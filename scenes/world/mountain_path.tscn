@@ -1,0 +1,154 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/mountain_path.gd" id="1_world"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="2_player"]
+
+[sub_resource type="BoxMesh" id="GroundMesh"]
+size = Vector3(12, 0.4, 58)
+
+[sub_resource type="BoxShape3D" id="GroundShape"]
+size = Vector3(12, 0.4, 58)
+
+[sub_resource type="CylinderMesh" id="TreeMesh"]
+top_radius = 0.42
+bottom_radius = 0.65
+height = 9.0
+
+[sub_resource type="BoxMesh" id="GatePostMesh"]
+size = Vector3(0.8, 5.5, 0.8)
+
+[sub_resource type="BoxMesh" id="GateBeamMesh"]
+size = Vector3(8.0, 0.65, 0.9)
+
+[sub_resource type="BoxShape3D" id="TriggerShape"]
+size = Vector3(8, 3, 2.5)
+
+[sub_resource type="StandardMaterial3D" id="GroundMat"]
+albedo_color = Color(0.12, 0.15, 0.13, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="TreeMat"]
+albedo_color = Color(0.08, 0.11, 0.08, 1)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="GateMat"]
+albedo_color = Color(0.25, 0.08, 0.06, 1)
+roughness = 0.8
+
+[sub_resource type="Environment" id="Environment_main"]
+background_mode = 1
+background_color = Color(0.16, 0.21, 0.24, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.58, 0.62, 0.68, 1)
+ambient_light_energy = 0.7
+fog_enabled = true
+fog_light_color = Color(0.55, 0.61, 0.64, 1)
+fog_density = 0.012
+
+[node name="MountainPath" type="Node3D"]
+script = ExtResource("1_world")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_main")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-48, -28, 0)
+light_color = Color(1, 0.78, 0.58, 1)
+light_energy = 1.25
+shadow_enabled = true
+
+[node name="Ground" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.2, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("GroundMesh")
+material_override = SubResource("GroundMat")
+
+[node name="Collision" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("GroundShape")
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+position = Vector3(0, 0.2, 23)
+
+[node name="Trees" type="Node3D" parent="."]
+
+[node name="TreeL1" type="MeshInstance3D" parent="Trees"]
+position = Vector3(-5, 4.5, 18)
+mesh = SubResource("TreeMesh")
+material_override = SubResource("TreeMat")
+
+[node name="TreeR1" type="MeshInstance3D" parent="Trees"]
+position = Vector3(5, 4.5, 13)
+mesh = SubResource("TreeMesh")
+material_override = SubResource("TreeMat")
+
+[node name="TreeL2" type="MeshInstance3D" parent="Trees"]
+position = Vector3(-4.8, 4.5, 3)
+mesh = SubResource("TreeMesh")
+material_override = SubResource("TreeMat")
+
+[node name="TreeR2" type="MeshInstance3D" parent="Trees"]
+position = Vector3(5.2, 4.5, -4)
+mesh = SubResource("TreeMesh")
+material_override = SubResource("TreeMat")
+
+[node name="TreeL3" type="MeshInstance3D" parent="Trees"]
+position = Vector3(-5.3, 4.5, -15)
+mesh = SubResource("TreeMesh")
+material_override = SubResource("TreeMat")
+
+[node name="TreeR3" type="MeshInstance3D" parent="Trees"]
+position = Vector3(5.0, 4.5, -19)
+mesh = SubResource("TreeMesh")
+material_override = SubResource("TreeMat")
+
+[node name="VillageGate" type="Node3D" parent="."]
+position = Vector3(0, 0, -20)
+
+[node name="LeftPost" type="MeshInstance3D" parent="VillageGate"]
+position = Vector3(-3, 2.75, 0)
+mesh = SubResource("GatePostMesh")
+material_override = SubResource("GateMat")
+
+[node name="RightPost" type="MeshInstance3D" parent="VillageGate"]
+position = Vector3(3, 2.75, 0)
+mesh = SubResource("GatePostMesh")
+material_override = SubResource("GateMat")
+
+[node name="TopBeam" type="MeshInstance3D" parent="VillageGate"]
+position = Vector3(0, 5.1, 0)
+mesh = SubResource("GateBeamMesh")
+material_override = SubResource("GateMat")
+
+[node name="LowerBeam" type="MeshInstance3D" parent="VillageGate"]
+position = Vector3(0, 4.25, 0)
+scale = Vector3(0.78, 0.72, 0.72)
+mesh = SubResource("GateBeamMesh")
+material_override = SubResource("GateMat")
+
+[node name="VillageGateTrigger" type="Area3D" parent="."]
+position = Vector3(0, 1.5, -20)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VillageGateTrigger"]
+shape = SubResource("TriggerShape")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Margin" type="MarginContainer" parent="HUD"]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 700.0
+offset_bottom = 140.0
+
+[node name="VBox" type="VBoxContainer" parent="HUD/Margin"]
+
+[node name="Title" type="Label" parent="HUD/Margin/VBox"]
+text = "TSUKIMORI — Vertical Slice v0.0.1"
+
+[node name="Status" type="Label" parent="HUD/Margin/VBox"]
+text = "BLOCKOUT"
+
+[node name="Controls" type="Label" parent="HUD/Margin/VBox"]
+text = "WASD — mozgás"
+
+[connection signal="body_entered" from="VillageGateTrigger" to="." method="_on_village_gate_trigger_body_entered"]
