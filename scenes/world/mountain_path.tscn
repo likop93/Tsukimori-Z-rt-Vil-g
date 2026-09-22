@@ -59,6 +59,15 @@ size = Vector3(0.12, 0.78, 0.02)
 [sub_resource type="BoxShape3D" id="TriggerShape"]
 size = Vector3(8, 3, 3)
 
+[sub_resource type="BoxShape3D" id="OddityTriggerShape"]
+size = Vector3(8, 3, 3.2)
+
+[sub_resource type="BoxShape3D" id="OverlookNarrativeShape"]
+size = Vector3(12, 3, 4.5)
+
+[sub_resource type="BoxMesh" id="PetalMesh"]
+size = Vector3(0.14, 0.025, 0.22)
+
 [sub_resource type="BoxShape3D" id="BendCameraShape"]
 size = Vector3(20, 20, 14)
 
@@ -103,6 +112,10 @@ roughness = 0.9
 [sub_resource type="StandardMaterial3D" id="PaperMat"]
 albedo_color = Color(0.78, 0.75, 0.64, 1)
 roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="PetalMat"]
+albedo_color = Color(0.92, 0.78, 0.79, 1)
+roughness = 0.82
 
 [sub_resource type="Environment" id="Environment_main"]
 background_mode = 1
@@ -381,6 +394,24 @@ rotation_degrees = Vector3(0, 14, 4)
 mesh = SubResource("PaperMesh")
 material_override = SubResource("PaperMat")
 
+[node name="OddityTrigger" type="Area3D" parent="."]
+position = Vector3(-2.6, 1.5, 0.6)
+collision_layer = 0
+collision_mask = 1
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OddityTrigger"]
+shape = SubResource("OddityTriggerShape")
+
+[node name="OverlookNarrativeTrigger" type="Area3D" parent="."]
+position = Vector3(-3.8, 1.5, -4.0)
+collision_layer = 0
+collision_mask = 1
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OverlookNarrativeTrigger"]
+shape = SubResource("OverlookNarrativeShape")
+
 [node name="OldSignpost" type="Node3D" parent="."]
 position = Vector3(2.5, 0, -15.5)
 rotation_degrees = Vector3(0, -12, 0)
@@ -395,6 +426,15 @@ position = Vector3(-0.2, 2.15, 0)
 rotation_degrees = Vector3(0, 0, -3)
 mesh = SubResource("SignBoardMesh")
 material_override = SubResource("WoodMat")
+
+[node name="SignText" type="Label3D" parent="OldSignpost"]
+position = Vector3(-0.2, 2.15, 0.105)
+rotation_degrees = Vector3(0, 0, -3)
+text = "月守村 — TSUKIMORI"
+font_size = 52
+outline_size = 6
+pixel_size = 0.0027
+modulate = Color(0.87, 0.82, 0.69, 1)
 
 [node name="VillageGate" type="Node3D" parent="."]
 position = Vector3(0, 0, -27)
@@ -419,6 +459,44 @@ position = Vector3(0, 4.25, 0)
 scale = Vector3(0.78, 0.72, 0.72)
 mesh = SubResource("GateBeamMesh")
 material_override = SubResource("GateMat")
+
+[node name="AnomalyPetals" type="Node3D" parent="VillageGate"]
+
+[node name="Petal01" type="MeshInstance3D" parent="VillageGate/AnomalyPetals"]
+position = Vector3(-1.8, 0.42, 1.25)
+rotation_degrees = Vector3(12, 15, 28)
+mesh = SubResource("PetalMesh")
+material_override = SubResource("PetalMat")
+
+[node name="Petal02" type="MeshInstance3D" parent="VillageGate/AnomalyPetals"]
+position = Vector3(-0.9, 0.72, 1.55)
+rotation_degrees = Vector3(-8, -20, 12)
+mesh = SubResource("PetalMesh")
+material_override = SubResource("PetalMat")
+
+[node name="Petal03" type="MeshInstance3D" parent="VillageGate/AnomalyPetals"]
+position = Vector3(0.2, 0.48, 1.05)
+rotation_degrees = Vector3(18, 42, -9)
+mesh = SubResource("PetalMesh")
+material_override = SubResource("PetalMat")
+
+[node name="Petal04" type="MeshInstance3D" parent="VillageGate/AnomalyPetals"]
+position = Vector3(1.05, 0.82, 1.45)
+rotation_degrees = Vector3(-15, 5, 20)
+mesh = SubResource("PetalMesh")
+material_override = SubResource("PetalMat")
+
+[node name="Petal05" type="MeshInstance3D" parent="VillageGate/AnomalyPetals"]
+position = Vector3(1.85, 0.35, 1.15)
+rotation_degrees = Vector3(9, -35, -24)
+mesh = SubResource("PetalMesh")
+material_override = SubResource("PetalMat")
+
+[node name="Petal06" type="MeshInstance3D" parent="VillageGate/AnomalyPetals"]
+position = Vector3(0.65, 1.02, 1.85)
+rotation_degrees = Vector3(22, 26, 31)
+mesh = SubResource("PetalMesh")
+material_override = SubResource("PetalMat")
 
 [node name="VillagePreview" type="Node3D" parent="."]
 position = Vector3(0, -0.1, -39)
@@ -482,4 +560,23 @@ text = "MOUNTAIN PATH — BLOCKOUT 2.0"
 [node name="Controls" type="Label" parent="HUD/Margin/VBox"]
 text = "WASD — állandó mozgásirányok, kamerától függetlenül"
 
+[node name="Subtitle" type="Label" parent="HUD"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -310.0
+offset_top = -118.0
+offset_right = 310.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 28
+text = ""
+horizontal_alignment = 1
+modulate = Color(1, 1, 1, 0)
+
+[connection signal="body_entered" from="OddityTrigger" to="." method="_on_oddity_trigger_body_entered"]
+[connection signal="body_entered" from="OverlookNarrativeTrigger" to="." method="_on_overlook_narrative_trigger_body_entered"]
 [connection signal="body_entered" from="VillageGateTrigger" to="." method="_on_village_gate_trigger_body_entered"]
