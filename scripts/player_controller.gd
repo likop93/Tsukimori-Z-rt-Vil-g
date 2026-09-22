@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var gravity: float = 24.0
 @export var rotation_speed: float = 10.0
 
-@onready var visual_body: MeshInstance3D = $PlaceholderBody
+@onready var visual_body: Node3D = $VisualRoot
 
 func _ready() -> void:
     add_to_group("player")

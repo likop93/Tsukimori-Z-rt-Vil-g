@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_player"]
 [ext_resource type="Script" path="res://scripts/directed_camera.gd" id="2_camera"]
+[ext_resource type="Script" path="res://scripts/proxy_visual.gd" id="3_proxy_visual"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape_player"]
 radius = 0.42
@@ -18,7 +19,10 @@ script = ExtResource("1_player")
 position = Vector3(0, 0.92, 0)
 shape = SubResource("CapsuleShape_player")
 
-[node name="PlaceholderBody" type="MeshInstance3D" parent="."]
+[node name="VisualRoot" type="Node3D" parent="."]
+script = ExtResource("3_proxy_visual")
+
+[node name="PlaceholderBody" type="MeshInstance3D" parent="VisualRoot"]
 position = Vector3(0, 0.92, 0)
 mesh = SubResource("CapsuleMesh_player")
 

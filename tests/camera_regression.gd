@@ -66,7 +66,7 @@ func check_controls(z: float) -> void:
         displacement.y = 0.0
         expect(displacement.normalized().distance_to(expected.normalized()) < 0.001, "WASD world direction changed with camera at z=%s" % z)
         expect(absf(Vector2(player.velocity.x, player.velocity.z).length() - player.move_speed) < 0.01, "Cardinal/diagonal speed differs")
-        var facing := player.get_node("PlaceholderBody").global_basis.z as Vector3
+        var facing := player.get_node("VisualRoot").global_basis.z as Vector3
         var motion := Vector3(player.velocity.x, 0.0, player.velocity.z).normalized()
         expect(facing.dot(motion) > 0.98, "Visual body does not face actual motion")
         expect(player.rotation.is_zero_approx(), "Movement rotated the player root")

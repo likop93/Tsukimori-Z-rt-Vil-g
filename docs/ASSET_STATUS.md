@@ -2,7 +2,7 @@
 
 | Asset | Státusz |
 |---|---|
-| Akira 3D | PLACEHOLDER |
+| Akira 3D | PLACEHOLDER — proxy generator ready |
 | Mountain path | BLOCKOUT |
 | Tsukimori gate | BLOCKOUT |
 | Cedar trees | PLACEHOLDER |
