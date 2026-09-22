@@ -22,7 +22,9 @@ shape = SubResource("CapsuleShape_player")
 [node name="VisualRoot" type="Node3D" parent="."]
 script = ExtResource("3_proxy_visual")
 
-[node name="PlaceholderBody" type="MeshInstance3D" parent="VisualRoot"]
+[node name="MotionLayer" type="Node3D" parent="VisualRoot"]
+
+[node name="PlaceholderBody" type="MeshInstance3D" parent="VisualRoot/MotionLayer"]
 position = Vector3(0, 0.92, 0)
 mesh = SubResource("CapsuleMesh_player")
 
