@@ -6,7 +6,7 @@
 
 **Vertical Slice Implementation**
 
-Az első hegyi játékszakasz működő, játszható és review-zott állapotban van.
+Az első hegyi játékszakasz review-zott, a kapun túli első utca pedig játszható és review-ra kész állapotban van.
 
 ## Mérföldkövek
 
@@ -25,14 +25,14 @@ Az első hegyi játékszakasz működő, játszható és review-zott állapotban
 | Mountain Path Blockout 2.0 | ✅ REVIEW PASSED |
 | Mountain Path Narrative Pass 1 | ✅ REVIEW PASSED |
 | Mountain Path Animation Pass v0.2 | ✅ REVIEW PASSED |
-| Tsukimori First Street Blockout 1.0 | ▶ NEXT |
+| Tsukimori First Street Blockout 1.0 | ✅ IMPLEMENTED — REVIEW |
 | Miyako first encounter staging | ⏳ PLANNED |
 | Clinic blockout | ⏳ PLANNED |
 | Opening slice title beat | ⏳ PLANNED |
 
 ## Jelenlegi játszható szakasz
 
-**Hegyi ösvény → első furcsa jel → kilátópont → útjelző → falukapu → „Szél?”**
+**Hegyi ösvény → első furcsa jel → kilátópont → útjelző → falukapu → „Szél?” → első utca → Miyako találkozási tere**
 
 Működik:
 
@@ -43,10 +43,14 @@ Működik:
 - környezeti ambient mozgás;
 - narratív trigger timing;
 - kapu-anomália;
+- hat házból álló első utcai blockout;
+- két mellékutca, kerítések és négy lámpa;
+- hat falusi NPC-hely;
+- Miyako találkozási helyőrzője;
 - GameState flag-ek.
 
-## Következő feladat
+## Aktuális review
 
 **Tsukimori — Első utca Blockout 1.0**
 
-Nem lépünk még combat, inventory, Black Kamui, route vagy final asset irányba. A következő cél a faluba belépés utáni első játszható tér és Miyako találkozásának előkészítése.
+A következő döntést a teljes hegyi út és az első utca egyben történő végigjátszása után hozzuk meg. Végleges NPC-rutin, Miyako-jelenet és dialógus még nincs a buildben.

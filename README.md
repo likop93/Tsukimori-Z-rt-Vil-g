@@ -5,14 +5,11 @@ Godot 4.x alapú 2.5D narratív RPG vertical slice.
 ## Aktuális állapot — 2026-09-22
 
 Az első játszható hegyi szakasz technikai és animációs alapja **review-n átment**.
+A kapun túli első falurész **Blockout 1.0** változata elkészült és review-ra kész.
 
 Jelenlegi játszható ív:
 
-**hegyi ösvény → első furcsa jel → Tsukimori-kilátópont → útjelző → kapu → első térbeli anomália („Szél?”)**
-
-A következő aktív fejlesztési blokk:
-
-**Tsukimori — Első utca Blockout 1.0**
+**hegyi ösvény → első furcsa jel → Tsukimori-kilátópont → útjelző → kapu → első térbeli anomália („Szél?”) → első utca → Miyako találkozási tere**
 
 ## Már működő alapok
 
@@ -32,6 +29,10 @@ A következő aktív fejlesztési blokk:
 - 月守村 — TSUKIMORI útjelző
 - kapu előtti szirom/tér-anomália
 - „Szél?” reakció
+- Tsukimori első utcája hat házzal és két mellékutcával
+- négy utcai lámpa és hat falusi NPC-hely
+- Miyako első találkozásának kijelölt tere
+- három falusi kamera-kompozíció
 - minimális GameState flag-rendszer
 - fejlesztői HUD + subtitle prototípus
 
@@ -48,21 +49,22 @@ Ez nem jelenti azt, hogy a karaktermodell, az animáció vagy az environment art
 - W / A / S / D — mozgás
 - a mozgás világirányú, a kamera nem téríti el a WASD irányait
 
-## Következő mérföldkő
+## Aktuális review
 
 ### Tsukimori — Első utca Blockout 1.0
 
-Cél:
+Elkészült:
 
 - kapun túli első falurész játszható blockoutja;
-- keskeny főutca és oldalirányú tértagolás;
-- hagyományos fa házak / kerítések / lámpák blockoutja;
-- 5–7 falusi NPC helye és alap sziluettje;
-- első falusi reakciók stagingje;
+- keskeny főutca és két oldalirányú mellékutca;
+- hat hagyományos háztömeg, kerítések és négy lámpa;
+- hat falusi NPC elhelyezési pontja;
 - Miyako első találkozásának tere;
-- kamera-zónák hozzáigazítása a falusi környezethez.
+- három, a falusi környezethez igazított kamera-zóna.
 
-Még nem kerül be végleges NPC-rutin, combat, inventory, route rendszer vagy final dialogue system.
+Részletes review-leírás: [docs/FIRST_STREET_BLOCKOUT.md](docs/FIRST_STREET_BLOCKOUT.md)
+
+Még nem került be végleges NPC-rutin, combat, inventory, route rendszer vagy final dialogue system.
 
 ## Asset szabály
 

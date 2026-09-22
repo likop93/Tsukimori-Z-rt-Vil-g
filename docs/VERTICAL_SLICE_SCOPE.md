@@ -20,20 +20,19 @@
 
 **Mountain Path Animation Pass v0.2: REVIEW PASSED — 2026-09-22**
 
-## Következő aktív blokk
+## Elkészült — review alatt
 
 ### Tsukimori — Első utca Blockout 1.0
 
-Tervezett tartalom:
+Implementált tartalom:
 
-- kapun túli első falurész;
-- keskeny főutca;
-- tradicionális fa házak és kerítések blockoutja;
-- lámpák és kisebb térbeli landmarkok;
-- 5–7 háttér-NPC pozíciója;
-- falusiak első stagingje;
-- Miyako első megjelenésének és találkozásának tere;
-- területhez igazított rendezett kamera-zónák;
+- a kapun túli első, folyamatosan bejárható falurész;
+- keskeny főutca hat ütközéssel ellátott háztömeggel;
+- két rövid mellékutca és két kerítésszakasz;
+- négy meleg fényű utcai lámpa;
+- hat háttér-NPC elhelyezési pontja;
+- Miyako első megjelenésének és találkozásának kijelölt tere;
+- három, a falusi területhez igazított rendezett kamera-zóna;
 - folytatódó ritmus: **szép → csendes → furcsa → személyesen nyugtalanító**.
 
 ## Még nincs implementálva
@@ -50,14 +49,15 @@ Tervezett tartalom:
 - végleges audio
 - végleges grafika
 - végleges Akira modell és final animation set
+- Miyako végleges karaktere és találkozási jelenete
 
 ## Következő review kérdések
 
-Az első utcánál majd ezt nézzük:
+Az első utcánál ezt nézzük:
 
 - természetes-e a kapuból a faluba való térbeli átmenet;
 - megfelelő-e az utca mérete Akirához képest;
 - olvasható-e a fő haladási irány;
-- kellően lakottnak érződik-e 5–7 háttérfigurával;
+- kellően lakottnak érződik-e hat háttérfigurával;
 - a kamera megtartja-e a rendezett filmes jelleget;
 - Miyako belépési pontja természetesnek, nem „spawnnak” érződik-e.

@@ -11,7 +11,9 @@
 | Fog | BLOCKOUT + subtle ambient motion — REVIEW PASSED |
 | Lighting | BLOCKOUT |
 | UI | PLACEHOLDER — subtitle prototype |
-| Tsukimori first street | NEXT — BLOCKOUT 1.0 |
+| Tsukimori first street | BLOCKOUT 1.0 — REVIEW |
+| Village houses / fences / lanterns | BLOCKOUT proxies |
+| Villagers / Miyako | PLACEMENT proxies only |
 
 Státuszfolyam:
 
