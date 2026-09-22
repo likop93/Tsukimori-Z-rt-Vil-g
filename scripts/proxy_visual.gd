@@ -98,7 +98,11 @@ func _play_one_shot(token: String, fallback_seconds: float) -> void:
 
 func _update_body_lean(player: CharacterBody3D, delta: float) -> void:
     var horizontal_speed := Vector2(player.velocity.x, player.velocity.z).length()
-    var speed_ratio := clampf(horizontal_speed / maxf(player.move_speed, 0.1), 0.0, 1.0)
+    var configured_speed = player.get("move_speed")
+    var max_speed := 4.2
+    if configured_speed != null:
+        max_speed = float(configured_speed)
+    var speed_ratio := clampf(horizontal_speed / maxf(max_speed, 0.1), 0.0, 1.0)
     var target_pitch := deg_to_rad(-body_lean_degrees) * speed_ratio
 
     var local_velocity := global_basis.inverse() * Vector3(player.velocity.x, 0.0, player.velocity.z)
