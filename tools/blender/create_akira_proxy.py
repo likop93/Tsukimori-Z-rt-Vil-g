@@ -1,5 +1,5 @@
 """
-Tsukimori — Akira Proxy v0.1
+Tsukimori — Akira Proxy v0.2
 Greybox humanoid generator for camera/movement review.
 
 Run from Blender's Scripting workspace:
@@ -134,6 +134,10 @@ def create_armature():
         add_bone(f"forearm.{side}", (x1, 0, 1.34), (x2, -0.01, 1.18), f"upper_arm.{side}", True)
         add_bone(f"hand.{side}", (x2, -0.01, 1.18), (x3, -0.02, 1.13), f"forearm.{side}", True)
 
+    add_bone("coat.back", (0, 0.08, 1.30), (0, 0.12, 0.70), "pelvis")
+    add_bone("coat.L", (-0.16, -0.03, 1.28), (-0.17, -0.01, 0.69), "pelvis")
+    add_bone("coat.R", (0.16, -0.03, 1.28), (0.17, -0.01, 0.69), "pelvis")
+
     bpy.ops.object.mode_set(mode="POSE")
     for pb in arm.pose.bones:
         pb.rotation_mode = "XYZ"
@@ -176,9 +180,9 @@ def build_proxy(arm):
     box("Chest", (0, 0, 1.47), (0.49, 0.25, 0.22), cloth2, "chest")
     box("ShirtAccent", (0, -0.126, 1.39), (0.055, 0.018, 0.25), accent, "chest")
 
-    box("CoatBack", (0, 0.105, 1.02), (0.48, 0.07, 0.68), cloth, "pelvis")
-    box("CoatPanelL", (-0.16, -0.04, 0.99), (0.15, 0.12, 0.64), cloth, "pelvis")
-    box("CoatPanelR", (0.16, -0.04, 0.99), (0.15, 0.12, 0.64), cloth, "pelvis")
+    box("CoatBack", (0, 0.105, 1.02), (0.48, 0.07, 0.68), cloth, "coat.back")
+    box("CoatPanelL", (-0.16, -0.04, 0.99), (0.15, 0.12, 0.64), cloth, "coat.L")
+    box("CoatPanelR", (0.16, -0.04, 0.99), (0.15, 0.12, 0.64), cloth, "coat.R")
 
     cyl("Neck", (0, 0, 1.54), (0, 0, 1.64), 0.075, skin, "neck")
     head = add_sphere("Head", (0, 0, 1.72), (0.115, 0.105, 0.145), skin)
@@ -242,81 +246,107 @@ def create_action(arm, name, frames):
     return action
 
 
+def smooth_action(action):
+    for curve in action.fcurves:
+        for key in curve.keyframe_points:
+            key.interpolation = "BEZIER"
+            key.handle_left_type = "AUTO_CLAMPED"
+            key.handle_right_type = "AUTO_CLAMPED"
+
+
 def build_animations(arm):
     idle = create_action(arm, "Idle", [
-        (1, {"chest": (0, 0, -0.6)}, {"pelvis": (0, 0, 0.0)}),
-        (30, {"chest": (0, 0, 0.8), "upper_arm.L": (1.0, 0, 0), "upper_arm.R": (-1.0, 0, 0)}, {"pelvis": (0, 0, 0.008)}),
-        (60, {"chest": (0, 0, -0.6)}, {"pelvis": (0, 0, 0.0)}),
+        (1, {"pelvis": (0, 0, -0.5), "chest": (-0.4, 0, 0.6), "head": (0.2, 0, -0.3)}, {"pelvis": (0, 0, 0.0)}),
+        (36, {"pelvis": (0, 0, 0.5), "chest": (0.6, 0, -0.7), "head": (-0.2, 0, 0.3)}, {"pelvis": (0, 0, 0.008)}),
+        (72, {"pelvis": (0, 0, -0.5), "chest": (-0.4, 0, 0.6), "head": (0.2, 0, -0.3)}, {"pelvis": (0, 0, 0.0)}),
     ])
 
     walk = create_action(arm, "Walk", [
         (1, {
-            "thigh.L": (24, 0, 0), "thigh.R": (-24, 0, 0),
-            "shin.L": (4, 0, 0), "shin.R": (30, 0, 0),
-            "upper_arm.L": (-20, 0, 0), "upper_arm.R": (20, 0, 0),
-            "forearm.L": (-8, 0, 0), "forearm.R": (-12, 0, 0),
-        }, {"pelvis": (0, 0, 0.0)}),
+            "pelvis": (0, 0, 5), "spine": (0, 0, -2), "chest": (0, 0, -4), "head": (0, 0, 1),
+            "thigh.L": (25, 0, 0), "thigh.R": (-22, 0, 0), "shin.L": (3, 0, 0), "shin.R": (30, 0, 0),
+            "foot.L": (-7, 0, 0), "foot.R": (10, 0, 0),
+            "upper_arm.L": (-18, 0, 0), "upper_arm.R": (18, 0, 0),
+            "coat.back": (-3, 0, -2), "coat.L": (-5, 0, -4), "coat.R": (-1, 0, 3),
+        }, {"pelvis": (-0.014, 0, 0.0)}),
         (7, {
-            "thigh.L": (0, 0, 0), "thigh.R": (0, 0, 0),
-            "shin.L": (20, 0, 0), "shin.R": (8, 0, 0),
-            "upper_arm.L": (0, 0, 0), "upper_arm.R": (0, 0, 0),
-        }, {"pelvis": (0, 0, 0.018)}),
+            "pelvis": (0, 0, 0), "chest": (0, 0, 0),
+            "thigh.L": (-2, 0, 0), "thigh.R": (3, 0, 0), "shin.L": (20, 0, 0), "shin.R": (7, 0, 0),
+            "foot.L": (5, 0, 0), "foot.R": (-5, 0, 0),
+            "coat.back": (2, 0, 0), "coat.L": (1, 0, 1), "coat.R": (2, 0, -1),
+        }, {"pelvis": (0.0, 0, 0.012)}),
         (13, {
-            "thigh.L": (-24, 0, 0), "thigh.R": (24, 0, 0),
-            "shin.L": (30, 0, 0), "shin.R": (4, 0, 0),
-            "upper_arm.L": (20, 0, 0), "upper_arm.R": (-20, 0, 0),
-            "forearm.L": (-12, 0, 0), "forearm.R": (-8, 0, 0),
-        }, {"pelvis": (0, 0, 0.0)}),
+            "pelvis": (0, 0, -5), "spine": (0, 0, 2), "chest": (0, 0, 4), "head": (0, 0, -1),
+            "thigh.L": (-22, 0, 0), "thigh.R": (25, 0, 0), "shin.L": (30, 0, 0), "shin.R": (3, 0, 0),
+            "foot.L": (10, 0, 0), "foot.R": (-7, 0, 0),
+            "upper_arm.L": (18, 0, 0), "upper_arm.R": (-18, 0, 0),
+            "coat.back": (-3, 0, 2), "coat.L": (-1, 0, 3), "coat.R": (-5, 0, -4),
+        }, {"pelvis": (0.014, 0, 0.0)}),
         (19, {
-            "thigh.L": (0, 0, 0), "thigh.R": (0, 0, 0),
-            "shin.L": (8, 0, 0), "shin.R": (20, 0, 0),
-            "upper_arm.L": (0, 0, 0), "upper_arm.R": (0, 0, 0),
-        }, {"pelvis": (0, 0, 0.018)}),
+            "pelvis": (0, 0, 0), "chest": (0, 0, 0),
+            "thigh.L": (3, 0, 0), "thigh.R": (-2, 0, 0), "shin.L": (7, 0, 0), "shin.R": (20, 0, 0),
+            "foot.L": (-5, 0, 0), "foot.R": (5, 0, 0),
+            "coat.back": (2, 0, 0), "coat.L": (2, 0, -1), "coat.R": (1, 0, 1),
+        }, {"pelvis": (0.0, 0, 0.012)}),
         (25, {
-            "thigh.L": (24, 0, 0), "thigh.R": (-24, 0, 0),
-            "shin.L": (4, 0, 0), "shin.R": (30, 0, 0),
-            "upper_arm.L": (-20, 0, 0), "upper_arm.R": (20, 0, 0),
-            "forearm.L": (-8, 0, 0), "forearm.R": (-12, 0, 0),
-        }, {"pelvis": (0, 0, 0.0)}),
+            "pelvis": (0, 0, 5), "spine": (0, 0, -2), "chest": (0, 0, -4), "head": (0, 0, 1),
+            "thigh.L": (25, 0, 0), "thigh.R": (-22, 0, 0), "shin.L": (3, 0, 0), "shin.R": (30, 0, 0),
+            "foot.L": (-7, 0, 0), "foot.R": (10, 0, 0),
+            "upper_arm.L": (-18, 0, 0), "upper_arm.R": (18, 0, 0),
+            "coat.back": (-3, 0, -2), "coat.L": (-5, 0, -4), "coat.R": (-1, 0, 3),
+        }, {"pelvis": (-0.014, 0, 0.0)}),
+    ])
+
+    walk_start = create_action(arm, "WalkStart", [
+        (1, {"pelvis": (0, 0, 0), "chest": (0, 0, 0)}, {"pelvis": (0, 0, 0)}),
+        (5, {"pelvis": (1, 0, 2), "chest": (-2, 0, -1), "thigh.L": (12, 0, 0), "thigh.R": (-7, 0, 0),
+             "upper_arm.L": (-7, 0, 0), "upper_arm.R": (7, 0, 0), "coat.back": (-2, 0, -1)}, {"pelvis": (-0.008, 0, -0.010)}),
+        (9, {"pelvis": (0, 0, 4), "chest": (0, 0, -3), "thigh.L": (22, 0, 0), "thigh.R": (-18, 0, 0),
+             "shin.R": (22, 0, 0), "upper_arm.L": (-15, 0, 0), "upper_arm.R": (15, 0, 0),
+             "coat.back": (-4, 0, -2), "coat.L": (-4, 0, -3), "coat.R": (-1, 0, 2)}, {"pelvis": (-0.013, 0, 0.0)}),
+    ])
+
+    walk_stop = create_action(arm, "WalkStop", [
+        (1, {"pelvis": (0, 0, -4), "chest": (0, 0, 3), "thigh.L": (-18, 0, 0), "thigh.R": (21, 0, 0),
+             "shin.L": (26, 0, 0), "upper_arm.L": (14, 0, 0), "upper_arm.R": (-14, 0, 0), "coat.back": (-3, 0, 2)},
+             {"pelvis": (0.012, 0, 0.0)}),
+        (6, {"pelvis": (0, 0, -1), "chest": (0.5, 0, 1), "thigh.L": (-6, 0, 0), "thigh.R": (8, 0, 0),
+             "shin.L": (10, 0, 0), "upper_arm.L": (4, 0, 0), "upper_arm.R": (-4, 0, 0), "coat.back": (1, 0, 1)},
+             {"pelvis": (0.004, 0, -0.006)}),
+        (11, {"pelvis": (0, 0, 0), "chest": (0, 0, 0)}, {"pelvis": (0, 0, 0)}),
+    ])
+
+    lookout = create_action(arm, "Lookout", [
+        (1, {"chest": (0, 0, 0), "head": (0, 0, 0)}, {}),
+        (12, {"chest": (0, 0, -4), "neck": (-2, 0, -4), "head": (-1, 0, -7)}, {}),
+        (26, {"chest": (0, 0, -3), "neck": (-1, 0, -3), "head": (0.5, 0, -5)}, {}),
+        (38, {"chest": (0, 0, 0), "neck": (0, 0, 0), "head": (0, 0, 0)}, {}),
+    ])
+
+    gate_react = create_action(arm, "GateReact", [
+        (1, {"chest": (0, 0, 0), "neck": (0, 0, 0), "head": (0, 0, 0)}, {}),
+        (7, {"chest": (-2, 0, -1.5), "neck": (-3, 0, 2.5), "head": (-4.5, 0, 5.5)}, {}),
+        (15, {"chest": (-1, 0, 1), "neck": (-2, 0, -2), "head": (-3, 0, -4)}, {}),
+        (23, {"chest": (0, 0, 0), "neck": (0, 0, 0), "head": (0, 0, 0)}, {}),
     ])
 
     run = create_action(arm, "Run", [
-        (1, {
-            "chest": (8, 0, 0),
-            "thigh.L": (38, 0, 0), "thigh.R": (-38, 0, 0),
-            "shin.L": (5, 0, 0), "shin.R": (48, 0, 0),
-            "upper_arm.L": (-32, 0, 0), "upper_arm.R": (32, 0, 0),
-            "forearm.L": (-35, 0, 0), "forearm.R": (-35, 0, 0),
-        }, {"pelvis": (0, 0, 0.0)}),
-        (5, {
-            "chest": (8, 0, 0),
-            "thigh.L": (0, 0, 0), "thigh.R": (0, 0, 0),
-            "shin.L": (30, 0, 0), "shin.R": (16, 0, 0),
-        }, {"pelvis": (0, 0, 0.028)}),
-        (9, {
-            "chest": (8, 0, 0),
-            "thigh.L": (-38, 0, 0), "thigh.R": (38, 0, 0),
-            "shin.L": (48, 0, 0), "shin.R": (5, 0, 0),
-            "upper_arm.L": (32, 0, 0), "upper_arm.R": (-32, 0, 0),
-            "forearm.L": (-35, 0, 0), "forearm.R": (-35, 0, 0),
-        }, {"pelvis": (0, 0, 0.0)}),
-        (13, {
-            "chest": (8, 0, 0),
-            "thigh.L": (0, 0, 0), "thigh.R": (0, 0, 0),
-            "shin.L": (16, 0, 0), "shin.R": (30, 0, 0),
-        }, {"pelvis": (0, 0, 0.028)}),
-        (17, {
-            "chest": (8, 0, 0),
-            "thigh.L": (38, 0, 0), "thigh.R": (-38, 0, 0),
-            "shin.L": (5, 0, 0), "shin.R": (48, 0, 0),
-            "upper_arm.L": (-32, 0, 0), "upper_arm.R": (32, 0, 0),
-            "forearm.L": (-35, 0, 0), "forearm.R": (-35, 0, 0),
-        }, {"pelvis": (0, 0, 0.0)}),
+        (1, {"chest": (7, 0, 0), "thigh.L": (38, 0, 0), "thigh.R": (-38, 0, 0),
+             "shin.L": (5, 0, 0), "shin.R": (48, 0, 0), "upper_arm.L": (-32, 0, 0), "upper_arm.R": (32, 0, 0),
+             "coat.back": (-9, 0, 0), "coat.L": (-11, 0, -3), "coat.R": (-7, 0, 3)}, {"pelvis": (0, 0, 0.0)}),
+        (9, {"chest": (7, 0, 0), "thigh.L": (-38, 0, 0), "thigh.R": (38, 0, 0),
+             "shin.L": (48, 0, 0), "shin.R": (5, 0, 0), "upper_arm.L": (32, 0, 0), "upper_arm.R": (-32, 0, 0),
+             "coat.back": (-9, 0, 0), "coat.L": (-7, 0, 3), "coat.R": (-11, 0, -3)}, {"pelvis": (0, 0, 0.025)}),
+        (17, {"chest": (7, 0, 0), "thigh.L": (38, 0, 0), "thigh.R": (-38, 0, 0),
+              "shin.L": (5, 0, 0), "shin.R": (48, 0, 0), "upper_arm.L": (-32, 0, 0), "upper_arm.R": (32, 0, 0),
+              "coat.back": (-9, 0, 0), "coat.L": (-11, 0, -3), "coat.R": (-7, 0, 3)}, {"pelvis": (0, 0, 0.0)}),
     ])
 
-    arm.animation_data.action = idle
-    return idle, walk, run
+    for action in [idle, walk, walk_start, walk_stop, lookout, gate_react, run]:
+        smooth_action(action)
 
+    arm.animation_data.action = idle
+    return idle, walk, walk_start, walk_stop, lookout, gate_react, run
 
 def export_glb():
     props = {p.identifier for p in bpy.ops.export_scene.gltf.get_rna_type().properties}
@@ -352,7 +382,7 @@ def main():
 
     arm["tsukimori_status"] = "BLOCKOUT"
     arm["character"] = "Akira"
-    arm["proxy_version"] = "0.1"
+    arm["proxy_version"] = "0.2"
 
     bpy.context.view_layer.objects.active = arm
     arm.select_set(True)
