@@ -5,6 +5,8 @@ extends CharacterBody3D
 @export var gravity: float = 24.0
 @export var rotation_speed: float = 10.0
 
+@onready var visual_body: MeshInstance3D = $PlaceholderBody
+
 func _ready() -> void:
     add_to_group("player")
 
@@ -33,6 +35,7 @@ func _physics_process(delta: float) -> void:
 
     if input_axis.length() > 0.01:
         var target_angle := atan2(desired.x, desired.z)
-        rotation.y = lerp_angle(rotation.y, target_angle, rotation_speed * delta)
+        # Rotate only the visual so CameraPivot keeps a fixed world orientation.
+        visual_body.rotation.y = lerp_angle(visual_body.rotation.y, target_angle, rotation_speed * delta)
 
     move_and_slide()
