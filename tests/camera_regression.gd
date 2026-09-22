@@ -105,21 +105,67 @@ func run_checks() -> void:
     for z in [20.0, 0.0, -24.0]:
         await check_controls(z)
 
-    # Hold W during an actual shot change, checking against the current view.
+    # Holding W must preserve the world direction while the camera changes shots.
     await settle_at(9.0)
+    var held_forward := -camera.global_basis.z
+    held_forward.y = 0.0
+    held_forward = held_forward.normalized()
+    var start_position := player.global_position
     set_key(KEY_W, true)
-    await frames(2)
-    for frame in range(100):
+    await frames(20)
+    var largest_deviation := 0.0
+    for frame in range(120):
         await physics_frame
-        var right := camera.global_basis.x
-        var back := camera.global_basis.z
-        back.y = 0.0
-        var motion := Vector3(player.velocity.x, 0.0, player.velocity.z)
-        expect(motion.dot(-back.normalized()) > 0.0, "W reversed during a transition")
-        expect(absf(motion.dot(right)) < 0.25, "Movement did not track camera transition")
+        var motion := Vector3(player.velocity.x, 0.0, player.velocity.z).normalized()
+        largest_deviation = maxf(largest_deviation, motion.distance_to(held_forward))
+    expect(largest_deviation < 0.001, "Camera steered held W without player input")
+    expect(absf(player.global_position.x - start_position.x) < 0.01, "Held W drifted off the original path")
+    expect(rig.rotation.y > deg_to_rad(20.0), "Traversal did not activate side shot")
+
+    # Additional held keys steer in the same frame; cancelling keys must not reset it.
+    set_key(KEY_S, true)
+    await frames(25)
+    expect(Vector2(player.velocity.x, player.velocity.z).length() < 0.001, "Opposing keys did not stop movement")
+    set_key(KEY_S, false)
+    await frames(25)
+    expect(Vector3(player.velocity.x, 0, player.velocity.z).normalized().distance_to(held_forward) < 0.001, "Opposing keys unexpectedly reset the held direction")
+    set_key(KEY_D, true)
+    await frames(25)
+    var held_diagonal := (held_forward + held_forward.cross(Vector3.UP)).normalized()
+    expect(Vector3(player.velocity.x, 0, player.velocity.z).normalized().distance_to(held_diagonal) < 0.001, "Adding D unexpectedly rebased held movement")
+    set_key(KEY_D, false)
+    await frames(25)
+    expect(Vector3(player.velocity.x, 0, player.velocity.z).normalized().distance_to(held_forward) < 0.001, "Releasing D unexpectedly rebased held W")
+
+    # A full release and re-press must use the new view, even between physics ticks.
+    set_key(KEY_W, false)
+    set_key(KEY_W, true)
+    var new_forward := -camera.global_basis.z
+    new_forward.y = 0.0
+    new_forward = new_forward.normalized()
+    await frames(30)
+    expect(Vector3(player.velocity.x, 0, player.velocity.z).normalized().distance_to(new_forward) < 0.002, "Fresh W did not adopt the new camera view")
     set_key(KEY_W, false)
     await frames(30)
-    expect(rig.rotation.y > deg_to_rad(10.0), "Traversal did not activate side shot")
+
+    # Preserve diagonal input too when crossing back out of the side zone.
+    await settle_at(7.0)
+    var back := camera.global_basis.z
+    back.y = 0.0
+    var diagonal := (back.normalized() - camera.global_basis.x).normalized()
+    set_key(KEY_S, true)
+    set_key(KEY_A, true)
+    await frames(20)
+    largest_deviation = 0.0
+    for frame in range(100):
+        await physics_frame
+        var motion := Vector3(player.velocity.x, 0, player.velocity.z).normalized()
+        largest_deviation = maxf(largest_deviation, motion.distance_to(diagonal))
+    expect(largest_deviation < 0.001, "Reverse shot transition steered held diagonal input")
+    expect(absf(rig.rotation.y) < deg_to_rad(3.0), "Reverse traversal did not leave the side zone")
+    set_key(KEY_S, false)
+    set_key(KEY_A, false)
+    await frames(30)
 
     await settle_at(-20.0)
     expect(root.get_node("GameState").has_flag("entered_tsukimori"), "Gate trigger failed")

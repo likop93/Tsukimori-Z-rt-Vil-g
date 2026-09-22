@@ -8,8 +8,22 @@ extends CharacterBody3D
 @onready var visual_body: MeshInstance3D = $PlaceholderBody
 @onready var camera: Camera3D = $CameraPivot/Camera3D
 
+var _movement_basis_locked := false
+var _movement_right := Vector3.RIGHT
+var _movement_back := Vector3.BACK
+
 func _ready() -> void:
     add_to_group("player")
+
+func _movement_keys_pressed() -> bool:
+    return Input.is_key_pressed(KEY_W) or Input.is_key_pressed(KEY_A) \
+        or Input.is_key_pressed(KEY_S) or Input.is_key_pressed(KEY_D)
+
+func _input(event: InputEvent) -> void:
+    # Catch a full release even if a new press arrives before the next physics tick.
+    if event is InputEventKey and not event.pressed:
+        if event.keycode in [KEY_W, KEY_A, KEY_S, KEY_D] and not _movement_keys_pressed():
+            _movement_basis_locked = false
 
 func _physics_process(delta: float) -> void:
     var input_axis := Vector2.ZERO
@@ -25,12 +39,19 @@ func _physics_process(delta: float) -> void:
 
     input_axis = input_axis.normalized()
 
-    # Use the visible camera's axes on the ground, including during shot transitions.
-    var right := camera.global_basis.x
-    var back := camera.global_basis.z
-    right.y = 0.0
-    back.y = 0.0
-    var direction := right.normalized() * input_axis.x + back.normalized() * input_axis.y
+    # Keep the input frame until all movement keys are released. Camera animation
+    # must not steer a held direction, including when adding/removing diagonal keys.
+    if not _movement_keys_pressed():
+        _movement_basis_locked = false
+    elif not _movement_basis_locked and not input_axis.is_zero_approx():
+        _movement_right = camera.global_basis.x
+        _movement_back = camera.global_basis.z
+        _movement_right.y = 0.0
+        _movement_back.y = 0.0
+        _movement_right = _movement_right.normalized()
+        _movement_back = _movement_back.normalized()
+        _movement_basis_locked = true
+    var direction := _movement_right * input_axis.x + _movement_back * input_axis.y
     var desired := direction.normalized() * move_speed
     var horizontal_velocity := Vector3(velocity.x, 0.0, velocity.z)
     horizontal_velocity = horizontal_velocity.move_toward(desired, acceleration * delta)
