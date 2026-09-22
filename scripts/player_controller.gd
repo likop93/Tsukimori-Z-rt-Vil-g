@@ -6,6 +6,7 @@ extends CharacterBody3D
 @export var rotation_speed: float = 10.0
 
 @onready var visual_body: MeshInstance3D = $PlaceholderBody
+@onready var camera: Camera3D = $CameraPivot/Camera3D
 
 func _ready() -> void:
     add_to_group("player")
@@ -24,18 +25,28 @@ func _physics_process(delta: float) -> void:
 
     input_axis = input_axis.normalized()
 
-    var desired := Vector3(input_axis.x, 0.0, input_axis.y) * move_speed
-    velocity.x = move_toward(velocity.x, desired.x, acceleration * delta)
-    velocity.z = move_toward(velocity.z, desired.z, acceleration * delta)
+    # Use the visible camera's axes on the ground, including during shot transitions.
+    var right := camera.global_basis.x
+    var back := camera.global_basis.z
+    right.y = 0.0
+    back.y = 0.0
+    var direction := right.normalized() * input_axis.x + back.normalized() * input_axis.y
+    var desired := direction.normalized() * move_speed
+    var horizontal_velocity := Vector3(velocity.x, 0.0, velocity.z)
+    horizontal_velocity = horizontal_velocity.move_toward(desired, acceleration * delta)
+    velocity.x = horizontal_velocity.x
+    velocity.z = horizontal_velocity.z
 
     if not is_on_floor():
         velocity.y -= gravity * delta
     else:
         velocity.y = -0.5
 
-    if input_axis.length() > 0.01:
-        var target_angle := atan2(desired.x, desired.z)
-        # Rotate only the visual so CameraPivot keeps a fixed world orientation.
-        visual_body.rotation.y = lerp_angle(visual_body.rotation.y, target_angle, rotation_speed * delta)
-
     move_and_slide()
+
+    # Face the actual movement after collisions; the player root and camera stay independent.
+    if Vector2(velocity.x, velocity.z).length() > 0.01:
+        var target_angle := atan2(velocity.x, velocity.z)
+        visual_body.global_rotation.y = lerp_angle(
+            visual_body.global_rotation.y, target_angle, 1.0 - exp(-rotation_speed * delta)
+        )

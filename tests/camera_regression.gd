@@ -1,0 +1,135 @@
+extends SceneTree
+
+# Run: godot --headless --path . --script res://tests/camera_regression.gd
+var failures: int = 0
+var world: Node3D
+var player: CharacterBody3D
+var rig: Node3D
+var camera: Camera3D
+
+func _initialize() -> void:
+    call_deferred("run_checks")
+
+func expect(condition: bool, message: String) -> void:
+    if not condition:
+        failures += 1
+        push_error(message)
+
+func frames(count: int) -> void:
+    for frame in range(count):
+        await physics_frame
+
+func set_key(key: Key, pressed: bool) -> void:
+    var event := InputEventKey.new()
+    event.keycode = key
+    event.pressed = pressed
+    Input.parse_input_event(event)
+
+func settle_at(z: float) -> void:
+    player.global_position = Vector3(0.0, 0.1, z)
+    player.velocity = Vector3.ZERO
+    await frames(240)
+
+func check_shot(z: float, yaw: float, offset: Vector3, pitch: float) -> void:
+    player.global_position = Vector3(0.0, 0.1, z)
+    player.velocity = Vector3.ZERO
+    var previous_yaw := rig.rotation.y
+    for frame in range(240):
+        await physics_frame
+        var step := absf(angle_difference(previous_yaw, rig.rotation.y))
+        expect(step < deg_to_rad(2.0), "Camera snapped during a zone transition")
+        previous_yaw = rig.rotation.y
+    expect(absf(angle_difference(rig.rotation.y, deg_to_rad(yaw))) < 0.001, "Incorrect zone yaw at z=%s" % z)
+    expect(camera.position.distance_to(offset) < 0.01, "Incorrect zone offset at z=%s" % z)
+    expect(absf(camera.rotation.x - deg_to_rad(pitch)) < 0.001, "Incorrect zone pitch at z=%s" % z)
+    expect(not camera.is_position_behind(player.global_position), "Player behind camera")
+
+func check_controls(z: float) -> void:
+    await settle_at(z)
+    for keys in [[KEY_W], [KEY_S], [KEY_A], [KEY_D], [KEY_W, KEY_D]]:
+        player.global_position.x = 0.0
+        player.global_position.z = z
+        player.velocity = Vector3.ZERO
+        await frames(20)
+        var start := player.global_position
+        for key in keys:
+            set_key(key, true)
+        await frames(35)
+        for key in keys:
+            set_key(key, false)
+        var screen_delta := camera.unproject_position(player.global_position) - camera.unproject_position(start)
+        if KEY_W in keys: expect(screen_delta.y < -1.0, "W must move up the screen")
+        if KEY_S in keys: expect(screen_delta.y > 1.0, "S must move down the screen")
+        if KEY_A in keys: expect(screen_delta.x < -1.0, "A must move left on screen")
+        if KEY_D in keys: expect(screen_delta.x > 1.0, "D must move right on screen")
+        if keys.size() == 1 and (KEY_W in keys or KEY_S in keys):
+            expect(absf(screen_delta.x) < 1.0, "Forward/back drifted sideways on screen")
+        expect(absf(Vector2(player.velocity.x, player.velocity.z).length() - player.move_speed) < 0.01, "Cardinal/diagonal speed differs")
+        var facing := player.get_node("PlaceholderBody").global_basis.z as Vector3
+        var motion := Vector3(player.velocity.x, 0.0, player.velocity.z).normalized()
+        expect(facing.dot(motion) > 0.98, "Visual body does not face actual motion")
+        expect(player.rotation.is_zero_approx(), "Movement rotated the player root")
+        await frames(25)
+        expect(Vector2(player.velocity.x, player.velocity.z).length() < 0.001, "Player failed to stop on key release")
+
+func run_checks() -> void:
+    var main := load("res://scenes/main.tscn").instantiate() as Node
+    root.add_child(main)
+    world = main.get_node("MountainPath")
+    player = world.get_node("Player")
+    rig = player.get_node("CameraPivot")
+    camera = rig.get_node("Camera3D")
+    await frames(60)
+    expect(player.get_script().resource_path == "res://scripts/player_controller.gd", "Player script binding changed")
+    expect(rig.top_level, "Camera still inherits player transforms")
+    var original_basis := camera.global_basis
+    player.rotation.y = 1.2
+    expect(camera.global_basis.is_equal_approx(original_basis), "Player rotation affects camera")
+    player.rotation.y = 0.0
+
+    player.global_position.x += 2.0
+    await frames(2)
+    var follow_error := absf(rig.global_position.x - player.global_position.x)
+    expect(follow_error > 0.1 and follow_error < 2.0, "Follow must ease toward the player")
+    await frames(90)
+    expect(absf(rig.global_position.x - player.global_position.x) < 0.001, "Follow did not converge")
+
+    # Enter, overlap, exit and reverse traversal, using actual Area3D overlaps.
+    await check_shot(20.0, 0.0, Vector3(0, 7.2, 8.8), -34.0)
+    await check_shot(0.0, 22.0, Vector3(0, 6.4, 9.6), -30.0)
+    await check_shot(-14.0, -12.0, Vector3(0, 4.8, 8.2), -18.0)
+    await check_shot(-24.0, -12.0, Vector3(0, 4.8, 8.2), -18.0)
+    await check_shot(-14.0, -12.0, Vector3(0, 4.8, 8.2), -18.0)
+    await check_shot(-5.0, 22.0, Vector3(0, 6.4, 9.6), -30.0)
+    await check_shot(20.0, 0.0, Vector3(0, 7.2, 8.8), -34.0)
+    for z in [20.0, 0.0, -24.0]:
+        await check_controls(z)
+
+    # Hold W during an actual shot change, checking against the current view.
+    await settle_at(9.0)
+    set_key(KEY_W, true)
+    await frames(2)
+    for frame in range(100):
+        await physics_frame
+        var right := camera.global_basis.x
+        var back := camera.global_basis.z
+        back.y = 0.0
+        var motion := Vector3(player.velocity.x, 0.0, player.velocity.z)
+        expect(motion.dot(-back.normalized()) > 0.0, "W reversed during a transition")
+        expect(absf(motion.dot(right)) < 0.25, "Movement did not track camera transition")
+    set_key(KEY_W, false)
+    await frames(30)
+    expect(rig.rotation.y > deg_to_rad(10.0), "Traversal did not activate side shot")
+
+    await settle_at(-20.0)
+    expect(root.get_node("GameState").has_flag("entered_tsukimori"), "Gate trigger failed")
+    expect(world.gate_triggered, "Gate did not latch")
+    expect(world.get_node("HUD/Margin/VBox/Status").text.contains("entered_tsukimori = true"), "Gate HUD failed")
+    expect(is_equal_approx(camera.fov, 40.0), "Gate FOV effect did not recover")
+    root.get_node("GameState").set_flag("entered_tsukimori", false)
+    await settle_at(-24.0)
+    await settle_at(-20.0)
+    expect(not root.get_node("GameState").has_flag("entered_tsukimori"), "Gate triggered more than once")
+
+    print("Camera regression: %s" % ("PASS" if failures == 0 else "%s failures" % failures))
+    quit(0 if failures == 0 else 1)

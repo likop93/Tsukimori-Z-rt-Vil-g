@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3]
+[gd_scene load_steps=16 format=3]
 
 [ext_resource type="Script" path="res://scripts/mountain_path.gd" id="1_world"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="2_player"]
+[ext_resource type="Script" path="res://scripts/camera_zone.gd" id="3_camera_zone"]
 
 [sub_resource type="BoxMesh" id="GroundMesh"]
 size = Vector3(12, 0.4, 58)
@@ -22,6 +23,12 @@ size = Vector3(8.0, 0.65, 0.9)
 
 [sub_resource type="BoxShape3D" id="TriggerShape"]
 size = Vector3(8, 3, 2.5)
+
+[sub_resource type="BoxShape3D" id="PathCameraShape"]
+size = Vector3(24, 20, 24)
+
+[sub_resource type="BoxShape3D" id="GateCameraShape"]
+size = Vector3(24, 20, 20)
 
 [sub_resource type="StandardMaterial3D" id="GroundMat"]
 albedo_color = Color(0.12, 0.15, 0.13, 1)
@@ -69,6 +76,36 @@ shape = SubResource("GroundShape")
 
 [node name="Player" parent="." instance=ExtResource("2_player")]
 position = Vector3(0, 0.2, 23)
+
+[node name="CameraZones" type="Node3D" parent="."]
+
+[node name="PathSide" type="Area3D" parent="CameraZones"]
+position = Vector3(0, 3, -4)
+collision_layer = 0
+collision_mask = 1
+monitorable = false
+script = ExtResource("3_camera_zone")
+camera_priority = 10
+yaw_degrees = 22.0
+camera_offset = Vector3(0, 6.4, 9.6)
+pitch_degrees = -30.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraZones/PathSide"]
+shape = SubResource("PathCameraShape")
+
+[node name="GateApproach" type="Area3D" parent="CameraZones"]
+position = Vector3(0, 3, -22)
+collision_layer = 0
+collision_mask = 1
+monitorable = false
+script = ExtResource("3_camera_zone")
+camera_priority = 20
+yaw_degrees = -12.0
+camera_offset = Vector3(0, 4.8, 8.2)
+pitch_degrees = -18.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraZones/GateApproach"]
+shape = SubResource("GateCameraShape")
 
 [node name="Trees" type="Node3D" parent="."]
 
@@ -149,6 +186,6 @@ text = "TSUKIMORI — Vertical Slice v0.0.1"
 text = "BLOCKOUT"
 
 [node name="Controls" type="Label" parent="HUD/Margin/VBox"]
-text = "WASD — mozgás"
+text = "WASD — mozgás a kameranézethez igazítva"
 
 [connection signal="body_entered" from="VillageGateTrigger" to="." method="_on_village_gate_trigger_body_entered"]
