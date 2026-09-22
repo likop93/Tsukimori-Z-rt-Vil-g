@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3]
+[gd_scene load_steps=26 format=3]
 
 [ext_resource type="Script" path="res://scripts/mountain_path.gd" id="1_world"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="2_player"]
 [ext_resource type="Script" path="res://scripts/camera_zone.gd" id="3_camera_zone"]
+[ext_resource type="Script" path="res://scripts/mountain_ambient.gd" id="4_ambient"]
 
 [sub_resource type="BoxMesh" id="TerrainMesh"]
 size = Vector3(46, 0.6, 84)
@@ -138,6 +139,9 @@ rotation_degrees = Vector3(-46, -32, 0)
 light_color = Color(1, 0.79, 0.59, 1)
 light_energy = 1.32
 shadow_enabled = true
+
+[node name="AmbientMotion" type="Node" parent="."]
+script = ExtResource("4_ambient")
 
 [node name="TerrainGround" type="StaticBody3D" parent="."]
 position = Vector3(0, -0.3, -5)
