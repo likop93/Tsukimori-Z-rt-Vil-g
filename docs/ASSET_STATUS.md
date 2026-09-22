@@ -2,11 +2,11 @@
 
 | Asset | Státusz |
 |---|---|
-| Akira 3D | PLACEHOLDER — proxy generator ready |
-| Mountain path | BLOCKOUT 2.0 + NARRATIVE PASS 1 — REVIEW |
-| Tsukimori gate | BLOCKOUT 2.0 + anomaly prototype |
-| Cedar trees | BLOCKOUT proxy |
-| Fog | BLOCKOUT |
+| Akira 3D | BLOCKOUT proxy v0.2 — locomotion review |
+| Mountain path | BLOCKOUT 2.0 + ANIMATION PASS v0.2 — REVIEW |
+| Tsukimori gate | BLOCKOUT 2.0 + animated anomaly prototype |
+| Cedar trees | BLOCKOUT proxy + ambient sway |
+| Fog | BLOCKOUT + subtle ambient motion |
 | Lighting | BLOCKOUT |
 | UI | PLACEHOLDER — subtitle prototype |
 
