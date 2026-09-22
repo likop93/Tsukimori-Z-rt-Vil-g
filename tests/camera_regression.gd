@@ -57,13 +57,14 @@ func check_controls(z: float) -> void:
         await frames(35)
         for key in keys:
             set_key(key, false)
-        var screen_delta := camera.unproject_position(player.global_position) - camera.unproject_position(start)
-        if KEY_W in keys: expect(screen_delta.y < -1.0, "W must move up the screen")
-        if KEY_S in keys: expect(screen_delta.y > 1.0, "S must move down the screen")
-        if KEY_A in keys: expect(screen_delta.x < -1.0, "A must move left on screen")
-        if KEY_D in keys: expect(screen_delta.x > 1.0, "D must move right on screen")
-        if keys.size() == 1 and (KEY_W in keys or KEY_S in keys):
-            expect(absf(screen_delta.x) < 1.0, "Forward/back drifted sideways on screen")
+        var displacement := player.global_position - start
+        var expected := Vector3.ZERO
+        if KEY_W in keys: expected += Vector3.FORWARD
+        if KEY_S in keys: expected += Vector3.BACK
+        if KEY_A in keys: expected += Vector3.LEFT
+        if KEY_D in keys: expected += Vector3.RIGHT
+        displacement.y = 0.0
+        expect(displacement.normalized().distance_to(expected.normalized()) < 0.001, "WASD world direction changed with camera at z=%s" % z)
         expect(absf(Vector2(player.velocity.x, player.velocity.z).length() - player.move_speed) < 0.01, "Cardinal/diagonal speed differs")
         var facing := player.get_node("PlaceholderBody").global_basis.z as Vector3
         var motion := Vector3(player.velocity.x, 0.0, player.velocity.z).normalized()
@@ -107,9 +108,7 @@ func run_checks() -> void:
 
     # Holding W must preserve the world direction while the camera changes shots.
     await settle_at(9.0)
-    var held_forward := -camera.global_basis.z
-    held_forward.y = 0.0
-    held_forward = held_forward.normalized()
+    var held_forward := Vector3.FORWARD
     var start_position := player.global_position
     set_key(KEY_W, true)
     await frames(20)
@@ -137,22 +136,22 @@ func run_checks() -> void:
     await frames(25)
     expect(Vector3(player.velocity.x, 0, player.velocity.z).normalized().distance_to(held_forward) < 0.001, "Releasing D unexpectedly rebased held W")
 
-    # A full release and re-press must use the new view, even between physics ticks.
+    # Full release/re-press must preserve the same world direction in the new view.
     set_key(KEY_W, false)
     set_key(KEY_W, true)
-    var new_forward := -camera.global_basis.z
-    new_forward.y = 0.0
-    new_forward = new_forward.normalized()
     await frames(30)
-    expect(Vector3(player.velocity.x, 0, player.velocity.z).normalized().distance_to(new_forward) < 0.002, "Fresh W did not adopt the new camera view")
+    expect(Vector3(player.velocity.x, 0, player.velocity.z).normalized().distance_to(held_forward) < 0.001, "Quick re-press changed the world direction")
+    set_key(KEY_W, false)
+    await frames(30)
+    set_key(KEY_W, true)
+    await frames(30)
+    expect(Vector3(player.velocity.x, 0, player.velocity.z).normalized().distance_to(held_forward) < 0.001, "Stopping and restarting changed the world direction")
     set_key(KEY_W, false)
     await frames(30)
 
     # Preserve diagonal input too when crossing back out of the side zone.
     await settle_at(7.0)
-    var back := camera.global_basis.z
-    back.y = 0.0
-    var diagonal := (back.normalized() - camera.global_basis.x).normalized()
+    var diagonal := (Vector3.BACK + Vector3.LEFT).normalized()
     set_key(KEY_S, true)
     set_key(KEY_A, true)
     await frames(20)

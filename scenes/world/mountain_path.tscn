@@ -186,6 +186,6 @@ text = "TSUKIMORI — Vertical Slice v0.0.1"
 text = "BLOCKOUT"
 
 [node name="Controls" type="Label" parent="HUD/Margin/VBox"]
-text = "WASD — mozgás a kameranézethez igazítva"
+text = "WASD — állandó mozgásirányok, kamerától függetlenül"
 
 [connection signal="body_entered" from="VillageGateTrigger" to="." method="_on_village_gate_trigger_body_entered"]
