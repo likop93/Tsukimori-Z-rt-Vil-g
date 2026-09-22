@@ -3,9 +3,9 @@
 | Asset | Státusz |
 |---|---|
 | Akira 3D | PLACEHOLDER — proxy generator ready |
-| Mountain path | BLOCKOUT |
-| Tsukimori gate | BLOCKOUT |
-| Cedar trees | PLACEHOLDER |
+| Mountain path | BLOCKOUT 2.0 — REVIEW NEXT |
+| Tsukimori gate | BLOCKOUT 2.0 |
+| Cedar trees | BLOCKOUT proxy |
 | Fog | BLOCKOUT |
 | Lighting | BLOCKOUT |
 | UI | PLACEHOLDER |

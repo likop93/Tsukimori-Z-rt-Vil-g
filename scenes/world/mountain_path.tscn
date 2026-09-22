@@ -1,19 +1,39 @@
-[gd_scene load_steps=16 format=3]
+[gd_scene load_steps=25 format=3]
 
 [ext_resource type="Script" path="res://scripts/mountain_path.gd" id="1_world"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="2_player"]
 [ext_resource type="Script" path="res://scripts/camera_zone.gd" id="3_camera_zone"]
 
-[sub_resource type="BoxMesh" id="GroundMesh"]
-size = Vector3(12, 0.4, 58)
+[sub_resource type="BoxMesh" id="TerrainMesh"]
+size = Vector3(46, 0.6, 84)
 
-[sub_resource type="BoxShape3D" id="GroundShape"]
-size = Vector3(12, 0.4, 58)
+[sub_resource type="BoxShape3D" id="TerrainShape"]
+size = Vector3(46, 0.6, 84)
 
-[sub_resource type="CylinderMesh" id="TreeMesh"]
-top_radius = 0.42
-bottom_radius = 0.65
-height = 9.0
+[sub_resource type="BoxMesh" id="PathStartMesh"]
+size = Vector3(7.0, 0.08, 17.0)
+
+[sub_resource type="BoxMesh" id="PathBendMesh"]
+size = Vector3(7.0, 0.08, 16.0)
+
+[sub_resource type="BoxMesh" id="PathOverlookMesh"]
+size = Vector3(10.5, 0.08, 14.0)
+
+[sub_resource type="BoxMesh" id="PathDescentMesh"]
+size = Vector3(7.0, 0.08, 16.0)
+
+[sub_resource type="BoxMesh" id="PathGateMesh"]
+size = Vector3(8.0, 0.08, 15.0)
+
+[sub_resource type="CylinderMesh" id="CedarTrunkMesh"]
+top_radius = 0.34
+bottom_radius = 0.52
+height = 9.5
+
+[sub_resource type="CylinderMesh" id="CedarCrownMesh"]
+top_radius = 0.18
+bottom_radius = 1.65
+height = 6.2
 
 [sub_resource type="BoxMesh" id="GatePostMesh"]
 size = Vector3(0.8, 5.5, 0.8)
@@ -21,36 +41,78 @@ size = Vector3(0.8, 5.5, 0.8)
 [sub_resource type="BoxMesh" id="GateBeamMesh"]
 size = Vector3(8.0, 0.65, 0.9)
 
-[sub_resource type="BoxShape3D" id="TriggerShape"]
-size = Vector3(8, 3, 2.5)
+[sub_resource type="BoxMesh" id="SignPoleMesh"]
+size = Vector3(0.22, 2.5, 0.22)
 
-[sub_resource type="BoxShape3D" id="PathCameraShape"]
-size = Vector3(24, 20, 24)
+[sub_resource type="BoxMesh" id="SignBoardMesh"]
+size = Vector3(2.8, 0.62, 0.18)
+
+[sub_resource type="BoxMesh" id="RockMesh"]
+size = Vector3(3.4, 1.5, 2.2)
+
+[sub_resource type="BoxMesh" id="HouseMesh"]
+size = Vector3(2.2, 1.5, 2.8)
+
+[sub_resource type="BoxMesh" id="PaperMesh"]
+size = Vector3(0.12, 0.78, 0.02)
+
+[sub_resource type="BoxShape3D" id="TriggerShape"]
+size = Vector3(8, 3, 3)
+
+[sub_resource type="BoxShape3D" id="BendCameraShape"]
+size = Vector3(20, 20, 14)
+
+[sub_resource type="BoxShape3D" id="OverlookCameraShape"]
+size = Vector3(22, 20, 14)
 
 [sub_resource type="BoxShape3D" id="GateCameraShape"]
-size = Vector3(24, 20, 20)
+size = Vector3(24, 20, 18)
 
-[sub_resource type="StandardMaterial3D" id="GroundMat"]
-albedo_color = Color(0.12, 0.15, 0.13, 1)
-roughness = 0.95
+[sub_resource type="StandardMaterial3D" id="TerrainMat"]
+albedo_color = Color(0.075, 0.095, 0.072, 1)
+roughness = 1.0
 
-[sub_resource type="StandardMaterial3D" id="TreeMat"]
-albedo_color = Color(0.08, 0.11, 0.08, 1)
+[sub_resource type="StandardMaterial3D" id="PathMat"]
+albedo_color = Color(0.22, 0.19, 0.14, 1)
+roughness = 0.98
+
+[sub_resource type="StandardMaterial3D" id="TrunkMat"]
+albedo_color = Color(0.12, 0.075, 0.045, 1)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="CrownMat"]
+albedo_color = Color(0.055, 0.12, 0.075, 1)
 roughness = 1.0
 
 [sub_resource type="StandardMaterial3D" id="GateMat"]
-albedo_color = Color(0.25, 0.08, 0.06, 1)
-roughness = 0.8
+albedo_color = Color(0.26, 0.075, 0.055, 1)
+roughness = 0.82
+
+[sub_resource type="StandardMaterial3D" id="WoodMat"]
+albedo_color = Color(0.24, 0.16, 0.09, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="RockMat"]
+albedo_color = Color(0.15, 0.17, 0.16, 1)
+roughness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="VillageMat"]
+albedo_color = Color(0.23, 0.19, 0.15, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="PaperMat"]
+albedo_color = Color(0.78, 0.75, 0.64, 1)
+roughness = 0.9
 
 [sub_resource type="Environment" id="Environment_main"]
 background_mode = 1
-background_color = Color(0.16, 0.21, 0.24, 1)
+background_color = Color(0.18, 0.23, 0.25, 1)
 ambient_light_source = 3
-ambient_light_color = Color(0.58, 0.62, 0.68, 1)
-ambient_light_energy = 0.7
+ambient_light_color = Color(0.62, 0.64, 0.61, 1)
+ambient_light_energy = 0.72
 fog_enabled = true
-fog_light_color = Color(0.55, 0.61, 0.64, 1)
-fog_density = 0.012
+fog_light_color = Color(0.58, 0.62, 0.61, 1)
+fog_density = 0.010
 
 [node name="MountainPath" type="Node3D"]
 script = ExtResource("1_world")
@@ -59,88 +121,283 @@ script = ExtResource("1_world")
 environment = SubResource("Environment_main")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
-rotation_degrees = Vector3(-48, -28, 0)
-light_color = Color(1, 0.78, 0.58, 1)
-light_energy = 1.25
+rotation_degrees = Vector3(-46, -32, 0)
+light_color = Color(1, 0.79, 0.59, 1)
+light_energy = 1.32
 shadow_enabled = true
 
-[node name="Ground" type="StaticBody3D" parent="."]
-position = Vector3(0, -0.2, 0)
+[node name="TerrainGround" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.3, -5)
 
-[node name="Mesh" type="MeshInstance3D" parent="Ground"]
-mesh = SubResource("GroundMesh")
-material_override = SubResource("GroundMat")
+[node name="Mesh" type="MeshInstance3D" parent="TerrainGround"]
+mesh = SubResource("TerrainMesh")
+material_override = SubResource("TerrainMat")
 
-[node name="Collision" type="CollisionShape3D" parent="Ground"]
-shape = SubResource("GroundShape")
+[node name="Collision" type="CollisionShape3D" parent="TerrainGround"]
+shape = SubResource("TerrainShape")
+
+[node name="PathBlockout" type="Node3D" parent="."]
+
+[node name="Start" type="MeshInstance3D" parent="PathBlockout"]
+position = Vector3(0, 0.025, 20)
+mesh = SubResource("PathStartMesh")
+material_override = SubResource("PathMat")
+
+[node name="FirstBend" type="MeshInstance3D" parent="PathBlockout"]
+position = Vector3(-1.6, 0.03, 9.2)
+rotation_degrees = Vector3(0, -12, 0)
+mesh = SubResource("PathBendMesh")
+material_override = SubResource("PathMat")
+
+[node name="OverlookClearing" type="MeshInstance3D" parent="PathBlockout"]
+position = Vector3(-4.0, 0.035, -1.5)
+rotation_degrees = Vector3(0, 9, 0)
+mesh = SubResource("PathOverlookMesh")
+material_override = SubResource("PathMat")
+
+[node name="Descent" type="MeshInstance3D" parent="PathBlockout"]
+position = Vector3(-2.4, 0.03, -11.0)
+rotation_degrees = Vector3(0, 16, 0)
+mesh = SubResource("PathDescentMesh")
+material_override = SubResource("PathMat")
+
+[node name="GateApproach" type="MeshInstance3D" parent="PathBlockout"]
+position = Vector3(0, 0.025, -21.5)
+mesh = SubResource("PathGateMesh")
+material_override = SubResource("PathMat")
 
 [node name="Player" parent="." instance=ExtResource("2_player")]
-position = Vector3(0, 0.2, 23)
+position = Vector3(0, 0.2, 25)
 
 [node name="CameraZones" type="Node3D" parent="."]
 
-[node name="PathSide" type="Area3D" parent="CameraZones"]
-position = Vector3(0, 3, -4)
+[node name="FirstBend" type="Area3D" parent="CameraZones"]
+position = Vector3(-1.5, 3, 8)
 collision_layer = 0
 collision_mask = 1
 monitorable = false
 script = ExtResource("3_camera_zone")
 camera_priority = 10
-yaw_degrees = 22.0
-camera_offset = Vector3(0, 6.4, 9.6)
+yaw_degrees = 18.0
+camera_offset = Vector3(0.4, 6.7, 9.2)
 pitch_degrees = -30.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraZones/PathSide"]
-shape = SubResource("PathCameraShape")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraZones/FirstBend"]
+shape = SubResource("BendCameraShape")
 
-[node name="GateApproach" type="Area3D" parent="CameraZones"]
-position = Vector3(0, 3, -22)
+[node name="Overlook" type="Area3D" parent="CameraZones"]
+position = Vector3(-3.8, 3, -3)
 collision_layer = 0
 collision_mask = 1
 monitorable = false
 script = ExtResource("3_camera_zone")
 camera_priority = 20
-yaw_degrees = -12.0
-camera_offset = Vector3(0, 4.8, 8.2)
-pitch_degrees = -18.0
+yaw_degrees = -28.0
+camera_offset = Vector3(1.8, 7.0, 9.8)
+pitch_degrees = -27.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraZones/Overlook"]
+shape = SubResource("OverlookCameraShape")
+
+[node name="GateApproach" type="Area3D" parent="CameraZones"]
+position = Vector3(0, 3, -20)
+collision_layer = 0
+collision_mask = 1
+monitorable = false
+script = ExtResource("3_camera_zone")
+camera_priority = 30
+yaw_degrees = -10.0
+camera_offset = Vector3(0, 4.9, 8.3)
+pitch_degrees = -19.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraZones/GateApproach"]
 shape = SubResource("GateCameraShape")
 
 [node name="Trees" type="Node3D" parent="."]
 
-[node name="TreeL1" type="MeshInstance3D" parent="Trees"]
-position = Vector3(-5, 4.5, 18)
-mesh = SubResource("TreeMesh")
-material_override = SubResource("TreeMat")
+[node name="Cedar01" type="Node3D" parent="Trees"]
+position = Vector3(-5.4, 0, 24)
+scale = Vector3(1.0, 1.05, 1.0)
+[node name="Trunk" type="MeshInstance3D" parent="Trees/Cedar01"]
+position = Vector3(0, 4.75, 0)
+mesh = SubResource("CedarTrunkMesh")
+material_override = SubResource("TrunkMat")
+[node name="Crown" type="MeshInstance3D" parent="Trees/Cedar01"]
+position = Vector3(0, 8.0, 0)
+mesh = SubResource("CedarCrownMesh")
+material_override = SubResource("CrownMat")
 
-[node name="TreeR1" type="MeshInstance3D" parent="Trees"]
-position = Vector3(5, 4.5, 13)
-mesh = SubResource("TreeMesh")
-material_override = SubResource("TreeMat")
+[node name="Cedar02" type="Node3D" parent="Trees"]
+position = Vector3(5.1, 0, 20)
+scale = Vector3(0.9, 1.0, 0.9)
+[node name="Trunk" type="MeshInstance3D" parent="Trees/Cedar02"]
+position = Vector3(0, 4.75, 0)
+mesh = SubResource("CedarTrunkMesh")
+material_override = SubResource("TrunkMat")
+[node name="Crown" type="MeshInstance3D" parent="Trees/Cedar02"]
+position = Vector3(0, 8.0, 0)
+mesh = SubResource("CedarCrownMesh")
+material_override = SubResource("CrownMat")
 
-[node name="TreeL2" type="MeshInstance3D" parent="Trees"]
-position = Vector3(-4.8, 4.5, 3)
-mesh = SubResource("TreeMesh")
-material_override = SubResource("TreeMat")
+[node name="Cedar03" type="Node3D" parent="Trees"]
+position = Vector3(-6.5, 0, 14)
+scale = Vector3(1.15, 1.08, 1.15)
+[node name="Trunk" type="MeshInstance3D" parent="Trees/Cedar03"]
+position = Vector3(0, 4.75, 0)
+mesh = SubResource("CedarTrunkMesh")
+material_override = SubResource("TrunkMat")
+[node name="Crown" type="MeshInstance3D" parent="Trees/Cedar03"]
+position = Vector3(0, 8.0, 0)
+mesh = SubResource("CedarCrownMesh")
+material_override = SubResource("CrownMat")
 
-[node name="TreeR2" type="MeshInstance3D" parent="Trees"]
-position = Vector3(5.2, 4.5, -4)
-mesh = SubResource("TreeMesh")
-material_override = SubResource("TreeMat")
+[node name="Cedar04" type="Node3D" parent="Trees"]
+position = Vector3(4.3, 0, 11)
+scale = Vector3(0.95, 1.12, 0.95)
+[node name="Trunk" type="MeshInstance3D" parent="Trees/Cedar04"]
+position = Vector3(0, 4.75, 0)
+mesh = SubResource("CedarTrunkMesh")
+material_override = SubResource("TrunkMat")
+[node name="Crown" type="MeshInstance3D" parent="Trees/Cedar04"]
+position = Vector3(0, 8.0, 0)
+mesh = SubResource("CedarCrownMesh")
+material_override = SubResource("CrownMat")
 
-[node name="TreeL3" type="MeshInstance3D" parent="Trees"]
-position = Vector3(-5.3, 4.5, -15)
-mesh = SubResource("TreeMesh")
-material_override = SubResource("TreeMat")
+[node name="Cedar05" type="Node3D" parent="Trees"]
+position = Vector3(-8.0, 0, 6)
+scale = Vector3(1.0, 0.95, 1.0)
+[node name="Trunk" type="MeshInstance3D" parent="Trees/Cedar05"]
+position = Vector3(0, 4.75, 0)
+mesh = SubResource("CedarTrunkMesh")
+material_override = SubResource("TrunkMat")
+[node name="Crown" type="MeshInstance3D" parent="Trees/Cedar05"]
+position = Vector3(0, 8.0, 0)
+mesh = SubResource("CedarCrownMesh")
+material_override = SubResource("CrownMat")
 
-[node name="TreeR3" type="MeshInstance3D" parent="Trees"]
-position = Vector3(5.0, 4.5, -19)
-mesh = SubResource("TreeMesh")
-material_override = SubResource("TreeMat")
+[node name="Cedar06" type="Node3D" parent="Trees"]
+position = Vector3(3.0, 0, 3)
+scale = Vector3(1.05, 1.1, 1.05)
+[node name="Trunk" type="MeshInstance3D" parent="Trees/Cedar06"]
+position = Vector3(0, 4.75, 0)
+mesh = SubResource("CedarTrunkMesh")
+material_override = SubResource("TrunkMat")
+[node name="Crown" type="MeshInstance3D" parent="Trees/Cedar06"]
+position = Vector3(0, 8.0, 0)
+mesh = SubResource("CedarCrownMesh")
+material_override = SubResource("CrownMat")
+
+[node name="Cedar07" type="Node3D" parent="Trees"]
+position = Vector3(-8.5, 0, -4)
+scale = Vector3(0.92, 1.0, 0.92)
+[node name="Trunk" type="MeshInstance3D" parent="Trees/Cedar07"]
+position = Vector3(0, 4.75, 0)
+mesh = SubResource("CedarTrunkMesh")
+material_override = SubResource("TrunkMat")
+[node name="Crown" type="MeshInstance3D" parent="Trees/Cedar07"]
+position = Vector3(0, 8.0, 0)
+mesh = SubResource("CedarCrownMesh")
+material_override = SubResource("CrownMat")
+
+[node name="Cedar08" type="Node3D" parent="Trees"]
+position = Vector3(2.0, 0, -7)
+scale = Vector3(1.08, 1.04, 1.08)
+[node name="Trunk" type="MeshInstance3D" parent="Trees/Cedar08"]
+position = Vector3(0, 4.75, 0)
+mesh = SubResource("CedarTrunkMesh")
+material_override = SubResource("TrunkMat")
+[node name="Crown" type="MeshInstance3D" parent="Trees/Cedar08"]
+position = Vector3(0, 8.0, 0)
+mesh = SubResource("CedarCrownMesh")
+material_override = SubResource("CrownMat")
+
+[node name="Cedar09" type="Node3D" parent="Trees"]
+position = Vector3(-7.0, 0, -13)
+scale = Vector3(1.15, 1.1, 1.15)
+[node name="Trunk" type="MeshInstance3D" parent="Trees/Cedar09"]
+position = Vector3(0, 4.75, 0)
+mesh = SubResource("CedarTrunkMesh")
+material_override = SubResource("TrunkMat")
+[node name="Crown" type="MeshInstance3D" parent="Trees/Cedar09"]
+position = Vector3(0, 8.0, 0)
+mesh = SubResource("CedarCrownMesh")
+material_override = SubResource("CrownMat")
+
+[node name="Cedar10" type="Node3D" parent="Trees"]
+position = Vector3(5.4, 0, -15)
+scale = Vector3(0.88, 0.96, 0.88)
+[node name="Trunk" type="MeshInstance3D" parent="Trees/Cedar10"]
+position = Vector3(0, 4.75, 0)
+mesh = SubResource("CedarTrunkMesh")
+material_override = SubResource("TrunkMat")
+[node name="Crown" type="MeshInstance3D" parent="Trees/Cedar10"]
+position = Vector3(0, 8.0, 0)
+mesh = SubResource("CedarCrownMesh")
+material_override = SubResource("CrownMat")
+
+[node name="Cedar11" type="Node3D" parent="Trees"]
+position = Vector3(-5.6, 0, -23)
+scale = Vector3(1.0, 1.05, 1.0)
+[node name="Trunk" type="MeshInstance3D" parent="Trees/Cedar11"]
+position = Vector3(0, 4.75, 0)
+mesh = SubResource("CedarTrunkMesh")
+material_override = SubResource("TrunkMat")
+[node name="Crown" type="MeshInstance3D" parent="Trees/Cedar11"]
+position = Vector3(0, 8.0, 0)
+mesh = SubResource("CedarCrownMesh")
+material_override = SubResource("CrownMat")
+
+[node name="Cedar12" type="Node3D" parent="Trees"]
+position = Vector3(6.0, 0, -25)
+scale = Vector3(1.05, 1.0, 1.05)
+[node name="Trunk" type="MeshInstance3D" parent="Trees/Cedar12"]
+position = Vector3(0, 4.75, 0)
+mesh = SubResource("CedarTrunkMesh")
+material_override = SubResource("TrunkMat")
+[node name="Crown" type="MeshInstance3D" parent="Trees/Cedar12"]
+position = Vector3(0, 8.0, 0)
+mesh = SubResource("CedarCrownMesh")
+material_override = SubResource("CrownMat")
+
+[node name="OverlookRocks" type="Node3D" parent="."]
+
+[node name="Rock01" type="MeshInstance3D" parent="OverlookRocks"]
+position = Vector3(-9.0, 0.45, -1)
+rotation_degrees = Vector3(0, 18, 0)
+scale = Vector3(1.1, 0.8, 0.9)
+mesh = SubResource("RockMesh")
+material_override = SubResource("RockMat")
+
+[node name="Rock02" type="MeshInstance3D" parent="OverlookRocks"]
+position = Vector3(-8.3, 0.35, -5.2)
+rotation_degrees = Vector3(0, -24, 0)
+scale = Vector3(0.85, 0.7, 1.1)
+mesh = SubResource("RockMesh")
+material_override = SubResource("RockMat")
+
+[node name="OddityMarker" type="MeshInstance3D" parent="."]
+position = Vector3(-2.95, 2.2, 1.9)
+rotation_degrees = Vector3(0, 14, 4)
+mesh = SubResource("PaperMesh")
+material_override = SubResource("PaperMat")
+
+[node name="OldSignpost" type="Node3D" parent="."]
+position = Vector3(2.5, 0, -15.5)
+rotation_degrees = Vector3(0, -12, 0)
+
+[node name="Pole" type="MeshInstance3D" parent="OldSignpost"]
+position = Vector3(0, 1.25, 0)
+mesh = SubResource("SignPoleMesh")
+material_override = SubResource("WoodMat")
+
+[node name="Board" type="MeshInstance3D" parent="OldSignpost"]
+position = Vector3(-0.2, 2.15, 0)
+rotation_degrees = Vector3(0, 0, -3)
+mesh = SubResource("SignBoardMesh")
+material_override = SubResource("WoodMat")
 
 [node name="VillageGate" type="Node3D" parent="."]
-position = Vector3(0, 0, -20)
+position = Vector3(0, 0, -27)
 
 [node name="LeftPost" type="MeshInstance3D" parent="VillageGate"]
 position = Vector3(-3, 2.75, 0)
@@ -163,8 +420,45 @@ scale = Vector3(0.78, 0.72, 0.72)
 mesh = SubResource("GateBeamMesh")
 material_override = SubResource("GateMat")
 
+[node name="VillagePreview" type="Node3D" parent="."]
+position = Vector3(0, -0.1, -39)
+
+[node name="House01" type="MeshInstance3D" parent="VillagePreview"]
+position = Vector3(-7, 0.75, 0)
+rotation_degrees = Vector3(0, 6, 0)
+mesh = SubResource("HouseMesh")
+material_override = SubResource("VillageMat")
+
+[node name="House02" type="MeshInstance3D" parent="VillagePreview"]
+position = Vector3(-3.6, 0.75, -2)
+rotation_degrees = Vector3(0, -9, 0)
+scale = Vector3(1.15, 0.9, 1.0)
+mesh = SubResource("HouseMesh")
+material_override = SubResource("VillageMat")
+
+[node name="House03" type="MeshInstance3D" parent="VillagePreview"]
+position = Vector3(0.2, 0.75, 1.2)
+rotation_degrees = Vector3(0, 4, 0)
+scale = Vector3(0.95, 1.05, 1.05)
+mesh = SubResource("HouseMesh")
+material_override = SubResource("VillageMat")
+
+[node name="House04" type="MeshInstance3D" parent="VillagePreview"]
+position = Vector3(4.0, 0.75, -1.4)
+rotation_degrees = Vector3(0, 12, 0)
+scale = Vector3(1.1, 1.0, 0.9)
+mesh = SubResource("HouseMesh")
+material_override = SubResource("VillageMat")
+
+[node name="House05" type="MeshInstance3D" parent="VillagePreview"]
+position = Vector3(7.3, 0.75, 0.6)
+rotation_degrees = Vector3(0, -5, 0)
+scale = Vector3(0.9, 0.88, 1.0)
+mesh = SubResource("HouseMesh")
+material_override = SubResource("VillageMat")
+
 [node name="VillageGateTrigger" type="Area3D" parent="."]
-position = Vector3(0, 1.5, -20)
+position = Vector3(0, 1.5, -27)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VillageGateTrigger"]
 shape = SubResource("TriggerShape")
@@ -174,8 +468,8 @@ shape = SubResource("TriggerShape")
 [node name="Margin" type="MarginContainer" parent="HUD"]
 offset_left = 24.0
 offset_top = 24.0
-offset_right = 700.0
-offset_bottom = 140.0
+offset_right = 780.0
+offset_bottom = 150.0
 
 [node name="VBox" type="VBoxContainer" parent="HUD/Margin"]
 
@@ -183,7 +477,7 @@ offset_bottom = 140.0
 text = "TSUKIMORI — Vertical Slice v0.0.1"
 
 [node name="Status" type="Label" parent="HUD/Margin/VBox"]
-text = "BLOCKOUT"
+text = "MOUNTAIN PATH — BLOCKOUT 2.0"
 
 [node name="Controls" type="Label" parent="HUD/Margin/VBox"]
 text = "WASD — állandó mozgásirányok, kamerától függetlenül"

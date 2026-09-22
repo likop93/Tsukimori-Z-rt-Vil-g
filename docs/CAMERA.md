@@ -1,45 +1,30 @@
-# Rendezett kamera – jelenlegi blockout
+# Rendezett kamera – Mountain Path Blockout 2.0
 
-A kamera lágyan követi Akirát, a forgásától függetlenül. A WASD mindig azonos
-világirányok szerint mozgat: W = −Z (a jelenlegi ösvényen a kapu felé), S = +Z
-(visszafelé), A = −X, D = +X. Ezek a kezdő kameranézet előre/hátra/balra/jobbra
-irányai. Átlósan sem gyorsabb a mozgás. Akira látható teste a tényleges mozgás
-felé fordul. Kameraváltás, megállás, gombfelengedés vagy új gombnyomás sem
-módosítja az irányrendszert; az irányítást csak a játékos gombválasztása határozza meg.
+A kamera továbbra is lágyan követi Akirát, a karakter forgásától függetlenül. A játékos által már elfogadott irányítási elv változatlan:
 
-Három kompozíció van a jelenlegi, egyenes hegyi ösvényen:
+- W = −Z
+- S = +Z
+- A = −X
+- D = +X
 
-| Szakasz | Yaw | Kamera helyzete a követett ponthoz képest | Dőlés |
-| --- | ---: | --- | ---: |
-| Kezdő / zónán kívüli nézet | 0° | (0, 7.2, 8.8) | −34° |
-| Ösvény közepe – PathSide | 22° | (0, 6.4, 9.6) | −30° |
-| Kapu – GateApproach | −12° | (0, 4.8, 8.2) | −18° |
+A kameraváltás nem módosítja a WASD világirányait. Ez szándékos, mert a korábbi kameraorientált megoldás játék közben nehezen kezelhetőnek bizonyult.
 
-A középső nézet z-tartománya −16…8, a kapué −32…−12. Az átfedésben a kapu
-magasabb prioritása nyer. Visszafelé haladva az aktuális terület nézete áll vissza;
-a zónákon kívül az alapnézet. A karakter ütközőjének széle is belépésnek számít.
+## Jelenlegi kompozíciók
 
-Godotban a `MountainPath/CameraZones` alatti Area3D csomópontokon állítható a
-terület mérete és helye, a yaw, a dőlés, a távolság/magasság és a prioritás.
-Eltérő prioritásokat használjunk átfedő beállításoknál. Az alapnézetet a
-`Player/CameraPivot/Camera3D`, a követési és átmeneti sebességet a `CameraPivot`
-beállításai adják. A kapu meglévő FOV-effektjét a kamera nem írja felül.
+| Szakasz | Yaw | Kamera offset | Dőlés | Prioritás |
+|---|---:|---|---:|---:|
+| Kezdő / zónán kívüli | 0° | (0, 7.2, 8.8) | −34° | — |
+| Első kanyar | 18° | (0.4, 6.7, 9.2) | −30° | 10 |
+| Kilátópont | −28° | (1.8, 7.0, 9.8) | −27° | 20 |
+| Kapu megközelítése | −10° | (0, 4.9, 8.3) | −19° | 30 |
 
-A kamerafordulás miatt a W mozgásiránya a képernyőn ferdén is futhat, de az
-ösvényen ugyanarra visz, felengedés és újraindulás után is. Ez még blockout, végleges kompozíciót
-a későbbi kanyarokkal/kilátóponttal együtt kap. Nincs szabad kameraforgatás,
-irányításelvétel vagy új átvezető jelenet.
+A magasabb prioritású zóna nyer átfedés esetén.
 
-## Ellenőrzés
+A kamera célja most nem a végleges filmes kompozíció, hanem annak ellenőrzése, hogy az emberarányos Akira proxy mellett:
 
-`godot --headless --path . --script res://tests/camera_regression.gd`
+- olvasható marad-e a sziluett;
+- természetes-e a követési távolság;
+- nem túl erős-e a nézetváltás;
+- a fix világirányú WASD továbbra is jól használható-e.
 
-A teszt valódi player/world jelenetet és billentyűbemenetet használ: követés,
-forgásfüggetlenség, oda-vissza zónaváltás és prioritás, világirányú WASD mindhárom nézetben,
-átlós sebesség, megállás, kameraváltás közben megtartott egyenes/átlós irány,
-gombkombinációk, változatlan irány gyors újranyomás és teljes megállás után, egyszeri kaputrigger/HUD/FOV.
-
-Kézi játékpróba: F5, induláskor W; az ösvény közepén figyeld az oldalra fordulást,
-a kapu közelében az alacsonyabb/közelebbi képet, majd fordulj vissza. Az átmenetek
-alatt a tartott W ne fordítsa el Akirát. Engedd fel az összes mozgásgombot, majd
-nyomd meg újra a W-t: továbbra is ugyanarra haladjon az ösvényen.
+A végleges értékeket csak Akira proxyval végzett kézi review után zárjuk le.
