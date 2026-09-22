@@ -1,37 +1,63 @@
-# Vertical Slice v0.0.1 — Scope Lock
+# Vertical Slice v0.0.1 — Scope / Progress
 
-## Ebben a buildben
-1. Hegyi ösvény
-2. Alap 3D mozgás
-3. 3/4 követőkamera
-4. Tsukimori kapu blockout
-5. Első belépési/anomália trigger
-6. Mountain Path Narrative Pass 1
-7. Papírcsík-furcsaság
-8. Tsukimori-kilátópont rendezett kamera-pillanata
-9. Útjelző: 月守村 — Tsukimori
-10. Kapu előtti finom térbeli anomália + „Szél?”
-11. Minimális GameState
-12. Fejlesztői HUD
+## Elkészült és review-n átment
 
-## Még NINCS
+1. Hegyi ösvény blockout
+2. Akira humanoid proxy v0.2
+3. Idle / WalkStart / Walk / WalkStop locomotion
+4. 3/4 rendezett követőkamera
+5. Fix világirányú WASD
+6. Tsukimori kapu blockout
+7. Mountain Path Narrative Pass 1
+8. Papírcsík-furcsaság
+9. Tsukimori-kilátópont rendezett kamera-pillanata
+10. Útjelző: 月守村 — Tsukimori
+11. Kapu előtti finom térbeli anomália
+12. Akira rövid kapureakciója + „Szél?”
+13. Cédrus / köd / tábla / szirom ambient mozgás
+14. Minimális GameState
+15. Fejlesztői HUD + subtitle prototípus
+
+**Mountain Path Animation Pass v0.2: REVIEW PASSED — 2026-09-22**
+
+## Következő aktív blokk
+
+### Tsukimori — Első utca Blockout 1.0
+
+Tervezett tartalom:
+
+- kapun túli első falurész;
+- keskeny főutca;
+- tradicionális fa házak és kerítések blockoutja;
+- lámpák és kisebb térbeli landmarkok;
+- 5–7 háttér-NPC pozíciója;
+- falusiak első stagingje;
+- Miyako első megjelenésének és találkozásának tere;
+- területhez igazított rendezett kamera-zónák;
+- folytatódó ritmus: **szép → csendes → furcsa → személyesen nyugtalanító**.
+
+## Még nincs implementálva
+
 - harc
 - inventory
 - Black Kamui
 - route rendszer
 - dinamikus főmenü
 - teljes köd-navigáció
-- Miyako
-- NPC rutin
-- dialógusrendszer
+- végleges NPC rutin
+- végleges dialógusrendszer
 - mentés/töltés
 - végleges audio
 - végleges grafika
+- végleges Akira modell és final animation set
 
 ## Következő review kérdések
-- Elég finom-e a papírcsík megfordulása, vagy túl direkt?
-- Jó pillanatban nyílik-e ki a kép Tsukimorira?
-- Olvasható-e az útjelző anélkül, hogy UI-elemnek hasson?
-- A kapunál a szirmok eltávolodása inkább furcsa, mint látványos "mágia"?
-- A „Szél?” pillanat elég rövid és természetes-e?
-- A narratív események mellett végig megmarad-e a jó mozgás/kameraérzet?
+
+Az első utcánál majd ezt nézzük:
+
+- természetes-e a kapuból a faluba való térbeli átmenet;
+- megfelelő-e az utca mérete Akirához képest;
+- olvasható-e a fő haladási irány;
+- kellően lakottnak érződik-e 5–7 háttérfigurával;
+- a kamera megtartja-e a rendezett filmes jelleget;
+- Miyako belépési pontja természetesnek, nem „spawnnak” érződik-e.

@@ -2,16 +2,21 @@
 
 | Asset | Státusz |
 |---|---|
-| Akira 3D | BLOCKOUT proxy v0.2 — locomotion review |
-| Mountain path | BLOCKOUT 2.0 + ANIMATION PASS v0.2 — REVIEW |
-| Tsukimori gate | BLOCKOUT 2.0 + animated anomaly prototype |
-| Cedar trees | BLOCKOUT proxy + ambient sway |
-| Fog | BLOCKOUT + subtle ambient motion |
+| Akira 3D | BLOCKOUT proxy v0.2 — REVIEW PASSED |
+| Akira locomotion | ANIMATION PASS v0.2 — REVIEW PASSED |
+| Mountain path | BLOCKOUT 2.0 — REVIEW PASSED |
+| Mountain Path narrative pass | PASS 1 — REVIEW PASSED |
+| Tsukimori gate | BLOCKOUT 2.0 + animated anomaly — REVIEW PASSED |
+| Cedar trees | BLOCKOUT proxy + ambient sway — REVIEW PASSED |
+| Fog | BLOCKOUT + subtle ambient motion — REVIEW PASSED |
 | Lighting | BLOCKOUT |
 | UI | PLACEHOLDER — subtitle prototype |
+| Tsukimori first street | NEXT — BLOCKOUT 1.0 |
 
 Státuszfolyam:
 
 **PLACEHOLDER → BLOCKOUT → REVIEW → FINAL**
 
-Semmi nem lép FINAL státuszba kreatív review nélkül.
+A **REVIEW PASSED** azt jelenti, hogy az adott elem jelenlegi minőségben elég stabil a következő fejlesztési lépéshez. Nem jelent FINAL státuszt.
+
+Semmi nem lép FINAL státuszba külön kreatív review nélkül.
