@@ -54,8 +54,8 @@ func _process(delta: float) -> void:
     var sway := deg_to_rad(tree_sway_degrees)
     for data in _crown_data:
         var crown := data["node"] as Node3D
-        var base := data["base"] as Vector3
-        var phase := float(data["phase"])
+        var base: Vector3 = data["base"]
+        var phase: float = data["phase"]
         crown.rotation.x = base.x + sin(_time * tree_sway_speed + phase) * sway * 0.55
         crown.rotation.z = base.z + sin(_time * tree_sway_speed * 0.83 + phase * 1.4) * sway
 
@@ -67,9 +67,9 @@ func _process(delta: float) -> void:
     if not GameState.has_flag("gate_spatial_anomaly_seen"):
         for data in _petal_data:
             var petal := data["node"] as Node3D
-            var base_position := data["position"] as Vector3
-            var base_rotation := data["rotation"] as Vector3
-            var phase := float(data["phase"])
+            var base_position: Vector3 = data["position"]
+            var base_rotation: Vector3 = data["rotation"]
+            var phase: float = data["phase"]
             petal.position.y = base_position.y + sin(_time * 1.15 + phase) * 0.035
             petal.rotation.y = base_rotation.y + sin(_time * 0.82 + phase) * 0.10
             petal.rotation.z = base_rotation.z + cos(_time * 0.94 + phase) * 0.08
