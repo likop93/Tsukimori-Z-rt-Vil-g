@@ -1,6 +1,8 @@
 extends Node3D
 
 const CameraZoneScript = preload("res://scripts/camera_zone.gd")
+const VillagerProxyScript = preload("res://scripts/villager_proxy.gd")
+const StreetAmbientScript = preload("res://scripts/street_ambient.gd")
 
 var meeting_reached := false
 
@@ -11,10 +13,12 @@ func _ready() -> void:
     var roof := _mat("DarkRoof", Color(0.075, 0.085, 0.09))
     var wood := _mat("DarkWood", Color(0.16, 0.105, 0.07))
     var glow := _mat("LanternGlow", Color(0.87, 0.61, 0.31), Color(0.95, 0.48, 0.16))
-    var villager := _mat("VillagerProxy", Color(0.26, 0.28, 0.30))
-    var miyako := _mat("MiyakoProxy", Color(0.36, 0.22, 0.34))
+    var cloth := _mat("HangingCloth", Color(0.42, 0.16, 0.12))
+    var paper := _mat("PetalPaper", Color(0.88, 0.75, 0.77))
+    var plant := _mat("VillagePlant", Color(0.11, 0.23, 0.13))
 
     _static_box(self, "Ground", Vector3(0, -0.2, -27), Vector3(20, 0.4, 62), ground)
+
     var surfaces := _node("StreetSurface", self)
     _mesh_box(surfaces, "MainStreet", Vector3(0, 0.025, -26), Vector3(7.2, 0.08, 55), street)
     _mesh_box(surfaces, "LeftAlley", Vector3(-6, 0.03, -18), Vector3(10, 0.08, 3.2), street)
@@ -28,7 +32,14 @@ func _ready() -> void:
         [Vector3(-7.2, 1.8, -45), -6.0], [Vector3(7.4, 1.8, -47), 4.0]
     ]
     for index in house_layout.size():
-        var house := _static_box(houses, "House%02d" % (index + 1), house_layout[index][0], Vector3(4.8, 3.6, 6), wall, house_layout[index][1])
+        var house := _static_box(
+            houses,
+            "House%02d" % (index + 1),
+            house_layout[index][0],
+            Vector3(4.8, 3.6, 6),
+            wall,
+            house_layout[index][1]
+        )
         var cap := _mesh_box(house, "Roof", Vector3(0, 2.15, 0), Vector3(5.4, 0.55, 6.6), roof)
         cap.rotation.z = deg_to_rad(5.0 if index % 2 == 0 else -5.0)
 
@@ -37,18 +48,41 @@ func _ready() -> void:
     _static_box(fences, "RightFence", Vector3(4.1, 0.575, -23), Vector3(0.18, 1.15, 11), wood)
 
     var lanterns := _node("Lanterns", self)
-    var lantern_positions := [Vector3(-3.8, 0, -5), Vector3(3.8, 0, -20), Vector3(-3.8, 0, -36), Vector3(3.8, 0, -50)]
+    var lantern_positions := [
+        Vector3(-3.8, 0, -5),
+        Vector3(3.8, 0, -20),
+        Vector3(-3.8, 0, -36),
+        Vector3(3.8, 0, -50)
+    ]
     for index in lantern_positions.size():
         _lantern(lanterns, index + 1, lantern_positions[index], wood, glow)
 
+    _build_wind_details(cloth, paper, plant)
+
     var slots := _node("NPCSlots", self)
-    var npc_positions := [Vector3(-2.7, 0.84, -11), Vector3(2.8, 0.84, -16), Vector3(-2.9, 0.84, -24), Vector3(2.7, 0.84, -31), Vector3(-2.5, 0.84, -39), Vector3(3.1, 0.84, -45)]
+    var npc_positions := [
+        Vector3(-2.7, 0, -11),
+        Vector3(2.8, 0, -16),
+        Vector3(-2.9, 0, -24),
+        Vector3(2.7, 0, -31),
+        Vector3(-2.5, 0, -39),
+        Vector3(3.1, 0, -45)
+    ]
     for index in npc_positions.size():
-        _npc(slots, "Villager%02d" % (index + 1), npc_positions[index], villager)
+        _villager(
+            slots,
+            "Villager%02d" % (index + 1),
+            npc_positions[index],
+            index,
+            index % 4,
+            float(index) * 0.63,
+            false
+        )
 
     var meeting := _node("MiyakoMeeting", self)
     meeting.position = Vector3(0, 0, -52)
-    _npc(meeting, "MiyakoMarker", Vector3(0, 0.84, -1.5), miyako)
+    _villager(meeting, "MiyakoMarker", Vector3(0, 0, -1.5), 3, 0, 1.4, true)
+
     var label := Label3D.new()
     label.name = "MiyakoLabel"
     label.position = Vector3(0, 2.15, -1.5)
@@ -58,6 +92,7 @@ func _ready() -> void:
     label.pixel_size = 0.0025
     label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
     meeting.add_child(label)
+
     var trigger := _area("MiyakoMeetTrigger", Vector3(0, 1.5, 0), Vector3(9.5, 3, 7.5), meeting)
     trigger.body_entered.connect(_on_miyako_meet_trigger_body_entered)
 
@@ -68,6 +103,66 @@ func _ready() -> void:
     _camera_zone(zones, "StreetEntry", Vector3(0, 3, -6), Vector3(18, 12, 16), 40, 10.0, Vector3(0.6, 6.1, 9.0), -29.0)
     _camera_zone(zones, "MainStreet", Vector3(0, 3, -26), Vector3(20, 12, 26), 50, -15.0, Vector3(-0.8, 6.2, 8.8), -27.0)
     _camera_zone(zones, "MiyakoCourt", Vector3(0, 3, -50), Vector3(22, 12, 18), 60, 18.0, Vector3(1.5, 5.6, 8.3), -23.0)
+
+    var ambient := Node.new()
+    ambient.name = "AmbientMotion"
+    ambient.set_script(StreetAmbientScript)
+    add_child(ambient)
+
+func _build_wind_details(cloth: Material, paper: Material, plant: Material) -> void:
+    var details := _node("WindDetails", self)
+
+    var hanging := _node("HangingCloth", details)
+    _cloth_panel(hanging, "Noren01", Vector3(-4.62, 2.05, -8.0), Vector3(0.06, 0.92, 1.05), cloth)
+    _cloth_panel(hanging, "Noren02", Vector3(4.62, 2.12, -12.0), Vector3(0.06, 0.82, 0.92), cloth)
+    _cloth_panel(hanging, "Noren03", Vector3(-4.62, 2.00, -27.0), Vector3(0.06, 1.02, 0.80), cloth)
+    _cloth_panel(hanging, "Noren04", Vector3(4.62, 2.08, -47.0), Vector3(0.06, 0.88, 1.00), cloth)
+
+    var petals := _node("Petals", details)
+    var petal_positions := [
+        Vector3(-1.7, 0.42, -8.0),
+        Vector3(1.3, 0.62, -12.5),
+        Vector3(-0.7, 0.36, -17.0),
+        Vector3(1.9, 0.76, -21.5),
+        Vector3(-1.2, 0.54, -27.0),
+        Vector3(0.6, 0.44, -32.0),
+        Vector3(-1.8, 0.70, -37.0),
+        Vector3(1.4, 0.50, -42.0),
+        Vector3(-0.3, 0.82, -47.0),
+        Vector3(1.0, 0.60, -52.0)
+    ]
+    for index in petal_positions.size():
+        var petal := _mesh_box(
+            petals,
+            "Petal%02d" % (index + 1),
+            petal_positions[index],
+            Vector3(0.10, 0.025, 0.16),
+            paper
+        )
+        petal.rotation = Vector3(
+            deg_to_rad(float((index * 13) % 30)),
+            deg_to_rad(float((index * 37) % 180)),
+            deg_to_rad(float((index * 19) % 45))
+        )
+
+    var plants := _node("Plants", details)
+    var plant_positions := [
+        Vector3(-4.0, 0.18, -3.0),
+        Vector3(4.0, 0.18, -15.0),
+        Vector3(-4.1, 0.18, -22.0),
+        Vector3(4.1, 0.18, -35.0),
+        Vector3(-4.0, 0.18, -44.0),
+        Vector3(4.0, 0.18, -52.0)
+    ]
+    for index in plant_positions.size():
+        var cluster := Node3D.new()
+        cluster.name = "Plant%02d" % (index + 1)
+        cluster.position = plant_positions[index]
+        plants.add_child(cluster)
+        _mesh_box(cluster, "LeafA", Vector3(-0.08, 0.18, 0), Vector3(0.08, 0.36, 0.06), plant)
+        _mesh_box(cluster, "LeafB", Vector3(0.08, 0.16, 0.02), Vector3(0.08, 0.32, 0.06), plant)
+        cluster.get_node("LeafA").rotation.z = deg_to_rad(-11.0)
+        cluster.get_node("LeafB").rotation.z = deg_to_rad(13.0)
 
 func _node(name_value: String, parent: Node) -> Node3D:
     var result := Node3D.new()
@@ -96,6 +191,13 @@ func _mesh_box(parent: Node, name_value: String, position_value: Vector3, size: 
     result.material_override = material
     parent.add_child(result)
     return result
+
+func _cloth_panel(parent: Node, name_value: String, position_value: Vector3, size: Vector3, material: Material) -> void:
+    var pivot := Node3D.new()
+    pivot.name = name_value
+    pivot.position = position_value
+    parent.add_child(pivot)
+    _mesh_box(pivot, "Cloth", Vector3(0, -size.y * 0.45, 0), size, material)
 
 func _static_box(parent: Node, name_value: String, position_value: Vector3, size: Vector3, material: Material, yaw := 0.0) -> StaticBody3D:
     var result := StaticBody3D.new()
@@ -151,18 +253,22 @@ func _camera_zone(parent: Node, name_value: String, position_value: Vector3, siz
 func _lantern(parent: Node, index: int, position_value: Vector3, wood: Material, glow: Material) -> void:
     var root := _node("Lantern%02d" % index, parent)
     root.position = position_value
+
     var post_resource := CylinderMesh.new()
     post_resource.top_radius = 0.07
     post_resource.bottom_radius = 0.10
     post_resource.height = 2.8
     post_resource.radial_segments = 8
+
     var post := MeshInstance3D.new()
     post.name = "Post"
     post.position.y = 1.4
     post.mesh = post_resource
     post.material_override = wood
     root.add_child(post)
+
     _mesh_box(root, "Lamp", Vector3(0, 2.65, 0), Vector3(0.42, 0.58, 0.42), glow)
+
     var light := OmniLight3D.new()
     light.name = "Light"
     light.position.y = 2.6
@@ -171,17 +277,15 @@ func _lantern(parent: Node, index: int, position_value: Vector3, wood: Material,
     light.omni_range = 5.0
     root.add_child(light)
 
-func _npc(parent: Node, name_value: String, position_value: Vector3, material: Material) -> void:
-    var resource := CapsuleMesh.new()
-    resource.radius = 0.28
-    resource.height = 1.68
-    resource.radial_segments = 12
-    resource.rings = 6
-    var result := MeshInstance3D.new()
+func _villager(parent: Node, name_value: String, position_value: Vector3, variant: int, idle_style: int, phase: float, miyako: bool) -> void:
+    var result := Node3D.new()
     result.name = name_value
     result.position = position_value
-    result.mesh = resource
-    result.material_override = material
+    result.set_script(VillagerProxyScript)
+    result.set("variant", variant)
+    result.set("idle_style", idle_style)
+    result.set("phase_offset", phase)
+    result.set("is_miyako", miyako)
     parent.add_child(result)
 
 func _on_miyako_meet_trigger_body_entered(body: Node3D) -> void:
@@ -191,7 +295,7 @@ func _on_miyako_meet_trigger_body_entered(body: Node3D) -> void:
     GameState.set_flag("reached_miyako_meeting_space", true)
     var status := get_node_or_null("../HUD/Margin/VBox/Status") as Label
     if status:
-        status.text = "ELSŐ UTCA • Miyako találkozási tere — BLOCKOUT"
+        status.text = "ELSŐ UTCA • Miyako találkozási tere — AMBIENT PASS"
 
 func _on_street_entry_trigger_body_entered(body: Node3D) -> void:
     if body == null or not body.is_in_group("player") or GameState.has_flag("entered_first_street"):
@@ -199,4 +303,4 @@ func _on_street_entry_trigger_body_entered(body: Node3D) -> void:
     GameState.set_flag("entered_first_street", true)
     var status := get_node_or_null("../HUD/Margin/VBox/Status") as Label
     if status:
-        status.text = "TSUKIMORI • Első utca — BLOCKOUT 1.0"
+        status.text = "TSUKIMORI • Első utca — AMBIENT PASS 1"
