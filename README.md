@@ -43,6 +43,7 @@ Jelenlegi játszható ív:
 - új, Godotba betöltött közösház-GLB részletezett cseréptetővel, favázzal, shoji ablakokkal és verandával; szerkeszthető Blender-forrás ugyanabból a generátorból készíthető
 - esti holdfény és mélyebb köd, nedves kőburkolat és tócsák, mozgó ereszalji eső és alacsony talajköd, lassan hajló erdei cédrusok
 - festett, ismételhető anime-stílusú talaj-, kő-, vakolat-, fa- és tetőanyag az utcán és a rendelő külső részén; tagoltabb cédruskoronák, finomabb tető- és shoji-részletek
+- három beágyazott textúrás, Godotba importált falusi házváltozat verandával, részletes tetővel és sötét shoji-ablakokkal; részletesebb hegyi ösvény, Forward+ fény- és árnyékpassz
 - hat animált fényű utcai lámpa
 - mozgó textil-, szirom- és növényproxyk
 - nyolc animált humanoid falusi proxy
@@ -69,6 +70,8 @@ Az utcai párok reakciói F5 review-n átmentek. A közös ház animált, kétsz
 A következő esti látványpassz Blender-modellje, Godot-betöltése és F5 ellenőrzőlistája: `docs/EVENING_VISUAL_PASS.md`.
 
 A falusi környezet új, helyben generált anyagai és F5 vizuális ellenőrzése: `docs/ENVIRONMENT_ART_PASS.md`.
+
+Persona 4 Golden léptékű grafikai cél, konkrét otthoni telepítési lista és bejárási sorrend: `docs/GRAPHICS_TARGET_AND_SETUP.md`.
 
 ## Godot asset stratégia
 

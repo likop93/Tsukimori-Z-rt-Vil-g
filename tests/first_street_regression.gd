@@ -46,6 +46,11 @@ func run_checks() -> void:
 
     expect(street.get_node("Houses").get_child_count() == 15, "Expected thirteen village houses and two houses past the stream")
     expect(street.get_node("ForestHomes").get_child_count() == 3, "Expected three scattered forest houses")
+    for variant in range(3):
+        expect(ResourceLoader.exists("res://assets/buildings/village/kominka_%02d.glb" % variant), "Authored village house model is missing")
+    expect(street.has_node("Houses/House01/AuthoredKominka") and street.has_node("Houses/House03/AuthoredKominka"), "Detailed houses did not import")
+    expect(street.has_node("ForestHomes/ForestHouse01/AuthoredKominka"), "Forest house did not import its authored model")
+    expect(not (street.get_node("Houses/House01/Mesh") as MeshInstance3D).visible, "Old house blockout covers the detailed model")
     expect(street.get_node("ForestTrees").get_child_count() >= 15, "Forest is missing its cedar blockouts")
     expect(street.get_node("ForestUndergrowth").get_child_count() == 44, "Forest floor details are missing")
     expect(street.has_node("ForestTrees/Cedar01/CrownTier03"), "Layered cedar silhouette is missing")
@@ -86,6 +91,7 @@ func run_checks() -> void:
     expect(street.has_node("WindDetails/Plants"), "Animated plant proxies are missing")
     expect(street.has_node("AmbientMotion"), "First street ambient controller is missing")
     expect(street.get_node("Ground") is StaticBody3D, "Street ground has no static collision")
+    expect(world.has_node("MountainGroundDetail/MossyStone01"), "Mountain path ground details are missing")
     expect(street.get_node("FarBankGround") is StaticBody3D, "Far bank ground has no static collision")
     var miyako_home := street.get_node("Houses/MiyakoAkiraHome") as Node3D
     var shion_home := street.get_node("Houses/ShionHome") as Node3D

@@ -101,7 +101,8 @@ func _ready() -> void:
             clinic.set_script(ClinicBlockoutScript)
             house.add_child(clinic)
         else:
-            _dress_house(house, roof, wood, plaster, stone, index)
+            if not _load_village_house(house, index):
+                _dress_house(house, roof, wood, plaster, stone, index)
             if index == 9:
                 _mesh_box(house, "ShionDoor", Vector3(0, -0.55, -3.08), Vector3(1.28, 2.30, 0.08), wood)
                 _mesh_box(house, "DoorInset", Vector3(0, -0.55, -3.13), Vector3(1.09, 2.12, 0.035), roof)
@@ -225,6 +226,25 @@ func _dress_house(house: StaticBody3D, roof: Material, wood: Material, plaster: 
         _mesh_box(house, "EntranceLintel", Vector3(-2.59, 0.72, -0.7), Vector3(0.15, 0.15, 1.55), wood)
         _mesh_box(house, "EntranceStep", Vector3(-2.7, -1.68, -0.7), Vector3(0.66, 0.18, 1.75), stone)
 
+func _load_village_house(house: StaticBody3D, index: int) -> bool:
+    var variant := index % 3
+    var path := "res://assets/buildings/village/kominka_%02d.glb" % variant
+    if not ResourceLoader.exists(path):
+        return false
+    var scene := load(path) as PackedScene
+    if scene == null:
+        push_warning("Village house GLB could not be loaded: %s" % path)
+        return false
+    var visual := scene.instantiate() as Node3D
+    if visual == null:
+        return false
+    visual.name = "AuthoredKominka"
+    # The authored front faces local +X. Both street sides face Akira's route.
+    visual.rotation.y = PI if house.position.x > 0.0 else 0.0
+    (house.get_node("Mesh") as MeshInstance3D).visible = false
+    house.add_child(visual)
+    return true
+
 func _build_wet_street() -> void:
     # Staggered stones pick up the lanterns without changing any walk collision.
     var paving := _node("WetPaving", self)
@@ -279,7 +299,8 @@ func _build_forest(wall: Material, roof: Material, wood: Material, plaster: Mate
     ]
     for index in outlying_homes.size():
         var home := _static_box(homes, "ForestHouse%02d" % (index + 1), outlying_homes[index], Vector3(4.8, 3.6, 6), wall, -4.0 if index % 2 == 0 else 5.0)
-        _dress_house(home, roof, wood, plaster, stone, index + 15)
+        if not _load_village_house(home, index + 15):
+            _dress_house(home, roof, wood, plaster, stone, index + 15)
 
     var trees := _node("ForestTrees", self)
     var tree_positions := [
@@ -530,6 +551,7 @@ func _lantern(parent: Node, index: int, position_value: Vector3, wood: Material,
     light.light_color = Color(1.0, 0.58, 0.30)
     light.light_energy = 1.4
     light.omni_range = 5.0
+    light.shadow_enabled = index % 2 == 0
     root.add_child(light)
 
 func _villager(parent: Node, name_value: String, position_value: Vector3, variant: int, idle_style: int, phase: float, miyako: bool, yaw_degrees: float = 0.0) -> void:

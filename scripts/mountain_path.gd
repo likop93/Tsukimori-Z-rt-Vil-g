@@ -12,6 +12,71 @@ var subtitle_tween: Tween
 
 func _ready() -> void:
     status_label.text = "MOUNTAIN PATH • Animation Pass v0.2"
+    _polish_mountain()
+
+func _polish_mountain() -> void:
+    var forest_floor := _mountain_surface("damp_earth", Color(0.68, 0.74, 0.66), Vector3(8, 1, 13))
+    var path := _mountain_surface("damp_earth", Color(0.86, 0.78, 0.67), Vector3(2, 1, 4))
+    var bark := _mountain_surface("weathered_cedar", Color(0.58, 0.54, 0.50))
+    var stone := _mountain_surface("wet_stone", Color(0.61, 0.64, 0.63))
+    ($TerrainGround/Mesh as MeshInstance3D).material_override = forest_floor
+    for segment in $PathBlockout.get_children():
+        (segment as MeshInstance3D).material_override = path
+
+    var needle_a := _mountain_color(Color(0.075, 0.17, 0.125))
+    var needle_b := _mountain_color(Color(0.052, 0.13, 0.102))
+    for index in $Trees.get_child_count():
+        var cedar := $Trees.get_child(index) as Node3D
+        (cedar.get_node("Trunk") as MeshInstance3D).material_override = bark
+        var crown := cedar.get_node("Crown") as MeshInstance3D
+        for level in range(2):
+            for lobe in range(4):
+                var tuft_mesh := SphereMesh.new()
+                tuft_mesh.radius = 0.73 - float(level) * 0.11
+                tuft_mesh.height = tuft_mesh.radius * 2.0
+                tuft_mesh.radial_segments = 7
+                tuft_mesh.rings = 4
+                var tuft := MeshInstance3D.new()
+                tuft.name = "BranchTuft_%d_%d" % [level, lobe]
+                tuft.mesh = tuft_mesh
+                tuft.scale.y = 0.71
+                var angle := TAU * float(lobe) / 4.0 + float(index) * 0.44 + float(level) * 0.31
+                var radius := 1.11 - float(level) * 0.30
+                tuft.position = Vector3(cos(angle) * radius, -1.51 + float(level) * 1.74, sin(angle) * radius)
+                tuft.material_override = needle_a if (index + level + lobe) % 2 == 0 else needle_b
+                crown.add_child(tuft)
+
+    var ground_detail := Node3D.new()
+    ground_detail.name = "MountainGroundDetail"
+    add_child(ground_detail)
+    for index in range(24):
+        var side := -1.0 if index % 2 == 0 else 1.0
+        var z := 22.0 - float(index) * 2.02
+        var x := side * (5.5 + float(index % 3) * 0.49)
+        var rock_mesh := SphereMesh.new()
+        rock_mesh.radius = 0.27 + float(index % 4) * 0.08
+        rock_mesh.height = rock_mesh.radius * 2.0
+        rock_mesh.radial_segments = 7
+        rock_mesh.rings = 3
+        var pebble := MeshInstance3D.new()
+        pebble.name = "MossyStone%02d" % (index + 1)
+        pebble.mesh = rock_mesh
+        pebble.scale = Vector3(1.0, 0.43, 0.81)
+        pebble.position = Vector3(x, 0.08, z)
+        pebble.material_override = stone
+        ground_detail.add_child(pebble)
+
+func _mountain_surface(map_name: String, tint: Color, tiling: Vector3 = Vector3.ONE) -> StandardMaterial3D:
+    var result := _mountain_color(tint)
+    result.albedo_texture = load("res://assets/environment/materials/%s.png" % map_name) as Texture2D
+    result.uv1_scale = tiling
+    return result
+
+func _mountain_color(tint: Color) -> StandardMaterial3D:
+    var result := StandardMaterial3D.new()
+    result.albedo_color = tint
+    result.roughness = 0.91
+    return result
 
 func _is_player(body: Node3D) -> bool:
     return body != null and body.is_in_group("player")

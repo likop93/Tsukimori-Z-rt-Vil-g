@@ -128,6 +128,12 @@ ambient_light_energy = 0.55
 fog_enabled = true
 fog_light_color = Color(0.25, 0.32, 0.43, 1)
 fog_density = 0.014
+ssao_enabled = true
+ssao_intensity = 1.15
+ssao_radius = 1.15
+glow_enabled = true
+glow_intensity = 0.16
+glow_hdr_threshold = 1.25
 
 [node name="MountainPath" type="Node3D"]
 script = ExtResource("1_world")
