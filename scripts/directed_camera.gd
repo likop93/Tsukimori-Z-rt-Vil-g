@@ -12,6 +12,7 @@ var _follow_offset: Vector3
 var _default_offset: Vector3
 var _default_pitch: float
 var _default_yaw: float
+var _travel_yaw := 0.0
 
 func _ready() -> void:
     _follow_offset = position
@@ -40,6 +41,16 @@ func _physics_process(delta: float) -> void:
         target_pitch = deg_to_rad(active_zone.pitch_degrees)
         target_yaw = deg_to_rad(active_zone.yaw_degrees)
         target_focus = active_zone.focus_offset
+        if active_zone.follow_facing:
+            var movement := (player as CharacterBody3D).velocity
+            if Vector2(movement.x, movement.z).length() > 0.2:
+                # World-forward (-Z) keeps the authored shot; other directions orbit behind Akira.
+                _travel_yaw = atan2(-movement.x, -movement.z)
+            target_yaw += _travel_yaw
+        else:
+            _travel_yaw = 0.0
+    else:
+        _travel_yaw = 0.0
 
     # Exponential smoothing keeps the response consistent across frame rates.
     var follow_weight := 1.0 - exp(-follow_speed * delta)

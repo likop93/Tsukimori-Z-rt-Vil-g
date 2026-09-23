@@ -6,6 +6,7 @@ extends Area3D
 @export var camera_offset := Vector3(0.0, 7.2, 8.8)
 @export var focus_offset: Vector3 = Vector3.ZERO
 @export_range(-80.0, -5.0) var pitch_degrees: float = -34.0
+@export var follow_facing: bool = false
 
 func _ready() -> void:
     add_to_group("camera_zones")

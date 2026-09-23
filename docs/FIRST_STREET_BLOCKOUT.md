@@ -63,3 +63,7 @@ A korábbi bővítés tizennégy házat, négy mellékutcát, hat lámpát és n
 ## Történet szerinti átrendezés — 2026-09-23
 
 A pontosított sorrend szerint Akira a falu egyik szélén érkezik meg, majd végigsétál a lakott utcán. Négy falusi pár felé fordul, összenéz és suttogó mozdulatot tesz, ahogy elhalad mellettük. Katsuro és Miyako háza a **távolabbi** patakparti peremen áll, Shioné szemközt a túlparton, Hana háza Miyako mellett. Akira csak a falun való áthaladás után találkozik Miyakóval. A patak megszakítja a talaj ütközőfelületét, a híd viszont járható; a partokat alacsony korlát védi. A többi szereplő otthonát csak a történetük szerinti elhelyezés tisztázása után jelöljük ki. Lásd: `docs/VILLAGE_LAYOUT.md`.
+
+## Iránykövető kamera és túlparti folytatás — 2026-09-23
+
+A felhasználói bejárás megmutatta, hogy a rögzített utcai kameraszögek nem követték Akira fordulását, és a ház takarta Miyakót. Az utcai kamerák most Akira haladási iránya szerint fordulnak, míg a találkozás külön, oldalról nyitott kameraképet kap. Miyako az utcai bejárat előtt áll; a patakra néző tornác megmarad. A túlparton a közelebbi ház Shioné, a távolabbi Akiráé. Akira háza után járható erdei főút, három mellékút, cédrusok és három névtelen ház jelölik a továbbépíthető tájat.

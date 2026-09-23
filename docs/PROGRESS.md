@@ -39,7 +39,7 @@ Az első utca kibővített blockoutja elkészült, az **Ambient Animation Pass 1
 
 ## Jelenlegi játszható szakasz
 
-**Hegyi ösvény → első furcsa jel → kilátópont → útjelző → falukapu → „Szél?” → falusiak közt végigjárt utca → Miyako a patakparton → híd**
+**Hegyi ösvény → első furcsa jel → kilátópont → falukapu → „Szél?” → falusiak közt végigjárt utca → Miyako → patakhíd → Shion háza → Akira háza → erdei utak**
 
 Működik:
 
@@ -51,9 +51,10 @@ Működik:
 - hegyi környezeti ambient mozgás;
 - narratív trigger timing;
 - kapu-anomália;
-- tizennégy házból álló, továbbjárható falusi blockout;
+- tizennégy falusi házból és a túlparti Akira-házból álló, továbbjárható blockout;
 - patak a bejárt falu túlsó peremén, ütközéssel rendelkező híddal;
-- Miyako és Katsuro otthona a közeli parton, Shioné szemben a túlparton, Hana háza Miyako mellett;
+- Miyako és Katsuro otthona a közeli parton, Shioné szemben a túlparton, Akiráé távolabb ugyanazon a parton, Hana háza Miyako mellett;
+- az erdőben három névtelen ház, elágazó utak és cédrus blockoutok;
 - négy mellékutca és kerítések;
 - hat animált fényű lámpa;
 - mozgó textil-, szirom- és növényproxyk;
@@ -81,4 +82,4 @@ A már működő directed camera rendszert nem cseréljük le automatikusan kés
 
 **Tsukimori — Miyako első találkozásának stagingje**
 
-A történet szerint Akira végigmegy a falun, ahol a lakók megnézik és összesúgnak, csak azután érkezik Katsuro és Miyako házához a csendes patakparti peremen. A következő végigjátszás ezt a sorrendet, Hana szomszédságát, Shion túlparti házát és Miyako találkozásának kameráját vizsgálja. A többi főszereplő otthona egyelőre nincs hozzárendelve a névtelen házakhoz. Részletek: `docs/VILLAGE_LAYOUT.md`. Külső assetet a jelenet konkrét igénye alapján próbálunk ki.
+A történet szerint Akira végigmegy a falun, ahol a lakók megnézik és összesúgnak, csak azután érkezik Katsuro és Miyako házához a csendes patakparti peremen. A felhasználói teszt alapján javítva: az utcai kamera Akira haladási irányát követi, a találkozási szög Miyakót a háztól szabadon mutatja, Shion háza után külön Akira-ház és erdei úthálózat következik. A többi főszereplő otthona egyelőre nincs hozzárendelve a névtelen házakhoz. Részletek: `docs/VILLAGE_LAYOUT.md`. Külső assetet a jelenet konkrét igénye alapján próbálunk ki.

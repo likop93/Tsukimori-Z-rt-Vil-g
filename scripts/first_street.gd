@@ -20,10 +20,12 @@ func _ready() -> void:
     var plant := _mat("VillagePlant", Color(0.11, 0.23, 0.13))
     var water := _mat("StreamWater", Color(0.075, 0.25, 0.28), Color(0.015, 0.07, 0.08))
     var bank := _mat("StreamBank", Color(0.20, 0.23, 0.20))
+    var bark := _mat("CedarBark", Color(0.13, 0.085, 0.055))
+    var needles := _mat("CedarNeedles", Color(0.075, 0.14, 0.105))
 
     # The village is crossed first. The stream marks its quiet, far edge.
     _static_box(self, "Ground", Vector3(0, -0.2, -45), Vector3(34, 0.4, 102), ground)
-    _static_box(self, "FarBankGround", Vector3(0, -0.2, -112.5), Vector3(34, 0.4, 25), ground)
+    _static_box(self, "FarBankGround", Vector3(0, -0.2, -152.5), Vector3(52, 0.4, 105), ground)
 
     var streambed := _node("Stream", self)
     _mesh_box(streambed, "Water", Vector3(0, -0.27, -98), Vector3(34, 0.08, 4), water)
@@ -37,12 +39,17 @@ func _ready() -> void:
 
     var surfaces := _node("StreetSurface", self)
     _mesh_box(surfaces, "MainStreet", Vector3(0, 0.025, -47), Vector3(8.2, 0.08, 94), street)
-    _mesh_box(surfaces, "FarBankPath", Vector3(0, 0.025, -111), Vector3(8.2, 0.08, 22), street)
+    _mesh_box(surfaces, "FarBankPath", Vector3(0, 0.025, -120), Vector3(7, 0.08, 40), street)
+    _mesh_box(surfaces, "ForestRoad", Vector3(0, 0.025, -167), Vector3(6.4, 0.08, 54), street)
+    _mesh_box(surfaces, "AkiraLane", Vector3(-5.7, 0.03, -126), Vector3(10, 0.08, 3.2), street)
+    _mesh_box(surfaces, "ForestWestLane", Vector3(-8, 0.03, -156), Vector3(16, 0.08, 3.4), street)
+    _mesh_box(surfaces, "ForestEastLane", Vector3(8, 0.03, -176), Vector3(16, 0.08, 3.4), street)
+    _mesh_box(surfaces, "ForestDeepLane", Vector3(-8, 0.03, -190), Vector3(16, 0.08, 3.4), street)
     _mesh_box(surfaces, "LeftAlley", Vector3(-6, 0.03, -18), Vector3(10, 0.08, 3.2), street)
     _mesh_box(surfaces, "RightAlley", Vector3(6, 0.03, -34), Vector3(10, 0.08, 3.2), street)
     _mesh_box(surfaces, "UpperLeftAlley", Vector3(-6.5, 0.03, -54), Vector3(11, 0.08, 3.2), street)
     _mesh_box(surfaces, "UpperRightAlley", Vector3(6.5, 0.03, -80), Vector3(11, 0.08, 3.2), street)
-    _mesh_box(surfaces, "HouseApproach", Vector3(3.75, 0.03, -92.5), Vector3(4.6, 0.08, 3), street)
+    _mesh_box(surfaces, "HouseApproach", Vector3(3.8, 0.03, -89), Vector3(4.4, 0.08, 3.2), street)
 
     var houses := _node("Houses", self)
     var house_layout := [
@@ -52,7 +59,8 @@ func _ready() -> void:
         [Vector3(-7.4, 1.8, -61), 5.0], [Vector3(7.2, 1.8, -70), 4.0],
         [Vector3(-7.3, 1.8, -82), -5.0], [Vector3(7.3, 1.8, -89), 6.0],
         [Vector3(-13.1, 1.8, -18), 3.0], [Vector3(13.1, 1.8, -34), -4.0],
-        [Vector3(-13.1, 1.8, -54), 5.0], [Vector3(13.1, 1.8, -88), -3.0]
+        [Vector3(-13.1, 1.8, -54), 5.0], [Vector3(13.1, 1.8, -88), -3.0],
+        [Vector3(-8.0, 1.8, -126), 3.0]
     ]
     for index in house_layout.size():
         var home_name := "House%02d" % (index + 1)
@@ -63,6 +71,8 @@ func _ready() -> void:
                 home_name = "ShionHome"
             13:
                 home_name = "HanaHome"
+            14:
+                home_name = "AkiraHome"
         var house := _static_box(
             houses,
             home_name,
@@ -74,12 +84,18 @@ func _ready() -> void:
         var cap := _mesh_box(house, "Roof", Vector3(0, 2.15, 0), Vector3(5.4, 0.55, 6.6), roof)
         cap.rotation.z = deg_to_rad(5.0 if index % 2 == 0 else -5.0)
         if index == 9:
-            # Miyako's home faces the near bank; Shion's home faces it from the far bank.
-            _mesh_box(house, "KatsuroDoor", Vector3(0, -0.55, -3.08), Vector3(1.28, 2.30, 0.08), wood)
-            _mesh_box(house, "DoorInset", Vector3(0, -0.55, -3.13), Vector3(1.09, 2.12, 0.035), roof)
+            # The entrance faces the street so Miyako is visible; the porch faces Shion across the stream.
+            _mesh_box(house, "KatsuroDoor", Vector3(-2.48, -0.55, -0.7), Vector3(0.08, 2.30, 1.28), wood)
+            _mesh_box(house, "DoorInset", Vector3(-2.53, -0.55, -0.7), Vector3(0.035, 2.12, 1.09), roof)
+            _mesh_box(house, "StreamPorch", Vector3(0, -1.68, -3.35), Vector3(2.6, 0.16, 0.75), wood)
         elif index == 3:
             _mesh_box(house, "ShionDoor", Vector3(0, -0.55, 3.08), Vector3(1.28, 2.30, 0.08), wood)
             _mesh_box(house, "DoorInset", Vector3(0, -0.55, 3.13), Vector3(1.09, 2.12, 0.035), roof)
+        elif index == 14:
+            _mesh_box(house, "AkiraDoor", Vector3(2.48, -0.55, -0.25), Vector3(0.08, 2.30, 1.28), wood)
+            _mesh_box(house, "DoorInset", Vector3(2.53, -0.55, -0.25), Vector3(0.035, 2.12, 1.09), roof)
+
+    _build_forest(wall, roof, bark, needles)
 
     var fences := _node("Fences", self)
     _static_box(fences, "LeftFence", Vector3(-4.1, 0.575, -10), Vector3(0.18, 1.15, 11), wood)
@@ -129,9 +145,9 @@ func _ready() -> void:
 
     var meeting := _node("MiyakoMeeting", self)
     meeting.position = Vector3(0, 0, -89)
-    _villager(meeting, "MiyakoMarker", Vector3(4.6, 0, -1.4), 3, 0, 1.4, true, 48.0)
+    _villager(meeting, "MiyakoMarker", Vector3(2.9, 0, 0.8), 3, 0, 1.4, true, 48.0)
 
-    var trigger := _area("MiyakoMeetTrigger", Vector3(1.2, 1.5, 0), Vector3(6.8, 3, 5.0), meeting)
+    var trigger := _area("MiyakoMeetTrigger", Vector3(0.7, 1.5, 0), Vector3(6.4, 3, 5.0), meeting)
     trigger.body_entered.connect(_on_miyako_meet_trigger_body_entered)
 
     var witness_trigger := _area("VillagersNoticeTrigger", Vector3(0, 1.5, -12), Vector3(8, 3, 5), self)
@@ -146,16 +162,52 @@ func _ready() -> void:
     _camera_zone(zones, "StreetEntry", Vector3(0, 3, -6), Vector3(18, 12, 16), 40, 10.0, Vector3(0.6, 6.1, 9.0), -29.0)
     _camera_zone(zones, "MainStreet", Vector3(0, 3, -34), Vector3(20, 12, 44), 50, -15.0, Vector3(-0.8, 6.2, 8.8), -27.0)
     _camera_zone(zones, "InnerStreet", Vector3(0, 3, -67), Vector3(22, 12, 34), 55, -8.0, Vector3(0.7, 5.9, 8.5), -25.0)
-    _camera_zone(zones, "MiyakoCourt", Vector3(0, 3, -89), Vector3(19, 12, 14), 60, 18.0, Vector3(1.5, 5.6, 8.3), -23.0, Vector3(1.3, 0, -0.7))
+    _camera_zone(zones, "MiyakoCourt", Vector3(0, 3, -89), Vector3(19, 12, 14), 60, -12.0, Vector3(0, 5.8, 8.8), -23.0, Vector3(0.6, 0, -0.3))
     _camera_zone(zones, "StreamBridge", Vector3(0, 3, -98), Vector3(20, 12, 11), 45, -4.0, Vector3(0, 6.0, 8.8), -25.0)
-    _camera_zone(zones, "VillageBeyond", Vector3(0, 3, -112), Vector3(22, 12, 24), 55, 5.0, Vector3(0.4, 6.0, 8.8), -26.0)
-    _camera_zone(zones, "MiyakoFocus", Vector3(0, 3, -89), Vector3(14, 12, 12), 80, 27.0, Vector3(-1.0, 5.0, 7.2), -20.0, Vector3(2.5, 0, -1.0))
+    _camera_zone(zones, "VillageBeyond", Vector3(0, 3, -121), Vector3(44, 12, 42), 55, 5.0, Vector3(0.4, 6.0, 8.8), -26.0)
+    _camera_zone(zones, "ForestRoad", Vector3(0, 3, -168), Vector3(52, 12, 76), 52, -6.0, Vector3(0, 6.9, 9.8), -29.0)
+    _camera_zone(zones, "MiyakoFocus", Vector3(0, 3, -89), Vector3(14, 12, 12), 80, -20.0, Vector3(-1.5, 5.4, 8.8), -20.0, Vector3(1.6, 0, -0.4), false)
     (zones.get_node("MiyakoFocus") as Area3D).remove_from_group("camera_zones")
 
     var ambient := Node.new()
     ambient.name = "AmbientMotion"
     ambient.set_script(StreetAmbientScript)
     add_child(ambient)
+
+func _build_forest(wall: Material, roof: Material, bark: Material, needles: Material) -> void:
+    var homes := _node("ForestHomes", self)
+    var outlying_homes := [
+        Vector3(-16, 1.8, -157),
+        Vector3(16, 1.8, -176),
+        Vector3(-16, 1.8, -190)
+    ]
+    for index in outlying_homes.size():
+        var home := _static_box(homes, "ForestHouse%02d" % (index + 1), outlying_homes[index], Vector3(4.8, 3.6, 6), wall, -4.0 if index % 2 == 0 else 5.0)
+        _mesh_box(home, "Roof", Vector3(0, 2.15, 0), Vector3(5.4, 0.55, 6.6), roof)
+
+    var trees := _node("ForestTrees", self)
+    var tree_positions := [
+        Vector3(-9, 0, -139), Vector3(9, 0, -141), Vector3(-21, 0, -140), Vector3(22, 0, -143),
+        Vector3(-9, 0, -149), Vector3(9, 0, -151), Vector3(21, 0, -153),
+        Vector3(-22, 0, -168), Vector3(-9, 0, -168), Vector3(9, 0, -165), Vector3(21, 0, -167),
+        Vector3(-10, 0, -180), Vector3(-22, 0, -180), Vector3(10, 0, -185), Vector3(22, 0, -186),
+        Vector3(-9, 0, -196), Vector3(9, 0, -195), Vector3(22, 0, -197), Vector3(-22, 0, -198)
+    ]
+    for index in tree_positions.size():
+        var tree := _node("Cedar%02d" % (index + 1), trees)
+        tree.position = tree_positions[index]
+        _static_box(tree, "Trunk", Vector3(0, 2.4, 0), Vector3(0.62, 4.8, 0.62), bark)
+        var crown_mesh := CylinderMesh.new()
+        crown_mesh.top_radius = 0.2
+        crown_mesh.bottom_radius = 1.5
+        crown_mesh.height = 4.5
+        crown_mesh.radial_segments = 8
+        var crown := MeshInstance3D.new()
+        crown.name = "Crown"
+        crown.mesh = crown_mesh
+        crown.position.y = 5.8
+        crown.material_override = needles
+        tree.add_child(crown)
 
 func _build_wind_details(cloth: Material, paper: Material, plant: Material) -> void:
     var details := _node("WindDetails", self)
@@ -288,7 +340,7 @@ func _area(name_value: String, position_value: Vector3, size: Vector3, parent: N
     result.add_child(collision)
     return result
 
-func _camera_zone(parent: Node, name_value: String, position_value: Vector3, size: Vector3, priority: int, yaw: float, offset: Vector3, pitch: float, focus_offset: Vector3 = Vector3.ZERO) -> void:
+func _camera_zone(parent: Node, name_value: String, position_value: Vector3, size: Vector3, priority: int, yaw: float, offset: Vector3, pitch: float, focus_offset: Vector3 = Vector3.ZERO, follow_facing: bool = true) -> void:
     var zone := Area3D.new()
     zone.name = name_value
     zone.position = position_value
@@ -301,6 +353,7 @@ func _camera_zone(parent: Node, name_value: String, position_value: Vector3, siz
     zone.set("camera_offset", offset)
     zone.set("pitch_degrees", pitch)
     zone.set("focus_offset", focus_offset)
+    zone.set("follow_facing", follow_facing)
     parent.add_child(zone)
     var shape := BoxShape3D.new()
     shape.size = size

@@ -13,7 +13,7 @@ A kapun túli első falurész:
 
 Jelenlegi játszható ív:
 
-**hegyi ösvény → első furcsa jel → Tsukimori-kilátópont → útjelző → kapu → első térbeli anomália („Szél?”) → falusiak között végigjárt utca → Miyako háza a patakparton → híd**
+**hegyi ösvény → első furcsa jel → kilátópont → kapu → falusiak között végigjárt utca → Miyako háza → patakhíd → Shion háza → Akira háza → erdei utak**
 
 ## Már működő alapok
 
@@ -34,14 +34,15 @@ Jelenlegi játszható ív:
 - 月守村 — TSUKIMORI útjelző
 - kapu előtti szirom/tér-anomália
 - „Szél?” reakció
-- Tsukimori kibővített falurésze tizennégy házzal és négy mellékutcával
-- a patak és járható híd a falu túlsó peremén; Miyako és Katsuro háza a közeli parton, Shioné a túlparton, Hana Miyako szomszédságában
+- Tsukimori kibővített falurésze tizennégy házzal, négy mellékutcával és Akira házával a túlparton
+- a patak és járható híd a falu túlsó peremén; Miyako és Katsuro háza a közeli parton, Shioné és a távolabbi Akiráé a túlparton, Hana Miyako szomszédságában
+- Akira háza után cédruserdő, elágazó utak és három névtelen, elszórt ház
 - hat animált fényű utcai lámpa
 - mozgó textil-, szirom- és növényproxyk
 - nyolc animált humanoid falusi proxy
 - a falun áthaladó Akirát figyelő és egymáshoz suttogó falusi párok
 - Miyako külön humanoid proxyja Katsuro házának bejáratánál
-- három falusi kamera-kompozíció
+- haladási irányt követő utcai kamera és elkülönített találkozási kompozíció
 - az első találkozás külön kameraképe és a kánon szerinti első mondata
 - minimális GameState flag-rendszer
 - fejlesztői HUD + subtitle prototípus
@@ -56,7 +57,7 @@ A hegyi út stabil alap.
 
 **Tsukimori — Miyako első találkozása**
 
-Most a falun való áthaladást, a falusiak reakcióit, Miyako későbbi megszólítását és a patakparti házak viszonyát vizsgáljuk. A részleteket a `docs/MIYAKO_FIRST_ENCOUNTER.md` és a `docs/VILLAGE_LAYOUT.md` tartalmazza.
+Most a kamera iránykövetését, Miyako láthatóságát és a patakon túli, erdőbe vezető új útvonalat vizsgáljuk. A részleteket a `docs/MIYAKO_FIRST_ENCOUNTER.md` és a `docs/VILLAGE_LAYOUT.md` tartalmazza.
 
 ## Godot asset stratégia
 
