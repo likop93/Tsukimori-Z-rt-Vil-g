@@ -8,7 +8,7 @@
 
 Az első hegyi játékszakasz review-zott.
 Az első utca kibővített blockoutja elkészült, az **Ambient Animation Pass 1** működik a hosszabb falurészben is.
-Az utcai narratív reakciók bejárható változata elkészült, Godot F5 review-ra vár.
+Az utcai narratív reakciók F5 bejárása sikeres volt; a következő körben a házak és az erdő saját, részletesebb blockoutjai készültek el.
 
 ## Mérföldkövek
 
@@ -35,7 +35,8 @@ Az utcai narratív reakciók bejárható változata elkészült, Godot F5 review
 | Godot Asset shortlist | ✅ CURATED |
 | Asset sandbox evaluation | ⏳ WHEN NEEDED |
 | Miyako first encounter staging | ✅ IMPLEMENTED — REVIEW |
-| First Street Narrative Pass | ✅ IMPLEMENTED — REVIEW |
+| First Street Narrative Pass | ✅ REVIEW PASSED |
+| House and forest visual pass | ✅ IMPLEMENTED — REVIEW |
 | Clinic blockout | ⏳ PLANNED |
 | Opening slice title beat | ⏳ PLANNED |
 
@@ -57,6 +58,7 @@ Működik:
 - patak a bejárt falu túlsó peremén, ütközéssel rendelkező híddal;
 - Shion otthona a falusi oldalon; a túlpart második háza Miyako és Akira közös otthona, Katsuro egykori háza;
 - az erdőben három névtelen ház, elágazó utak és cédrus blockoutok;
+- kétoldalt lejtő tetővel, favázzal, ablakokkal részletezett házak, háromrétegű cédruskoronák és aljnövényzet;
 - négy mellékutca és kerítések;
 - hat animált fényű lámpa;
 - mozgó textil-, szirom- és növényproxyk;
@@ -83,7 +85,8 @@ A már működő directed camera rendszert nem cseréljük le automatikusan kés
 
 ## Aktuális review
 
-**Tsukimori — az első utca narratív ritmusa**
+**Tsukimori — házak és erdő látványa**
 
 Akira végigmegy a falun a figyelő, összesúgó lakók között, elhalad Shion háza mellett, átkel a patakon, majd az első túlparti ház után Miyakóval a közös otthonuknál találkozik. A kamera fordulását és a WASD képernyőirányú mozgását összehangoltuk: a mozgás gombnyomás alatt stabil marad. A ház mögött erdei úthálózat következik. Hana és a többi főszereplő otthonának helyét a történeti térkép alapján később rögzítjük. Részletek: `docs/VILLAGE_LAYOUT.md`. Külső assetet a jelenet konkrét igénye alapján próbálunk ki.
 Az új utcai reakciók sorrendjét és a híd melletti átmenetet a `docs/FIRST_STREET_NARRATIVE_PASS.md` írja le. A falusiak külön hangsávja későbbi hang pass feladata.
+A házak új tetői és homlokzatai, valamint az erdei növényzet Godot F5 review-ra várnak. Különösen Miyako láthatóságát és a híd utáni gyalogos útvonalat kell ellenőrizni.

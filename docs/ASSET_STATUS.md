@@ -12,13 +12,14 @@
 | Fog | BLOCKOUT + subtle ambient motion — REVIEW PASSED |
 | Lighting | BLOCKOUT |
 | UI | PLACEHOLDER — subtitle prototype |
-| Tsukimori first street | EXTENDED BLOCKOUT + AMBIENT PASS 1 — REVIEW |
-| Village houses / fences | BLOCKOUT proxies |
+| Tsukimori first street | NARRATIVE PASS REVIEW PASSED; ENVIRONMENT PASS — REVIEW |
+| Village houses / fences | PROCEDURAL FACADES / ROOFS — REVIEW |
+| Forest cedars / undergrowth | LAYERED SILHOUETTES / FERNS — REVIEW |
 | Lanterns | BLOCKOUT + animated flicker |
 | Hanging cloth / petals / plants | ANIMATED BLOCKOUT |
 | Villagers | HUMANOID ANIMATED PROXIES |
 | Miyako | HUMANOID PLACEMENT PROXY |
-| Godot asset shortlist | CURATED — EVALUATION NEXT |
+| Godot asset shortlist | CURATED — EXTERNAL PACKS NOT ADMITTED |
 
 Státuszfolyam:
 

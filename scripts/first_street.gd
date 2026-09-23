@@ -26,6 +26,10 @@ func _ready() -> void:
     var bank := _mat("StreamBank", Color(0.20, 0.23, 0.20))
     var bark := _mat("CedarBark", Color(0.13, 0.085, 0.055))
     var needles := _mat("CedarNeedles", Color(0.075, 0.14, 0.105))
+    var darker_needles := _mat("CedarShade", Color(0.055, 0.11, 0.085))
+    var plaster := _mat("WindowPaper", Color(0.56, 0.50, 0.39))
+    var stone := _mat("FoundationStone", Color(0.22, 0.23, 0.21))
+    var home_wall := _mat("SharedHomeWall", Color(0.37, 0.27, 0.20))
 
     # The village is crossed first. The stream marks its quiet, far edge.
     _static_box(self, "Ground", Vector3(0, -0.2, -45), Vector3(34, 0.4, 102), ground)
@@ -78,11 +82,10 @@ func _ready() -> void:
             home_name,
             house_layout[index][0],
             Vector3(4.8, 3.6, 6),
-            wall,
+            home_wall if index == 14 else wall,
             house_layout[index][1]
         )
-        var cap := _mesh_box(house, "Roof", Vector3(0, 2.15, 0), Vector3(5.4, 0.55, 6.6), roof)
-        cap.rotation.z = deg_to_rad(5.0 if index % 2 == 0 else -5.0)
+        _dress_house(house, roof, wood, plaster, stone, index)
         if index == 14:
             # Miyako and Akira share the farthest house; its porch looks back across the stream.
             _mesh_box(house, "KatsuroDoor", Vector3(-2.48, -0.55, -0.7), Vector3(0.08, 2.30, 1.28), wood)
@@ -92,7 +95,7 @@ func _ready() -> void:
             _mesh_box(house, "ShionDoor", Vector3(0, -0.55, -3.08), Vector3(1.28, 2.30, 0.08), wood)
             _mesh_box(house, "DoorInset", Vector3(0, -0.55, -3.13), Vector3(1.09, 2.12, 0.035), roof)
 
-    _build_forest(wall, roof, bark, needles)
+    _build_forest(wall, roof, wood, plaster, stone, bark, needles, darker_needles, plant)
 
     var fences := _node("Fences", self)
     _static_box(fences, "LeftFence", Vector3(-4.1, 0.575, -10), Vector3(0.18, 1.15, 11), wood)
@@ -177,7 +180,33 @@ func _ready() -> void:
     ambient.set_script(StreetAmbientScript)
     add_child(ambient)
 
-func _build_forest(wall: Material, roof: Material, bark: Material, needles: Material) -> void:
+func _dress_house(house: StaticBody3D, roof: Material, wood: Material, plaster: Material, stone: Material, index: int) -> void:
+    var side := -1.0 if house.position.x > 0.0 else 1.0
+    _mesh_box(house, "StoneFooting", Vector3(0, -1.66, 0), Vector3(4.96, 0.30, 6.16), stone)
+    _mesh_box(house, "RoofUnderlay", Vector3(0, 1.85, 0), Vector3(5.55, 0.24, 6.95), wood)
+    for roof_side in [-1.0, 1.0]:
+        var panel := _mesh_box(house, "RoofSlopeLeft" if roof_side < 0 else "RoofSlopeRight", Vector3(roof_side * 1.4, 2.17, 0), Vector3(3.2, 0.22, 7.05), roof)
+        panel.rotation.z = deg_to_rad(-22.0 * roof_side)
+    _mesh_box(house, "RoofRidge", Vector3(0, 2.75, 0), Vector3(0.22, 0.19, 7.18), wood)
+
+    # These are visual facades only; the existing collision shape still defines the house.
+    for post_index in range(2):
+        var post_z := -2.35 if post_index == 0 else 2.35
+        _mesh_box(house, "TimberPost%02d" % (post_index + 1), Vector3(side * 2.47, -0.1, post_z), Vector3(0.13, 3.28, 0.15), wood)
+    _mesh_box(house, "TimberLintel", Vector3(side * 2.49, 1.15, 0), Vector3(0.13, 0.14, 4.6), wood)
+    for window_index in range(2):
+        var window_z := -2.03 if index == 14 and window_index == 0 else (-1.55 if window_index == 0 else 1.55)
+        var window_root := _node("Window%02d" % (window_index + 1), house)
+        window_root.position = Vector3(side * 2.52, 0.15, window_z)
+        _mesh_box(window_root, "Paper", Vector3.ZERO, Vector3(0.04, 0.83, 0.82), plaster)
+        _mesh_box(window_root, "Sill", Vector3(side * 0.04, -0.45, 0), Vector3(0.1, 0.11, 0.98), wood)
+        _mesh_box(window_root, "MiddleRail", Vector3(side * 0.04, 0, 0), Vector3(0.1, 0.06, 0.83), wood)
+        _mesh_box(window_root, "CenterBar", Vector3(side * 0.05, 0, 0), Vector3(0.1, 0.83, 0.06), wood)
+    if index == 14:
+        _mesh_box(house, "EntranceLintel", Vector3(-2.59, 0.72, -0.7), Vector3(0.15, 0.15, 1.55), wood)
+        _mesh_box(house, "EntranceStep", Vector3(-2.7, -1.68, -0.7), Vector3(0.66, 0.18, 1.75), stone)
+
+func _build_forest(wall: Material, roof: Material, wood: Material, plaster: Material, stone: Material, bark: Material, needles: Material, darker_needles: Material, plant: Material) -> void:
     var homes := _node("ForestHomes", self)
     var outlying_homes := [
         Vector3(-16, 1.8, -157),
@@ -186,7 +215,7 @@ func _build_forest(wall: Material, roof: Material, bark: Material, needles: Mate
     ]
     for index in outlying_homes.size():
         var home := _static_box(homes, "ForestHouse%02d" % (index + 1), outlying_homes[index], Vector3(4.8, 3.6, 6), wall, -4.0 if index % 2 == 0 else 5.0)
-        _mesh_box(home, "Roof", Vector3(0, 2.15, 0), Vector3(5.4, 0.55, 6.6), roof)
+        _dress_house(home, roof, wood, plaster, stone, index + 15)
 
     var trees := _node("ForestTrees", self)
     var tree_positions := [
@@ -200,17 +229,30 @@ func _build_forest(wall: Material, roof: Material, bark: Material, needles: Mate
         var tree := _node("Cedar%02d" % (index + 1), trees)
         tree.position = tree_positions[index]
         _static_box(tree, "Trunk", Vector3(0, 2.4, 0), Vector3(0.62, 4.8, 0.62), bark)
-        var crown_mesh := CylinderMesh.new()
-        crown_mesh.top_radius = 0.2
-        crown_mesh.bottom_radius = 1.5
-        crown_mesh.height = 4.5
-        crown_mesh.radial_segments = 8
-        var crown := MeshInstance3D.new()
-        crown.name = "Crown"
-        crown.mesh = crown_mesh
-        crown.position.y = 5.8
-        crown.material_override = needles
-        tree.add_child(crown)
+        var height_variation := float(index % 4) * 0.18
+        for tier in range(3):
+            var crown_mesh := CylinderMesh.new()
+            crown_mesh.top_radius = 0.09 + float(tier) * 0.035
+            crown_mesh.bottom_radius = (1.53 - float(tier) * 0.29) * (1.0 + height_variation * 0.2)
+            crown_mesh.height = 2.65 - float(tier) * 0.12
+            crown_mesh.radial_segments = 7
+            var crown := MeshInstance3D.new()
+            crown.name = "CrownTier%02d" % (tier + 1)
+            crown.mesh = crown_mesh
+            crown.position.y = 4.35 + float(tier) * 1.14 + height_variation
+            crown.material_override = needles if (tier + index) % 3 == 0 else darker_needles
+            tree.add_child(crown)
+
+    # Small, uncollidable plants keep the roads clear while breaking up the flat forest floor.
+    var undergrowth := _node("ForestUndergrowth", self)
+    for index in range(44):
+        var row := floori(float(index) / 2.0)
+        var side := -1.0 if index % 2 == 0 else 1.0
+        var patch := _node("Fern%02d" % (index + 1), undergrowth)
+        patch.position = Vector3(side * (5.2 + float(index % 4) * 0.7), 0, -138.0 - float(row) * 2.55)
+        for leaf_side in [-1.0, 1.0]:
+            var frond := _mesh_box(patch, "FrondLeft" if leaf_side < 0 else "FrondRight", Vector3(leaf_side * 0.22, 0.34, 0), Vector3(0.11, 0.74, 0.28), plant)
+            frond.rotation.z = deg_to_rad(-28.0 * leaf_side)
 
 func _build_wind_details(cloth: Material, paper: Material, plant: Material) -> void:
     var details := _node("WindDetails", self)

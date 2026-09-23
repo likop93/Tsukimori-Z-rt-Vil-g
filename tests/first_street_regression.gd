@@ -47,6 +47,8 @@ func run_checks() -> void:
     expect(street.get_node("Houses").get_child_count() == 15, "Expected thirteen village houses and two houses past the stream")
     expect(street.get_node("ForestHomes").get_child_count() == 3, "Expected three scattered forest houses")
     expect(street.get_node("ForestTrees").get_child_count() >= 15, "Forest is missing its cedar blockouts")
+    expect(street.get_node("ForestUndergrowth").get_child_count() == 44, "Forest floor details are missing")
+    expect(street.has_node("ForestTrees/Cedar01/CrownTier03"), "Layered cedar silhouette is missing")
     expect(street.get_node("NPCSlots").get_child_count() == 8, "Expected eight villager slots")
     for index in range(1, 5):
         expect(street.has_node("VillagerBeat%02d" % index), "Missing staged villager reaction %d" % index)
@@ -57,6 +59,8 @@ func run_checks() -> void:
     expect(street.has_node("StreetSurface/UpperLeftAlley"), "Upper left alley is missing")
     expect(street.has_node("StreetSurface/UpperRightAlley"), "Upper right alley is missing")
     expect(street.has_node("Houses/MiyakoAkiraHome/KatsuroDoor"), "Miyako and Akira's shared entrance is missing")
+    expect(street.has_node("Houses/MiyakoAkiraHome/RoofSlopeLeft"), "Shared home roof detail is missing")
+    expect(street.has_node("Houses/MiyakoAkiraHome/EntranceStep"), "Shared home entrance step is missing")
     expect(street.has_node("Houses/ShionHome/ShionDoor"), "Shion's house by the near bank is missing")
     expect(street.has_node("Houses/House04"), "First, unnamed house past the stream is missing")
     expect(street.has_node("Stream/Water"), "Stream water is missing")

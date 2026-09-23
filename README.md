@@ -37,6 +37,7 @@ Jelenlegi játszható ív:
 - Tsukimori kibővített falurésze tizenhárom faluoldali házzal, két túlparti házzal és négy mellékutcával
 - a patak és járható híd a falu túlsó peremén; Shion a falusi oldalon, Miyako és Akira közös otthona a túlpart távolabbi háza
 - a közös ház után cédruserdő, elágazó utak és három névtelen, elszórt ház
+- lejtős tetők, favázas homlokzatok, papírablakok és külön bejárat a közös házon; réteges cédruskoronák és erdei aljnövényzet
 - hat animált fényű utcai lámpa
 - mozgó textil-, szirom- és növényproxyk
 - nyolc animált humanoid falusi proxy
@@ -58,7 +59,7 @@ A hegyi út stabil alap.
 
 **Tsukimori — az első utca narratív bejárása**
 
-Most az utcai párok reakcióinak időzítését, a híd felé vezető átmenetet és Miyako első mondatához érkezést vizsgáljuk. Részletek: `docs/FIRST_STREET_NARRATIVE_PASS.md`, `docs/MIYAKO_FIRST_ENCOUNTER.md` és `docs/VILLAGE_LAYOUT.md`.
+Az utcai párok reakciói F5 review-n átmentek. Most a házak új sziluettjét, Miyako láthatóságát és az erdő részleteit vizsgáljuk. Részletek: `docs/ASSET_EVALUATION_PLAN.md`, `docs/FIRST_STREET_NARRATIVE_PASS.md`, `docs/MIYAKO_FIRST_ENCOUNTER.md` és `docs/VILLAGE_LAYOUT.md`.
 
 ## Godot asset stratégia
 
