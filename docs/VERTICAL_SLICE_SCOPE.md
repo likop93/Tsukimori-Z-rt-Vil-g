@@ -6,7 +6,7 @@
 2. Akira humanoid proxy v0.2
 3. Idle / WalkStart / Walk / WalkStop locomotion
 4. 3/4 rendezett követőkamera
-5. Fix világirányú WASD
+5. Kamera és mozgás vezérlésének első review-ja (a későbbi kameraorientált módosítást külön ellenőrizzük)
 6. Tsukimori kapu blockout
 7. Mountain Path Narrative Pass 1
 8. Papírcsík-furcsaság

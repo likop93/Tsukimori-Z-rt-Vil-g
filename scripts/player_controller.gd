@@ -9,6 +9,9 @@ extends CharacterBody3D
 
 var _input_lock_remaining := 0.0
 var _controls_locked := false
+var _held_input_axis := Vector2.ZERO
+var _held_forward := Vector3.FORWARD
+var _held_right := Vector3.RIGHT
 
 func _ready() -> void:
     add_to_group("player")
@@ -35,8 +38,14 @@ func _physics_process(delta: float) -> void:
 
     input_axis = input_axis.normalized()
 
-    # Fixed world directions remain deliberate: camera changes never remap WASD.
-    var desired := Vector3(input_axis.x, 0.0, input_axis.y) * move_speed
+    # Sample the screen axes on each new input. Keeping them through the key hold
+    # prevents a following camera from feeding its own rotation back into movement.
+    if input_axis != _held_input_axis and input_axis != Vector2.ZERO:
+        var view_basis := ($CameraPivot as Node3D).global_basis
+        _held_forward = -Vector3(view_basis.z.x, 0.0, view_basis.z.z).normalized()
+        _held_right = Vector3(view_basis.x.x, 0.0, view_basis.x.z).normalized()
+    _held_input_axis = input_axis
+    var desired := (_held_right * input_axis.x - _held_forward * input_axis.y) * move_speed
     var horizontal_velocity := Vector3(velocity.x, 0.0, velocity.z)
     horizontal_velocity = horizontal_velocity.move_toward(desired, acceleration * delta)
     velocity.x = horizontal_velocity.x

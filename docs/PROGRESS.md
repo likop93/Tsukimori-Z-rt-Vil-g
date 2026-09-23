@@ -21,7 +21,7 @@ Az első utca kibővített blockoutja elkészült, az **Ambient Animation Pass 1
 | Vertical slice plan | ✅ DONE |
 | Godot project bootstrap | ✅ DONE |
 | Directed camera system | ✅ REVIEW PASSED |
-| Fixed-world WASD | ✅ REVIEW PASSED |
+| Camera-relative WASD | ✅ IMPLEMENTED — REVIEW |
 | Akira Proxy v0.2 | ✅ REVIEW PASSED |
 | Portable procedural Akira fallback | ✅ IMPLEMENTED |
 | Mountain Path Blockout 2.0 | ✅ REVIEW PASSED |
@@ -39,7 +39,7 @@ Az első utca kibővített blockoutja elkészült, az **Ambient Animation Pass 1
 
 ## Jelenlegi játszható szakasz
 
-**Hegyi ösvény → első furcsa jel → kilátópont → falukapu → „Szél?” → falusiak közt végigjárt utca → Miyako → patakhíd → Shion háza → Akira háza → erdei utak**
+**Hegyi ösvény → első furcsa jel → kilátópont → falukapu → „Szél?” → falusiak közt végigjárt utca → Shion háza → patakhíd → Miyako és Akira közös háza → erdei utak**
 
 Működik:
 
@@ -47,13 +47,13 @@ Működik:
 - Blender GLB hiányában automatikus humanoid Akira fallback;
 - locomotion blending / fallback locomotion;
 - kamera-zónák;
-- világirányú WASD;
+- képernyőirányú WASD, lenyomva tartott gomb mellett stabil mozgással;
 - hegyi környezeti ambient mozgás;
 - narratív trigger timing;
 - kapu-anomália;
-- tizennégy falusi házból és a túlparti Akira-házból álló, továbbjárható blockout;
+- tizenhárom faluoldali és két túlparti házból álló, továbbjárható blockout;
 - patak a bejárt falu túlsó peremén, ütközéssel rendelkező híddal;
-- Miyako és Katsuro otthona a közeli parton, Shioné szemben a túlparton, Akiráé távolabb ugyanazon a parton, Hana háza Miyako mellett;
+- Shion otthona a falusi oldalon; a túlpart második háza Miyako és Akira közös otthona, Katsuro egykori háza;
 - az erdőben három névtelen ház, elágazó utak és cédrus blockoutok;
 - négy mellékutca és kerítések;
 - hat animált fényű lámpa;
@@ -82,4 +82,4 @@ A már működő directed camera rendszert nem cseréljük le automatikusan kés
 
 **Tsukimori — Miyako első találkozásának stagingje**
 
-A történet szerint Akira végigmegy a falun, ahol a lakók megnézik és összesúgnak, csak azután érkezik Katsuro és Miyako házához a csendes patakparti peremen. A felhasználói teszt alapján javítva: az utcai kamera Akira haladási irányát követi, a találkozási szög Miyakót a háztól szabadon mutatja, Shion háza után külön Akira-ház és erdei úthálózat következik. A többi főszereplő otthona egyelőre nincs hozzárendelve a névtelen házakhoz. Részletek: `docs/VILLAGE_LAYOUT.md`. Külső assetet a jelenet konkrét igénye alapján próbálunk ki.
+Akira végigmegy a falun a figyelő, összesúgó lakók között, elhalad Shion háza mellett, átkel a patakon, majd az első túlparti ház után Miyakóval a közös otthonuknál találkozik. A kamera fordulását és a WASD képernyőirányú mozgását összehangoltuk: a mozgás gombnyomás alatt stabil marad. A ház mögött erdei úthálózat következik. Hana és a többi főszereplő otthonának helyét a történeti térkép alapján később rögzítjük. Részletek: `docs/VILLAGE_LAYOUT.md`. Külső assetet a jelenet konkrét igénye alapján próbálunk ki.

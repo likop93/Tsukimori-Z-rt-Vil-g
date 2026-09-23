@@ -31,7 +31,7 @@ Most nem a grafikai minőséget értékeljük. Menj végig Akirával oda és vis
 3. jó helyen nyílik-e ki a kép a kilátópontnál;
 4. a kamera kilátóponti fordulása segít-e megmutatni a falut;
 5. a kapu előtti közelebbi kép erősíti-e a megérkezést;
-6. a fix WASD kezelhető marad-e akkor is, amikor a vizuális út kanyarodik;
+6. a képernyőirányú WASD kezelhető marad-e akkor is, amikor a kamera és az út kanyarodik;
 7. van-e olyan pont, ahol Akira túl kicsi, túl nagy vagy takarásba kerül.
 
 Ha ezek közül valamelyik rossz érzést ad, előbb a blockoutot/kamerát javítjuk, és csak utána kezdünk részletes environment asseteket gyártani.

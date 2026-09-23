@@ -1,13 +1,15 @@
 # Rendezett kamera – Mountain Path Blockout 2.0
 
-A kamera továbbra is lágyan követi Akirát, a karakter forgásától függetlenül. A játékos által már elfogadott irányítási elv változatlan:
+A kamera továbbra is lágyan követi Akirát. Az új képernyőirányú vezérlés a következő:
 
-- W = −Z
-- S = +Z
-- A = −X
-- D = +X
+- W = a képen előre
+- S = a képen hátra
+- A = a képen balra
+- D = a képen jobbra
 
-A kameraváltás nem módosítja a WASD világirányait. Ez szándékos, mert a korábbi kameraorientált megoldás játék közben nehezen kezelhetőnek bizonyult.
+Az irányt minden új billentyűálláskor a kamera pillanatnyi nézetéből rögzítjük. Ha a követőkamera közben fordul, a lenyomva tartott gomb nem kezdi körbevezetni Akirát. A falusi és erdei szakaszon a kamera Akira haladási irányába áll; a Miyako-találkozás külön rögzített beállítás.
+
+A falusi főút mozgás előtti kameraszöge az út tengelyéhez igazodik. Így a falun és a hídon újonnan lenyomott W a főút mentén indítja Akirát; oldalra fordulva a kamera követi őt.
 
 ## Jelenlegi kompozíciók
 
@@ -25,6 +27,6 @@ A kamera célja most nem a végleges filmes kompozíció, hanem annak ellenőrz�
 - olvasható marad-e a sziluett;
 - természetes-e a követési távolság;
 - nem túl erős-e a nézetváltás;
-- a fix világirányú WASD továbbra is jól használható-e.
+- a képernyőirányú WASD forgó kamerával is következetes marad-e.
 
 A végleges értékeket csak Akira proxyval végzett kézi review után zárjuk le.

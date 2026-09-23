@@ -41,7 +41,7 @@ func _ready() -> void:
     _mesh_box(surfaces, "MainStreet", Vector3(0, 0.025, -47), Vector3(8.2, 0.08, 94), street)
     _mesh_box(surfaces, "FarBankPath", Vector3(0, 0.025, -120), Vector3(7, 0.08, 40), street)
     _mesh_box(surfaces, "ForestRoad", Vector3(0, 0.025, -167), Vector3(6.4, 0.08, 54), street)
-    _mesh_box(surfaces, "AkiraLane", Vector3(-5.7, 0.03, -126), Vector3(10, 0.08, 3.2), street)
+    _mesh_box(surfaces, "AkiraLane", Vector3(5.7, 0.03, -122), Vector3(10, 0.08, 3.2), street)
     _mesh_box(surfaces, "ForestWestLane", Vector3(-8, 0.03, -156), Vector3(16, 0.08, 3.4), street)
     _mesh_box(surfaces, "ForestEastLane", Vector3(8, 0.03, -176), Vector3(16, 0.08, 3.4), street)
     _mesh_box(surfaces, "ForestDeepLane", Vector3(-8, 0.03, -190), Vector3(16, 0.08, 3.4), street)
@@ -49,30 +49,26 @@ func _ready() -> void:
     _mesh_box(surfaces, "RightAlley", Vector3(6, 0.03, -34), Vector3(10, 0.08, 3.2), street)
     _mesh_box(surfaces, "UpperLeftAlley", Vector3(-6.5, 0.03, -54), Vector3(11, 0.08, 3.2), street)
     _mesh_box(surfaces, "UpperRightAlley", Vector3(6.5, 0.03, -80), Vector3(11, 0.08, 3.2), street)
-    _mesh_box(surfaces, "HouseApproach", Vector3(3.8, 0.03, -89), Vector3(4.4, 0.08, 3.2), street)
+    _mesh_box(surfaces, "HouseApproach", Vector3(3.8, 0.03, -122), Vector3(4.4, 0.08, 3.2), street)
 
     var houses := _node("Houses", self)
     var house_layout := [
         [Vector3(-7.1, 1.8, -8), -4.0], [Vector3(7.3, 1.8, -12), 5.0],
-        [Vector3(-7.4, 1.8, -27), 6.0], [Vector3(7.0, 1.8, -107), -5.0],
+        [Vector3(-7.4, 1.8, -27), 6.0], [Vector3(-7.0, 1.8, -107), -5.0],
         [Vector3(-7.2, 1.8, -45), -6.0], [Vector3(7.4, 1.8, -47), 4.0],
         [Vector3(-7.4, 1.8, -61), 5.0], [Vector3(7.2, 1.8, -70), 4.0],
         [Vector3(-7.3, 1.8, -82), -5.0], [Vector3(7.3, 1.8, -89), 6.0],
         [Vector3(-13.1, 1.8, -18), 3.0], [Vector3(13.1, 1.8, -34), -4.0],
         [Vector3(-13.1, 1.8, -54), 5.0], [Vector3(13.1, 1.8, -88), -3.0],
-        [Vector3(-8.0, 1.8, -126), 3.0]
+        [Vector3(7.0, 1.8, -122), 3.0]
     ]
     for index in house_layout.size():
         var home_name := "House%02d" % (index + 1)
         match index:
             9:
-                home_name = "KatsuroMiyakoHome"
-            3:
                 home_name = "ShionHome"
-            13:
-                home_name = "HanaHome"
             14:
-                home_name = "AkiraHome"
+                home_name = "MiyakoAkiraHome"
         var house := _static_box(
             houses,
             home_name,
@@ -83,17 +79,14 @@ func _ready() -> void:
         )
         var cap := _mesh_box(house, "Roof", Vector3(0, 2.15, 0), Vector3(5.4, 0.55, 6.6), roof)
         cap.rotation.z = deg_to_rad(5.0 if index % 2 == 0 else -5.0)
-        if index == 9:
-            # The entrance faces the street so Miyako is visible; the porch faces Shion across the stream.
+        if index == 14:
+            # Miyako and Akira share the farthest house; its porch looks back across the stream.
             _mesh_box(house, "KatsuroDoor", Vector3(-2.48, -0.55, -0.7), Vector3(0.08, 2.30, 1.28), wood)
             _mesh_box(house, "DoorInset", Vector3(-2.53, -0.55, -0.7), Vector3(0.035, 2.12, 1.09), roof)
-            _mesh_box(house, "StreamPorch", Vector3(0, -1.68, -3.35), Vector3(2.6, 0.16, 0.75), wood)
-        elif index == 3:
-            _mesh_box(house, "ShionDoor", Vector3(0, -0.55, 3.08), Vector3(1.28, 2.30, 0.08), wood)
-            _mesh_box(house, "DoorInset", Vector3(0, -0.55, 3.13), Vector3(1.09, 2.12, 0.035), roof)
-        elif index == 14:
-            _mesh_box(house, "AkiraDoor", Vector3(2.48, -0.55, -0.25), Vector3(0.08, 2.30, 1.28), wood)
-            _mesh_box(house, "DoorInset", Vector3(2.53, -0.55, -0.25), Vector3(0.035, 2.12, 1.09), roof)
+            _mesh_box(house, "StreamPorch", Vector3(0, -1.68, 3.35), Vector3(2.6, 0.16, 0.75), wood)
+        elif index == 9:
+            _mesh_box(house, "ShionDoor", Vector3(0, -0.55, -3.08), Vector3(1.28, 2.30, 0.08), wood)
+            _mesh_box(house, "DoorInset", Vector3(0, -0.55, -3.13), Vector3(1.09, 2.12, 0.035), roof)
 
     _build_forest(wall, roof, bark, needles)
 
@@ -144,7 +137,7 @@ func _ready() -> void:
         second.set("whisper_partner", first)
 
     var meeting := _node("MiyakoMeeting", self)
-    meeting.position = Vector3(0, 0, -89)
+    meeting.position = Vector3(0, 0, -122)
     _villager(meeting, "MiyakoMarker", Vector3(2.9, 0, 0.8), 3, 0, 1.4, true, 48.0)
 
     var trigger := _area("MiyakoMeetTrigger", Vector3(0.7, 1.5, 0), Vector3(6.4, 3, 5.0), meeting)
@@ -159,14 +152,15 @@ func _ready() -> void:
     entry_trigger.body_entered.connect(_on_street_entry_trigger_body_entered)
 
     var zones := _node("CameraZones", self)
-    _camera_zone(zones, "StreetEntry", Vector3(0, 3, -6), Vector3(18, 12, 16), 40, 10.0, Vector3(0.6, 6.1, 9.0), -29.0)
-    _camera_zone(zones, "MainStreet", Vector3(0, 3, -34), Vector3(20, 12, 44), 50, -15.0, Vector3(-0.8, 6.2, 8.8), -27.0)
-    _camera_zone(zones, "InnerStreet", Vector3(0, 3, -67), Vector3(22, 12, 34), 55, -8.0, Vector3(0.7, 5.9, 8.5), -25.0)
-    _camera_zone(zones, "MiyakoCourt", Vector3(0, 3, -89), Vector3(19, 12, 14), 60, -12.0, Vector3(0, 5.8, 8.8), -23.0, Vector3(0.6, 0, -0.3))
-    _camera_zone(zones, "StreamBridge", Vector3(0, 3, -98), Vector3(20, 12, 11), 45, -4.0, Vector3(0, 6.0, 8.8), -25.0)
-    _camera_zone(zones, "VillageBeyond", Vector3(0, 3, -121), Vector3(44, 12, 42), 55, 5.0, Vector3(0.4, 6.0, 8.8), -26.0)
-    _camera_zone(zones, "ForestRoad", Vector3(0, 3, -168), Vector3(52, 12, 76), 52, -6.0, Vector3(0, 6.9, 9.8), -29.0)
-    _camera_zone(zones, "MiyakoFocus", Vector3(0, 3, -89), Vector3(14, 12, 12), 80, -20.0, Vector3(-1.5, 5.4, 8.8), -20.0, Vector3(1.6, 0, -0.4), false)
+    _camera_zone(zones, "StreetEntry", Vector3(0, 3, -6), Vector3(18, 12, 16), 40, 0.0, Vector3(0.6, 6.1, 9.0), -29.0)
+    _camera_zone(zones, "MainStreet", Vector3(0, 3, -34), Vector3(20, 12, 44), 50, 0.0, Vector3(-0.8, 6.2, 8.8), -27.0)
+    _camera_zone(zones, "InnerStreet", Vector3(0, 3, -67), Vector3(22, 12, 34), 55, 0.0, Vector3(0.7, 5.9, 8.5), -25.0)
+    _camera_zone(zones, "VillageEdge", Vector3(0, 3, -88), Vector3(20, 12, 18), 55, 0.0, Vector3(0, 5.9, 8.7), -25.0)
+    _camera_zone(zones, "StreamBridge", Vector3(0, 3, -98), Vector3(20, 12, 11), 59, 0.0, Vector3(0, 6.0, 8.8), -25.0)
+    _camera_zone(zones, "MiyakoCourt", Vector3(0, 3, -122), Vector3(19, 12, 18), 60, 0.0, Vector3(0, 5.8, 8.8), -23.0, Vector3(0.6, 0, -0.3))
+    _camera_zone(zones, "VillageBeyond", Vector3(0, 3, -121), Vector3(44, 12, 42), 55, 0.0, Vector3(0.4, 6.0, 8.8), -26.0)
+    _camera_zone(zones, "ForestRoad", Vector3(0, 3, -168), Vector3(52, 12, 76), 52, 0.0, Vector3(0, 6.9, 9.8), -29.0)
+    _camera_zone(zones, "MiyakoFocus", Vector3(0, 3, -122), Vector3(14, 12, 12), 80, -20.0, Vector3(-1.5, 5.4, 8.8), -20.0, Vector3(1.6, 0, -0.4), false)
     (zones.get_node("MiyakoFocus") as Area3D).remove_from_group("camera_zones")
 
     var ambient := Node.new()

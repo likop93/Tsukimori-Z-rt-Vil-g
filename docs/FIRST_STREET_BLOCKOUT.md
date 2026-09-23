@@ -62,8 +62,12 @@ A korábbi bővítés tizennégy házat, négy mellékutcát, hat lámpát és n
 
 ## Történet szerinti átrendezés — 2026-09-23
 
-A pontosított sorrend szerint Akira a falu egyik szélén érkezik meg, majd végigsétál a lakott utcán. Négy falusi pár felé fordul, összenéz és suttogó mozdulatot tesz, ahogy elhalad mellettük. Katsuro és Miyako háza a **távolabbi** patakparti peremen áll, Shioné szemközt a túlparton, Hana háza Miyako mellett. Akira csak a falun való áthaladás után találkozik Miyakóval. A patak megszakítja a talaj ütközőfelületét, a híd viszont járható; a partokat alacsony korlát védi. A többi szereplő otthonát csak a történetük szerinti elhelyezés tisztázása után jelöljük ki. Lásd: `docs/VILLAGE_LAYOUT.md`.
+A falusiak reakcióihoz Akira a falu egyik szélén érkezik meg, majd végigsétál a lakott utcán. Négy falusi pár felé fordul, összenéz és suttogó mozdulatot tesz, ahogy elhalad mellettük. A patak megszakítja a talaj ütközőfelületét, a híd viszont járható; a partokat alacsony korlát védi. A később pontosított házhelyeket a `docs/VILLAGE_LAYOUT.md` tartalmazza.
 
 ## Iránykövető kamera és túlparti folytatás — 2026-09-23
 
-A felhasználói bejárás megmutatta, hogy a rögzített utcai kameraszögek nem követték Akira fordulását, és a ház takarta Miyakót. Az utcai kamerák most Akira haladási iránya szerint fordulnak, míg a találkozás külön, oldalról nyitott kameraképet kap. Miyako az utcai bejárat előtt áll; a patakra néző tornác megmarad. A túlparton a közelebbi ház Shioné, a távolabbi Akiráé. Akira háza után járható erdei főút, három mellékút, cédrusok és három névtelen ház jelölik a továbbépíthető tájat.
+A felhasználói bejárás megmutatta, hogy a rögzített utcai kameraszögek nem követték Akira fordulását, és a ház takarta Miyakót. Az utcai kamerák Akira haladási iránya szerint fordulnak, míg a találkozás külön, oldalról nyitott kameraképet kap. Akira későbbi lakóhelye után járható erdei főút, három mellékút, cédrusok és három névtelen ház jelölik a továbbépíthető tájat. A házakat a következő pontosítás ismét átrendezte.
+
+## Híd utáni közös otthon és vezérlés — 2026-09-23
+
+A legutóbbi bejárás után a szabadon forduló kamera mellé a WASD is képernyőirányú lett. Új billentyűálláskor rögzíti a kamera alapirányait, így ugyanazon gomb nyomva tartása alatt nincs visszacsatolt körbefordulás. Shion a patak falusi partján lakik. A híd utáni első ház névtelen; a második, távolabbi Katsuro egykori háza Miyako és Akira közös otthona, a találkozás ott történik. Hana házát a későbbi történeti falutérképhez kötjük. Az erdei szakasz az otthon után folytatódik.

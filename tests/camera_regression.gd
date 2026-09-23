@@ -39,6 +39,7 @@ func check_shot(x: float, z: float, yaw: float, offset: Vector3, pitch: float) -
 
 func check_control(keys: Array, expected: Vector3, x: float, z: float) -> void:
     await settle_at(x, z)
+    var expected_world := Basis(Vector3.UP, rig.rotation.y) * expected.normalized()
     var start := player.global_position
     for key in keys:
         set_key(key, true)
@@ -48,7 +49,7 @@ func check_control(keys: Array, expected: Vector3, x: float, z: float) -> void:
 
     var displacement := player.global_position - start
     displacement.y = 0.0
-    expect(displacement.normalized().distance_to(expected.normalized()) < 0.001, "WASD world direction changed")
+    expect(displacement.normalized().distance_to(expected_world) < 0.01, "WASD did not follow the screen axes")
     expect(absf(Vector2(player.velocity.x, player.velocity.z).length() - player.move_speed) < 0.01, "Cardinal/diagonal speed differs")
 
     var facing := player.get_node("VisualRoot").global_basis.z as Vector3
@@ -80,19 +81,22 @@ func run_checks() -> void:
         await check_control([KEY_D], Vector3.RIGHT, point.x, point.y)
         await check_control([KEY_W, KEY_D], (Vector3.FORWARD + Vector3.RIGHT).normalized(), point.x, point.y)
 
-    # The camera may turn through a zone, but holding W must remain world-forward.
+    # Keep the sampled screen direction through a zone transition while W stays down.
     await settle_at(0.0, 15.0)
+    var initial_forward := Basis(Vector3.UP, rig.rotation.y) * Vector3.FORWARD
     set_key(KEY_W, true)
-    var start_x := player.global_position.x
+    var start_position := player.global_position
     var max_direction_error := 0.0
     for frame in range(120):
         await physics_frame
         var motion := Vector3(player.velocity.x, 0.0, player.velocity.z)
         if motion.length() > 0.01:
-            max_direction_error = maxf(max_direction_error, motion.normalized().distance_to(Vector3.FORWARD))
+            max_direction_error = maxf(max_direction_error, motion.normalized().distance_to(initial_forward))
     set_key(KEY_W, false)
-    expect(max_direction_error < 0.001, "Camera transition steered held W")
-    expect(absf(player.global_position.x - start_x) < 0.02, "Held W drifted sideways")
+    expect(max_direction_error < 0.01, "Camera transition steered held W")
+    var travel := player.global_position - start_position
+    travel.y = 0.0
+    expect(travel.normalized().distance_to(initial_forward) < 0.01, "Held W drifted sideways")
     expect(absf(rig.rotation.y) > deg_to_rad(8.0), "Traversal did not activate a directed shot")
     await frames(30)
 

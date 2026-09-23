@@ -44,7 +44,7 @@ func run_checks() -> void:
     camera_rig = player.get_node("CameraPivot")
     await frames(8)
 
-    expect(street.get_node("Houses").get_child_count() == 15, "Expected fourteen village houses and Akira's house")
+    expect(street.get_node("Houses").get_child_count() == 15, "Expected thirteen village houses and two houses past the stream")
     expect(street.get_node("ForestHomes").get_child_count() == 3, "Expected three scattered forest houses")
     expect(street.get_node("ForestTrees").get_child_count() >= 15, "Forest is missing its cedar blockouts")
     expect(street.get_node("NPCSlots").get_child_count() == 8, "Expected eight villager slots")
@@ -53,10 +53,9 @@ func run_checks() -> void:
     expect(street.has_node("StreetSurface/RightAlley"), "Right alley is missing")
     expect(street.has_node("StreetSurface/UpperLeftAlley"), "Upper left alley is missing")
     expect(street.has_node("StreetSurface/UpperRightAlley"), "Upper right alley is missing")
-    expect(street.has_node("Houses/KatsuroMiyakoHome/KatsuroDoor"), "Miyako's stream-facing house is missing")
-    expect(street.has_node("Houses/ShionHome/ShionDoor"), "Shion's house across the stream is missing")
-    expect(street.has_node("Houses/AkiraHome/AkiraDoor"), "Akira's house past Shion's is missing")
-    expect(street.has_node("Houses/HanaHome"), "Hana's neighboring house is missing")
+    expect(street.has_node("Houses/MiyakoAkiraHome/KatsuroDoor"), "Miyako and Akira's shared entrance is missing")
+    expect(street.has_node("Houses/ShionHome/ShionDoor"), "Shion's house by the near bank is missing")
+    expect(street.has_node("Houses/House04"), "First, unnamed house past the stream is missing")
     expect(street.has_node("Stream/Water"), "Stream water is missing")
     expect(street.has_node("Stream/Bridge/CollisionShape3D"), "Walkable bridge is missing")
     expect(street.has_node("MiyakoMeeting/MiyakoMarker"), "Miyako meeting marker is missing")
@@ -66,14 +65,12 @@ func run_checks() -> void:
     expect(street.has_node("AmbientMotion"), "First street ambient controller is missing")
     expect(street.get_node("Ground") is StaticBody3D, "Street ground has no static collision")
     expect(street.get_node("FarBankGround") is StaticBody3D, "Far bank ground has no static collision")
-    var miyako_home := street.get_node("Houses/KatsuroMiyakoHome") as Node3D
+    var miyako_home := street.get_node("Houses/MiyakoAkiraHome") as Node3D
     var shion_home := street.get_node("Houses/ShionHome") as Node3D
-    var hana_home := street.get_node("Houses/HanaHome") as Node3D
-    var akira_home := street.get_node("Houses/AkiraHome") as Node3D
+    var first_far_home := street.get_node("Houses/House04") as Node3D
     var water := street.get_node("Stream/Water") as Node3D
-    expect(miyako_home.position.z > water.position.z and shion_home.position.z < water.position.z, "Miyako and Shion must live on opposite banks")
-    expect(akira_home.position.z < shion_home.position.z, "Akira must live farther past the stream than Shion")
-    expect(absf(miyako_home.position.z - hana_home.position.z) < 3.0, "Hana must live next to Miyako")
+    expect(shion_home.position.z > water.position.z and miyako_home.position.z < water.position.z, "Miyako and Shion must live on opposite banks")
+    expect(first_far_home.position.z < water.position.z and miyako_home.position.z < first_far_home.position.z, "Miyako and Akira must share the farther of two houses past the bridge")
     for villager in street.get_node("NPCSlots").get_children():
         expect(villager.position.z > miyako_home.position.z + 10.0, "%s is not on Akira's approach through the village" % villager.name)
 
@@ -87,7 +84,7 @@ func run_checks() -> void:
     expect(street.get_node("MiyakoMeeting/MiyakoMarker").has_node("BodyRoot"), "Miyako marker did not build a humanoid proxy")
 
     await settle_at(Vector3(0, 0.2, -38))
-    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(10.0))) < 0.002, "Street entry camera did not settle")
+    expect(absf(camera_rig.rotation.y) < 0.002, "Street entry camera did not settle")
     expect(root.get_node("GameState").has_flag("entered_first_street"), "Street entry trigger did not set its flag")
     expect(not street.meeting_reached, "Miyako encounter started before reaching the house")
 
@@ -97,17 +94,32 @@ func run_checks() -> void:
     expect(not street.meeting_reached, "Miyako appeared before Akira crossed the village")
 
     await settle_at(Vector3(0, 0.2, -63))
-    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-15.0))) < 0.002, "Main street camera did not settle")
+    expect(absf(camera_rig.rotation.y) < 0.002, "Main street camera did not settle")
 
     await settle_at(Vector3(0, 0.2, -82))
     expect(root.get_node("GameState").has_flag("heard_village_whispers"), "Villagers did not whisper as Akira passed")
     expect(not street.meeting_reached, "Miyako encounter started in the middle of the village")
 
     await settle_at(Vector3(0, 0.2, -105))
-    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-8.0))) < 0.002, "Inner street camera did not settle")
+    expect(absf(camera_rig.rotation.y) < 0.002, "Inner street camera did not settle")
     expect(not street.meeting_reached, "Miyako encounter started before the far edge of the village")
 
     await settle_at(Vector3(0, 0.2, -121))
+    expect(not street.meeting_reached, "Miyako appeared before crossing the bridge")
+    expect(absf(camera_rig.rotation.y) < 0.002, "Near-bank camera did not settle")
+
+    await settle_at(Vector3(0, 0.2, -130))
+    expect(player.is_on_floor(), "Bridge has no walkable collision over the stream")
+    expect(not street.meeting_reached, "Miyako appeared on the bridge")
+    expect(absf(camera_rig.rotation.y) < 0.002, "Stream bridge camera did not settle")
+
+    await settle_at(Vector3(0, 0.2, -139))
+    expect(player.is_on_floor(), "First far-bank house is not reachable")
+    expect(not street.meeting_reached, "Miyako appeared before the farther shared home")
+
+    var approach_start := player.global_position
+    await hold_key(KEY_W, 240)
+    expect(player.global_position.z < approach_start.z - 9.0 and absf(player.global_position.x) < 0.6, "W did not lead from the first far-bank house to the shared home")
     expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-20.0))) < 0.002, "Miyako encounter camera did not settle")
     var camera := camera_rig.get_node("Camera3D") as Camera3D
     var miyako := street.get_node("MiyakoMeeting/MiyakoMarker") as Node3D
@@ -126,28 +138,29 @@ func run_checks() -> void:
     await frames(240)
     expect(root.get_node("GameState").has_flag("met_miyako"), "Miyako encounter did not complete")
     expect(not player.get("_controls_locked"), "Movement stayed locked after Miyako encounter")
-    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-12.0))) < 0.002, "Miyako court camera did not return")
+    expect(absf(camera_rig.rotation.y) < 0.002, "Miyako court camera did not return")
     expect(world.get_node("HUD/Margin/VBox/Status").text.contains("Miyako"), "Miyako meeting status was not shown")
 
-    await settle_at(Vector3(0, 0.2, -130))
-    expect(player.is_on_floor(), "Bridge has no walkable collision over the stream")
-    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-4.0))) < 0.002, "Stream bridge camera did not settle")
-
-    await settle_at(Vector3(0, 0.2, -150))
-    expect(player.is_on_floor(), "Shion's bank is not walkable")
-    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(5.0))) < 0.002, "Far bank camera did not settle")
-
     await settle_at(Vector3(0, 0.2, -158))
-    expect(player.is_on_floor(), "Akira's house is not reachable")
+    expect(player.is_on_floor(), "Miyako and Akira's house is not reachable")
 
     await settle_at(Vector3(0, 0.2, -182))
     expect(player.is_on_floor(), "Forest road is not walkable")
-    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-6.0))) < 0.002, "Forest camera did not settle")
+    expect(absf(camera_rig.rotation.y) < 0.002, "Forest camera did not settle")
+    var start_right := player.global_position
+    var screen_right := Basis(Vector3.UP, camera_rig.rotation.y) * Vector3.RIGHT
     await hold_key(KEY_D, 80)
-    expect(player.global_position.x > 3.0, "Akira cannot take the right-hand forest road")
-    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-96.0))) < 0.01, "Camera did not move behind Akira when turning right")
+    var right_motion := player.global_position - start_right
+    right_motion.y = 0.0
+    expect(right_motion.normalized().distance_to(screen_right) < 0.03, "Holding D changed world direction while the camera turned")
+    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-90.0))) < 0.01, "Camera did not move behind Akira when turning right")
+    var start_forward := player.global_position
+    var screen_forward := Basis(Vector3.UP, camera_rig.rotation.y) * Vector3.FORWARD
     await hold_key(KEY_W, 80)
-    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-6.0))) < 0.01, "Camera did not follow Akira when turning forward")
+    var forward_motion := player.global_position - start_forward
+    forward_motion.y = 0.0
+    expect(forward_motion.normalized().distance_to(screen_forward) < 0.03, "W did not move Akira toward the top of the rotated view")
+    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-90.0))) < 0.02, "Following the camera caused a control feedback spin")
     expect(player.rotation.is_zero_approx(), "Street camera changed the player root rotation")
 
     print("First street regression: %s" % ("PASS" if failures == 0 else "%s failures" % failures))

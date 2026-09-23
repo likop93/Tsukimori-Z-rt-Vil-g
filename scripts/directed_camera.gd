@@ -13,6 +13,7 @@ var _default_offset: Vector3
 var _default_pitch: float
 var _default_yaw: float
 var _travel_yaw := 0.0
+var _has_travel_heading := false
 
 func _ready() -> void:
     _follow_offset = position
@@ -44,13 +45,17 @@ func _physics_process(delta: float) -> void:
         if active_zone.follow_facing:
             var movement := (player as CharacterBody3D).velocity
             if Vector2(movement.x, movement.z).length() > 0.2:
-                # World-forward (-Z) keeps the authored shot; other directions orbit behind Akira.
                 _travel_yaw = atan2(-movement.x, -movement.z)
-            target_yaw += _travel_yaw
+                _has_travel_heading = true
+            if _has_travel_heading:
+                # Follow the held world heading without adding a zone offset each frame.
+                target_yaw = _travel_yaw
         else:
             _travel_yaw = 0.0
+            _has_travel_heading = false
     else:
         _travel_yaw = 0.0
+        _has_travel_heading = false
 
     # Exponential smoothing keeps the response consistent across frame rates.
     var follow_weight := 1.0 - exp(-follow_speed * delta)

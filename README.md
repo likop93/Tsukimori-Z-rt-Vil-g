@@ -13,7 +13,7 @@ A kapun túli első falurész:
 
 Jelenlegi játszható ív:
 
-**hegyi ösvény → első furcsa jel → kilátópont → kapu → falusiak között végigjárt utca → Miyako háza → patakhíd → Shion háza → Akira háza → erdei utak**
+**hegyi ösvény → első furcsa jel → kilátópont → kapu → falusiak között végigjárt utca → Shion háza → patakhíd → Miyako és Akira közös háza → erdei utak**
 
 ## Már működő alapok
 
@@ -26,7 +26,7 @@ Jelenlegi játszható ív:
 - lágyabb testfordulás és finom body lean
 - 3/4-es rendezett követőkamera
 - területenkénti kamera-kompozíciók
-- fix világirányú WASD
+- képernyőirányú WASD; a lenyomva tartott irány stabil marad kamera-fordulás közben
 - Mountain Path Blockout 2.0
 - ambient cédrus- és ködmozgás
 - papírcsík-furcsaság
@@ -34,9 +34,9 @@ Jelenlegi játszható ív:
 - 月守村 — TSUKIMORI útjelző
 - kapu előtti szirom/tér-anomália
 - „Szél?” reakció
-- Tsukimori kibővített falurésze tizennégy házzal, négy mellékutcával és Akira házával a túlparton
-- a patak és járható híd a falu túlsó peremén; Miyako és Katsuro háza a közeli parton, Shioné és a távolabbi Akiráé a túlparton, Hana Miyako szomszédságában
-- Akira háza után cédruserdő, elágazó utak és három névtelen, elszórt ház
+- Tsukimori kibővített falurésze tizenhárom faluoldali házzal, két túlparti házzal és négy mellékutcával
+- a patak és járható híd a falu túlsó peremén; Shion a falusi oldalon, Miyako és Akira közös otthona a túlpart távolabbi háza
+- a közös ház után cédruserdő, elágazó utak és három névtelen, elszórt ház
 - hat animált fényű utcai lámpa
 - mozgó textil-, szirom- és növényproxyk
 - nyolc animált humanoid falusi proxy
@@ -57,7 +57,7 @@ A hegyi út stabil alap.
 
 **Tsukimori — Miyako első találkozása**
 
-Most a kamera iránykövetését, Miyako láthatóságát és a patakon túli, erdőbe vezető új útvonalat vizsgáljuk. A részleteket a `docs/MIYAKO_FIRST_ENCOUNTER.md` és a `docs/VILLAGE_LAYOUT.md` tartalmazza.
+Most a képernyőirányú irányítást, a híd utáni találkozást, Miyako láthatóságát és az erdőbe vezető útvonalat vizsgáljuk. A részleteket a `docs/MIYAKO_FIRST_ENCOUNTER.md` és a `docs/VILLAGE_LAYOUT.md` tartalmazza.
 
 ## Godot asset stratégia
 
@@ -76,7 +76,7 @@ Az asseteket először külön tesztjelenetben próbáljuk ki. Nem cserélünk l
 ## Irányítás
 
 - W / A / S / D — mozgás
-- a mozgás világirányú, a kamera nem téríti el a WASD irányait
+- a WASD a képen látható irányok szerint mozgat; egy gombnyomás alatt a kamera fordulása nem görbíti el az útvonalat
 
 ## Asset szabály
 
