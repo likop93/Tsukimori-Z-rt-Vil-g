@@ -1,5 +1,7 @@
 extends Node3D
 
+enum Reaction { AMBIENT, WATCH, WHISPER, HUSH }
+
 @export var variant: int = 0
 @export var idle_style: int = 0
 @export var phase_offset: float = 0.0
@@ -10,6 +12,8 @@ var whisper_partner: Node3D
 var _rest_yaw := 0.0
 var _attention := 0.0
 var _time := 0.0
+var reaction_phase := Reaction.AMBIENT
+var _reaction_time_left := 0.0
 var _body_root: Node3D
 var _torso: Node3D
 var _head: Node3D
@@ -23,9 +27,24 @@ func _ready() -> void:
     _rest_yaw = rotation.y
     _build_proxy()
 
+func start_reaction(phase: int) -> void:
+    if is_miyako:
+        return
+    reaction_phase = phase
+    _reaction_time_left = 1.4 if phase == Reaction.WHISPER else 2.6
+
 func _process(delta: float) -> void:
     _time += delta
     var t := _time + phase_offset
+
+    if _reaction_time_left > 0.0:
+        _reaction_time_left -= delta
+        if _reaction_time_left <= 0.0:
+            if reaction_phase == Reaction.WHISPER:
+                reaction_phase = Reaction.HUSH
+                _reaction_time_left = 1.5
+            else:
+                reaction_phase = Reaction.AMBIENT
 
     if _body_root == null:
         return
@@ -79,14 +98,18 @@ func _react_to_passersby(delta: float, t: float) -> void:
         _head.rotation.z = 0.0
         return
 
-    # Follow Akira with the body; briefly turn to a neighbor when he passes.
+    # Each staged pair watches, whispers, then visibly falls quiet as he passes.
     var target := to_player
-    var whispering := whisper_partner != null and distance < 5.5 and sin(t * 1.7 + phase_offset) > 0.1
+    var whispering := reaction_phase == Reaction.WHISPER and whisper_partner != null
     if whispering:
         target = whisper_partner.global_position - global_position
         target.y = 0.0
     var target_yaw := atan2(-target.x, -target.z)
-    rotation.y = lerp_angle(_rest_yaw, target_yaw, _attention * (0.7 if whispering else 0.88))
+    if reaction_phase == Reaction.HUSH:
+        target_yaw = _rest_yaw
+        _head.rotation.x += deg_to_rad(11.0) * _attention
+    var attentive_yaw := lerp_angle(_rest_yaw, target_yaw, _attention * (0.78 if whispering else 0.88))
+    rotation.y = lerp_angle(rotation.y, attentive_yaw, 1.0 - exp(-6.0 * delta))
     _head.rotation.y += sin(t * 1.9) * deg_to_rad(5.0) * _attention
     _head.rotation.z = deg_to_rad(7.0) * _attention if whispering else 0.0
     if whispering:

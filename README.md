@@ -41,6 +41,7 @@ Jelenlegi játszható ív:
 - mozgó textil-, szirom- és növényproxyk
 - nyolc animált humanoid falusi proxy
 - a falun áthaladó Akirát figyelő és egymáshoz suttogó falusi párok
+- négy egymásra épülő, egyszeri falusi reakció és csendes átmenet a hídnál
 - Miyako külön humanoid proxyja Katsuro házának bejáratánál
 - haladási irányt követő utcai kamera és elkülönített találkozási kompozíció
 - az első találkozás külön kameraképe és a kánon szerinti első mondata
@@ -55,9 +56,9 @@ A hegyi út stabil alap.
 
 ### Aktuális review
 
-**Tsukimori — Miyako első találkozása**
+**Tsukimori — az első utca narratív bejárása**
 
-Most a képernyőirányú irányítást, a híd utáni találkozást, Miyako láthatóságát és az erdőbe vezető útvonalat vizsgáljuk. A részleteket a `docs/MIYAKO_FIRST_ENCOUNTER.md` és a `docs/VILLAGE_LAYOUT.md` tartalmazza.
+Most az utcai párok reakcióinak időzítését, a híd felé vezető átmenetet és Miyako első mondatához érkezést vizsgáljuk. Részletek: `docs/FIRST_STREET_NARRATIVE_PASS.md`, `docs/MIYAKO_FIRST_ENCOUNTER.md` és `docs/VILLAGE_LAYOUT.md`.
 
 ## Godot asset stratégia
 

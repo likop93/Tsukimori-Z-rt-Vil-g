@@ -3,10 +3,14 @@ extends Node3D
 const CameraZoneScript = preload("res://scripts/camera_zone.gd")
 const VillagerProxyScript = preload("res://scripts/villager_proxy.gd")
 const StreetAmbientScript = preload("res://scripts/street_ambient.gd")
+const REACTION_WATCH := 1
+const REACTION_WHISPER := 2
+const REACTION_HUSH := 3
 
 var meeting_reached := false
 var _encounter_state := 0
 var _encounter_player: CharacterBody3D
+var _experienced_beats: Array[bool] = [false, false, false, false]
 
 func _ready() -> void:
     var ground := _mat("VillageGround", Color(0.105, 0.115, 0.105))
@@ -143,10 +147,15 @@ func _ready() -> void:
     var trigger := _area("MiyakoMeetTrigger", Vector3(0.7, 1.5, 0), Vector3(6.4, 3, 5.0), meeting)
     trigger.body_entered.connect(_on_miyako_meet_trigger_body_entered)
 
-    var witness_trigger := _area("VillagersNoticeTrigger", Vector3(0, 1.5, -12), Vector3(8, 3, 5), self)
-    witness_trigger.body_entered.connect(_on_villagers_notice_trigger_body_entered)
-    var whisper_trigger := _area("VillagersWhisperTrigger", Vector3(0, 1.5, -50), Vector3(8, 3, 5), self)
-    whisper_trigger.body_entered.connect(_on_villagers_whisper_trigger_body_entered)
+    for index in range(4):
+        var first_position: Vector3 = npc_positions[index * 2]
+        var second_position: Vector3 = npc_positions[index * 2 + 1]
+        var pair_center := (first_position.z + second_position.z) * 0.5
+        var beat := _area("VillagerBeat%02d" % (index + 1), Vector3(0, 1.5, pair_center), Vector3(8, 3, 6), self)
+        beat.body_entered.connect(_on_villager_beat_body_entered.bind(index))
+
+    var bridge_beat := _area("BridgeQuietBeat", Vector3(0, 1.5, -97), Vector3(7, 3, 4), self)
+    bridge_beat.body_entered.connect(_on_bridge_quiet_beat_body_entered)
 
     var entry_trigger := _area("StreetEntryTrigger", Vector3(0, 1.5, -6), Vector3(8, 3, 5), self)
     entry_trigger.body_entered.connect(_on_street_entry_trigger_body_entered)
@@ -427,6 +436,9 @@ func _show_miyako_line() -> void:
         status.text = "Miyako • Enter / Space: tovább"
     var subtitle := get_node_or_null("../HUD/Subtitle") as Label
     if subtitle:
+        var previous_subtitle := get_parent().get("subtitle_tween") as Tween
+        if previous_subtitle != null and previous_subtitle.is_running():
+            previous_subtitle.kill()
         subtitle.text = "Miyako: Dr. Akira. Már vártam."
         subtitle.modulate.a = 0.0
         create_tween().tween_property(subtitle, "modulate:a", 1.0, 0.24)
@@ -456,16 +468,28 @@ func _on_street_entry_trigger_body_entered(body: Node3D) -> void:
     GameState.set_flag("entered_first_street", true)
     var status := get_node_or_null("../HUD/Margin/VBox/Status") as Label
     if status:
-        status.text = "TSUKIMORI • Első utca — AMBIENT PASS 1"
+        status.text = "TSUKIMORI • Első utca"
 
-func _on_villagers_notice_trigger_body_entered(body: Node3D) -> void:
-    if body == null or not body.is_in_group("player") or GameState.has_flag("noticed_by_villagers"):
+func _on_villager_beat_body_entered(body: Node3D, index: int) -> void:
+    if body == null or not body.is_in_group("player") or _experienced_beats[index]:
         return
-    GameState.set_flag("noticed_by_villagers", true)
-    get_parent().call("_show_subtitle", "Az utcán minden tekintet Akirát követi.", 2.2)
+    _experienced_beats[index] = true
+    var phases: Array[int] = [REACTION_WATCH, REACTION_WHISPER, REACTION_HUSH, REACTION_WHISPER]
+    var flags: Array[String] = ["noticed_by_villagers", "heard_village_whispers", "villagers_fall_silent", "last_village_whispers"]
+    var lines: Array[String] = [
+        "A beszélgetés abbamarad. Ketten Akira után néznek.",
+        "A következő pár összenéz és halkan összesúg.",
+        "Amint Akira közelebb ér, a két falusi elhallgat.",
+        "Még egy pillantás. A suttogás Akira mögött hal el."
+    ]
+    var slots := get_node("NPCSlots")
+    for offset in range(2):
+        slots.get_child(index * 2 + offset).call("start_reaction", phases[index])
+    GameState.set_flag(flags[index], true)
+    get_parent().call("_show_subtitle", lines[index], 2.25)
 
-func _on_villagers_whisper_trigger_body_entered(body: Node3D) -> void:
-    if body == null or not body.is_in_group("player") or GameState.has_flag("heard_village_whispers"):
+func _on_bridge_quiet_beat_body_entered(body: Node3D) -> void:
+    if body == null or not body.is_in_group("player") or GameState.has_flag("village_bridge_quiet"):
         return
-    GameState.set_flag("heard_village_whispers", true)
-    get_parent().call("_show_subtitle", "Két falusi összenéz, majd halkan összesúg.", 2.2)
+    GameState.set_flag("village_bridge_quiet", true)
+    get_parent().call("_show_subtitle", "A pataknál elmaradnak a pillantások. A hídon túl két ház áll.", 2.4)

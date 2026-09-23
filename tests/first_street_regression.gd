@@ -48,6 +48,9 @@ func run_checks() -> void:
     expect(street.get_node("ForestHomes").get_child_count() == 3, "Expected three scattered forest houses")
     expect(street.get_node("ForestTrees").get_child_count() >= 15, "Forest is missing its cedar blockouts")
     expect(street.get_node("NPCSlots").get_child_count() == 8, "Expected eight villager slots")
+    for index in range(1, 5):
+        expect(street.has_node("VillagerBeat%02d" % index), "Missing staged villager reaction %d" % index)
+    expect(street.has_node("BridgeQuietBeat"), "Missing quiet approach to the bridge")
     expect(street.get_node("Lanterns").get_child_count() == 6, "Expected six street lanterns")
     expect(street.has_node("StreetSurface/LeftAlley"), "Left alley is missing")
     expect(street.has_node("StreetSurface/RightAlley"), "Right alley is missing")
@@ -94,13 +97,15 @@ func run_checks() -> void:
     expect(not street.meeting_reached, "Miyako appeared before Akira crossed the village")
 
     await settle_at(Vector3(0, 0.2, -63))
+    expect(root.get_node("GameState").has_flag("heard_village_whispers"), "Second pair did not whisper")
     expect(absf(camera_rig.rotation.y) < 0.002, "Main street camera did not settle")
 
     await settle_at(Vector3(0, 0.2, -82))
-    expect(root.get_node("GameState").has_flag("heard_village_whispers"), "Villagers did not whisper as Akira passed")
+    expect(root.get_node("GameState").has_flag("villagers_fall_silent"), "Third pair did not fall quiet")
     expect(not street.meeting_reached, "Miyako encounter started in the middle of the village")
 
     await settle_at(Vector3(0, 0.2, -105))
+    expect(root.get_node("GameState").has_flag("last_village_whispers"), "Last pair did not react at the village edge")
     expect(absf(camera_rig.rotation.y) < 0.002, "Inner street camera did not settle")
     expect(not street.meeting_reached, "Miyako encounter started before the far edge of the village")
 
@@ -109,6 +114,7 @@ func run_checks() -> void:
     expect(absf(camera_rig.rotation.y) < 0.002, "Near-bank camera did not settle")
 
     await settle_at(Vector3(0, 0.2, -130))
+    expect(root.get_node("GameState").has_flag("village_bridge_quiet"), "The bridge did not close the village sequence")
     expect(player.is_on_floor(), "Bridge has no walkable collision over the stream")
     expect(not street.meeting_reached, "Miyako appeared on the bridge")
     expect(absf(camera_rig.rotation.y) < 0.002, "Stream bridge camera did not settle")
