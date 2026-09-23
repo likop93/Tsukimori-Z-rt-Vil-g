@@ -3,6 +3,7 @@ extends Node3D
 const CameraZoneScript = preload("res://scripts/camera_zone.gd")
 const VillagerProxyScript = preload("res://scripts/villager_proxy.gd")
 const StreetAmbientScript = preload("res://scripts/street_ambient.gd")
+const SharedHomeVisualScript = preload("res://scripts/shared_home_visual.gd")
 const REACTION_WATCH := 1
 const REACTION_WHISPER := 2
 const REACTION_HUSH := 3
@@ -85,15 +86,18 @@ func _ready() -> void:
             home_wall if index == 14 else wall,
             house_layout[index][1]
         )
-        _dress_house(house, roof, wood, plaster, stone, index)
         if index == 14:
-            # Miyako and Akira share the farthest house; its porch looks back across the stream.
-            _mesh_box(house, "KatsuroDoor", Vector3(-2.48, -0.55, -0.7), Vector3(0.08, 2.30, 1.28), wood)
-            _mesh_box(house, "DoorInset", Vector3(-2.53, -0.55, -0.7), Vector3(0.035, 2.12, 1.09), roof)
-            _mesh_box(house, "StreamPorch", Vector3(0, -1.68, 3.35), Vector3(2.6, 0.16, 0.75), wood)
-        elif index == 9:
-            _mesh_box(house, "ShionDoor", Vector3(0, -0.55, -3.08), Vector3(1.28, 2.30, 0.08), wood)
-            _mesh_box(house, "DoorInset", Vector3(0, -0.55, -3.13), Vector3(1.09, 2.12, 0.035), roof)
+            # The parent remains the same solid collider; this child owns only visible geometry.
+            (house.get_node("Mesh") as MeshInstance3D).visible = false
+            var shared_visual := Node3D.new()
+            shared_visual.name = "SharedHomeExterior"
+            shared_visual.set_script(SharedHomeVisualScript)
+            house.add_child(shared_visual)
+        else:
+            _dress_house(house, roof, wood, plaster, stone, index)
+            if index == 9:
+                _mesh_box(house, "ShionDoor", Vector3(0, -0.55, -3.08), Vector3(1.28, 2.30, 0.08), wood)
+                _mesh_box(house, "DoorInset", Vector3(0, -0.55, -3.13), Vector3(1.09, 2.12, 0.035), roof)
 
     _build_forest(wall, roof, wood, plaster, stone, bark, needles, darker_needles, plant)
 

@@ -38,6 +38,7 @@ Jelenlegi játszható ív:
 - a patak és járható híd a falu túlsó peremén; Shion a falusi oldalon, Miyako és Akira közös otthona a túlpart távolabbi háza
 - a közös ház után cédruserdő, elágazó utak és három névtelen, elszórt ház
 - lejtős tetők, favázas homlokzatok, papírablakok és külön bejárat a közös házon; réteges cédruskoronák és erdei aljnövényzet
+- Miyako és Akira közös otthonának kétszintes, sötét alkonyati vizuális prototípusa; külön F6 ellenőrző jelenettel
 - hat animált fényű utcai lámpa
 - mozgó textil-, szirom- és növényproxyk
 - nyolc animált humanoid falusi proxy
@@ -57,9 +58,9 @@ A hegyi út stabil alap.
 
 ### Aktuális review
 
-**Tsukimori — az első utca narratív bejárása**
+**Tsukimori — az első utca narratív bejárása és a közös ház vizuális prototípusa**
 
-Az utcai párok reakciói F5 review-n átmentek. Most a házak új sziluettjét, Miyako láthatóságát és az erdő részleteit vizsgáljuk. Részletek: `docs/ASSET_EVALUATION_PLAN.md`, `docs/FIRST_STREET_NARRATIVE_PASS.md`, `docs/MIYAKO_FIRST_ENCOUNTER.md` és `docs/VILLAGE_LAYOUT.md`.
+Az utcai párok reakciói F5 review-n átmentek. A közös ház első, kétszintes atmoszférikus prototípusa elkészült, most F5-ben a ház sziluettjét és Miyako láthatóságát ellenőrizzük. Részletek: `docs/ASSET_EVALUATION_PLAN.md`, `docs/FIRST_STREET_NARRATIVE_PASS.md`, `docs/MIYAKO_FIRST_ENCOUNTER.md`, `docs/VILLAGE_LAYOUT.md` és `docs/SHARED_HOME_PROTOTYPE.md`.
 
 ## Godot asset stratégia
 

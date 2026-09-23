@@ -58,9 +58,11 @@ func run_checks() -> void:
     expect(street.has_node("StreetSurface/RightAlley"), "Right alley is missing")
     expect(street.has_node("StreetSurface/UpperLeftAlley"), "Upper left alley is missing")
     expect(street.has_node("StreetSurface/UpperRightAlley"), "Upper right alley is missing")
-    expect(street.has_node("Houses/MiyakoAkiraHome/KatsuroDoor"), "Miyako and Akira's shared entrance is missing")
-    expect(street.has_node("Houses/MiyakoAkiraHome/RoofSlopeLeft"), "Shared home roof detail is missing")
-    expect(street.has_node("Houses/MiyakoAkiraHome/EntranceStep"), "Shared home entrance step is missing")
+    expect(street.has_node("Houses/MiyakoAkiraHome/SharedHomeExterior"), "Miyako and Akira's shared home visual is missing")
+    expect(street.has_node("Houses/MiyakoAkiraHome/SharedHomeExterior/KatsuroDoor"), "Miyako and Akira's shared entrance is missing")
+    expect(street.has_node("Houses/MiyakoAkiraHome/SharedHomeExterior/LowerRoofLeft"), "Shared home lower roof detail is missing")
+    expect(street.has_node("Houses/MiyakoAkiraHome/SharedHomeExterior/UpperRoofRidge"), "Shared home upper roof ridge is missing")
+    expect(street.has_node("Houses/MiyakoAkiraHome/SharedHomeExterior/DoorThreshold"), "Shared home entrance step is missing")
     expect(street.has_node("Houses/ShionHome/ShionDoor"), "Shion's house by the near bank is missing")
     expect(street.has_node("Houses/House04"), "First, unnamed house past the stream is missing")
     expect(street.has_node("Stream/Water"), "Stream water is missing")
@@ -78,6 +80,8 @@ func run_checks() -> void:
     var water := street.get_node("Stream/Water") as Node3D
     expect(shion_home.position.z > water.position.z and miyako_home.position.z < water.position.z, "Miyako and Shion must live on opposite banks")
     expect(first_far_home.position.z < water.position.z and miyako_home.position.z < first_far_home.position.z, "Miyako and Akira must share the farther of two houses past the bridge")
+    expect(not (miyako_home.get_node("Mesh") as MeshInstance3D).visible, "Shared home blockout mesh still covers the visual prototype")
+    expect(miyako_home.get_node("CollisionShape3D") is CollisionShape3D, "Shared home lost its original movement collider")
     for villager in street.get_node("NPCSlots").get_children():
         expect(villager.position.z > miyako_home.position.z + 10.0, "%s is not on Akira's approach through the village" % villager.name)
 

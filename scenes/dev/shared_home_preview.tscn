@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/shared_home_visual.gd" id="1_home"]
+
+[sub_resource type="PlaneMesh" id="GroundMesh"]
+size = Vector2(26, 26)
+
+[sub_resource type="StandardMaterial3D" id="GroundMat"]
+albedo_color = Color(0.11, 0.13, 0.14, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="AkiraMesh"]
+size = Vector3(0.48, 1.82, 0.33)
+
+[sub_resource type="StandardMaterial3D" id="AkiraMat"]
+albedo_color = Color(0.12, 0.12, 0.16, 1)
+
+[sub_resource type="BoxMesh" id="MiyakoMesh"]
+size = Vector3(0.43, 1.72, 0.32)
+
+[sub_resource type="StandardMaterial3D" id="MiyakoMat"]
+albedo_color = Color(0.30, 0.16, 0.28, 1)
+
+[sub_resource type="Environment" id="Dusk"]
+background_mode = 1
+background_color = Color(0.075, 0.09, 0.15, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.33, 0.38, 0.51, 1)
+ambient_light_energy = 0.8
+fog_enabled = true
+fog_light_color = Color(0.30, 0.34, 0.48, 1)
+fog_density = 0.009
+
+[node name="SharedHomePreview" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Dusk")
+
+[node name="DuskLight" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-47, -32, 0)
+light_color = Color(0.69, 0.62, 0.68, 1)
+light_energy = 0.68
+shadow_enabled = true
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("GroundMesh")
+material_override = SubResource("GroundMat")
+
+[node name="SharedHomeExterior" type="Node3D" parent="."]
+position = Vector3(0, 1.8, 0)
+script = ExtResource("1_home")
+
+[node name="AkiraHeightReference" type="MeshInstance3D" parent="."]
+position = Vector3(-5.2, 0.91, 1.4)
+mesh = SubResource("AkiraMesh")
+material_override = SubResource("AkiraMat")
+
+[node name="MiyakoHeightReference" type="MeshInstance3D" parent="."]
+position = Vector3(-4.1, 0.86, 0.8)
+mesh = SubResource("MiyakoMesh")
+material_override = SubResource("MiyakoMat")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(-9.8, 5.8, 9.4)
+rotation_degrees = Vector3(-13.6, -46.2, 0)
+current = true
+fov = 42.0

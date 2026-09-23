@@ -14,6 +14,7 @@
 | UI | PLACEHOLDER — subtitle prototype |
 | Tsukimori first street | NARRATIVE PASS REVIEW PASSED; ENVIRONMENT PASS — REVIEW |
 | Village houses / fences | PROCEDURAL FACADES / ROOFS — REVIEW |
+| Miyako + Akira shared home | TWO-STOREY ATMOSPHERIC PROTOTYPE — F5 REVIEW |
 | Forest cedars / undergrowth | LAYERED SILHOUETTES / FERNS — REVIEW |
 | Lanterns | BLOCKOUT + animated flicker |
 | Hanging cloth / petals / plants | ANIMATED BLOCKOUT |
