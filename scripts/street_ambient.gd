@@ -3,11 +3,13 @@ extends Node
 @export var lantern_flicker_strength: float = 0.12
 @export var cloth_sway_degrees: float = 4.0
 @export var petal_bob: float = 0.08
+@export var plant_sway_degrees: float = 3.0
 
 var _time := 0.0
 var _lights: Array[Dictionary] = []
 var _cloth: Array[Dictionary] = []
 var _petals: Array[Dictionary] = []
+var _plants: Array[Dictionary] = []
 
 func _ready() -> void:
     var street := get_parent()
@@ -52,6 +54,19 @@ func _ready() -> void:
                 })
                 index += 1
 
+    var plants := street.get_node_or_null("WindDetails/Plants")
+    if plants:
+        var index := 0
+        for child in plants.get_children():
+            var plant := child as Node3D
+            if plant:
+                _plants.append({
+                    "node": plant,
+                    "rotation": plant.rotation,
+                    "phase": float(index) * 0.88
+                })
+                index += 1
+
 func _process(delta: float) -> void:
     _time += delta
 
@@ -79,3 +94,10 @@ func _process(delta: float) -> void:
         petal.position.z = base_position.z + cos(_time * 0.36 + phase) * 0.13
         petal.rotation.y = base_rotation.y + _time * (0.25 + fmod(phase, 0.3))
         petal.rotation.z = base_rotation.z + sin(_time * 0.8 + phase) * 0.25
+
+    for data in _plants:
+        var plant := data["node"] as Node3D
+        var base_rotation: Vector3 = data["rotation"]
+        var phase: float = data["phase"]
+        plant.rotation.x = base_rotation.x + sin(_time * 0.78 + phase) * deg_to_rad(plant_sway_degrees * 0.45)
+        plant.rotation.z = base_rotation.z + sin(_time * 0.60 + phase * 1.4) * deg_to_rad(plant_sway_degrees)
