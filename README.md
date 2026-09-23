@@ -7,7 +7,7 @@ Godot 4.x alapú 2.5D narratív RPG vertical slice.
 Az első játszható hegyi szakasz technikai és animációs alapja **review-n átment**.
 
 A kapun túli első falurész:
-- **Blockout 1.0 elkészült**
+- **kibővített utcai blockout elkészült**
 - **Ambient Animation Pass 1 review-n átment**
 - **Miyako első találkozásának stagingje elkészült — review-ra kész**
 
@@ -34,10 +34,10 @@ Jelenlegi játszható ív:
 - 月守村 — TSUKIMORI útjelző
 - kapu előtti szirom/tér-anomália
 - „Szél?” reakció
-- Tsukimori első utcája hat házzal és két mellékutcával
-- négy animált fényű utcai lámpa
+- Tsukimori kibővített falurésze tizennégy házzal és négy mellékutcával
+- hat animált fényű utcai lámpa
 - mozgó textil-, szirom- és növényproxyk
-- hat animált humanoid falusi proxy
+- nyolc animált humanoid falusi proxy
 - Miyako külön humanoid proxyja Katsuro házának bejáratánál
 - három falusi kamera-kompozíció
 - az első találkozás külön kameraképe és a kánon szerinti első mondata
@@ -54,7 +54,7 @@ A hegyi út stabil alap.
 
 **Tsukimori — Miyako első találkozása**
 
-Most a megszólítás ritmusát, Miyako helyét és a visszatérő irányítást vizsgáljuk. A részleteket a `docs/MIYAKO_FIRST_ENCOUNTER.md` tartalmazza.
+Most a megszólítás ritmusát, Miyako beljebb helyezett házát, a közös kameraképet és a továbbjárható utcát vizsgáljuk. A részleteket a `docs/MIYAKO_FIRST_ENCOUNTER.md` tartalmazza.
 
 ## Godot asset stratégia
 

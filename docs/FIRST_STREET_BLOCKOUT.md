@@ -55,3 +55,7 @@ A vizuális review után Miyako első találkozásának stagingje következett. 
 A hat falusi proxy és az utcai ambient controller már működő kódként szerepelt a projektben. A review során a falusiak azonos alapirányát változatos, kézzel beállított testirányokra cseréltük, és három egyszerű hajsziluettet adtunk a falusi proxyknak. Az idle fázisok, a mozgó textil, növények, szirmok és a lámpafény meglévő működését megtartottuk.
 
 A vizuális review még nyitott: a teljes hegyi út felől végigjátszva kell megítélni az NPC-k és Miyako helyét, a kamera kompozícióját és a mozgás mértékét. A technikai módosítás önmagában nem jelent kreatív jóváhagyást.
+
+## Kibővített falurész — 2026-09-23
+
+A felhasználói végigjátszás szerint az eredeti utca jól futott, de Miyako a pálya szélére került. A bővített blockout tizennégy házat, négy házakhoz vezető mellékutcát, hat lámpát és nyolc falusi proxyt tartalmaz. Katsuro háza a nyolcadik ház; Miyako a bejárat előtt, a főutca felé áll. A járható talaj, a környezeti mozgás és a kamera továbbvezet a ház mögötti utcára. A végső térarányok vizuális review-ra várnak.

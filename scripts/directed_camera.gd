@@ -34,15 +34,17 @@ func _physics_process(delta: float) -> void:
     var target_offset := _default_offset
     var target_pitch := _default_pitch
     var target_yaw := _default_yaw
+    var target_focus := Vector3.ZERO
     if active_zone != null:
         target_offset = active_zone.camera_offset
         target_pitch = deg_to_rad(active_zone.pitch_degrees)
         target_yaw = deg_to_rad(active_zone.yaw_degrees)
+        target_focus = active_zone.focus_offset
 
     # Exponential smoothing keeps the response consistent across frame rates.
     var follow_weight := 1.0 - exp(-follow_speed * delta)
     var shot_weight := 1.0 - exp(-transition_speed * delta)
-    global_position = global_position.lerp(player.global_position + _follow_offset, follow_weight)
+    global_position = global_position.lerp(player.global_position + _follow_offset + target_focus, follow_weight)
     rotation.y = lerp_angle(rotation.y, target_yaw, shot_weight)
     camera.position = camera.position.lerp(target_offset, shot_weight)
     camera.rotation.x = lerp_angle(camera.rotation.x, target_pitch, shot_weight)

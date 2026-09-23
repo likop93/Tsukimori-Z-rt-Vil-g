@@ -12,7 +12,7 @@
 | Fog | BLOCKOUT + subtle ambient motion — REVIEW PASSED |
 | Lighting | BLOCKOUT |
 | UI | PLACEHOLDER — subtitle prototype |
-| Tsukimori first street | BLOCKOUT 1.0 + AMBIENT PASS 1 — REVIEW |
+| Tsukimori first street | EXTENDED BLOCKOUT + AMBIENT PASS 1 — REVIEW |
 | Village houses / fences | BLOCKOUT proxies |
 | Lanterns | BLOCKOUT + animated flicker |
 | Hanging cloth / petals / plants | ANIMATED BLOCKOUT |

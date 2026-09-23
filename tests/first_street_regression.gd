@@ -32,11 +32,14 @@ func run_checks() -> void:
     camera_rig = player.get_node("CameraPivot")
     await frames(8)
 
-    expect(street.get_node("Houses").get_child_count() == 6, "Expected six house blockouts")
-    expect(street.get_node("NPCSlots").get_child_count() == 6, "Expected six villager slots")
-    expect(street.get_node("Lanterns").get_child_count() == 4, "Expected four street lanterns")
+    expect(street.get_node("Houses").get_child_count() == 14, "Expected fourteen house blockouts")
+    expect(street.get_node("NPCSlots").get_child_count() == 8, "Expected eight villager slots")
+    expect(street.get_node("Lanterns").get_child_count() == 6, "Expected six street lanterns")
     expect(street.has_node("StreetSurface/LeftAlley"), "Left alley is missing")
     expect(street.has_node("StreetSurface/RightAlley"), "Right alley is missing")
+    expect(street.has_node("StreetSurface/UpperLeftAlley"), "Upper left alley is missing")
+    expect(street.has_node("StreetSurface/UpperRightAlley"), "Upper right alley is missing")
+    expect(street.has_node("Houses/House08/KatsuroDoor"), "Katsuro house entrance is missing")
     expect(street.has_node("MiyakoMeeting/MiyakoMarker"), "Miyako meeting marker is missing")
     expect(street.has_node("WindDetails/HangingCloth"), "Animated hanging cloth is missing")
     expect(street.has_node("WindDetails/Petals"), "Animated petals are missing")
@@ -60,7 +63,12 @@ func run_checks() -> void:
     expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-15.0))) < 0.002, "Main street camera did not settle")
 
     await settle_at(Vector3(0, 0.2, -84))
+    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-8.0))) < 0.002, "Inner street camera did not settle")
+    expect(not street.meeting_reached, "Miyako encounter started before reaching Katsuro house")
+
+    await settle_at(Vector3(0, 0.2, -104))
     expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(27.0))) < 0.002, "Miyako encounter camera did not settle")
+    expect(camera_rig.global_position.x - player.global_position.x > 1.0, "Miyako encounter camera did not frame the doorway")
     expect(root.get_node("GameState").has_flag("reached_miyako_meeting_space"), "Miyako meeting trigger did not set its flag")
     expect(street.meeting_reached, "Miyako meeting did not latch")
     expect(player.get("_controls_locked"), "Miyako encounter did not pause movement")
@@ -75,6 +83,10 @@ func run_checks() -> void:
     expect(not player.get("_controls_locked"), "Movement stayed locked after Miyako encounter")
     expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(18.0))) < 0.002, "Miyako court camera did not return")
     expect(world.get_node("HUD/Margin/VBox/Status").text.contains("Miyako"), "Miyako meeting status was not shown")
+
+    await settle_at(Vector3(0, 0.2, -121))
+    expect(player.is_on_floor(), "Street ended immediately after Miyako meeting")
+    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(5.0))) < 0.002, "Village continuation camera did not settle")
     expect(player.rotation.is_zero_approx(), "Street camera changed the player root rotation")
 
     print("First street regression: %s" % ("PASS" if failures == 0 else "%s failures" % failures))

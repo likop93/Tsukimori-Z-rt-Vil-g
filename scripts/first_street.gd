@@ -19,19 +19,25 @@ func _ready() -> void:
     var paper := _mat("PetalPaper", Color(0.88, 0.75, 0.77))
     var plant := _mat("VillagePlant", Color(0.11, 0.23, 0.13))
 
-    _static_box(self, "Ground", Vector3(0, -0.2, -27), Vector3(20, 0.4, 62), ground)
+    _static_box(self, "Ground", Vector3(0, -0.2, -50), Vector3(34, 0.4, 112), ground)
 
     var surfaces := _node("StreetSurface", self)
-    _mesh_box(surfaces, "MainStreet", Vector3(0, 0.025, -26), Vector3(7.2, 0.08, 55), street)
+    _mesh_box(surfaces, "MainStreet", Vector3(0, 0.025, -49), Vector3(8.2, 0.08, 102), street)
     _mesh_box(surfaces, "LeftAlley", Vector3(-6, 0.03, -18), Vector3(10, 0.08, 3.2), street)
     _mesh_box(surfaces, "RightAlley", Vector3(6, 0.03, -34), Vector3(10, 0.08, 3.2), street)
-    _mesh_box(surfaces, "MeetingPlaza", Vector3(0, 0.035, -51), Vector3(11.5, 0.08, 10), street)
+    _mesh_box(surfaces, "UpperLeftAlley", Vector3(-6.5, 0.03, -54), Vector3(11, 0.08, 3.2), street)
+    _mesh_box(surfaces, "UpperRightAlley", Vector3(6.5, 0.03, -80), Vector3(11, 0.08, 3.2), street)
+    _mesh_box(surfaces, "MeetingPlaza", Vector3(0, 0.035, -71), Vector3(11.5, 0.08, 11), street)
 
     var houses := _node("Houses", self)
     var house_layout := [
         [Vector3(-7.1, 1.8, -8), -4.0], [Vector3(7.3, 1.8, -12), 5.0],
         [Vector3(-7.4, 1.8, -27), 6.0], [Vector3(7.0, 1.8, -29), -5.0],
-        [Vector3(-7.2, 1.8, -45), -6.0], [Vector3(7.4, 1.8, -47), 4.0]
+        [Vector3(-7.2, 1.8, -45), -6.0], [Vector3(7.4, 1.8, -47), 4.0],
+        [Vector3(-7.4, 1.8, -61), 5.0], [Vector3(7.2, 1.8, -70), 4.0],
+        [Vector3(-7.3, 1.8, -82), -5.0], [Vector3(7.3, 1.8, -89), 6.0],
+        [Vector3(-13.1, 1.8, -18), 3.0], [Vector3(13.1, 1.8, -34), -4.0],
+        [Vector3(-13.1, 1.8, -54), 5.0], [Vector3(13.1, 1.8, -80), -3.0]
     ]
     for index in house_layout.size():
         var house := _static_box(
@@ -44,7 +50,7 @@ func _ready() -> void:
         )
         var cap := _mesh_box(house, "Roof", Vector3(0, 2.15, 0), Vector3(5.4, 0.55, 6.6), roof)
         cap.rotation.z = deg_to_rad(5.0 if index % 2 == 0 else -5.0)
-        if index == 5:
+        if index == 7:
             _mesh_box(house, "KatsuroDoor", Vector3(-2.48, -0.55, -1.15), Vector3(0.08, 2.30, 1.28), wood)
             _mesh_box(house, "DoorInset", Vector3(-2.53, -0.55, -1.15), Vector3(0.035, 2.12, 1.09), roof)
 
@@ -57,7 +63,9 @@ func _ready() -> void:
         Vector3(-3.8, 0, -5),
         Vector3(3.8, 0, -20),
         Vector3(-3.8, 0, -36),
-        Vector3(3.8, 0, -50)
+        Vector3(3.8, 0, -50),
+        Vector3(-3.8, 0, -67),
+        Vector3(3.8, 0, -86)
     ]
     for index in lantern_positions.size():
         _lantern(lanterns, index + 1, lantern_positions[index], wood, glow)
@@ -71,9 +79,11 @@ func _ready() -> void:
         Vector3(-2.9, 0, -24),
         Vector3(2.7, 0, -31),
         Vector3(-2.5, 0, -39),
-        Vector3(3.1, 0, -45)
+        Vector3(3.1, 0, -45),
+        Vector3(-2.9, 0, -61),
+        Vector3(2.7, 0, -84)
     ]
-    var npc_yaws: Array[float] = [32.0, -52.0, 122.0, -36.0, 66.0, -78.0]
+    var npc_yaws: Array[float] = [32.0, -52.0, 122.0, -36.0, 66.0, -78.0, 48.0, -64.0]
     for index in npc_positions.size():
         _villager(
             slots,
@@ -87,8 +97,8 @@ func _ready() -> void:
         )
 
     var meeting := _node("MiyakoMeeting", self)
-    meeting.position = Vector3(0, 0, -52)
-    _villager(meeting, "MiyakoMarker", Vector3(4.25, 0, 2.5), 3, 0, 1.4, true, 48.0)
+    meeting.position = Vector3(0, 0, -72)
+    _villager(meeting, "MiyakoMarker", Vector3(3.3, 0, 0.9), 3, 0, 1.4, true, 48.0)
 
     var trigger := _area("MiyakoMeetTrigger", Vector3(1.0, 1.5, 2.0), Vector3(5.0, 3, 8.0), meeting)
     trigger.body_entered.connect(_on_miyako_meet_trigger_body_entered)
@@ -98,9 +108,11 @@ func _ready() -> void:
 
     var zones := _node("CameraZones", self)
     _camera_zone(zones, "StreetEntry", Vector3(0, 3, -6), Vector3(18, 12, 16), 40, 10.0, Vector3(0.6, 6.1, 9.0), -29.0)
-    _camera_zone(zones, "MainStreet", Vector3(0, 3, -26), Vector3(20, 12, 26), 50, -15.0, Vector3(-0.8, 6.2, 8.8), -27.0)
-    _camera_zone(zones, "MiyakoCourt", Vector3(0, 3, -50), Vector3(22, 12, 18), 60, 18.0, Vector3(1.5, 5.6, 8.3), -23.0)
-    _camera_zone(zones, "MiyakoFocus", Vector3(0, 3, -50), Vector3(11, 12, 15), 80, 27.0, Vector3(-1.0, 5.0, 7.2), -20.0)
+    _camera_zone(zones, "MainStreet", Vector3(0, 3, -27), Vector3(20, 12, 30), 50, -15.0, Vector3(-0.8, 6.2, 8.8), -27.0)
+    _camera_zone(zones, "InnerStreet", Vector3(0, 3, -59), Vector3(22, 12, 28), 55, -8.0, Vector3(0.7, 5.9, 8.5), -25.0)
+    _camera_zone(zones, "MiyakoCourt", Vector3(0, 3, -71), Vector3(23, 12, 20), 60, 18.0, Vector3(1.5, 5.6, 8.3), -23.0)
+    _camera_zone(zones, "VillageBeyond", Vector3(0, 3, -89), Vector3(22, 12, 20), 55, 5.0, Vector3(0.4, 6.0, 8.8), -26.0)
+    _camera_zone(zones, "MiyakoFocus", Vector3(0, 3, -71), Vector3(12, 12, 15), 80, 27.0, Vector3(-1.0, 5.0, 7.2), -20.0, Vector3(1.5, 0, -1.0))
     (zones.get_node("MiyakoFocus") as Area3D).remove_from_group("camera_zones")
 
     var ambient := Node.new()
@@ -116,6 +128,8 @@ func _build_wind_details(cloth: Material, paper: Material, plant: Material) -> v
     _cloth_panel(hanging, "Noren02", Vector3(4.62, 2.12, -12.0), Vector3(0.06, 0.82, 0.92), cloth)
     _cloth_panel(hanging, "Noren03", Vector3(-4.62, 2.00, -27.0), Vector3(0.06, 1.02, 0.80), cloth)
     _cloth_panel(hanging, "Noren04", Vector3(4.62, 2.08, -47.0), Vector3(0.06, 0.88, 1.00), cloth)
+    _cloth_panel(hanging, "Noren05", Vector3(-4.62, 2.02, -61.0), Vector3(0.06, 0.94, 0.95), cloth)
+    _cloth_panel(hanging, "Noren06", Vector3(4.62, 2.06, -89.0), Vector3(0.06, 0.90, 0.90), cloth)
 
     var petals := _node("Petals", details)
     var petal_positions := [
@@ -128,7 +142,11 @@ func _build_wind_details(cloth: Material, paper: Material, plant: Material) -> v
         Vector3(-1.8, 0.70, -37.0),
         Vector3(1.4, 0.50, -42.0),
         Vector3(-0.3, 0.82, -47.0),
-        Vector3(1.0, 0.60, -52.0)
+        Vector3(1.0, 0.60, -52.0),
+        Vector3(-1.2, 0.65, -60.0),
+        Vector3(0.9, 0.48, -70.0),
+        Vector3(-1.4, 0.71, -80.0),
+        Vector3(1.1, 0.55, -90.0)
     ]
     for index in petal_positions.size():
         var petal := _mesh_box(
@@ -151,7 +169,11 @@ func _build_wind_details(cloth: Material, paper: Material, plant: Material) -> v
         Vector3(-4.1, 0.18, -22.0),
         Vector3(4.1, 0.18, -35.0),
         Vector3(-4.0, 0.18, -44.0),
-        Vector3(4.0, 0.18, -52.0)
+        Vector3(4.0, 0.18, -52.0),
+        Vector3(-4.1, 0.18, -63.0),
+        Vector3(4.1, 0.18, -74.0),
+        Vector3(-4.0, 0.18, -85.0),
+        Vector3(4.0, 0.18, -94.0)
     ]
     for index in plant_positions.size():
         var cluster := Node3D.new()
@@ -229,7 +251,7 @@ func _area(name_value: String, position_value: Vector3, size: Vector3, parent: N
     result.add_child(collision)
     return result
 
-func _camera_zone(parent: Node, name_value: String, position_value: Vector3, size: Vector3, priority: int, yaw: float, offset: Vector3, pitch: float) -> void:
+func _camera_zone(parent: Node, name_value: String, position_value: Vector3, size: Vector3, priority: int, yaw: float, offset: Vector3, pitch: float, focus_offset: Vector3 = Vector3.ZERO) -> void:
     var zone := Area3D.new()
     zone.name = name_value
     zone.position = position_value
@@ -241,6 +263,7 @@ func _camera_zone(parent: Node, name_value: String, position_value: Vector3, siz
     zone.set("yaw_degrees", yaw)
     zone.set("camera_offset", offset)
     zone.set("pitch_degrees", pitch)
+    zone.set("focus_offset", focus_offset)
     parent.add_child(zone)
     var shape := BoxShape3D.new()
     shape.size = size
