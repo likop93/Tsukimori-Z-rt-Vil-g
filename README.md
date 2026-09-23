@@ -8,12 +8,12 @@ Az első játszható hegyi szakasz technikai és animációs alapja **review-n �
 
 A kapun túli első falurész:
 - **Blockout 1.0 elkészült**
-- **Ambient Animation Pass 1 implementálva**
-- review-ra kész
+- **Ambient Animation Pass 1 review-n átment**
+- **Miyako első találkozásának stagingje elkészült — review-ra kész**
 
 Jelenlegi játszható ív:
 
-**hegyi ösvény → első furcsa jel → Tsukimori-kilátópont → útjelző → kapu → első térbeli anomália („Szél?”) → első utca → Miyako találkozási tere**
+**hegyi ösvény → első furcsa jel → Tsukimori-kilátópont → útjelző → kapu → első térbeli anomália („Szél?”) → első utca → Miyako Katsuro házánál**
 
 ## Már működő alapok
 
@@ -38,8 +38,9 @@ Jelenlegi játszható ív:
 - négy animált fényű utcai lámpa
 - mozgó textil-, szirom- és növényproxyk
 - hat animált humanoid falusi proxy
-- Miyako külön humanoid placement proxyja
+- Miyako külön humanoid proxyja Katsuro házának bejáratánál
 - három falusi kamera-kompozíció
+- az első találkozás külön kameraképe és a kánon szerinti első mondata
 - minimális GameState flag-rendszer
 - fejlesztői HUD + subtitle prototípus
 
@@ -51,9 +52,9 @@ A hegyi út stabil alap.
 
 ### Aktuális review
 
-**Tsukimori — First Street Ambient Animation Pass 1**
+**Tsukimori — Miyako első találkozása**
 
-Most azt vizsgáljuk, hogy a házak, NPC-k és kamera jobban működnek-e egy már mozgó, lakott környezetben.
+Most a megszólítás ritmusát, Miyako helyét és a visszatérő irányítást vizsgáljuk. A részleteket a `docs/MIYAKO_FIRST_ENCOUNTER.md` tartalmazza.
 
 ## Godot asset stratégia
 
@@ -61,7 +62,7 @@ Külön shortlist készült:
 
 `docs/GODOT_ASSET_SHORTLIST.md`
 
-Első körben vizsgálandó:
+Amikor a jelenet igényli, első körben vizsgálandó:
 - Kominka Modular Home Pack
 - Tree3D
 - ScatterShot

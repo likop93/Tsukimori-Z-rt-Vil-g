@@ -28,17 +28,17 @@ Az első utca Blockout 1.0 elkészült, és most már **Ambient Animation Pass 1
 | Mountain Path Narrative Pass 1 | ✅ REVIEW PASSED |
 | Mountain Path Animation Pass v0.2 | ✅ REVIEW PASSED |
 | Tsukimori First Street Blockout 1.0 | ✅ IMPLEMENTED |
-| First Street Ambient Animation Pass 1 | ✅ IMPLEMENTED — REVIEW |
-| Animated villager humanoid proxies | ✅ IMPLEMENTED — REVIEW |
+| First Street Ambient Animation Pass 1 | ✅ REVIEW PASSED |
+| Animated villager humanoid proxies | ✅ REVIEW PASSED |
 | Godot Asset shortlist | ✅ CURATED |
-| Asset sandbox evaluation | ▶ NEXT |
-| Miyako first encounter staging | ⏳ PLANNED |
+| Asset sandbox evaluation | ⏳ WHEN NEEDED |
+| Miyako first encounter staging | ✅ IMPLEMENTED — REVIEW |
 | Clinic blockout | ⏳ PLANNED |
 | Opening slice title beat | ⏳ PLANNED |
 
 ## Jelenlegi játszható szakasz
 
-**Hegyi ösvény → első furcsa jel → kilátópont → útjelző → falukapu → „Szél?” → első utca → Miyako találkozási tere**
+**Hegyi ösvény → első furcsa jel → kilátópont → útjelző → falukapu → „Szél?” → első utca → Miyako Katsuro házánál**
 
 Működik:
 
@@ -55,7 +55,8 @@ Működik:
 - négy animált fényű lámpa;
 - mozgó textil-, szirom- és növényproxyk;
 - hat animált humanoid falusi proxy;
-- Miyako humanoid placement proxy;
+- Miyako humanoid proxyja Katsuro házának küszöbénél;
+- irányított első találkozás, kánon szerinti első mondattal és folytatható vezérléssel;
 - GameState flag-ek.
 
 ## Asset irány
@@ -74,6 +75,6 @@ A már működő directed camera rendszert nem cseréljük le automatikusan kés
 
 ## Aktuális review
 
-**Tsukimori — Első utca Ambient Animation Pass 1**
+**Tsukimori — Miyako első találkozásának stagingje**
 
-A következő döntést a teljes hegyi út és az első utca egyben történő végigjátszása után hozzuk meg. Ezután külön sandboxban próbáljuk ki a legígéretesebb Godot asseteket, mielőtt bármelyiket beépítjük a fő jelenetbe.
+Az első utca a felhasználói végigjátszás alapján jól fut. A következő végigjátszás Miyako megszólításának ritmusát, a ház melletti elhelyezést és az átmeneti kameraképet vizsgálja. Külső assetet akkor próbálunk ki külön sandboxban, amikor a jelenet konkrétan igényli.

@@ -60,9 +60,20 @@ func run_checks() -> void:
     expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-15.0))) < 0.002, "Main street camera did not settle")
 
     await settle_at(Vector3(0, 0.2, -84))
-    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(18.0))) < 0.002, "Miyako court camera did not settle")
+    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(27.0))) < 0.002, "Miyako encounter camera did not settle")
     expect(root.get_node("GameState").has_flag("reached_miyako_meeting_space"), "Miyako meeting trigger did not set its flag")
     expect(street.meeting_reached, "Miyako meeting did not latch")
+    expect(player.get("_controls_locked"), "Miyako encounter did not pause movement")
+    expect(world.get_node("HUD/Subtitle").text == "Miyako: Dr. Akira. Már vártam.", "Canonical Miyako line is missing")
+
+    var advance := InputEventKey.new()
+    advance.keycode = KEY_ENTER
+    advance.pressed = true
+    street._unhandled_input(advance)
+    await frames(240)
+    expect(root.get_node("GameState").has_flag("met_miyako"), "Miyako encounter did not complete")
+    expect(not player.get("_controls_locked"), "Movement stayed locked after Miyako encounter")
+    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(18.0))) < 0.002, "Miyako court camera did not return")
     expect(world.get_node("HUD/Margin/VBox/Status").text.contains("Miyako"), "Miyako meeting status was not shown")
     expect(player.rotation.is_zero_approx(), "Street camera changed the player root rotation")
 

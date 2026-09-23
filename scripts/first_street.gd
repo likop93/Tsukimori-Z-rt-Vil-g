@@ -5,6 +5,8 @@ const VillagerProxyScript = preload("res://scripts/villager_proxy.gd")
 const StreetAmbientScript = preload("res://scripts/street_ambient.gd")
 
 var meeting_reached := false
+var _encounter_state := 0
+var _encounter_player: CharacterBody3D
 
 func _ready() -> void:
     var ground := _mat("VillageGround", Color(0.105, 0.115, 0.105))
@@ -42,6 +44,9 @@ func _ready() -> void:
         )
         var cap := _mesh_box(house, "Roof", Vector3(0, 2.15, 0), Vector3(5.4, 0.55, 6.6), roof)
         cap.rotation.z = deg_to_rad(5.0 if index % 2 == 0 else -5.0)
+        if index == 5:
+            _mesh_box(house, "KatsuroDoor", Vector3(-2.48, -0.55, -1.15), Vector3(0.08, 2.30, 1.28), wood)
+            _mesh_box(house, "DoorInset", Vector3(-2.53, -0.55, -1.15), Vector3(0.035, 2.12, 1.09), roof)
 
     var fences := _node("Fences", self)
     _static_box(fences, "LeftFence", Vector3(-4.1, 0.575, -10), Vector3(0.18, 1.15, 11), wood)
@@ -83,19 +88,9 @@ func _ready() -> void:
 
     var meeting := _node("MiyakoMeeting", self)
     meeting.position = Vector3(0, 0, -52)
-    _villager(meeting, "MiyakoMarker", Vector3(0, 0, -1.5), 3, 0, 1.4, true)
+    _villager(meeting, "MiyakoMarker", Vector3(4.25, 0, 2.5), 3, 0, 1.4, true, 48.0)
 
-    var label := Label3D.new()
-    label.name = "MiyakoLabel"
-    label.position = Vector3(0, 2.15, -1.5)
-    label.text = "MIYAKO — TALÁLKOZÁSI HELY"
-    label.font_size = 38
-    label.outline_size = 6
-    label.pixel_size = 0.0025
-    label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
-    meeting.add_child(label)
-
-    var trigger := _area("MiyakoMeetTrigger", Vector3(0, 1.5, 0), Vector3(9.5, 3, 7.5), meeting)
+    var trigger := _area("MiyakoMeetTrigger", Vector3(1.0, 1.5, 2.0), Vector3(5.0, 3, 8.0), meeting)
     trigger.body_entered.connect(_on_miyako_meet_trigger_body_entered)
 
     var entry_trigger := _area("StreetEntryTrigger", Vector3(0, 1.5, -6), Vector3(8, 3, 5), self)
@@ -105,6 +100,8 @@ func _ready() -> void:
     _camera_zone(zones, "StreetEntry", Vector3(0, 3, -6), Vector3(18, 12, 16), 40, 10.0, Vector3(0.6, 6.1, 9.0), -29.0)
     _camera_zone(zones, "MainStreet", Vector3(0, 3, -26), Vector3(20, 12, 26), 50, -15.0, Vector3(-0.8, 6.2, 8.8), -27.0)
     _camera_zone(zones, "MiyakoCourt", Vector3(0, 3, -50), Vector3(22, 12, 18), 60, 18.0, Vector3(1.5, 5.6, 8.3), -23.0)
+    _camera_zone(zones, "MiyakoFocus", Vector3(0, 3, -50), Vector3(11, 12, 15), 80, 27.0, Vector3(-1.0, 5.0, 7.2), -20.0)
+    (zones.get_node("MiyakoFocus") as Area3D).remove_from_group("camera_zones")
 
     var ambient := Node.new()
     ambient.name = "AmbientMotion"
@@ -294,11 +291,57 @@ func _villager(parent: Node, name_value: String, position_value: Vector3, varian
 func _on_miyako_meet_trigger_body_entered(body: Node3D) -> void:
     if meeting_reached or body == null or not body.is_in_group("player"):
         return
+    _encounter_player = body as CharacterBody3D
+    if _encounter_player == null:
+        return
     meeting_reached = true
     GameState.set_flag("reached_miyako_meeting_space", true)
+    _encounter_state = 1
+    _encounter_player.call("set_controls_locked", true)
+    (get_node("CameraZones/MiyakoFocus") as Area3D).add_to_group("camera_zones")
+
+    var miyako := get_node("MiyakoMeeting/MiyakoMarker") as Node3D
+    var direction := _encounter_player.global_position - miyako.global_position
+    direction.y = 0.0
+    if direction.length() > 0.01:
+        var turn := create_tween()
+        turn.tween_property(miyako, "rotation:y", atan2(-direction.x, -direction.z), 0.72).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+    var beat := create_tween()
+    beat.tween_interval(0.85)
+    beat.tween_callback(_show_miyako_line)
+
+func _show_miyako_line() -> void:
+    if _encounter_state != 1:
+        return
+    _encounter_state = 2
     var status := get_node_or_null("../HUD/Margin/VBox/Status") as Label
     if status:
-        status.text = "ELSŐ UTCA • Miyako találkozási tere — AMBIENT PASS"
+        status.text = "Miyako • Enter / Space: tovább"
+    var subtitle := get_node_or_null("../HUD/Subtitle") as Label
+    if subtitle:
+        subtitle.text = "Miyako: Dr. Akira. Már vártam."
+        subtitle.modulate.a = 0.0
+        create_tween().tween_property(subtitle, "modulate:a", 1.0, 0.24)
+
+func _unhandled_input(event: InputEvent) -> void:
+    if _encounter_state != 2 or not event is InputEventKey:
+        return
+    var key := event as InputEventKey
+    if key.pressed and not key.echo and key.keycode in [KEY_ENTER, KEY_KP_ENTER, KEY_SPACE]:
+        _complete_miyako_encounter()
+
+func _complete_miyako_encounter() -> void:
+    _encounter_state = 3
+    GameState.set_flag("met_miyako", true)
+    (get_node("CameraZones/MiyakoFocus") as Area3D).remove_from_group("camera_zones")
+    _encounter_player.call("set_controls_locked", false)
+    var subtitle := get_node_or_null("../HUD/Subtitle") as Label
+    if subtitle:
+        create_tween().tween_property(subtitle, "modulate:a", 0.0, 0.22)
+    var status := get_node_or_null("../HUD/Margin/VBox/Status") as Label
+    if status:
+        status.text = "ELSŐ UTCA • Miyako első találkozása"
 
 func _on_street_entry_trigger_body_entered(body: Node3D) -> void:
     if body == null or not body.is_in_group("player") or GameState.has_flag("entered_first_street"):

@@ -8,6 +8,7 @@ extends CharacterBody3D
 @onready var visual_body: Node3D = $VisualRoot
 
 var _input_lock_remaining := 0.0
+var _controls_locked := false
 
 func _ready() -> void:
     add_to_group("player")
@@ -15,11 +16,14 @@ func _ready() -> void:
 func request_soft_stop(duration: float) -> void:
     _input_lock_remaining = maxf(_input_lock_remaining, duration)
 
+func set_controls_locked(locked: bool) -> void:
+    _controls_locked = locked
+
 func _physics_process(delta: float) -> void:
     _input_lock_remaining = maxf(0.0, _input_lock_remaining - delta)
 
     var input_axis := Vector2.ZERO
-    if _input_lock_remaining <= 0.0:
+    if _input_lock_remaining <= 0.0 and not _controls_locked:
         if Input.is_key_pressed(KEY_A):
             input_axis.x -= 1.0
         if Input.is_key_pressed(KEY_D):

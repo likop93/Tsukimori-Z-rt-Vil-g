@@ -11,7 +11,7 @@ A házelrendezés továbbra is blockout, de az utca most már kapott egy első *
 - két rövid mellékutca;
 - két kerítésszakasz;
 - négy utcai lámpa;
-- Miyako találkozási tere;
+- Miyako találkozási tere Katsuro házának küszöbénél;
 - három rendezett kamera-kompozíció.
 
 ## Ambient Pass 1
@@ -26,7 +26,7 @@ Bekerült:
 - többféle falusi idle: nézelődés, beszélő gesztus, munkamozdulat, nyugodt állás;
 - eltérő testirányok a hat falusinál, hogy a mozgás ne sorba állított figuráknak hasson;
 - három visszafogott hajsziluett a falusi proxykon;
-- Miyako külön, hosszú hajú humanoid placement proxyként.
+- Miyako külön, hosszú hajú humanoid proxyként a ház bejáratánál.
 
 Ez még nem teljes NPC-rutin. A cél az, hogy az utca **lakottnak és mozgónak** hasson anélkül, hogy final asseteket készítenénk.
 
@@ -48,7 +48,7 @@ Figyeld:
 5. kell-e házat, mellékutcát vagy NPC-helyet áthelyezni;
 6. megfelelő-e Miyako későbbi belépési tere.
 
-A következő nagy lépés az asset-alapú environment dressing és a Miyako First Encounter staging lesz, de csak az ambient review után.
+A vizuális review után Miyako első találkozásának stagingje következett. A külső environment asseteket a jelenet tényleges igénye alapján próbáljuk ki.
 
 ## Technikai review — 2026-09-23
 
