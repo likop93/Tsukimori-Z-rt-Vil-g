@@ -83,7 +83,7 @@ func _ready() -> void:
 
     var fences := _node("Fences", self)
     _static_box(fences, "LeftFence", Vector3(-4.1, 0.575, -10), Vector3(0.18, 1.15, 11), wood)
-    _static_box(fences, "RightFence", Vector3(4.1, 0.575, -23), Vector3(0.18, 1.15, 11), wood)
+    _static_box(fences, "RightFence", Vector3(4.1, 0.575, -60), Vector3(0.18, 1.15, 11), wood)
 
     var lanterns := _node("Lanterns", self)
     var lantern_positions := [
