@@ -1,32 +1,49 @@
-# Tsukimori – Első utca Blockout 1.0
+# Tsukimori – Első utca Blockout 1.0 + Ambient Pass 1
 
 A kapu után a hegyi út megszakítás nélkül folytatódik Tsukimori első utcáján.
-Ez továbbra is játszható blockout: a cél a térarány, az útvonal, Akira mérete,
-a rendezett kamerák és a későbbi falusi jelenetek helyének ellenőrzése.
 
-## Tartalom
+A házelrendezés továbbra is blockout, de az utca most már kapott egy első **élő környezeti réteget**, hogy a térarányokat ne teljesen statikus maketten kelljen megítélni.
 
-- keskeny, végig járható főutca a kaputól a találkozótérig;
+## Tér / blockout
+
+- keskeny, végig járható főutca;
 - hat eltérően elfordított háztömeg, fizikai ütközéssel;
-- két rövid mellékutca és két kerítésszakasz;
-- négy meleg fényű utcai lámpa;
-- hat semleges falusi NPC-helyőrző;
-- külön tér és jelölő Miyako első találkozásához;
-- három új kamerakompozíció: utca bejárata, főutca, Miyako tere;
-- `entered_first_street` és `reached_miyako_meeting_space` állapotjelzők.
+- két rövid mellékutca;
+- két kerítésszakasz;
+- négy utcai lámpa;
+- Miyako találkozási tere;
+- három rendezett kamera-kompozíció.
 
-Az erdei távoli házelőnézet rejtve lett, mert ugyanazon a helyen most már a
-tényleges első utca áll. A hegyi út, a kapuanomália, a fix világirányú WASD és
-az Animation Pass v0.2 változatlanul működik.
+## Ambient Pass 1
 
-## Határok
+Bekerült:
 
-A falusi kapszulák csak elhelyezési pontok. Nincs még NPC-rutin, dialógus,
-Miyako végleges modellje vagy jelenete, belső tér, küldetés, harc és útvonalrendszer.
+- finoman vibráló meleg lámpafény;
+- négy mozgó noren / függő textil proxy;
+- tíz lassan lebegő szirom/papírdarab;
+- hat enyhén mozgó növényproxy;
+- hat kapszula helyett emberarányos falusi proxy;
+- többféle falusi idle: nézelődés, beszélő gesztus, munkamozdulat, nyugodt állás;
+- Miyako külön, hosszú hajú humanoid placement proxyként.
 
-## Review
+Ez még nem teljes NPC-rutin. A cél az, hogy az utca **lakottnak és mozgónak** hasson anélkül, hogy final asseteket készítenénk.
 
-F5 után menj végig a hegyi úton és a kapun. Az utcán ellenőrizd, hogy a házak
-közötti tér elég széles-e, az NPC-k nem takarják-e az útvonalat, a lámpák ritmusa
-olvasható-e, és a három kameraállás finoman követi-e egymást. A lila helyőrző
-jelöli Miyako későbbi találkozási pozícióját.
+## Állapotjelzők
+
+- `entered_first_street`
+- `reached_miyako_meeting_space`
+
+## Következő review
+
+F5 után a teljes hegyi út felől érkezz meg.
+
+Figyeld:
+
+1. a házak elrendezése jobb-e úgy, hogy körülöttük már történik valami;
+2. megfelelő-e a főutca szélessége emberalakokkal;
+3. túl sok vagy túl kevés-e a mozgás;
+4. természetes-e a meleg lámpafény ritmusa;
+5. kell-e házat, mellékutcát vagy NPC-helyet áthelyezni;
+6. megfelelő-e Miyako későbbi belépési tere.
+
+A következő nagy lépés az asset-alapú environment dressing és a Miyako First Encounter staging lesz, de csak az ambient review után.
