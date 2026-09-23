@@ -2,6 +2,20 @@
 
 Cél: a saját irányításunk és art direction megtartása mellett olyan kész Godot asseteket/addonokat használni, amelyek ténylegesen időt spórolnak.
 
+## Tesztelési hely
+
+Minden új assetet először ebben a külön jelenetben próbálunk:
+
+`scenes/dev/asset_sandbox.tscn`
+
+A sandbox tartalmaz:
+- Tsukimorihoz közeli alap világítást;
+- enyhe ködöt;
+- 1,82 m magas Akira-méretreferenciát;
+- külön `DropAssetsHere` node-ot.
+
+Így egy asset nem tudja véletlenül szétverni a működő vertical slice-ot.
+
 ## Első körben erősen érdekes
 
 ### Kominka Modular Home Pack
