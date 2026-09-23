@@ -217,8 +217,8 @@ func _animate_fallback(delta: float, speed: float) -> void:
 
     var stride := sin(_fallback_phase)
     var opposite := sin(_fallback_phase + PI)
-    var bob := abs(sin(_fallback_phase * 2.0)) * 0.018 * move_amount
-    var idle_breath := sin(_fallback_phase * 0.75) * 0.006 * (1.0 - move_amount)
+    var bob: float = absf(sin(_fallback_phase * 2.0)) * 0.018 * move_amount
+    var idle_breath: float = sin(_fallback_phase * 0.75) * 0.006 * (1.0 - move_amount)
 
     _fallback_root.position.y = bob + idle_breath
 
@@ -235,7 +235,7 @@ func _animate_fallback(delta: float, speed: float) -> void:
     _fallback_head.rotation.y = stride * deg_to_rad(1.0) * move_amount + sin(_fallback_phase * 0.33) * deg_to_rad(1.2) * (1.0 - move_amount)
 
     var coat_swing := -stride * deg_to_rad(4.0) * move_amount
-    _fallback_coat_back.rotation.x = -abs(stride) * deg_to_rad(3.0) * move_amount
+    _fallback_coat_back.rotation.x = -absf(stride) * deg_to_rad(3.0) * move_amount
     _fallback_coat_l.rotation.x = coat_swing - deg_to_rad(1.5) * move_amount
     _fallback_coat_r.rotation.x = -coat_swing - deg_to_rad(1.5) * move_amount
     _fallback_coat_l.rotation.z = stride * deg_to_rad(2.5) * move_amount
