@@ -1,7 +1,7 @@
 # Miyako és Akira közös háza — vizuális prototípus
 
 **Dátum:** 2026-09-23  
-**Állapot:** BLOCKOUT — F5 review szükséges
+**Állapot:** ANIMATED VISUAL PASS — F5 review szükséges
 
 ## Vizuális irány
 
@@ -13,12 +13,15 @@ A ház a kiválasztott első atmoszférakép hangulatát követi: hideg kékes-l
 - két külön lejtésű, sötét indigó tetőszint cserépszegélyekkel;
 - kopott vakolat, látható faváz és meleg, emisszív shoji ablakok;
 - utcafronti `KatsuroDoor`, küszöb és veranda;
-- `WarmEntryLight`, hogy a ház olvasható maradjon a ködös alkonyban;
+- egy meleg veranda-lámpás és finoman pulzáló `WarmEntryLight`, hogy a ház olvasható maradjon a ködös alkonyban;
+- szinte mozdulatlan szélcsengő, amely csak nagyon lassan billen a veranda alatt;
+- nedvesebb, fényesebb tető- és kőanyagok a hideg kékes-lilás környezetben;
+- visszafogott külső jelzés Katsuro lezárt, ház alatti teréhez: ajtó, öt vájatú lemez és három nedves kőlépcső;
 - Akira és Miyako emberarányát jelző külön F6 preview kockák.
 
 ## Pályaillesztés
 
-A közös ház ugyanazon a világpozíción maradt a híd utáni távolabbi házként. A meglévő `StaticBody3D` és `CollisionShape3D` továbbra is a szülőházon van, ezért a járhatóság és az encounter trigger nem változik. A régi látható blockout mesh elrejtve marad, a részletesebb modell a `SharedHomeExterior` gyermekben épül fel.
+A közös ház ugyanazon a világpozíción maradt a híd utáni távolabbi házként. A meglévő `StaticBody3D` és `CollisionShape3D` továbbra is a szülőházon van, ezért a járhatóság és az encounter trigger nem változik. A régi látható blockout mesh elrejtve marad, a részletesebb modell a `SharedHomeExterior` gyermekben épül fel. A pontos házméret és a környező házak helye továbbra is F5 review után rögzítendő.
 
 ## Ellenőrzés
 

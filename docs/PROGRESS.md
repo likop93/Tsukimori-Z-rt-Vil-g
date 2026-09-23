@@ -37,7 +37,7 @@ Az utcai narratív reakciók F5 bejárása sikeres volt; a következő körben a
 | Miyako first encounter staging | ✅ IMPLEMENTED — REVIEW |
 | First Street Narrative Pass | ✅ REVIEW PASSED |
 | House and forest visual pass | ✅ IMPLEMENTED — REVIEW |
-| Miyako + Akira shared home visual prototype | ✅ IMPLEMENTED — F5 REVIEW |
+| Miyako + Akira shared home visual prototype | ✅ ANIMATED PASS — F5 REVIEW |
 | Clinic blockout | ⏳ PLANNED |
 | Opening slice title beat | ⏳ PLANNED |
 
@@ -88,6 +88,6 @@ A már működő directed camera rendszert nem cseréljük le automatikusan kés
 
 **Tsukimori — házak és erdő látványa**
 
-Akira végigmegy a falun a figyelő, összesúgó lakók között, elhalad Shion háza mellett, átkel a patakon, majd az első túlparti ház után Miyakóval a közös otthonuknál találkozik. A kamera fordulását és a WASD képernyőirányú mozgását összehangoltuk: a mozgás gombnyomás alatt stabil marad. A ház mögött erdei úthálózat következik. Hana és a többi főszereplő otthonának helyét a történeti térkép alapján később rögzítjük. Részletek: `docs/VILLAGE_LAYOUT.md`. A közös ház első atmoszférikus, kétszintes vizuális prototípusa elkészült; részletek: `docs/SHARED_HOME_PROTOTYPE.md`.
+Akira végigmegy a falun a figyelő, összesúgó lakók között, elhalad Shion háza mellett, átkel a patakon, majd az első túlparti ház után Miyakóval a közös otthonuknál találkozik. A kamera fordulását és a WASD képernyőirányú mozgását összehangoltuk: a mozgás gombnyomás alatt stabil marad. A ház mögött erdei úthálózat következik. Hana és a többi főszereplő otthonának helyét a történeti térkép alapján később rögzítjük. A közös ház sötét, kétszintes animált vizuális passza elkészült: veranda-lámpás, lassú fénylüktetés, szinte mozdulatlan szélcsengő, nedves anyagok és Katsuro ház alatti terének külső jele került be. Részletek: `docs/VILLAGE_LAYOUT.md` és `docs/SHARED_HOME_PROTOTYPE.md`.
 Az új utcai reakciók sorrendjét és a híd melletti átmenetet a `docs/FIRST_STREET_NARRATIVE_PASS.md` írja le. A falusiak külön hangsávja későbbi hang pass feladata.
 A házak új tetői és homlokzatai, valamint az erdei növényzet Godot F5 review-ra várnak. Különösen Miyako láthatóságát és a híd utáni gyalogos útvonalat kell ellenőrizni.
