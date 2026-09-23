@@ -39,7 +39,7 @@ Jelenlegi játszható ív:
 - a közös ház után cédruserdő, elágazó utak és három névtelen, elszórt ház
 - lejtős tetők, favázas homlokzatok, papírablakok és külön bejárat a közös házon; réteges cédruskoronák és erdei aljnövényzet
 - Miyako és Akira közös otthonának kétszintes, sötét alkonyati animált vizuális passza; veranda-lámpással, lassú fénylüktetéssel és szinte mozdulatlan szélcsengővel
-- Miyakóval való találkozás után elérhető falusi rendelő első bejárható változata, váróval és vizsgálóval; E-vel belépés, megfigyelés és kilépés
+- Miyako és Akira közös házának kisebb, híd felőli rendelőszárnya: külön oldalsó ajtóhoz rövid kövezett ösvény és lámpásos tábla vezet; E-vel belépés, váró és vizsgáló megfigyelése, majd kilépés
 - hat animált fényű utcai lámpa
 - mozgó textil-, szirom- és növényproxyk
 - nyolc animált humanoid falusi proxy

@@ -1,18 +1,20 @@
 extends Node3D
 
-# Provisional village address. The interior sits apart from the street so its
-# open roof can be seen by the existing 3/4 camera without exposing the set.
+# The exterior is a small wing of Miyako and Akira's home. The open-roof
+# interior sits apart from the street for the existing three-quarter camera.
 const INTERIOR_OFFSET := Vector3(112.0, 0.0, 0.0)
 const ENTER_OFFSET := Vector3(0.0, 0.2, 2.85)
-const EXIT_OFFSET := Vector3(6.15, 0.2, 0.0)
+const EXIT_OFFSET := Vector3(-3.45, 0.2, 0.0)
 
+var _world: Node3D
 var _player: CharacterBody3D
 var _inside := false
 var _prompt := ""
 var _camera_zone: Area3D
 
 func _ready() -> void:
-    _player = get_node("../../Player") as CharacterBody3D
+    _world = get_node("../../../..") as Node3D
+    _player = _world.get_node("Player") as CharacterBody3D
     _build_exterior()
     _build_interior()
 
@@ -22,7 +24,7 @@ func _process(_delta: float) -> void:
     var next_prompt := ""
     if _inside:
         if _near("Interior/Entrance", 2.1):
-            next_prompt = "RENDELŐ • E: vissza a faluba"
+            next_prompt = "RENDELŐ • E: vissza a ház udvarára"
         elif _near("Interior/Examination", 2.25):
             next_prompt = "RENDELŐ • E: vizsgálótér megtekintése"
         elif _near("Interior/WaitingArea", 2.0):
@@ -31,9 +33,9 @@ func _process(_delta: float) -> void:
         next_prompt = "RENDELŐ • E: belépés"
     if next_prompt != _prompt:
         _prompt = next_prompt
-        var status := get_node_or_null("../../HUD/Margin/VBox/Status") as Label
+        var status := _world.get_node_or_null("HUD/Margin/VBox/Status") as Label
         if status and (next_prompt != "" or status.text.begins_with("RENDELŐ")):
-            status.text = next_prompt if next_prompt != "" else ("RENDELŐ • váró és vizsgáló" if _inside else "ELSŐ UTCA • Miyako első találkozása")
+            status.text = next_prompt if next_prompt != "" else ("RENDELŐ • váró és vizsgáló" if _inside else "KÖZÖS HÁZ • rendelő a híd felőli oldalon")
 
 func _unhandled_input(event: InputEvent) -> void:
     if not event is InputEventKey:
@@ -46,10 +48,10 @@ func _unhandled_input(event: InputEvent) -> void:
             _leave_clinic()
         elif _near("Interior/Examination", 2.25):
             GameState.set_flag("inspected_clinic_exam_room")
-            get_parent().get_parent().call("_show_subtitle", "A vizsgáló készen áll. Az első páciensek még váratnak magukra.", 2.6)
+            _world.call("_show_subtitle", "A vizsgáló készen áll. Az első páciensek még váratnak magukra.", 2.6)
         elif _near("Interior/WaitingArea", 2.0):
             GameState.set_flag("inspected_clinic_waiting_room")
-            get_parent().get_parent().call("_show_subtitle", "A váróban néhány üres szék áll. Odakint elhalkul a falu.", 2.6)
+            _world.call("_show_subtitle", "A váróban néhány üres szék áll. Odakint elhalkul a falu.", 2.6)
     elif GameState.has_flag("met_miyako") and _near("Exterior/Entrance", 2.4):
         _enter_clinic()
 
@@ -61,7 +63,7 @@ func _enter_clinic() -> void:
     _snap_camera()
     _camera_zone.add_to_group("camera_zones")
     _prompt = ""
-    get_parent().get_parent().call("_show_subtitle", "A rendelőben a váró és a vizsgáló várja Akirát.", 2.5)
+    _world.call("_show_subtitle", "A rendelőben a váró és a vizsgáló várja Akirát.", 2.5)
 
 func _leave_clinic() -> void:
     _inside = false
@@ -88,36 +90,62 @@ func _build_exterior() -> void:
     var roof := _mat(Color(0.074, 0.085, 0.105))
     var stone := _mat(Color(0.20, 0.22, 0.22))
     var paper := _mat(Color(0.60, 0.45, 0.30), Color(0.23, 0.105, 0.038))
-    _solid(root, "ClinicYard", Vector3(0, -0.17, 0), Vector3(13.5, 0.34, 12.0), stone)
-    _solid(root, "Building", Vector3(0, 1.65, 0), Vector3(8.8, 3.30, 8.4), wall)
-    _mesh(root, "Foundation", Vector3(0, 0.17, 0), Vector3(9.0, 0.34, 8.6), stone)
+    _solid(root, "ClinicYard", Vector3(-0.5, -0.17, 0.2), Vector3(7.8, 0.34, 6.7), stone)
+    _solid(root, "Building", Vector3(0, 1.4, 0), Vector3(3.9, 2.8, 5.2), wall)
+    _mesh(root, "Foundation", Vector3(0, 0.15, 0), Vector3(4.05, 0.30, 5.3), stone)
     for side in [-1.0, 1.0]:
-        var slope := _mesh(root, "RoofLeft" if side < 0 else "RoofRight", Vector3(side * 2.32, 3.68, 0), Vector3(5.3, 0.24, 9.4), roof)
-        slope.rotation.z = deg_to_rad(-20.0 * side)
-    _mesh(root, "RoofRidge", Vector3(0, 4.63, 0), Vector3(0.25, 0.20, 9.4), timber)
-    for z in [-3.55, 3.55]:
-        _mesh(root, "StreetFrame%02d" % (0 if z < 0 else 1), Vector3(4.47, 1.7, z), Vector3(0.18, 3.1, 0.16), timber)
-    _mesh(root, "StreetLintel", Vector3(4.47, 2.98, 0), Vector3(0.18, 0.17, 7.4), timber)
-    _mesh(root, "ClinicDoor", Vector3(4.52, 1.07, 0), Vector3(0.09, 2.13, 1.44), timber)
-    _mesh(root, "DoorSill", Vector3(4.75, 0.12, 0), Vector3(0.52, 0.24, 1.75), stone)
+        var slope := _mesh(root, "RoofLeft" if side < 0 else "RoofRight", Vector3(side * 1.04, 3.08, 0), Vector3(2.48, 0.22, 5.75), roof)
+        slope.rotation.z = deg_to_rad(-23.0 * side)
+    _mesh(root, "RoofRidge", Vector3(0, 3.55, 0), Vector3(0.22, 0.18, 5.75), timber)
+    for z in [-2.17, 2.17]:
+        _mesh(root, "SideFrame%02d" % (0 if z < 0 else 1), Vector3(-2.03, 1.4, z), Vector3(0.16, 2.7, 0.15), timber)
+    _mesh(root, "SideLintel", Vector3(-2.04, 2.6, 0), Vector3(0.16, 0.15, 4.55), timber)
+    _mesh(root, "ClinicSideDoor", Vector3(-2.05, 1.06, 0), Vector3(0.10, 2.12, 1.22), timber)
+    _mesh(root, "DoorSill", Vector3(-2.29, 0.12, 0), Vector3(0.53, 0.24, 1.5), stone)
     for index in range(2):
-        var z := -2.45 if index == 0 else 2.45
-        _mesh(root, "PaperWindow%02d" % index, Vector3(4.53, 1.75, z), Vector3(0.045, 0.96, 1.18), paper)
-        _mesh(root, "WindowCross%02d" % index, Vector3(4.56, 1.75, z), Vector3(0.06, 0.08, 1.23), timber)
+        var z := -1.72 if index == 0 else 1.72
+        _mesh(root, "PaperWindow%02d" % index, Vector3(-2.05, 1.67, z), Vector3(0.045, 0.83, 0.65), paper)
+        _mesh(root, "WindowCross%02d" % index, Vector3(-2.08, 1.67, z), Vector3(0.06, 0.07, 0.69), timber)
     var sign := Label3D.new()
     sign.name = "ClinicSign"
     sign.text = "診療所  •  RENDELŐ"
-    sign.position = Vector3(4.57, 2.82, 0)
-    sign.rotation.y = PI * 0.5
+    sign.position = Vector3(-2.12, 2.49, 0)
+    sign.rotation.y = -PI * 0.5
     sign.font_size = 40
     sign.pixel_size = 0.005
     sign.modulate = Color(0.83, 0.78, 0.67)
     root.add_child(sign)
-    _node("Entrance", root, Vector3(6.1, 0, 0))
-    _mesh(root, "LaneToStreet", Vector3(8.45, 0.025, 0), Vector3(8.2, 0.05, 2.4), stone)
+    _node("Entrance", root, Vector3(-3.4, 0, 0))
+    _mesh(root, "LaneToStreet", Vector3(-5.25, 0.025, 0), Vector3(4.6, 0.05, 1.8), stone)
+    for index in range(3):
+        _mesh(root, "PathStone%02d" % index, Vector3(-3.4 - float(index) * 1.55, 0.065, 0), Vector3(0.92, 0.035, 1.15), stone)
+
+    # The home and clinic share a roofline; the separate side door is marked at the road.
+    var marker := _node("RoadsideMarker", root, Vector3(-3.8, 0, 2.0))
+    var lantern_glow := _mat(Color(0.75, 0.47, 0.21), Color(0.48, 0.20, 0.055))
+    _mesh(marker, "Post", Vector3(0, 1.35, 0), Vector3(0.15, 2.7, 0.15), timber)
+    _mesh(marker, "SignBoard", Vector3(0, 2.48, 0), Vector3(2.8, 0.83, 0.14), timber)
+    _mesh(marker, "Lantern", Vector3(0, 3.19, 0), Vector3(0.52, 0.58, 0.52), lantern_glow)
+    for side in [-1, 1]:
+        var direction_sign := Label3D.new()
+        direction_sign.name = "ClinicDirectionNearBank" if side > 0 else "ClinicDirectionVillage"
+        direction_sign.text = "RENDELŐ →" if side > 0 else "← RENDELŐ"
+        direction_sign.position = Vector3(0, 2.48, float(side) * 0.085)
+        direction_sign.rotation.y = 0.0 if side > 0 else PI
+        direction_sign.font_size = 64
+        direction_sign.pixel_size = 0.006
+        direction_sign.modulate = Color(0.98, 0.84, 0.60)
+        marker.add_child(direction_sign)
+    var marker_light := OmniLight3D.new()
+    marker_light.name = "RoadsideLight"
+    marker_light.position = Vector3(0, 3.15, 0)
+    marker_light.light_color = Color(1.0, 0.62, 0.33)
+    marker_light.light_energy = 1.2
+    marker_light.omni_range = 7.5
+    marker.add_child(marker_light)
     var lamp := OmniLight3D.new()
     lamp.name = "ClinicLamp"
-    lamp.position = Vector3(5.0, 2.25, -1.4)
+    lamp.position = Vector3(-2.45, 2.3, -0.9)
     lamp.light_color = Color(1.0, 0.67, 0.40)
     lamp.light_energy = 0.7
     lamp.omni_range = 4.5

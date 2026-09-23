@@ -18,6 +18,7 @@ A ház a kiválasztott első atmoszférakép hangulatát követi: hideg kékes-l
 - nedvesebb, fényesebb tető- és kőanyagok a hideg kékes-lilás környezetben;
 - visszafogott külső jelzés Katsuro lezárt, ház alatti teréhez: ajtó, öt vájatú lemez és három nedves kőlépcső;
 - Akira és Miyako emberarányát jelző külön F6 preview kockák.
+- a ház híd felőli oldalához épített, alacsonyabb rendelőszárny saját oldalbejárattal és lámpásos táblával (F5 jelenet).
 
 ## Pályaillesztés
 

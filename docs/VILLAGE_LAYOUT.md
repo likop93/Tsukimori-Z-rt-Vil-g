@@ -7,6 +7,7 @@ Akira a hegyi úton érkezik a falu egyik szélére, majd **végigsétál a lako
 | Shion háza | `Houses/ShionHome` | A patak falusi oldalán; bejárata a patak felé néz. |
 | Túlparti első ház | `Houses/House04` | A híd utáni közelebbi, egyelőre névtelen ház. |
 | Miyako és Akira közös háza | `Houses/MiyakoAkiraHome` | A híd utáni távolabbi, elszigeteltebb ház; Katsuro egykori otthona. |
+| Rendelő | `Houses/MiyakoAkiraHome/Clinic` | A közös ház kisebb, híd felőli oldalszárnya; külön oldalbejárattal. |
 | A falu többi háza | `Houses/House*` | Egyelőre névtelen blockout; Hana és a többi főszereplő helye később kerül történet szerint kijelölésre. |
 | Falusi párok | `NPCSlots/Villager01`–`Villager08` | Az utcán négy helyen Akira felé fordulnak, majd egymáshoz hajolnak. |
 | Erdő és elszórt házak | `ForestTrees`, `ForestHomes` | A közös ház után cédrusok, főút és három leágazás; a három ház lakói nincsenek kijelölve. |

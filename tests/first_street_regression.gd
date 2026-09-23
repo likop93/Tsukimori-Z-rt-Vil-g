@@ -157,7 +157,7 @@ func run_checks() -> void:
     expect(root.get_node("GameState").has_flag("met_miyako"), "Miyako encounter did not complete")
     expect(not player.get("_controls_locked"), "Movement stayed locked after Miyako encounter")
     expect(absf(camera_rig.rotation.y) < 0.002, "Miyako court camera did not return")
-    expect(world.get_node("HUD/Margin/VBox/Status").text.contains("Miyako"), "Miyako meeting status was not shown")
+    expect(world.get_node("HUD/Margin/VBox/Status").text.contains("RENDELŐ"), "Clinic directions were not shown after meeting Miyako")
 
     await settle_at(Vector3(0, 0.2, -158))
     expect(player.is_on_floor(), "Miyako and Akira's house is not reachable")
@@ -181,10 +181,13 @@ func run_checks() -> void:
     expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-90.0))) < 0.02, "Following the camera caused a control feedback spin")
     expect(player.rotation.is_zero_approx(), "Street camera changed the player root rotation")
 
-    var clinic := street.get_node("Clinic") as Node3D
+    var clinic := street.get_node("Houses/MiyakoAkiraHome/Clinic") as Node3D
+    expect(clinic.get_parent() == miyako_home and clinic.position.z > 3.0, "Clinic must be a bridge-side wing of the shared home")
     expect(clinic.has_node("Exterior/Building/CollisionShape3D"), "Clinic exterior has no collider")
+    expect(clinic.has_node("Exterior/ClinicSideDoor"), "Clinic wing lost its separate side entrance")
     expect(clinic.has_node("Interior/Floor/CollisionShape3D"), "Clinic interior has no walkable floor")
     expect(clinic.has_node("Interior/WaitingArea") and clinic.has_node("Interior/Examination"), "Clinic rooms are missing")
+    expect(clinic.has_node("Exterior/RoadsideMarker/ClinicDirectionNearBank") and clinic.has_node("Exterior/RoadsideMarker/ClinicDirectionVillage"), "Clinic street sign cannot be read in both directions")
     await settle_at((clinic.get_node("Exterior/Entrance") as Node3D).global_position + Vector3(0, 0.2, 0))
     var interact := InputEventKey.new()
     interact.keycode = KEY_E
@@ -203,7 +206,7 @@ func run_checks() -> void:
     await settle_at((clinic.get_node("Interior/Entrance") as Node3D).global_position + Vector3(0, 0.2, 0))
     clinic._unhandled_input(interact)
     await frames(12)
-    expect(player.global_position.distance_to((clinic.get_node("Exterior/Entrance") as Node3D).global_position) < 2.0, "Clinic exit did not return Akira to the village")
+    expect(player.global_position.distance_to((clinic.get_node("Exterior/Entrance") as Node3D).global_position) < 2.0, "Clinic exit did not return Akira to the shared home yard")
     expect(not clinic.get_node("Interior/ClinicCamera").is_in_group("camera_zones"), "Clinic camera stayed active after exit")
 
     print("First street regression: %s" % ("PASS" if failures == 0 else "%s failures" % failures))

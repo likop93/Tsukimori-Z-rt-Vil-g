@@ -94,6 +94,12 @@ func _ready() -> void:
             shared_visual.name = "SharedHomeExterior"
             shared_visual.set_script(SharedHomeVisualScript)
             house.add_child(shared_visual)
+            # A small clinic wing belongs to the shared home, on its bridge side.
+            var clinic := Node3D.new()
+            clinic.name = "Clinic"
+            clinic.position = Vector3(0, -1.8, 4.8)
+            clinic.set_script(ClinicBlockoutScript)
+            house.add_child(clinic)
         else:
             _dress_house(house, roof, wood, plaster, stone, index)
             if index == 9:
@@ -101,14 +107,6 @@ func _ready() -> void:
                 _mesh_box(house, "DoorInset", Vector3(0, -0.55, -3.13), Vector3(1.09, 2.12, 0.035), roof)
 
     _build_forest(wall, roof, wood, plaster, stone, bark, needles, darker_needles, plant)
-
-    # Provisional village clinic; it is a separate location from the two homes
-    # across the stream and does not assign any of the unnamed houses an owner.
-    var clinic := Node3D.new()
-    clinic.name = "Clinic"
-    clinic.position = Vector3(-16, 0, -72)
-    clinic.set_script(ClinicBlockoutScript)
-    add_child(clinic)
 
     var fences := _node("Fences", self)
     _static_box(fences, "LeftFence", Vector3(-4.1, 0.575, -10), Vector3(0.18, 1.15, 11), wood)
@@ -184,7 +182,7 @@ func _ready() -> void:
     _camera_zone(zones, "StreamBridge", Vector3(0, 3, -98), Vector3(20, 12, 11), 59, 0.0, Vector3(0, 6.0, 8.8), -25.0)
     _camera_zone(zones, "MiyakoCourt", Vector3(0, 3, -122), Vector3(19, 12, 18), 60, 0.0, Vector3(0, 5.8, 8.8), -23.0, Vector3(0.6, 0, -0.3))
     _camera_zone(zones, "VillageBeyond", Vector3(0, 3, -121), Vector3(44, 12, 42), 55, 0.0, Vector3(0.4, 6.0, 8.8), -26.0)
-    _camera_zone(zones, "ClinicApproach", Vector3(-15, 3, -72), Vector3(15, 12, 16), 65, -12.0, Vector3(0.2, 6.3, 8.7), -27.0)
+    _camera_zone(zones, "ClinicApproach", Vector3(6.5, 3, -116.5), Vector3(8, 12, 11), 65, -12.0, Vector3(0.2, 6.3, 8.7), -27.0)
     _camera_zone(zones, "ForestRoad", Vector3(0, 3, -168), Vector3(52, 12, 76), 52, 0.0, Vector3(0, 6.9, 9.8), -29.0)
     _camera_zone(zones, "MiyakoFocus", Vector3(0, 3, -122), Vector3(14, 12, 12), 80, -20.0, Vector3(-1.5, 5.4, 8.8), -20.0, Vector3(1.6, 0, -0.4), false)
     (zones.get_node("MiyakoFocus") as Area3D).remove_from_group("camera_zones")
@@ -516,7 +514,7 @@ func _complete_miyako_encounter() -> void:
         create_tween().tween_property(subtitle, "modulate:a", 0.0, 0.22)
     var status := get_node_or_null("../HUD/Margin/VBox/Status") as Label
     if status:
-        status.text = "ELSŐ UTCA • Miyako első találkozása"
+        status.text = "RENDELŐ • a közös ház híd felőli oldalán, külön ajtó"
 
 func _on_street_entry_trigger_body_entered(body: Node3D) -> void:
     if body == null or not body.is_in_group("player") or GameState.has_flag("entered_first_street"):
