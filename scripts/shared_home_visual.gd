@@ -1,5 +1,7 @@
 extends Node3D
 
+@export_file("*.glb") var authored_model_path: String = "res://assets/buildings/shared_home/tsukimori_shared_home.glb"
+
 # A visual prototype only. The parent house keeps its original collision and position.
 # Local origin is at the middle of the ground-floor wall, 1.8 m above the ground.
 var _elapsed := 0.0
@@ -7,6 +9,8 @@ var _entry_light: OmniLight3D
 var _porch_lantern: Node3D
 var _wind_chime: Node3D
 var _seal_material: StandardMaterial3D
+var _rain: Array[Dictionary] = []
+var _mist: Array[Dictionary] = []
 
 func _ready() -> void:
     var wall := _mat("WeatheredPlaster", Color(0.28, 0.25, 0.22), Color(0, 0, 0), 0.88)
@@ -41,6 +45,7 @@ func _ready() -> void:
     _window("LowerWindowRight", Vector3(-2.51, 0.16, 1.46), 1.03, 1.08, window, wood)
     _window("UpperWindowLeft", Vector3(-1.79, 3.50, -1.10), 0.74, 0.72, window, wood)
     _window("UpperWindowRight", Vector3(-1.79, 3.50, 1.12), 0.74, 0.72, window, wood)
+    _build_finish_details(wood, footing, roof)
 
     # The entrance is on the street side. Keep the canopy above Miyako's sightline.
     _box(self, "KatsuroDoor", Vector3(-2.49, -0.58, -0.67), Vector3(0.08, 2.32, 1.27), doorway)
@@ -61,6 +66,8 @@ func _ready() -> void:
     _entry_light.light_energy = 1.15
     _entry_light.omni_range = 4.0
     add_child(_entry_light)
+    _build_weather()
+    _load_authored_model()
 
 func _process(delta: float) -> void:
     _elapsed += delta
@@ -73,6 +80,85 @@ func _process(delta: float) -> void:
         _wind_chime.rotation.z = sin(_elapsed * 0.54) * deg_to_rad(0.9)
     if is_instance_valid(_seal_material):
         _seal_material.emission_energy_multiplier = 0.50 + sin(_elapsed * 0.38) * 0.10
+    for drop in _rain:
+        var streak := drop["node"] as Node3D
+        var phase: float = drop["phase"]
+        streak.position.y = 3.1 - fposmod(_elapsed * 2.8 + phase, 4.8)
+        streak.position.x = drop["x"] + sin(_elapsed * 0.37 + phase) * 0.16
+    for wisp in _mist:
+        var mist := wisp["node"] as Node3D
+        var base_x: float = wisp["x"]
+        var phase: float = wisp["phase"]
+        mist.position.x = base_x + sin(_elapsed * 0.22 + phase) * 0.38
+
+func _load_authored_model() -> void:
+    if not ResourceLoader.exists(authored_model_path):
+        return
+    var scene := load(authored_model_path) as PackedScene
+    if scene == null:
+        push_warning("Shared home GLB could not be imported: %s" % authored_model_path)
+        return
+    var authored := scene.instantiate() as Node3D
+    if authored == null:
+        push_warning("Shared home GLB does not have a Node3D root")
+        return
+    authored.name = "BlenderSharedHome"
+    for child in get_children():
+        if child != _porch_lantern and child != _wind_chime and child.name != "Atmosphere":
+            _hide_fallback_meshes(child)
+    add_child(authored)
+
+func _hide_fallback_meshes(node: Node) -> void:
+    if node is MeshInstance3D:
+        (node as MeshInstance3D).visible = false
+    for child in node.get_children():
+        _hide_fallback_meshes(child)
+
+func _build_finish_details(wood: Material, stone: Material, roof: Material) -> void:
+    # Separate rafters, tile bands and veranda planks break the greybox silhouette.
+    for index in range(13):
+        var z := -3.00 + float(index) * 0.50
+        _box(self, "EaveRafter%02d" % index, Vector3(-2.75, 1.38, z), Vector3(1.18, 0.095, 0.11), wood)
+    for index in range(11):
+        var z := -2.85 + float(index) * 0.57
+        for side in [-1.0, 1.0]:
+            var tile := _box(self, "LowerTile_%d_%02d" % [int(side), index], Vector3(side * 1.44, 2.28, z), Vector3(3.06, 0.06, 0.12), roof)
+            tile.rotation.z = deg_to_rad(-22.0 * side)
+    for index in range(12):
+        _box(self, "VerandaPlank%02d" % index, Vector3(-2.79, -1.53, -2.82 + float(index) * 0.52), Vector3(1.07, 0.035, 0.45), wood)
+    for index in range(5):
+        _box(self, "WetApproachStone%02d" % index, Vector3(-3.65 - float(index) * 0.57, -1.76, -0.67), Vector3(0.48, 0.05, 0.87), stone)
+
+func _build_weather() -> void:
+    var atmosphere := Node3D.new()
+    atmosphere.name = "Atmosphere"
+    add_child(atmosphere)
+    var rain_material := _mat("MoonlitRain", Color(0.26, 0.37, 0.48, 0.42), Color(0.035, 0.055, 0.085), 0.28)
+    rain_material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+    for index in range(28):
+        var side := -1.0 if index % 2 == 0 else 1.0
+        var x := side * (3.65 + float(index % 4) * 0.35)
+        var z := -4.8 + float((index * 11) % 23) * 0.48
+        var drop := _box(atmosphere, "Rain%02d" % index, Vector3(x, 0, z), Vector3(0.018, 0.32, 0.018), rain_material)
+        drop.rotation.z = deg_to_rad(8.0)
+        _rain.append({"node": drop, "x": x, "phase": float(index) * 0.61})
+    var mist_material := _mat("GroundMist", Color(0.32, 0.39, 0.52, 0.085), Color(0, 0, 0), 1.0)
+    mist_material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+    mist_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+    for index in range(3):
+        var cloud := MeshInstance3D.new()
+        cloud.name = "GroundMist%02d" % index
+        var shape := SphereMesh.new()
+        shape.radius = 1.0
+        shape.height = 2.0
+        shape.radial_segments = 12
+        shape.rings = 6
+        cloud.mesh = shape
+        cloud.material_override = mist_material
+        cloud.scale = Vector3(2.4, 0.16, 1.15)
+        cloud.position = Vector3(-4.2 + float(index) * 3.6, -1.43, 3.8 + float(index % 2) * 1.7)
+        atmosphere.add_child(cloud)
+        _mist.append({"node": cloud, "x": cloud.position.x, "phase": float(index) * 1.7})
 
 func _build_story_details(wood: Material, footing: Material, doorway: Material, lantern: Material, seal: Material) -> void:
     # One warm lantern carries the entry composition in the blue-violet dusk.

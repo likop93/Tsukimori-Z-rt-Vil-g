@@ -107,6 +107,7 @@ func _ready() -> void:
                 _mesh_box(house, "DoorInset", Vector3(0, -0.55, -3.13), Vector3(1.09, 2.12, 0.035), roof)
 
     _build_forest(wall, roof, wood, plaster, stone, bark, needles, darker_needles, plant)
+    _build_wet_street()
 
     var fences := _node("Fences", self)
     _static_box(fences, "LeftFence", Vector3(-4.1, 0.575, -10), Vector3(0.18, 1.15, 11), wood)
@@ -217,6 +218,31 @@ func _dress_house(house: StaticBody3D, roof: Material, wood: Material, plaster: 
     if index == 14:
         _mesh_box(house, "EntranceLintel", Vector3(-2.59, 0.72, -0.7), Vector3(0.15, 0.15, 1.55), wood)
         _mesh_box(house, "EntranceStep", Vector3(-2.7, -1.68, -0.7), Vector3(0.66, 0.18, 1.75), stone)
+
+func _build_wet_street() -> void:
+    # Staggered stones pick up the lanterns without changing any walk collision.
+    var paving := _node("WetPaving", self)
+    var slate := _mat("RainDarkenedSlate", Color(0.19, 0.205, 0.215))
+    slate.roughness = 0.48
+    var worn := _mat("WornSlate", Color(0.24, 0.235, 0.225))
+    worn.roughness = 0.62
+    var water := _mat("StillRainwater", Color(0.085, 0.13, 0.18), Color(0.014, 0.025, 0.04))
+    water.roughness = 0.18
+    water.metallic = 0.12
+    for row in range(49):
+        for column in range(3):
+            var offset := float((row * 7 + column * 11) % 5) * 0.07
+            var slab := _mesh_box(
+                paving,
+                "Stone_%02d_%d" % [row, column],
+                Vector3((float(column) - 1.0) * 1.73 + offset, 0.082, -2.1 - float(row) * 1.85 + float(column % 2) * 0.23),
+                Vector3(1.42 - offset, 0.027, 1.32 + offset),
+                worn if (row + column) % 6 == 0 else slate
+            )
+            slab.rotation.y = deg_to_rad(float((row * 13 + column * 19) % 11) - 5.0)
+    for index in range(11):
+        var side := -1.0 if index % 2 == 0 else 1.0
+        _mesh_box(paving, "Puddle%02d" % index, Vector3(side * 3.32, 0.08, -5.0 - float(index) * 8.25), Vector3(1.02, 0.019, 1.65), water)
 
 func _build_forest(wall: Material, roof: Material, wood: Material, plaster: Material, stone: Material, bark: Material, needles: Material, darker_needles: Material, plant: Material) -> void:
     var homes := _node("ForestHomes", self)

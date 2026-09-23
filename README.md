@@ -40,6 +40,8 @@ Jelenlegi játszható ív:
 - lejtős tetők, favázas homlokzatok, papírablakok és külön bejárat a közös házon; réteges cédruskoronák és erdei aljnövényzet
 - Miyako és Akira közös otthonának kétszintes, sötét alkonyati animált vizuális passza; veranda-lámpással, lassú fénylüktetéssel és szinte mozdulatlan szélcsengővel
 - Miyako és Akira közös házának kisebb, híd felőli rendelőszárnya: külön oldalsó ajtóhoz rövid kövezett ösvény és lámpásos tábla vezet; E-vel belépés, váró és vizsgáló megfigyelése, majd kilépés
+- új, Godotba betöltött közösház-GLB részletezett cseréptetővel, favázzal, shoji ablakokkal és verandával; szerkeszthető Blender-forrás ugyanabból a generátorból készíthető
+- esti holdfény és mélyebb köd, nedves kőburkolat és tócsák, mozgó ereszalji eső és alacsony talajköd, lassan hajló erdei cédrusok
 - hat animált fényű utcai lámpa
 - mozgó textil-, szirom- és növényproxyk
 - nyolc animált humanoid falusi proxy
@@ -62,6 +64,8 @@ A hegyi út stabil alap.
 **Tsukimori — az első utca narratív bejárása és a közös ház vizuális prototípusa**
 
 Az utcai párok reakciói F5 review-n átmentek. A közös ház animált, kétszintes atmoszférikus passza elkészült, most F5-ben a ház sziluettjét, léptékét és Miyako láthatóságát ellenőrizzük. Részletek: `docs/ASSET_EVALUATION_PLAN.md`, `docs/FIRST_STREET_NARRATIVE_PASS.md`, `docs/MIYAKO_FIRST_ENCOUNTER.md`, `docs/VILLAGE_LAYOUT.md` és `docs/SHARED_HOME_PROTOTYPE.md`.
+
+A következő esti látványpassz Blender-modellje, Godot-betöltése és F5 ellenőrzőlistája: `docs/EVENING_VISUAL_PASS.md`.
 
 ## Godot asset stratégia
 

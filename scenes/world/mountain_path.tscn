@@ -121,13 +121,13 @@ roughness = 0.82
 
 [sub_resource type="Environment" id="Environment_main"]
 background_mode = 1
-background_color = Color(0.18, 0.23, 0.25, 1)
+background_color = Color(0.045, 0.061, 0.092, 1)
 ambient_light_source = 3
-ambient_light_color = Color(0.62, 0.64, 0.61, 1)
-ambient_light_energy = 0.72
+ambient_light_color = Color(0.39, 0.47, 0.65, 1)
+ambient_light_energy = 0.55
 fog_enabled = true
-fog_light_color = Color(0.58, 0.62, 0.61, 1)
-fog_density = 0.010
+fog_light_color = Color(0.25, 0.32, 0.43, 1)
+fog_density = 0.014
 
 [node name="MountainPath" type="Node3D"]
 script = ExtResource("1_world")
@@ -137,8 +137,8 @@ environment = SubResource("Environment_main")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 rotation_degrees = Vector3(-46, -32, 0)
-light_color = Color(1, 0.79, 0.59, 1)
-light_energy = 1.32
+light_color = Color(0.49, 0.59, 0.81, 1)
+light_energy = 0.72
 shadow_enabled = true
 
 [node name="AmbientMotion" type="Node" parent="."]

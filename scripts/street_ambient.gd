@@ -10,6 +10,8 @@ var _lights: Array[Dictionary] = []
 var _cloth: Array[Dictionary] = []
 var _petals: Array[Dictionary] = []
 var _plants: Array[Dictionary] = []
+var _cedars: Array[Dictionary] = []
+var _puddles: Array[Dictionary] = []
 
 func _ready() -> void:
     var street := get_parent()
@@ -67,6 +69,23 @@ func _ready() -> void:
                 })
                 index += 1
 
+    var forest := street.get_node_or_null("ForestTrees")
+    if forest:
+        var index := 0
+        for tree in forest.get_children():
+            for crown in tree.get_children():
+                if crown.name.begins_with("CrownTier"):
+                    _cedars.append({"node": crown, "rotation": crown.rotation, "phase": float(index) * 0.53})
+                    index += 1
+
+    var paving := street.get_node_or_null("WetPaving")
+    if paving:
+        var index := 0
+        for slab in paving.get_children():
+            if slab.name.begins_with("Puddle"):
+                _puddles.append({"node": slab, "phase": float(index) * 0.83})
+                index += 1
+
 func _process(delta: float) -> void:
     _time += delta
 
@@ -101,3 +120,16 @@ func _process(delta: float) -> void:
         var phase: float = data["phase"]
         plant.rotation.x = base_rotation.x + sin(_time * 0.78 + phase) * deg_to_rad(plant_sway_degrees * 0.45)
         plant.rotation.z = base_rotation.z + sin(_time * 0.60 + phase * 1.4) * deg_to_rad(plant_sway_degrees)
+
+    for data in _cedars:
+        var crown := data["node"] as Node3D
+        var base_rotation: Vector3 = data["rotation"]
+        var phase: float = data["phase"]
+        crown.rotation.x = base_rotation.x + sin(_time * 0.39 + phase) * deg_to_rad(0.55)
+        crown.rotation.z = base_rotation.z + sin(_time * 0.32 + phase * 1.3) * deg_to_rad(0.75)
+
+    for data in _puddles:
+        var puddle := data["node"] as Node3D
+        var phase: float = data["phase"]
+        puddle.scale.x = 1.0 + sin(_time * 1.1 + phase) * 0.023
+        puddle.scale.z = 1.0 + cos(_time * 0.9 + phase) * 0.016

@@ -11,14 +11,28 @@ var _player: CharacterBody3D
 var _inside := false
 var _prompt := ""
 var _camera_zone: Area3D
+var _visual_time := 0.0
+var _side_light: OmniLight3D
+var _sign_light: OmniLight3D
+var _interior_light: OmniLight3D
+var _curtain: Node3D
 
 func _ready() -> void:
     _world = get_node("../../../..") as Node3D
     _player = _world.get_node("Player") as CharacterBody3D
     _build_exterior()
     _build_interior()
+    _side_light = get_node("Exterior/ClinicLamp") as OmniLight3D
+    _sign_light = get_node("Exterior/RoadsideMarker/RoadsideLight") as OmniLight3D
+    _interior_light = get_node("Interior/InteriorLight") as OmniLight3D
+    _curtain = get_node("Exterior/ClinicCurtain") as Node3D
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+    _visual_time += delta
+    _side_light.light_energy = 0.7 + sin(_visual_time * 1.8) * 0.06
+    _sign_light.light_energy = 1.2 + sin(_visual_time * 1.31 + 1.0) * 0.09
+    _interior_light.light_energy = 1.15 + sin(_visual_time * 1.2 + 0.3) * 0.035
+    _curtain.rotation.z = sin(_visual_time * 0.53) * deg_to_rad(2.0)
     if not is_instance_valid(_player):
         return
     var next_prompt := ""
@@ -96,12 +110,20 @@ func _build_exterior() -> void:
     for side in [-1.0, 1.0]:
         var slope := _mesh(root, "RoofLeft" if side < 0 else "RoofRight", Vector3(side * 1.04, 3.08, 0), Vector3(2.48, 0.22, 5.75), roof)
         slope.rotation.z = deg_to_rad(-23.0 * side)
+        for index in range(8):
+            var tile := _mesh(root, "AnnexTile_%d_%02d" % [int(side), index], Vector3(side * 1.04, 3.22, -2.35 + float(index) * 0.67), Vector3(2.4, 0.045, 0.07), stone)
+            tile.rotation.z = slope.rotation.z
     _mesh(root, "RoofRidge", Vector3(0, 3.55, 0), Vector3(0.22, 0.18, 5.75), timber)
+    for index in range(9):
+        _mesh(root, "AnnexRafter%02d" % index, Vector3(-2.10, 2.58, -2.3 + float(index) * 0.57), Vector3(0.62, 0.095, 0.09), timber)
     for z in [-2.17, 2.17]:
         _mesh(root, "SideFrame%02d" % (0 if z < 0 else 1), Vector3(-2.03, 1.4, z), Vector3(0.16, 2.7, 0.15), timber)
     _mesh(root, "SideLintel", Vector3(-2.04, 2.6, 0), Vector3(0.16, 0.15, 4.55), timber)
     _mesh(root, "ClinicSideDoor", Vector3(-2.05, 1.06, 0), Vector3(0.10, 2.12, 1.22), timber)
     _mesh(root, "DoorSill", Vector3(-2.29, 0.12, 0), Vector3(0.53, 0.24, 1.5), stone)
+    var curtain := _node("ClinicCurtain", root, Vector3(-2.17, 2.32, 0))
+    for index in range(2):
+        _mesh(curtain, "NorenPanel%02d" % index, Vector3(-0.04, -0.28, -0.34 + float(index) * 0.68), Vector3(0.035, 0.54, 0.58), wall)
     for index in range(2):
         var z := -1.72 if index == 0 else 1.72
         _mesh(root, "PaperWindow%02d" % index, Vector3(-2.05, 1.67, z), Vector3(0.045, 0.83, 0.65), paper)
@@ -159,6 +181,12 @@ func _build_interior() -> void:
     var linen := _mat(Color(0.53, 0.51, 0.44))
     var amber := _mat(Color(0.62, 0.42, 0.22), Color(0.30, 0.14, 0.045))
     _solid(room, "Floor", Vector3(0, -0.16, 0), Vector3(11.8, 0.32, 9.8), floor_mat)
+    var tatami := _mat(Color(0.37, 0.33, 0.23))
+    for row in range(3):
+        for column in range(3):
+            _mesh(room, "Tatami_%d_%d" % [row, column], Vector3(-3.8 + float(column) * 3.8, 0.024, -2.92 + float(row) * 2.85), Vector3(3.61, 0.038, 2.65), tatami)
+    for index in range(4):
+        _mesh(room, "FloorRail%02d" % index, Vector3(-5.75 + float(index) * 3.8, 0.055, -0.1), Vector3(0.09, 0.04, 9.4), wood)
     _solid(room, "BackWall", Vector3(0, 1.6, -4.9), Vector3(11.8, 3.2, 0.22), paper)
     _solid(room, "WestWall", Vector3(-5.9, 1.6, 0), Vector3(0.22, 3.2, 9.8), paper)
     _solid(room, "EastWall", Vector3(5.9, 1.6, 0), Vector3(0.22, 3.2, 9.8), paper)
@@ -184,6 +212,9 @@ func _build_interior() -> void:
     _mesh(exam, "InstrumentTray", Vector3(-1.35, 0.87, -1.26), Vector3(0.57, 0.08, 0.66), linen)
     _mesh(exam, "NotesDesk", Vector3(-1.55, 0.60, 1.70), Vector3(1.05, 0.15, 0.78), wood)
     _mesh(exam, "Notes", Vector3(-1.55, 0.70, 1.70), Vector3(0.55, 0.035, 0.38), linen)
+    _mesh(exam, "MedicineBottles", Vector3(2.35, 2.22, -1.35), Vector3(0.32, 0.28, 0.6), amber)
+    _mesh(exam, "PrivacyFrame", Vector3(-1.7, 1.45, -1.65), Vector3(0.10, 2.9, 0.1), wood)
+    _mesh(exam, "PrivacyFabric", Vector3(-1.7, 1.56, -1.65), Vector3(0.035, 2.4, 1.15), paper)
     _node("Entrance", room, Vector3(0, 0, 3.92))
     _mesh(room, "HangingLamp", Vector3(0, 2.96, -0.2), Vector3(0.38, 0.12, 0.55), amber)
     var light := OmniLight3D.new()

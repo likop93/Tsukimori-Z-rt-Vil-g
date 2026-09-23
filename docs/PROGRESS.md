@@ -39,6 +39,7 @@ Az utcai narratív reakciók F5 bejárása sikeres volt; a következő körben a
 | House and forest visual pass | ✅ IMPLEMENTED — REVIEW |
 | Miyako + Akira shared home visual prototype | ✅ ANIMATED PASS — F5 REVIEW |
 | Clinic blockout | ✅ IMPLEMENTED — F5 REVIEW |
+| Evening visual pass and shared-home GLB | ✅ GENERATED — F5 REVIEW |
 | Opening slice title beat | ⏳ PLANNED |
 
 ## Jelenlegi játszható szakasz
@@ -68,7 +69,8 @@ Működik:
 - négy külön, egyszeri falusi reakció és a patakhídnál lezáruló narratív feliratsor;
 - Miyako humanoid proxyja Katsuro házának küszöbénél;
 - irányított első találkozás, kánon szerinti első mondattal és folytatható vezérléssel;
-- Miyako találkozása után E-vel elérhető rendelő a falusi oldalon, bejárható váróval és vizsgálóval;
+- Miyako találkozása után E-vel elérhető rendelő a közös ház híd felőli oldalszárnyában, bejárható váróval és vizsgálóval;
+- generált, Godotba betöltött közösház-GLB és ugyanahhoz a geometriához szerkeszthető Blender-forrásgenerátor; hideg esti fény, nedves utcakő, mozgatott eső és talajköd;
 - GameState flag-ek.
 
 ## Asset irány

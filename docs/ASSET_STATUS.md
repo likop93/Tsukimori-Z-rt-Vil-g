@@ -10,13 +10,13 @@
 | Tsukimori gate | BLOCKOUT 2.0 + animated anomaly — REVIEW PASSED |
 | Cedar trees | BLOCKOUT proxy + ambient sway — REVIEW PASSED |
 | Fog | BLOCKOUT + subtle ambient motion — REVIEW PASSED |
-| Lighting | BLOCKOUT |
+| Lighting | BLUE HOUR PASS — F5 REVIEW |
 | UI | PLACEHOLDER — subtitle prototype |
 | Tsukimori first street | NARRATIVE PASS REVIEW PASSED; ENVIRONMENT PASS — REVIEW |
 | Village houses / fences | PROCEDURAL FACADES / ROOFS — REVIEW |
-| Miyako + Akira shared home | TWO-STOREY ANIMATED VISUAL PASS — F5 REVIEW |
-| Clinic exterior and interior | WALKABLE BLOCKOUT — F5 REVIEW |
-| Forest cedars / undergrowth | LAYERED SILHOUETTES / FERNS — REVIEW |
+| Miyako + Akira shared home | AUTHORED GLB + ANIMATED WEATHER — F5 REVIEW |
+| Clinic exterior and interior | ATTACHED WALKABLE WING + INTERIOR DETAIL — F5 REVIEW |
+| Forest cedars / undergrowth | LAYERED SILHOUETTES + SUBTLE SWAY — REVIEW |
 | Lanterns | BLOCKOUT + animated flicker |
 | Hanging cloth / petals / plants | ANIMATED BLOCKOUT |
 | Villagers | HUMANOID ANIMATED PROXIES |
