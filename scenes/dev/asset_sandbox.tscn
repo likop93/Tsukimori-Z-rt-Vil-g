@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3]
+
+[sub_resource type="PlaneMesh" id="FloorMesh"]
+size = Vector2(24, 24)
+
+[sub_resource type="StandardMaterial3D" id="FloorMat"]
+albedo_color = Color(0.16, 0.17, 0.15, 1)
+roughness = 0.95
+
+[sub_resource type="BoxMesh" id="ScaleMesh"]
+size = Vector3(0.42, 1.82, 0.32)
+
+[sub_resource type="StandardMaterial3D" id="ScaleMat"]
+albedo_color = Color(0.12, 0.34, 0.25, 1)
+roughness = 0.85
+
+[sub_resource type="Environment" id="Env"]
+background_mode = 1
+background_color = Color(0.18, 0.21, 0.22, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.62, 0.64, 0.60, 1)
+ambient_light_energy = 0.75
+fog_enabled = true
+fog_light_color = Color(0.56, 0.60, 0.58, 1)
+fog_density = 0.004
+
+[sub_resource type="BoxMesh" id="GridMarkerMesh"]
+size = Vector3(1, 0.025, 0.08)
+
+[sub_resource type="StandardMaterial3D" id="MarkerMat"]
+albedo_color = Color(0.45, 0.43, 0.36, 1)
+roughness = 1.0
+
+[node name="AssetSandbox" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-48, -35, 0)
+light_color = Color(1, 0.82, 0.66, 1)
+light_energy = 1.15
+shadow_enabled = true
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("FloorMesh")
+material_override = SubResource("FloorMat")
+
+[node name="AkiraScaleReference" type="MeshInstance3D" parent="."]
+position = Vector3(-4, 0.91, 0)
+mesh = SubResource("ScaleMesh")
+material_override = SubResource("ScaleMat")
+
+[node name="ScaleLabel" type="Label3D" parent="."]
+position = Vector3(-4, 2.1, 0)
+text = "AKIRA ~1.82 m"
+font_size = 48
+pixel_size = 0.003
+billboard = 1
+
+[node name="DropAssetsHere" type="Node3D" parent="."]
+
+[node name="DropLabel" type="Label3D" parent="."]
+position = Vector3(0, 0.25, -3)
+rotation_degrees = Vector3(-90, 0, 0)
+text = "ASSET TEST AREA"
+font_size = 64
+pixel_size = 0.003
+
+[node name="MarkerX" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.02, 0)
+mesh = SubResource("GridMarkerMesh")
+material_override = SubResource("MarkerMat")
+
+[node name="MarkerZ" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.02, 0)
+rotation_degrees = Vector3(0, 90, 0)
+mesh = SubResource("GridMarkerMesh")
+material_override = SubResource("MarkerMat")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(7.2, 5.7, 8.8)
+rotation_degrees = Vector3(-22, 38, 0)
+current = true
+fov = 42.0
