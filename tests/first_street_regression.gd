@@ -49,6 +49,10 @@ func run_checks() -> void:
     expect(street.get_node("ForestTrees").get_child_count() >= 15, "Forest is missing its cedar blockouts")
     expect(street.get_node("ForestUndergrowth").get_child_count() == 44, "Forest floor details are missing")
     expect(street.has_node("ForestTrees/Cedar01/CrownTier03"), "Layered cedar silhouette is missing")
+    expect(street.has_node("ForestTrees/Cedar01/TaperedBole") and street.has_node("ForestTrees/Cedar01/CrownTier03/NeedleLobe03"), "Natural cedar silhouette is missing")
+    expect(ResourceLoader.exists("res://assets/environment/materials/damp_earth.png") and ResourceLoader.exists("res://assets/environment/materials/slate_roof.png"), "Painted village environment maps are missing")
+    var paving_material := (street.get_node("WetPaving/Stone_00_0") as MeshInstance3D).material_override as StandardMaterial3D
+    expect(paving_material != null and paving_material.albedo_texture != null, "Wet stones lost their painted surface")
     expect(street.get_node("NPCSlots").get_child_count() == 8, "Expected eight villager slots")
     for index in range(1, 5):
         expect(street.has_node("VillagerBeat%02d" % index), "Missing staged villager reaction %d" % index)
@@ -71,6 +75,7 @@ func run_checks() -> void:
     expect(street.has_node("Houses/MiyakoAkiraHome/SharedHomeExterior/BlenderSharedHome"), "Shared home did not load its authored GLB")
     expect(street.has_node("Houses/MiyakoAkiraHome/SharedHomeExterior/Atmosphere/Rain00"), "Animated home weather is missing")
     expect(street.has_node("WetPaving/Stone_00_0") and street.has_node("WetPaving/Puddle00"), "Wet village route is missing")
+    expect(street.get_node("RoadsideDetails").get_child_count() == 21, "Roadside ground details are missing")
     expect(street.has_node("Houses/ShionHome/ShionDoor"), "Shion's house by the near bank is missing")
     expect(street.has_node("Houses/House04"), "First, unnamed house past the stream is missing")
     expect(street.has_node("Stream/Water"), "Stream water is missing")

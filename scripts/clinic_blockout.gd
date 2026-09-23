@@ -99,10 +99,10 @@ func _near(node_path: String, radius: float) -> bool:
 
 func _build_exterior() -> void:
     var root := _node("Exterior", self, Vector3.ZERO)
-    var wall := _mat(Color(0.31, 0.30, 0.27))
-    var timber := _mat(Color(0.13, 0.09, 0.072))
-    var roof := _mat(Color(0.074, 0.085, 0.105))
-    var stone := _mat(Color(0.20, 0.22, 0.22))
+    var wall := _surface("aged_plaster", Color(0.77, 0.78, 0.76))
+    var timber := _surface("weathered_cedar", Color(0.68, 0.65, 0.62))
+    var roof := _surface("slate_roof", Color(0.67, 0.71, 0.78))
+    var stone := _surface("wet_stone", Color(0.65, 0.67, 0.68))
     var paper := _mat(Color(0.60, 0.45, 0.30), Color(0.23, 0.105, 0.038))
     _solid(root, "ClinicYard", Vector3(-0.5, -0.17, 0.2), Vector3(7.8, 0.34, 6.7), stone)
     _solid(root, "Building", Vector3(0, 1.4, 0), Vector3(3.9, 2.8, 5.2), wall)
@@ -258,6 +258,11 @@ func _mat(color: Color, emission: Color = Color.BLACK) -> StandardMaterial3D:
     if emission != Color.BLACK:
         material.emission_enabled = true
         material.emission = emission
+    return material
+
+func _surface(map_name: String, tint: Color) -> StandardMaterial3D:
+    var material := _mat(tint)
+    material.albedo_texture = load("res://assets/environment/materials/%s.png" % map_name) as Texture2D
     return material
 
 func _mesh(parent: Node, name_value: String, position_value: Vector3, size: Vector3, material: Material) -> MeshInstance3D:

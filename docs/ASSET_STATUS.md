@@ -12,11 +12,12 @@
 | Fog | BLOCKOUT + subtle ambient motion — REVIEW PASSED |
 | Lighting | BLUE HOUR PASS — F5 REVIEW |
 | UI | PLACEHOLDER — subtitle prototype |
-| Tsukimori first street | NARRATIVE PASS REVIEW PASSED; ENVIRONMENT PASS — REVIEW |
-| Village houses / fences | PROCEDURAL FACADES / ROOFS — REVIEW |
+| Tsukimori first street | NARRATIVE PASS REVIEW PASSED; PAINTED ENVIRONMENT PASS — F5 REVIEW |
+| Village houses / fences | TEXTURED PROCEDURAL FACADES / ROOFS — F5 REVIEW |
 | Miyako + Akira shared home | AUTHORED GLB + ANIMATED WEATHER — F5 REVIEW |
-| Clinic exterior and interior | ATTACHED WALKABLE WING + INTERIOR DETAIL — F5 REVIEW |
-| Forest cedars / undergrowth | LAYERED SILHOUETTES + SUBTLE SWAY — REVIEW |
+| Clinic exterior and interior | ATTACHED WALKABLE WING + TEXTURED EXTERIOR — F5 REVIEW |
+| Forest cedars / undergrowth | TAPERED TRUNKS + LOBED CROWNS + SUBTLE SWAY — F5 REVIEW |
+| Village surface maps | FIVE PROCEDURALLY AUTHORED COLOR MAPS — F5 REVIEW |
 | Lanterns | BLOCKOUT + animated flicker |
 | Hanging cloth / petals / plants | ANIMATED BLOCKOUT |
 | Villagers | HUMANOID ANIMATED PROXIES |

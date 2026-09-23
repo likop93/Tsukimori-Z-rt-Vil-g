@@ -15,22 +15,22 @@ var _encounter_player: CharacterBody3D
 var _experienced_beats: Array[bool] = [false, false, false, false]
 
 func _ready() -> void:
-    var ground := _mat("VillageGround", Color(0.105, 0.115, 0.105))
-    var street := _mat("PackedEarth", Color(0.265, 0.245, 0.205))
-    var wall := _mat("HouseWall", Color(0.31, 0.235, 0.17))
-    var roof := _mat("DarkRoof", Color(0.075, 0.085, 0.09))
-    var wood := _mat("DarkWood", Color(0.16, 0.105, 0.07))
+    var ground := _surface("VillageGround", "damp_earth", Color(0.59, 0.68, 0.61), 0.98, Vector3(5, 1, 15))
+    var street := _surface("PackedEarth", "damp_earth", Color(0.85, 0.79, 0.69), 0.94, Vector3(2, 1, 16))
+    var wall := _surface("HouseWall", "aged_plaster", Color(0.79, 0.74, 0.70))
+    var roof := _surface("DarkRoof", "slate_roof", Color(0.64, 0.68, 0.72), 0.70, Vector3(2, 1, 2))
+    var wood := _surface("DarkWood", "weathered_cedar", Color(0.72, 0.67, 0.62))
     var glow := _mat("LanternGlow", Color(0.87, 0.61, 0.31), Color(0.95, 0.48, 0.16))
     var cloth := _mat("HangingCloth", Color(0.42, 0.16, 0.12))
     var paper := _mat("PetalPaper", Color(0.88, 0.75, 0.77))
     var plant := _mat("VillagePlant", Color(0.11, 0.23, 0.13))
     var water := _mat("StreamWater", Color(0.075, 0.25, 0.28), Color(0.015, 0.07, 0.08))
-    var bank := _mat("StreamBank", Color(0.20, 0.23, 0.20))
-    var bark := _mat("CedarBark", Color(0.13, 0.085, 0.055))
+    var bank := _surface("StreamBank", "wet_stone", Color(0.54, 0.59, 0.55))
+    var bark := _surface("CedarBark", "weathered_cedar", Color(0.52, 0.49, 0.46))
     var needles := _mat("CedarNeedles", Color(0.075, 0.14, 0.105))
     var darker_needles := _mat("CedarShade", Color(0.055, 0.11, 0.085))
-    var plaster := _mat("WindowPaper", Color(0.56, 0.50, 0.39))
-    var stone := _mat("FoundationStone", Color(0.22, 0.23, 0.21))
+    var plaster := _surface("WindowPaper", "aged_plaster", Color(0.95, 0.91, 0.80))
+    var stone := _surface("FoundationStone", "wet_stone", Color(0.60, 0.60, 0.55))
     var home_wall := _mat("SharedHomeWall", Color(0.37, 0.27, 0.20))
 
     # The village is crossed first. The stream marks its quiet, far edge.
@@ -108,6 +108,7 @@ func _ready() -> void:
 
     _build_forest(wall, roof, wood, plaster, stone, bark, needles, darker_needles, plant)
     _build_wet_street()
+    _build_roadside_details(plant, stone)
 
     var fences := _node("Fences", self)
     _static_box(fences, "LeftFence", Vector3(-4.1, 0.575, -10), Vector3(0.18, 1.15, 11), wood)
@@ -200,6 +201,9 @@ func _dress_house(house: StaticBody3D, roof: Material, wood: Material, plaster: 
     for roof_side in [-1.0, 1.0]:
         var panel := _mesh_box(house, "RoofSlopeLeft" if roof_side < 0 else "RoofSlopeRight", Vector3(roof_side * 1.4, 2.17, 0), Vector3(3.2, 0.22, 7.05), roof)
         panel.rotation.z = deg_to_rad(-22.0 * roof_side)
+        # Thin timber battens follow the slope; they give the roof a readable edge in fog.
+        for batten in range(4):
+            _mesh_box(panel, "RoofBatten%02d" % (batten + 1), Vector3(0, 0.12, -2.65 + float(batten) * 1.77), Vector3(3.22, 0.055, 0.055), wood)
     _mesh_box(house, "RoofRidge", Vector3(0, 2.75, 0), Vector3(0.22, 0.19, 7.18), wood)
 
     # These are visual facades only; the existing collision shape still defines the house.
@@ -215,6 +219,8 @@ func _dress_house(house: StaticBody3D, roof: Material, wood: Material, plaster: 
         _mesh_box(window_root, "Sill", Vector3(side * 0.04, -0.45, 0), Vector3(0.1, 0.11, 0.98), wood)
         _mesh_box(window_root, "MiddleRail", Vector3(side * 0.04, 0, 0), Vector3(0.1, 0.06, 0.83), wood)
         _mesh_box(window_root, "CenterBar", Vector3(side * 0.05, 0, 0), Vector3(0.1, 0.83, 0.06), wood)
+        for rail in [-1.0, 1.0]:
+            _mesh_box(window_root, "ShojiRailLower" if rail < 0 else "ShojiRailUpper", Vector3(side * 0.055, rail * 0.25, 0), Vector3(0.07, 0.032, 0.84), wood)
     if index == 14:
         _mesh_box(house, "EntranceLintel", Vector3(-2.59, 0.72, -0.7), Vector3(0.15, 0.15, 1.55), wood)
         _mesh_box(house, "EntranceStep", Vector3(-2.7, -1.68, -0.7), Vector3(0.66, 0.18, 1.75), stone)
@@ -222,9 +228,9 @@ func _dress_house(house: StaticBody3D, roof: Material, wood: Material, plaster: 
 func _build_wet_street() -> void:
     # Staggered stones pick up the lanterns without changing any walk collision.
     var paving := _node("WetPaving", self)
-    var slate := _mat("RainDarkenedSlate", Color(0.19, 0.205, 0.215))
+    var slate := _surface("RainDarkenedSlate", "wet_stone", Color(0.70, 0.73, 0.76))
     slate.roughness = 0.48
-    var worn := _mat("WornSlate", Color(0.24, 0.235, 0.225))
+    var worn := _surface("WornSlate", "wet_stone", Color(0.80, 0.77, 0.72))
     worn.roughness = 0.62
     var water := _mat("StillRainwater", Color(0.085, 0.13, 0.18), Color(0.014, 0.025, 0.04))
     water.roughness = 0.18
@@ -243,6 +249,26 @@ func _build_wet_street() -> void:
     for index in range(11):
         var side := -1.0 if index % 2 == 0 else 1.0
         _mesh_box(paving, "Puddle%02d" % index, Vector3(side * 3.32, 0.08, -5.0 - float(index) * 8.25), Vector3(1.02, 0.019, 1.65), water)
+
+func _build_roadside_details(moss: Material, stone: Material) -> void:
+    var verge := _node("RoadsideDetails", self)
+    for index in range(21):
+        var side := -1.0 if index % 2 == 0 else 1.0
+        var center := Vector3(side * (4.27 + float(index % 3) * 0.10), 0.065, -5.5 - float(index) * 4.13)
+        var cluster := _node("Verge%02d" % (index + 1), verge)
+        cluster.position = center
+        var moss_mesh := SphereMesh.new()
+        moss_mesh.radius = 0.40 + float(index % 4) * 0.065
+        moss_mesh.height = moss_mesh.radius * 2.0
+        moss_mesh.radial_segments = 8
+        moss_mesh.rings = 2
+        var moss_patch := MeshInstance3D.new()
+        moss_patch.name = "Moss"
+        moss_patch.mesh = moss_mesh
+        moss_patch.scale.y = 0.07
+        moss_patch.material_override = moss
+        cluster.add_child(moss_patch)
+        _mesh_box(cluster, "Pebble", Vector3(side * 0.22, 0.03, 0.17), Vector3(0.19, 0.07, 0.13), stone)
 
 func _build_forest(wall: Material, roof: Material, wood: Material, plaster: Material, stone: Material, bark: Material, needles: Material, darker_needles: Material, plant: Material) -> void:
     var homes := _node("ForestHomes", self)
@@ -266,7 +292,19 @@ func _build_forest(wall: Material, roof: Material, wood: Material, plaster: Mate
     for index in tree_positions.size():
         var tree := _node("Cedar%02d" % (index + 1), trees)
         tree.position = tree_positions[index]
-        _static_box(tree, "Trunk", Vector3(0, 2.4, 0), Vector3(0.62, 4.8, 0.62), bark)
+        var trunk := _static_box(tree, "Trunk", Vector3(0, 2.4, 0), Vector3(0.62, 4.8, 0.62), bark)
+        (trunk.get_node("Mesh") as MeshInstance3D).visible = false
+        var bole := CylinderMesh.new()
+        bole.bottom_radius = 0.39
+        bole.top_radius = 0.18
+        bole.height = 6.5
+        bole.radial_segments = 9
+        var bole_visual := MeshInstance3D.new()
+        bole_visual.name = "TaperedBole"
+        bole_visual.mesh = bole
+        bole_visual.position.y = 3.25
+        bole_visual.material_override = bark
+        tree.add_child(bole_visual)
         var height_variation := float(index % 4) * 0.18
         for tier in range(3):
             var crown_mesh := CylinderMesh.new()
@@ -280,6 +318,21 @@ func _build_forest(wall: Material, roof: Material, wood: Material, plaster: Mate
             crown.position.y = 4.35 + float(tier) * 1.14 + height_variation
             crown.material_override = needles if (tier + index) % 3 == 0 else darker_needles
             tree.add_child(crown)
+            for lobe in range(3):
+                var foliage := SphereMesh.new()
+                foliage.radius = 0.60 - float(tier) * 0.08
+                foliage.height = foliage.radius * 2.0
+                foliage.radial_segments = 7
+                foliage.rings = 4
+                var tuft := MeshInstance3D.new()
+                tuft.name = "NeedleLobe%02d" % (lobe + 1)
+                tuft.mesh = foliage
+                tuft.scale.y = 0.68
+                var angle := float(lobe) * TAU / 3.0 + float(index % 7) * 0.38 + float(tier) * 0.41
+                var spread := (0.98 - float(tier) * 0.20) * (1.0 + float(index % 3) * 0.035)
+                tuft.position = Vector3(cos(angle) * spread, -0.48 - float(lobe % 2) * 0.20, sin(angle) * spread)
+                tuft.material_override = needles if (lobe + tier + index) % 2 == 0 else darker_needles
+                crown.add_child(tuft)
 
     # Small, uncollidable plants keep the roads clear while breaking up the flat forest floor.
     var undergrowth := _node("ForestUndergrowth", self)
@@ -372,6 +425,13 @@ func _mat(name_value: String, color: Color, emission := Color(0, 0, 0, 1)) -> St
         result.emission_enabled = true
         result.emission = emission
         result.emission_energy_multiplier = 1.3
+    return result
+
+func _surface(name_value: String, map_name: String, tint: Color, roughness_value: float = 0.88, tiling: Vector3 = Vector3.ONE) -> StandardMaterial3D:
+    var result := _mat(name_value, tint)
+    result.albedo_texture = load("res://assets/environment/materials/%s.png" % map_name) as Texture2D
+    result.roughness = roughness_value
+    result.uv1_scale = tiling
     return result
 
 func _mesh_box(parent: Node, name_value: String, position_value: Vector3, size: Vector3, material: Material) -> MeshInstance3D:
