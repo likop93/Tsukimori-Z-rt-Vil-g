@@ -21,47 +21,47 @@ func _ready() -> void:
     var water := _mat("StreamWater", Color(0.075, 0.25, 0.28), Color(0.015, 0.07, 0.08))
     var bank := _mat("StreamBank", Color(0.20, 0.23, 0.20))
 
-    # The stream is an actual gap in the ground collision. The bridge is its only crossing.
-    _static_box(self, "Ground", Vector3(0, -0.2, -6.5), Vector3(34, 0.4, 25), ground)
-    _static_box(self, "VillageGround", Vector3(0, -0.2, -64.5), Vector3(34, 0.4, 83), ground)
+    # The village is crossed first. The stream marks its quiet, far edge.
+    _static_box(self, "Ground", Vector3(0, -0.2, -45), Vector3(34, 0.4, 102), ground)
+    _static_box(self, "FarBankGround", Vector3(0, -0.2, -112.5), Vector3(34, 0.4, 25), ground)
 
     var streambed := _node("Stream", self)
-    _mesh_box(streambed, "Water", Vector3(0, -0.27, -21), Vector3(34, 0.08, 4), water)
-    _static_box(streambed, "NearBankLeft", Vector3(-10.075, 0.33, -18.9), Vector3(13.85, 0.66, 0.26), bank)
-    _static_box(streambed, "NearBankRight", Vector3(10.075, 0.33, -18.9), Vector3(13.85, 0.66, 0.26), bank)
-    _static_box(streambed, "FarBankLeft", Vector3(-10.075, 0.33, -23.1), Vector3(13.85, 0.66, 0.26), bank)
-    _static_box(streambed, "FarBankRight", Vector3(10.075, 0.33, -23.1), Vector3(13.85, 0.66, 0.26), bank)
-    _static_box(streambed, "Bridge", Vector3(0, -0.14, -21), Vector3(6.4, 0.28, 4.8), wood)
-    _static_box(streambed, "BridgeRailLeft", Vector3(-3.15, 0.42, -21), Vector3(0.12, 0.84, 4.2), wood)
-    _static_box(streambed, "BridgeRailRight", Vector3(3.15, 0.42, -21), Vector3(0.12, 0.84, 4.2), wood)
+    _mesh_box(streambed, "Water", Vector3(0, -0.27, -98), Vector3(34, 0.08, 4), water)
+    _static_box(streambed, "NearBankLeft", Vector3(-10.075, 0.33, -95.9), Vector3(13.85, 0.66, 0.26), bank)
+    _static_box(streambed, "NearBankRight", Vector3(10.075, 0.33, -95.9), Vector3(13.85, 0.66, 0.26), bank)
+    _static_box(streambed, "FarBankLeft", Vector3(-10.075, 0.33, -100.1), Vector3(13.85, 0.66, 0.26), bank)
+    _static_box(streambed, "FarBankRight", Vector3(10.075, 0.33, -100.1), Vector3(13.85, 0.66, 0.26), bank)
+    _static_box(streambed, "Bridge", Vector3(0, -0.14, -98), Vector3(6.4, 0.28, 4.8), wood)
+    _static_box(streambed, "BridgeRailLeft", Vector3(-3.15, 0.42, -98), Vector3(0.12, 0.84, 4.2), wood)
+    _static_box(streambed, "BridgeRailRight", Vector3(3.15, 0.42, -98), Vector3(0.12, 0.84, 4.2), wood)
 
     var surfaces := _node("StreetSurface", self)
-    _mesh_box(surfaces, "ApproachStreet", Vector3(0, 0.025, -8.5), Vector3(8.2, 0.08, 21), street)
-    _mesh_box(surfaces, "MainStreet", Vector3(0, 0.025, -61.5), Vector3(8.2, 0.08, 77), street)
-    _mesh_box(surfaces, "LeftAlley", Vector3(-6, 0.03, -44), Vector3(10, 0.08, 3.2), street)
+    _mesh_box(surfaces, "MainStreet", Vector3(0, 0.025, -47), Vector3(8.2, 0.08, 94), street)
+    _mesh_box(surfaces, "FarBankPath", Vector3(0, 0.025, -111), Vector3(8.2, 0.08, 22), street)
+    _mesh_box(surfaces, "LeftAlley", Vector3(-6, 0.03, -18), Vector3(10, 0.08, 3.2), street)
     _mesh_box(surfaces, "RightAlley", Vector3(6, 0.03, -34), Vector3(10, 0.08, 3.2), street)
     _mesh_box(surfaces, "UpperLeftAlley", Vector3(-6.5, 0.03, -54), Vector3(11, 0.08, 3.2), street)
     _mesh_box(surfaces, "UpperRightAlley", Vector3(6.5, 0.03, -80), Vector3(11, 0.08, 3.2), street)
-    _mesh_box(surfaces, "HouseApproach", Vector3(3.75, 0.03, -15.5), Vector3(4.6, 0.08, 3), street)
+    _mesh_box(surfaces, "HouseApproach", Vector3(3.75, 0.03, -92.5), Vector3(4.6, 0.08, 3), street)
 
     var houses := _node("Houses", self)
     var house_layout := [
         [Vector3(-7.1, 1.8, -8), -4.0], [Vector3(7.3, 1.8, -12), 5.0],
-        [Vector3(-7.4, 1.8, -27), 6.0], [Vector3(7.0, 1.8, -29), -5.0],
+        [Vector3(-7.4, 1.8, -27), 6.0], [Vector3(7.0, 1.8, -107), -5.0],
         [Vector3(-7.2, 1.8, -45), -6.0], [Vector3(7.4, 1.8, -47), 4.0],
         [Vector3(-7.4, 1.8, -61), 5.0], [Vector3(7.2, 1.8, -70), 4.0],
         [Vector3(-7.3, 1.8, -82), -5.0], [Vector3(7.3, 1.8, -89), 6.0],
-        [Vector3(13.1, 1.8, -11), 3.0], [Vector3(13.1, 1.8, -34), -4.0],
-        [Vector3(-13.1, 1.8, -54), 5.0], [Vector3(13.1, 1.8, -80), -3.0]
+        [Vector3(-13.1, 1.8, -18), 3.0], [Vector3(13.1, 1.8, -34), -4.0],
+        [Vector3(-13.1, 1.8, -54), 5.0], [Vector3(13.1, 1.8, -88), -3.0]
     ]
     for index in house_layout.size():
         var home_name := "House%02d" % (index + 1)
         match index:
-            1:
+            9:
                 home_name = "KatsuroMiyakoHome"
             3:
                 home_name = "ShionHome"
-            10:
+            13:
                 home_name = "HanaHome"
         var house := _static_box(
             houses,
@@ -73,7 +73,7 @@ func _ready() -> void:
         )
         var cap := _mesh_box(house, "Roof", Vector3(0, 2.15, 0), Vector3(5.4, 0.55, 6.6), roof)
         cap.rotation.z = deg_to_rad(5.0 if index % 2 == 0 else -5.0)
-        if index == 1:
+        if index == 9:
             # Miyako's home faces the near bank; Shion's home faces it from the far bank.
             _mesh_box(house, "KatsuroDoor", Vector3(0, -0.55, -3.08), Vector3(1.28, 2.30, 0.08), wood)
             _mesh_box(house, "DoorInset", Vector3(0, -0.55, -3.13), Vector3(1.09, 2.12, 0.035), roof)
@@ -101,14 +101,10 @@ func _ready() -> void:
 
     var slots := _node("NPCSlots", self)
     var npc_positions := [
-        Vector3(-2.7, 0, -26),
-        Vector3(2.8, 0, -31),
-        Vector3(-2.9, 0, -36),
-        Vector3(2.7, 0, -42),
-        Vector3(-2.5, 0, -49),
-        Vector3(3.1, 0, -57),
-        Vector3(-2.9, 0, -65),
-        Vector3(2.7, 0, -84)
+        Vector3(-2.8, 0, -12), Vector3(-3.1, 0, -14),
+        Vector3(2.9, 0, -30), Vector3(3.2, 0, -32),
+        Vector3(-2.8, 0, -50), Vector3(-3.1, 0, -52),
+        Vector3(2.9, 0, -69), Vector3(3.1, 0, -71)
     ]
     var npc_yaws: Array[float] = [32.0, -52.0, 122.0, -36.0, 66.0, -78.0, 48.0, -64.0]
     for index in npc_positions.size():
@@ -122,25 +118,38 @@ func _ready() -> void:
             false,
             npc_yaws[index]
         )
+    var player := get_node_or_null("../Player") as Node3D
+    for index in range(0, npc_positions.size(), 2):
+        var first := slots.get_child(index) as Node3D
+        var second := slots.get_child(index + 1) as Node3D
+        first.set("observer", player)
+        second.set("observer", player)
+        first.set("whisper_partner", second)
+        second.set("whisper_partner", first)
 
     var meeting := _node("MiyakoMeeting", self)
-    meeting.position = Vector3(0, 0, -14)
+    meeting.position = Vector3(0, 0, -89)
     _villager(meeting, "MiyakoMarker", Vector3(4.6, 0, -1.4), 3, 0, 1.4, true, 48.0)
 
     var trigger := _area("MiyakoMeetTrigger", Vector3(1.2, 1.5, 0), Vector3(6.8, 3, 5.0), meeting)
     trigger.body_entered.connect(_on_miyako_meet_trigger_body_entered)
+
+    var witness_trigger := _area("VillagersNoticeTrigger", Vector3(0, 1.5, -12), Vector3(8, 3, 5), self)
+    witness_trigger.body_entered.connect(_on_villagers_notice_trigger_body_entered)
+    var whisper_trigger := _area("VillagersWhisperTrigger", Vector3(0, 1.5, -50), Vector3(8, 3, 5), self)
+    whisper_trigger.body_entered.connect(_on_villagers_whisper_trigger_body_entered)
 
     var entry_trigger := _area("StreetEntryTrigger", Vector3(0, 1.5, -6), Vector3(8, 3, 5), self)
     entry_trigger.body_entered.connect(_on_street_entry_trigger_body_entered)
 
     var zones := _node("CameraZones", self)
     _camera_zone(zones, "StreetEntry", Vector3(0, 3, -6), Vector3(18, 12, 16), 40, 10.0, Vector3(0.6, 6.1, 9.0), -29.0)
-    _camera_zone(zones, "StreamBridge", Vector3(0, 3, -21), Vector3(20, 12, 11), 45, -4.0, Vector3(0, 6.0, 8.8), -25.0)
-    _camera_zone(zones, "MainStreet", Vector3(0, 3, -39), Vector3(20, 12, 32), 50, -15.0, Vector3(-0.8, 6.2, 8.8), -27.0)
-    _camera_zone(zones, "InnerStreet", Vector3(0, 3, -59), Vector3(22, 12, 28), 55, -8.0, Vector3(0.7, 5.9, 8.5), -25.0)
-    _camera_zone(zones, "MiyakoCourt", Vector3(0, 3, -14), Vector3(19, 12, 10), 60, 18.0, Vector3(1.5, 5.6, 8.3), -23.0, Vector3(1.3, 0, -0.7))
-    _camera_zone(zones, "VillageBeyond", Vector3(0, 3, -89), Vector3(22, 12, 20), 55, 5.0, Vector3(0.4, 6.0, 8.8), -26.0)
-    _camera_zone(zones, "MiyakoFocus", Vector3(0, 3, -14), Vector3(14, 12, 9), 80, 27.0, Vector3(-1.0, 5.0, 7.2), -20.0, Vector3(2.5, 0, -1.0))
+    _camera_zone(zones, "MainStreet", Vector3(0, 3, -34), Vector3(20, 12, 44), 50, -15.0, Vector3(-0.8, 6.2, 8.8), -27.0)
+    _camera_zone(zones, "InnerStreet", Vector3(0, 3, -67), Vector3(22, 12, 34), 55, -8.0, Vector3(0.7, 5.9, 8.5), -25.0)
+    _camera_zone(zones, "MiyakoCourt", Vector3(0, 3, -89), Vector3(19, 12, 14), 60, 18.0, Vector3(1.5, 5.6, 8.3), -23.0, Vector3(1.3, 0, -0.7))
+    _camera_zone(zones, "StreamBridge", Vector3(0, 3, -98), Vector3(20, 12, 11), 45, -4.0, Vector3(0, 6.0, 8.8), -25.0)
+    _camera_zone(zones, "VillageBeyond", Vector3(0, 3, -112), Vector3(22, 12, 24), 55, 5.0, Vector3(0.4, 6.0, 8.8), -26.0)
+    _camera_zone(zones, "MiyakoFocus", Vector3(0, 3, -89), Vector3(14, 12, 12), 80, 27.0, Vector3(-1.0, 5.0, 7.2), -20.0, Vector3(2.5, 0, -1.0))
     (zones.get_node("MiyakoFocus") as Area3D).remove_from_group("camera_zones")
 
     var ambient := Node.new()
@@ -401,3 +410,15 @@ func _on_street_entry_trigger_body_entered(body: Node3D) -> void:
     var status := get_node_or_null("../HUD/Margin/VBox/Status") as Label
     if status:
         status.text = "TSUKIMORI • Első utca — AMBIENT PASS 1"
+
+func _on_villagers_notice_trigger_body_entered(body: Node3D) -> void:
+    if body == null or not body.is_in_group("player") or GameState.has_flag("noticed_by_villagers"):
+        return
+    GameState.set_flag("noticed_by_villagers", true)
+    get_parent().call("_show_subtitle", "Az utcán minden tekintet Akirát követi.", 2.2)
+
+func _on_villagers_whisper_trigger_body_entered(body: Node3D) -> void:
+    if body == null or not body.is_in_group("player") or GameState.has_flag("heard_village_whispers"):
+        return
+    GameState.set_flag("heard_village_whispers", true)
+    get_parent().call("_show_subtitle", "Két falusi összenéz, majd halkan összesúg.", 2.2)

@@ -5,6 +5,10 @@ extends Node3D
 @export var phase_offset: float = 0.0
 @export var is_miyako: bool = false
 
+var observer: Node3D
+var whisper_partner: Node3D
+var _rest_yaw := 0.0
+var _attention := 0.0
 var _time := 0.0
 var _body_root: Node3D
 var _torso: Node3D
@@ -16,6 +20,7 @@ var _leg_r: Node3D
 var _hair_back: Node3D
 
 func _ready() -> void:
+    _rest_yaw = rotation.y
     _build_proxy()
 
 func _process(delta: float) -> void:
@@ -58,6 +63,34 @@ func _process(delta: float) -> void:
             _arm_l.rotation.x = deg_to_rad(8.0) - sin(t * 1.35) * deg_to_rad(5.0)
             _leg_l.rotation.x = sin(t * 0.9) * deg_to_rad(1.0)
             _leg_r.rotation.x = -sin(t * 0.9) * deg_to_rad(1.0)
+
+    _react_to_passersby(delta, t)
+
+func _react_to_passersby(delta: float, t: float) -> void:
+    if observer == null:
+        return
+    var to_player := observer.global_position - global_position
+    to_player.y = 0.0
+    var distance := to_player.length()
+    var target_attention := clampf((11.0 - distance) / 5.0, 0.0, 1.0)
+    _attention = move_toward(_attention, target_attention, delta * 1.8)
+    if _attention < 0.001:
+        rotation.y = _rest_yaw
+        _head.rotation.z = 0.0
+        return
+
+    # Follow Akira with the body; briefly turn to a neighbor when he passes.
+    var target := to_player
+    var whispering := whisper_partner != null and distance < 5.5 and sin(t * 1.7 + phase_offset) > 0.1
+    if whispering:
+        target = whisper_partner.global_position - global_position
+        target.y = 0.0
+    var target_yaw := atan2(-target.x, -target.z)
+    rotation.y = lerp_angle(_rest_yaw, target_yaw, _attention * (0.7 if whispering else 0.88))
+    _head.rotation.y += sin(t * 1.9) * deg_to_rad(5.0) * _attention
+    _head.rotation.z = deg_to_rad(7.0) * _attention if whispering else 0.0
+    if whispering:
+        _arm_r.rotation.x = lerpf(_arm_r.rotation.x, deg_to_rad(-68.0), _attention * 0.75)
 
 func _build_proxy() -> void:
     var skin := _material(Color(0.58, 0.48, 0.42))

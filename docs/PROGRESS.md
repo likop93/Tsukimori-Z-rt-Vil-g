@@ -39,7 +39,7 @@ Az első utca kibővített blockoutja elkészült, az **Ambient Animation Pass 1
 
 ## Jelenlegi játszható szakasz
 
-**Hegyi ösvény → első furcsa jel → kilátópont → útjelző → falukapu → „Szél?” → Miyako a patakparton → híd → falu**
+**Hegyi ösvény → első furcsa jel → kilátópont → útjelző → falukapu → „Szél?” → falusiak közt végigjárt utca → Miyako a patakparton → híd**
 
 Működik:
 
@@ -52,12 +52,13 @@ Működik:
 - narratív trigger timing;
 - kapu-anomália;
 - tizennégy házból álló, továbbjárható falusi blockout;
-- patak a falu peremén, ütközéssel rendelkező híddal;
+- patak a bejárt falu túlsó peremén, ütközéssel rendelkező híddal;
 - Miyako és Katsuro otthona a közeli parton, Shioné szemben a túlparton, Hana háza Miyako mellett;
 - négy mellékutca és kerítések;
 - hat animált fényű lámpa;
 - mozgó textil-, szirom- és növényproxyk;
 - nyolc animált humanoid falusi proxy;
+- négy pár, akik Akirát figyelik, majd egymáshoz fordulnak és suttogó mozdulatot tesznek;
 - Miyako humanoid proxyja Katsuro házának küszöbénél;
 - irányított első találkozás, kánon szerinti első mondattal és folytatható vezérléssel;
 - GameState flag-ek.
@@ -80,4 +81,4 @@ A már működő directed camera rendszert nem cseréljük le automatikusan kés
 
 **Tsukimori — Miyako első találkozásának stagingje**
 
-A felhasználó történeti pontosítása szerint Miyako háza valóban a falu szélén áll, szemben a patakkal és Shion házával. A következő végigjátszás ezt az új patakparti elrendezést, Hana szomszédságát, a találkozás kameráját és a hídon át a faluba vezető utat vizsgálja. A többi főszereplő otthona egyelőre nincs hozzárendelve a névtelen házakhoz. Részletek: `docs/VILLAGE_LAYOUT.md`. Külső assetet a jelenet konkrét igénye alapján próbálunk ki.
+A történet szerint Akira végigmegy a falun, ahol a lakók megnézik és összesúgnak, csak azután érkezik Katsuro és Miyako házához a csendes patakparti peremen. A következő végigjátszás ezt a sorrendet, Hana szomszédságát, Shion túlparti házát és Miyako találkozásának kameráját vizsgálja. A többi főszereplő otthona egyelőre nincs hozzárendelve a névtelen házakhoz. Részletek: `docs/VILLAGE_LAYOUT.md`. Külső assetet a jelenet konkrét igénye alapján próbálunk ki.
