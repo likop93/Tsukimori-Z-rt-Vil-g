@@ -18,16 +18,31 @@ func _ready() -> void:
     var cloth := _mat("HangingCloth", Color(0.42, 0.16, 0.12))
     var paper := _mat("PetalPaper", Color(0.88, 0.75, 0.77))
     var plant := _mat("VillagePlant", Color(0.11, 0.23, 0.13))
+    var water := _mat("StreamWater", Color(0.075, 0.25, 0.28), Color(0.015, 0.07, 0.08))
+    var bank := _mat("StreamBank", Color(0.20, 0.23, 0.20))
 
-    _static_box(self, "Ground", Vector3(0, -0.2, -50), Vector3(34, 0.4, 112), ground)
+    # The stream is an actual gap in the ground collision. The bridge is its only crossing.
+    _static_box(self, "Ground", Vector3(0, -0.2, -6.5), Vector3(34, 0.4, 25), ground)
+    _static_box(self, "VillageGround", Vector3(0, -0.2, -64.5), Vector3(34, 0.4, 83), ground)
+
+    var streambed := _node("Stream", self)
+    _mesh_box(streambed, "Water", Vector3(0, -0.27, -21), Vector3(34, 0.08, 4), water)
+    _static_box(streambed, "NearBankLeft", Vector3(-10.075, 0.33, -18.9), Vector3(13.85, 0.66, 0.26), bank)
+    _static_box(streambed, "NearBankRight", Vector3(10.075, 0.33, -18.9), Vector3(13.85, 0.66, 0.26), bank)
+    _static_box(streambed, "FarBankLeft", Vector3(-10.075, 0.33, -23.1), Vector3(13.85, 0.66, 0.26), bank)
+    _static_box(streambed, "FarBankRight", Vector3(10.075, 0.33, -23.1), Vector3(13.85, 0.66, 0.26), bank)
+    _static_box(streambed, "Bridge", Vector3(0, -0.14, -21), Vector3(6.4, 0.28, 4.8), wood)
+    _static_box(streambed, "BridgeRailLeft", Vector3(-3.15, 0.42, -21), Vector3(0.12, 0.84, 4.2), wood)
+    _static_box(streambed, "BridgeRailRight", Vector3(3.15, 0.42, -21), Vector3(0.12, 0.84, 4.2), wood)
 
     var surfaces := _node("StreetSurface", self)
-    _mesh_box(surfaces, "MainStreet", Vector3(0, 0.025, -49), Vector3(8.2, 0.08, 102), street)
-    _mesh_box(surfaces, "LeftAlley", Vector3(-6, 0.03, -18), Vector3(10, 0.08, 3.2), street)
+    _mesh_box(surfaces, "ApproachStreet", Vector3(0, 0.025, -8.5), Vector3(8.2, 0.08, 21), street)
+    _mesh_box(surfaces, "MainStreet", Vector3(0, 0.025, -61.5), Vector3(8.2, 0.08, 77), street)
+    _mesh_box(surfaces, "LeftAlley", Vector3(-6, 0.03, -44), Vector3(10, 0.08, 3.2), street)
     _mesh_box(surfaces, "RightAlley", Vector3(6, 0.03, -34), Vector3(10, 0.08, 3.2), street)
     _mesh_box(surfaces, "UpperLeftAlley", Vector3(-6.5, 0.03, -54), Vector3(11, 0.08, 3.2), street)
     _mesh_box(surfaces, "UpperRightAlley", Vector3(6.5, 0.03, -80), Vector3(11, 0.08, 3.2), street)
-    _mesh_box(surfaces, "MeetingPlaza", Vector3(0, 0.035, -71), Vector3(11.5, 0.08, 11), street)
+    _mesh_box(surfaces, "HouseApproach", Vector3(3.75, 0.03, -15.5), Vector3(4.6, 0.08, 3), street)
 
     var houses := _node("Houses", self)
     var house_layout := [
@@ -36,13 +51,21 @@ func _ready() -> void:
         [Vector3(-7.2, 1.8, -45), -6.0], [Vector3(7.4, 1.8, -47), 4.0],
         [Vector3(-7.4, 1.8, -61), 5.0], [Vector3(7.2, 1.8, -70), 4.0],
         [Vector3(-7.3, 1.8, -82), -5.0], [Vector3(7.3, 1.8, -89), 6.0],
-        [Vector3(-13.1, 1.8, -18), 3.0], [Vector3(13.1, 1.8, -34), -4.0],
+        [Vector3(13.1, 1.8, -11), 3.0], [Vector3(13.1, 1.8, -34), -4.0],
         [Vector3(-13.1, 1.8, -54), 5.0], [Vector3(13.1, 1.8, -80), -3.0]
     ]
     for index in house_layout.size():
+        var home_name := "House%02d" % (index + 1)
+        match index:
+            1:
+                home_name = "KatsuroMiyakoHome"
+            3:
+                home_name = "ShionHome"
+            10:
+                home_name = "HanaHome"
         var house := _static_box(
             houses,
-            "House%02d" % (index + 1),
+            home_name,
             house_layout[index][0],
             Vector3(4.8, 3.6, 6),
             wall,
@@ -50,9 +73,13 @@ func _ready() -> void:
         )
         var cap := _mesh_box(house, "Roof", Vector3(0, 2.15, 0), Vector3(5.4, 0.55, 6.6), roof)
         cap.rotation.z = deg_to_rad(5.0 if index % 2 == 0 else -5.0)
-        if index == 7:
-            _mesh_box(house, "KatsuroDoor", Vector3(-2.48, -0.55, -1.15), Vector3(0.08, 2.30, 1.28), wood)
-            _mesh_box(house, "DoorInset", Vector3(-2.53, -0.55, -1.15), Vector3(0.035, 2.12, 1.09), roof)
+        if index == 1:
+            # Miyako's home faces the near bank; Shion's home faces it from the far bank.
+            _mesh_box(house, "KatsuroDoor", Vector3(0, -0.55, -3.08), Vector3(1.28, 2.30, 0.08), wood)
+            _mesh_box(house, "DoorInset", Vector3(0, -0.55, -3.13), Vector3(1.09, 2.12, 0.035), roof)
+        elif index == 3:
+            _mesh_box(house, "ShionDoor", Vector3(0, -0.55, 3.08), Vector3(1.28, 2.30, 0.08), wood)
+            _mesh_box(house, "DoorInset", Vector3(0, -0.55, 3.13), Vector3(1.09, 2.12, 0.035), roof)
 
     var fences := _node("Fences", self)
     _static_box(fences, "LeftFence", Vector3(-4.1, 0.575, -10), Vector3(0.18, 1.15, 11), wood)
@@ -61,7 +88,7 @@ func _ready() -> void:
     var lanterns := _node("Lanterns", self)
     var lantern_positions := [
         Vector3(-3.8, 0, -5),
-        Vector3(3.8, 0, -20),
+        Vector3(3.8, 0, -25),
         Vector3(-3.8, 0, -36),
         Vector3(3.8, 0, -50),
         Vector3(-3.8, 0, -67),
@@ -74,13 +101,13 @@ func _ready() -> void:
 
     var slots := _node("NPCSlots", self)
     var npc_positions := [
-        Vector3(-2.7, 0, -11),
-        Vector3(2.8, 0, -16),
-        Vector3(-2.9, 0, -24),
-        Vector3(2.7, 0, -31),
-        Vector3(-2.5, 0, -39),
-        Vector3(3.1, 0, -45),
-        Vector3(-2.9, 0, -61),
+        Vector3(-2.7, 0, -26),
+        Vector3(2.8, 0, -31),
+        Vector3(-2.9, 0, -36),
+        Vector3(2.7, 0, -42),
+        Vector3(-2.5, 0, -49),
+        Vector3(3.1, 0, -57),
+        Vector3(-2.9, 0, -65),
         Vector3(2.7, 0, -84)
     ]
     var npc_yaws: Array[float] = [32.0, -52.0, 122.0, -36.0, 66.0, -78.0, 48.0, -64.0]
@@ -97,10 +124,10 @@ func _ready() -> void:
         )
 
     var meeting := _node("MiyakoMeeting", self)
-    meeting.position = Vector3(0, 0, -72)
-    _villager(meeting, "MiyakoMarker", Vector3(3.3, 0, 0.9), 3, 0, 1.4, true, 48.0)
+    meeting.position = Vector3(0, 0, -14)
+    _villager(meeting, "MiyakoMarker", Vector3(4.6, 0, -1.4), 3, 0, 1.4, true, 48.0)
 
-    var trigger := _area("MiyakoMeetTrigger", Vector3(1.0, 1.5, 2.0), Vector3(5.0, 3, 8.0), meeting)
+    var trigger := _area("MiyakoMeetTrigger", Vector3(1.2, 1.5, 0), Vector3(6.8, 3, 5.0), meeting)
     trigger.body_entered.connect(_on_miyako_meet_trigger_body_entered)
 
     var entry_trigger := _area("StreetEntryTrigger", Vector3(0, 1.5, -6), Vector3(8, 3, 5), self)
@@ -108,11 +135,12 @@ func _ready() -> void:
 
     var zones := _node("CameraZones", self)
     _camera_zone(zones, "StreetEntry", Vector3(0, 3, -6), Vector3(18, 12, 16), 40, 10.0, Vector3(0.6, 6.1, 9.0), -29.0)
-    _camera_zone(zones, "MainStreet", Vector3(0, 3, -27), Vector3(20, 12, 30), 50, -15.0, Vector3(-0.8, 6.2, 8.8), -27.0)
+    _camera_zone(zones, "StreamBridge", Vector3(0, 3, -21), Vector3(20, 12, 11), 45, -4.0, Vector3(0, 6.0, 8.8), -25.0)
+    _camera_zone(zones, "MainStreet", Vector3(0, 3, -39), Vector3(20, 12, 32), 50, -15.0, Vector3(-0.8, 6.2, 8.8), -27.0)
     _camera_zone(zones, "InnerStreet", Vector3(0, 3, -59), Vector3(22, 12, 28), 55, -8.0, Vector3(0.7, 5.9, 8.5), -25.0)
-    _camera_zone(zones, "MiyakoCourt", Vector3(0, 3, -71), Vector3(23, 12, 20), 60, 18.0, Vector3(1.5, 5.6, 8.3), -23.0)
+    _camera_zone(zones, "MiyakoCourt", Vector3(0, 3, -14), Vector3(19, 12, 10), 60, 18.0, Vector3(1.5, 5.6, 8.3), -23.0, Vector3(1.3, 0, -0.7))
     _camera_zone(zones, "VillageBeyond", Vector3(0, 3, -89), Vector3(22, 12, 20), 55, 5.0, Vector3(0.4, 6.0, 8.8), -26.0)
-    _camera_zone(zones, "MiyakoFocus", Vector3(0, 3, -71), Vector3(12, 12, 15), 80, 27.0, Vector3(-1.0, 5.0, 7.2), -20.0, Vector3(1.5, 0, -1.0))
+    _camera_zone(zones, "MiyakoFocus", Vector3(0, 3, -14), Vector3(14, 12, 9), 80, 27.0, Vector3(-1.0, 5.0, 7.2), -20.0, Vector3(2.5, 0, -1.0))
     (zones.get_node("MiyakoFocus") as Area3D).remove_from_group("camera_zones")
 
     var ambient := Node.new()
@@ -166,7 +194,7 @@ func _build_wind_details(cloth: Material, paper: Material, plant: Material) -> v
     var plant_positions := [
         Vector3(-4.0, 0.18, -3.0),
         Vector3(4.0, 0.18, -15.0),
-        Vector3(-4.1, 0.18, -22.0),
+        Vector3(-4.1, 0.18, -25.0),
         Vector3(4.1, 0.18, -35.0),
         Vector3(-4.0, 0.18, -44.0),
         Vector3(4.0, 0.18, -52.0),

@@ -13,7 +13,7 @@ A kapun túli első falurész:
 
 Jelenlegi játszható ív:
 
-**hegyi ösvény → első furcsa jel → Tsukimori-kilátópont → útjelző → kapu → első térbeli anomália („Szél?”) → első utca → Miyako Katsuro házánál**
+**hegyi ösvény → első furcsa jel → Tsukimori-kilátópont → útjelző → kapu → első térbeli anomália („Szél?”) → Miyako háza a patakparton → híd → falu**
 
 ## Már működő alapok
 
@@ -35,6 +35,7 @@ Jelenlegi játszható ív:
 - kapu előtti szirom/tér-anomália
 - „Szél?” reakció
 - Tsukimori kibővített falurésze tizennégy házzal és négy mellékutcával
+- patak és járható híd a falu bejáratánál; Miyako és Katsuro háza a közeli parton, Shioné a túlparton, Hana Miyako szomszédságában
 - hat animált fényű utcai lámpa
 - mozgó textil-, szirom- és növényproxyk
 - nyolc animált humanoid falusi proxy
@@ -54,7 +55,7 @@ A hegyi út stabil alap.
 
 **Tsukimori — Miyako első találkozása**
 
-Most a megszólítás ritmusát, Miyako beljebb helyezett házát, a közös kameraképet és a továbbjárható utcát vizsgáljuk. A részleteket a `docs/MIYAKO_FIRST_ENCOUNTER.md` tartalmazza.
+Most a megszólítás ritmusát, a patakparti házak térbeli viszonyát, a közös kameraképet és a hídon át vezető utat vizsgáljuk. A részleteket a `docs/MIYAKO_FIRST_ENCOUNTER.md` és a `docs/VILLAGE_LAYOUT.md` tartalmazza.
 
 ## Godot asset stratégia
 

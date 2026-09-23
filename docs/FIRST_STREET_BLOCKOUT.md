@@ -58,4 +58,8 @@ A vizuális review még nyitott: a teljes hegyi út felől végigjátszva kell m
 
 ## Kibővített falurész — 2026-09-23
 
-A felhasználói végigjátszás szerint az eredeti utca jól futott, de Miyako a pálya szélére került. A bővített blockout tizennégy házat, négy házakhoz vezető mellékutcát, hat lámpát és nyolc falusi proxyt tartalmaz. Katsuro háza a nyolcadik ház; Miyako a bejárat előtt, a főutca felé áll. A járható talaj, a környezeti mozgás és a kamera továbbvezet a ház mögötti utcára. A végső térarányok vizuális review-ra várnak.
+A korábbi bővítés tizennégy házat, négy mellékutcát, hat lámpát és nyolc falusi proxyt adott a pályához. Miyako házának akkori, beljebb helyezett változata az alábbi történeti pontosítás miatt már nem aktuális.
+
+## Történet szerinti átrendezés — 2026-09-23
+
+A történeti pontosítás felülírja a fenti ideiglenes elrendezést. Katsuro és Miyako háza most a falu bejáratánál, a patak közeli partján áll. Shion háza vele szemben, a túlparton van, Hana háza Miyako mellett. Akira Miyakóval még a faluközpont előtt találkozik; a hídon át jut be a sűrűbben lakott részbe. A patak megszakítja a talaj ütközőfelületét, a híd viszont járható; a partokat alacsony korlát védi. A többi szereplő otthonát csak a történetük szerinti elhelyezés tisztázása után jelöljük ki. Lásd: `docs/VILLAGE_LAYOUT.md`.

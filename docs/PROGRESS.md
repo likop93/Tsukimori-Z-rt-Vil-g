@@ -39,7 +39,7 @@ Az első utca kibővített blockoutja elkészült, az **Ambient Animation Pass 1
 
 ## Jelenlegi játszható szakasz
 
-**Hegyi ösvény → első furcsa jel → kilátópont → útjelző → falukapu → „Szél?” → első utca → Miyako Katsuro házánál**
+**Hegyi ösvény → első furcsa jel → kilátópont → útjelző → falukapu → „Szél?” → Miyako a patakparton → híd → falu**
 
 Működik:
 
@@ -52,6 +52,8 @@ Működik:
 - narratív trigger timing;
 - kapu-anomália;
 - tizennégy házból álló, továbbjárható falusi blockout;
+- patak a falu peremén, ütközéssel rendelkező híddal;
+- Miyako és Katsuro otthona a közeli parton, Shioné szemben a túlparton, Hana háza Miyako mellett;
 - négy mellékutca és kerítések;
 - hat animált fényű lámpa;
 - mozgó textil-, szirom- és növényproxyk;
@@ -78,4 +80,4 @@ A már működő directed camera rendszert nem cseréljük le automatikusan kés
 
 **Tsukimori — Miyako első találkozásának stagingje**
 
-Az első utca a felhasználói végigjátszás alapján jól futott, de Miyako túl közel került a pálya széléhez. A bővítés után a következő végigjátszás a hosszabb falut, Miyako beljebb helyezett házát és az átmeneti kameraképet vizsgálja. Külső assetet akkor próbálunk ki külön sandboxban, amikor a jelenet konkrétan igényli.
+A felhasználó történeti pontosítása szerint Miyako háza valóban a falu szélén áll, szemben a patakkal és Shion házával. A következő végigjátszás ezt az új patakparti elrendezést, Hana szomszédságát, a találkozás kameráját és a hídon át a faluba vezető utat vizsgálja. A többi főszereplő otthona egyelőre nincs hozzárendelve a névtelen házakhoz. Részletek: `docs/VILLAGE_LAYOUT.md`. Külső assetet a jelenet konkrét igénye alapján próbálunk ki.
