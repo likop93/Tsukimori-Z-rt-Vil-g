@@ -4,6 +4,7 @@ const CameraZoneScript = preload("res://scripts/camera_zone.gd")
 const VillagerProxyScript = preload("res://scripts/villager_proxy.gd")
 const StreetAmbientScript = preload("res://scripts/street_ambient.gd")
 const SharedHomeVisualScript = preload("res://scripts/shared_home_visual.gd")
+const ClinicBlockoutScript = preload("res://scripts/clinic_blockout.gd")
 const REACTION_WATCH := 1
 const REACTION_WHISPER := 2
 const REACTION_HUSH := 3
@@ -101,6 +102,14 @@ func _ready() -> void:
 
     _build_forest(wall, roof, wood, plaster, stone, bark, needles, darker_needles, plant)
 
+    # Provisional village clinic; it is a separate location from the two homes
+    # across the stream and does not assign any of the unnamed houses an owner.
+    var clinic := Node3D.new()
+    clinic.name = "Clinic"
+    clinic.position = Vector3(-16, 0, -72)
+    clinic.set_script(ClinicBlockoutScript)
+    add_child(clinic)
+
     var fences := _node("Fences", self)
     _static_box(fences, "LeftFence", Vector3(-4.1, 0.575, -10), Vector3(0.18, 1.15, 11), wood)
     _static_box(fences, "RightFence", Vector3(4.1, 0.575, -60), Vector3(0.18, 1.15, 11), wood)
@@ -175,6 +184,7 @@ func _ready() -> void:
     _camera_zone(zones, "StreamBridge", Vector3(0, 3, -98), Vector3(20, 12, 11), 59, 0.0, Vector3(0, 6.0, 8.8), -25.0)
     _camera_zone(zones, "MiyakoCourt", Vector3(0, 3, -122), Vector3(19, 12, 18), 60, 0.0, Vector3(0, 5.8, 8.8), -23.0, Vector3(0.6, 0, -0.3))
     _camera_zone(zones, "VillageBeyond", Vector3(0, 3, -121), Vector3(44, 12, 42), 55, 0.0, Vector3(0.4, 6.0, 8.8), -26.0)
+    _camera_zone(zones, "ClinicApproach", Vector3(-15, 3, -72), Vector3(15, 12, 16), 65, -12.0, Vector3(0.2, 6.3, 8.7), -27.0)
     _camera_zone(zones, "ForestRoad", Vector3(0, 3, -168), Vector3(52, 12, 76), 52, 0.0, Vector3(0, 6.9, 9.8), -29.0)
     _camera_zone(zones, "MiyakoFocus", Vector3(0, 3, -122), Vector3(14, 12, 12), 80, -20.0, Vector3(-1.5, 5.4, 8.8), -20.0, Vector3(1.6, 0, -0.4), false)
     (zones.get_node("MiyakoFocus") as Area3D).remove_from_group("camera_zones")

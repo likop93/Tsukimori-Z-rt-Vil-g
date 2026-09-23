@@ -38,7 +38,7 @@ Az utcai narratív reakciók F5 bejárása sikeres volt; a következő körben a
 | First Street Narrative Pass | ✅ REVIEW PASSED |
 | House and forest visual pass | ✅ IMPLEMENTED — REVIEW |
 | Miyako + Akira shared home visual prototype | ✅ ANIMATED PASS — F5 REVIEW |
-| Clinic blockout | ⏳ PLANNED |
+| Clinic blockout | ✅ IMPLEMENTED — F5 REVIEW |
 | Opening slice title beat | ⏳ PLANNED |
 
 ## Jelenlegi játszható szakasz
@@ -68,6 +68,7 @@ Működik:
 - négy külön, egyszeri falusi reakció és a patakhídnál lezáruló narratív feliratsor;
 - Miyako humanoid proxyja Katsuro házának küszöbénél;
 - irányított első találkozás, kánon szerinti első mondattal és folytatható vezérléssel;
+- Miyako találkozása után E-vel elérhető rendelő a falusi oldalon, bejárható váróval és vizsgálóval;
 - GameState flag-ek.
 
 ## Asset irány

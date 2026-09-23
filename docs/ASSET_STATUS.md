@@ -15,6 +15,7 @@
 | Tsukimori first street | NARRATIVE PASS REVIEW PASSED; ENVIRONMENT PASS — REVIEW |
 | Village houses / fences | PROCEDURAL FACADES / ROOFS — REVIEW |
 | Miyako + Akira shared home | TWO-STOREY ANIMATED VISUAL PASS — F5 REVIEW |
+| Clinic exterior and interior | WALKABLE BLOCKOUT — F5 REVIEW |
 | Forest cedars / undergrowth | LAYERED SILHOUETTES / FERNS — REVIEW |
 | Lanterns | BLOCKOUT + animated flicker |
 | Hanging cloth / petals / plants | ANIMATED BLOCKOUT |

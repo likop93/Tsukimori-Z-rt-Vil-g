@@ -181,5 +181,30 @@ func run_checks() -> void:
     expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-90.0))) < 0.02, "Following the camera caused a control feedback spin")
     expect(player.rotation.is_zero_approx(), "Street camera changed the player root rotation")
 
+    var clinic := street.get_node("Clinic") as Node3D
+    expect(clinic.has_node("Exterior/Building/CollisionShape3D"), "Clinic exterior has no collider")
+    expect(clinic.has_node("Interior/Floor/CollisionShape3D"), "Clinic interior has no walkable floor")
+    expect(clinic.has_node("Interior/WaitingArea") and clinic.has_node("Interior/Examination"), "Clinic rooms are missing")
+    await settle_at((clinic.get_node("Exterior/Entrance") as Node3D).global_position + Vector3(0, 0.2, 0))
+    var interact := InputEventKey.new()
+    interact.keycode = KEY_E
+    interact.pressed = true
+    clinic._unhandled_input(interact)
+    await frames(12)
+    expect(root.get_node("GameState").has_flag("entered_clinic"), "Clinic does not open after meeting Miyako")
+    expect(player.is_on_floor(), "Clinic entry did not land on a walkable floor")
+    expect(clinic.get_node("Interior/ClinicCamera").is_in_group("camera_zones"), "Clinic camera did not activate indoors")
+    await settle_at((clinic.get_node("Interior/WaitingArea") as Node3D).global_position + Vector3(0, 0.2, 0))
+    clinic._unhandled_input(interact)
+    expect(root.get_node("GameState").has_flag("inspected_clinic_waiting_room"), "Waiting area cannot be inspected")
+    await settle_at((clinic.get_node("Interior/Examination") as Node3D).global_position + Vector3(0, 0.2, 0))
+    clinic._unhandled_input(interact)
+    expect(root.get_node("GameState").has_flag("inspected_clinic_exam_room"), "Examination station cannot be inspected")
+    await settle_at((clinic.get_node("Interior/Entrance") as Node3D).global_position + Vector3(0, 0.2, 0))
+    clinic._unhandled_input(interact)
+    await frames(12)
+    expect(player.global_position.distance_to((clinic.get_node("Exterior/Entrance") as Node3D).global_position) < 2.0, "Clinic exit did not return Akira to the village")
+    expect(not clinic.get_node("Interior/ClinicCamera").is_in_group("camera_zones"), "Clinic camera stayed active after exit")
+
     print("First street regression: %s" % ("PASS" if failures == 0 else "%s failures" % failures))
     quit(0 if failures == 0 else 1)

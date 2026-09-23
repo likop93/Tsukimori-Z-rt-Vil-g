@@ -39,6 +39,7 @@ Jelenlegi játszható ív:
 - a közös ház után cédruserdő, elágazó utak és három névtelen, elszórt ház
 - lejtős tetők, favázas homlokzatok, papírablakok és külön bejárat a közös házon; réteges cédruskoronák és erdei aljnövényzet
 - Miyako és Akira közös otthonának kétszintes, sötét alkonyati animált vizuális passza; veranda-lámpással, lassú fénylüktetéssel és szinte mozdulatlan szélcsengővel
+- Miyakóval való találkozás után elérhető falusi rendelő első bejárható változata, váróval és vizsgálóval; E-vel belépés, megfigyelés és kilépés
 - hat animált fényű utcai lámpa
 - mozgó textil-, szirom- és növényproxyk
 - nyolc animált humanoid falusi proxy
@@ -79,6 +80,7 @@ Az asseteket először külön tesztjelenetben próbáljuk ki. Nem cserélünk l
 ## Irányítás
 
 - W / A / S / D — mozgás
+- E — belépés a rendelőbe, megfigyelés a két térben, kilépés
 - a WASD a képen látható irányok szerint mozgat; egy gombnyomás alatt a kamera fordulása nem görbíti el az útvonalat
 
 ## Asset szabály
