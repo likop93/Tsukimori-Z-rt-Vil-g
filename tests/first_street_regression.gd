@@ -30,7 +30,7 @@ func run_checks() -> void:
     street = world.get_node("FirstStreet")
     player = world.get_node("Player")
     camera_rig = player.get_node("CameraPivot")
-    await frames(5)
+    await frames(8)
 
     expect(street.get_node("Houses").get_child_count() == 6, "Expected six house blockouts")
     expect(street.get_node("NPCSlots").get_child_count() == 6, "Expected six villager slots")
@@ -38,15 +38,27 @@ func run_checks() -> void:
     expect(street.has_node("StreetSurface/LeftAlley"), "Left alley is missing")
     expect(street.has_node("StreetSurface/RightAlley"), "Right alley is missing")
     expect(street.has_node("MiyakoMeeting/MiyakoMarker"), "Miyako meeting marker is missing")
+    expect(street.has_node("WindDetails/HangingCloth"), "Animated hanging cloth is missing")
+    expect(street.has_node("WindDetails/Petals"), "Animated petals are missing")
+    expect(street.has_node("WindDetails/Plants"), "Animated plant proxies are missing")
+    expect(street.has_node("AmbientMotion"), "First street ambient controller is missing")
     expect(street.get_node("Ground") is StaticBody3D, "Street ground has no static collision")
+
     for house in street.get_node("Houses").get_children():
         expect(house is StaticBody3D and house.has_node("CollisionShape3D"), "%s has no collision" % house.name)
+
+    for villager in street.get_node("NPCSlots").get_children():
+        expect(villager.has_node("BodyRoot"), "%s did not build a humanoid proxy" % villager.name)
+
+    expect(street.get_node("MiyakoMeeting/MiyakoMarker").has_node("BodyRoot"), "Miyako marker did not build a humanoid proxy")
 
     await settle_at(Vector3(0, 0.2, -38))
     expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(10.0))) < 0.002, "Street entry camera did not settle")
     expect(root.get_node("GameState").has_flag("entered_first_street"), "Street entry trigger did not set its flag")
+
     await settle_at(Vector3(0, 0.2, -58))
     expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-15.0))) < 0.002, "Main street camera did not settle")
+
     await settle_at(Vector3(0, 0.2, -84))
     expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(18.0))) < 0.002, "Miyako court camera did not settle")
     expect(root.get_node("GameState").has_flag("reached_miyako_meeting_space"), "Miyako meeting trigger did not set its flag")
