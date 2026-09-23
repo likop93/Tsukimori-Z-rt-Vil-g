@@ -2,10 +2,14 @@
 
 Godot 4.x alapú 2.5D narratív RPG vertical slice.
 
-## Aktuális állapot — 2026-09-22
+## Aktuális állapot — 2026-09-23
 
 Az első játszható hegyi szakasz technikai és animációs alapja **review-n átment**.
-A kapun túli első falurész **Blockout 1.0** változata elkészült és review-ra kész.
+
+A kapun túli első falurész:
+- **Blockout 1.0 elkészült**
+- **Ambient Animation Pass 1 implementálva**
+- review-ra kész
 
 Jelenlegi játszható ív:
 
@@ -15,23 +19,26 @@ Jelenlegi játszható ív:
 
 - Godot 4.x projektstruktúra
 - Akira humanoid proxy v0.2
+- automatikus procedurális Akira fallback, ha a Blender GLB nincs a gépen
 - Idle / WalkStart / Walk / WalkStop locomotion
+- fallback humanoid walk / idle / coat motion
 - sebességhez igazított walk playback
 - lágyabb testfordulás és finom body lean
-- külön kabátmozgás a proxy rigben
 - 3/4-es rendezett követőkamera
 - területenkénti kamera-kompozíciók
-- fix világirányú WASD — játék közben elfogadott irányítás
+- fix világirányú WASD
 - Mountain Path Blockout 2.0
-- ambient cédrusmozgás és finom ködmozgás
+- ambient cédrus- és ködmozgás
 - papírcsík-furcsaság
 - Tsukimori-kilátópont
 - 月守村 — TSUKIMORI útjelző
 - kapu előtti szirom/tér-anomália
 - „Szél?” reakció
 - Tsukimori első utcája hat házzal és két mellékutcával
-- négy utcai lámpa és hat falusi NPC-hely
-- Miyako első találkozásának kijelölt tere
+- négy animált fényű utcai lámpa
+- mozgó textil-, szirom- és növényproxyk
+- hat animált humanoid falusi proxy
+- Miyako külön humanoid placement proxyja
 - három falusi kamera-kompozíció
 - minimális GameState flag-rendszer
 - fejlesztői HUD + subtitle prototípus
@@ -40,31 +47,32 @@ Jelenlegi játszható ív:
 
 **Mountain Path Animation Pass v0.2: PASSED**
 
-A Blenderből generált Akira proxy, a Godot locomotion, a kamera, az ambient mozgás és a narratív trigger-sor hibamentesen végigfut a jelenlegi buildben.
+A hegyi út stabil alap.
 
-Ez nem jelenti azt, hogy a karaktermodell, az animáció vagy az environment art FINAL. A jelenlegi állapot a következő terület fejlesztéséhez elfogadott működő alap.
+### Aktuális review
+
+**Tsukimori — First Street Ambient Animation Pass 1**
+
+Most azt vizsgáljuk, hogy a házak, NPC-k és kamera jobban működnek-e egy már mozgó, lakott környezetben.
+
+## Godot asset stratégia
+
+Külön shortlist készült:
+
+`docs/GODOT_ASSET_SHORTLIST.md`
+
+Első körben vizsgálandó:
+- Kominka Modular Home Pack
+- Tree3D
+- ScatterShot
+- Dialogue Manager 3
+
+Az asseteket először külön tesztjelenetben próbáljuk ki. Nem cserélünk le működő rendszert csak azért, mert van kész plugin.
 
 ## Irányítás
 
 - W / A / S / D — mozgás
 - a mozgás világirányú, a kamera nem téríti el a WASD irányait
-
-## Aktuális review
-
-### Tsukimori — Első utca Blockout 1.0
-
-Elkészült:
-
-- kapun túli első falurész játszható blockoutja;
-- keskeny főutca és két oldalirányú mellékutca;
-- hat hagyományos háztömeg, kerítések és négy lámpa;
-- hat falusi NPC elhelyezési pontja;
-- Miyako első találkozásának tere;
-- három, a falusi környezethez igazított kamera-zóna.
-
-Részletes review-leírás: [docs/FIRST_STREET_BLOCKOUT.md](docs/FIRST_STREET_BLOCKOUT.md)
-
-Még nem került be végleges NPC-rutin, combat, inventory, route rendszer vagy final dialogue system.
 
 ## Asset szabály
 
