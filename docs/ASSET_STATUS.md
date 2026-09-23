@@ -3,6 +3,7 @@
 | Asset | Státusz |
 |---|---|
 | Akira 3D | BLOCKOUT proxy v0.2 — REVIEW PASSED |
+| Akira portable fallback | PROCEDURAL HUMANOID — IMPLEMENTED |
 | Akira locomotion | ANIMATION PASS v0.2 — REVIEW PASSED |
 | Mountain path | BLOCKOUT 2.0 — REVIEW PASSED |
 | Mountain Path narrative pass | PASS 1 — REVIEW PASSED |
@@ -11,9 +12,13 @@
 | Fog | BLOCKOUT + subtle ambient motion — REVIEW PASSED |
 | Lighting | BLOCKOUT |
 | UI | PLACEHOLDER — subtitle prototype |
-| Tsukimori first street | BLOCKOUT 1.0 — REVIEW |
-| Village houses / fences / lanterns | BLOCKOUT proxies |
-| Villagers / Miyako | PLACEMENT proxies only |
+| Tsukimori first street | BLOCKOUT 1.0 + AMBIENT PASS 1 — REVIEW |
+| Village houses / fences | BLOCKOUT proxies |
+| Lanterns | BLOCKOUT + animated flicker |
+| Hanging cloth / petals / plants | ANIMATED BLOCKOUT |
+| Villagers | HUMANOID ANIMATED PROXIES |
+| Miyako | HUMANOID PLACEMENT PROXY |
+| Godot asset shortlist | CURATED — EVALUATION NEXT |
 
 Státuszfolyam:
 
