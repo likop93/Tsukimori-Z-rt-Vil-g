@@ -68,6 +68,7 @@ func _ready() -> void:
         Vector3(-2.5, 0, -39),
         Vector3(3.1, 0, -45)
     ]
+    var npc_yaws: Array[float] = [32.0, -52.0, 122.0, -36.0, 66.0, -78.0]
     for index in npc_positions.size():
         _villager(
             slots,
@@ -76,7 +77,8 @@ func _ready() -> void:
             index,
             index % 4,
             float(index) * 0.63,
-            false
+            false,
+            npc_yaws[index]
         )
 
     var meeting := _node("MiyakoMeeting", self)
@@ -277,10 +279,11 @@ func _lantern(parent: Node, index: int, position_value: Vector3, wood: Material,
     light.omni_range = 5.0
     root.add_child(light)
 
-func _villager(parent: Node, name_value: String, position_value: Vector3, variant: int, idle_style: int, phase: float, miyako: bool) -> void:
+func _villager(parent: Node, name_value: String, position_value: Vector3, variant: int, idle_style: int, phase: float, miyako: bool, yaw_degrees: float = 0.0) -> void:
     var result := Node3D.new()
     result.name = name_value
     result.position = position_value
+    result.rotation.y = deg_to_rad(yaw_degrees)
     result.set_script(VillagerProxyScript)
     result.set("variant", variant)
     result.set("idle_style", idle_style)

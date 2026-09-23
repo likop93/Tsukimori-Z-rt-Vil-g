@@ -24,6 +24,8 @@ Bekerült:
 - hat enyhén mozgó növényproxy;
 - hat kapszula helyett emberarányos falusi proxy;
 - többféle falusi idle: nézelődés, beszélő gesztus, munkamozdulat, nyugodt állás;
+- eltérő testirányok a hat falusinál, hogy a mozgás ne sorba állított figuráknak hasson;
+- három visszafogott hajsziluett a falusi proxykon;
 - Miyako külön, hosszú hajú humanoid placement proxyként.
 
 Ez még nem teljes NPC-rutin. A cél az, hogy az utca **lakottnak és mozgónak** hasson anélkül, hogy final asseteket készítenénk.
@@ -47,3 +49,9 @@ Figyeld:
 6. megfelelő-e Miyako későbbi belépési tere.
 
 A következő nagy lépés az asset-alapú environment dressing és a Miyako First Encounter staging lesz, de csak az ambient review után.
+
+## Technikai review — 2026-09-23
+
+A hat falusi proxy és az utcai ambient controller már működő kódként szerepelt a projektben. A review során a falusiak azonos alapirányát változatos, kézzel beállított testirányokra cseréltük, és három egyszerű hajsziluettet adtunk a falusi proxyknak. Az idle fázisok, a mozgó textil, növények, szirmok és a lámpafény meglévő működését megtartottuk.
+
+A vizuális review még nyitott: a teljes hegyi út felől végigjátszva kell megítélni az NPC-k és Miyako helyét, a kamera kompozícióját és a mozgás mértékét. A technikai módosítás önmagában nem jelent kreatív jóváhagyást.

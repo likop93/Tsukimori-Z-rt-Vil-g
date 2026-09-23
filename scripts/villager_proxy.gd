@@ -105,6 +105,13 @@ func _build_proxy() -> void:
         _box(_hair_back, "HairBack", Vector3(0, -0.23, 0.045), Vector3(0.22, 0.48, 0.08), hair)
     else:
         _box(_head, "HairFringe", Vector3(0, 0.08, -0.105), Vector3(0.19, 0.09, 0.045), hair)
+        match variant % 3:
+            0:
+                _box(_head, "ShortHair", Vector3(0, -0.055, 0.07), Vector3(0.23, 0.25, 0.08), hair)
+            1:
+                _box(_head, "LongHair", Vector3(0, -0.15, 0.07), Vector3(0.23, 0.44, 0.08), hair)
+            2:
+                _sphere(_head, "HairKnot", Vector3(0, 0.15, 0.10), 0.075, hair)
 
     _arm_l = _limb_pivot(_body_root, "ArmL", Vector3(-0.27, 1.43, 0), Vector3(0.10, 0.47, 0.11), cloth, -0.22)
     _arm_r = _limb_pivot(_body_root, "ArmR", Vector3(0.27, 1.43, 0), Vector3(0.10, 0.47, 0.11), cloth, -0.22)
