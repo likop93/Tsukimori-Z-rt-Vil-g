@@ -13,6 +13,7 @@ Minden új vizuális, pályatervezési, kamera-, UI-, animációs és prezentác
 1. `docs/STORY_CANON.md`
 2. `docs/CHARACTER_BIBLE.md`
 3. `docs/DECISION_LOG.md`
+4. `docs/VISUAL_REFERENCE_INDEX.md`
 
 A `LOCKED` döntéseket implementáció, asset, Ren'Py-forrás vagy technikai kényelem önmagában nem írhatja felül. LOCKED döntés csak kifejezett tulajdonosi döntéssel változhat.
 
@@ -207,3 +208,28 @@ A későbbi fő jelenetek vizuális minőségét ehhez a beauty targethez kell m
 PLACEHOLDER → BLOCKOUT → REVIEW → FINAL
 
 Semmi nem válik FINAL-lá pusztán attól, hogy bekerült a játékba vagy technikailag működik.
+
+
+---
+
+# 2.5D cinematic prototype direction — APPROVED / REVIEW
+
+A tulajdonosi döntés alapján külön prototípusban vizsgáljuk, hogy a Tsukimori végleges prezentációja a teljes 3D helyett egy **2D/2.5D cinematic narrative adventure** formában működik-e jobban.
+
+Hivatalos képi célreferencia:
+- ChatGPT Library: `/Tsukimori Visual References/visual_target/TSUKIMORI_2_5D_VISUAL_TARGET_V1.png`
+- státusz: **APPROVED VISUAL TARGET — PROTOTYPE**
+
+Ez jelenleg **nem írja felül** a fent dokumentált LOCKED 3D Visual Target v1-et. A teljes migráció csak a Miyako first-encounter 2.5D prototípus játékbeli review-ja és új tulajdonosi döntés után történhet.
+
+A 2.5D prototípus alapelvei:
+- saját Tsukimori vizuális identitás; nem Until Then-másolat;
+- oldalirányú / rendezett filmes felfedezés;
+- parallax rétegek;
+- részletes anime/painterly karakterprezentáció;
+- meleg lámpafény + hideg holdfény + eső/köd/víz;
+- a történet, karakterkapcsolatok és rejtély előnyt élveznek a komplex 3D rendszerekkel szemben;
+- hagyományos combat rendszer nem része a prototípusnak;
+- a meglévő 3D world layout továbbra is térbeli referencia és nem törlendő.
+
+A konkrét képi authority és státuszlista: `docs/VISUAL_REFERENCE_INDEX.md`.
