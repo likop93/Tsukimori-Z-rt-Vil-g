@@ -13,6 +13,7 @@ Minden implementáció előtt ellenőrizd:
 4. `docs/CREATIVE_BIBLE.md`
 5. `docs/ART_DIRECTION_LOCK.md`
 6. `docs/VERTICAL_SLICE_SCOPE.md`
+7. `docs/VISUAL_REFERENCE_INDEX.md`
 
 A `LOCKED` döntést sem technikai egyszerűség, sem Ren'Py-forrás, sem korábbi blockout, sem generált asset nem írhatja felül automatikusan.
 
@@ -23,6 +24,15 @@ Ha a feladat ütközik egy LOCKED döntéssel:
 - csak kifejezett tulajdonosi döntés után változtass rajta.
 
 A Ren'Py az események, dialógusok, döntések és route-ok történeti forrása, **nem automatikus pálya-, kamera- vagy art-direction terv**.
+
+### Konkrét képi referenciák
+
+A jóváhagyott képek kanonikus példányai a ChatGPT Library `/Tsukimori Visual References/` mappában találhatók; a pontos fájlnevek, státuszok és SHA-256 értékek:
+- `docs/VISUAL_REFERENCE_INDEX.md`
+
+Ha a Work/Codex környezet a binary képet nem tudja közvetlenül elérni, **ne helyettesítse saját új designnal**. Használja a production specet fallbackként és jelezze a reference-sync hiányát.
+
+A képeken lévő automatikusan generált feliratok nem történeti authorityk.
 
 
 ### Akira FINAL karaktermunka
@@ -81,3 +91,19 @@ NE implementálj még:
 ## Refaktor-szabály
 Ne írj történeti tartalmat közvetlenül player/world scriptbe.
 A későbbi narratív rendszer adatvezérelt lesz.
+
+
+### 2.5D prototype — jelenlegi státusz
+
+A tulajdonos jóváhagyta egy külön 2D/2.5D cinematic narrative prototype elkészítését.
+
+Visual target:
+- `TSUKIMORI_2_5D_VISUAL_TARGET_V1.png`
+- státusz: **APPROVED / REVIEW**, nem FINAL migration lock.
+
+Szabály:
+- a jelenlegi 3D projektet ne töröld;
+- a 3D world layoutot használd térbeli referenciának;
+- a 2.5D prototípust elkülönített scene/script/asset struktúrában építsd;
+- hagyományos combatot ne implementálj;
+- teljes production migration csak új tulajdonosi döntés után történhet.
