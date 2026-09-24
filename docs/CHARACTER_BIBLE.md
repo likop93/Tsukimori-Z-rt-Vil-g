@@ -26,7 +26,7 @@ A `LOCKED` karakterdöntést nem írhatja felül automatikusan generált asset, 
 - későbbi kulcsmondat: **„Én vagyok a szél.”**
 - későbbi cím: **„A Bukottak Királya.”**
 
-## FINAL vizuális irány — részben LOCKED
+## FINAL vizuális irány — LOCKED
 
 LOCKED:
 - **fekete haj**;
@@ -37,14 +37,21 @@ LOCKED:
 - nem fotórealista;
 - Tsukimori anime-stilizált 3D art directionjéhez igazodik.
 
-Tervezési irány:
+LOCKED megjelenés:
+- kb. 180 cm;
+- korai harmincas, felnőtt férfi arc;
 - enyhén rendezetlen, nagyobb tincsekben olvasható fekete haj;
-- intelligens, komoly arc;
-- visszafogott modern szemüveg megengedett, ha nem tolja Loft vizuális csomagja felé;
-- sötét garbó/felsőrész;
-- hosszabb kabát vagy rétegzett felsőruházat;
-- visszafogott zöld akcentus csak indokoltan;
+- intelligens, komoly, figyelő arc;
+- karcsú-atletikus testalkat;
+- sötét charcoal/fekete, modern, rétegzett városi felsőruházat;
+- puhább belső réteg / kapucnis réteg megengedett és a jóváhagyott design része;
+- sötét, karcsú nadrág és praktikus sötét cipő;
+- visszafogott karóra;
+- szemüveg opcionális variáns, vékony modern kerettel;
+- hosszabb kabát későbbi alternatív outfit lehet, nem az elsődleges sziluett;
 - a Black Fan motívum előrevetíthető, de ne legyen feltűnő cosplay-dísz.
+
+A 3D gyártási specifikáció: `docs/AKIRA_PRODUCTION_SPEC.md`.
 
 ## Akira animációs nyelve — LOCKED
 
