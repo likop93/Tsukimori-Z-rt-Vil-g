@@ -45,6 +45,7 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 | 2026-09-24 | **Shion FINAL Character Design v1** | LOCKED | Hosszú fekete/ibolyás haj, zöld szem, finom virágdísz, víz/holdfény vizuális motívum, sötét rétegzett Primary outfit. A referencia-lap automatikus bio-szövegei nem kánonok. Spec: `docs/SHION_PRODUCTION_SPEC.md`. |
 | 2026-09-24 | **Shion animációs alapelv** | LOCKED | Shion akkor a legnyugtalanítóbb, amikor túl kevéssé mozog; hosszú holdok, minimális testsúlyváltás, szemvezérelt reakció. |
 | 2026-09-24 | **Asset státusz: PLACEHOLDER → BLOCKOUT → REVIEW → FINAL** | LOCKED | A technikailag működő asset nem lesz automatikusan FINAL. |
+| 2026-09-24 | **Visual Reference Packet / konkrét jóváhagyott képek** | LOCKED AUTHORITY RULE | A konkrét képek kanonikus másolatai a ChatGPT Library `/Tsukimori Visual References/` mappában vannak; státusz és SHA-256: `docs/VISUAL_REFERENCE_INDEX.md`. A képeken lévő automatikus szövegek nem kánonok. |
 
 ---
 
@@ -55,6 +56,9 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 | 2026-09-24 | **Akira + Miyako arrival staging v1** | APPROVED / REVIEW | Rendezett beauty-target terv elkészült: 7–10 mp-es encounter, warm/cool kontraszt, Akira kontrollált recognition beat, Miyako Primary Design A, első mondat: „Dr. Akira. Már vártam.” Részletek: `docs/BEAUTY_TARGET_AKIRA_MIYAKO_ARRIVAL.md`. |
 | 2026-09-24 | Miyako kontrollált, finom animációs nyelve | LOCKED | Idle/Walk első review; részletek: `docs/MIYAKO_PRODUCTION_SPEC.md`. |
 | 2026-09-24 | Közös ház hero location szerepe | APPROVED | Beauty pass és F5 review. |
+| 2026-09-24 | **2.5D cinematic narrative prototype** | APPROVED / REVIEW | Saját Tsukimori 2D/2.5D irány tesztelése a Miyako first encounterrel; hagyományos combat nélkül. A teljes 3D migration még nincs LOCKED. Visual target: `docs/VISUAL_REFERENCE_INDEX.md`. |
+| 2026-09-24 | **Tsukimori Dialogue UI v1 képi referencia** | APPROVED / VISUAL AUTHORITY | A jóváhagyott UI board használható a prototípus dialógus-prezentációjához; konkrét fájl az indexben. |
+| 2026-09-24 | **Renka Character Design v1** | APPROVED REFERENCE | Jelenlegi képi irány megtartva; még nem production lock. |
 
 ---
 
