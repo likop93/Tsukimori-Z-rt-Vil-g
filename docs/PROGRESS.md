@@ -4,6 +4,8 @@
 
 **Történeti forrás rögzítve:** a feltöltött Ren’Py-projekt fő útja az irányadó. A részletes megfeleltetés és a még különálló Ren’Py-prototípusok leírása: `docs/RENPY_CANON.md`. A Godot route-rendszere ettől még nincs megvalósítva.
 
+A jóváhagyott falutérképet megtartó, fejezetenkénti jelenet- és döntéstérkép: `docs/RENPY_GODOT_STORY_MAP.md`. Akira FINAL modellje és FINAL animációi külön kreatív döntésig nem készülnek.
+
 ## Aktuális fázis
 
 **Vertical Slice Implementation**

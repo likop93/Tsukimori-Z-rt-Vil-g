@@ -1,6 +1,6 @@
 # Tsukimori — faluelrendezés (történeti blockout)
 
-A történeti forrás a Ren’Py-projekt (`docs/RENPY_CANON.md`). A híd és az otthon pontos Godot-helye jelenlegi térbeli értelmezés; a Ren’Py I. fejezete Katsuro házát a falu csendesebb részén említi, a hidat nem rögzíti. Ha egy későbbi jelenet eltérő elrendezést kíván, a blockoutot a történethez igazítjuk.
+A történeti forrás a Ren’Py-projekt (`docs/RENPY_CANON.md`). A már elfogadott Godot-elrendezés megmarad: a Ren’Py I. fejezete Katsuro házát a falu csendesebb részén említi, a hidat nem rögzíti, ezért a híd utáni csendes perem ezzel összeegyeztethető. Kisebb eltérés miatt nem rendezzük át automatikusan a falut; lényegi történeti ellentmondást előbb egyeztetünk.
 
 Akira a hegyi úton érkezik a falu egyik szélére, majd **végigsétál a lakott utcán**. A falusiak figyelik, párban összenéznek és összesúgnak. Shion háza a patak falusi oldalán áll. Akira átmegy a hídon; a túlparton két ház van. Az első egyelőre névtelen, a távolabbi Katsuro egykori háza, ahol **Miyako és Akira együtt laknak** és ahol az első találkozás történik. Ezután erdő, elágazó utak és három elszórt, egyelőre névtelen ház jön. Ez térbeli blockout; a házak belseje és a végleges építészeti forma még nincs kidolgozva.
 

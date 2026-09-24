@@ -4,7 +4,9 @@ Godot 4.x alapú 2.5D narratív RPG vertical slice.
 
 ## Aktuális állapot — 2026-09-24
 
-**Történeti fő kánon:** a tulajdonos Ren’Py-projektje. A Godot-változat a Ren’Py fő útvonalának bejárható megvalósítása; a route-okat és a következő jeleneteket a Ren’Py alapján visszük át. A pontos forrás, a jelenlegi fő út és a Godot-megfeleltetés: `docs/RENPY_CANON.md`.
+**Történeti fő kánon:** a tulajdonos Ren’Py-projektje. A Godot-változat a Ren’Py fő útvonalának bejárható megvalósítása; a route-okat és a következő jeleneteket a Ren’Py alapján visszük át. A már jóváhagyott Godot-falut kisebb eltérések miatt nem rendezzük át. A pontos forrás, a jelenlegi fő út és a Godot-megfeleltetés: `docs/RENPY_CANON.md`.
+
+A részletes történeti jelenettérkép és a következő átültetési feladatok: `docs/RENPY_GODOT_STORY_MAP.md`.
 
 Az első játszható hegyi szakasz technikai és animációs alapja **review-n átment**.
 
