@@ -22,6 +22,7 @@ var _arm_r: Node3D
 var _leg_l: Node3D
 var _leg_r: Node3D
 var _hair_back: Node3D
+var _greeting_time := -1.0
 
 func _ready() -> void:
     _rest_yaw = rotation.y
@@ -32,6 +33,10 @@ func start_reaction(phase: int) -> void:
         return
     reaction_phase = phase
     _reaction_time_left = 1.4 if phase == Reaction.WHISPER else 2.6
+
+func begin_greeting() -> void:
+    if is_miyako:
+        _greeting_time = 0.0
 
 func _process(delta: float) -> void:
     _time += delta
@@ -60,6 +65,20 @@ func _process(delta: float) -> void:
         _arm_r.rotation.x = -sin(t * 0.55) * deg_to_rad(1.5)
         if _hair_back:
             _hair_back.rotation.x = sin(t * 0.82) * deg_to_rad(1.6)
+        if _greeting_time >= 0.0:
+            _greeting_time += delta
+            # A slight bow and open hand read at the encounter camera distance.
+            var bow := smoothstep(0.3, 1.05, _greeting_time) * (1.0 - smoothstep(1.75, 2.8, _greeting_time))
+            var hand := smoothstep(0.55, 1.2, _greeting_time) * (1.0 - smoothstep(2.05, 2.9, _greeting_time))
+            _torso.rotation.x = deg_to_rad(5.0) * bow
+            _head.rotation.x += deg_to_rad(7.0) * bow
+            _body_root.position.y -= 0.035 * bow
+            _arm_r.rotation.x -= deg_to_rad(34.0) * hand
+            _arm_l.rotation.x += deg_to_rad(7.0) * bow
+            if _greeting_time >= 3.1:
+                _greeting_time = -1.0
+        else:
+            _torso.rotation.x = 0.0
         return
 
     match idle_style % 4:

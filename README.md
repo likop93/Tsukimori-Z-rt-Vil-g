@@ -13,7 +13,7 @@ Az első játszható hegyi szakasz technikai és animációs alapja **review-n �
 A kapun túli első falurész:
 - **kibővített utcai blockout elkészült**
 - **Ambient Animation Pass 1 review-n átment**
-- **Miyako első találkozásának stagingje elkészült — review-ra kész**
+- **Miyako első találkozásának néma animációs stagingje elkészült — F5 review-ra kész**
 
 Jelenlegi játszható ív:
 
@@ -55,8 +55,8 @@ Jelenlegi játszható ív:
 - négy egymásra épülő, egyszeri falusi reakció és csendes átmenet a hídnál
 - Miyako külön humanoid proxyja Katsuro házának bejáratánál
 - haladási irányt követő utcai kamera és elkülönített találkozási kompozíció
-- az első találkozás külön kameraképe és a kánon szerinti első mondata
-- Miyako Ren’Py szerinti első beszélgetése az eredeti jelenetképekkel, két válasszal és a kapcsolati / Gyógyulás-értékekkel; a döntés után visszatér az irányítás
+- az első találkozás külön kameraképe és Miyako visszafogott, forduló/meghajló üdvözlő mozgása; utána visszatér az irányítás
+- a Ren’Py dialógusai és döntései a történeti jegyzékben vannak, később kerülnek át a Godot-jelenetekbe; a korábbi teljes képernyős VN-próbát kivettük
 - minimális GameState flag-rendszer
 - fejlesztői HUD + subtitle prototípus
 
@@ -70,7 +70,7 @@ A hegyi út stabil alap.
 
 **Tsukimori — az első utca narratív bejárása és a közös ház vizuális prototípusa**
 
-Az utcai párok reakciói F5 review-n átmentek. A közös ház animált, kétszintes atmoszférikus passza elkészült, most F5-ben a ház sziluettjét, léptékét és Miyako láthatóságát ellenőrizzük. Részletek: `docs/ASSET_EVALUATION_PLAN.md`, `docs/FIRST_STREET_NARRATIVE_PASS.md`, `docs/MIYAKO_FIRST_ENCOUNTER.md`, `docs/VILLAGE_LAYOUT.md` és `docs/SHARED_HOME_PROTOTYPE.md`.
+Az utcai párok reakciói F5 review-n átmentek. A közös ház animált, kétszintes atmoszférikus passza elkészült; most Miyako néma mozdulatát, a találkozás kameráját és az irányítás visszatérését ellenőrizzük F5-ben. Részletek: `docs/ASSET_EVALUATION_PLAN.md`, `docs/FIRST_STREET_NARRATIVE_PASS.md`, `docs/MIYAKO_FIRST_ENCOUNTER.md`, `docs/VILLAGE_LAYOUT.md` és `docs/SHARED_HOME_PROTOTYPE.md`.
 
 A következő esti látványpassz Blender-modellje, Godot-betöltése és F5 ellenőrzőlistája: `docs/EVENING_VISUAL_PASS.md`.
 

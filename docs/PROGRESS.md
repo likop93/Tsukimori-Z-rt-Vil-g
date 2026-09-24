@@ -72,8 +72,8 @@ Működik:
 - négy pár, akik Akirát figyelik, majd egymáshoz fordulnak és suttogó mozdulatot tesznek;
 - négy külön, egyszeri falusi reakció és a patakhídnál lezáruló narratív feliratsor;
 - Miyako humanoid proxyja Katsuro házának küszöbénél;
-- irányított első találkozás, kánon szerinti első mondattal és folytatható vezérléssel;
-- a Ren’Py I. fejezetéből átvett első házbelső beszélgetés, két döntés és a döntésnek megfelelő Miyako / Gyógyulás érték; a VN-kép után visszatér a Godot-pálya;
+- irányított, néma első találkozás: Miyako Akira felé fordul, enyhén meghajol, nyitott kézzel üdvözli; a rövid animáció után visszatér a vezérlés;
+- Ren’Py-kánonhoz igazított, külön jegyzékben rögzített beszélgetési és döntési sorrend; a dialógusok képernyős VN-próbáját kivettük a játszható Godot-projektből az animációs jelenetek kialakításáig;
 - Miyako találkozása után E-vel elérhető rendelő a közös ház híd felőli oldalszárnyában, bejárható váróval és vizsgálóval;
 - generált, Godotba betöltött közösház-GLB és ugyanahhoz a geometriához szerkeszthető Blender-forrásgenerátor; hideg esti fény, nedves utcakő, mozgatott eső és talajköd;
 - GameState flag-ek.

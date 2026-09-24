@@ -5,13 +5,11 @@ const VillagerProxyScript = preload("res://scripts/villager_proxy.gd")
 const StreetAmbientScript = preload("res://scripts/street_ambient.gd")
 const SharedHomeVisualScript = preload("res://scripts/shared_home_visual.gd")
 const ClinicBlockoutScript = preload("res://scripts/clinic_blockout.gd")
-const MiyakoConversationScript = preload("res://scripts/miyako_first_conversation.gd")
 const REACTION_WATCH := 1
 const REACTION_WHISPER := 2
 const REACTION_HUSH := 3
 
 var meeting_reached := false
-var _encounter_state := 0
 var _encounter_player: CharacterBody3D
 var _experienced_beats: Array[bool] = [false, false, false, false]
 
@@ -575,7 +573,6 @@ func _on_miyako_meet_trigger_body_entered(body: Node3D) -> void:
         return
     meeting_reached = true
     GameState.set_flag("reached_miyako_meeting_space", true)
-    _encounter_state = 1
     _encounter_player.call("set_controls_locked", true)
     (get_node("CameraZones/MiyakoFocus") as Area3D).add_to_group("camera_zones")
 
@@ -585,56 +582,16 @@ func _on_miyako_meet_trigger_body_entered(body: Node3D) -> void:
     if direction.length() > 0.01:
         var turn := create_tween()
         turn.tween_property(miyako, "rotation:y", atan2(-direction.x, -direction.z), 0.72).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+    miyako.call("begin_greeting")
 
     var beat := create_tween()
-    beat.tween_interval(0.85)
-    beat.tween_callback(_show_miyako_line)
-
-func _show_miyako_line() -> void:
-    if _encounter_state != 1:
-        return
-    _encounter_state = 2
-    var status := get_node_or_null("../HUD/Margin/VBox/Status") as Label
-    if status:
-        status.text = "Miyako • Enter / Space: tovább"
-    var subtitle := get_node_or_null("../HUD/Subtitle") as Label
-    if subtitle:
-        var previous_subtitle := get_parent().get("subtitle_tween") as Tween
-        if previous_subtitle != null and previous_subtitle.is_running():
-            previous_subtitle.kill()
-        subtitle.text = "Miyako: Dr. Akira. Már vártam."
-        subtitle.modulate.a = 0.0
-        create_tween().tween_property(subtitle, "modulate:a", 1.0, 0.24)
-
-func _unhandled_input(event: InputEvent) -> void:
-    if _encounter_state != 2 or not event is InputEventKey:
-        return
-    var key := event as InputEventKey
-    if key.pressed and not key.echo and key.keycode in [KEY_ENTER, KEY_KP_ENTER, KEY_SPACE]:
-        _begin_miyako_conversation()
-
-func _begin_miyako_conversation() -> void:
-    _encounter_state = 3
-    GameState.set_flag("met_miyako", true)
-    var subtitle := get_node_or_null("../HUD/Subtitle") as Label
-    if subtitle:
-        subtitle.modulate.a = 0.0
-    var conversation := MiyakoConversationScript.new() as CanvasLayer
-    conversation.name = "MiyakoFirstConversation"
-    get_parent().add_child(conversation)
-    conversation.connect("completed", Callable(self, "_complete_miyako_encounter"))
+    beat.tween_interval(3.1)
+    beat.tween_callback(_complete_miyako_encounter)
 
 func _complete_miyako_encounter() -> void:
-    _encounter_state = 4
-    GameState.set_flag("miyako_first_conversation_complete", true)
-    var conversation := get_parent().get_node_or_null("MiyakoFirstConversation") as CanvasLayer
-    if conversation:
-        conversation.queue_free()
+    GameState.set_flag("met_miyako")
     (get_node("CameraZones/MiyakoFocus") as Area3D).remove_from_group("camera_zones")
     _encounter_player.call("set_controls_locked", false)
-    var subtitle := get_node_or_null("../HUD/Subtitle") as Label
-    if subtitle:
-        create_tween().tween_property(subtitle, "modulate:a", 0.0, 0.22)
     var status := get_node_or_null("../HUD/Margin/VBox/Status") as Label
     if status:
         status.text = "RENDELŐ • a közös ház híd felőli oldalán, külön ajtó"

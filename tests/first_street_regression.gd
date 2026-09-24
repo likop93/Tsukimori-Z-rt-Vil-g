@@ -23,7 +23,7 @@ func settle_at(position_value: Vector3) -> void:
     player.velocity = Vector3.ZERO
     await frames(240)
 
-func hold_key(key: Key, duration_frames: int) -> void:
+func hold_key(key: Key, duration_frames: int, settle_frames: int = 240) -> void:
     var press := InputEventKey.new()
     press.keycode = key
     press.pressed = true
@@ -33,7 +33,7 @@ func hold_key(key: Key, duration_frames: int) -> void:
     release.keycode = key
     release.pressed = false
     Input.parse_input_event(release)
-    await frames(240)
+    await frames(settle_frames)
 
 func run_checks() -> void:
     var main: Node = load("res://scenes/main.tscn").instantiate()
@@ -150,42 +150,31 @@ func run_checks() -> void:
     expect(player.is_on_floor(), "First far-bank house is not reachable")
     expect(not street.meeting_reached, "Miyako appeared before the farther shared home")
 
-    var approach_start := player.global_position
-    await hold_key(KEY_W, 240)
-    expect(player.global_position.z < approach_start.z - 9.0 and absf(player.global_position.x) < 0.6, "W did not lead from the first far-bank house to the shared home")
-    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-20.0))) < 0.002, "Miyako encounter camera did not settle")
-    var camera := camera_rig.get_node("Camera3D") as Camera3D
     var miyako := street.get_node("MiyakoMeeting/MiyakoMarker") as Node3D
+    miyako.call("begin_greeting")
+    await frames(85)
+    expect((miyako.get_node("BodyRoot/TorsoPivot") as Node3D).rotation.x > deg_to_rad(3.0), "Miyako's greeting has no bow")
+    expect((miyako.get_node("BodyRoot/ArmR") as Node3D).rotation.x < deg_to_rad(-25.0), "Miyako's greeting has no open hand")
+    await frames(115)
+    expect(absf((miyako.get_node("BodyRoot/TorsoPivot") as Node3D).rotation.x) < 0.005, "Miyako's greeting did not settle back to idle")
+
+    var approach_start := player.global_position
+    await hold_key(KEY_W, 240, 0)
+    await frames(55)
+    expect(player.global_position.z < approach_start.z - 9.0 and absf(player.global_position.x) < 0.6, "W did not lead from the first far-bank house to the shared home")
+    expect(absf(angle_difference(camera_rig.rotation.y, deg_to_rad(-20.0))) < 0.02, "Miyako encounter camera did not frame the greeting")
+    var camera := camera_rig.get_node("Camera3D") as Camera3D
     var sightline := PhysicsRayQueryParameters3D.create(camera.global_position, miyako.global_position + Vector3(0, 1.6, 0))
     sightline.exclude = [player.get_rid()]
     expect(world.get_world_3d().direct_space_state.intersect_ray(sightline).is_empty(), "Miyako is hidden by the house in the encounter shot")
     expect(root.get_node("GameState").has_flag("reached_miyako_meeting_space"), "Miyako meeting trigger did not set its flag")
     expect(street.meeting_reached, "Miyako meeting did not latch")
-    expect(player.get("_controls_locked"), "Miyako encounter did not pause movement")
-    expect(world.get_node("HUD/Subtitle").text == "Miyako: Dr. Akira. Már vártam.", "Canonical Miyako line is missing")
-
-    var advance := InputEventKey.new()
-    advance.keycode = KEY_ENTER
-    advance.pressed = true
-    street._unhandled_input(advance)
-    var conversation := world.get_node_or_null("MiyakoFirstConversation") as CanvasLayer
-    expect(conversation != null, "Miyako's Ren'Py conversation did not open")
-    expect(player.get("_controls_locked"), "Movement resumed during Miyako's conversation")
-    expect(root.get_node("GameState").has_flag("met_miyako"), "Miyako meeting was not recorded")
-    for step in range(4):
-        conversation.call("_advance")
-    var choice_buttons := conversation.get_node("Control/PanelContainer/VBoxContainer/VBoxContainer") as VBoxContainer
-    expect(choice_buttons.get_child_count() == 2, "The first canonical choice is missing")
-    (choice_buttons.get_child(0) as Button).pressed.emit()
-    conversation.call("_advance")
-    conversation.call("_advance")
+    expect(player.get("_controls_locked"), "The silent greeting did not pause movement")
+    expect(float(miyako.get("_greeting_time")) >= 0.0, "The encounter did not start Miyako's gesture")
     await frames(240)
-    expect(root.get_node("GameState").has_flag("miyako_first_conversation_complete"), "Miyako's first decision did not complete")
-    expect(root.get_node("GameState").miyako_first_choice == "silence", "The selected answer was not recorded")
-    expect(root.get_node("GameState").aff_miyako == 1 and root.get_node("GameState").akira_gyogyulas == 1, "Ren'Py choice effects do not match")
-    expect(not root.get_node("GameState").choose_miyako_first_response("silence"), "The first choice was applied more than once")
-    expect(world.get_node_or_null("MiyakoFirstConversation") == null, "Miyako's VN layer stayed open")
-    expect(not player.get("_controls_locked"), "Movement stayed locked after Miyako encounter")
+    expect(root.get_node("GameState").has_flag("met_miyako"), "Miyako meeting was not recorded after the silent animation")
+    expect(not player.get("_controls_locked"), "Movement stayed locked after Miyako's greeting")
+    expect(world.get_node_or_null("MiyakoFirstConversation") == null, "The old full-screen VN layer still opens")
     expect(absf(camera_rig.rotation.y) < 0.002, "Miyako court camera did not return")
     expect(world.get_node("HUD/Margin/VBox/Status").text.contains("RENDELŐ"), "Clinic directions were not shown after meeting Miyako")
 
@@ -238,11 +227,6 @@ func run_checks() -> void:
     await frames(12)
     expect(player.global_position.distance_to((clinic.get_node("Exterior/Entrance") as Node3D).global_position) < 2.0, "Clinic exit did not return Akira to the shared home yard")
     expect(not clinic.get_node("Interior/ClinicCamera").is_in_group("camera_zones"), "Clinic camera stayed active after exit")
-
-    root.get_node("GameState").clear_runtime_state()
-    expect(root.get_node("GameState").choose_miyako_first_response("question"), "The question branch could not be selected")
-    expect(root.get_node("GameState").miyako_first_choice == "question", "The question branch was not recorded")
-    expect(root.get_node("GameState").aff_miyako == 0 and root.get_node("GameState").akira_gyogyulas == 0, "The question branch changed Ren'Py stats")
 
     print("First street regression: %s" % ("PASS" if failures == 0 else "%s failures" % failures))
     quit(0 if failures == 0 else 1)

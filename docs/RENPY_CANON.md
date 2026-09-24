@@ -20,15 +20,15 @@ A forrásban megőrzött `canonical_html_legacy_route_menu` jelenleg nem része 
 |---|---|
 | Akira megérkezik a ködös hegyi faluba | Bejárható hegyi út és kapu; a Ren’Py prológusának szöveges jelenete még nincs átültetve. |
 | A falusiak feltűnően figyelik Akirát | A falun végigvezető utcában időzített figyelő és összesúgó NPC-reakciók. |
-| Katsuro házánál Miyako fogadja: „Dr. Akira. Már vártam.” | A találkozás első mondata és kamerája működik; a ház belső történeti jelenete még nincs átültetve. |
-| Miyako beengedi Akirát a házba; első beszélgetésük döntéshez vezet | A Ren’Py eredeti két képe, az első beszélgetés és a választás átkerült Godotba. A rendelő még külön bejárható térbeli prototípus, nincs összeillesztve a VN-beli házbelsővel. |
+| Katsuro házánál Miyako fogadja: „Dr. Akira. Már vártam.” | A térbeli kamera és Miyako néma üdvözlő animációja működik. A mondat és a történeti jelenet egyelőre a Ren’Py kánonban marad. |
+| Miyako beengedi Akirát a házba; első beszélgetésük döntéshez vezet | A házbelső beszélgetés és a két választás későbbi, Godotba illő bemutatásra vár. A külön rendelőszárny jelenleg bejárható térbeli prototípus. |
 
 **Térbeli egyeztetés:** a Ren’Py I. fejezete Katsuro házát „a falu egyik csendesebb részén” írja le, pontos patakhidat nem nevez meg. A jelenlegi Godot-világban a ház a falu csendes peremén, a híd után áll. Ez összeegyeztethető a történettel, ezért a jóváhagyott hidat, Shion falusi oldali házát és Miyako–Akira közös otthonát megtartjuk. A későbbi karakterotthonokat a történet alapján helyezzük el; lényegi ellentmondás esetén egyeztetünk, mielőtt a falut átrendeznénk.
 
 ## Az átültetés sorrendje
 
-1. Akira érkezésének és a Ren’Py első éjszakai jelenetének Godot-megfeleltetése; az első Miyako-beszélgetés és döntés már működik.
-2. A bejárható házbelső és a VN-kép közötti átmenet egységesítése a későbbi grafikai passzban.
+1. A jelenlegi Godot-világ animációs ritmusának fejlesztése: Miyako üdvözlése, falusi reakciók, kamera és visszafogott környezeti mozgás a meglévő proxykon.
+2. Akira érkezésének, Miyako első beszélgetésének és az első éjszakának térbeli jelenetformája; a dialógusok és döntések csak az animációs jelenetnyelv kialakítása után kerülnek át.
 3. Az első páciensek, kapcsolati rendszer és szabadidős szakaszok átvitele a Ren’Py feltételeinek megfelelően.
 4. A külön körökre osztott harc prototípusa a történetbe illő helyen; a Ren’Py-ben szereplő harci sprite önmagában nem jelent kész harcrendszert.
 
