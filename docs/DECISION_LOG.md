@@ -42,6 +42,8 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 | 2026-09-24 | **Akira animációs alapelv: kontrollált reakció** | LOCKED | Minél furcsább az esemény, annál kevésbé látványos az első testi reakció. |
 | 2026-09-24 | **Miyako FINAL Character Design A — Primary** | LOCKED | Alapjátékos FINAL: kb. 165 cm, korai harmincas, hosszú sötét haj, fekete/charcoal elegáns gyászruha, finom arany/bordó részletek. Gyártási spec: `docs/MIYAKO_PRODUCTION_SPEC.md`. |
 | 2026-09-24 | **Miyako Design B — Ceremonial / Detail Exploration** | LOCKED VARIANT | Megtartott második vizuális referencia: hajdísz, bordó–arany motívumok, textilminták és ceremoniális outfit használható. A képen szereplő „házvezető / szentélyi gondozó” szöveg nem kánon. |
+| 2026-09-24 | **Shion FINAL Character Design v1** | LOCKED | Hosszú fekete/ibolyás haj, zöld szem, finom virágdísz, víz/holdfény vizuális motívum, sötét rétegzett Primary outfit. A referencia-lap automatikus bio-szövegei nem kánonok. Spec: `docs/SHION_PRODUCTION_SPEC.md`. |
+| 2026-09-24 | **Shion animációs alapelv** | LOCKED | Shion akkor a legnyugtalanítóbb, amikor túl kevéssé mozog; hosszú holdok, minimális testsúlyváltás, szemvezérelt reakció. |
 | 2026-09-24 | **Asset státusz: PLACEHOLDER → BLOCKOUT → REVIEW → FINAL** | LOCKED | A technikailag működő asset nem lesz automatikusan FINAL. |
 
 ---
@@ -61,4 +63,5 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 1. Akira FINAL Idle + Walk vizuális review.
 2. Miyako FINAL Idle + Walk vizuális review.
 3. Miyako–Akira ház beauty-target pass.
-4. Dialógus/UI vizuális nyelv.
+4. Shion FINAL Idle + Walk vizuális review.
+5. Dialógus/UI vizuális nyelv.
