@@ -2,7 +2,10 @@
 
 **Utolsó frissítés:** 2026-09-24
 
-**Történeti forrás rögzítve:** a feltöltött Ren’Py-projekt fő útja az irányadó. A részletes megfeleltetés és a még különálló Ren’Py-prototípusok leírása: `docs/RENPY_CANON.md`. A Godot route-rendszere ettől még nincs megvalósítva.
+
+**Projekt-governance LOCKED:** létrejött a `CREATIVE_BIBLE.md`, `STORY_CANON.md`, `CHARACTER_BIBLE.md` és `DECISION_LOG.md`. A Work/implementáció nem írhat felül LOCKED döntést; konfliktus esetén a tulajdonosi döntés az elsődleges.
+
+**Történeti forrás rögzítve:** a feltöltött Ren’Py-projekt fő útja az események, dialógusok és route-ok forrása; a már LOCKED Godot-világépítést nem írja felül automatikusan. A részletes megfeleltetés és a még különálló Ren’Py-prototípusok leírása: `docs/RENPY_CANON.md`. A Godot route-rendszere ettől még nincs megvalósítva.
 
 A jóváhagyott falutérképet megtartó, fejezetenkénti jelenet- és döntéstérkép: `docs/RENPY_GODOT_STORY_MAP.md`. Akira FINAL modellje és FINAL animációi külön kreatív döntésig nem készülnek.
 
@@ -18,7 +21,7 @@ Az utcai narratív reakciók F5 bejárása sikeres volt; a következő körben a
 
 | Mérföldkő | Állapot |
 |---|---|
-| Visual target | ✅ LOCKED |
+| Visual target — Tsukimori Visual Target v1 | ✅ LOCKED |
 | Camera / display mode | ✅ LOCKED |
 | Technical 2.5D pipeline | ✅ LOCKED |
 | Art Bible v0.1 | ✅ LOCKED |
