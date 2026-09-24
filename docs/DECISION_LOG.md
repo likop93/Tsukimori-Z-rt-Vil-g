@@ -50,6 +50,7 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 
 | Dátum | Döntés | Státusz | Következő lépés |
 |---|---|---|---|
+| 2026-09-24 | **Akira + Miyako arrival staging v1** | APPROVED / REVIEW | Rendezett beauty-target terv elkészült: 7–10 mp-es encounter, warm/cool kontraszt, Akira kontrollált recognition beat, Miyako Primary Design A, első mondat: „Dr. Akira. Már vártam.” Részletek: `docs/BEAUTY_TARGET_AKIRA_MIYAKO_ARRIVAL.md`. |
 | 2026-09-24 | Miyako kontrollált, finom animációs nyelve | LOCKED | Idle/Walk első review; részletek: `docs/MIYAKO_PRODUCTION_SPEC.md`. |
 | 2026-09-24 | Közös ház hero location szerepe | APPROVED | Beauty pass és F5 review. |
 
