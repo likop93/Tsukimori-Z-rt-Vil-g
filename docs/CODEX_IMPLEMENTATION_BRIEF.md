@@ -24,6 +24,14 @@ Ha a feladat ütközik egy LOCKED döntéssel:
 
 A Ren'Py az események, dialógusok, döntések és route-ok történeti forrása, **nem automatikus pálya-, kamera- vagy art-direction terv**.
 
+
+### Akira FINAL karaktermunka
+
+Ha Akira FINAL modelljét, rigjét, animációját vagy materialját érinti a feladat, kötelező forrás:
+- `docs/AKIRA_PRODUCTION_SPEC.md`
+
+Proxy vagy korábbi generált Akira asset nem írhatja felül ezt a specifikációt.
+
 ## Első technikai cél
 A `scenes/world/mountain_path.tscn` hibamentesen induljon,
 a Player WASD-vel mozogjon, a kamera kövesse, és a
