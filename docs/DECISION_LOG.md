@@ -37,6 +37,7 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 | 2026-09-24 | **Rendelőszárny a közös ház része** | LOCKED | Híd felőli külön bejárattal. |
 | 2026-09-24 | **Jelenlegi falusi és erdei útstruktúra** | LOCKED | Nem kell Ren'Py-hiányzó térleírás miatt átrendezni. |
 | 2026-09-24 | **Akira FINAL design: fekete haj** | LOCKED | Nem szőke; nem keverhető Loft vizuális identitásával. |
+| 2026-09-24 | **Akira FINAL Character Design v1** | LOCKED | Fekete haj, kb. 180 cm, korai harmincas, karcsú-atletikus testalkat, sötét rétegzett városi outfit, opcionális modern szemüveg; a jóváhagyott karakterlap az irány. Gyártási spec: `docs/AKIRA_PRODUCTION_SPEC.md`. |
 | 2026-09-24 | **Akira FINAL locomotion = in-place** | LOCKED | CharacterBody3D mozgatja; root motion csak külön cinematic használatra. |
 | 2026-09-24 | **Akira animációs alapelv: kontrollált reakció** | LOCKED | Minél furcsább az esemény, annál kevésbé látványos az első testi reakció. |
 | 2026-09-24 | **Asset státusz: PLACEHOLDER → BLOCKOUT → REVIEW → FINAL** | LOCKED | A technikailag működő asset nem lesz automatikusan FINAL. |
@@ -47,8 +48,6 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 
 | Dátum | Döntés | Státusz | Következő lépés |
 |---|---|---|---|
-| 2026-09-24 | Akira sötét, elegáns, praktikus öltözéke | APPROVED | FINAL front/side/back design. |
-| 2026-09-24 | Akira szemüvege maradhat, ha nem tolja Loft irányába | APPROVED | Karakterlap review. |
 | 2026-09-24 | Miyako kontrollált, finom animációs nyelve | APPROVED | Idle/Walk/meeting pack tervezése. |
 | 2026-09-24 | Közös ház hero location szerepe | APPROVED | Beauty pass és F5 review. |
 
@@ -56,8 +55,7 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 
 ## Következő kreatív lockok
 
-1. Akira FINAL front/side/back karakterdesign.
-2. Akira FINAL Idle + Walk vizuális review.
-3. Miyako FINAL karakterdesign.
-4. Miyako–Akira ház beauty-target pass.
-5. Dialógus/UI vizuális nyelv.
+1. Akira FINAL Idle + Walk vizuális review.
+2. Miyako FINAL karakterdesign.
+3. Miyako–Akira ház beauty-target pass.
+4. Dialógus/UI vizuális nyelv.
