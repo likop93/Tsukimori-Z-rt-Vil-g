@@ -32,6 +32,14 @@ Ha Akira FINAL modelljét, rigjét, animációját vagy materialját érinti a f
 
 Proxy vagy korábbi generált Akira asset nem írhatja felül ezt a specifikációt.
 
+
+### Miyako FINAL karaktermunka
+
+Ha Miyako modelljét, rigjét, animációját, materialját vagy outfit variánsát érinti a feladat, kötelező forrás:
+- `docs/MIYAKO_PRODUCTION_SPEC.md`
+
+Design A az elsődleges FINAL alapmodell. Design B megtartott ceremonial/detail variáns; nem írhatja felül Design A-t, és a referencia-lapon szereplő „házvezető / szentélyi gondozó” szerepleírásokat nem szabad történeti kánonként átvenni.
+
 ## Első technikai cél
 A `scenes/world/mountain_path.tscn` hibamentesen induljon,
 a Player WASD-vel mozogjon, a kamera kövesse, és a
