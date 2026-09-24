@@ -16,6 +16,9 @@ Almappák:
 - `ui/`
 - `visual_target/`
 
+Egyben letölthető/csatolható csomag:
+- `/Tsukimori Visual References/TSUKIMORI_VISUAL_REFERENCE_PACKET_V1.zip`
+
 ## Kötelező értelmezési szabály
 
 A képeken automatikusan generált szöveg, életkor, foglalkozás, szerepleírás, idézet vagy más felirat **nem válik automatikusan kánonná**.
