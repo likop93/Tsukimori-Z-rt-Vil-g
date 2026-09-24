@@ -1,10 +1,22 @@
 # Történeti kánon és Godot-átültetés
 
-**Fő történeti forrás:** a tulajdonos által 2026-09-24-én átadott `Tsukimori.rar` Ren’Py-projekt. A vizsgált archívum SHA-256 értéke: `834fb6caa9494e538a94eafb344f7e4e79e501b1c1f2e336525032e3f9a65c60`.
+**Történeti forrás:** a tulajdonos által 2026-09-24-én átadott `Tsukimori.rar` Ren’Py-projekt. A vizsgált archívum SHA-256 értéke: `834fb6caa9494e538a94eafb344f7e4e79e501b1c1f2e336525032e3f9a65c60`.
 
 **A Ren’Py a történeti események, párbeszédek, döntések és route-szabályok kánonja.** A Godot a történet bejárható, térbeli és később harccal bővülő megvalósítása. A már jóváhagyott Godot-világot és faluelrendezést megtartjuk, ha a Ren’Py-jelenetekkel összeegyeztethető: egy hiányzó helyszínrészlet vagy apró leírásbeli különbség nem indokol automatikus pályaátrendezést. Ha valódi, a történet menetét érintő ellentmondás merül fel, előbb egyeztetjük a megoldást. Új történeti fordulatot vagy route-szabályt nem vezetünk be pusztán a Godot-pálya alapján.
 
 A címkénkénti történeti sorrend, az állapotok és a következő jelenetek pontos átültetési jegyzéke: `docs/RENPY_GODOT_STORY_MAP.md`.
+
+
+## Projektkánon-hierarchia
+
+A Ren’Py-forrás ezt a fájlt **nem teszi magasabb prioritásúvá a már LOCKED tulajdonosi döntéseknél**. A teljes sorrend és konfliktuskezelés:
+
+- `docs/STORY_CANON.md`
+- `docs/DECISION_LOG.md`
+- `docs/CREATIVE_BIBLE.md`
+- `docs/CHARACTER_BIBLE.md`
+
+Ha ez a Ren’Py-megfeleltetés egy LOCKED döntéssel ütközik, nem módosítjuk automatikusan a Godot-világot. Az ütközést dokumentálni kell, és csak kifejezett tulajdonosi döntés oldhatja fel.
 
 ## A Ren’Py-projektben ténylegesen elérhető fő út
 
