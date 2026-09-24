@@ -168,8 +168,23 @@ func run_checks() -> void:
     advance.keycode = KEY_ENTER
     advance.pressed = true
     street._unhandled_input(advance)
+    var conversation := world.get_node_or_null("MiyakoFirstConversation") as CanvasLayer
+    expect(conversation != null, "Miyako's Ren'Py conversation did not open")
+    expect(player.get("_controls_locked"), "Movement resumed during Miyako's conversation")
+    expect(root.get_node("GameState").has_flag("met_miyako"), "Miyako meeting was not recorded")
+    for step in range(4):
+        conversation.call("_advance")
+    var choice_buttons := conversation.get_node("Control/PanelContainer/VBoxContainer/VBoxContainer") as VBoxContainer
+    expect(choice_buttons.get_child_count() == 2, "The first canonical choice is missing")
+    (choice_buttons.get_child(0) as Button).pressed.emit()
+    conversation.call("_advance")
+    conversation.call("_advance")
     await frames(240)
-    expect(root.get_node("GameState").has_flag("met_miyako"), "Miyako encounter did not complete")
+    expect(root.get_node("GameState").has_flag("miyako_first_conversation_complete"), "Miyako's first decision did not complete")
+    expect(root.get_node("GameState").miyako_first_choice == "silence", "The selected answer was not recorded")
+    expect(root.get_node("GameState").aff_miyako == 1 and root.get_node("GameState").akira_gyogyulas == 1, "Ren'Py choice effects do not match")
+    expect(not root.get_node("GameState").choose_miyako_first_response("silence"), "The first choice was applied more than once")
+    expect(world.get_node_or_null("MiyakoFirstConversation") == null, "Miyako's VN layer stayed open")
     expect(not player.get("_controls_locked"), "Movement stayed locked after Miyako encounter")
     expect(absf(camera_rig.rotation.y) < 0.002, "Miyako court camera did not return")
     expect(world.get_node("HUD/Margin/VBox/Status").text.contains("RENDELŐ"), "Clinic directions were not shown after meeting Miyako")
@@ -223,6 +238,11 @@ func run_checks() -> void:
     await frames(12)
     expect(player.global_position.distance_to((clinic.get_node("Exterior/Entrance") as Node3D).global_position) < 2.0, "Clinic exit did not return Akira to the shared home yard")
     expect(not clinic.get_node("Interior/ClinicCamera").is_in_group("camera_zones"), "Clinic camera stayed active after exit")
+
+    root.get_node("GameState").clear_runtime_state()
+    expect(root.get_node("GameState").choose_miyako_first_response("question"), "The question branch could not be selected")
+    expect(root.get_node("GameState").miyako_first_choice == "question", "The question branch was not recorded")
+    expect(root.get_node("GameState").aff_miyako == 0 and root.get_node("GameState").akira_gyogyulas == 0, "The question branch changed Ren'Py stats")
 
     print("First street regression: %s" % ("PASS" if failures == 0 else "%s failures" % failures))
     quit(0 if failures == 0 else 1)

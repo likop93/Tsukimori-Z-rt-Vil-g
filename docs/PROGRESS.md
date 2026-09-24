@@ -71,6 +71,7 @@ Működik:
 - négy külön, egyszeri falusi reakció és a patakhídnál lezáruló narratív feliratsor;
 - Miyako humanoid proxyja Katsuro házának küszöbénél;
 - irányított első találkozás, kánon szerinti első mondattal és folytatható vezérléssel;
+- a Ren’Py I. fejezetéből átvett első házbelső beszélgetés, két döntés és a döntésnek megfelelő Miyako / Gyógyulás érték; a VN-kép után visszatér a Godot-pálya;
 - Miyako találkozása után E-vel elérhető rendelő a közös ház híd felőli oldalszárnyában, bejárható váróval és vizsgálóval;
 - generált, Godotba betöltött közösház-GLB és ugyanahhoz a geometriához szerkeszthető Blender-forrásgenerátor; hideg esti fény, nedves utcakő, mozgatott eső és talajköd;
 - GameState flag-ek.

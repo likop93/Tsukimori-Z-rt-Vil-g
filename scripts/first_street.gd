@@ -5,6 +5,7 @@ const VillagerProxyScript = preload("res://scripts/villager_proxy.gd")
 const StreetAmbientScript = preload("res://scripts/street_ambient.gd")
 const SharedHomeVisualScript = preload("res://scripts/shared_home_visual.gd")
 const ClinicBlockoutScript = preload("res://scripts/clinic_blockout.gd")
+const MiyakoConversationScript = preload("res://scripts/miyako_first_conversation.gd")
 const REACTION_WATCH := 1
 const REACTION_WHISPER := 2
 const REACTION_HUSH := 3
@@ -610,11 +611,25 @@ func _unhandled_input(event: InputEvent) -> void:
         return
     var key := event as InputEventKey
     if key.pressed and not key.echo and key.keycode in [KEY_ENTER, KEY_KP_ENTER, KEY_SPACE]:
-        _complete_miyako_encounter()
+        _begin_miyako_conversation()
 
-func _complete_miyako_encounter() -> void:
+func _begin_miyako_conversation() -> void:
     _encounter_state = 3
     GameState.set_flag("met_miyako", true)
+    var subtitle := get_node_or_null("../HUD/Subtitle") as Label
+    if subtitle:
+        subtitle.modulate.a = 0.0
+    var conversation := MiyakoConversationScript.new() as CanvasLayer
+    conversation.name = "MiyakoFirstConversation"
+    get_parent().add_child(conversation)
+    conversation.connect("completed", Callable(self, "_complete_miyako_encounter"))
+
+func _complete_miyako_encounter() -> void:
+    _encounter_state = 4
+    GameState.set_flag("miyako_first_conversation_complete", true)
+    var conversation := get_parent().get_node_or_null("MiyakoFirstConversation") as CanvasLayer
+    if conversation:
+        conversation.queue_free()
     (get_node("CameraZones/MiyakoFocus") as Area3D).remove_from_group("camera_zones")
     _encounter_player.call("set_controls_locked", false)
     var subtitle := get_node_or_null("../HUD/Subtitle") as Label

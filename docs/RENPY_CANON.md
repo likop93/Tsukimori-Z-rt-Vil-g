@@ -19,14 +19,14 @@ A forrásban megőrzött `canonical_html_legacy_route_menu` jelenleg nem része 
 | Akira megérkezik a ködös hegyi faluba | Bejárható hegyi út és kapu; a Ren’Py prológusának szöveges jelenete még nincs átültetve. |
 | A falusiak feltűnően figyelik Akirát | A falun végigvezető utcában időzített figyelő és összesúgó NPC-reakciók. |
 | Katsuro házánál Miyako fogadja: „Dr. Akira. Már vártam.” | A találkozás első mondata és kamerája működik; a ház belső történeti jelenete még nincs átültetve. |
-| Miyako megmutatja a házat és a rendelőt; első beszélgetésük döntéshez vezet | A rendelő térbeli prototípusa megvan, a Ren’Py-jelenet és a választás Godotban még hiányzik. |
+| Miyako beengedi Akirát a házba; első beszélgetésük döntéshez vezet | A Ren’Py eredeti két képe, az első beszélgetés és a választás átkerült Godotba. A rendelő még külön bejárható térbeli prototípus, nincs összeillesztve a VN-beli házbelsővel. |
 
 **Térbeli egyeztetés:** a Ren’Py I. fejezete Katsuro házát „a falu egyik csendesebb részén” írja le, pontos patakhidat nem nevez meg. A jelenlegi Godot-blockoutban a ház a falu szélén, a híd után áll; ez csak akkor maradhat így, ha a további jelenetekkel összeegyeztethető. A korábban jóváhagyott híd, Shion falusi oldali háza és Miyako–Akira közös otthona egyelőre bejárható térbeli értelmezés, nem a Ren’Py-szöveget felülíró új kánon. A végleges karakterotthonokat a jelenetek alapján rögzítjük.
 
 ## Az átültetés sorrendje
 
-1. Akira érkezésétől Miyako első beszélgetéséig a Ren’Py jeleneteinek, választásainak és állapotváltozásainak pontos megfeleltetése.
-2. Ugyanezen jelenetsor Godotban való bejárható és párbeszédes megvalósítása; a mozgásból a VN-beszélgetésbe, majd vissza vezető átmenettel.
+1. Akira érkezésének és a Ren’Py első éjszakai jelenetének Godot-megfeleltetése; az első Miyako-beszélgetés és döntés már működik.
+2. A bejárható házbelső és a VN-kép közötti átmenet egységesítése a későbbi grafikai passzban.
 3. Az első páciensek, kapcsolati rendszer és szabadidős szakaszok átvitele a Ren’Py feltételeinek megfelelően.
 4. A külön körökre osztott harc prototípusa a történetbe illő helyen; a Ren’Py-ben szereplő harci sprite önmagában nem jelent kész harcrendszert.
 

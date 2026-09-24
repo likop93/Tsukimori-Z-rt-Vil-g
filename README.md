@@ -54,6 +54,7 @@ Jelenlegi játszható ív:
 - Miyako külön humanoid proxyja Katsuro házának bejáratánál
 - haladási irányt követő utcai kamera és elkülönített találkozási kompozíció
 - az első találkozás külön kameraképe és a kánon szerinti első mondata
+- Miyako Ren’Py szerinti első beszélgetése az eredeti jelenetképekkel, két válasszal és a kapcsolati / Gyógyulás-értékekkel; a döntés után visszatér az irányítás
 - minimális GameState flag-rendszer
 - fejlesztői HUD + subtitle prototípus
 
