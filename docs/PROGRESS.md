@@ -1,6 +1,8 @@
 # Tsukimori — Development Progress
 
-**Utolsó frissítés:** 2026-09-23
+**Utolsó frissítés:** 2026-09-24
+
+**Történeti forrás rögzítve:** a feltöltött Ren’Py-projekt fő útja az irányadó. A részletes megfeleltetés és a még különálló Ren’Py-prototípusok leírása: `docs/RENPY_CANON.md`. A Godot route-rendszere ettől még nincs megvalósítva.
 
 ## Aktuális fázis
 
