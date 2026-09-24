@@ -150,19 +150,50 @@ Első találkozási kánon:
 
 # Shion
 
+## Identitás
+
 - fekete haj;
-- zöld szem;
+- **zöld szem — LOCKED karakterjegy**;
 - karcsú, visszafogott;
 - vízhez, emlékezethez és szentélyhez kötődik;
 - Oto vitte le gyerekként a mélybe;
 - Kuroe korábbi barátnője;
 - háza a patak falusi oldalán van.
 
-Mozgásérzet:
-- csendes;
-- finoman feszült;
-- visszafogott;
-- néha „túl mozdulatlan”.
+## FINAL vizuális irány — LOCKED
+
+- hosszú fekete / nagyon sötét ibolyás haj;
+- hideg holdfényben ezüstös-lilás edge-light;
+- finom virágos hajdísz;
+- sötét fekete / mély ibolya, japán ihletésű rétegzett Primary outfit;
+- finom virágminták;
+- törékeny, hosszanti, csendes sziluett;
+- a vizuális motívum: **víz + holdfény + emlékezet + csend**;
+- nem Miyako 2.0 és nem harsány goth;
+- a jóváhagyott referencia-lap képi elemei az irányadók; a rajta automatikusan generált életrajzi számok/szövegek nem válnak automatikusan történeti kánonná.
+
+A 3D gyártási specifikáció: `docs/SHION_PRODUCTION_SPEC.md`.
+
+## Mozgásnyelv — PRODUCTION LOCK
+
+Alapelv:
+> Shion akkor a legnyugtalanítóbb, amikor túl kevéssé mozog.
+
+- nagyon kis testsúlyváltás;
+- hosszabb statikus pózok;
+- szem gyakran előbb vált, mint a fej;
+- lassú, csekély fejfordítás;
+- néha szinte természetellenesen mozdulatlan;
+- a haj és ruha finom, puha secondary motiont kap.
+
+Első animációs batch:
+- `SHION_Idle_Base_01`
+- `SHION_Walk_Loop`
+- `SHION_Turn_Slow_L/R`
+- `SHION_LookAside`
+- `SHION_StillHold`
+- `SHION_SmallSmile`
+- `SHION_WaterObserve`
 
 ---
 
