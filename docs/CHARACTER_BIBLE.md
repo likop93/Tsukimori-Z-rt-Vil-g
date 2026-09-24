@@ -99,7 +99,30 @@ Az első gyártási validáció csak Idle + Walk után folytatható a teljes cso
 - kezdetben sötét hajú, elegáns, fekete gyászruhás megjelenés;
 - később vizuálisan változhat, de ezt külön jóvá kell hagyni.
 
-## Mozgásnyelv
+## FINAL vizuális irány — LOCKED
+
+**Design A — Primary FINAL**
+- kb. 165 cm;
+- korai harmincas, felnőtt nő;
+- karcsú, nőies, elegáns testalkat;
+- hosszú, sötétbarna/feketébe hajló haj;
+- részben feltűzött, rendezett hajforma;
+- melankolikus, méltóságteljes, kontrollált arc;
+- fekete/charcoal, rétegzett, gyászruhás alapoutfit;
+- finom arany/bordó díszítés;
+- hosszú, elegáns sziluett;
+- sötét, praktikus-elegáns lábbeli.
+
+**Design B — Ceremonial / Detail Exploration**
+- szintén megtartott hivatalos vizuális referencia;
+- nem cseréli le Design A-t;
+- használható belőle: hajdísz, bordó–arany részletnyelv, textilminták, díszesebb ceremoniális outfit, bizonyos arckifejezések;
+- különleges/szentélyi/ceremoniális jelenetekhez használható;
+- a lapon szereplő téves szerepleírások — „házvezető”, „szentélyi gondozó” — **nem kánonok**.
+
+A 3D gyártási specifikáció: `docs/MIYAKO_PRODUCTION_SPEC.md`.
+
+## Mozgásnyelv — PRODUCTION LOCK
 
 - kontrollált;
 - kevés felesleges testsúlyváltás;
@@ -107,6 +130,18 @@ Az első gyártási validáció csak Idle + Walk után folytatható a teljes cso
 - hosszabb szemkontaktus;
 - érzelmi kibillenést apró gesztus árul el;
 - félbehagyott mozdulat, elfordított tekintet, megálló kéz fontosabb, mint nagy reakció.
+
+Alapelv:
+> Miyako érzelmeit gyakran egy félbehagyott mozdulat árulja el.
+
+Első animációs batch:
+- `MIYAKO_Idle_Base_01`
+- `MIYAKO_Walk_Loop`
+- `MIYAKO_Turn_Soft_L/R`
+- `MIYAKO_FoldHands`
+- `MIYAKO_Wait`
+- `MIYAKO_LookAway`
+- `MIYAKO_SoftGesture`
 
 Első találkozási kánon:
 **„Dr. Akira. Már vártam.”**
