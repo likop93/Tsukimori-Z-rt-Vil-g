@@ -10,6 +10,8 @@ Karaktermodell, portré, animáció, ruha, arckifejezés vagy jelenetrendezés e
 
 A `LOCKED` karakterdöntést nem írhatja felül automatikusan generált asset, proxy, korábbi koncepció vagy más karakterhez tartozó vizuális jegy.
 
+A jóváhagyott konkrét képi referenciák és státuszaik: `docs/VISUAL_REFERENCE_INDEX.md`. Ha egy referencia-lap automatikus szövege ütközik ezzel a Character Bible-lel, mindig ez a dokumentum az irányadó.
+
 ---
 
 # Dr. Akira
