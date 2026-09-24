@@ -3,9 +3,26 @@
 ## Feladat
 A repository technikai alapjának stabilizálása Godot 4.x alatt.
 
-## Art/Design authority
-A `docs/ART_DIRECTION_LOCK.md` és `docs/VERTICAL_SLICE_SCOPE.md`
-dokumentumok elsőbbséget élveznek.
+## Kötelező governance / authority
+
+Minden implementáció előtt ellenőrizd:
+
+1. `docs/DECISION_LOG.md`
+2. `docs/STORY_CANON.md`
+3. `docs/CHARACTER_BIBLE.md`
+4. `docs/CREATIVE_BIBLE.md`
+5. `docs/ART_DIRECTION_LOCK.md`
+6. `docs/VERTICAL_SLICE_SCOPE.md`
+
+A `LOCKED` döntést sem technikai egyszerűség, sem Ren'Py-forrás, sem korábbi blockout, sem generált asset nem írhatja felül automatikusan.
+
+Ha a feladat ütközik egy LOCKED döntéssel:
+- ne módosítsd a kánont;
+- ne rendezd át automatikusan a pályát;
+- dokumentáld az ütközést;
+- csak kifejezett tulajdonosi döntés után változtass rajta.
+
+A Ren'Py az események, dialógusok, döntések és route-ok történeti forrása, **nem automatikus pálya-, kamera- vagy art-direction terv**.
 
 ## Első technikai cél
 A `scenes/world/mountain_path.tscn` hibamentesen induljon,
