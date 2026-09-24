@@ -47,6 +47,13 @@ Ha Miyako modelljét, rigjét, animációját, materialját vagy outfit variáns
 
 Design A az elsődleges FINAL alapmodell. Design B megtartott ceremonial/detail variáns; nem írhatja felül Design A-t, és a referencia-lapon szereplő „házvezető / szentélyi gondozó” szerepleírásokat nem szabad történeti kánonként átvenni.
 
+### Shion FINAL karaktermunka
+
+Ha Shion modelljét, rigjét, animációját, materialját vagy outfit variánsát érinti a feladat, kötelező forrás:
+- `docs/SHION_PRODUCTION_SPEC.md`
+
+A zöld szem, a hosszú fekete/ibolyás haj, a víz/holdfény vizuális nyelv és a visszafogott mozgás LOCKED. A referencia-lap automatikus életrajzi számai vagy hibás szövegei nem használhatók történeti kánonként.
+
 ## Első technikai cél
 A `scenes/world/mountain_path.tscn` hibamentesen induljon,
 a Player WASD-vel mozogjon, a kamera kövesse, és a
