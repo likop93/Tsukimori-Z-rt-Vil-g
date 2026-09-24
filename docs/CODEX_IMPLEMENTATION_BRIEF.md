@@ -33,6 +33,13 @@ Ha Akira FINAL modelljét, rigjét, animációját vagy materialját érinti a f
 Proxy vagy korábbi generált Akira asset nem írhatja felül ezt a specifikációt.
 
 
+### Beauty target — Akira érkezése Miyakóhoz
+
+Ha a Miyako első találkozását, a közös ház előtti encountert, kamerát, világítást, animációt vagy dialógus-staginget érinti a feladat, kötelező rendezési forrás:
+- `docs/BEAUTY_TARGET_AKIRA_MIYAKO_ARRIVAL.md`
+
+A jelenlegi működő encountert ne bontsd vissza. A beauty-target rendezést rétegezd a meglévő trigger/kamera/ház struktúrára. Miyako ebben a jelenetben Design A — Primary FINAL megjelenést használjon.
+
 ### Miyako FINAL karaktermunka
 
 Ha Miyako modelljét, rigjét, animációját, materialját vagy outfit variánsát érinti a feladat, kötelező forrás:
