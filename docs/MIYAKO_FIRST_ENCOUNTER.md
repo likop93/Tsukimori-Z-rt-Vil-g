@@ -1,5 +1,7 @@
 # Miyako első találkozása — térbeli animációs próba
 
+> **Aktuális rendezési authority:** a véglegesebb beauty-target staginget a `docs/BEAUTY_TARGET_AKIRA_MIYAKO_ARRIVAL.md` rögzíti. Ez a dokumentum a korábbi működő próba technikai alapját írja le; a következő implementáció a beauty-target tervet rétegzi rá, nem bontja vissza a működő encountert.
+
 Akira a hegyi ösvényről érkezve **először végigsétál a falun**. A falusi párok figyelik, összenéznek és összesúgnak, ahogy elhalad mellettük. Shion háza a patak falusi oldalán áll. Akira átmegy a hídon, elhalad egy névtelen ház mellett, majd Katsuro egykori házához érkezik: itt **Miyako és Akira együtt laknak**. Miyako az utcai bejárat előtt, takarás nélkül várja; a találkozás kamerája oldalról fogja be őket.
 
 - A találkozás egyetlen alkalommal indul, amikor Akira a ház elé ér.
