@@ -1,0 +1,181 @@
+# Tsukimori — Character Bible
+
+**Verzió:** 1.0  
+**Státusz:** aktív karakterkánon  
+**Dátum:** 2026-09-24
+
+## Használati szabály
+
+Karaktermodell, portré, animáció, ruha, arckifejezés vagy jelenetrendezés előtt ezt a dokumentumot ellenőrizni kell.
+
+A `LOCKED` karakterdöntést nem írhatja felül automatikusan generált asset, proxy, korábbi koncepció vagy más karakterhez tartozó vizuális jegy.
+
+---
+
+# Dr. Akira
+
+## Identitás
+
+- férfi főhős;
+- városi terapeuta/doktor;
+- kontrollált, megfigyelő személyiség;
+- nem klasszikus fantasy-hős;
+- Tsukimoriban Katsuro egykori házába/rendelőjébe érkezik;
+- tisztánlátása vágyakat, félelmeket, hazugságokat, elfojtott önképet és természetfeletti nyomást érzékel;
+- elemi motívuma: **szél**;
+- későbbi kulcsmondat: **„Én vagyok a szél.”**
+- későbbi cím: **„A Bukottak Királya.”**
+
+## FINAL vizuális irány — részben LOCKED
+
+LOCKED:
+- **fekete haj**;
+- Akira vizuális identitását nem szabad Lofttal összemosni;
+- normál emberi, nyúlánk/karcsú-atletikus arány;
+- sötét, elegáns, de praktikus megjelenés;
+- nem chibi;
+- nem fotórealista;
+- Tsukimori anime-stilizált 3D art directionjéhez igazodik.
+
+Tervezési irány:
+- enyhén rendezetlen, nagyobb tincsekben olvasható fekete haj;
+- intelligens, komoly arc;
+- visszafogott modern szemüveg megengedett, ha nem tolja Loft vizuális csomagja felé;
+- sötét garbó/felsőrész;
+- hosszabb kabát vagy rétegzett felsőruházat;
+- visszafogott zöld akcentus csak indokoltan;
+- a Black Fan motívum előrevetíthető, de ne legyen feltűnő cosplay-dísz.
+
+## Akira animációs nyelve — LOCKED
+
+Alapelv:
+
+> Minél furcsább dolog történik Akira körül, annál kevésbé reagál látványosan.
+
+Jellemző:
+- szem reagál először;
+- fej utána;
+- váll/test csak szükség esetén;
+- kontrollált reakció;
+- nincs nagy anime-hátrahőkölés;
+- nyugodt járás;
+- figyelő tekintet;
+- finom súlyáthelyezés;
+- kabát kézzel tervezett secondary motion + csak finom procedurális rásegítés.
+
+FINAL locomotion:
+- **in-place**;
+- Godot CharacterBody3D mozgatja a karaktert;
+- root motion csak külön cinematic kategóriában megengedett.
+
+Első FINAL locomotion batch:
+- `AKIRA_Idle_Base_01`
+- `AKIRA_Walk_Loop`
+- `AKIRA_WalkStart_L/R`
+- `AKIRA_WalkStop_L/R`
+- `AKIRA_Turn45_L/R`
+- `AKIRA_Turn90_L/R`
+
+Az első gyártási validáció csak Idle + Walk után folytatható a teljes csomagra.
+
+---
+
+# Miyako
+
+## Identitás
+
+- Katsuro özvegye;
+- Akira fő érzelmi és romantikus ellenpontja;
+- Katsuro egykori házához, rendelőjéhez és a régi rendszerhez kötődik;
+- Akira és Miyako kapcsolata slow-burn, bizalomra épül;
+- képes lehet átalakulások/korrupció semlegesítésére;
+- kezdetben sötét hajú, elegáns, fekete gyászruhás megjelenés;
+- később vizuálisan változhat, de ezt külön jóvá kell hagyni.
+
+## Mozgásnyelv
+
+- kontrollált;
+- kevés felesleges testsúlyváltás;
+- lassabb, tudatos kézmozdulatok;
+- hosszabb szemkontaktus;
+- érzelmi kibillenést apró gesztus árul el;
+- félbehagyott mozdulat, elfordított tekintet, megálló kéz fontosabb, mint nagy reakció.
+
+Első találkozási kánon:
+**„Dr. Akira. Már vártam.”**
+
+---
+
+# Shion
+
+- fekete haj;
+- zöld szem;
+- karcsú, visszafogott;
+- vízhez, emlékezethez és szentélyhez kötődik;
+- Oto vitte le gyerekként a mélybe;
+- Kuroe korábbi barátnője;
+- háza a patak falusi oldalán van.
+
+Mozgásérzet:
+- csendes;
+- finoman feszült;
+- visszafogott;
+- néha „túl mozdulatlan”.
+
+---
+
+# Kuroe
+
+- fiatal goth művész;
+- Shion exbarátnője;
+- hegedű/zongora/zene motívum;
+- Akira jövőbeli mahagóni gitárjának ötlete tőle ered;
+- a hangszer külső motívumai közül Miyako motívumai dominálnak.
+
+---
+
+# Hana
+
+- barna/tan bőr;
+- nagyon hosszú, sötét, hullámos haj;
+- arany hajdísz;
+- vörösesbarna szem;
+- erős, közvetlen, testi/fertilitási energia.
+
+Mozgásérzet:
+- közvetlenebb;
+- teltebb, erősebb jelenlét;
+- több testsúly és határozottabb gesztus, mint Miyakónál vagy Shionnál.
+
+---
+
+# Oto
+
+- idős ritualista nő;
+- régi rend / living seals;
+- Shion gyerekkori szentélytörténetéhez kötődik.
+
+---
+
+# Katsuro
+
+- Akira elődje;
+- Miyako férje;
+- nyilvánosan halottnak hitt;
+- történeti lehetőség szerint fekete vízben fogva lehet;
+- ház, dolgozószoba, láda, kazetta és Black Fan rejtélyének központja.
+
+---
+
+# Karakterasset szabály
+
+PLACEHOLDER vagy PROXY nem válhat FINAL karakterkánonná.
+
+FINAL karakterhez kell:
+- jóváhagyott front/side/back;
+- arcirány;
+- színpaletta;
+- ruha;
+- sziluett;
+- rig-kompatibilitás;
+- animációs language review.
