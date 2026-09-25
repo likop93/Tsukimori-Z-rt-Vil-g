@@ -40,6 +40,13 @@ Nem lehet:
 - fantasy-páncélos;
 - túl dekorált.
 
+## 1.1 Szakmai identitás — LOCKED
+
+- Akira **orvos**, nem kizárólag terapeuta.
+- Terápiás/pszichológiai kompetenciája megmaradhat a karakter és a páciensjelenetek részeként.
+- A rendelő ezért valódi orvosi vizsgálatra és alapellátási/kezelési jelenetekre is alkalmas tér legyen, ne pusztán beszélgetőszoba.
+- Pontos orvosi szakirány csak külön történeti döntéssel rögzíthető.
+
 ---
 
 # 2. Jóváhagyott elsődleges megjelenés
@@ -89,7 +96,7 @@ A jóváhagyott karakterlap alapján:
 - opcionális kis táska / vállpánt csak jelenetfüggően.
 
 A ruházat célja:
-**„városi doktor, aki nem kalandornak öltözött, mégis képes végigjárni Tsukimori hegyi környezetét.”**
+**„városi orvos, aki nem kalandornak öltözött, mégis képes végigjárni Tsukimori hegyi környezetét.”**
 
 ## Alternatív variánsok későbbre
 - hosszabb sötét kabát;
