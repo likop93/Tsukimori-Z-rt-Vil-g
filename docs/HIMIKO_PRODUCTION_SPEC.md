@@ -38,6 +38,25 @@ Alapelv:
 
 ---
 
+# 1A. Személyiség — LOCKED
+
+Himiko személyiségi archetípusa a felhasználó által megjelölt **Boa Hancock-vonalból inspirálódik**, de Tsukimori saját karaktereként kell megírni, nem másolatként.
+
+Kulcsjegyek:
+- királynői önbizalom és természetes felsőbbrendűség-érzet;
+- büszke, elegáns, néha nyíltan lekezelő viselkedés;
+- szereti, ha ő szabja meg egy beszélgetés ritmusát;
+- teátrális méltóság, de nem bohózati túlzás;
+- rendkívül erős önkontroll és pszichológiai megfigyelőképesség;
+- tudatosan használja a csendet, szemkontaktust és közelséget;
+- ritkán mutat valódi sebezhetőséget;
+- ha valaki valóban érdekli, a fölény mögött fokozatosan megjelenhet melegség és meglepő gyengédség;
+- Akira különösen azért érdekes számára, mert nem könnyű kizökkenteni vagy uralni.
+
+Fontos: ne másoljon Boa Hancock konkrét dialógusokat, gesztusokat vagy komikus jeleneteit; csak a **regal pride / empress presence / selective softness** karakterarchetípust használja saját Tsukimori-értelmezésben.
+
+---
+
 # 2. FINAL vizuális irány — LOCKED
 
 ## Magasság és arány
@@ -69,13 +88,15 @@ Alapelv:
 - mozgásban lassú, súlyos secondary motion.
 
 ## Testalkat
-- magas, monumentális, erősen nőies sziluett;
-- keskenyebb derék, hosszú lábak, erős felsőtest;
+- magas, monumentális, erősen nőies **extrém homokóra** sziluett;
+- keskenyebb derék és hosszú lábak;
 - **rendkívül telt mellkas / extrém nagy keblek — LOCKED designjegy**;
+- **szélesebb csípő, nagyobb/feltűnőbb far és vastagabb, erőteljes combok — LOCKED designjegy**;
+- a teljes alsótest erősebb és szoborszerűbb, mint a korábbi Himiko-változatban;
 - ez az Empress túlzó vizuális jelenlétének része;
-- a mellkas mérete nem Hana-másolatként működik: Hanánál puha/buja, Himikónál monumentális/uralkodó.
+- Hana és Himiko továbbra sem azonos testnyelv: Hanánál puha/buja/földközeli, Himikónál monumentális/uralkodó/szoborszerű.
 
-A testarány stilizált anime, de felnőtt és koherens.
+A testarány tudatosan eltúlzott, stilizált anime, de felnőtt és belsőleg koherens.
 
 ---
 
@@ -245,6 +266,7 @@ Későbbi 3D változat:
 - [ ] kb. 200 cm-es vizuális karakterérzet;
 - [ ] extrém nagy mellkas megtartva;
 - [ ] hosszú lábak / Empress-sziluett;
+- [ ] szélesebb csípő, nagyobb far és vastagabb/erősebb combok megtartva;
 - [ ] fehér top + fekete ceruzaszoknya;
 - [ ] magassarkú;
 - [ ] orvosi köpeny variáns működik;
