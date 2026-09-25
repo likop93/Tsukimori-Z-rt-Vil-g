@@ -274,6 +274,7 @@ Alapelv:
 - nyugodt, sokatmondó félmosoly;
 - monumentális, erősen nőies sziluett;
 - **rendkívül telt mellkas / extrém nagy keblek** mint LOCKED designjegy;
+- **szélesebb csípő, nagyobb far, vastagabb és erősebb combok** mint LOCKED Empress-arány;
 - hosszú lábak, keskenyebb derék, egyenes testtartás;
 - fehér elegáns top;
 - fekete magas derekú ceruzaszoknya;
@@ -286,6 +287,15 @@ Elsődleges képi referencia:
 
 A production specifikáció:
 `docs/HIMIKO_PRODUCTION_SPEC.md`
+
+## Személyiség — LOCKED
+
+- királynői önbizalom és felsőbbrendűség-érzet;
+- büszke, elegáns, néha lekezelő;
+- pszichológiailag éles és tudatosan domináns;
+- ritkán mutat valódi gyengédséget;
+- Akira azért kelti fel különösen az érdeklődését, mert nehezen uralható vagy zökkenthető ki;
+- a felhasználó által megjelölt Boa Hancock-féle Empress-archetípusból indul, de saját Tsukimori-személyiséggel és saját dialógusokkal.
 
 ## Mozgásnyelv — PRODUCTION LOCK
 
