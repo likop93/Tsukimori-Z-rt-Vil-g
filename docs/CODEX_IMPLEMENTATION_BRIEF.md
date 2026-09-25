@@ -35,6 +35,10 @@ Ha a Work/Codex környezet a binary képet nem tudja közvetlenül elérni, **ne
 A képeken lévő automatikusan generált feliratok nem történeti authorityk.
 
 
+### Akira szakmai szerepe — LOCKED
+
+Akira **orvos, nem kizárólag terapeuta**. A terápiás/pszichológiai kompetencia megmaradhat, de a rendelő és a történeti jelenetek tervezésénél valódi orvosi vizsgálat/ellátás is támogatandó. A pontos szakirányt ne találd ki automatikusan.
+
 ### Akira FINAL karaktermunka
 
 Ha Akira FINAL modelljét, rigjét, animációját vagy materialját érinti a feladat, kötelező forrás:
