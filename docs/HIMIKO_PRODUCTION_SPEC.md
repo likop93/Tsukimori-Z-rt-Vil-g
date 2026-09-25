@@ -300,3 +300,16 @@ Himiko csak akkor production FINAL asset, ha:
 
 Addig:
 **LOCKED DESIGN → PRODUCTION → REVIEW → FINAL ASSET**.
+
+
+## Trauma-háttér — APPROVED
+
+- Himiko korábbi férje szexuális erőszakot követett el ellene.
+- A rögzített forma anális szexuális erőszak.
+- Himiko esetében ehhez **nem kapcsolódik terhesség vagy elzárt magzat**.
+- A következmények a kontrollhoz, kiszolgáltatottsághoz, testi fájdalomhoz és orvosi bizalomhoz való viszonyában jelennek meg.
+- Akira mellett a bizalmi ív lényege a kontroll visszaadása, beleegyezés és professzionális ellátás.
+- A történet és a kamera nem erotizálhatja a bántalmazást vagy annak következményeit.
+
+---
+
