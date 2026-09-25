@@ -64,6 +64,23 @@ Ha Shion modelljét, rigjét, animációját, materialját vagy outfit variáns�
 
 A zöld szem, a hosszú fekete/ibolyás haj, a víz/holdfény vizuális nyelv és a visszafogott mozgás LOCKED. A referencia-lap automatikus életrajzi számai vagy hibás szövegei nem használhatók történeti kánonként.
 
+### Hana FINAL karaktermunka
+
+Ha Hana sprite-ját, portréját, animációját, 3D modelljét, materialját vagy outfit variánsát érinti a feladat, kötelező forrás:
+- `docs/HANA_PRODUCTION_SPEC.md`
+- `docs/VISUAL_REFERENCE_INDEX.md`
+
+LOCKED jegyek:
+- meleg tan bőr;
+- nagyon hosszú hullámos sötét haj;
+- vörösesbarna szem;
+- arany virágos hajdísz;
+- telt/buja felnőtt női testalkat;
+- nagyon telt mellkas;
+- fekete–bordó–arany, mély dekoltázsú japán ihletésű primary outfit.
+
+Hana nem generikus „sexy NPC”. A testalkat, a ruha, a mozgás és a karakterjelenlét egyetlen koherens designrendszer.
+
 ## Első technikai cél
 A `scenes/world/mountain_path.tscn` hibamentesen induljon,
 a Player WASD-vel mozogjon, a kamera kövesse, és a
