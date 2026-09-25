@@ -81,6 +81,25 @@ LOCKED jegyek:
 
 Hana nem generikus „sexy NPC”. A testalkat, a ruha, a mozgás és a karakterjelenlét egyetlen koherens designrendszer.
 
+### Himiko FINAL karaktermunka
+
+Ha Himiko sprite-ját, portréját, animációját, 3D modelljét, materialját vagy outfit variánsát érinti a feladat, kötelező forrás:
+- `docs/HIMIKO_PRODUCTION_SPEC.md`
+- `docs/VISUAL_REFERENCE_INDEX.md`
+
+LOCKED jegyek:
+- kb. 200 cm-es vizuális karakterérzet;
+- hosszú vörös haj;
+- kék / majdnem fehér heterokrómia;
+- monumentális Empress-sziluett;
+- extrém nagy mellkas;
+- fehér elegáns top;
+- fekete magas derekú ceruzaszoknya;
+- magassarkú;
+- kontrollált, pszichológiailag domináns mozgásnyelv.
+
+Himiko nem generikus „sexy doctor” NPC. A túlzó testarány a monumentális Empress-kisugárzás része, nem Hana vizuális másolata.
+
 ## Első technikai cél
 A `scenes/world/mountain_path.tscn` hibamentesen induljon,
 a Player WASD-vel mozogjon, a kamera kövesse, és a
