@@ -184,11 +184,11 @@ A testalkatból adódó secondary motion finom és fizikai legyen, ne önálló 
 # 6.1 Történeti trauma / életenergia irány — APPROVED
 
 - Hana múltjában Himiko férje által elkövetett szexuális erőszak szerepel.
-- A gyermek-szál ehhez kapcsolódik: Hana teherbe esett / eshetett az erőszak következtében.
-- Tsukimori a magzatot természetfeletti módon elzárja vagy felfüggeszti, és az életenergiát Hana testében tartja.
+- Hana **nem materiálisan terhes** a játék korai/középső szakaszában; nincs normálisan fejlődő fizikai magzat.
+- Tsukimori egy természetfeletti **életmagot / felfüggesztett gyermek-energiát** tart Hanában.
 - A tartós tejtermelés ennek egyik testi jele, valamint Hana élet/termékenység motívumának része.
 - A route és a vizuális rendezés ezt traumaként, orvosi rejtélyként és természetfeletti jelenségként kezeli; nem erotizálja az erőszakot.
-- A happy ending a gyermek történetének feloldásához kapcsolódhat; Akira Hana választott társa, nem automatikusan a gyermek biológiai apja.
+- A Hana-route végjátékában Akira energiája felülírja az életmag korábbi apai/eredeti lenyomatát; a később materiálissá váló gyermek **Akira és Hana gyermeke**.
 
 ---
 
