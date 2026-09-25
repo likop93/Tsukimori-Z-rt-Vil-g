@@ -223,7 +223,32 @@ Fontos:
 
 ---
 
-# 9. Jelenlegi dramaturgiai sorrend — WORKING STRUCTURE
+# 9. Hana route — fertility / trust / happy ending — APPROVED
+
+Hana személyes történeti ívének egyik visszatérő testi tünete a **megmagyarázhatatlan, tartós tejtermelés**.
+
+## Korai / középső játék
+- Akira orvosként először valódi egészségügyi problémaként kezeli.
+- A történet nem erotikus jelenetként, hanem orvosi és bizalmi helyzetként mutatja.
+- Hana szégyelli a problémát, különösen azért, mert számára a saját kézi ingerlés túl könnyen válna szexuálisan megterhelővé.
+- A bizalom kialakulása után Akirát kéri meg, hogy gépi fejéssel segítsen a tünet enyhítésében.
+- Az ismétlődő alkalmak jelentése: **szégyen → elfogadás → bizalom → természetes intimitás**, nem maga a beavatkozás.
+- Akira végig professzionálisan, beleegyezésalapon és klinikai módon kezeli.
+- Orvosilag indokolt kivizsgálás mellett egyre nyilvánvalóbbá válik, hogy a jelenség Tsukimoriban nem magyarázható teljesen hétköznapi módon.
+
+## Hana route végső kifizetése
+Ha a játékos Hana útját választja és a szükséges kapcsolati feltételek teljesülnek:
+- a route **boldog endinget** kaphat;
+- Hana és Akira együtt maradnak;
+- a történet végén kiderül, hogy Hana korábbi megmagyarázhatatlan tejtermelése valamilyen módon a **születendő gyermekükhöz** és Hana élet/termékenység motívumához kapcsolódott;
+- a korábbi testi tünet így utólag narratív előrevetítéssé válik, nem öncélú karakterjeggyé.
+
+A pontos természetfeletti mechanizmus és az, hogy mikor válik egyértelművé a terhesség / gyermek érkezése, később külön jelenettervezéssel rögzítendő.
+
+
+---
+
+# 10. Jelenlegi dramaturgiai sorrend — WORKING STRUCTURE
 
 ## Act I — Az idegen
 - Akira megérkezik;
@@ -264,7 +289,7 @@ Fontos:
 
 ---
 
-# 10. 2.5D implementációs elv
+# 11. 2.5D implementációs elv
 
 A 2.5D verzióban a történet:
 - karakterközpontú;
@@ -278,7 +303,7 @@ Először a történeti állapotmodell és a karakterkapcsolati változók szerk
 
 ---
 
-# 11. Nyitott kérdések
+# 12. Nyitott kérdések
 
 Még nincs lezárva:
 - Akira és volt felesége szakításának pontos oka;
