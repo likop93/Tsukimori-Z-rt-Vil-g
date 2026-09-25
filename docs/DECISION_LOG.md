@@ -58,6 +58,7 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 | 2026-09-25 | **Loft felesége = Akira volt felesége** | APPROVED STORY DIRECTION | A Lofttal való kapcsolat alibi/védelmi konstrukció; Akira és a nő régen valódi házasságban éltek. A szakítás pontos oka még nyitott. |
 | 2026-09-25 | **Renka mint Akira későbbi exe** | PROPOSED | Lehetséges, hogy a házasság után Renka törte meg Akirát és gyorsította fel a romlását; még nem LOCKED. |
 | 2026-09-25 | **Konszenzuális többpartneres route** | APPROVED | Harem/multi-partner opció marad, de külön bizalom, őszinteség és karakter-kompatibilitás kell; nem minden nővel és nem minden kombinációban lehetséges. |
+| 2026-09-25 | **2.5D narrative pacing / retention structure** | APPROVED | Minden fontos jelenet adjon választ, új kérdést vagy kapcsolati változást; mikrobeat ~5–10 perc, értelmezést módosító középbeat ~20–30 perc, fejezetvégi horog kötelező. Részletek: `docs/TSUKIMORI_2_5D_NARRATIVE_PACING.md`. |
 
 ---
 
