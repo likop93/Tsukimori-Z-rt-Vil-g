@@ -255,6 +255,55 @@ Alapelv:
 
 ---
 
+# Himiko
+
+## Identitás
+
+- Hana nővére;
+- felnőtt nő;
+- orvos / pszichiátriai karakterirány;
+- rendkívül magas, domináns jelenlét;
+- az „Empress” vizuális pólus.
+
+## FINAL vizuális irány — LOCKED
+
+- kb. 200 cm-es vizuális karakterérzet;
+- hosszú, gazdag vörös haj;
+- heterokrómia: egyik szem kék, a másik nagyon világos / majdnem fehér;
+- érett, intelligens, kifinomult arc;
+- nyugodt, sokatmondó félmosoly;
+- monumentális, erősen nőies sziluett;
+- **rendkívül telt mellkas / extrém nagy keblek** mint LOCKED designjegy;
+- hosszú lábak, keskenyebb derék, egyenes testtartás;
+- fehér elegáns top;
+- fekete magas derekú ceruzaszoknya;
+- fehér orvosi köpeny variáns;
+- kb. 10 cm-es magassarkú vizuális érzet;
+- összhatás: **Empress + intelligencia + pszichológiai dominancia + városi kifinomultság**.
+
+Elsődleges képi referencia:
+`/Tsukimori Visual References/characters/HIMIKO_FINAL_CHARACTER_DESIGN_V1.png`
+
+A production specifikáció:
+`docs/HIMIKO_PRODUCTION_SPEC.md`
+
+## Mozgásnyelv — PRODUCTION LOCK
+
+Alapelv:
+> Himiko nem siet, mert nincs oka sietni.
+
+- hosszú, kontrollált lépések;
+- kevés felesleges mozgás;
+- stabil, függőleges tartás;
+- hosszú szemkontaktus;
+- finom fejbillentés és félmosoly;
+- tudatosan kitartott csend;
+- személyes térbe fél lépéssel túl közel kerülhet;
+- haj/köpeny secondary motion finom és fizikai;
+- nincs komikus vagy túlzó fanservice animáció.
+
+---
+
 # Oto
 
 - idős ritualista nő;
