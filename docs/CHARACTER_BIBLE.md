@@ -246,9 +246,10 @@ A production specifikáció:
 - Hana élet/termékenység motívuma a történetben konkrét testi jelenségként is megjelenik: tartós, orvosilag nem teljesen magyarázható tejtermelés.
 - A bizalom kialakulása után Akirához fordul gépi fejéshez; a jelenetek funkciója a szégyen, elfogadás és bizalom fejlődése, nem erotizált kezelés.
 - Himiko férje korábban szexuális erőszakot követett el Hana ellen; Hana gyermek-szála ehhez a traumához kapcsolódik.
-- Tsukimori a magzatot természetfeletti módon elzárja/felfüggeszti, miközben az életenergiát Hana testében tartja; a tartós tejtermelés ennek egyik jele.
-- A Hana-route boldog endingjében a gyermek története feloldódhat/továbbhaladhat, miközben Akira Hana választott társa és a gyermek jövőjének része lehet.
-- A pontos természetfeletti mechanizmus és a gyermek megszületésének feltétele későbbi történeti döntés.
+- Hana a játék korai/középső részében **nem materiálisan terhes**; Tsukimori egy természetfeletti életmagot / felfüggesztett gyermek-energiát tart Hanában, fizikai magzat nélkül.
+- A tartós tejtermelés ennek az életenergiának és a hely torzító hatásának egyik jele.
+- A Hana-route végjátékában Akira energiája felülírja az életmag korábbi apai/eredeti lenyomatát; amikor a gyermek végül materiálissá válik, **Akira és Hana gyermeke** lesz.
+- A pontos materializálódási szabály és jelenet későbbi történeti kidolgozás.
 
 ## Mozgásnyelv — PRODUCTION LOCK
 
