@@ -76,3 +76,24 @@ A részletes Ren'Py-forrás és technikai megfeleltetés:
 - `docs/RENPY_GODOT_STORY_MAP.md`
 
 Ezek a források a jelen dokumentum hierarchiája szerint értelmezendők.
+
+
+## 7. 2.5D történeti átdolgozás
+
+A 2.5D cinematic narrative verzióhoz külön jóváhagyott történeti átdolgozás tartozik:
+
+- `docs/TSUKIMORI_2_5D_STORY_REWORK.md`
+
+A dokumentumban **APPROVED** vagy **LOCKED** státuszú döntések a 2.5D verzióban elsőbbséget élveznek a régi Ren'Py történeti megoldásokkal szemben, ha a kettő ütközik.
+
+A **PROPOSED / nyitott** elemek még nem írják felül a korábbi kánont, és nem implementálhatók végleges történeti tényként.
+
+Kiemelt 2.5D szerkezeti irány:
+- Akira korábbi bántalmazása megmarad;
+- Katsuro hívta vissza Tsukimoriba;
+- a női karakterekkel való ismerkedés viszi előre az első nagy történeti szakaszt;
+- a Mélység későbbi esemény;
+- az első nagy játékrész Akira végleges emlékezet-visszatéréséig tart;
+- a memória-visszatérés után a route-ok az addigi döntések alapján nyílnak szét;
+- a Loft-szál korán, háttérmegfigyelésként van jelen, nem késői akciós becsapódásként;
+- a többpartneres/hárem route csak karakterhű, őszinte és konszenzuális formában működhet, és nem minden karakterrel/kombinációban elérhető.
