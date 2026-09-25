@@ -133,6 +133,7 @@ A későbbi narratív rendszer adatvezérelt lesz.
 
 A 2.5D történeti implementáció kötelező forrása:
 - `docs/TSUKIMORI_2_5D_STORY_REWORK.md`
+- `docs/TSUKIMORI_2_5D_NARRATIVE_PACING.md`
 
 Fontos:
 - az ott APPROVED/LOCKED elemek elsőbbséget élveznek a régi Ren'Py megoldással szemben a 2.5D verzióban;
@@ -142,7 +143,9 @@ Fontos:
 - először adatvezérelt story-state és relationship-state alap készüljön;
 - a Loft-megfigyelés korai háttérjel lehet;
 - a Mélység ne kerüljön a korai vertical slice-ba;
-- a többpartneres route csak későbbi, konszenzuális és karakter-kompatibilis állapotként kezelhető.
+- a többpartneres route csak későbbi, konszenzuális és karakter-kompatibilis állapotként kezelhető;
+- jelenettervezésnél tartsd a pacing-elvet: minden fontos jelenet adjon választ, új kérdést vagy kapcsolati változást;
+- a korai 30–45 perces vertical slice retention-célja: a játékos akarja tudni, miért hívta ide Katsuro Akirát, mit tud Miyako, és ki figyeli Akirát.
 
 ### 2.5D prototype — jelenlegi státusz
 
