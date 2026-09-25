@@ -52,6 +52,12 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 | 2026-09-25 | **Himiko personality archetype** | LOCKED | Boa Hancock-vonalból inspirált regal pride / felsőbbrendűség / Empress-jelenlét / ritka gyengédség, de saját Tsukimori-karakterként, konkrét másolás nélkül. |
 | 2026-09-24 | **Asset státusz: PLACEHOLDER → BLOCKOUT → REVIEW → FINAL** | LOCKED | A technikailag működő asset nem lesz automatikusan FINAL. |
 | 2026-09-24 | **Visual Reference Packet / konkrét jóváhagyott képek** | LOCKED AUTHORITY RULE | A konkrét képek kanonikus másolatai a ChatGPT Library `/Tsukimori Visual References/` mappában vannak; státusz és SHA-256: `docs/VISUAL_REFERENCE_INDEX.md`. A képeken lévő automatikus szövegek nem kánonok. |
+| 2026-09-25 | **2.5D story rework — memory structure** | APPROVED | Az első nagy játékrész Akira végleges emlékezet-visszatéréséig tart; utána a döntések alapján nyílnak szét a kapcsolati és történeti route-ok. Részletek: `docs/TSUKIMORI_2_5D_STORY_REWORK.md`. |
+| 2026-09-25 | **2.5D story rework — character-driven first half** | APPROVED | Akira bántalmazott múltja és Katsuro visszahívása megmarad; a női karakterekkel való ismerkedés viszi a cselekményt, a Mélység később nyílik meg. |
+| 2026-09-25 | **Loft 2.5D role** | APPROVED | Loft köre korán tud Akiráról és figyeli; nem késői „nagy harcba becsapódó” szereplőként jelenik meg. |
+| 2026-09-25 | **Loft felesége = Akira volt felesége** | APPROVED STORY DIRECTION | A Lofttal való kapcsolat alibi/védelmi konstrukció; Akira és a nő régen valódi házasságban éltek. A szakítás pontos oka még nyitott. |
+| 2026-09-25 | **Renka mint Akira későbbi exe** | PROPOSED | Lehetséges, hogy a házasság után Renka törte meg Akirát és gyorsította fel a romlását; még nem LOCKED. |
+| 2026-09-25 | **Konszenzuális többpartneres route** | APPROVED | Harem/multi-partner opció marad, de külön bizalom, őszinteség és karakter-kompatibilitás kell; nem minden nővel és nem minden kombinációban lehetséges. |
 
 ---
 
