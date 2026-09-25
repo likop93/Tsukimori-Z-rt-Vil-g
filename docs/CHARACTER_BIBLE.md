@@ -19,10 +19,11 @@ A jóváhagyott konkrét képi referenciák és státuszaik: `docs/VISUAL_REFERE
 ## Identitás
 
 - férfi főhős;
-- városi terapeuta/doktor;
+- **orvos**; terápiás/pszichológiai munkát is végezhet, de nem pusztán terapeuta;
 - kontrollált, megfigyelő személyiség;
 - nem klasszikus fantasy-hős;
 - Tsukimoriban Katsuro egykori házába/rendelőjébe érkezik;
+- **Akira szakmai identitása: orvos.** A terápiás/pszichológiai kompetencia a karakter része, de nem írhatja felül vagy szűkítheti le az orvosi szerepét;
 - tisztánlátása vágyakat, félelmeket, hazugságokat, elfojtott önképet és természetfeletti nyomást érzékel;
 - elemi motívuma: **szél**;
 - későbbi kulcsmondat: **„Én vagyok a szél.”**
