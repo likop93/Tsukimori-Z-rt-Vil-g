@@ -236,15 +236,30 @@ Hana személyes történeti ívének egyik visszatérő testi tünete a **megmag
 - Akira végig professzionálisan, beleegyezésalapon és klinikai módon kezeli.
 - Orvosilag indokolt kivizsgálás mellett egyre nyilvánvalóbbá válik, hogy a jelenség Tsukimoriban nem magyarázható teljesen hétköznapi módon.
 
+## Hana trauma- és gyermek-szál — APPROVED
+- Himiko férje korábban szexuális erőszakot követett el Hana ellen.
+- Hana ennek következtében teherbe eshetett / esett teherbe a történeti irány szerint.
+- Tsukimori a magzatot természetfeletti módon **elzárja / felfüggeszti**: a gyermek jelen van, de nem fejlődik és nem születik meg normális biológiai időrendben.
+- A hely a magzathoz kötődő életenergiát Hana testében tartja fenn.
+- Hana tartós tejtermelése ennek az elzárt életenergiának és a Tsukimori által belehelyezett/aktivált „életmag” torzító hatásának egyik testi jele.
+- A történet ezt nem erotizálja; a szexuális erőszak trauma, a testi következmények pedig orvosi és természetfeletti rejtélyként jelennek meg.
+
 ## Hana route végső kifizetése
 Ha a játékos Hana útját választja és a szükséges kapcsolati feltételek teljesülnek:
 - a route **boldog endinget** kaphat;
 - Hana és Akira együtt maradnak;
-- a történet végén kiderül, hogy Hana korábbi megmagyarázhatatlan tejtermelése valamilyen módon a **születendő gyermekükhöz** és Hana élet/termékenység motívumához kapcsolódott;
-- a korábbi testi tünet így utólag narratív előrevetítéssé válik, nem öncélú karakterjeggyé.
+- a korábban elzárt gyermek története feloldódhat / továbbhaladhat;
+- Akira szerepe nem a gyermek biológiai apaságának automatikus átírása, hanem Hana választott társa és a gyermek jövőjének része;
+- a korábbi tejtermelés és életenergia-motívum visszamenőleg a gyermek jelenlétének előrevetítése lesz.
 
-A pontos természetfeletti mechanizmus és az, hogy mikor válik egyértelművé a terhesség / gyermek érkezése, később külön jelenettervezéssel rögzítendő.
+A pontos természetfeletti mechanizmus, a gyermek megszületésének feltétele és Akira későbbi családi szerepe külön jelenettervezéssel rögzítendő.
 
+
+## Himiko trauma-szál — APPROVED
+- Himiko férje korábban szexuális erőszakot követett el Himiko ellen is.
+- Himiko esetében a rögzített forma anális szexuális erőszak; **nem ehhez kapcsolódik terhesség vagy elzárt magzat**.
+- A trauma következményei a kontrollhoz, testi kiszolgáltatottsághoz és orvosi bizalomhoz való viszonyában jelennek meg.
+- Akira és Himiko orvosi jeleneteit beleegyezés, kontroll-visszaadás és nem erotizált traumaábrázolás vezesse.
 
 ---
 
