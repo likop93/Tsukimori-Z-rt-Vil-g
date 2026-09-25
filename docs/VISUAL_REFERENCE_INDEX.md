@@ -45,6 +45,11 @@ Ha egy képen lévő szöveg ütközik a dokumentált kánonnal, a dokumentált 
 | `characters/SHION_FINAL_CHARACTER_DESIGN_V1.png` | **LOCKED PRIMARY** | Shion arc, zöld szem, fekete/ibolyás haj, primary outfit, holdfény/víz vizuális nyelv | `e65d15d6192e78c795a5083b1e695106a309161c188a41453b779d5ec9560653` |
 | `characters/RENKA_CHARACTER_DESIGN_V1_REFERENCE.png` | **APPROVED REFERENCE** | Renka jelenlegi vizuális irány; még nem production lock | `25ea70919fe0719bb901d12faa6c3af08d6ac594d2d7fdae2c556c399c003de1` |
 | `characters/HANA_FINAL_CHARACTER_DESIGN_V1.png` | **LOCKED PRIMARY** | Hana arc, tan bőr, nagyon hosszú hullámos haj, arany hajdísz, telt/buja testalkat, fekete–bordó–arany primary outfit | `c63ac780162addddf4e9cfef470038483f200f8b3ba88ac62de18e1a16d3ff9c` |
+| `characters/HIMIKO_FINAL_CHARACTER_DESIGN_V1.png` | **LOCKED PRIMARY** | Himiko Empress-design: vörös haj, heterokrómia, kb. 200 cm-es karakterérzet, monumentális sziluett, extrém nagy mellkas, fehér–fekete városi/orvosi primary outfit | `e95bfb8bd81e0846bf2e037ec814bd89ef716285f250d0c1ede97cce7779d293` |
+
+### Himiko megjegyzés
+
+A Himiko-kép **LOCKED PRIMARY** vizuális referencia. Az automatikusan generált feliratok és idézetek nem történeti kánonok. A Character Bible és a `docs/HIMIKO_PRODUCTION_SPEC.md` határozza meg a használható részleteket.
 
 ### Hana megjegyzés
 
