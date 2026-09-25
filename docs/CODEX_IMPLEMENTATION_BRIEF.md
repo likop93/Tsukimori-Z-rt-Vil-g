@@ -129,6 +129,21 @@ Ne írj történeti tartalmat közvetlenül player/world scriptbe.
 A későbbi narratív rendszer adatvezérelt lesz.
 
 
+### 2.5D story rework authority
+
+A 2.5D történeti implementáció kötelező forrása:
+- `docs/TSUKIMORI_2_5D_STORY_REWORK.md`
+
+Fontos:
+- az ott APPROVED/LOCKED elemek elsőbbséget élveznek a régi Ren'Py megoldással szemben a 2.5D verzióban;
+- PROPOSED/nyitott elemet ne hardcode-olj végleges kánonként;
+- az első nagy játékrész Akira végleges emlékezet-visszatéréséig tart;
+- a teljes route-rendszert ne implementáld előre mereven;
+- először adatvezérelt story-state és relationship-state alap készüljön;
+- a Loft-megfigyelés korai háttérjel lehet;
+- a Mélység ne kerüljön a korai vertical slice-ba;
+- a többpartneres route csak későbbi, konszenzuális és karakter-kompatibilis állapotként kezelhető.
+
 ### 2.5D prototype — jelenlegi státusz
 
 A tulajdonos jóváhagyta egy külön 2D/2.5D cinematic narrative prototype elkészítését.
