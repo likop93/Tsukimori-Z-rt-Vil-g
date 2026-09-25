@@ -3,6 +3,9 @@
 **Dátum:** 2026-09-25  
 **Státusz:** APPROVED STORY DIRECTION / 2.5D working canon
 
+Kapcsolódó pacing/retention dokumentum:
+- `docs/TSUKIMORI_2_5D_NARRATIVE_PACING.md`
+
 ## Cél
 
 Ez a dokumentum a 2.5D cinematic narrative verzió új történeti gerincét rögzíti.
