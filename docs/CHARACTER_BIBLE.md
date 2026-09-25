@@ -211,16 +211,47 @@ Első animációs batch:
 
 # Hana
 
-- barna/tan bőr;
+## Identitás
+
+- felnőtt nő;
+- meleg barna/tan bőr;
 - nagyon hosszú, sötét, hullámos haj;
-- arany hajdísz;
+- arany virágos hajdísz;
 - vörösesbarna szem;
 - erős, közvetlen, testi/fertilitási energia.
 
-Mozgásérzet:
-- közvetlenebb;
-- teltebb, erősebb jelenlét;
-- több testsúly és határozottabb gesztus, mint Miyakónál vagy Shionnál.
+## FINAL vizuális irány — LOCKED
+
+- **meleg barna / tan bőrtónus**;
+- nagyon hosszú, dús, hullámos sötétbarna/majdnem fekete haj;
+- vörösesbarna szem;
+- arany virágos hajdísz és finom arany függők;
+- telt, erőteljesen nőies, buja testalkat;
+- **nagyon telt mellkas / nagy keblek** a karakter felismerhető designjegye;
+- hangsúlyos csípő és formásabb combok;
+- fekete–bordó–arany, japán ihletésű primary outfit;
+- mély dekoltázs;
+- virágmintás textil és díszített obi-jellegű öv;
+- összhatás: **testiség + élet + hagyomány + termékenységi energia + melegség**.
+
+Elsődleges képi referencia:
+`/Tsukimori Visual References/characters/HANA_FINAL_CHARACTER_DESIGN_V1.png`
+
+A production specifikáció:
+`docs/HANA_PRODUCTION_SPEC.md`
+
+## Mozgásnyelv — PRODUCTION LOCK
+
+Alapelv:
+> Hana nem siet el a saját jelenlétéből.
+
+- közvetlenebb és földeltebb mozgás;
+- láthatóbb testsúlyváltás;
+- stabilabb állás;
+- nyugodt, magabiztos kézgesztusok;
+- természetes, közvetlen szemkontaktus;
+- több fizikai jelenlét, mint Miyakónál vagy Shionnál;
+- secondary motion finom és fizikai, nem komikus fanservice effekt.
 
 ---
 
