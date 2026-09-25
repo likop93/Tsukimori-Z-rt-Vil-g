@@ -238,21 +238,27 @@ Hana személyes történeti ívének egyik visszatérő testi tünete a **megmag
 
 ## Hana trauma- és gyermek-szál — APPROVED
 - Himiko férje korábban szexuális erőszakot követett el Hana ellen.
-- Hana ennek következtében teherbe eshetett / esett teherbe a történeti irány szerint.
-- Tsukimori a magzatot természetfeletti módon **elzárja / felfüggeszti**: a gyermek jelen van, de nem fejlődik és nem születik meg normális biológiai időrendben.
-- A hely a magzathoz kötődő életenergiát Hana testében tartja fenn.
-- Hana tartós tejtermelése ennek az elzárt életenergiának és a Tsukimori által belehelyezett/aktivált „életmag” torzító hatásának egyik testi jele.
-- A történet ezt nem erotizálja; a szexuális erőszak trauma, a testi következmények pedig orvosi és természetfeletti rejtélyként jelennek meg.
+- Hana **nem terhes materiális / biológiai értelemben** a történet korai és középső szakaszában; nincs benne normálisan fejlődő fizikai magzat.
+- Tsukimori az eseményhez kapcsolódó életlehetőséget természetfeletti módon **„életmagként” / felfüggesztett gyermek-energiaként** őrzi Hanában.
+- A gyermek ezért természetfeletti értelemben „jelen van”, de még nem testesült meg és nem tud megszületni.
+- A hely az életenergiát Hanában tartja, és ez torzítja a testét; a tartós tejtermelés ennek egyik testi jele.
+- A szexuális erőszak a trauma eredete, de **nem marad fenn belőle materiális terhesség vagy fizikai magzat**.
+- A történet ezt nem erotizálja; a következmények orvosi, érzelmi és természetfeletti rejtélyként jelennek meg.
+
+## Akira felülíró energiája — APPROVED
+- A Hana-route végjátékában Akira természetfeletti energiája kapcsolatba kerül a Hanában őrzött életmaggal.
+- Akira energiája **felülírja az életmag korábbi apai/eredeti lenyomatát**.
+- Amikor a gyermek végül materiális értelemben is létrejön / megszülethet, **Akira gyermeke lesz**.
+- Ez nem egyszerű örökbefogadó vagy nevelőapai szerep: a történeti kánon szerint a megszülető gyermek Akirához tartozik, mert az életmag identitását az ő energiája írja át.
+- A pontos természetfeletti szabályt és a materializálódás pillanatát később külön jelenetben kell kidolgozni.
 
 ## Hana route végső kifizetése
 Ha a játékos Hana útját választja és a szükséges kapcsolati feltételek teljesülnek:
 - a route **boldog endinget** kaphat;
 - Hana és Akira együtt maradnak;
-- a korábban elzárt gyermek története feloldódhat / továbbhaladhat;
-- Akira szerepe nem a gyermek biológiai apaságának automatikus átírása, hanem Hana választott társa és a gyermek jövőjének része;
+- a felfüggesztett életmag végre továbbhalad és materiális gyermek lehet belőle;
+- a gyermek **Akiráé és Hanáé**;
 - a korábbi tejtermelés és életenergia-motívum visszamenőleg a gyermek jelenlétének előrevetítése lesz.
-
-A pontos természetfeletti mechanizmus, a gyermek megszületésének feltétele és Akira későbbi családi szerepe külön jelenettervezéssel rögzítendő.
 
 
 ## Himiko trauma-szál — APPROVED
