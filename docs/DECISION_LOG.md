@@ -44,6 +44,8 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 | 2026-09-24 | **Miyako Design B — Ceremonial / Detail Exploration** | LOCKED VARIANT | Megtartott második vizuális referencia: hajdísz, bordó–arany motívumok, textilminták és ceremoniális outfit használható. A képen szereplő „házvezető / szentélyi gondozó” szöveg nem kánon. |
 | 2026-09-24 | **Shion FINAL Character Design v1** | LOCKED | Hosszú fekete/ibolyás haj, zöld szem, finom virágdísz, víz/holdfény vizuális motívum, sötét rétegzett Primary outfit. A referencia-lap automatikus bio-szövegei nem kánonok. Spec: `docs/SHION_PRODUCTION_SPEC.md`. |
 | 2026-09-24 | **Shion animációs alapelv** | LOCKED | Shion akkor a legnyugtalanítóbb, amikor túl kevéssé mozog; hosszú holdok, minimális testsúlyváltás, szemvezérelt reakció. |
+| 2026-09-25 | **Hana FINAL Character Design v1** | LOCKED | Meleg tan bőr, nagyon hosszú hullámos sötét haj, vörösesbarna szem, arany hajdísz, telt/buja testalkat, nagyon telt mellkas, fekete–bordó–arany mély dekoltázsú japán ihletésű outfit. Spec: `docs/HANA_PRODUCTION_SPEC.md`. |
+| 2026-09-25 | **Hana mozgásnyelv** | LOCKED | Földelt, közvetlen, magabiztos; több testsúlyváltás, de nincs komikus/túlzó secondary motion. |
 | 2026-09-24 | **Asset státusz: PLACEHOLDER → BLOCKOUT → REVIEW → FINAL** | LOCKED | A technikailag működő asset nem lesz automatikusan FINAL. |
 | 2026-09-24 | **Visual Reference Packet / konkrét jóváhagyott képek** | LOCKED AUTHORITY RULE | A konkrét képek kanonikus másolatai a ChatGPT Library `/Tsukimori Visual References/` mappában vannak; státusz és SHA-256: `docs/VISUAL_REFERENCE_INDEX.md`. A képeken lévő automatikus szövegek nem kánonok. |
 
