@@ -241,6 +241,13 @@ Elsődleges képi referencia:
 A production specifikáció:
 `docs/HANA_PRODUCTION_SPEC.md`
 
+## Történeti route-motívum — APPROVED
+
+- Hana élet/termékenység motívuma a történetben konkrét testi jelenségként is megjelenik: tartós, orvosilag nem teljesen magyarázható tejtermelés.
+- A bizalom kialakulása után Akirához fordul gépi fejéshez; a jelenetek funkciója a szégyen, elfogadás és bizalom fejlődése, nem erotizált kezelés.
+- A Hana-route boldog endingjében ez a motívum a születendő gyermekükhöz kapcsolódik.
+- A pontos természetfeletti mechanizmus későbbi történeti döntés.
+
 ## Mozgásnyelv — PRODUCTION LOCK
 
 Alapelv:
