@@ -48,6 +48,8 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 | 2026-09-25 | **Hana mozgásnyelv** | LOCKED | Földelt, közvetlen, magabiztos; több testsúlyváltás, de nincs komikus/túlzó secondary motion. |
 | 2026-09-25 | **Himiko FINAL Character Design v1** | LOCKED | „Empress” vizuális irány: kb. 200 cm-es karakterérzet, hosszú vörös haj, kék/majdnem fehér heterokrómia, monumentális női sziluett, extrém nagy mellkas, fehér top, fekete ceruzaszoknya, magassarkú. Spec: `docs/HIMIKO_PRODUCTION_SPEC.md`. |
 | 2026-09-25 | **Himiko mozgásnyelv** | LOCKED | Hosszú, kontrollált lépések, stabil tartás, kitartott szemkontaktus, sokatmondó félmosoly, pszichológiai dominancia; nincs komikus túlzás. |
+| 2026-09-25 | **Himiko Empress body-proportion update** | LOCKED | A jóváhagyott új primary referencia az extrém nagy mellkas mellett szélesebb csípőt, nagyobb fart és vastagabb/erősebb combokat használ; monumentális, szoborszerű Empress-sziluett. |
+| 2026-09-25 | **Himiko personality archetype** | LOCKED | Boa Hancock-vonalból inspirált regal pride / felsőbbrendűség / Empress-jelenlét / ritka gyengédség, de saját Tsukimori-karakterként, konkrét másolás nélkül. |
 | 2026-09-24 | **Asset státusz: PLACEHOLDER → BLOCKOUT → REVIEW → FINAL** | LOCKED | A technikailag működő asset nem lesz automatikusan FINAL. |
 | 2026-09-24 | **Visual Reference Packet / konkrét jóváhagyott képek** | LOCKED AUTHORITY RULE | A konkrét képek kanonikus másolatai a ChatGPT Library `/Tsukimori Visual References/` mappában vannak; státusz és SHA-256: `docs/VISUAL_REFERENCE_INDEX.md`. A képeken lévő automatikus szövegek nem kánonok. |
 
