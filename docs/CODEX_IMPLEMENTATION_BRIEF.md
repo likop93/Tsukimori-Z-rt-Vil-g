@@ -144,6 +144,23 @@ Implementáció:
 - nagy route beat / climactic scene külön pixel-CG-t használhat;
 - a portré nem redesign: kövesse a LOCKED character reference-et.
 
+### First village 10–15 minute flow — APPROVED
+
+Kötelező jelenetritmus-forrás:
+- `docs/FIRST_VILLAGE_10_15_MIN_FLOW.md`
+
+Első érkezési sequence:
+- village gate / first street;
+- ambient villagers;
+- Hana cameo;
+- Kuroe glimpse;
+- Shion distant observation;
+- bridge micro-event;
+- Miyako full reveal at the house;
+- interior transition.
+
+**Canon rule:** Himiko ne jelenjen meg fizikailag ebben az első érkezési szakaszban, mert a jelenlegi történeti struktúra szerint később érkezik Tsukimoriba. Korai negyedik megfigyelőjelhez azonosítatlan observer / Loft-jel használható.
+
 ### Első playable pixel-art háttérkészlet — APPROVED
 
 A Work az első bejárható slice-hoz a következő négy Library hátteret használja alapként:
