@@ -104,6 +104,29 @@ LOCKED jegyek:
 
 Himiko nem generikus „sexy doctor” NPC. A túlzó testarány a monumentális Empress-kisugárzás része, nem Hana vizuális másolata.
 
+### FINAL visual production direction — LOCKED 2026-09-26
+
+A teljes játék végleges vizuális production iránya:
+**high-detail cinematic 2D/2.5D pixel-art narrative adventure**.
+
+Kötelező forrás:
+- `docs/PIXEL_ART_PRODUCTION_DIRECTION.md`
+- `docs/VISUAL_REFERENCE_INDEX.md`
+
+Primary visual target:
+- `TSUKIMORI_PIXEL_ART_VISUAL_TARGET_V1.png`
+
+Implementációs szabály:
+- az új FINAL/production vizuális assetek pixel-art irányban készüljenek;
+- a meglévő 3D világ ne törlődjön, de csak spatial/layout/blocking referencia;
+- a LOCKED character reference-ekből pixel-art adaptáció készüljön, redesign nélkül;
+- pixel texture filtering OFF / nearest-neighbor;
+- pixel snapping és konzisztens pixel density;
+- parallax foreground/midground/background;
+- CG-k és narratív képek is ugyanabban a pixel-art nyelvben készüljenek;
+- nyers AI render vagy egyszerű pixel-filter nem FINAL asset;
+- első technikai canvas-teszt 640×360 → 1920×1080 3× integer upscale; ez working technical target, review alapján módosítható.
+
 ## Első technikai cél
 A `scenes/world/mountain_path.tscn` hibamentesen induljon,
 a Player WASD-vel mozogjon, a kamera kövesse, és a
@@ -151,17 +174,17 @@ Fontos:
 - jelenettervezésnél tartsd a pacing-elvet: minden fontos jelenet adjon választ, új kérdést vagy kapcsolati változást;
 - a korai 30–45 perces vertical slice retention-célja: a játékos akarja tudni, miért hívta ide Katsuro Akirát, mit tud Miyako, és ki figyeli Akirát.
 
-### 2.5D prototype — jelenlegi státusz
+### 2.5D pixel-art production — jelenlegi státusz
 
-A tulajdonos jóváhagyta egy külön 2D/2.5D cinematic narrative prototype elkészítését.
+A tulajdonos a teljes játék production migrációját **LOCKED** státuszban pixel-art 2D/2.5D irányra állította.
 
 Visual target:
-- `TSUKIMORI_2_5D_VISUAL_TARGET_V1.png`
-- státusz: **APPROVED / REVIEW**, nem FINAL migration lock.
+- `TSUKIMORI_PIXEL_ART_VISUAL_TARGET_V1.png`
+- státusz: **LOCKED PRIMARY PRODUCTION VISUAL TARGET**
 
 Szabály:
 - a jelenlegi 3D projektet ne töröld;
-- a 3D world layoutot használd térbeli referenciának;
-- a 2.5D prototípust elkülönített scene/script/asset struktúrában építsd;
-- hagyományos combatot ne implementálj;
-- teljes production migration csak új tulajdonosi döntés után történhet.
+- a 3D world layoutot csak térbeli referenciának használd;
+- minden új production vizuális asset pixel-art / 2.5D legyen;
+- hagyományos combatot továbbra se implementálj;
+- a korábbi painterly/smooth-anime prototípus asset ne váljon automatikusan FINAL-lá.
