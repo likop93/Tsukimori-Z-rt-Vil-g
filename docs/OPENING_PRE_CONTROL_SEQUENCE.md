@@ -16,6 +16,9 @@ Feladata:
 
 **Fontos:** ez az új pixel-art verzióhoz készített jelenet. Nem az eredeti Ren'Py intro szó szerinti rekonstrukciója, hanem annak funkcionális és hangulati továbbírása.
 
+Primary visual staging reference:
+- `/Tsukimori Visual References/visual_target/OPENING_SEQUENCE_STORYBOARD_V1.png`
+
 Kapcsolódó authority:
 - `docs/FIRST_VILLAGE_10_15_MIN_FLOW.md`
 - `docs/PIXEL_ART_PRODUCTION_DIRECTION.md`
