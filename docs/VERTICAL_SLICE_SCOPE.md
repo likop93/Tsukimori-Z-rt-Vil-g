@@ -1,5 +1,31 @@
 # Vertical Slice v0.0.1 — Scope / Progress
 
+## Production irányváltás — LOCKED 2026-09-26
+
+A tulajdonos a teljes játék végleges megjelenését **high-detail cinematic pixel-art / 2.5D** irányban rögzítette.
+
+Kötelező:
+- `docs/PIXEL_ART_PRODUCTION_DIRECTION.md`
+- `TSUKIMORI_PIXEL_ART_VISUAL_TARGET_V1.png`
+
+A fent felsorolt 3D blockout/animation munka:
+- továbbra is használható spatial/layout referenciának;
+- nem törlendő;
+- nem FINAL production render target.
+
+A következő vertical-slice vizuális cél:
+**village street → bridge → Miyako house → first encounter**, teljesen koherens pixel-art 2.5D pipeline-nal.
+
+Review fókusz:
+- pixel density consistency;
+- karakterazonosság;
+- parallax;
+- contact shadow / occlusion;
+- hideg külső + meleg belső fény;
+- eső/köd/víz rétegek;
+- dialógus/UI pixel-art integráció;
+- ne legyen „karakter egy festmény előtt” érzés.
+
 ## Elkészült és review-n átment
 
 1. Hegyi ösvény blockout
