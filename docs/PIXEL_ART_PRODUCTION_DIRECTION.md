@@ -166,7 +166,21 @@ Kötelező:
 - sötét, elegáns Tsukimori hangulat;
 - dialógus / choice prezentáció továbbra is karakteres.
 
-A régi UI referencia kompozíciós és funkcionális irányként használható, de a végleges rendernyelvet pixel-artra kell fordítani.
+## Dialógus-prezentáció — LOCKED
+
+A játék **hibrid dialógus-rendszert** használ:
+
+- exploration / rövid ambient beszélgetés: a world sprite-ok maradnak fókuszban, portré opcionális;
+- fontos karakterbeszélgetés: nagy, részletes pixel-art portré vagy félalak jelenik meg;
+- a világ és a kis sprite-ok nem tűnnek el, hanem finoman dimmelődnek;
+- a nagy portré ugyanazt a FINAL karakteridentitást és pixel-art nyelvet használja, mint a world sprite;
+- karakterenként több alapérzelem / reaction portrait használható;
+- nagy route-beat vagy climactic jelenet külön, teljes pixel-CG-re válthat.
+
+Primary UI referencia:
+`/Tsukimori Visual References/ui/TSUKIMORI_PIXEL_DIALOGUE_UI_V1.png`
+
+A korábbi `TSUKIMORI_DIALOGUE_UI_V1.png` funkcionális és kompozíciós supporting reference marad, de a pixel dialogue UI a production authority.
 
 ---
 
