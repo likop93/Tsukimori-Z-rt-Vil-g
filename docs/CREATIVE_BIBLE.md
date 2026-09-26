@@ -1,5 +1,16 @@
 # Tsukimori — Creative Bible
 
+# CURRENT PRODUCTION VISUAL DIRECTION — LOCKED 2026-09-26
+
+A tulajdonos a teljes játék végleges vizuális irányát **high-detail cinematic 2D/2.5D pixel artként** rögzítette.
+
+Kötelező authority:
+- docs/PIXEL_ART_PRODUCTION_DIRECTION.md
+- docs/VISUAL_REFERENCE_INDEX.md
+
+A korábbi teljes 3D Visual Target **production renderingként SUPERSEDED**. A 3D munka térbeli/blocking/layout referenciaként megtartható, de nem a végleges grafikai target.
+
+---
 **Verzió:** 1.0  
 **Státusz:** LOCKED  
 **Dátum:** 2026-09-24
@@ -19,7 +30,7 @@ A `LOCKED` döntéseket implementáció, asset, Ren'Py-forrás vagy technikai k�
 
 ---
 
-# Tsukimori Visual Target v1
+# Legacy Tsukimori 3D Visual Target v1 — SUPERSEDED AS PRODUCTION RENDERING
 
 ## 1. Fő cél
 
@@ -212,21 +223,21 @@ Semmi nem válik FINAL-lá pusztán attól, hogy bekerült a játékba vagy tech
 
 ---
 
-# 2.5D cinematic prototype direction — APPROVED / REVIEW
+# 2D/2.5D cinematic pixel-art production direction — LOCKED
 
-A tulajdonosi döntés alapján külön prototípusban vizsgáljuk, hogy a Tsukimori végleges prezentációja a teljes 3D helyett egy **2D/2.5D cinematic narrative adventure** formában működik-e jobban.
+A tulajdonosi döntés alapján a Tsukimori teljes production prezentációja **2D/2.5D cinematic pixel-art narrative adventure**. A korábbi prototípus-státusz lezárult; ez a végleges production irány.
 
-Hivatalos képi célreferencia:
-- ChatGPT Library: `/Tsukimori Visual References/visual_target/TSUKIMORI_2_5D_VISUAL_TARGET_V1.png`
-- státusz: **APPROVED VISUAL TARGET — PROTOTYPE**
+Hivatalos elsődleges képi célreferencia:
+- ChatGPT Library: `/Tsukimori Visual References/visual_target/TSUKIMORI_PIXEL_ART_VISUAL_TARGET_V1.png`
+- státusz: **LOCKED PRIMARY PRODUCTION VISUAL TARGET**
 
-Ez jelenleg **nem írja felül** a fent dokumentált LOCKED 3D Visual Target v1-et. A teljes migráció csak a Miyako first-encounter 2.5D prototípus játékbeli review-ja és új tulajdonosi döntés után történhet.
+A korábbi `TSUKIMORI_2_5D_VISUAL_TARGET_V1.png` történeti/prototípus referencia marad, de a végleges rendernyelv a pixel-art target.
 
 A 2.5D prototípus alapelvei:
 - saját Tsukimori vizuális identitás; nem Until Then-másolat;
 - oldalirányú / rendezett filmes felfedezés;
 - parallax rétegek;
-- részletes anime/painterly karakterprezentáció;
+- high-detail pixel-art karakterprezentáció a LOCKED karakterdesignokból;
 - meleg lámpafény + hideg holdfény + eső/köd/víz;
 - a történet, karakterkapcsolatok és rejtély előnyt élveznek a komplex 3D rendszerekkel szemben;
 - hagyományos combat rendszer nem része a prototípusnak;
