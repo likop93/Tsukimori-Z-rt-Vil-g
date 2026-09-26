@@ -144,6 +144,21 @@ Implementáció:
 - nagy route beat / climactic scene külön pixel-CG-t használhat;
 - a portré nem redesign: kövesse a LOCKED character reference-et.
 
+### Village NPC population — LOCKED
+
+Kötelező vizuális referenciák:
+- `npc/VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png`
+- `npc/VILLAGE_NPC_ATTRACTIVE_VARIANTS_V2.png`
+- `npc/INN_COURTESAN_NPC_PACK_V1.png`
+
+Implementációs szabályok:
+- Tsukimori ambient falusi lakossága nőkből áll; generikus férfi crowd NPC ne kerüljön a faluba;
+- a population legyen kor- és szerepdiverz: fiatal/felnőtt/idős nők, boltosok, munkások, szentélyi segítők, utazók, fogadói dolgozók;
+- a többség lehet vizuálisan vonzó/elegáns, de a fő route-karakterek maradjanak egyértelműen különlegesek;
+- a fogadói courtesan/sex-worker NPC-k külön, felnőtt és kihívóbb outfit-nyelvet használhatnak;
+- a reference boardokból production előtt tiszta transparent atlasz készüljön fix frame size + bottom-center pivot rendszerrel;
+- a boardokon szereplő named/special character designok nem írhatják felül a saját character reference-eket.
+
 ### First village 10–15 minute flow — APPROVED
 
 Kötelező jelenetritmus-forrás:
