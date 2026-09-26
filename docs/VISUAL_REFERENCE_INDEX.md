@@ -15,6 +15,7 @@ Almappák:
 - `characters/`
 - `ui/`
 - `visual_target/`
+- `npc/`
 
 Egyben letölthető/csatolható csomag:
 - `/Tsukimori Visual References/TSUKIMORI_VISUAL_REFERENCE_PACKET_V1.zip`
@@ -58,6 +59,24 @@ A Hana-kép **LOCKED PRIMARY** vizuális referencia. A képen lévő automatikus
 ### Renka megjegyzés
 
 A Renka-kép jelenleg **APPROVED REFERENCE**, nem teljes FINAL production lock. A történeti/életkori kánont külön dokumentum határozza meg; a képi lap szövege önmagában nem authority.
+
+---
+
+## NPC / population referenciák
+
+| Fájl | Státusz | Használat | SHA-256 |
+|---|---|---|---|
+| `npc/VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` | **LOCKED POPULATION VISUAL DIRECTION / APPROVED SOURCE PACK** | Tsukimori női falusi lakosságának alap vizuális készlete: fiatal, felnőtt és idős nők, szentélyi segítők, boltosok, munkások, utazók; crowd-sprite és in-game population referencia | `f4b3404ee19cb536af9b58e933db85b32e581aad192e6e27bd959be194aab116` |
+| `npc/VILLAGE_NPC_ATTRACTIVE_VARIANTS_V2.png` | **APPROVED VARIATION REFERENCE** | a falusi női NPC-k többségéhez vonzóbb/elegánsabb karakter- és outfit-variációk, miközben a fő route-karakterek továbbra is vizuálisan kiemelkednek | `6232a637c11f853d1e6b1ac860e73ebb059cae02317151add6d71e0f4f547e91` |
+| `npc/INN_COURTESAN_NPC_PACK_V1.png` | **APPROVED INN / COURTESAN REFERENCE** | a fogadóban dolgozó felnőtt nők külön, léhább/szenzuálisabb outfit-nyelve és ambient/worker sprite iránya | `1158f13f4bdeb5d81f00680026174b64e52a5916d68201b65eacb26a9ea63c9a` |
+
+### Population szabály
+
+Tsukimori falusi ambient lakossága **nőkből áll**. A crowd packban nem használható generikus férfi falusi NPC.
+
+A lakosság vizuálisan lehet kifejezetten vonzó/elegáns; a hétköznapi falusiak, munkások, fogadói dolgozók és idősebb nők között legyen testalkat-, kor-, ruha- és szerepvariáció. A fő női karaktereknek ennek ellenére első pillantásra megkülönböztethetőnek kell maradniuk.
+
+A generált boardok **nem automatikusan FINAL sprite-atlaszok**. Production előtt külön tiszta, transzparens, fix frame/pivot rendszerű atlaszokra kell bontani őket. A boardokon szereplő név-, szerep- és karakterfeliratok nem írhatják felül a történeti vagy karakter-kánont; névvel rendelkező szereplőknél a saját karakter-authority az elsődleges.
 
 ---
 
