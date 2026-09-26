@@ -76,16 +76,25 @@ A Renka-kép jelenleg **APPROVED REFERENCE**, nem teljes FINAL production lock. 
 | `visual_target/AKIRA_MIYAKO_BEAUTY_TARGET_SCENE.png` | **LOCKED BEAUTY REFERENCE** | warm/cool lighting, Miyako doorway staging, Akira foreground, rainy village mood | `1f0eda84565ef5442a9b054942d6a841bacc857d7bca99a5f083822a85dec1fd` |
 | `visual_target/AKIRA_MIYAKO_BEAUTY_TARGET_STORYBOARD.png` | **APPROVED STAGING REFERENCE** | first encounter shot language és ritmus | `d63b9351dd39cc5985ceed8e153359e7c7e93cf032125a14d8137094a8ca0c45` |
 | `visual_target/TSUKIMORI_2_5D_VISUAL_TARGET_V1.png` | **APPROVED VISUAL TARGET — PROTOTYPE** | az Until Then által inspirált, de saját Tsukimori 2D/2.5D cinematic narrative adventure irány első hivatalos képi célreferenciája | `fcab458a7ba4280d47f3b48ffc5086d2aa1c8475b3293a953a7cefdec9310243` |
+| `visual_target/TSUKIMORI_PIXEL_ART_VISUAL_TARGET_V1.png` | **LOCKED PRIMARY PRODUCTION VISUAL TARGET** | high-detail cinematic pixel-art / 2.5D végleges játékmegjelenés; karakter-környezet egység, pixel density, fény, UI/CG irány | `59470ab2bd3db4d9d584fbba7d3d846a3234d04eb8e854e056ce2049567d70a2` |
 
-### 2.5D státusz
+### 2.5D / pixel-art státusz
 
-A `TSUKIMORI_2_5D_VISUAL_TARGET_V1.png` **nem FINAL production lock**.
+A tulajdonos 2026-09-26-án a teljes játék vizuális production irányát **high-detail cinematic pixel artként LOCKED** státuszra emelte.
 
-Először a Miyako first-encounter 2.5D prototípusban kell validálni. Addig:
+Elsődleges authority:
+`TSUKIMORI_PIXEL_ART_VISUAL_TARGET_V1.png`
+
+A korábbi `TSUKIMORI_2_5D_VISUAL_TARGET_V1.png` prototípus/történeti referencia, nem a végleges render target.
+
+A pixel targetnél a képi stílus az authority; az automatikusan generált feliratok és konkrét jelenettartalom nem válik automatikusan történeti kánonná.
+
+A korábbi 3D production render irány **SUPERSEDED**.
+
 - a jelenlegi 3D verziót nem szabad törölni;
 - a 3D world layout kánon megmarad térbeli referenciának;
-- a 2.5D prototípus külön implementációs réteg;
-- teljes production migration csak újabb tulajdonosi döntéssel történhet.
+- az új production assetek pixel-art / 2.5D irányban készülnek;
+- a karakterek meglévő LOCKED designreferenciái változatlan identitás-authorityk.
 
 ---
 
