@@ -29,6 +29,7 @@ A Ren'Py az események, dialógusok, döntések és route-ok történeti forrás
 
 A jóváhagyott képek kanonikus példányai a ChatGPT Library `/Tsukimori Visual References/` mappában találhatók; a pontos fájlnevek, státuszok és SHA-256 értékek:
 - `docs/VISUAL_REFERENCE_INDEX.md`
+- `docs/PLAYABLE_BACKGROUND_SCENE_MAPPING.md`
 
 Ha a Work/Codex környezet a binary képet nem tudja közvetlenül elérni, **ne helyettesítse saját új designnal**. Használja a production specet fallbackként és jelezze a reference-sync hiányát.
 
@@ -126,6 +127,19 @@ Implementációs szabály:
 - CG-k és narratív képek is ugyanabban a pixel-art nyelvben készüljenek;
 - nyers AI render vagy egyszerű pixel-filter nem FINAL asset;
 - első technikai canvas-teszt 640×360 → 1920×1080 3× integer upscale; ez working technical target, review alapján módosítható.
+
+
+### Első playable pixel-art háttérkészlet — APPROVED
+
+A Work az első bejárható slice-hoz a következő négy Library hátteret használja alapként:
+- `backgrounds/VILLAGE_STREET_PIXEL_V1.png`
+- `backgrounds/BRIDGE_PIXEL_V1.png`
+- `backgrounds/MIYAKO_HOUSE_EXTERIOR_PIXEL_V1.png`
+- `backgrounds/SHARED_HOME_CLINIC_INTERIOR_PIXEL_V1.png`
+
+Ezek **APPROVED PLAYABLE BASE** státuszúak, nem FINAL shipping assetek.
+Kötelező scene-role, walk-lane, interaction és parallax bontás:
+- `docs/PLAYABLE_BACKGROUND_SCENE_MAPPING.md`
 
 ## Első technikai cél
 A `scenes/world/mountain_path.tscn` hibamentesen induljon,
