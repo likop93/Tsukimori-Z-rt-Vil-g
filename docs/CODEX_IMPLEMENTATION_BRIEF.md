@@ -159,6 +159,21 @@ Implementációs szabályok:
 - a reference boardokból production előtt tiszta transparent atlasz készüljön fix frame size + bottom-center pivot rendszerrel;
 - a boardokon szereplő named/special character designok nem írhatják felül a saját character reference-eket.
 
+### Opening pre-control sequence — APPROVED
+
+Kötelező jelenetforrás:
+- `docs/OPENING_PRE_CONTROL_SEQUENCE.md`
+
+Ez fut le a tényleges player control előtt:
+- black/rain opening;
+- Akira internal monologue;
+- Tsukimori arrival pixel shot;
+- subtle watched-by-the-village beat;
+- Akira at gate;
+- seamless handoff to Village Street.
+
+Narratív tartalom ne kerüljön közvetlenül a Player/World scriptbe; adatvezérelt scene runner használata javasolt.
+
 ### First village 10–15 minute flow — APPROVED
 
 Kötelező jelenetritmus-forrás:
