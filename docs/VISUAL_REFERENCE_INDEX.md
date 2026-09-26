@@ -66,6 +66,20 @@ A Renka-kép jelenleg **APPROVED REFERENCE**, nem teljes FINAL production lock. 
 | Fájl | Státusz | Használat | SHA-256 |
 |---|---|---|---|
 | `ui/TSUKIMORI_DIALOGUE_UI_V1.png` | **APPROVED / VISUAL AUTHORITY** | dialógusbox, névtábla, választási highlight, narration/thought variáns, általános prezentáció | `333ff49088052e14ad1f3374754101fb9b19a3498e071cc47b609e2e54894862` |
+| `ui/TSUKIMORI_PIXEL_DIALOGUE_UI_V1.png` | **LOCKED PRIMARY PIXEL DIALOGUE UI** | fontos párbeszédeknél nagy pixel-art karakterportré/félalak, háttér és world sprite megmarad dimmelve, alsó dialógusbox; first-encounter referencia | `525387edbc8b7010a2eaf967d8335a7bf64316531d5af67ec4dba927922aed4a` |
+
+### Pixel dialógus UI — LOCKED
+
+A végleges dialógus-prezentáció hibrid rendszer:
+- exploration alatt a kis world sprite-ok maradnak a jelenetben;
+- fontos beszélgetésnél nagy, részletes pixel-art portré / félalak jelenik meg;
+- a háttér nem tűnik el, csak finoman dimmelődik;
+- a portré ugyanazt a pixel-art karakteridentitást használja, mint a world sprite és a FINAL character reference;
+- rövid ambient/NPC mondatok portré nélkül is működhetnek;
+- kiemelt route- és csúcspont-jelenetek külön pixel-CG-re válthatnak.
+
+Elsődleges képi referencia:
+`ui/TSUKIMORI_PIXEL_DIALOGUE_UI_V1.png`
 
 ---
 
