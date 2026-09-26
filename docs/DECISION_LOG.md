@@ -30,6 +30,7 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 |---|---|---|---|
 | 2026-09-24 | **Tsukimori Visual Target v1 (legacy 3D)** | SUPERSEDED FOR PRODUCTION RENDERING | A hangulati, világítási és térbeli célok részben öröklődnek, de a végleges renderformátumot a 2026-09-26-i pixel-art lock írja felül. |
 | 2026-09-26 | **Full-game visual production = cinematic pixel art 2.5D** | LOCKED | A teljes játék high-detail cinematic pixel-art / 2.5D narrative adventure formában készül. Az A Space for the Unbound részletgazdag pixel-art prezentációja inspiráció, nem másolandó stílus. A korábbi 3D render production target SUPERSEDED; a 3D layout/blocking referencia marad. Primary target: `TSUKIMORI_PIXEL_ART_VISUAL_TARGET_V1.png`. Részletes spec: `docs/PIXEL_ART_PRODUCTION_DIRECTION.md`. |
+| 2026-09-26 | **Hybrid pixel dialogue presentation** | LOCKED | Exploration közben world sprite; fontos párbeszédnél nagy, részletes pixel-art portré/félalak jelenik meg, miközben a jelenet és a kis sprite-ok dimmelve megmaradnak. Rövid ambient dialógus portré nélkül is mehet; kiemelt jelenet külön pixel-CG-re válthat. Primary reference: `TSUKIMORI_PIXEL_DIALOGUE_UI_V1.png`. |
 | 2026-09-24 | **Beauty target: Akira esti megérkezése Miyako házához** | LOCKED | A fő vizuális quality bar jelenet. |
 | 2026-09-24 | **Ren'Py = történeti forrás, nem automatikus pálya-/kamera-terv** | LOCKED | A jóváhagyott Godot világépítést csak valódi történeti ütközés és tulajdonosi döntés módosíthatja. |
 | 2026-09-24 | **Shion háza a patak falusi oldalán** | LOCKED | A jelenlegi Godot térkép része. |
@@ -74,7 +75,7 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 | 2026-09-24 | Miyako kontrollált, finom animációs nyelve | LOCKED | Idle/Walk első review; részletek: `docs/MIYAKO_PRODUCTION_SPEC.md`. |
 | 2026-09-24 | Közös ház hero location szerepe | APPROVED | Beauty pass és F5 review. |
 | 2026-09-24 | **2.5D cinematic narrative prototype** | SUPERSEDED BY PRODUCTION LOCK | A prototípus sikeres irányváltást alapozott meg; 2026-09-26-tól a teljes játék pixel-art 2.5D production iránya LOCKED. |
-| 2026-09-24 | **Tsukimori Dialogue UI v1 képi referencia** | APPROVED / VISUAL AUTHORITY | A jóváhagyott UI board használható a prototípus dialógus-prezentációjához; konkrét fájl az indexben. |
+| 2026-09-24 | **Tsukimori Dialogue UI v1 képi referencia** | LEGACY / SUPPORTING REFERENCE | A korábbi UI board funkcionális/kompozíciós referencia marad; a 2026-09-26-i pixel dialógus UI a production authority. |
 | 2026-09-24 | **Renka Character Design v1** | APPROVED REFERENCE | Jelenlegi képi irány megtartva; még nem production lock. |
 
 ---
