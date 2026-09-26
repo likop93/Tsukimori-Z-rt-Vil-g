@@ -129,6 +129,21 @@ Implementációs szabály:
 - első technikai canvas-teszt 640×360 → 1920×1080 3× integer upscale; ez working technical target, review alapján módosítható.
 
 
+### Dialógus UI / portré rendszer — LOCKED
+
+Primary képi referencia:
+- `ui/TSUKIMORI_PIXEL_DIALOGUE_UI_V1.png`
+
+Implementáció:
+- rövid exploration/ambient dialógusnál a world sprite maradhat portré nélkül;
+- fontos párbeszédnél nagy pixel-art portré/félalak jelenjen meg;
+- a world scene maradjon látható és finoman dimmelődjön, ne váltson külön üres VN-háttérre;
+- a portré a beszélő oldalához igazítható;
+- a world sprite-ok maradjanak a scene-ben;
+- expression/state rendszer támogasson több portréváltozatot;
+- nagy route beat / climactic scene külön pixel-CG-t használhat;
+- a portré nem redesign: kövesse a LOCKED character reference-et.
+
 ### Első playable pixel-art háttérkészlet — APPROVED
 
 A Work az első bejárható slice-hoz a következő négy Library hátteret használja alapként:
