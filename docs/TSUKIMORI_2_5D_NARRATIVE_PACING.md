@@ -2,7 +2,8 @@
 
 **Dátum:** 2026-09-25  
 **Státusz:** APPROVED WORKING STRUCTURE  
-**Kapcsolódó authority:** `docs/TSUKIMORI_2_5D_STORY_REWORK.md`
+**Kapcsolódó authority:** `docs/TSUKIMORI_2_5D_STORY_REWORK.md`  
+**Első village flow:** `docs/FIRST_VILLAGE_10_15_MIN_FLOW.md`
 
 ## 0. Cél
 
