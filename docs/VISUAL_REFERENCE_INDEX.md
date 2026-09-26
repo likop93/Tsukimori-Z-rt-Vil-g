@@ -110,6 +110,7 @@ Elsődleges képi referencia:
 | `visual_target/AKIRA_MIYAKO_BEAUTY_TARGET_STORYBOARD.png` | **APPROVED STAGING REFERENCE** | first encounter shot language és ritmus | `d63b9351dd39cc5985ceed8e153359e7c7e93cf032125a14d8137094a8ca0c45` |
 | `visual_target/TSUKIMORI_2_5D_VISUAL_TARGET_V1.png` | **APPROVED VISUAL TARGET — PROTOTYPE** | az Until Then által inspirált, de saját Tsukimori 2D/2.5D cinematic narrative adventure irány első hivatalos képi célreferenciája | `fcab458a7ba4280d47f3b48ffc5086d2aa1c8475b3293a953a7cefdec9310243` |
 | `visual_target/TSUKIMORI_PIXEL_ART_VISUAL_TARGET_V1.png` | **LOCKED PRIMARY PRODUCTION VISUAL TARGET** | high-detail cinematic pixel-art / 2.5D végleges játékmegjelenés; karakter-környezet egység, pixel density, fény, UI/CG irány | `59470ab2bd3db4d9d584fbba7d3d846a3234d04eb8e854e056ce2049567d70a2` |
+| `visual_target/OPENING_SEQUENCE_STORYBOARD_V1.png` | **LOCKED OPENING STAGING REFERENCE** | pre-control nyitány vizuális ritmusa: eső/busz → Tsukimori első látványa → falu figyel → kapu → control handoff → Village Street | `fc7fa5d7a380ba372e3f72e95e4227765a594782c89f67ceceef5e073ef6cd4b` |
 
 ### 2.5D / pixel-art státusz
 
