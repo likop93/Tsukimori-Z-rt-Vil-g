@@ -1,0 +1,58 @@
+[
+  {
+    "file": "AKIRA_FINAL_CHARACTER_DESIGN_V1.png",
+    "sha256": "20b842f6fd63816361b6f747ebb4cc232f5801ff1e70a97e16e27ec912661acd",
+    "bytes": 2346046,
+    "origin": "Tsukimori_Visual_References_FULL_2026-09-27.zip",
+    "status": "user-provided approved reference; not FINAL runtime art"
+  },
+  {
+    "file": "INN_COURTESAN_NPC_PACK_V1.png",
+    "sha256": "1158f13f4bdeb5d81f00680026174b64e52a5916d68201b65eacb26a9ea63c9a",
+    "bytes": 2696795,
+    "origin": "Tsukimori_Visual_References_FULL_2026-09-27.zip",
+    "status": "user-provided approved reference; not FINAL runtime art"
+  },
+  {
+    "file": "OPENING_SEQUENCE_STORYBOARD_V1.png",
+    "sha256": "fc7fa5d7a380ba372e3f72e95e4227765a594782c89f67ceceef5e073ef6cd4b",
+    "bytes": 2826142,
+    "origin": "Tsukimori_Visual_References_FULL_2026-09-27.zip",
+    "status": "user-provided approved reference; not FINAL runtime art"
+  },
+  {
+    "file": "TSUKIMORI_PIXEL_ART_VISUAL_TARGET_V1.png",
+    "sha256": "59470ab2bd3db4d9d584fbba7d3d846a3234d04eb8e854e056ce2049567d70a2",
+    "bytes": 2372399,
+    "origin": "Tsukimori_Visual_References_FULL_2026-09-27.zip",
+    "status": "user-provided approved reference; not FINAL runtime art"
+  },
+  {
+    "file": "TSUKIMORI_PIXEL_DIALOGUE_UI_V1.png",
+    "sha256": "525387edbc8b7010a2eaf967d8335a7bf64316531d5af67ec4dba927922aed4a",
+    "bytes": 2140855,
+    "origin": "Tsukimori_Visual_References_FULL_2026-09-27.zip",
+    "status": "user-provided approved reference; not FINAL runtime art"
+  },
+  {
+    "file": "VILLAGE_NPC_ATTRACTIVE_VARIANTS_V2.png",
+    "sha256": "6232a637c11f853d1e6b1ac860e73ebb059cae02317151add6d71e0f4f547e91",
+    "bytes": 2710244,
+    "origin": "Tsukimori_Visual_References_FULL_2026-09-27.zip",
+    "status": "user-provided approved reference; not FINAL runtime art"
+  },
+  {
+    "file": "VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png",
+    "sha256": "f4b3404ee19cb536af9b58e933db85b32e581aad192e6e27bd959be194aab116",
+    "bytes": 3508866,
+    "origin": "Tsukimori_Visual_References_FULL_2026-09-27.zip",
+    "status": "user-provided approved reference; not FINAL runtime art"
+  },
+  {
+    "file": "VILLAGE_STREET_PIXEL_V1.png",
+    "sha256": "2185c7e7d8b0dbe99411b1453d276b41a50750c09ef923109819dce7ceecd38d",
+    "bytes": 2664151,
+    "origin": "Tsukimori_Visual_References_FULL_2026-09-27.zip",
+    "status": "user-provided approved reference; not FINAL runtime art"
+  }
+]

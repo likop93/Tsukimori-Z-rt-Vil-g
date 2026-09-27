@@ -1,0 +1,103 @@
+{
+  "frames": [
+    {
+      "foot_y": 94,
+      "height": 71,
+      "index": 0,
+      "width": 26
+    },
+    {
+      "foot_y": 94,
+      "height": 72,
+      "index": 1,
+      "width": 19
+    },
+    {
+      "foot_y": 94,
+      "height": 71,
+      "index": 2,
+      "width": 25
+    },
+    {
+      "foot_y": 94,
+      "height": 72,
+      "index": 3,
+      "width": 18
+    },
+    {
+      "foot_y": 94,
+      "height": 68,
+      "index": 4,
+      "width": 35
+    },
+    {
+      "foot_y": 94,
+      "height": 67,
+      "index": 5,
+      "width": 37
+    },
+    {
+      "foot_y": 94,
+      "height": 68,
+      "index": 6,
+      "width": 42
+    },
+    {
+      "foot_y": 94,
+      "height": 67,
+      "index": 7,
+      "width": 21
+    },
+    {
+      "foot_y": 94,
+      "height": 69,
+      "index": 8,
+      "width": 27
+    },
+    {
+      "foot_y": 94,
+      "height": 69,
+      "index": 9,
+      "width": 26
+    },
+    {
+      "foot_y": 94,
+      "height": 69,
+      "index": 10,
+      "width": 26
+    },
+    {
+      "foot_y": 94,
+      "height": 69,
+      "index": 11,
+      "width": 26
+    },
+    {
+      "foot_y": 94,
+      "height": 71,
+      "index": 12,
+      "width": 27
+    },
+    {
+      "foot_y": 94,
+      "height": 71,
+      "index": 13,
+      "width": 26
+    },
+    {
+      "foot_y": 94,
+      "height": 71,
+      "index": 14,
+      "width": 27
+    },
+    {
+      "foot_y": 94,
+      "height": 71,
+      "index": 15,
+      "width": 27
+    }
+  ],
+  "normalization": "alpha threshold 0.5, shared 0.19 scale, nearest, registered feet; no body stretching",
+  "source_sha256": "7663fe5bf6eba556af6eaa9001a1be8398b37b1a54f5d93cfcabd456130e1d58",
+  "status": "REVIEW"
+}

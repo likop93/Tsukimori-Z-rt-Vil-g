@@ -9,3 +9,5 @@ Thumbs.db
 __pycache__/
 *.pyc
 *.blend1
+review/runtime-profile/
+review/*.log

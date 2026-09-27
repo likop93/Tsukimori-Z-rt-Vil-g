@@ -1,0 +1,81 @@
+{
+  "spawn": [
+    180,
+    344
+  ],
+  "npc": [
+    {
+      "id": "resident_01",
+      "row": 1,
+      "position": [
+        275,
+        330
+      ],
+      "mode": "slow_walk",
+      "range": 32,
+      "speed": 8,
+      "phrase": "Ő az új doktor?",
+      "atlas": "res://assets/opening/generated/npc_v2/resident_01_atlas.png",
+      "look_left_frame": 3,
+      "look_right_frame": 3,
+      "mirror_left_look": true
+    },
+    {
+      "id": "resident_02",
+      "row": 2,
+      "position": [
+        385,
+        329
+      ],
+      "mode": "idle",
+      "range": 0,
+      "speed": 0,
+      "phrase": "Katsuro úr miatt jött?",
+      "atlas": "res://assets/opening/generated/npc_v2/resident_02_atlas.png",
+      "look_left_frame": 2,
+      "look_right_frame": 3,
+      "mirror_left_look": false
+    },
+    {
+      "id": "resident_03",
+      "row": 3,
+      "position": [
+        505,
+        347
+      ],
+      "mode": "look",
+      "range": 0,
+      "speed": 0,
+      "phrase": "Rég láttam idegent erre.",
+      "atlas": "res://assets/opening/generated/npc_v2/resident_03_atlas.png",
+      "look_left_frame": 3,
+      "look_right_frame": 3,
+      "mirror_left_look": true
+    },
+    {
+      "id": "resident_04",
+      "row": 4,
+      "position": [
+        615,
+        335
+      ],
+      "mode": "slow_walk",
+      "range": 20,
+      "speed": 6,
+      "phrase": "",
+      "atlas": "res://assets/opening/generated/npc_v2/resident_04_atlas.png",
+      "look_left_frame": 3,
+      "look_right_frame": 2,
+      "mirror_left_look": false
+    }
+  ],
+  "ui": {
+    "controls": "WASD / nyilak · séta    E · figyelés    F1 · segítség",
+    "end": "A híd felé vezető szakasz a következő mérföldkő.",
+    "review": "Opening + Village Street · REVIEW / PLACEHOLDER",
+    "intro": "Enter / Szóköz · következő sor    Esc · intro kihagyása",
+    "skip": "Kihagyod a nyitást?",
+    "yes": "Igen, belépek a faluba",
+    "no": "Folytatom a nyitást"
+  }
+}

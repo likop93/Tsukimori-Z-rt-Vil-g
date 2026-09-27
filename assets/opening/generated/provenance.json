@@ -1,0 +1,108 @@
+[
+  {
+    "asset": "actors_REVIEW.png",
+    "frame": [
+      48,
+      80
+    ],
+    "limitations": "Akira: source silhouette extraction, no production walk cycle. Other residents: held poses except row 1 example walk. No redesign, no FINAL claim.",
+    "npc_crop_rects": [
+      [
+        1244,
+        132,
+        34,
+        66
+      ],
+      [
+        991,
+        266,
+        37,
+        67
+      ],
+      [
+        1290,
+        266,
+        36,
+        67
+      ],
+      [
+        275,
+        566,
+        36,
+        64
+      ]
+    ],
+    "pivot": [
+      24,
+      80
+    ],
+    "rows": [
+      "Akira primary",
+      "anonymous adult animation example",
+      "middle-aged resident",
+      "elderly resident",
+      "shop worker"
+    ],
+    "sources": [
+      "AKIRA_FINAL_CHARACTER_DESIGN_V1.png",
+      "VILLAGE_NPC_ATTRACTIVE_VARIANTS_V2.png",
+      "VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png"
+    ],
+    "status": "PLACEHOLDER / REVIEW"
+  },
+  {
+    "asset": "street_REVIEW.png / foreground_REVIEW.png",
+    "limitations": "Missing clean painted depth layers and hidden surface reconstruction. Flattened source remains under cutout.",
+    "operation": "nearest 800x450 and source-only polygon foreground extraction",
+    "source": "VILLAGE_STREET_PIXEL_V1.png",
+    "status": "APPROVED PLAYABLE BASE / REVIEW technical layers"
+  },
+  {
+    "asset": "bus_REVIEW.png",
+    "limitations": "Storyboard panel, original staging retained; dedicated production CG missing.",
+    "rect": [
+      280,
+      46,
+      402,
+      230
+    ],
+    "source": "OPENING_SEQUENCE_STORYBOARD_V1.png",
+    "status": "PLACEHOLDER"
+  },
+  {
+    "asset": "arrival_REVIEW.png",
+    "limitations": "Storyboard panel, original staging retained; dedicated production CG missing.",
+    "rect": [
+      704,
+      37,
+      526,
+      270
+    ],
+    "source": "OPENING_SEQUENCE_STORYBOARD_V1.png",
+    "status": "PLACEHOLDER"
+  },
+  {
+    "asset": "watch_REVIEW.png",
+    "limitations": "Storyboard panel, original staging retained; dedicated production CG missing.",
+    "rect": [
+      13,
+      431,
+      491,
+      166
+    ],
+    "source": "OPENING_SEQUENCE_STORYBOARD_V1.png",
+    "status": "PLACEHOLDER"
+  },
+  {
+    "asset": "gate_REVIEW.png",
+    "limitations": "Storyboard panel, original staging retained; dedicated production CG missing.",
+    "rect": [
+      960,
+      412,
+      330,
+      168
+    ],
+    "source": "OPENING_SEQUENCE_STORYBOARD_V1.png",
+    "status": "PLACEHOLDER"
+  }
+]

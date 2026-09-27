@@ -1,0 +1,44 @@
+{
+  "status": "APPROVED VISUAL SOURCE / ENGINE REVIEW",
+  "generator": "built-in image_gen",
+  "date": "2026-09-27",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "layout": "4 columns x 2 rows; intended 384x512 cells; final registration not validated",
+  "validation": {
+    "rgba": true,
+    "corner_alpha": 0,
+    "intercell_sample_alpha": 0,
+    "visual_review": "Four distinct reference-based women, complete bodies and garments. Not engine-normalized. Some look directions duplicate; cycle timing/foot contacts and adult proportions need review, especially elderly sprite. No FINAL promotion."
+  },
+  "jobs": [
+    {
+      "id": "resident_01",
+      "ref": "VILLAGE_NPC_ATTRACTIVE_VARIANTS_V2.png",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual Tsukimori NPC game sprite sheet, REVIEW candidate. Reference image is approved design authority, not an output board to reproduce. Regenerate only the specified anonymous adult woman. Preserve hairstyle, face, garment construction and palette. High-detail cinematic pixel art, clean controlled pixel clusters, normal mature adult anatomy about 7 heads tall, NOT chibi. No redesign. Transparent alpha background, no floor or shadow, no text, labels, frames, decorations, scenery or additional characters. Output a uniform 4 columns x 2 rows sprite sheet, eight complete full-body poses of the SAME woman, consistent proportions, identical scale, ample transparent margin around each, feet on identical baseline in each row. Row 1: front three-quarter idle; same idle gentle breath; looking left; looking right. Row 2: four consecutive slow walking cycle poses facing right, contact/passing/opposite contact/passing. Keep hair/outfit identical in every cell. Orthographic game camera, restrained cool ambient and soft warm edge light. Hands and both feet intact, all pixels including darkest cloth opaque; only exterior genuinely transparent. These are game animation assets, not portraits or promotional boards.\nSubject selection: Use the woman in the top-right ANIMATION SET (EXAMPLE): short dark-brown/black bob with side fringe, warm light skin, muted terracotta/rust kimono with pale cream neckline, dark brown obi, ankle-length skirt and simple sandals. Adult everyday village resident. Match that example's identity; use its poses as motion reference, but follow normal adult proportions required by the production spec.",
+      "file": "resident_01_REVIEW.png"
+    },
+    {
+      "id": "resident_02",
+      "ref": "VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual Tsukimori NPC game sprite sheet, REVIEW candidate. Reference image is approved design authority, not an output board to reproduce. Regenerate only the specified anonymous adult woman. Preserve hairstyle, face, garment construction and palette. High-detail cinematic pixel art, clean controlled pixel clusters, normal mature adult anatomy about 7 heads tall, NOT chibi. No redesign. Transparent alpha background, no floor or shadow, no text, labels, frames, decorations, scenery or additional characters. Output a uniform 4 columns x 2 rows sprite sheet, eight complete full-body poses of the SAME woman, consistent proportions, identical scale, ample transparent margin around each, feet on identical baseline in each row. Row 1: front three-quarter idle; same idle gentle breath; looking left; looking right. Row 2: four consecutive slow walking cycle poses facing right, contact/passing/opposite contact/passing. Keep hair/outfit identical in every cell. Orthographic game camera, restrained cool ambient and soft warm edge light. Hands and both feet intact, all pixels including darkest cloth opaque; only exterior genuinely transparent. These are game animation assets, not portraits or promotional boards.\nSubject selection: Use category 4 VILLAGE WOMEN (ADULT), FIRST woman from left: dark brown wavy pinned-up hair, warm light skin, feminine mature adult face and curvy adult figure, cream/taupe floral kimono with low folded neckline as in the reference, deep brown obi and long muted rose/taupe skirt. Preserve her reference outfit and silhouette; not any named character and not an inn courtesan.",
+      "file": "resident_02_REVIEW.png"
+    },
+    {
+      "id": "resident_03",
+      "ref": "VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual Tsukimori NPC game sprite sheet, REVIEW candidate. Reference image is approved design authority, not an output board to reproduce. Regenerate only the specified anonymous adult woman. Preserve hairstyle, face, garment construction and palette. High-detail cinematic pixel art, clean controlled pixel clusters, normal mature adult anatomy about 7 heads tall, NOT chibi. No redesign. Transparent alpha background, no floor or shadow, no text, labels, frames, decorations, scenery or additional characters. Output a uniform 4 columns x 2 rows sprite sheet, eight complete full-body poses of the SAME woman, consistent proportions, identical scale, ample transparent margin around each, feet on identical baseline in each row. Row 1: front three-quarter idle; same idle gentle breath; looking left; looking right. Row 2: four consecutive slow walking cycle poses facing right, contact/passing/opposite contact/passing. Keep hair/outfit identical in every cell. Orthographic game camera, restrained cool ambient and soft warm edge light. Hands and both feet intact, all pixels including darkest cloth opaque; only exterior genuinely transparent. These are game animation assets, not portraits or promotional boards.\nSubject selection: Use category 5 ELDERLY WOMEN, FIRST small idle sprite from left (center approximately x1306,y299 in 1536x1024 reference). Older woman with swept grey hair in a small bun, lined gentle face, dark plum/charcoal wrap kimono, muted obi, long skirt, modest practical shoes. Preserve her aged identity and modest dark palette, naturally slightly stooped posture. Do not rejuvenate her or change into a glamorous young woman.",
+      "file": "resident_03_REVIEW.png"
+    },
+    {
+      "id": "resident_04",
+      "ref": "VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png",
+      "prompt": "Use case: identity-preserve. Asset type: ONE individual Tsukimori NPC game sprite sheet, REVIEW candidate. Reference image is approved design authority, not an output board to reproduce. Regenerate only the specified anonymous adult woman. Preserve hairstyle, face, garment construction and palette. High-detail cinematic pixel art, clean controlled pixel clusters, normal mature adult anatomy about 7 heads tall, NOT chibi. No redesign. Transparent alpha background, no floor or shadow, no text, labels, frames, decorations, scenery or additional characters. Output a uniform 4 columns x 2 rows sprite sheet, eight complete full-body poses of the SAME woman, consistent proportions, identical scale, ample transparent margin around each, feet on identical baseline in each row. Row 1: front three-quarter idle; same idle gentle breath; looking left; looking right. Row 2: four consecutive slow walking cycle poses facing right, contact/passing/opposite contact/passing. Keep hair/outfit identical in every cell. Orthographic game camera, restrained cool ambient and soft warm edge light. Hands and both feet intact, all pixels including darkest cloth opaque; only exterior genuinely transparent. These are game animation assets, not portraits or promotional boards.\nSubject selection: Use category 7 SHOPKEEPERS / WORKERS, FIRST small idle sprite from left (center approximately x293,y600 in 1536x1024 reference), with the left portrait above as face reference. Adult female shop worker with tied dark-brown hair and side bangs, warm light skin, simple light cream blouse/kimono sleeves, tan/brown work apron and brown long skirt, practical shoes. Preserve the apron/outfit and grounded friendly adult face. Empty hands for locomotion, no props, no maid redesign.",
+      "file": "resident_04_REVIEW.png"
+    }
+  ],
+  "user_approval": "2026-09-27: tökéletes, folytassuk",
+  "integration_manifest": "../generated/npc_v2/atlas_manifest.json"
+}

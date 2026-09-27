@@ -1,0 +1,22 @@
+{
+  "status": "REVIEW / NOT LOCKED",
+  "tool": "built-in image_gen",
+  "background_prompt": "Create a production REVIEW pixel-art playable background based on image1 approved Tsukimori street; image2 is only pixel rendering style reference, NO people in background. Preserve rainy blue-grey Japanese wooden village, warm paper windows, damp stone, quiet threatening atmosphere and architectural design language. Correct stage perspective for a lateral 2.5D walking game: wide 16:9 landscape, restrained shallow perspective, continuous unobstructed horizontal cobblestone walking strip at 70%-86% image height across full width. House thresholds align just above strip around 68%, door heights around 24% canvas height (adult sprites will be 17% canvas height). Midground houses behind lane, distant misty roof silhouettes higher up. No central road vanishing into depth, no massive close buildings dwarfing actors. Hand-placed readable pixel clusters, limited palette, crisp edges, moderate detail matching sprite reference, not painterly high resolution noise. No text, characters, UI, rain streaks or foreground occluding objects baked in. This refines approved environment for gameplay, not a new location. Render entire finished seamless composition, not a board.",
+  "akira_prompt": "Production REVIEW animation sprite sheet of Dr Akira from image1 identity reference; image2 approved resident sheet is rendering-style reference only. Exactly ONE same adult man repeated in exactly FOUR columns and FOUR rows evenly spaced on TRANSPARENT background, all full body, consistent size and grounded foot line within each cell, no labels, no shadows, no props. Mature normal anatomy, 7.5 heads tall, slim athletic adult early30s, black tousled hair, charcoal SHORT layered jacket with hoodie, pale grey shirt, dark fitted trousers, dark sneakers exactly matching image1. Do NOT redesign, no long coat, no chibi, no oversized head. Crisp readable detailed pixel art matching image2, limited color clusters, not smooth painting. Row1: four standing idle directions FRONT, RIGHT profile, BACK, LEFT profile. Row2: four distinct consecutive walking RIGHT profile poses contact left foot forward, passing, opposite contact right foot forward, opposite passing. Row3: four consecutive walking towards viewer poses with alternating legs and restrained opposite arm swing. Row4: four walking AWAY from viewer poses alternating legs. Controlled relaxed natural gait, weight transfer, bent knees in passing phase, modest stride, hands visible moving slightly, NOT running. All 16 figures same person, same outfit and scale; four rows four columns only; generous transparent gutters. This must serve actual frame animation, distinct feet positions essential.",
+  "akira_correction_prompt": "Edit supplied Akira sprite sheet, preserve exact identity clothing pixel style proportions and transparent background. Output exactly 4 columns x4 rows same layout. CRITICAL fix row TWO: all four walking right, but cell1 wide contact stride LEFT leg forward right leg back; cell2 PASSING pose legs close together under pelvis one bent knee with rear foot lifted, arms near torso; cell3 opposite contact RIGHT leg forward LEFT leg back, opposite arm swing; cell4 opposite PASSING pose knees together one bent lifted foot, arms near torso. Current row2 all four legs wide spread is wrong and unusable animation. Two contact poses and TWO NARROW passing poses required. Keep rows1,3,4 essentially same: row1 idle front,left,back,right, row3 front walk,row4 back walk. Align each row figures feet slightly ABOVE each cell boundary with visible transparent gutter top and bottom. No body clipping at row boundaries. True transparent RGBA no ground/shadows no labels.",
+  "sources": [
+    "assets/opening/reference/VILLAGE_STREET_PIXEL_V1.png",
+    "assets/opening/reference/AKIRA_FINAL_CHARACTER_DESIGN_V1.png",
+    "assets/opening/npc_review_v2/resident_01_REVIEW.png"
+  ],
+  "outputs": [
+    "street_REVIEW.png",
+    "akira_REVIEW.png",
+    "akira_walk_REVIEW.png"
+  ],
+  "limitations": [
+    "Generated walk poses still need animator cleanup; left walk mirrors right",
+    "Background is proposed gameplay staging derived from approved reference, not approved new canon",
+    "Foreground is registered lower ground strip; independent architecture depth layers remain production work"
+  ]
+}

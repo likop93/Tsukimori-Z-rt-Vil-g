@@ -1,0 +1,56 @@
+{
+  "scene_id": "opening_pre_control_v1",
+  "beats": [
+    {
+      "id": "open_00",
+      "image": "",
+      "duration": 6,
+      "lines": []
+    },
+    {
+      "id": "open_01",
+      "image": "bus",
+      "duration": 32,
+      "lines": [
+        "Az eső már órák óta verte az ablakot.",
+        "A sofőr egyszer sem kérdezte meg, biztosan itt akarok-e leszállni.",
+        "Talán ő is tudta, hogy ezt a döntést már jóval az indulás előtt elrontottam.",
+        "Katsuro hívott vissza.",
+        "Túl sok év után. Túl kevés magyarázattal.",
+        "És én mégis eljöttem."
+      ]
+    },
+    {
+      "id": "open_02",
+      "image": "arrival",
+      "duration": 24,
+      "lines": [
+        "Tsukimori ugyanolyan csendesnek tűnt, mint régen.",
+        "Csak a csendje lett nehezebb."
+      ]
+    },
+    {
+      "id": "open_03",
+      "image": "watch",
+      "duration": 18,
+      "lines": [
+        "Mintha a falu már tudná, hogy megérkeztem."
+      ]
+    },
+    {
+      "id": "open_04",
+      "image": "gate",
+      "duration": 14,
+      "lines": [
+        "Most már mindegy.",
+        "Innen már végig kell mennem rajta."
+      ]
+    },
+    {
+      "id": "open_05",
+      "image": "",
+      "duration": 2.5,
+      "lines": []
+    }
+  ]
+}

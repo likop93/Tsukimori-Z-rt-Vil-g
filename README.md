@@ -1,5 +1,32 @@
 # Tsukimori — Zárt Világ
 
+## Opening + Village Street — 2026-09-27
+
+F5 now starts the 96.5-second pixel opening and first playable street.
+WASD/arrows: move. Enter/Space: advance narration. Esc: confirm intro skip.
+E: observe a nearby resident. F1: show/hide controls.
+
+**TECHNICAL REVIEW / PLACEHOLDER ART.** Four ambient women, camera, lane boundaries,
+rain, parallax, foreground occlusion and state-safe handoff are implemented.
+The four approved individual NPC sheets now play idle/look/walk poses.
+Akira now uses a 16-frame REVIEW atlas with directional walking and distance-based gait.
+The street background and walkable lane share revised staging and scale.
+Latest visual review: [Staging v3](docs/STAGING_V3_REVIEW.md).
+NPC integration: [NPC v2 review](docs/NPC_V2_INTEGRATION.md).
+Prior conversation decisions: [continuity notes](docs/CONTINUITY_NOTES.md).
+Asset gaps, governance mapping and validation: [Opening milestone review](docs/OPENING_MILESTONE_REVIEW.md).
+The older 3D milestone below is retained as historical/spatial reference.
+
+### Megnyitás a letöltött ZIP-ből
+
+1. Csomagold ki a ZIP-et egy saját mappába; ne a ZIP-en belül indítsd.
+2. Godot 4.7.2-ben válaszd az **Import** lehetőséget és a kicsomagolt `project.godot` fájlt.
+3. Várd meg az első automatikus asset-importot, majd **F5**: teljes nyitás és játszható utca.
+4. Közvetlen utcai próba: nyisd meg a `scenes/dev/npc_animation_review.tscn` jelenetet, majd **F6**.
+
+A csomag tartalmazza a képeket és forrásokat; külön bővítmény vagy letöltés nem szükséges.
+A `.godot` gyorsítótárat az editor helyben hozza létre. Az új grafika REVIEW állapotú.
+
 Godot 4.x alapú 2.5D narratív RPG vertical slice.
 
 ## Aktuális állapot — 2026-09-24

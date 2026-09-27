@@ -1,0 +1,795 @@
+{
+  "date": "2026-09-27",
+  "limitations": [
+    "Left walk uses mirrored right frames",
+    "Some source walk phases are similar; production foot-lock review remains",
+    "No new character proportions authored"
+  ],
+  "records": [
+    {
+      "feet_pivot": [
+        32,
+        94
+      ],
+      "frame_size": [
+        64,
+        96
+      ],
+      "frames": [
+        {
+          "alpha_bounds": [
+            185,
+            19,
+            159,
+            488
+          ],
+          "destination_offset": [
+            21,
+            28
+          ],
+          "foot_y": 94,
+          "index": 0,
+          "size": [
+            22,
+            66
+          ],
+          "source_cell": [
+            0,
+            0
+          ]
+        },
+        {
+          "alpha_bounds": [
+            123,
+            19,
+            159,
+            488
+          ],
+          "destination_offset": [
+            21,
+            28
+          ],
+          "foot_y": 94,
+          "index": 1,
+          "size": [
+            22,
+            66
+          ],
+          "source_cell": [
+            1,
+            0
+          ]
+        },
+        {
+          "alpha_bounds": [
+            88,
+            19,
+            159,
+            488
+          ],
+          "destination_offset": [
+            21,
+            28
+          ],
+          "foot_y": 94,
+          "index": 2,
+          "size": [
+            22,
+            66
+          ],
+          "source_cell": [
+            2,
+            0
+          ]
+        },
+        {
+          "alpha_bounds": [
+            45,
+            19,
+            156,
+            488
+          ],
+          "destination_offset": [
+            21,
+            28
+          ],
+          "foot_y": 94,
+          "index": 3,
+          "size": [
+            21,
+            66
+          ],
+          "source_cell": [
+            3,
+            0
+          ]
+        },
+        {
+          "alpha_bounds": [
+            170,
+            10,
+            202,
+            468
+          ],
+          "destination_offset": [
+            18,
+            31
+          ],
+          "foot_y": 94,
+          "index": 4,
+          "size": [
+            27,
+            63
+          ],
+          "source_cell": [
+            0,
+            1
+          ]
+        },
+        {
+          "alpha_bounds": [
+            106,
+            13,
+            215,
+            465
+          ],
+          "destination_offset": [
+            17,
+            31
+          ],
+          "foot_y": 94,
+          "index": 5,
+          "size": [
+            29,
+            63
+          ],
+          "source_cell": [
+            1,
+            1
+          ]
+        },
+        {
+          "alpha_bounds": [
+            69,
+            16,
+            218,
+            462
+          ],
+          "destination_offset": [
+            17,
+            32
+          ],
+          "foot_y": 94,
+          "index": 6,
+          "size": [
+            29,
+            62
+          ],
+          "source_cell": [
+            2,
+            1
+          ]
+        },
+        {
+          "alpha_bounds": [
+            22,
+            16,
+            201,
+            462
+          ],
+          "destination_offset": [
+            18,
+            32
+          ],
+          "foot_y": 94,
+          "index": 7,
+          "size": [
+            27,
+            62
+          ],
+          "source_cell": [
+            3,
+            1
+          ]
+        }
+      ],
+      "id": "resident_01",
+      "normalization": "alpha threshold 0.5 to remove faint residue; alpha bounds, one shared scale per actor, nearest sampling, bottom alignment; no recolor, pose synthesis or redesign",
+      "output": "res://assets/opening/generated/npc_v2/resident_01_atlas.png",
+      "output_sha256": "258a86d3119025484cc0874b8b46fe1e99fc9e378121547ed851c3b9c1cbc0dd",
+      "scale_factor": 0.135245901639344,
+      "source": "res://assets/opening/npc_review_v2/resident_01_REVIEW.png",
+      "source_sha256": "f61ce3f9d7477d6dbbf695ce57315083fdc9e876583d5eeb44815e3fd9c8dd39",
+      "status": "APPROVED VISUAL SOURCE / ENGINE REVIEW"
+    },
+    {
+      "feet_pivot": [
+        32,
+        94
+      ],
+      "frame_size": [
+        64,
+        96
+      ],
+      "frames": [
+        {
+          "alpha_bounds": [
+            128,
+            15,
+            194,
+            495
+          ],
+          "destination_offset": [
+            18,
+            26
+          ],
+          "foot_y": 94,
+          "index": 0,
+          "size": [
+            27,
+            68
+          ],
+          "source_cell": [
+            0,
+            0
+          ]
+        },
+        {
+          "alpha_bounds": [
+            95,
+            15,
+            193,
+            495
+          ],
+          "destination_offset": [
+            18,
+            26
+          ],
+          "foot_y": 94,
+          "index": 1,
+          "size": [
+            27,
+            68
+          ],
+          "source_cell": [
+            1,
+            0
+          ]
+        },
+        {
+          "alpha_bounds": [
+            87,
+            16,
+            181,
+            495
+          ],
+          "destination_offset": [
+            19,
+            26
+          ],
+          "foot_y": 94,
+          "index": 2,
+          "size": [
+            25,
+            68
+          ],
+          "source_cell": [
+            2,
+            0
+          ]
+        },
+        {
+          "alpha_bounds": [
+            91,
+            16,
+            168,
+            494
+          ],
+          "destination_offset": [
+            20,
+            26
+          ],
+          "foot_y": 94,
+          "index": 3,
+          "size": [
+            23,
+            68
+          ],
+          "source_cell": [
+            3,
+            0
+          ]
+        },
+        {
+          "alpha_bounds": [
+            100,
+            12,
+            208,
+            466
+          ],
+          "destination_offset": [
+            17,
+            30
+          ],
+          "foot_y": 94,
+          "index": 4,
+          "size": [
+            29,
+            64
+          ],
+          "source_cell": [
+            0,
+            1
+          ]
+        },
+        {
+          "alpha_bounds": [
+            88,
+            14,
+            232,
+            461
+          ],
+          "destination_offset": [
+            16,
+            31
+          ],
+          "foot_y": 94,
+          "index": 5,
+          "size": [
+            32,
+            63
+          ],
+          "source_cell": [
+            1,
+            1
+          ]
+        },
+        {
+          "alpha_bounds": [
+            76,
+            14,
+            228,
+            463
+          ],
+          "destination_offset": [
+            16,
+            30
+          ],
+          "foot_y": 94,
+          "index": 6,
+          "size": [
+            31,
+            64
+          ],
+          "source_cell": [
+            2,
+            1
+          ]
+        },
+        {
+          "alpha_bounds": [
+            66,
+            14,
+            209,
+            463
+          ],
+          "destination_offset": [
+            17,
+            30
+          ],
+          "foot_y": 94,
+          "index": 7,
+          "size": [
+            29,
+            64
+          ],
+          "source_cell": [
+            3,
+            1
+          ]
+        }
+      ],
+      "id": "resident_02",
+      "normalization": "alpha threshold 0.5 to remove faint residue; alpha bounds, one shared scale per actor, nearest sampling, bottom alignment; no recolor, pose synthesis or redesign",
+      "output": "res://assets/opening/generated/npc_v2/resident_02_atlas.png",
+      "output_sha256": "3b5a683cc42919172fcc4568832822378d5a94a8dd92fe1dbf607e73c0f547e1",
+      "scale_factor": 0.137373737373737,
+      "source": "res://assets/opening/npc_review_v2/resident_02_REVIEW.png",
+      "source_sha256": "34f4f153c88497bdf3fa4838055abf6cb8f124dc7eb5e52faf1da21f56669b35",
+      "status": "APPROVED VISUAL SOURCE / ENGINE REVIEW"
+    },
+    {
+      "feet_pivot": [
+        32,
+        94
+      ],
+      "frame_size": [
+        64,
+        96
+      ],
+      "frames": [
+        {
+          "alpha_bounds": [
+            106,
+            23,
+            177,
+            482
+          ],
+          "destination_offset": [
+            21,
+            33
+          ],
+          "foot_y": 94,
+          "index": 0,
+          "size": [
+            22,
+            61
+          ],
+          "source_cell": [
+            0,
+            0
+          ]
+        },
+        {
+          "alpha_bounds": [
+            96,
+            25,
+            178,
+            480
+          ],
+          "destination_offset": [
+            20,
+            33
+          ],
+          "foot_y": 94,
+          "index": 1,
+          "size": [
+            23,
+            61
+          ],
+          "source_cell": [
+            1,
+            0
+          ]
+        },
+        {
+          "alpha_bounds": [
+            95,
+            25,
+            185,
+            480
+          ],
+          "destination_offset": [
+            20,
+            33
+          ],
+          "foot_y": 94,
+          "index": 2,
+          "size": [
+            23,
+            61
+          ],
+          "source_cell": [
+            2,
+            0
+          ]
+        },
+        {
+          "alpha_bounds": [
+            86,
+            23,
+            190,
+            482
+          ],
+          "destination_offset": [
+            20,
+            33
+          ],
+          "foot_y": 94,
+          "index": 3,
+          "size": [
+            24,
+            61
+          ],
+          "source_cell": [
+            3,
+            0
+          ]
+        },
+        {
+          "alpha_bounds": [
+            111,
+            20,
+            196,
+            449
+          ],
+          "destination_offset": [
+            19,
+            37
+          ],
+          "foot_y": 94,
+          "index": 4,
+          "size": [
+            25,
+            57
+          ],
+          "source_cell": [
+            0,
+            1
+          ]
+        },
+        {
+          "alpha_bounds": [
+            87,
+            19,
+            204,
+            449
+          ],
+          "destination_offset": [
+            19,
+            37
+          ],
+          "foot_y": 94,
+          "index": 5,
+          "size": [
+            26,
+            57
+          ],
+          "source_cell": [
+            1,
+            1
+          ]
+        },
+        {
+          "alpha_bounds": [
+            86,
+            20,
+            207,
+            448
+          ],
+          "destination_offset": [
+            19,
+            37
+          ],
+          "foot_y": 94,
+          "index": 6,
+          "size": [
+            26,
+            57
+          ],
+          "source_cell": [
+            2,
+            1
+          ]
+        },
+        {
+          "alpha_bounds": [
+            82,
+            19,
+            195,
+            449
+          ],
+          "destination_offset": [
+            19,
+            37
+          ],
+          "foot_y": 94,
+          "index": 7,
+          "size": [
+            25,
+            57
+          ],
+          "source_cell": [
+            3,
+            1
+          ]
+        }
+      ],
+      "id": "resident_03",
+      "normalization": "alpha threshold 0.5 to remove faint residue; alpha bounds, one shared scale per actor, nearest sampling, bottom alignment; no recolor, pose synthesis or redesign",
+      "output": "res://assets/opening/generated/npc_v2/resident_03_atlas.png",
+      "output_sha256": "63e8185d34fc3363949d3c24b3ff16adc1adeb7a0395aef2d8b4aad52696af90",
+      "scale_factor": 0.12655601659751,
+      "source": "res://assets/opening/npc_review_v2/resident_03_REVIEW.png",
+      "source_sha256": "3551811acd797ae9f856460ce0bc79c3fb0462b512cf5f79aff406261a0d9775",
+      "status": "APPROVED VISUAL SOURCE / ENGINE REVIEW"
+    },
+    {
+      "feet_pivot": [
+        32,
+        94
+      ],
+      "frame_size": [
+        64,
+        96
+      ],
+      "frames": [
+        {
+          "alpha_bounds": [
+            145,
+            15,
+            178,
+            490
+          ],
+          "destination_offset": [
+            20,
+            29
+          ],
+          "foot_y": 94,
+          "index": 0,
+          "size": [
+            24,
+            65
+          ],
+          "source_cell": [
+            0,
+            0
+          ]
+        },
+        {
+          "alpha_bounds": [
+            113,
+            15,
+            178,
+            491
+          ],
+          "destination_offset": [
+            20,
+            29
+          ],
+          "foot_y": 94,
+          "index": 1,
+          "size": [
+            24,
+            65
+          ],
+          "source_cell": [
+            1,
+            0
+          ]
+        },
+        {
+          "alpha_bounds": [
+            100,
+            15,
+            180,
+            491
+          ],
+          "destination_offset": [
+            20,
+            29
+          ],
+          "foot_y": 94,
+          "index": 2,
+          "size": [
+            24,
+            65
+          ],
+          "source_cell": [
+            2,
+            0
+          ]
+        },
+        {
+          "alpha_bounds": [
+            75,
+            14,
+            182,
+            492
+          ],
+          "destination_offset": [
+            20,
+            29
+          ],
+          "foot_y": 94,
+          "index": 3,
+          "size": [
+            24,
+            65
+          ],
+          "source_cell": [
+            3,
+            0
+          ]
+        },
+        {
+          "alpha_bounds": [
+            126,
+            13,
+            219,
+            462
+          ],
+          "destination_offset": [
+            17,
+            33
+          ],
+          "foot_y": 94,
+          "index": 4,
+          "size": [
+            29,
+            61
+          ],
+          "source_cell": [
+            0,
+            1
+          ]
+        },
+        {
+          "alpha_bounds": [
+            109,
+            13,
+            223,
+            462
+          ],
+          "destination_offset": [
+            17,
+            33
+          ],
+          "foot_y": 94,
+          "index": 5,
+          "size": [
+            29,
+            61
+          ],
+          "source_cell": [
+            1,
+            1
+          ]
+        },
+        {
+          "alpha_bounds": [
+            88,
+            13,
+            240,
+            462
+          ],
+          "destination_offset": [
+            16,
+            33
+          ],
+          "foot_y": 94,
+          "index": 6,
+          "size": [
+            32,
+            61
+          ],
+          "source_cell": [
+            2,
+            1
+          ]
+        },
+        {
+          "alpha_bounds": [
+            61,
+            15,
+            216,
+            459
+          ],
+          "destination_offset": [
+            17,
+            33
+          ],
+          "foot_y": 94,
+          "index": 7,
+          "size": [
+            29,
+            61
+          ],
+          "source_cell": [
+            3,
+            1
+          ]
+        }
+      ],
+      "id": "resident_04",
+      "normalization": "alpha threshold 0.5 to remove faint residue; alpha bounds, one shared scale per actor, nearest sampling, bottom alignment; no recolor, pose synthesis or redesign",
+      "output": "res://assets/opening/generated/npc_v2/resident_04_atlas.png",
+      "output_sha256": "4c528e1fcae8e1b44fb73c2c813b2b0cc8ef5f36b9ad1a8fa48ec1076ae50096",
+      "scale_factor": 0.132113821138211,
+      "source": "res://assets/opening/npc_review_v2/resident_04_REVIEW.png",
+      "source_sha256": "3c04e4ed50ec18c209fcc19609a28018e358d891c513c992f7a17d2ce4009978",
+      "status": "APPROVED VISUAL SOURCE / ENGINE REVIEW"
+    }
+  ],
+  "source_approval": "Owner: tökéletes, folytassuk"
+}
