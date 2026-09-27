@@ -6,12 +6,14 @@ F5 now starts the 96.5-second pixel opening and first playable street.
 WASD/arrows: move. Enter/Space: advance narration. Esc: confirm intro skip.
 E: observe a nearby resident. F1: show/hide controls.
 
-**TECHNICAL REVIEW / PLACEHOLDER ART.** Four ambient women, camera, lane boundaries,
-rain, parallax, foreground occlusion and state-safe handoff are implemented.
+**TECHNICAL REVIEW / PLACEHOLDER ART.** Four ambient women, camera, three-quarter
+stone-lane boundaries, rain, foreground rail occlusion and state-safe handoff are implemented.
 The four approved individual NPC sheets now play idle/look/walk poses.
 Akira now uses a 16-frame REVIEW atlas with directional walking and distance-based gait.
-The street background and walkable lane share revised staging and scale.
-Latest visual review: [Staging v3](docs/STAGING_V3_REVIEW.md).
+The playable street now follows the owner's attached overhead three-quarter image;
+the plate is still a REVIEW asset and separate production parallax layers are missing.
+Current visual target and exact provenance: [Village Street owner target v4](docs/VILLAGE_STREET_OWNER_TARGET_V4_REVIEW.md).
+Previous visual review: [Staging v3](docs/STAGING_V3_REVIEW.md).
 Closer *Until Then* proportion study: [Village Street proportions REVIEW](docs/UNTIL_THEN_PROPORTIONS_REVIEW.md).
 NPC integration: [NPC v2 review](docs/NPC_V2_INTEGRATION.md).
 Prior conversation decisions: [continuity notes](docs/CONTINUITY_NOTES.md).

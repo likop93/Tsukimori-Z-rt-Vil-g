@@ -10,6 +10,7 @@ var beats: Array
 var words: Dictionary
 var beat_index := 0
 var beat_time := 0.0
+var shot_index := -1
 var line_index := -1
 var reveal_time := 0.0
 var completed := false
@@ -54,6 +55,7 @@ func _ready() -> void:
 	shot.size = Vector2(640,360)
 	shot.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	shot.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	shot.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	shot.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	overlay.add_child(shot)
 	weather = Weather.new()
@@ -126,6 +128,10 @@ func _process(delta: float) -> void:
 	beat_time += delta
 	reveal_time += delta
 	var beat: Dictionary = beats[beat_index]
+	if beat.has("shots"):
+		var next_shot := mini(beat.shots.size()-1,int(beat_time / (float(beat.duration)/beat.shots.size())))
+		if next_shot != shot_index:
+			set_shot(str(beat.shots[next_shot]),next_shot)
 	var lines: Array = beat.lines
 	if not lines.is_empty():
 		var next_line := mini(lines.size()-1,int(beat_time / (float(beat.duration)/lines.size())))
@@ -149,6 +155,7 @@ func _process(delta: float) -> void:
 func set_beat(index: int) -> void:
 	beat_index = index
 	beat_time = 0
+	shot_index = -1
 	reveal_time = 0
 	line_index = -1
 	overlay.modulate.a = 1.0
@@ -168,12 +175,22 @@ func set_beat(index: int) -> void:
 		fade.kill()
 	shot.visible = not str(beat.image).is_empty()
 	if shot.visible:
-		shot.texture = load("res://assets/opening/generated/"+str(beat.image)+"_REVIEW.png")
-		shot.modulate.a = 0
-		fade = create_tween()
-		fade.tween_property(shot,"modulate:a",1.0,0.8)
+		if beat.has("shots"):
+			set_shot(str(beat.shots[0]),0)
+		else:
+			shot.texture = load("res://assets/opening/generated/"+str(beat.image)+"_REVIEW.png")
+			shot.modulate.a = 1.0
 	if index == 3:
 		ambience.leave_vehicle()
+
+func set_shot(id: String, index: int) -> void:
+	shot_index = index
+	if fade != null:
+		fade.kill()
+	shot.texture = load("res://assets/opening/shot_review_v2/"+id+"_REVIEW.png")
+	shot.modulate.a = 0.0
+	fade = create_tween()
+	fade.tween_property(shot,"modulate:a",1.0,0.55)
 
 func advance_line() -> void:
 	if completed or skip_dialog.visible:
@@ -229,7 +246,7 @@ func update_ambient(delta: float) -> void:
 	else:
 		position_bubble()
 	var p: Vector2 = street.player.position
-	if p.x > 712:
+	if p.y < 112:
 		show_bubble(words.end,p)
 	elif Input.is_action_just_pressed("observe"):
 		for resident in street.residents:

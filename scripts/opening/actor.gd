@@ -3,7 +3,7 @@ const ATLAS := preload("res://assets/opening/staging_v3/akira_atlas.png")
 const STRIDE := 30.0
 var controlled := false
 var input_enabled := false
-var facing := 0
+var facing := 2
 var visual: Sprite2D
 var travel := 0.0
 var moving := false
@@ -23,12 +23,12 @@ func _ready() -> void:
 	visual.vframes = 4
 	visual.position = Vector2(0,-46)
 	visual.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-	visual.modulate = Color(0.86,0.88,1.0)
+	visual.modulate = Color.WHITE
 	add_child(visual)
 
 func _physics_process(delta: float) -> void:
 	var axis := Input.get_vector("walk_left","walk_right","walk_up","walk_down") if input_enabled and controlled else Vector2.ZERO
-	var desired := axis * 56.0
+	var desired := axis * 70.0
 	velocity = velocity.move_toward(desired,(260.0 if axis != Vector2.ZERO else 350.0)*delta)
 	if absf(axis.x) > 0.1:
 		facing = 1 if axis.x < 0 else 3
@@ -36,8 +36,9 @@ func _physics_process(delta: float) -> void:
 		facing = 2 if axis.y < 0 else 0
 	var before := position
 	move_and_slide()
-	position.x = clampf(position.x,124,734)
-	position.y = clampf(position.y,294,344)
+	position.y = clampf(position.y,95,339)
+	var edges: Vector2 = get_parent().get_parent().lane_limits(position.y)
+	position.x = clampf(position.x,edges.x,edges.y)
 	var distance := before.distance_to(position)
 	moving = distance > 0.01
 	visual.flip_h = false

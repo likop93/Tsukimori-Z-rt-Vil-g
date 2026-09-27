@@ -1,0 +1,200 @@
+{
+  "date": "2026-09-27",
+  "limitations": [
+    "These are editorial shots from approved boards, not ten separately painted production CGs.",
+    "No named-character reveal or storyboard timing captions are intended in playable crops.",
+    "Production-clean bus, rain-glass, anonymous-window and gate animation/CG remain missing."
+  ],
+  "shots": [
+    {
+      "id": "bus_cabin",
+      "intent": "bus interior / Akira",
+      "method": "source-only crop, nearest resize; no synthetic scene or character",
+      "output": "res://assets/opening/shot_review_v2/bus_cabin_REVIEW.png",
+      "output_sha256": "0089b8194e1ce7d148485aaa3a73f96f50ba8bba5e5409898d41c0a65591079e",
+      "size": [
+        640,
+        360
+      ],
+      "source": "res://assets/opening/reference/OPENING_SEQUENCE_STORYBOARD_V1.png",
+      "source_rect": [
+        280,
+        47,
+        402,
+        226
+      ],
+      "status": "REVIEW / TECHNICAL PLACEHOLDER"
+    },
+    {
+      "id": "bus_akira",
+      "intent": "held close-up / Akira",
+      "method": "source-only crop, nearest resize; no synthetic scene or character",
+      "output": "res://assets/opening/shot_review_v2/bus_akira_REVIEW.png",
+      "output_sha256": "233c95eb92eec8e516d00cbf73458257eae14175d4c4168a654807c0fc602de7",
+      "size": [
+        640,
+        360
+      ],
+      "source": "res://assets/opening/reference/OPENING_SEQUENCE_STORYBOARD_V1.png",
+      "source_rect": [
+        315,
+        80,
+        320,
+        180
+      ],
+      "status": "REVIEW / TECHNICAL PLACEHOLDER"
+    },
+    {
+      "id": "bus_glass",
+      "intent": "rain and window detail",
+      "method": "source-only crop, nearest resize; no synthetic scene or character",
+      "output": "res://assets/opening/shot_review_v2/bus_glass_REVIEW.png",
+      "output_sha256": "43ccaf516ab924d18eecf95e616da481d6c2fd94b4e15feb675f029e7724aba1",
+      "size": [
+        640,
+        360
+      ],
+      "source": "res://assets/opening/reference/OPENING_SEQUENCE_STORYBOARD_V1.png",
+      "source_rect": [
+        452,
+        60,
+        230,
+        129
+      ],
+      "status": "REVIEW / TECHNICAL PLACEHOLDER"
+    },
+    {
+      "id": "bus_road",
+      "intent": "bus nearing village",
+      "method": "source-only crop, nearest resize; no synthetic scene or character",
+      "output": "res://assets/opening/shot_review_v2/bus_road_REVIEW.png",
+      "output_sha256": "ec2db0c357e6c8088706f52d63669f41275c8742db9b00eef50d7acefb6a22e3",
+      "size": [
+        640,
+        360
+      ],
+      "source": "res://assets/opening/reference/OPENING_SEQUENCE_STORYBOARD_V1.png",
+      "source_rect": [
+        720,
+        52,
+        432,
+        243
+      ],
+      "status": "REVIEW / TECHNICAL PLACEHOLDER"
+    },
+    {
+      "id": "arrival_skyline",
+      "intent": "distant roofs, mist and mountains",
+      "method": "source-only crop, nearest resize; no synthetic scene or character",
+      "output": "res://assets/opening/shot_review_v2/arrival_skyline_REVIEW.png",
+      "output_sha256": "4b86e9d56449c5c2a2fb4178090c1d8d13397e207174da826f582cc864e75403",
+      "size": [
+        640,
+        360
+      ],
+      "source": "res://assets/opening/reference/VILLAGE_STREET_PIXEL_V1.png",
+      "source_rect": [
+        390,
+        35,
+        1120,
+        630
+      ],
+      "status": "REVIEW / TECHNICAL PLACEHOLDER"
+    },
+    {
+      "id": "arrival_street",
+      "intent": "approved wet street approach",
+      "method": "source-only crop, nearest resize; no synthetic scene or character",
+      "output": "res://assets/opening/shot_review_v2/arrival_street_REVIEW.png",
+      "output_sha256": "c942376ff112c30e85a5b70e940043ded3ffc82e58167b4c688e7c09d462ad7c",
+      "size": [
+        640,
+        360
+      ],
+      "source": "res://assets/opening/reference/VILLAGE_STREET_PIXEL_V1.png",
+      "source_rect": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "status": "REVIEW / TECHNICAL PLACEHOLDER"
+    },
+    {
+      "id": "watch_left",
+      "intent": "anonymous left shoji and lamplight",
+      "method": "source-only crop, nearest resize; no synthetic scene or character",
+      "output": "res://assets/opening/shot_review_v2/watch_left_REVIEW.png",
+      "output_sha256": "2490a3f7a16e4a3cccf58368d688d7f9b411f90c4fcfc5095dc29b71994108d3",
+      "size": [
+        640,
+        360
+      ],
+      "source": "res://assets/opening/reference/VILLAGE_STREET_PIXEL_V1.png",
+      "source_rect": [
+        45,
+        135,
+        760,
+        428
+      ],
+      "status": "REVIEW / TECHNICAL PLACEHOLDER"
+    },
+    {
+      "id": "watch_right",
+      "intent": "anonymous right shoji and lamplight",
+      "method": "source-only crop, nearest resize; no synthetic scene or character",
+      "output": "res://assets/opening/shot_review_v2/watch_right_REVIEW.png",
+      "output_sha256": "be35db259595c28ac285e2a8d2c2a267b970f24e9ac3016ee32fda37741f35fc",
+      "size": [
+        640,
+        360
+      ],
+      "source": "res://assets/opening/reference/VILLAGE_STREET_PIXEL_V1.png",
+      "source_rect": [
+        890,
+        125,
+        760,
+        428
+      ],
+      "status": "REVIEW / TECHNICAL PLACEHOLDER"
+    },
+    {
+      "id": "gate_wide",
+      "intent": "village entrance torii",
+      "method": "source-only crop, nearest resize; no synthetic scene or character",
+      "output": "res://assets/opening/shot_review_v2/gate_wide_REVIEW.png",
+      "output_sha256": "69d15cd2a32919253055d136b3fa0aa570e312ca1517bf52384d2729116dae77",
+      "size": [
+        640,
+        360
+      ],
+      "source": "res://assets/opening/reference/OPENING_SEQUENCE_STORYBOARD_V1.png",
+      "source_rect": [
+        1246,
+        48,
+        420,
+        236
+      ],
+      "status": "REVIEW / TECHNICAL PLACEHOLDER"
+    },
+    {
+      "id": "gate_close",
+      "intent": "controlled approach to gate",
+      "method": "source-only crop, nearest resize; no synthetic scene or character",
+      "output": "res://assets/opening/shot_review_v2/gate_close_REVIEW.png",
+      "output_sha256": "3d99f1ef27c643173f61bde18ab74b35f322107d4c8b85658299cd954de8686a",
+      "size": [
+        640,
+        360
+      ],
+      "source": "res://assets/opening/reference/OPENING_SEQUENCE_STORYBOARD_V1.png",
+      "source_rect": [
+        1284,
+        80,
+        360,
+        203
+      ],
+      "status": "REVIEW / TECHNICAL PLACEHOLDER"
+    }
+  ]
+}

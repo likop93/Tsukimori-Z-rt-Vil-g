@@ -1,5 +1,7 @@
 # Tsukimori — Playable Background Scene Mapping v1
 
+**2026-09-27-i tulajdonosi pontosítás az első Village Street slice-hoz:** a csatolt nyitó-storyboard-kivágás háromnegyedes, mélységbe futó utcanézete a konkrét playable kompozíciós cél. A korábbi „alsó-középső, sekély oldalirányú sáv” prototípus-értelmezés ennél a jelenetnél felülírva. A járható kőút keskenyedik a távolban; a korlát, házlépcső és tető nem járható. A többi helyszín térbeli kánonja változatlan. Implementációs státusz és hiányzó FINAL assetek: `docs/VILLAGE_STREET_OWNER_TARGET_V4_REVIEW.md`.
+
 **Dátum:** 2026-09-26  
 **Státusz:** APPROVED PLAYABLE BACKGROUND BASES
 
@@ -225,4 +227,3 @@ FINAL előtt kötelező:
 - lighting integration;
 - loopable VFX;
 - in-game review Akira FINAL pixel sprite-tal.
-

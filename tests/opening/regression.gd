@@ -59,16 +59,14 @@ func run_checks() -> void:
 	check(GameState.has_flag("opening_intro_seen") and GameState.has_flag("entered_tsukimori"),"Both story flags set at natural handoff")
 	check(runner.ambience.rain.playing,"Rain continues through handoff")
 	check(runner.street.residents.size() == 4,"Four anonymous female residents instantiated")
-	check(is_equal_approx(runner.street.camera.zoom.x,2.0),"Whole-pixel gameplay camera is active")
+	check(is_equal_approx(runner.street.camera.zoom.x,1.0),"Native-pixel gameplay camera is active")
 	var visible_residents := 0
 	for resident in runner.street.residents:
 		var screen_pos: Vector2 = get_viewport().get_canvas_transform() * resident.position
 		if screen_pos.x > 24 and screen_pos.x < 625:
 			visible_residents += 1
 	check(visible_residents >= 3,"At least three residents are visible in the first camera framing")
-	var akira_sheet: Image = runner.street.player.visual.texture.get_image()
-	var akira_height: float = akira_sheet.get_region(Rect2i(0,0,64,96)).get_used_rect().size.y * runner.street.player.scale.y * runner.street.camera.zoom.y
-	check(akira_height >= 130 and akira_height <= 155,"Akira occupies roughly two fifths of the viewport height")
+	check(runner.street.player.scale.y >= 1.8 and runner.street.player.scale.y <= 2.25,"Akira has adult scale within the three-quarter street")
 	var sheet_paths: Dictionary = {}
 	for resident in runner.street.residents:
 		sheet_paths[resident.visual.texture.resource_path] = true
@@ -86,14 +84,14 @@ func run_checks() -> void:
 	var old_x: float = runner.street.player.position.x
 	Input.action_press("walk_right")
 	await get_tree().create_timer(0.05).timeout
-	check(runner.street.player.velocity.x > 0 and runner.street.player.velocity.x < 56,"Walking starts with measured acceleration")
+	check(runner.street.player.velocity.x > 0 and runner.street.player.velocity.x < 70,"Walking starts with measured acceleration")
 	await get_tree().create_timer(3.4).timeout
 	Input.action_release("walk_right")
 	check(runner.street.player.position.x > old_x+100,"Player input moves Akira after handoff")
 	await get_tree().create_timer(0.3).timeout
 	check(runner.street.player.velocity.length() < 0.01,"Akira decelerates to a full stop")
-	check(runner.street.camera.position.x > 320,"Camera follows within scene limits")
-	runner.street.player.position = Vector2(650,340)
+	check(runner.street.camera.position.x > 545,"Camera follows within scene limits")
+	runner.street.player.position = Vector2(620,300)
 	await get_tree().create_timer(1.6).timeout
 	await capture("village_right")
 	check(not runner.street.player.moving and runner.street.player.visual.frame < 4,"Akira returns to idle after stopping")
@@ -101,12 +99,13 @@ func run_checks() -> void:
 	for frame in range(4,8):
 		all_walk = all_walk and runner.street.player.visited_frames.has(frame)
 	check(all_walk,"Akira plays every side-walk phase from actual travel")
+	runner.street.player.position = Vector2(535,96)
 	Input.action_press("walk_up")
 	await get_tree().create_timer(1.0).timeout
 	Input.action_release("walk_up")
-	check(runner.street.player.position.y >= 294,"Cannot walk onto stairs or background bridge")
+	check(is_equal_approx(runner.street.player.position.y,95),"Cannot walk beyond the far end of the stone lane")
 	check(not runner.street.player.moving and runner.street.player.visual.frame == 2,"Walking into upper boundary stops gait in back idle")
-	runner.street.player.position = Vector2(650,350)
+	runner.street.player.position = Vector2(525,300)
 	for action in ["walk_up","walk_down","walk_left"]:
 		Input.action_press(action)
 		await get_tree().create_timer(0.4).timeout
@@ -121,21 +120,21 @@ func run_checks() -> void:
 	check(runner.street.player.visual.flip_h,"Left walk faces left")
 	await get_tree().create_timer(0.3).timeout
 	check(runner.street.player.visual.frame == 3 and not runner.street.player.visual.flip_h,"Akira remains left-facing in the correct idle pose")
-	runner.street.player.position = Vector2(733,370)
+	runner.street.player.position = Vector2(900,370)
 	Input.action_press("walk_right")
 	Input.action_press("walk_down")
 	await get_tree().create_timer(0.2).timeout
 	Input.action_release("walk_right")
 	Input.action_release("walk_down")
-	check(runner.street.player.position.x <= 734 and runner.street.player.position.y <= 344,"Right and bottom bounds hold")
-	runner.street.player.position = Vector2(125,319)
+	check(runner.street.player.position.x <= runner.street.lane_limits(runner.street.player.position.y).y and runner.street.player.position.y <= 339,"Right and bottom bounds hold")
+	runner.street.player.position = Vector2(0,300)
 	Input.action_press("walk_left")
 	await get_tree().create_timer(0.25).timeout
 	Input.action_release("walk_left")
-	check(runner.street.player.position.x >= 124,"Left camera edge retains Akira in view")
+	check(runner.street.player.position.x >= runner.street.lane_limits(runner.street.player.position.y).x,"Left railing retains Akira in the lane")
 	for resident in runner.street.residents:
 		check(resident.row >= 1 and resident.row <= 4,"Resident uses anonymous approved source row")
-	runner.street.player.position = Vector2(280,330)
+	runner.street.player.position = Vector2(425,270)
 	# Start a fresh encounter independent of earlier movement-test duration.
 	runner.street.residents[0].look_cooldown = 0.0
 	await get_tree().create_timer(0.15).timeout
@@ -172,7 +171,7 @@ func run_checks() -> void:
 		for key in resident.visited_states:
 			state_union[key] = true
 	# Independently exercise a full ambient cycle.
-	runner.street.player.position = Vector2(120,360)
+	runner.street.player.position = Vector2(535,330)
 	await get_tree().create_timer(7.0).timeout
 	for resident in runner.street.residents:
 		for key in resident.visited_states:

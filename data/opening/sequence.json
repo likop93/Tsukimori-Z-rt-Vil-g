@@ -10,6 +10,7 @@
     {
       "id": "open_01",
       "image": "bus",
+      "shots": ["bus_cabin", "bus_glass", "bus_akira", "bus_road"],
       "duration": 32,
       "lines": [
         "Az eső már órák óta verte az ablakot.",
@@ -23,6 +24,7 @@
     {
       "id": "open_02",
       "image": "arrival",
+      "shots": ["arrival_skyline", "arrival_street"],
       "duration": 24,
       "lines": [
         "Tsukimori ugyanolyan csendesnek tűnt, mint régen.",
@@ -32,6 +34,7 @@
     {
       "id": "open_03",
       "image": "watch",
+      "shots": ["watch_left", "watch_right"],
       "duration": 18,
       "lines": [
         "Mintha a falu már tudná, hogy megérkeztem."
@@ -40,6 +43,7 @@
     {
       "id": "open_04",
       "image": "gate",
+      "shots": ["gate_wide", "gate_close"],
       "duration": 14,
       "lines": [
         "Most már mindegy.",

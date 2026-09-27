@@ -34,7 +34,7 @@ func _ready() -> void:
 	# Every frame's foot pivot is (32,94) in a 64x96 frame.
 	visual.position = Vector2(0,-46)
 	visual.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-	visual.modulate = Color(0.86,0.88,1.0)
+	visual.modulate = Color.WHITE
 	add_child(visual)
 	update_frame()
 	queue_redraw()
