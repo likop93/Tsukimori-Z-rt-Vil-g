@@ -59,6 +59,16 @@ func run_checks() -> void:
 	check(GameState.has_flag("opening_intro_seen") and GameState.has_flag("entered_tsukimori"),"Both story flags set at natural handoff")
 	check(runner.ambience.rain.playing,"Rain continues through handoff")
 	check(runner.street.residents.size() == 4,"Four anonymous female residents instantiated")
+	check(is_equal_approx(runner.street.camera.zoom.x,2.0),"Whole-pixel gameplay camera is active")
+	var visible_residents := 0
+	for resident in runner.street.residents:
+		var screen_pos: Vector2 = get_viewport().get_canvas_transform() * resident.position
+		if screen_pos.x > 24 and screen_pos.x < 625:
+			visible_residents += 1
+	check(visible_residents >= 3,"At least three residents are visible in the first camera framing")
+	var akira_sheet: Image = runner.street.player.visual.texture.get_image()
+	var akira_height: float = akira_sheet.get_region(Rect2i(0,0,64,96)).get_used_rect().size.y * runner.street.player.scale.y * runner.street.camera.zoom.y
+	check(akira_height >= 130 and akira_height <= 155,"Akira occupies roughly two fifths of the viewport height")
 	var sheet_paths: Dictionary = {}
 	for resident in runner.street.residents:
 		sheet_paths[resident.visual.texture.resource_path] = true
@@ -75,9 +85,13 @@ func run_checks() -> void:
 	await capture("village_start")
 	var old_x: float = runner.street.player.position.x
 	Input.action_press("walk_right")
+	await get_tree().create_timer(0.05).timeout
+	check(runner.street.player.velocity.x > 0 and runner.street.player.velocity.x < 56,"Walking starts with measured acceleration")
 	await get_tree().create_timer(3.4).timeout
 	Input.action_release("walk_right")
 	check(runner.street.player.position.x > old_x+100,"Player input moves Akira after handoff")
+	await get_tree().create_timer(0.3).timeout
+	check(runner.street.player.velocity.length() < 0.01,"Akira decelerates to a full stop")
 	check(runner.street.camera.position.x > 320,"Camera follows within scene limits")
 	runner.street.player.position = Vector2(650,340)
 	await get_tree().create_timer(1.6).timeout
@@ -90,7 +104,7 @@ func run_checks() -> void:
 	Input.action_press("walk_up")
 	await get_tree().create_timer(1.0).timeout
 	Input.action_release("walk_up")
-	check(runner.street.player.position.y >= 322,"Cannot walk onto stairs or background bridge")
+	check(runner.street.player.position.y >= 294,"Cannot walk onto stairs or background bridge")
 	check(not runner.street.player.moving and runner.street.player.visual.frame == 2,"Walking into upper boundary stops gait in back idle")
 	runner.street.player.position = Vector2(650,350)
 	for action in ["walk_up","walk_down","walk_left"]:
@@ -105,13 +119,20 @@ func run_checks() -> void:
 		used_back = used_back or runner.street.player.visited_frames.has(frame)
 	check(used_front and used_back,"Depth movement uses front and back walking poses")
 	check(runner.street.player.visual.flip_h,"Left walk faces left")
+	await get_tree().create_timer(0.3).timeout
+	check(runner.street.player.visual.frame == 3 and not runner.street.player.visual.flip_h,"Akira remains left-facing in the correct idle pose")
 	runner.street.player.position = Vector2(733,370)
 	Input.action_press("walk_right")
 	Input.action_press("walk_down")
 	await get_tree().create_timer(0.2).timeout
 	Input.action_release("walk_right")
 	Input.action_release("walk_down")
-	check(runner.street.player.position.x <= 734 and runner.street.player.position.y <= 376,"Right and bottom bounds hold")
+	check(runner.street.player.position.x <= 734 and runner.street.player.position.y <= 344,"Right and bottom bounds hold")
+	runner.street.player.position = Vector2(125,319)
+	Input.action_press("walk_left")
+	await get_tree().create_timer(0.25).timeout
+	Input.action_release("walk_left")
+	check(runner.street.player.position.x >= 124,"Left camera edge retains Akira in view")
 	for resident in runner.street.residents:
 		check(resident.row >= 1 and resident.row <= 4,"Resident uses anonymous approved source row")
 	runner.street.player.position = Vector2(280,330)
@@ -119,6 +140,9 @@ func run_checks() -> void:
 	runner.street.residents[0].look_cooldown = 0.0
 	await get_tree().create_timer(0.15).timeout
 	check(runner.street.residents[0].state == "look","Resident notices nearby Akira")
+	runner.show_bubble(runner.street.residents[0].phrase,runner.street.residents[0].position)
+	var speaker_screen: Vector2 = get_viewport().get_canvas_transform() * runner.street.residents[0].position
+	check(runner.bubble.position.y < speaker_screen.y-80,"Ambient speech is placed above the speaker")
 	var looking_at: Vector2 = runner.street.residents[0].position
 	await get_tree().create_timer(0.15).timeout
 	check(runner.street.residents[0].position.is_equal_approx(looking_at),"Resident stops walking while looking at Akira")

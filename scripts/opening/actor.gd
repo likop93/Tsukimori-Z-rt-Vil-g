@@ -26,19 +26,20 @@ func _ready() -> void:
 	visual.modulate = Color(0.86,0.88,1.0)
 	add_child(visual)
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var axis := Input.get_vector("walk_left","walk_right","walk_up","walk_down") if input_enabled and controlled else Vector2.ZERO
-	velocity = axis * 48.0
+	var desired := axis * 56.0
+	velocity = velocity.move_toward(desired,(260.0 if axis != Vector2.ZERO else 350.0)*delta)
 	if absf(axis.x) > 0.1:
 		facing = 1 if axis.x < 0 else 3
 	elif absf(axis.y) > 0.1:
 		facing = 2 if axis.y < 0 else 0
 	var before := position
 	move_and_slide()
-	position.x = clampf(position.x,112,734)
-	position.y = clampf(position.y,322,376)
+	position.x = clampf(position.x,124,734)
+	position.y = clampf(position.y,294,344)
 	var distance := before.distance_to(position)
-	moving = distance > 0.01 and axis != Vector2.ZERO
+	moving = distance > 0.01
 	visual.flip_h = false
 	if moving:
 		travel += distance
@@ -48,7 +49,8 @@ func _physics_process(_delta: float) -> void:
 		visual.flip_h = facing == 1
 	else:
 		travel = 0.0
-		visual.frame = facing
+		# Sheet row 0 is front, right, back, left.
+		visual.frame = 3 if facing == 1 else (1 if facing == 3 else facing)
 	visited_frames[visual.frame] = true
 	queue_redraw()
 

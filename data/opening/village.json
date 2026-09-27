@@ -1,15 +1,15 @@
 {
   "spawn": [
     180,
-    344
+    319
   ],
   "npc": [
     {
       "id": "resident_01",
       "row": 1,
       "position": [
-        275,
-        330
+        250,
+        306
       ],
       "mode": "slow_walk",
       "range": 32,
@@ -24,8 +24,8 @@
       "id": "resident_02",
       "row": 2,
       "position": [
-        385,
-        329
+        337,
+        304
       ],
       "mode": "idle",
       "range": 0,
@@ -40,8 +40,8 @@
       "id": "resident_03",
       "row": 3,
       "position": [
-        505,
-        347
+        405,
+        322
       ],
       "mode": "look",
       "range": 0,
@@ -56,8 +56,8 @@
       "id": "resident_04",
       "row": 4,
       "position": [
-        615,
-        335
+        505,
+        310
       ],
       "mode": "slow_walk",
       "range": 20,

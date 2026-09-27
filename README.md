@@ -12,6 +12,7 @@ The four approved individual NPC sheets now play idle/look/walk poses.
 Akira now uses a 16-frame REVIEW atlas with directional walking and distance-based gait.
 The street background and walkable lane share revised staging and scale.
 Latest visual review: [Staging v3](docs/STAGING_V3_REVIEW.md).
+Closer *Until Then* proportion study: [Village Street proportions REVIEW](docs/UNTIL_THEN_PROPORTIONS_REVIEW.md).
 NPC integration: [NPC v2 review](docs/NPC_V2_INTEGRATION.md).
 Prior conversation decisions: [continuity notes](docs/CONTINUITY_NOTES.md).
 Asset gaps, governance mapping and validation: [Opening milestone review](docs/OPENING_MILESTONE_REVIEW.md).

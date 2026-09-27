@@ -5,6 +5,8 @@ func _initialize() -> void:
 	background.resize(800,450,Image.INTERPOLATE_NEAREST)
 	background.get_region(Rect2i(0,0,800,383)).save_png(OUT+"street_stage.png")
 	background.get_region(Rect2i(0,383,800,67)).save_png(OUT+"foreground.png")
+	# A small, exact source-aligned lane-edge cutout remains visible in the closer camera.
+	background.get_region(Rect2i(0,335,800,48)).save_png(OUT+"foreground_close_REVIEW.png")
 	var source := Image.load_from_file(OUT+"akira_walk_REVIEW.png")
 	source.convert(Image.FORMAT_RGBA8)
 	for y in source.get_height():

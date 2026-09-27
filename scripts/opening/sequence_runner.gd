@@ -26,6 +26,7 @@ var bubble: Label
 var skip_dialog: ConfirmationDialog
 var fade: Tween
 var bubble_time := 0.0
+var bubble_anchor := Vector2.ZERO
 var shown_phrases: Dictionary = {}
 var help_visible := true
 
@@ -76,7 +77,7 @@ func _ready() -> void:
 	heading.add_theme_color_override("font_color",Color("#efd0a5"))
 	hint = make_label(canvas,Vector2(30,342),Vector2(580,17),10)
 	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	bubble = make_label(canvas,Vector2(150,200),Vector2(350,30),13)
+	bubble = make_label(canvas,Vector2(150,150),Vector2(250,34),13)
 	bubble.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	bubble.add_theme_color_override("font_shadow_color",Color.BLACK)
 	bubble.add_theme_constant_override("shadow_offset_x",1)
@@ -225,6 +226,8 @@ func update_ambient(delta: float) -> void:
 	bubble_time = maxf(0,bubble_time-delta)
 	if bubble_time <= 0:
 		bubble.hide()
+	else:
+		position_bubble()
 	var p: Vector2 = street.player.position
 	if p.x > 712:
 		show_bubble(words.end,p)
@@ -243,8 +246,13 @@ func update_ambient(delta: float) -> void:
 func show_bubble(text: String, at: Vector2) -> void:
 	bubble.text = text
 	bubble_time = 3.7
-	bubble.position = Vector2(clampf(at.x-street.camera.position.x+320-175,15,275),at.y-45-78)
+	bubble_anchor = at
+	position_bubble()
 	bubble.show()
+
+func position_bubble() -> void:
+	var screen_at: Vector2 = street.get_viewport().get_canvas_transform() * bubble_anchor
+	bubble.position = Vector2(clampf(screen_at.x-125,8,382),clampf(screen_at.y-145,8,300))
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
