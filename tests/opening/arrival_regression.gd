@@ -13,6 +13,12 @@ func make_runner() -> Node:
 	add_child(runner)
 	await get_tree().process_frame
 	return runner
+func check_watchers(runner: Node, place: String) -> void:
+	var watchers := 0
+	for resident in runner.street.residents:
+		if resident.visible and resident.state == "look":
+			watchers += 1
+	check(watchers >= 2,"At least two live women watch Akira in "+place)
 func _ready() -> void:
 	GameState.clear_runtime_state()
 	var runner: Node = await make_runner()
@@ -32,17 +38,24 @@ func _ready() -> void:
 	check(runner.street.player.position.distance_to(paused) < 1,"Skip confirmation pauses actor")
 	runner.skip_dialog.hide()
 	await capture("arrival_street_cinematic")
+	check_watchers(runner,"street")
 	Engine.time_scale = 4
 	while runner.arrival.phase == "street":
 		await get_tree().process_frame
 	check(not runner.street.player.input_enabled,"Bridge remains cinematic")
 	await get_tree().create_timer(5).timeout
 	await capture("arrival_bridge_cinematic")
+	check_watchers(runner,"bridge")
+	while runner.arrival.phase == "bridge":
+		await get_tree().process_frame
+	check(runner.street.player.position.x < 200,"Akira enters the house shot from the left")
 	while runner.arrival.phase != "greeting":
 		await get_tree().process_frame
 	check(not GameState.has_flag("met_miyako"),"Meeting is not set before greeting")
 	await get_tree().create_timer(4).timeout
 	await capture("arrival_miyako_greeting")
+	check_watchers(runner,"house")
+	check(runner.street.player.position.x < runner.arrival.miyako.position.x and runner.street.player.facing == 3,"Akira stops left of Miyako facing toward her")
 	check(runner.narration.text.contains("Dr. Akira. Már vártam."),"Canonical greeting is displayed")
 	while not runner.arrival.done:
 		await get_tree().process_frame
@@ -67,6 +80,7 @@ func _ready() -> void:
 		runner.skip_all()
 		runner.skip_all()
 		check(runner.street.location == "house" and runner.handoff_count == 1,"Skip endpoint is idempotent from "+phase)
+		check(runner.street.player.position.x == 270 and runner.street.player.facing == 3,"Skipped arrival retains left-hand staging")
 		for flag in ["opening_intro_seen","entered_tsukimori","crossed_bridge","met_miyako","arrival_cinematic_seen"]:
 			check(GameState.has_flag(flag),"Skip sets "+flag+" from "+phase)
 		runner.queue_free()

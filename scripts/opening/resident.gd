@@ -22,6 +22,7 @@ var look_right_frame := 3
 var mirror_left_look := false
 var visited_states: Dictionary = {}
 var visited_frames: Dictionary = {}
+var watch_arrival := false
 
 func _ready() -> void:
 	assert(atlas != null, "Each resident requires its own approved atlas")
@@ -46,7 +47,9 @@ func _physics_process(delta: float) -> void:
 	if player != null and position.distance_to(player.position) < 68 and look_cooldown <= 0:
 		look_time = 2.2
 		look_cooldown = 9
-	if look_time > 0:
+	if watch_arrival:
+		set_state("look")
+	elif look_time > 0:
 		look_time = maxf(0,look_time-delta)
 		set_state("look")
 	elif behavior == "slow_walk" and roam_range > 0 and fmod(clock,9.0) > 3:

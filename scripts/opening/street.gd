@@ -84,7 +84,7 @@ func lane_scale(feet_y: float) -> float:
 
 func lane_limits(feet_y: float) -> Vector2:
 	if location != "street":
-		return Vector2(65,555) if location == "bridge" else Vector2(280,545)
+		return Vector2(65,555) if location == "bridge" else Vector2(110,545)
 	var depth := clampf((feet_y-80.0)/260.0,0.0,1.0)
 	return Vector2(lerpf(465,375,depth),lerpf(615,650,depth))
 
@@ -104,7 +104,19 @@ func show_location(next_location: String) -> void:
 	player.scale = Vector2.ONE * (1.1 if location == "bridge" else 1.55)
 	player.floor_min = 170 if location == "bridge" else 260
 	player.floor_max = 205 if location == "bridge" else 286
-	player.position = Vector2(85,190) if location == "bridge" else Vector2(520,274)
+	player.position = Vector2(85,190) if location == "bridge" else Vector2(145,274)
+	player.facing = 3
+	# Anonymous women remain at the edges of each arrival composition.
+	# Their look frames track Akira, including when he crosses their sightline.
+	var placements := [Vector2(130,173),Vector2(560,204)] if location == "bridge" else [Vector2(120,247),Vector2(525,246)]
+	for i in placements.size():
+		var resident: Node2D = residents[i]
+		resident.position = placements[i]
+		resident.home_x = resident.position.x
+		resident.scale = Vector2.ONE * (0.85 if location == "bridge" else 1.1)
+		resident.watch_arrival = true
+		resident.show()
+		resident.set_physics_process(true)
 
 
 func enable_control() -> void:

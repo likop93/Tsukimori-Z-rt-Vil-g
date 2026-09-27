@@ -10,6 +10,8 @@ var phrase_index := -1
 func start(owner_runner: Node) -> void:
 	runner = owner_runner
 	runner.street.player.scripted_speed = 17
+	for resident in runner.street.residents:
+		resident.watch_arrival = true
 	runner.hint.text = "Érkezés Tsukimoriba · Esc: átvezető kihagyása"
 	runner.heading.hide()
 
@@ -44,7 +46,7 @@ func advance(delta: float) -> void:
 				GameState.set_flag("crossed_bridge")
 				enter_phase("house")
 		"house":
-			actor.scripted_axis = Vector2.LEFT if actor.position.x > 430 else Vector2.ZERO
+			actor.scripted_axis = Vector2.RIGHT if actor.position.x < 270 else Vector2.ZERO
 			actor.scripted_speed = 22
 			if elapsed >= 7:
 				enter_phase("greeting")
@@ -89,10 +91,10 @@ func finish() -> void:
 		runner.street.show_location("house")
 	show_miyako()
 	runner.street.modulate.a = 1
-	runner.street.player.position = Vector2(430,274)
+	runner.street.player.position = Vector2(270,274)
 	runner.street.player.scripted_axis = Vector2.ZERO
 	runner.street.player.velocity = Vector2.ZERO
-	runner.street.player.facing = 1
+	runner.street.player.facing = 3
 	for flag in ["opening_intro_seen","entered_tsukimori","crossed_bridge","met_miyako","arrival_cinematic_seen"]:
 		GameState.set_flag(flag)
 	done = true

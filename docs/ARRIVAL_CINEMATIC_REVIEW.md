@@ -1,5 +1,7 @@
 # Arrival through Miyako — REVIEW, 2026-09-27
 
+Owner correction: Akira enters the final house shot from the left (x=145), walks right and stops left of Miyako (x=270). Natural completion and skipping share this destination. All three live arrival scenes now contain watching anonymous women: four in the street, two at the bridge edges and two at the house edges. The existing approved resident atlases are reused; their look frames follow Akira's horizontal position. Miyako's reveal remains at the house.
+
 Owner approved: the three-quarter village view can be a live in-game cinematic through Miyako's first meeting. It is not a universal camera requirement. Side-view gameplay remains supported; the house forecourt is the first controllable area in this build.
 
 F5: original 96.5-second black/bus/arrival/window/gate opening, then 13 seconds of directed Village Street movement and resident remarks, 21 seconds of bridge crossing including a three-second hold, seven seconds of house approach, and ten seconds of greeting. Miyako's line remains “Dr. Akira. Már vártam.” The scene uses independent live actors, rain and animated poses; it is not a video. Input unlocks only after the greeting. ESC confirmation skips the entire arrival to the house. Repeated completion is idempotent. All completion paths set opening_intro_seen, entered_tsukimori, crossed_bridge, met_miyako and arrival_cinematic_seen.
