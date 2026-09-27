@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 	clock += delta
 	state_elapsed += delta
 	look_cooldown = maxf(0,look_cooldown-delta)
-	if player != null and player.input_enabled and position.distance_to(player.position) < 68 and look_cooldown <= 0:
+	if player != null and position.distance_to(player.position) < 68 and look_cooldown <= 0:
 		look_time = 2.2
 		look_cooldown = 9
 	if look_time > 0:

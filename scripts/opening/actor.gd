@@ -8,6 +8,10 @@ var visual: Sprite2D
 var travel := 0.0
 var moving := false
 var visited_frames: Dictionary = {}
+var scripted_axis := Vector2.ZERO
+var scripted_speed := 28.0
+var floor_min := 95.0
+var floor_max := 339.0
 
 func _ready() -> void:
 	collision_layer = 1
@@ -28,7 +32,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var axis := Input.get_vector("walk_left","walk_right","walk_up","walk_down") if input_enabled and controlled else Vector2.ZERO
-	var desired := axis * 70.0
+	if not input_enabled:
+		axis = scripted_axis
+	var desired := axis * (70.0 if input_enabled else scripted_speed)
 	velocity = velocity.move_toward(desired,(260.0 if axis != Vector2.ZERO else 350.0)*delta)
 	if absf(axis.x) > 0.1:
 		facing = 1 if axis.x < 0 else 3
@@ -36,7 +42,7 @@ func _physics_process(delta: float) -> void:
 		facing = 2 if axis.y < 0 else 0
 	var before := position
 	move_and_slide()
-	position.y = clampf(position.y,95,339)
+	position.y = clampf(position.y,floor_min,floor_max)
 	var edges: Vector2 = get_parent().get_parent().lane_limits(position.y)
 	position.x = clampf(position.x,edges.x,edges.y)
 	var distance := before.distance_to(position)

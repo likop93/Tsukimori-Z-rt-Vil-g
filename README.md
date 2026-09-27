@@ -2,7 +2,7 @@
 
 ## Opening + Village Street — 2026-09-27
 
-F5 now starts the 96.5-second pixel opening and first playable street.
+F5 starts the pixel opening and a live arrival cinematic through Village Street, the bridge and Miyako's greeting (about 2.5 minutes total). Movement unlocks in the house forecourt after the greeting. ESC skips the full arrival safely. Side-view levels remain supported; the village camera is not a global rule. Current details: [Arrival cinematic REVIEW](docs/ARRIVAL_CINEMATIC_REVIEW.md).
 WASD/arrows: move. Enter/Space: advance narration. Esc: confirm intro skip.
 E: observe a nearby resident. F1: show/hide controls.
 

@@ -71,6 +71,8 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 
 ## APPROVED / még finomítható
 
+2026-09-27 — **APPROVED owner change:** the first three-quarter village sequence is a live in-game cinematic through bridge, house and Miyako's greeting. Control starts after meeting Miyako. This view is scene-specific; side-view levels remain supported. Implementation and review gaps: `ARRIVAL_CINEMATIC_REVIEW.md`.
+
 | Dátum | Döntés | Státusz | Következő lépés |
 |---|---|---|---|
 | 2026-09-27 | **Village Street playable owner image target** | APPROVED / REVIEW | A tulajdonos által csatolt storyboard-kivágás háromnegyedes, mélységbe futó utcaképe az első bejárható jelenet konkrét kompozíciós célja. Az új `street_clean_source_REVIEW.png` emberek és UI nélküli átmeneti háttér; Akira és az egyenként jóváhagyott női NPC-k külön sprite-ok. Részletek és hiányzó FINAL rétegek: `docs/VILLAGE_STREET_OWNER_TARGET_V4_REVIEW.md`. |

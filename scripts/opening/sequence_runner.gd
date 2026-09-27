@@ -14,6 +14,7 @@ var shot_index := -1
 var line_index := -1
 var reveal_time := 0.0
 var completed := false
+var arrival: Node
 var handoff_count := 0
 var auto_advance := true
 var overlay: Control
@@ -90,7 +91,7 @@ func _ready() -> void:
 	skip_dialog.dialog_text = words.skip
 	skip_dialog.ok_button_text = words.yes
 	skip_dialog.cancel_button_text = words.no
-	skip_dialog.confirmed.connect(finish_intro)
+	skip_dialog.confirmed.connect(skip_all)
 	canvas.add_child(skip_dialog)
 	set_beat(0)
 
@@ -121,7 +122,12 @@ func install_input() -> void:
 
 func _process(delta: float) -> void:
 	if completed:
-		update_ambient(delta)
+		if skip_dialog.visible:
+			street.player.scripted_axis = Vector2.ZERO
+			street.player.velocity = Vector2.ZERO
+			return
+		if is_instance_valid(arrival) and not arrival.done:
+			arrival.advance(delta)
 		return
 	if skip_dialog.visible:
 		return
@@ -208,19 +214,23 @@ func advance_line() -> void:
 		finish_intro()
 
 func request_skip() -> void:
-	if completed:
+	if is_instance_valid(arrival) and arrival.done:
 		return
-	if GameState.has_flag("opening_intro_seen"):
-		finish_intro()
+	if GameState.has_flag("arrival_cinematic_seen"):
+		skip_all()
 	else:
 		skip_dialog.popup_centered(Vector2i(370,110))
+
+func skip_all() -> void:
+	finish_intro()
+	if is_instance_valid(arrival):
+		arrival.finish()
 
 func finish_intro() -> void:
 	# All completion paths converge here; idempotent under repeated skip/Enter.
 	if completed:
 		return
 	completed = true
-	handoff_count += 1
 	if fade != null:
 		fade.kill()
 	skip_dialog.hide()
@@ -232,12 +242,26 @@ func finish_intro() -> void:
 	weather.show()
 	heading.text = "Tsukimori  /  村"
 	heading.show()
-	hint.text = words.controls
+	hint.text = "Érkezés · Esc: kihagyás"
 	hint.show()
 	ambience.leave_vehicle()
+	arrival = preload("res://scripts/opening/arrival_director.gd").new()
+	add_child(arrival)
+	arrival.start(self)
+
+func finish_arrival() -> void:
+	if handoff_count > 0:
+		return
+	handoff_count += 1
+	skip_dialog.hide()
+	dialogue.hide()
+	bubble.hide()
+	heading.text = "Miyako háza"
+	heading.show()
+	hint.text = "WASD / nyilak · séta    F1 · segítség"
 	street.enable_control()
 	handoff_completed.emit()
-	print("OPENING_HANDOFF: opening_intro_seen=true entered_tsukimori=true input_enabled=true")
+	print("ARRIVAL_HANDOFF: met_miyako=true arrival_cinematic_seen=true input_enabled=true")
 
 func update_ambient(delta: float) -> void:
 	bubble_time = maxf(0,bubble_time-delta)

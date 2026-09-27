@@ -9,6 +9,7 @@ var data: Dictionary
 var enabled := false
 var camera_x := 542.0
 var backdrop: Sprite2D
+var location := "street"
 const STREET_WIDTH := 1085.0
 
 func _ready() -> void:
@@ -66,6 +67,8 @@ func _ready() -> void:
 	camera.make_current()
 
 func _physics_process(delta: float) -> void:
+	if location != "street":
+		return
 	var target := clampf(player.position.x,320,STREET_WIDTH-320)
 	camera_x = move_toward(camera_x,target,140*delta)
 	camera.position.x = roundf(camera_x)
@@ -75,11 +78,33 @@ func _physics_process(delta: float) -> void:
 		resident.scale = Vector2.ONE * lane_scale(resident.position.y)
 
 func lane_scale(feet_y: float) -> float:
+	if location != "street":
+		return 1.3
 	return lerpf(1.20,2.25,clampf((feet_y-90.0)/245.0,0.0,1.0))
 
 func lane_limits(feet_y: float) -> Vector2:
+	if location != "street":
+		return Vector2(65,555) if location == "bridge" else Vector2(280,545)
 	var depth := clampf((feet_y-80.0)/260.0,0.0,1.0)
 	return Vector2(lerpf(465,375,depth),lerpf(615,650,depth))
+
+func show_location(next_location: String) -> void:
+	location = next_location
+	for resident in residents:
+		resident.hide()
+		resident.set_physics_process(false)
+	foreground.hide()
+	var file := "BRIDGE_PIXEL_V1.png" if location == "bridge" else "MIYAKO_HOUSE_EXTERIOR_PIXEL_V1.png"
+	backdrop.texture = load("res://assets/opening/reference/"+file)
+	backdrop.scale = Vector2(640.0/backdrop.texture.get_width(),360.0/backdrop.texture.get_height())
+	camera.position = Vector2(320,180)
+	camera_x = 320
+	player.velocity = Vector2.ZERO
+	player.scripted_axis = Vector2.ZERO
+	player.scale = Vector2.ONE * (1.1 if location == "bridge" else 1.55)
+	player.floor_min = 170 if location == "bridge" else 260
+	player.floor_max = 205 if location == "bridge" else 286
+	player.position = Vector2(85,190) if location == "bridge" else Vector2(520,274)
 
 
 func enable_control() -> void:

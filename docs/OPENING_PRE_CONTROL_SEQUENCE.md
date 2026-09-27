@@ -1,5 +1,7 @@
 # Tsukimori — Opening Pre-Control Sequence v1
 
+**2026-09-27 owner-approved update:** control stays locked after the gate through the live Village Street → bridge → house → Miyako greeting cinematic. Handoff occurs in the house forecourt after the greeting. See `ARRIVAL_CINEMATIC_REVIEW.md`; earlier gate-handoff notes below are historical staging.
+
 **Dátum:** 2026-09-26  
 **Státusz:** APPROVED WORKING SCENE SCRIPT
 
@@ -276,4 +278,3 @@ A jelenet akkor kész review-ra, ha:
 - az első playable frame vizuálisan ugyanabból a világból folytatódik;
 - az input lock/unlock hibamentes;
 - skip esetén a szükséges GameState flag-ek helyesen állnak.
-
