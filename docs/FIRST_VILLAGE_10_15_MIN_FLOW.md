@@ -1,6 +1,6 @@
 # Tsukimori — First Village 10–15 Minute Flow v1
 
-**2026-09-27 owner-approved update:** the current arrival slice is an automatic in-game cinematic through Miyako's greeting. The exploration timings/input descriptions below are superseded for this arrival; side-view playable levels remain part of the game. See `ARRIVAL_CINEMATIC_REVIEW.md`.
+**2026-09-28 owner-approved superseding update:** a teljes falun átvezető automatikus arrival cinematic SUPERSEDED. A rövid pre-control cinematic a Tsukimori kapunál ér véget. Innen a játékos visszakapja az irányítást, és az alábbi Village Street → Hana → Kuroe → Shion → híd → Miyako flow ismét az elsődleges pacing authority.
 
 **Dátum:** 2026-09-26  
 **Státusz:** APPROVED WORKING SCENE FLOW
