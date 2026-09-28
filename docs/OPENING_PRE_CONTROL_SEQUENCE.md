@@ -1,6 +1,6 @@
 # Tsukimori — Opening Pre-Control Sequence v1
 
-**2026-09-27 owner-approved update:** control stays locked after the gate through the live Village Street → bridge → house → Miyako greeting cinematic. Handoff occurs in the house forecourt after the greeting. See `ARRIVAL_CINEMATIC_REVIEW.md`; earlier gate-handoff notes below are historical staging.
+**2026-09-28 owner-approved superseding update:** a korábbi hosszú automatikus Village Street → bridge → house → Miyako arrival flow **SUPERSEDED** a nyitás szempontjából. A pre-control cinematic most: **busz → rövid emléktöredék → leszállás → erdei gyaloglás → Tsukimori kapuja → control handoff**. A Village Street, Hana/Kuroe/Shion cameók, híd és Miyako találkozása ezután játékosvezérelt flow. A korábbi `ARRIVAL_CINEMATIC_REVIEW.md` technikai referencia marad, de nem az új opening authority.
 
 **Dátum:** 2026-09-26  
 **Státusz:** APPROVED WORKING SCENE SCRIPT
@@ -25,6 +25,36 @@ Kapcsolódó authority:
 - `docs/FIRST_VILLAGE_10_15_MIN_FLOW.md`
 - `docs/PIXEL_ART_PRODUCTION_DIRECTION.md`
 - `docs/CODEX_IMPLEMENTATION_BRIEF.md`
+
+---
+
+# 0.5. Opening memory fracture — LOCKED motif
+
+A buszos szakaszban, Akira visszatérésének okát felidézve egy **rövid, 8–15 másodperces töredezett emlékkép** jelenik meg.
+
+## OPEN_MEMORY_01 — Beautiful memory → horror fracture
+
+Első benyomás:
+- egy felnőtt nő gyönyörű, meleg, biztonságosnak tűnő emlékképben jelenik meg;
+- a nő egyik azonnal felismerhető vizuális jegye a **szokatlanul / extrém nagy mellkas**, monumentális női sziluettel;
+- a név és a teljes arcazonosság az első nyitásban maradjon részben rejtve;
+- a jelenet első pillanatai akár romantikus vagy megnyugtató emléknek is tűnhetnek.
+
+Átfordulás:
+- ugyanaz a mosoly / kéz / közelség rövid, törött vágásokkal fenyegetővé válik;
+- a meleg fény hidegbe fordul;
+- ugyanaz a kéz, amely előbb gyengédnek tűnt, később Akira csuklóját fogja;
+- a perspektíva és a nő monumentális sziluettje nyomasztóvá válik;
+- Akira testi reakciója, lefogott kéz, elfordított fej, összeszorított ujjak, légzés és képkiesés jelzi a bántalmazás emlékét;
+- **maga a szexuális/bántalmazó aktus nem jelenik meg explicit módon**.
+
+Narratív funkció:
+- az első alkalom ne magyarázza meg, ki a nő és pontosan mi történt;
+- ugyanaz a motívum később többször visszatérhet, minden alkalommal hosszabban és pontosabban;
+- a teljes igazság csak Akira memória-visszatérési ívében áll össze;
+- az extrém nagy mellkas/sziluett szándékos vizuális azonosító: a játékos később azonnal felismerhesse, hogy ugyanahhoz a nőhöz kapcsolódik az emlék.
+
+A jelenet célja: **szépség → intimitás látszata → disszonancia → horror → képkiesés**.
 
 ---
 
@@ -269,11 +299,14 @@ A nyitó CG-k ugyanazt a high-detail pixel-art nyelvet használják, mint a play
 # 5. Acceptance criteria
 
 A jelenet akkor kész review-ra, ha:
-- 1.5–3 perc alatt lefut;
+- kb. 45–70 másodperc alatt lefut;
 - nincs lore dump;
 - Katsuro neve megmarad a játékosban;
 - érezhető, hogy a falu figyel;
 - nincs korai Miyako/Himiko reveal;
+- a busz utáni erdei gyaloglás cinematic része a nyitásnak;
+- a teljes cinematic a Tsukimori kapunál ér véget, és ott történik a control handoff;
+- a Village Street/Hana/Kuroe/Shion/híd/Miyako rész már nem automatikus opening cinematic;
 - a control handoff természetes;
 - az első playable frame vizuálisan ugyanabból a világból folytatódik;
 - az input lock/unlock hibamentes;
