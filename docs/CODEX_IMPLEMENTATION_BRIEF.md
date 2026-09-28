@@ -159,20 +159,28 @@ Implementációs szabályok:
 - a reference boardokból production előtt tiszta transparent atlasz készüljön fix frame size + bottom-center pivot rendszerrel;
 - a boardokon szereplő named/special character designok nem írhatják felül a saját character reference-eket.
 
-### Opening pre-control sequence — APPROVED
+### Opening pre-control sequence — LOCKED 2026-09-28
 
 Kötelező jelenetforrás:
 - `docs/OPENING_PRE_CONTROL_SEQUENCE.md`
 
-Ez fut le a tényleges player control előtt:
-- black/rain opening;
-- Akira internal monologue;
-- Tsukimori arrival pixel shot;
-- subtle watched-by-the-village beat;
-- Akira at gate;
-- seamless handoff to Village Street.
+A korábbi hosszú automatikus Village Street → bridge → house → Miyako arrival flow **SUPERSEDED**.
 
-Narratív tartalom ne kerüljön közvetlenül a Player/World scriptbe; adatvezérelt scene runner használata javasolt.
+Új pre-control cinematic:
+- black/rain opening;
+- busz + Akira belső monológ;
+- 8–15 mp-es szépnek induló, horrorba törő trauma-emléktöredék;
+- az emlékben szereplő felnőtt nő vizuális azonosítója: monumentális sziluett és extrém nagy mellkas; név/arc korán részben rejtett;
+- bántalmazás csak töredékes, nem explicit képi jelekkel;
+- buszról leszállás;
+- cinematic erdei gyaloglás a Tsukimori kapuig;
+- control handoff a kapunál.
+
+Utána a Village Street, Hana/Kuroe/Shion cameók, híd és Miyako első találkozása **játékosvezérelt flow** a `FIRST_VILLAGE_10_15_MIN_FLOW.md` szerint.
+
+Célidő: kb. 45–70 másodperc.
+
+Narratív tartalom ne kerüljön közvetlenül a Player/World scriptbe; adatvezérelt scene runner maradjon.
 
 ### First village 10–15 minute flow — APPROVED
 
