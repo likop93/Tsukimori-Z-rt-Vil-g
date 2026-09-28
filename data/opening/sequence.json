@@ -1,60 +1,12 @@
 {
-  "scene_id": "opening_pre_control_v1",
+  "scene_id": "short_gate_handoff_v1",
   "beats": [
-    {
-      "id": "open_00",
-      "image": "",
-      "duration": 6,
-      "lines": []
-    },
-    {
-      "id": "open_01",
-      "image": "bus",
-      "shots": ["bus_cabin", "bus_glass", "bus_akira", "bus_road"],
-      "duration": 32,
-      "lines": [
-        "Az eső már órák óta verte az ablakot.",
-        "A sofőr egyszer sem kérdezte meg, biztosan itt akarok-e leszállni.",
-        "Talán ő is tudta, hogy ezt a döntést már jóval az indulás előtt elrontottam.",
-        "Katsuro hívott vissza.",
-        "Túl sok év után. Túl kevés magyarázattal.",
-        "És én mégis eljöttem."
-      ]
-    },
-    {
-      "id": "open_02",
-      "image": "arrival",
-      "shots": ["arrival_skyline", "arrival_street"],
-      "duration": 24,
-      "lines": [
-        "Tsukimori ugyanolyan csendesnek tűnt, mint régen.",
-        "Csak a csendje lett nehezebb."
-      ]
-    },
-    {
-      "id": "open_03",
-      "image": "watch",
-      "shots": ["watch_left", "watch_right"],
-      "duration": 18,
-      "lines": [
-        "Mintha a falu már tudná, hogy megérkeztem."
-      ]
-    },
-    {
-      "id": "open_04",
-      "image": "gate",
-      "shots": ["gate_wide", "gate_close"],
-      "duration": 14,
-      "lines": [
-        "Most már mindegy.",
-        "Innen már végig kell mennem rajta."
-      ]
-    },
-    {
-      "id": "open_05",
-      "image": "",
-      "duration": 2.5,
-      "lines": []
-    }
+    {"id":"black","image":"","duration":3,"lines":[]},
+    {"id":"bus","image":"bus","shots":["bus_cabin"],"duration":16,"lines":["Az eső már órák óta verte az ablakot.","Katsuro hívott vissza.","Túl sok év után. Túl kevés magyarázattal."]},
+    {"id":"memory","image":"memory","asset":"res://assets/opening/short_intro_v1/memory_REVIEW.png","duration":10,"lines":[]},
+    {"id":"stop","image":"forest","asset":"res://assets/opening/short_intro_v1/forest_gate_REVIEW.png","duration":8,"lines":[]},
+    {"id":"forest","image":"forest","asset":"res://assets/opening/short_intro_v1/forest_gate_REVIEW.png","duration":15,"lines":["Tsukimori ugyanolyan csendesnek tűnt, mint régen.","Csak a csendje lett nehezebb."]},
+    {"id":"gate","image":"forest","asset":"res://assets/opening/short_intro_v1/forest_gate_REVIEW.png","duration":7,"lines":["Most már mindegy.","Innen már végig kell mennem rajta."]},
+    {"id":"handoff","image":"","duration":1,"lines":[]}
   ]
 }

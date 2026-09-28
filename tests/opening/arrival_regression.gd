@@ -1,3 +1,4 @@
+# Historical automatic-arrival test; superseded by gate_flow_regression.gd on 2026-09-28.
 extends Node
 var failures: Array[String] = []
 func check(ok: bool, label: String) -> void:
@@ -43,8 +44,10 @@ func _ready() -> void:
 	while runner.arrival.phase == "street":
 		await get_tree().process_frame
 	check(not runner.street.player.input_enabled,"Bridge remains cinematic")
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(9).timeout
 	await capture("arrival_bridge_cinematic")
+	check(runner.street.player.position.y >= 176 and runner.street.player.position.y <= 183,"Bridge hold is grounded on the central deck")
+	check(runner.street.bridge_rail.visible,"Near bridge railing occludes the cast")
 	check_watchers(runner,"bridge")
 	while runner.arrival.phase == "bridge":
 		await get_tree().process_frame
@@ -66,6 +69,14 @@ func _ready() -> void:
 	await get_tree().create_timer(0.4).timeout
 	Input.action_release("walk_left")
 	check(runner.street.player.position.x < destination.x,"House forecourt becomes playable")
+	await get_tree().create_timer(0.4).timeout
+	check(runner.street.player.facing == 1 and runner.street.player.visual.frame == 1 and not runner.street.player.visual.flip_h,"Left movement settles in the source's left-facing idle")
+	await capture("akira_left_idle_REVIEW")
+	Input.action_press("walk_right")
+	await get_tree().create_timer(0.4).timeout
+	Input.action_release("walk_right")
+	await get_tree().create_timer(0.4).timeout
+	check(runner.street.player.facing == 3 and runner.street.player.visual.frame == 3 and not runner.street.player.visual.flip_h,"Right movement settles in the source's right-facing idle")
 	runner.queue_free()
 	await get_tree().process_frame
 	for phase in ["intro","street","bridge","house","greeting"]:

@@ -11,3 +11,4 @@ __pycache__/
 *.blend1
 review/runtime-profile/
 review/*.log
+review/motion_frames/

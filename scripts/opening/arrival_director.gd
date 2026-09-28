@@ -34,8 +34,7 @@ func advance(delta: float) -> void:
 		"bridge":
 			actor.scripted_axis = Vector2.RIGHT if elapsed < 8 or elapsed > 11 else Vector2.ZERO
 			actor.scripted_speed = 25
-			# Feet follow the bridge's shallow arch.
-			actor.position.y = 194-20*sin(clampf((actor.position.x-85)/430,0,1)*PI)
+			# Street owns the surveyed deck path and foreground rail occlusion.
 			if elapsed >= 8 and elapsed < 11:
 				runner.dialogue.show()
 				runner.narration.text = "…csak a fény."
@@ -89,13 +88,12 @@ func finish() -> void:
 		return
 	if runner.street.location != "house":
 		runner.street.show_location("house")
+		runner.street.player.position = Vector2(270,274)
 	show_miyako()
 	runner.street.modulate.a = 1
-	runner.street.player.position = Vector2(270,274)
 	runner.street.player.scripted_axis = Vector2.ZERO
 	runner.street.player.velocity = Vector2.ZERO
 	runner.street.player.facing = 3
-	for flag in ["opening_intro_seen","entered_tsukimori","crossed_bridge","met_miyako","arrival_cinematic_seen"]:
-		GameState.set_flag(flag)
+	GameState.set_flag("met_miyako")
 	done = true
 	runner.finish_arrival()

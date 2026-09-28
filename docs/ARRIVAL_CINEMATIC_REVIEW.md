@@ -1,5 +1,7 @@
 # Arrival through Miyako — REVIEW, 2026-09-27
 
+**SUPERSEDED as an opening on 2026-09-28.** Retained as historical staging. Current behavior: `SHORT_OPENING_GATE_REVIEW.md`; authority: `OPENING_PRE_CONTROL_SEQUENCE.md`. Control is now given at the gate.
+
 Owner correction: Akira enters the final house shot from the left (x=145), walks right and stops left of Miyako (x=270). Natural completion and skipping share this destination. All three live arrival scenes now contain watching anonymous women: four in the street, two at the bridge edges and two at the house edges. The existing approved resident atlases are reused; their look frames follow Akira's horizontal position. Miyako's reveal remains at the house.
 
 Owner approved: the three-quarter village view can be a live in-game cinematic through Miyako's first meeting. It is not a universal camera requirement. Side-view gameplay remains supported; the house forecourt is the first controllable area in this build.

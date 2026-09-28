@@ -7,9 +7,12 @@ var foreground: Sprite2D
 var residents: Array = []
 var data: Dictionary
 var enabled := false
+var camera_locked := true
 var camera_x := 542.0
 var backdrop: Sprite2D
 var location := "street"
+var bridge_rail: Node2D
+const BRIDGE_PATH := [Vector2(65,188),Vector2(185,187),Vector2(265,177),Vector2(345,178),Vector2(435,189),Vector2(555,205)]
 const STREET_WIDTH := 1085.0
 
 func _ready() -> void:
@@ -69,8 +72,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if location != "street":
 		return
-	var target := clampf(player.position.x,320,STREET_WIDTH-320)
-	camera_x = move_toward(camera_x,target,140*delta)
+	if not camera_locked:
+		var target := clampf(player.position.x,320,STREET_WIDTH-320)
+		camera_x = move_toward(camera_x,target,140*delta)
 	camera.position.x = roundf(camera_x)
 	# The lane recedes into the image. Scale follows the foot position in depth.
 	player.scale = Vector2.ONE * lane_scale(player.position.y)
@@ -88,15 +92,58 @@ func lane_limits(feet_y: float) -> Vector2:
 	var depth := clampf((feet_y-80.0)/260.0,0.0,1.0)
 	return Vector2(lerpf(465,375,depth),lerpf(615,650,depth))
 
+func constrain_position(at: Vector2) -> Vector2:
+	if location == "bridge":
+		at.x = clampf(at.x,65,555)
+		for i in range(1,BRIDGE_PATH.size()):
+			var end: Vector2 = BRIDGE_PATH[i]
+			var start: Vector2 = BRIDGE_PATH[i-1]
+			if at.x <= end.x:
+				at.y = lerpf(start.y,end.y,(at.x-start.x)/(end.x-start.x))
+				break
+		return at
+	# Stop before the upper village steps and keep the house feet between
+	# the planted border and the near fence, including during cinematics.
+	at.y = clampf(at.y,150 if location == "street" else 264,339 if location == "street" else 282)
+	var edges := lane_limits(at.y)
+	at.x = clampf(at.x,edges.x,edges.y)
+	return at
+
+func add_rail_patch(points: PackedVector2Array) -> void:
+	var patch := Polygon2D.new()
+	patch.polygon = points
+	var texcoords := PackedVector2Array()
+	for point in points:
+		texcoords.append(point*Vector2(backdrop.texture.get_width()/640.0,backdrop.texture.get_height()/360.0))
+	patch.uv = texcoords
+	patch.texture = backdrop.texture
+	patch.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	bridge_rail.add_child(patch)
+
+func build_bridge_rail() -> void:
+	bridge_rail = Node2D.new()
+	bridge_rail.z_index = 20
+	add_child(bridge_rail)
+	# Exact source-image patches put the near rail in front of the actor.
+	add_rail_patch(PackedVector2Array([Vector2(190,179),Vector2(265,174),Vector2(345,174),Vector2(435,184),Vector2(544,201),Vector2(544,212),Vector2(435,196),Vector2(345,186),Vector2(265,185),Vector2(190,191)]))
+	for post in [Rect2(248,151,10,36),Rect2(361,157,9,31),Rect2(486,166,11,37),Rect2(535,181,10,32)]:
+		add_rail_patch(PackedVector2Array([post.position,post.position+Vector2(post.size.x,0),post.end,post.position+Vector2(0,post.size.y)]))
+
 func show_location(next_location: String) -> void:
 	location = next_location
 	for resident in residents:
 		resident.hide()
 		resident.set_physics_process(false)
 	foreground.hide()
+	if is_instance_valid(bridge_rail):
+		bridge_rail.hide()
 	var file := "BRIDGE_PIXEL_V1.png" if location == "bridge" else "MIYAKO_HOUSE_EXTERIOR_PIXEL_V1.png"
 	backdrop.texture = load("res://assets/opening/reference/"+file)
 	backdrop.scale = Vector2(640.0/backdrop.texture.get_width(),360.0/backdrop.texture.get_height())
+	if location == "bridge":
+		if not is_instance_valid(bridge_rail):
+			build_bridge_rail()
+		bridge_rail.show()
 	camera.position = Vector2(320,180)
 	camera_x = 320
 	player.velocity = Vector2.ZERO
@@ -121,4 +168,5 @@ func show_location(next_location: String) -> void:
 
 func enable_control() -> void:
 	enabled = true
+	camera_locked = false
 	player.input_enabled = true

@@ -7,6 +7,6 @@ func _ready() -> void:
 	runner.skip_all()
 	await get_tree().create_timer(1.0).timeout
 	await RenderingServer.frame_post_draw
-	get_viewport().get_texture().get_image().save_png("res://review/miyako_arrival_REVIEW.png")
-	print("VILLAGE_TARGET_V4_READY: overhead lane, owner image composition and depth scale")
+	get_viewport().get_texture().get_image().save_png("res://review/short_intro_playable_gate.png")
+	print("GATE_REVIEW_READY: player control begins in Village Street")
 	get_tree().quit()

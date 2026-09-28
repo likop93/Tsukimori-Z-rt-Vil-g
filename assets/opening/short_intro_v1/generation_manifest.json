@@ -1,0 +1,26 @@
+{
+  "status": "REVIEW / PLACEHOLDER",
+  "date": "2026-09-28",
+  "provider": "built-in image_gen",
+  "assets": [
+    {
+      "file": "forest_gate_REVIEW.png",
+      "prompt": "Tsukimori game REVIEW environment asset, high-detail crisp cinematic pixel art. Match the attached approved Japanese mountain village architecture, blue-violet rainy night and warm amber lantern palette. Wide 16:9 SIDE-VIEW staging of a narrow forest footpath approaching the village gate at far right. Empty continuous wet horizontal footpath across lower third, traversable from left to right, dark cedar trunks and mist behind it, distant warm village lights visible through the gate, restrained foreground branches framing outer edges only. No people, no vehicles, no text, no UI. Important: the walkable ground baseline stays roughly level, clear and continuous; no obstruction across the path. Rich precise pixel clusters, no blur or photographic rendering. This is the forest-before-gate approach, not a new location or a redesigned village.",
+      "reference": "assets/opening/reference/VILLAGE_STREET_PIXEL_V1.png"
+    },
+    {
+      "file": "bus_REVIEW.png",
+      "prompt": "Transparent pixel-art game sprite: a single modest Japanese rural passenger bus, side view facing LEFT, at night, full vehicle including both wheels, passenger door on visible side near left front OPEN with warm amber doorway. Muted cream and dark navy paint, rain-wet body, cool blue shadow, dim interior. Crisp hand-placed pixel clusters, no blur, no people driver lettering logos scenery ground or cast shadow. Vehicle fills a wide horizontal canvas with small equal transparent margins; correct wheels and realistic bus proportions. For a 2D narrative game intro, source intended to display at 390px width. One bus only, no sheet, no labels."
+    },
+    {
+      "file": "memory_REVIEW.png",
+      "prompt": "Create a non-explicit psychological-drama memory image for Tsukimori, crisp high-detail cinematic pixel art, wide 16:9. An anonymous clearly adult woman in a fully opaque elegant dark high-neck long-sleeved dress sits near an adult man's hand at a table in a softly lit amber room. Her unusual monumental silhouette and extremely large bust are a recognizable physical characteristic, fully covered, not a focal erotic close-up. Frame from her shoulders to lap with upper face entirely outside the frame; identity and hair not identifiable. Her hand rests quietly around the man's clothed wrist on the table, initially ambiguous as a reassuring gesture, not an act of violence. Include an amber lamp and a doorway receding into shadow. The man is only represented by his charcoal jacket sleeve and hand at the frame edge. Warm calm composition with subtle uneasy negative space. Serious trauma-memory storytelling, no nudity, no sexual activity, no visible injuries, no erotic posing, no text or named character. This single anonymous memory motif will be reused with cold lighting and temporal distortion in engine. No established heroine design or identity is implied.",
+      "authority": "docs/OPENING_PRE_CONTROL_SEQUENCE.md: anonymous adult memory motif; no named identity assigned"
+    }
+  ],
+  "gait": {
+    "file": "../gait_v5/side_source_REVIEW.png",
+    "reference": "assets/opening/staging_v3/akira_walk_REVIEW.png",
+    "limitations": "Eight exposures with some closely related poses; still requires authored production animation polish, especially front/back cycles."
+  }
+}

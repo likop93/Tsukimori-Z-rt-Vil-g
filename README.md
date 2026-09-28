@@ -1,15 +1,15 @@
 # Tsukimori — Zárt Világ
 
-## Opening + Village Street — 2026-09-27
+## Opening + Village Street — 2026-09-28
 
-F5 starts the pixel opening and a live arrival cinematic through Village Street, the bridge and Miyako's greeting (about 2.5 minutes total). Movement unlocks in the house forecourt after the greeting. ESC skips the full arrival safely. Side-view levels remain supported; the village camera is not a global rule. Current details: [Arrival cinematic REVIEW](docs/ARRIVAL_CINEMATIC_REVIEW.md).
+F5 starts the new 60-second bus/memory/forest/gate opening. Movement unlocks at Village Street; the bridge and Miyako follow through player-controlled exploration. E at the route edge continues, E near Miyako starts her greeting. ESC skips only the pre-control intro to the gate. Side-view levels remain supported. Current details: [Short opening and movement REVIEW](docs/SHORT_OPENING_GATE_REVIEW.md).
 WASD/arrows: move. Enter/Space: advance narration. Esc: confirm intro skip.
 E: observe a nearby resident. F1: show/hide controls.
 
 **TECHNICAL REVIEW / PLACEHOLDER ART.** Four ambient women, camera, three-quarter
 stone-lane boundaries, rain, foreground rail occlusion and state-safe handoff are implemented.
 The four approved individual NPC sheets now play idle/look/walk poses.
-Akira now uses a 16-frame REVIEW atlas with directional walking and distance-based gait.
+Akira uses an eight-frame side-walk REVIEW cycle, four-pose front/back cycles, preserved idle direction and distance-based cadence.
 The playable street now follows the owner's attached overhead three-quarter image;
 the plate is still a REVIEW asset and separate production parallax layers are missing.
 Current visual target and exact provenance: [Village Street owner target v4](docs/VILLAGE_STREET_OWNER_TARGET_V4_REVIEW.md).

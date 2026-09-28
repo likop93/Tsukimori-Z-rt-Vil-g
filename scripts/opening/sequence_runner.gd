@@ -15,6 +15,8 @@ var line_index := -1
 var reveal_time := 0.0
 var completed := false
 var arrival: Node
+var opening_stage: Node2D
+var village_flow: Node
 var handoff_count := 0
 var auto_advance := true
 var overlay: Control
@@ -59,6 +61,8 @@ func _ready() -> void:
 	shot.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	shot.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	overlay.add_child(shot)
+	opening_stage = preload("res://scripts/opening/opening_stage.gd").new()
+	overlay.add_child(opening_stage)
 	weather = Weather.new()
 	canvas.add_child(weather)
 	dialogue = Panel.new()
@@ -122,18 +126,18 @@ func install_input() -> void:
 
 func _process(delta: float) -> void:
 	if completed:
-		if skip_dialog.visible:
-			street.player.scripted_axis = Vector2.ZERO
-			street.player.velocity = Vector2.ZERO
-			return
 		if is_instance_valid(arrival) and not arrival.done:
 			arrival.advance(delta)
+		else:
+			update_ambient(delta)
+			village_flow.advance(delta)
 		return
 	if skip_dialog.visible:
 		return
 	beat_time += delta
 	reveal_time += delta
 	var beat: Dictionary = beats[beat_index]
+	opening_stage.update_stage(str(beat.id),beat_time,float(beat.duration),shot)
 	if beat.has("shots"):
 		var next_shot := mini(beat.shots.size()-1,int(beat_time / (float(beat.duration)/beat.shots.size())))
 		if next_shot != shot_index:
@@ -146,10 +150,10 @@ func _process(delta: float) -> void:
 			reveal_time = 0
 			narration.text = lines[line_index]
 		narration.visible_characters = int(reveal_time*34)
-	if beat_index == 4:
+	if beat.id == "gate":
 		# Reveal the already-instantiated street before input unlock: same actor and spawn.
 		overlay.modulate.a = 1.0-clampf((beat_time-(float(beat.duration)-2.5))/2.5,0,1)
-	if beat_index == 5:
+	if beat.id == "handoff":
 		overlay.modulate.a = 0
 		dialogue.modulate.a = overlay.modulate.a
 	if auto_advance and beat_time >= float(beat.duration):
@@ -167,13 +171,23 @@ func set_beat(index: int) -> void:
 	overlay.modulate.a = 1.0
 	dialogue.modulate.a = 1.0
 	var beat: Dictionary = beats[index]
+	if beat.id == "gate":
+		street.camera_x = 388
+		street.camera.position.x = 388
+	opening_stage.reset_stage()
+	shot.material = null
+	shot.modulate = Color.WHITE
+	shot.position = Vector2.ZERO
+	shot.scale = Vector2.ONE
 	dialogue.visible = not beat.lines.is_empty()
 	heading.visible = false
 	hint.text = words.intro
 	hint.visible = index > 0
-	weather.active = index != 0
-	weather.visible = index != 0
-	if index == 5:
+	weather.active = beat.id not in ["black","memory"]
+	weather.visible = weather.active
+	ambience.rain.volume_db = -22 if beat.id == "memory" else -15
+	ambience.vehicle.pitch_scale = 0.65 if beat.id == "memory" else 1.0
+	if beat.id == "handoff":
 		# Street is already alive beneath the gate shot: no scene/audio reload.
 		dialogue.hide()
 		return
@@ -181,12 +195,19 @@ func set_beat(index: int) -> void:
 		fade.kill()
 	shot.visible = not str(beat.image).is_empty()
 	if shot.visible:
-		if beat.has("shots"):
+		if beat.has("asset"):
+			shot.texture = load(beat.asset)
+			if beat.id == "stop":
+				var crop := AtlasTexture.new()
+				crop.atlas = shot.texture
+				crop.region = Rect2(0,280,1100,619)
+				shot.texture = crop
+		elif beat.has("shots"):
 			set_shot(str(beat.shots[0]),0)
 		else:
 			shot.texture = load("res://assets/opening/generated/"+str(beat.image)+"_REVIEW.png")
 			shot.modulate.a = 1.0
-	if index == 3:
+	if beat.id == "stop":
 		ambience.leave_vehicle()
 
 func set_shot(id: String, index: int) -> void:
@@ -214,17 +235,15 @@ func advance_line() -> void:
 		finish_intro()
 
 func request_skip() -> void:
-	if is_instance_valid(arrival) and arrival.done:
+	if completed:
 		return
-	if GameState.has_flag("arrival_cinematic_seen"):
+	if GameState.has_flag("opening_intro_seen"):
 		skip_all()
 	else:
 		skip_dialog.popup_centered(Vector2i(370,110))
 
 func skip_all() -> void:
 	finish_intro()
-	if is_instance_valid(arrival):
-		arrival.finish()
 
 func finish_intro() -> void:
 	# All completion paths converge here; idempotent under repeated skip/Enter.
@@ -242,17 +261,21 @@ func finish_intro() -> void:
 	weather.show()
 	heading.text = "Tsukimori  /  村"
 	heading.show()
-	hint.text = "Érkezés · Esc: kihagyás"
+	hint.text = words.controls
 	hint.show()
 	ambience.leave_vehicle()
-	arrival = preload("res://scripts/opening/arrival_director.gd").new()
-	add_child(arrival)
-	arrival.start(self)
+	ambience.rain.volume_db = -15
+	opening_stage.reset_stage()
+	street.player.scripted_axis = Vector2.ZERO
+	street.enable_control()
+	handoff_count += 1
+	village_flow = preload("res://scripts/opening/village_flow.gd").new()
+	add_child(village_flow)
+	village_flow.runner = self
+	handoff_completed.emit()
+	print("GATE_HANDOFF: entered_tsukimori=true met_miyako=false")
 
 func finish_arrival() -> void:
-	if handoff_count > 0:
-		return
-	handoff_count += 1
 	skip_dialog.hide()
 	dialogue.hide()
 	bubble.hide()
@@ -260,8 +283,7 @@ func finish_arrival() -> void:
 	heading.show()
 	hint.text = "WASD / nyilak · séta    F1 · segítség"
 	street.enable_control()
-	handoff_completed.emit()
-	print("ARRIVAL_HANDOFF: met_miyako=true arrival_cinematic_seen=true input_enabled=true")
+	print("MIYAKO_ENCOUNTER_COMPLETE: met_miyako=true")
 
 func update_ambient(delta: float) -> void:
 	bubble_time = maxf(0,bubble_time-delta)
@@ -270,16 +292,14 @@ func update_ambient(delta: float) -> void:
 	else:
 		position_bubble()
 	var p: Vector2 = street.player.position
-	if p.y < 112:
-		show_bubble(words.end,p)
-	elif Input.is_action_just_pressed("observe"):
+	if Input.is_action_just_pressed("observe"):
 		for resident in street.residents:
-			if p.distance_to(resident.position) < 85 and not resident.phrase.is_empty():
+			if resident.visible and p.distance_to(resident.position) < 85 and not resident.phrase.is_empty():
 				show_bubble(resident.phrase,resident.position)
 				break
 	else:
 		for resident in street.residents:
-			if resident.look_time > 1.9 and not resident.phrase.is_empty() and not shown_phrases.has(resident.name) and bubble_time <= 0:
+			if resident.visible and resident.look_time > 1.9 and not resident.phrase.is_empty() and not shown_phrases.has(resident.name) and bubble_time <= 0:
 				shown_phrases[resident.name] = true
 				show_bubble(resident.phrase,resident.position)
 				break
