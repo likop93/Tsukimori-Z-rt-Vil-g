@@ -32,6 +32,7 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 | 2026-09-26 | **Full-game visual production = cinematic pixel art 2.5D** | LOCKED | A teljes játék high-detail cinematic pixel-art / 2.5D narrative adventure formában készül. Az A Space for the Unbound részletgazdag pixel-art prezentációja inspiráció, nem másolandó stílus. A korábbi 3D render production target SUPERSEDED; a 3D layout/blocking referencia marad. Primary target: `TSUKIMORI_PIXEL_ART_VISUAL_TARGET_V1.png`. Részletes spec: `docs/PIXEL_ART_PRODUCTION_DIRECTION.md`. |
 | 2026-09-26 | **Hybrid pixel dialogue presentation** | LOCKED | Exploration közben world sprite; fontos párbeszédnél nagy, részletes pixel-art portré/félalak jelenik meg, miközben a jelenet és a kis sprite-ok dimmelve megmaradnak. Rövid ambient dialógus portré nélkül is mehet; kiemelt jelenet külön pixel-CG-re válthat. Primary reference: `TSUKIMORI_PIXEL_DIALOGUE_UI_V1.png`. |
 | 2026-09-26 | **Opening pre-control staging v1** | LOCKED | A nyitás vizuális ritmusa: fekete+eső → busz/monológ → Tsukimori establish → figyelő ablakok → Akira a kapunál → kontroll átadás a Village Streetnek. Primary reference: `visual_target/OPENING_SEQUENCE_STORYBOARD_V1.png`. |
+| 2026-09-28 | **Opening cinematic structure + traumatic memory motif** | LOCKED | A hosszú automatikus village→bridge→Miyako arrival nyitás SUPERSEDED. Új pre-control: busz → rövid szépnek induló, horrorba törő emléktöredék Akira bántalmazott múltjáról → leszállás → erdei gyaloglás → Tsukimori kapu → control handoff. Az emlékben szereplő felnőtt nő szándékos vizuális azonosítója a monumentális, extrém nagy mellkas/sziluett; név/arc az elején részben rejtett. A bántalmazás nem explicit képpel, hanem töredékes testi/pszichológiai jelekkel jelenik meg. A Village Street, Hana/Kuroe/Shion, híd és Miyako ezután játékosvezérelt flow. |
 | 2026-09-26 | **Village population = women-only ambient cast** | LOCKED | Tsukimori falusi crowd/NPC lakossága nőkből áll; generikus férfi falusi NPC nem használható. A lakosság nagy része lehet kifejezetten vonzó/elegáns, kor- és szerepvariációkkal. A fogadóban külön felnőtt courtesan/sex-worker NPC-csoport működhet kihívóbb outfitekkel. Vizuális források: `npc/VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png`, `npc/VILLAGE_NPC_ATTRACTIVE_VARIANTS_V2.png`, `npc/INN_COURTESAN_NPC_PACK_V1.png`. |
 | 2026-09-24 | **Beauty target: Akira esti megérkezése Miyako házához** | LOCKED | A fő vizuális quality bar jelenet. |
 | 2026-09-24 | **Ren'Py = történeti forrás, nem automatikus pálya-/kamera-terv** | LOCKED | A jóváhagyott Godot világépítést csak valódi történeti ütközés és tulajdonosi döntés módosíthatja. |
@@ -71,7 +72,7 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 
 ## APPROVED / még finomítható
 
-2026-09-27 — **APPROVED owner change:** the first three-quarter village sequence is a live in-game cinematic through bridge, house and Miyako's greeting. Control starts after meeting Miyako. This view is scene-specific; side-view levels remain supported. Implementation and review gaps: `ARRIVAL_CINEMATIC_REVIEW.md`.
+2026-09-27 — **SUPERSEDED owner change:** the earlier live in-game cinematic through bridge, house and Miyako's greeting remains a technical review reference only. The 2026-09-28 opening decision restores player control at the Tsukimori gate.
 
 | Dátum | Döntés | Státusz | Következő lépés |
 |---|---|---|---|
