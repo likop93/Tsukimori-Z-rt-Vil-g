@@ -1,8 +1,9 @@
 # Tsukimori — Zárt Világ
 
-## Opening + Village Street — 2026-09-28
+## Opening + Village Street — 2026-09-30
 
 F5 starts the new 70-second bus/memory/forest/gate opening. Movement unlocks at Village Street; the bridge and Miyako follow through player-controlled exploration. E at the route edge continues, E near Miyako starts her greeting. ESC skips only the pre-control intro to the gate. Side-view levels remain supported. Current details: [Cinematic v2 and Space fix REVIEW](docs/CINEMATIC_V2_REVIEW.md).
+Latest correction: [Post-intro text, grounded Miyako and scenery boundaries](docs/DIALOGUE_GROUNDING_FIX_REVIEW.md).
 WASD/arrows: move. Enter/Space: reveal or advance text without seeking the film. Esc: confirm intro skip.
 E: observe a nearby resident. F1: show/hide controls.
 

@@ -261,6 +261,8 @@ func finish_intro() -> void:
 	if completed:
 		return
 	completed = true
+	dialogue.modulate = Color.WHITE
+	narration.modulate = Color.WHITE
 	if fade != null:
 		fade.kill()
 	skip_dialog.hide()

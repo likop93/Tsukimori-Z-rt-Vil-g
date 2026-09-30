@@ -12,7 +12,11 @@ var camera_x := 542.0
 var backdrop: Sprite2D
 var location := "street"
 var bridge_rail: Node2D
-const BRIDGE_PATH := [Vector2(65,188),Vector2(185,187),Vector2(265,177),Vector2(345,178),Vector2(435,189),Vector2(555,205)]
+var house_rail: Node2D
+var featured_actor: Node2D
+const BRIDGE_PATH := [Vector2(75,191),Vector2(185,190),Vector2(265,181),Vector2(345,182),Vector2(435,192),Vector2(555,205)]
+# Surveyed inner road edges; add the actor's foot clearance before clamping.
+const STREET_EDGES := [Vector3(150,440,630),Vector3(215,410,655),Vector3(270,415,655),Vector3(339,395,680)]
 const STREET_WIDTH := 1085.0
 
 func _ready() -> void:
@@ -88,13 +92,19 @@ func lane_scale(feet_y: float) -> float:
 
 func lane_limits(feet_y: float) -> Vector2:
 	if location != "street":
-		return Vector2(65,555) if location == "bridge" else Vector2(110,545)
-	var depth := clampf((feet_y-80.0)/260.0,0.0,1.0)
-	return Vector2(lerpf(465,375,depth),lerpf(615,650,depth))
+		return Vector2(75,555) if location == "bridge" else Vector2(110,545)
+	var clearance := 24.0*lane_scale(feet_y)
+	for i in range(1,STREET_EDGES.size()):
+		var a: Vector3 = STREET_EDGES[i-1]
+		var b: Vector3 = STREET_EDGES[i]
+		if feet_y <= b.x:
+			var t := clampf((feet_y-a.x)/(b.x-a.x),0,1)
+			return Vector2(lerpf(a.y,b.y,t)+clearance,lerpf(a.z,b.z,t)-clearance)
+	return Vector2(395+clearance,680-clearance)
 
 func constrain_position(at: Vector2) -> Vector2:
 	if location == "bridge":
-		at.x = clampf(at.x,65,555)
+		at.x = clampf(at.x,75,555)
 		for i in range(1,BRIDGE_PATH.size()):
 			var end: Vector2 = BRIDGE_PATH[i]
 			var start: Vector2 = BRIDGE_PATH[i-1]
@@ -109,7 +119,7 @@ func constrain_position(at: Vector2) -> Vector2:
 	at.x = clampf(at.x,edges.x,edges.y)
 	return at
 
-func add_rail_patch(points: PackedVector2Array) -> void:
+func add_rail_patch(points: PackedVector2Array, target: Node2D = null) -> void:
 	var patch := Polygon2D.new()
 	patch.polygon = points
 	var texcoords := PackedVector2Array()
@@ -118,7 +128,7 @@ func add_rail_patch(points: PackedVector2Array) -> void:
 	patch.uv = texcoords
 	patch.texture = backdrop.texture
 	patch.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-	bridge_rail.add_child(patch)
+	(bridge_rail if target == null else target).add_child(patch)
 
 func build_bridge_rail() -> void:
 	bridge_rail = Node2D.new()
@@ -129,14 +139,26 @@ func build_bridge_rail() -> void:
 	for post in [Rect2(248,151,10,36),Rect2(361,157,9,31),Rect2(486,166,11,37),Rect2(535,181,10,32)]:
 		add_rail_patch(PackedVector2Array([post.position,post.position+Vector2(post.size.x,0),post.end,post.position+Vector2(0,post.size.y)]))
 
+func build_house_rail() -> void:
+	house_rail = Node2D.new()
+	house_rail.z_index = 20
+	add_child(house_rail)
+	add_rail_patch(PackedVector2Array([Vector2(0,244),Vector2(100,262),Vector2(190,277),Vector2(280,291),Vector2(300,294),Vector2(335,310),Vector2(383,316),Vector2(418,300),Vector2(433,279),Vector2(540,288),Vector2(640,288),Vector2(640,360),Vector2(0,360)]),house_rail)
+	for post in [Rect2(137,260,21,67),Rect2(232,270,22,63),Rect2(314,272,20,45),Rect2(426,267,23,65),Rect2(516,265,22,68)]:
+		add_rail_patch(PackedVector2Array([post.position,post.position+Vector2(post.size.x,0),post.end,post.position+Vector2(0,post.size.y)]),house_rail)
+
 func show_location(next_location: String) -> void:
 	location = next_location
+	if is_instance_valid(featured_actor):
+		featured_actor.set_active(location == "house")
 	for resident in residents:
 		resident.hide()
 		resident.set_physics_process(false)
 	foreground.hide()
 	if is_instance_valid(bridge_rail):
 		bridge_rail.hide()
+	if is_instance_valid(house_rail):
+		house_rail.hide()
 	var file := "BRIDGE_PIXEL_V1.png" if location == "bridge" else "MIYAKO_HOUSE_EXTERIOR_PIXEL_V1.png"
 	backdrop.texture = load("res://assets/opening/reference/"+file)
 	backdrop.scale = Vector2(640.0/backdrop.texture.get_width(),360.0/backdrop.texture.get_height())
@@ -144,6 +166,10 @@ func show_location(next_location: String) -> void:
 		if not is_instance_valid(bridge_rail):
 			build_bridge_rail()
 		bridge_rail.show()
+	else:
+		if not is_instance_valid(house_rail):
+			build_house_rail()
+		house_rail.show()
 	camera.position = Vector2(320,180)
 	camera_x = 320
 	player.velocity = Vector2.ZERO

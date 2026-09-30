@@ -42,6 +42,7 @@ func _ready() -> void:
 		await get_tree().process_frame
 	Engine.time_scale = 1
 	check(runner.street.location == "street" and runner.street.player.input_enabled,"Natural handoff is at village entrance")
+	check(runner.dialogue.modulate.a == 1.0,"Natural handoff restores dialogue opacity")
 	check(runner.handoff_count == 1 and not GameState.has_flag("met_miyako") and not GameState.has_flag("crossed_bridge"),"Gate handoff does not invent later story progress")
 	await capture("short_intro_playable_gate")
 	# The street must remain still until the player provides input.
@@ -78,6 +79,7 @@ func _ready() -> void:
 	Engine.time_scale = 4
 	await get_tree().create_timer(4).timeout
 	check(runner.narration.text.contains("Dr. Akira. Már vártam."),"Miyako meeting is still available after exploration")
+	check(runner.dialogue.is_visible_in_tree() and runner.dialogue.modulate.a == 1.0 and runner.narration.modulate.a == 1.0,"Miyako text actually renders after natural intro")
 	await capture("miyako_after_exploration_REVIEW")
 	await get_tree().create_timer(7).timeout
 	Engine.time_scale = 1
@@ -100,6 +102,7 @@ func _ready() -> void:
 		runner.skip_dialog.confirmed.emit()
 		runner.skip_all()
 		check(runner.handoff_count == 1 and runner.street.location == "street" and runner.street.player.input_enabled,"Every skip reaches gate exactly once")
+		check(runner.dialogue.modulate.a == 1.0,"Skip restores dialogue opacity")
 		check(GameState.has_flag("opening_intro_seen") and GameState.has_flag("entered_tsukimori") and not GameState.has_flag("met_miyako") and not GameState.has_flag("crossed_bridge"),"Skip flags match new governance")
 		runner.queue_free()
 		await get_tree().process_frame

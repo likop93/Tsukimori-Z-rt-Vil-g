@@ -4,7 +4,7 @@ var runner: Node
 var phase := "street"
 var elapsed := 0.0
 var done := false
-var miyako: Sprite2D
+var miyako: Node2D
 var phrase_index := -1
 
 func start(owner_runner: Node) -> void:
@@ -76,12 +76,10 @@ func enter_phase(next: String) -> void:
 func show_miyako() -> void:
 	if is_instance_valid(miyako):
 		return
-	miyako = Sprite2D.new()
-	miyako.texture = load("res://assets/opening/miyako_review/atlas_REVIEW.png")
-	miyako.hframes = 4
-	miyako.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-	miyako.position = Vector2(352,193)
-	runner.street.add_child(miyako)
+	miyako = preload("res://scripts/opening/grounded_miyako.gd").new()
+	miyako.position = Vector2(352,274)
+	runner.street.player.get_parent().add_child(miyako)
+	runner.street.featured_actor = miyako
 
 func finish() -> void:
 	if done:
