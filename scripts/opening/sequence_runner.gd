@@ -66,6 +66,11 @@ func _ready() -> void:
 	overlay.add_child(opening_stage)
 	weather = Weather.new()
 	canvas.add_child(weather)
+	# Foreground sprites use positive Z values. UI needs its own canvas layer;
+	# sibling order alone cannot keep foliage from painting over subtitles.
+	var hud := CanvasLayer.new()
+	hud.layer = 20
+	add_child(hud)
 	dialogue = Panel.new()
 	dialogue.position = Vector2(42,268)
 	dialogue.size = Vector2(556,66)
@@ -77,15 +82,15 @@ func _ready() -> void:
 	style.corner_radius_top_left = 3
 	style.corner_radius_bottom_right = 3
 	dialogue.add_theme_stylebox_override("panel",style)
-	canvas.add_child(dialogue)
+	hud.add_child(dialogue)
 	narration = make_label(dialogue,Vector2(16,10),Vector2(524,50),16)
 	narration.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	heading = make_label(canvas,Vector2(28,20),Vector2(584,35),19)
+	heading = make_label(hud,Vector2(28,20),Vector2(584,35),19)
 	heading.text = "TSUKIMORI"
 	heading.add_theme_color_override("font_color",Color("#efd0a5"))
-	hint = make_label(canvas,Vector2(30,342),Vector2(580,17),10)
+	hint = make_label(hud,Vector2(30,342),Vector2(580,17),10)
 	hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	bubble = make_label(canvas,Vector2(150,150),Vector2(250,34),13)
+	bubble = make_label(hud,Vector2(150,150),Vector2(250,34),13)
 	bubble.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	bubble.add_theme_color_override("font_shadow_color",Color.BLACK)
 	bubble.add_theme_constant_override("shadow_offset_x",1)
@@ -97,7 +102,7 @@ func _ready() -> void:
 	skip_dialog.ok_button_text = words.yes
 	skip_dialog.cancel_button_text = words.no
 	skip_dialog.confirmed.connect(skip_all)
-	canvas.add_child(skip_dialog)
+	hud.add_child(skip_dialog)
 	set_beat(0)
 
 func make_label(parent: Node, at: Vector2, dimensions: Vector2, font_size: int) -> Label:
