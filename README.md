@@ -2,8 +2,8 @@
 
 ## Opening + Village Street — 2026-09-28
 
-F5 starts the new 60-second bus/memory/forest/gate opening. Movement unlocks at Village Street; the bridge and Miyako follow through player-controlled exploration. E at the route edge continues, E near Miyako starts her greeting. ESC skips only the pre-control intro to the gate. Side-view levels remain supported. Current details: [Short opening and movement REVIEW](docs/SHORT_OPENING_GATE_REVIEW.md).
-WASD/arrows: move. Enter/Space: advance narration. Esc: confirm intro skip.
+F5 starts the new 70-second bus/memory/forest/gate opening. Movement unlocks at Village Street; the bridge and Miyako follow through player-controlled exploration. E at the route edge continues, E near Miyako starts her greeting. ESC skips only the pre-control intro to the gate. Side-view levels remain supported. Current details: [Cinematic v2 and Space fix REVIEW](docs/CINEMATIC_V2_REVIEW.md).
+WASD/arrows: move. Enter/Space: reveal or advance text without seeking the film. Esc: confirm intro skip.
 E: observe a nearby resident. F1: show/hide controls.
 
 **TECHNICAL REVIEW / PLACEHOLDER ART.** Four ambient women, camera, three-quarter

@@ -1,6 +1,6 @@
 {
   "failures": [],
-  "intro_seconds": 60.0,
+  "intro_seconds": 70.0,
   "passed": true,
   "suite": "gate_flow"
 }

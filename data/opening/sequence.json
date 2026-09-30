@@ -1,12 +1,235 @@
 {
-  "scene_id": "short_gate_handoff_v1",
+  "scene_id": "short_gate_handoff_v2",
   "beats": [
-    {"id":"black","image":"","duration":3,"lines":[]},
-    {"id":"bus","image":"bus","shots":["bus_cabin"],"duration":16,"lines":["Az eső már órák óta verte az ablakot.","Katsuro hívott vissza.","Túl sok év után. Túl kevés magyarázattal."]},
-    {"id":"memory","image":"memory","asset":"res://assets/opening/short_intro_v1/memory_REVIEW.png","duration":10,"lines":[]},
-    {"id":"stop","image":"forest","asset":"res://assets/opening/short_intro_v1/forest_gate_REVIEW.png","duration":8,"lines":[]},
-    {"id":"forest","image":"forest","asset":"res://assets/opening/short_intro_v1/forest_gate_REVIEW.png","duration":15,"lines":["Tsukimori ugyanolyan csendesnek tűnt, mint régen.","Csak a csendje lett nehezebb."]},
-    {"id":"gate","image":"forest","asset":"res://assets/opening/short_intro_v1/forest_gate_REVIEW.png","duration":7,"lines":["Most már mindegy.","Innen már végig kell mennem rajta."]},
-    {"id":"handoff","image":"","duration":1,"lines":[]}
+    {
+      "id": "black",
+      "image": "",
+      "duration": 3,
+      "lines": []
+    },
+    {
+      "id": "bus",
+      "image": "bus",
+      "shots": [
+        "bus_cabin"
+      ],
+      "duration": 23,
+      "lines": [
+        "Az eső már órák óta verte az ablakot.",
+        "A sofőr egyszer sem kérdezte meg, biztosan itt akarok-e leszállni.",
+        "Talán ő is tudta, hogy ezt a döntést már jóval az indulás előtt elrontottam.",
+        "Katsuro hívott vissza.",
+        "Túl sok év után.",
+        "Túl kevés magyarázattal."
+      ]
+    },
+    {
+      "id": "memory",
+      "image": "memory",
+      "asset": "res://assets/opening/cinematic_v2/memory_warm_REVIEW.png",
+      "duration": 12,
+      "lines": [],
+      "cuts": [
+        {
+          "at": 0,
+          "asset": "res://assets/opening/cinematic_v2/memory_warm_REVIEW.png",
+          "push": 0.012
+        },
+        {
+          "at": 3.4,
+          "asset": "res://assets/opening/short_intro_v1/memory_REVIEW.png",
+          "crop": [
+            0.12,
+            0.39,
+            0.64,
+            0.6
+          ],
+          "push": 0.02
+        },
+        {
+          "at": 5.1,
+          "asset": "res://assets/opening/cinematic_v2/memory_cold_REVIEW.png",
+          "push": 0.025,
+          "fracture": 0.3
+        },
+        {
+          "at": 6.8,
+          "asset": "res://assets/opening/cinematic_v2/memory_cold_REVIEW.png",
+          "crop": [
+            0.22,
+            0.45,
+            0.44,
+            0.42
+          ],
+          "push": 0.035,
+          "fracture": 0.45
+        },
+        {
+          "at": 8.8,
+          "asset": "res://assets/opening/cinematic_v2/memory_cold_REVIEW.png",
+          "crop": [
+            0.04,
+            0.04,
+            0.55,
+            0.52
+          ],
+          "push": 0.012,
+          "fracture": 0.6
+        }
+      ],
+      "cues": [
+        {
+          "at": 0,
+          "sound": "warm"
+        },
+        {
+          "at": 5.1,
+          "sound": "dread"
+        },
+        {
+          "at": 6.8,
+          "sound": "pulse"
+        },
+        {
+          "at": 10.9,
+          "sound": "silence"
+        }
+      ]
+    },
+    {
+      "id": "recover",
+      "image": "bus",
+      "asset": "res://assets/opening/cinematic_v2/akira_recover_REVIEW.png",
+      "duration": 3,
+      "lines": [
+        "És én mégis eljöttem."
+      ],
+      "cues": [
+        {
+          "at": 0,
+          "sound": "breath"
+        }
+      ]
+    },
+    {
+      "id": "stop",
+      "image": "forest",
+      "asset": "res://assets/opening/short_intro_v1/forest_gate_REVIEW.png",
+      "duration": 8,
+      "lines": [],
+      "cues": [
+        {
+          "at": 0.5,
+          "sound": "door"
+        },
+        {
+          "at": 2.3,
+          "sound": "step"
+        },
+        {
+          "at": 4.3,
+          "sound": "door"
+        },
+        {
+          "at": 5,
+          "sound": "depart"
+        }
+      ]
+    },
+    {
+      "id": "forest",
+      "image": "forest",
+      "asset": "res://assets/opening/short_intro_v1/forest_gate_REVIEW.png",
+      "duration": 12,
+      "lines": [
+        "Tsukimori ugyanolyan csendesnek tűnt, mint régen.",
+        "Csak a csendje lett nehezebb.",
+        "Mintha a falu már tudná, hogy megérkeztem."
+      ],
+      "cues": [
+        {
+          "at": 0,
+          "sound": "step"
+        },
+        {
+          "at": 0.82,
+          "sound": "step"
+        },
+        {
+          "at": 1.64,
+          "sound": "step"
+        },
+        {
+          "at": 2.46,
+          "sound": "step"
+        },
+        {
+          "at": 3.28,
+          "sound": "step"
+        },
+        {
+          "at": 4.1,
+          "sound": "step"
+        },
+        {
+          "at": 4.92,
+          "sound": "step"
+        },
+        {
+          "at": 5.739999999999999,
+          "sound": "step"
+        },
+        {
+          "at": 6.56,
+          "sound": "step"
+        },
+        {
+          "at": 7.38,
+          "sound": "step"
+        },
+        {
+          "at": 8.2,
+          "sound": "step"
+        },
+        {
+          "at": 9.02,
+          "sound": "step"
+        },
+        {
+          "at": 9.84,
+          "sound": "step"
+        },
+        {
+          "at": 10.66,
+          "sound": "step"
+        }
+      ]
+    },
+    {
+      "id": "gate",
+      "image": "forest",
+      "asset": "res://assets/opening/short_intro_v1/forest_gate_REVIEW.png",
+      "duration": 8,
+      "lines": [
+        "Most már mindegy.",
+        "Innen már végig kell mennem rajta."
+      ],
+      "cues": [
+        {
+          "at": 0.3,
+          "sound": "step"
+        },
+        {
+          "at": 1.1,
+          "sound": "step"
+        }
+      ]
+    },
+    {
+      "id": "handoff",
+      "image": "",
+      "duration": 1,
+      "lines": []
+    }
   ]
 }

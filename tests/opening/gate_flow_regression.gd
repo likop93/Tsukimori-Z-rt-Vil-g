@@ -23,6 +23,7 @@ func _ready() -> void:
 	GameState.clear_runtime_state()
 	var runner: Node = await make_runner()
 	var duration := 0.0
+	var beat_count: int = runner.beats.size()
 	for beat in runner.beats:
 		duration += float(beat.duration)
 	check(duration >= 45 and duration <= 70,"Opening is 45–70 seconds")
@@ -89,7 +90,7 @@ func _ready() -> void:
 	await capture("akira_left_idle_REVIEW")
 	runner.queue_free()
 	await get_tree().process_frame
-	for index in 7:
+	for index in beat_count:
 		GameState.clear_runtime_state()
 		runner = await make_runner()
 		runner.auto_advance = false

@@ -1,3 +1,5 @@
+> Presentation superseded by [Cinematic v2](CINEMATIC_V2_REVIEW.md), 2026-09-30. Gate flow and movement notes below remain historical implementation context.
+
 # Short opening and gate handoff — 2026-09-28 REVIEW
 
 Synced the owner's latest “Emlékmentés folytatása” decisions and GitHub governance through 632e7d6, preserving the local movement corrections. The long automatic village-to-Miyako opening is no longer active.

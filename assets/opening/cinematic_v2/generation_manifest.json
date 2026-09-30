@@ -1,0 +1,30 @@
+{
+  "status": "REVIEW / PLACEHOLDER",
+  "date": "2026-09-30",
+  "provider": "built-in image_gen",
+  "assets": [
+    {
+      "file": "memory_warm_REVIEW.png",
+      "prompt": "Create a single 16:9 cinematic pixel-art game frame, no panels no text no UI. Input1 is approved adult Akira identity (32-year-old black tousled hair, black jacket over gray hoodie, adult proportions); input2 is continuity reference for the anonymous adult woman's black high-neck long-sleeved elegant dress, unusually extremely large bust and monumental silhouette, not a new named heroine. Show a beautiful warm apparently reassuring memory: seated adult Akira at LEFT in close three-quarter profile, shoulders and head visible, a woman's gentle hand resting on his cheek; she occupies RIGHT with her clothed imposing torso and soft dark hair, only lower cheek and closed faint smile at very top edge, eyes and upper face OUTSIDE frame to conceal identity. Amber lamplight, intimate but nonsexual calm, same elegant room as input2. Emphasize their interaction and Akira's tentative relaxed expression. All adults fully clothed, no nudity, no explicit act. Crisp precise high-detail pixel clusters like a premium narrative pixel adventure, no blur. This is the WARM beginning of a psychological trauma memory; do not depict violence in this frame. Keep bottom 15 percent relatively uncluttered for subtitles. Landscape 16:9.",
+      "references": [
+        "../reference/AKIRA_FINAL_CHARACTER_DESIGN_V1.png",
+        "../short_intro_v1/memory_REVIEW.png"
+      ]
+    },
+    {
+      "file": "memory_cold_REVIEW.png",
+      "prompt": "Edit the attached warm memory frame into its matched psychological-horror reversal for the same Tsukimori pixel-art cinematic. Keep exact same adult characters, Akira's approved black hair/jacket/gray hoodie, woman's black high-neck dress, very large clothed monumental torso silhouette, and exact camera composition. All adults fully clothed. Woman's eyes/upper face remain outside frame, no identity reveal. Now Akira turns his face away and tenses, shoulders drawn inward, lips pressed, no smile. Her hand is no longer on his cheek: her long-sleeved hand grips his wrist at the bottom center while his fingers curl tensely. Non-graphic, nonsexual implied traumatic control only: no injuries, no explicit act, no erotic presentation. Same room now oppressively cold blue-black, amber lamp nearly extinguished, background doorway subtly elongated in perspective. Her lower face barely readable in shadow, expression restrained and ominous. Detailed crisp pixel clusters, no blur. The viewer must immediately recognize the same reassuring memory transformed into fear. Single 16:9 frame, no text/UI/panels.",
+      "references": [
+        "memory_warm_REVIEW.png"
+      ]
+    },
+    {
+      "file": "akira_recover_REVIEW.png",
+      "prompt": "Generate a new single 16:9 high-detail crisp PIXEL ART cinematic frame for Tsukimori game, based on attached references. Input1 identity reference: Akira adult32 black tousled hair black jacket gray hoodie wristwatch, preserve identity and outfit. Input2 is bus interior continuity: dark navy seats, rainy window on RIGHT, amber moving lights beyond. New shot: tight close-up on seated Akira's face LEFT-center and his hands at lower center. He has just resurfaced from an upsetting memory, eyes wide but restrained, slight parted lips catching breath, one hand gently holding his own wrist, shoulders tense. No other people, no woman in present bus. Wet right window visible taking right quarter, reflected blue night. Recognizably same character/cabin, no new clothing, no text/UI/panels, no blur, precise pixel clusters and adult proportions. Bottom 15 percent clear enough for subtitles. This is a quiet startled bodily reaction, not exaggerated cartoon shock.",
+      "references": [
+        "../reference/AKIRA_FINAL_CHARACTER_DESIGN_V1.png",
+        "../shot_review_v2/bus_cabin_REVIEW.png"
+      ]
+    }
+  ]
+}

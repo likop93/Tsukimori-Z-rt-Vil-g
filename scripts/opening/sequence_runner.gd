@@ -12,6 +12,7 @@ var beat_index := 0
 var beat_time := 0.0
 var shot_index := -1
 var line_index := -1
+var manual_line := -1
 var reveal_time := 0.0
 var completed := false
 var arrival: Node
@@ -138,6 +139,7 @@ func _process(delta: float) -> void:
 	reveal_time += delta
 	var beat: Dictionary = beats[beat_index]
 	opening_stage.update_stage(str(beat.id),beat_time,float(beat.duration),shot)
+	ambience.update_cinematic(str(beat.id),beat_time)
 	if beat.has("shots"):
 		var next_shot := mini(beat.shots.size()-1,int(beat_time / (float(beat.duration)/beat.shots.size())))
 		if next_shot != shot_index:
@@ -145,11 +147,12 @@ func _process(delta: float) -> void:
 	var lines: Array = beat.lines
 	if not lines.is_empty():
 		var next_line := mini(lines.size()-1,int(beat_time / (float(beat.duration)/lines.size())))
+		next_line = maxi(next_line,manual_line)
 		if next_line != line_index:
 			line_index = next_line
 			reveal_time = 0
 			narration.text = lines[line_index]
-		narration.visible_characters = int(reveal_time*34)
+		narration.visible_characters = int(reveal_time*48)
 	if beat.id == "gate":
 		# Reveal the already-instantiated street before input unlock: same actor and spawn.
 		overlay.modulate.a = 1.0-clampf((beat_time-(float(beat.duration)-2.5))/2.5,0,1)
@@ -168,9 +171,17 @@ func set_beat(index: int) -> void:
 	shot_index = -1
 	reveal_time = 0
 	line_index = -1
+	manual_line = -1
 	overlay.modulate.a = 1.0
 	dialogue.modulate.a = 1.0
 	var beat: Dictionary = beats[index]
+	opening_stage.configure(beat)
+	ambience.configure(beat)
+	dialogue.position = Vector2(42,300)
+	dialogue.size = Vector2(556,42)
+	narration.position = Vector2(12,4)
+	narration.size = Vector2(532,36)
+	narration.add_theme_font_size_override("font_size",14)
 	if beat.id == "gate":
 		street.camera_x = 388
 		street.camera.position.x = 388
@@ -183,7 +194,7 @@ func set_beat(index: int) -> void:
 	heading.visible = false
 	hint.text = words.intro
 	hint.visible = index > 0
-	weather.active = beat.id not in ["black","memory"]
+	weather.active = beat.id not in ["black","memory","bus","recover"]
 	weather.visible = weather.active
 	ambience.rain.volume_db = -22 if beat.id == "memory" else -15
 	ambience.vehicle.pitch_scale = 0.65 if beat.id == "memory" else 1.0
@@ -207,8 +218,6 @@ func set_beat(index: int) -> void:
 		else:
 			shot.texture = load("res://assets/opening/generated/"+str(beat.image)+"_REVIEW.png")
 			shot.modulate.a = 1.0
-	if beat.id == "stop":
-		ambience.leave_vehicle()
 
 func set_shot(id: String, index: int) -> void:
 	shot_index = index
@@ -223,16 +232,18 @@ func advance_line() -> void:
 	if completed or skip_dialog.visible:
 		return
 	var beat: Dictionary = beats[beat_index]
-	if narration.visible_characters < narration.text.length() and dialogue.visible:
+	if narration.visible_characters >= 0 and narration.visible_characters < narration.text.length() and dialogue.visible:
 		reveal_time = 100
 		narration.visible_characters = -1
 		return
 	if not beat.lines.is_empty() and line_index < beat.lines.size()-1:
-		beat_time = (line_index+1)*float(beat.duration)/beat.lines.size()+0.01
-	elif beat_index < beats.size()-1:
-		set_beat(beat_index+1)
-	else:
-		finish_intro()
+		manual_line = line_index+1
+		line_index = manual_line
+		narration.text = beat.lines[line_index]
+		reveal_time = 0
+		narration.visible_characters = 0
+	# Text input never seeks the cinematic clock, actors, camera or audio.
+	# ESC is the sole explicit path for skipping the full cinematic.
 
 func request_skip() -> void:
 	if completed:
@@ -264,10 +275,16 @@ func finish_intro() -> void:
 	hint.text = words.controls
 	hint.show()
 	ambience.leave_vehicle()
+	ambience.end_cinematic()
 	ambience.rain.volume_db = -15
 	opening_stage.reset_stage()
 	street.player.scripted_axis = Vector2.ZERO
 	street.enable_control()
+	dialogue.position = Vector2(42,268)
+	dialogue.size = Vector2(556,66)
+	narration.position = Vector2(16,10)
+	narration.size = Vector2(524,50)
+	narration.add_theme_font_size_override("font_size",16)
 	handoff_count += 1
 	village_flow = preload("res://scripts/opening/village_flow.gd").new()
 	add_child(village_flow)
