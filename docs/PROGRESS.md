@@ -1,104 +1,13 @@
-# Tsukimori — Development Progress
+# Tsukimori — aktuális fejlesztési állapot
 
-**Utolsó frissítés:** 2026-09-24
+Frissítve: 2026-10-01. Technikai REVIEW; a LOCKED kreatív döntések változatlanok.
 
+A jelenleg játszható ág a scenes/opening/opening.tscn. Nyitás (70 mp) → kapunál kontroll → Village Street → híd → ház → Miyako köszöntése. A falun belüli útvonal játékosvezérelt.
 
-**Projekt-governance LOCKED:** létrejött a `CREATIVE_BIBLE.md`, `STORY_CANON.md`, `CHARACTER_BIBLE.md` és `DECISION_LOG.md`. A Work/implementáció nem írhat felül LOCKED döntést; konfliktus esetén a tulajdonosi döntés az elsődleges.
+Működik: négy női ambient NPC, nyolcképkockás oldalirányú járás és négyképkockás előre/hátra ciklus, kamera, eső, előtér-takarás, mozgáshatárok, talajhoz igazított Miyako, ütközés, látható feliratok. A Space nem ugrik a cinematic idővonalán; a teljes kihagyás a kapunál csak opening_intro_seen és entered_tsukimori flaget állít.
 
-**Történeti forrás rögzítve:** a feltöltött Ren’Py-projekt fő útja az események, dialógusok és route-ok forrása; a már LOCKED Godot-világépítést nem írja felül automatikusan. A részletes megfeleltetés és a még különálló Ren’Py-prototípusok leírása: `docs/RENPY_CANON.md`. A Godot route-rendszere ettől még nincs megvalósítva.
+Hátralévő: a jóváhagyott Hana/Kuroe/Shion cameók, házbelső, teljes 10–15 perces narratív flow, végleges animáció és hang. Combat/inventory/route/komplex mentés nincs kész.
 
-A jóváhagyott falutérképet megtartó, fejezetenkénti jelenet- és döntéstérkép: `docs/RENPY_GODOT_STORY_MAP.md`. Akira FINAL modellje és FINAL animációi külön kreatív döntésig nem készülnek.
+2026-10-01 technikai rendezés: a régi 3D ág archive/legacy_3d alá került, importbeállításokkal és szerkesztőeszközökkel együtt. Az aktív arrival_director már csak Miyako köszöntését vezérli; Akira explicit street referenciát kap. A korábbi szöveg-, talaj- és ütközésjavítások megmaradtak.
 
-## Aktuális fázis
-
-**Vertical Slice Implementation**
-
-Az első hegyi játékszakasz review-zott.
-Az első utca kibővített blockoutja elkészült, az **Ambient Animation Pass 1** működik a hosszabb falurészben is.
-Az utcai narratív reakciók F5 bejárása sikeres volt; a következő körben a házak és az erdő saját, részletesebb blockoutjai készültek el.
-
-## Mérföldkövek
-
-| Mérföldkő | Állapot |
-|---|---|
-| Visual target — Tsukimori Visual Target v1 | ✅ LOCKED |
-| Camera / display mode | ✅ LOCKED |
-| Technical 2.5D pipeline | ✅ LOCKED |
-| Art Bible v0.1 | ✅ LOCKED |
-| Akira model/proxy spec | ✅ DONE |
-| Vertical slice plan | ✅ DONE |
-| Godot project bootstrap | ✅ DONE |
-| Directed camera system | ✅ REVIEW PASSED |
-| Camera-relative WASD | ✅ IMPLEMENTED — REVIEW |
-| Akira Proxy v0.2 | ✅ REVIEW PASSED |
-| Portable procedural Akira fallback | ✅ IMPLEMENTED |
-| Mountain Path Blockout 2.0 | ✅ REVIEW PASSED |
-| Mountain Path Narrative Pass 1 | ✅ REVIEW PASSED |
-| Mountain Path Animation Pass v0.2 | ✅ REVIEW PASSED |
-| Tsukimori First Street Blockout 1.0 | ✅ IMPLEMENTED |
-| Extended village street blockout | ✅ IMPLEMENTED — REVIEW |
-| First Street Ambient Animation Pass 1 | ✅ REVIEW PASSED |
-| Animated villager humanoid proxies | ✅ REVIEW PASSED |
-| Godot Asset shortlist | ✅ CURATED |
-| Asset sandbox evaluation | ⏳ WHEN NEEDED |
-| Miyako first encounter staging | ✅ IMPLEMENTED — REVIEW |
-| First Street Narrative Pass | ✅ REVIEW PASSED |
-| House and forest visual pass | ✅ IMPLEMENTED — REVIEW |
-| Miyako + Akira shared home visual prototype | ✅ ANIMATED PASS — F5 REVIEW |
-| Clinic blockout | ✅ IMPLEMENTED — F5 REVIEW |
-| Evening visual pass and shared-home GLB | ✅ GENERATED — F5 REVIEW |
-| Opening slice title beat | ⏳ PLANNED |
-
-## Jelenlegi játszható szakasz
-
-**Hegyi ösvény → első furcsa jel → kilátópont → falukapu → „Szél?” → falusiak közt végigjárt utca → Shion háza → patakhíd → Miyako és Akira közös háza → erdei utak**
-
-Működik:
-
-- emberarányos Akira proxy;
-- Blender GLB hiányában automatikus humanoid Akira fallback;
-- locomotion blending / fallback locomotion;
-- kamera-zónák;
-- képernyőirányú WASD, lenyomva tartott gomb mellett stabil mozgással;
-- hegyi környezeti ambient mozgás;
-- narratív trigger timing;
-- kapu-anomália;
-- tizenhárom faluoldali és két túlparti házból álló, továbbjárható blockout;
-- patak a bejárt falu túlsó peremén, ütközéssel rendelkező híddal;
-- Shion otthona a falusi oldalon; a túlpart második háza Miyako és Akira közös otthona, Katsuro egykori háza;
-- az erdőben három névtelen ház, elágazó utak és cédrus blockoutok;
-- kétoldalt lejtő tetővel, favázzal, ablakokkal részletezett házak, háromrétegű cédruskoronák és aljnövényzet;
-- négy mellékutca és kerítések;
-- hat animált fényű lámpa;
-- mozgó textil-, szirom- és növényproxyk;
-- nyolc animált humanoid falusi proxy;
-- négy pár, akik Akirát figyelik, majd egymáshoz fordulnak és suttogó mozdulatot tesznek;
-- négy külön, egyszeri falusi reakció és a patakhídnál lezáruló narratív feliratsor;
-- Miyako humanoid proxyja Katsuro házának küszöbénél;
-- irányított, néma első találkozás: Miyako Akira felé fordul, enyhén meghajol, nyitott kézzel üdvözli; a rövid animáció után visszatér a vezérlés;
-- Ren’Py-kánonhoz igazított, külön jegyzékben rögzített beszélgetési és döntési sorrend; a dialógusok képernyős VN-próbáját kivettük a játszható Godot-projektből az animációs jelenetek kialakításáig;
-- Miyako találkozása után E-vel elérhető rendelő a közös ház híd felőli oldalszárnyában, bejárható váróval és vizsgálóval;
-- generált, Godotba betöltött közösház-GLB és ugyanahhoz a geometriához szerkeszthető Blender-forrásgenerátor; hideg esti fény, nedves utcakő, mozgatott eső és talajköd;
-- GameState flag-ek.
-
-## Asset irány
-
-Külön shortlist készült:
-
-`docs/GODOT_ASSET_SHORTLIST.md`
-
-Elsőként vizsgálandó:
-- Kominka Modular Home Pack;
-- Tree3D;
-- ScatterShot;
-- Dialogue Manager 3.
-
-A már működő directed camera rendszert nem cseréljük le automatikusan kész pluginra.
-
-## Aktuális review
-
-**Tsukimori — házak és erdő látványa**
-
-Akira végigmegy a falun a figyelő, összesúgó lakók között, elhalad Shion háza mellett, átkel a patakon, majd az első túlparti ház után Miyakóval a közös otthonuknál találkozik. A kamera fordulását és a WASD képernyőirányú mozgását összehangoltuk: a mozgás gombnyomás alatt stabil marad. A ház mögött erdei úthálózat következik. Hana és a többi főszereplő otthonának helyét a történeti térkép alapján később rögzítjük. A közös ház sötét, kétszintes animált vizuális passza elkészült: veranda-lámpás, lassú fénylüktetés, szinte mozdulatlan szélcsengő, nedves anyagok és Katsuro ház alatti terének külső jele került be. Részletek: `docs/VILLAGE_LAYOUT.md` és `docs/SHARED_HOME_PROTOTYPE.md`.
-Az új utcai reakciók sorrendjét és a híd melletti átmenetet a `docs/FIRST_STREET_NARRATIVE_PASS.md` írja le. A falusiak külön hangsávja későbbi hang pass feladata.
-A házak új tetői és homlokzatai, valamint az erdei növényzet Godot F5 review-ra várnak. Különösen Miyako láthatóságát és a híd utáni gyalogos útvonalat kell ellenőrizni.
+A korábbi 3D állapotjelentés: [archivált PROGRESS](../archive/legacy_3d/docs/PROGRESS_BEFORE_ARCHIVE.md). Az ott leírt klinika, 3D falusi párok és belső terek nem a jelenlegi pixel-art játékmenet funkciói.

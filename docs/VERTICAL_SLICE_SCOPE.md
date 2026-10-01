@@ -1,3 +1,5 @@
+> A régi 3D mérföldkövek az archive/legacy_3d részei. A jelenlegi pixel-art játék állapota: docs/PROGRESS.md.
+
 # Vertical Slice v0.0.1 — Scope / Progress
 
 ## Production irányváltás — LOCKED 2026-09-26

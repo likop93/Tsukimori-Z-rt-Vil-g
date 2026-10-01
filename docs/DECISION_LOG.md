@@ -93,3 +93,7 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 3. Miyako–Akira ház beauty-target pass.
 4. Shion FINAL Idle + Walk vizuális review.
 5. Dialógus/UI vizuális nyelv.
+
+## Technikai rendezés — 2026-10-01
+
+Tulajdonosi kérésre a régi 3D prototípus az archive/legacy_3d alá került, az assetek és importbeállítások megőrzésével. A kreatív kánon és a pixel-art production irány változatlan. Az aktív játékból eltávolítottuk a használaton kívüli automatikus érkezési fázisokat; Miyako jelenlegi talaj-, ütközés- és feliratjavításai megmaradtak. Az aktuális működést a README és PROGRESS írja le; az eredeti állapotleírások az archívumban is megmaradtak.

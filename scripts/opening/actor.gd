@@ -2,6 +2,7 @@ extends CharacterBody2D
 const ATLAS := preload("res://assets/opening/staging_v3/akira_atlas.png")
 const SIDE_ATLAS := preload("res://assets/opening/gait_v5/side_atlas_REVIEW.png")
 const STRIDE := 24.0
+var street: Node2D
 var controlled := false
 var input_enabled := false
 var facing := 2
@@ -43,7 +44,7 @@ func _physics_process(delta: float) -> void:
 		facing = 2 if axis.y < 0 else 0
 	var before := position
 	move_and_slide()
-	position = get_parent().get_parent().constrain_position(position)
+	position = street.constrain_position(position)
 	var distance := before.distance_to(position)
 	moving = distance > 0.01
 	visual.flip_h = false

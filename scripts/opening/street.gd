@@ -31,6 +31,7 @@ func _ready() -> void:
 	cast.y_sort_enabled = true
 	add_child(cast)
 	player = Actor.new()
+	player.street = self
 	player.name = "Akira"
 	player.controlled = true
 	player.position = Vector2(data.spawn[0],data.spawn[1])

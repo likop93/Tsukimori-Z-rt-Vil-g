@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-01",
+  "preserved_binary_assets": 21,
+  "binary_hashes_match": true,
+  "generator_destinations_checked": ["create_akira_proxy.py", "create_shared_home.py"],
+  "active_tests_passed": ["gate_flow", "subtitle_layer", "grounding"],
+  "legacy_scene_loaded": true,
+  "legacy_street_test_passed": false,
+  "legacy_failure": "Clinic entry did not land on a walkable floor",
+  "baseline_commit": "2cd2600",
+  "baseline_has_identical_failure": true
+}

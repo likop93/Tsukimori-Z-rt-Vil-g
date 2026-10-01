@@ -1,0 +1,512 @@
+[
+  {
+    "sha256": "4E4345E64BBCA60787C0E7D6F829E863F1A72B3169801468501FEF0196149C4F",
+    "new": "archive/legacy_3d/assets/buildings/shared_home/tsukimori_shared_home.glb",
+    "old": "assets/buildings/shared_home/tsukimori_shared_home.glb"
+  },
+  {
+    "sha256": "64A7C56E66DDBCD1A4EBFDE602EB1BE4FC86528ACFD07AF6F5FE3E73AE10994A",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_00.glb",
+    "old": "assets/buildings/village/kominka_00.glb"
+  },
+  {
+    "sha256": "142BCAAA363F1FB9DFD453ACC6CD4A7F1C6C3B20EBDE436A5EF39DEB87E711F0",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_00_0.png",
+    "old": "assets/buildings/village/kominka_00_0.png"
+  },
+  {
+    "sha256": "16B9363CD559E226CFC8F7B36A8108B8FD56AA0DBE8D04AFFDCAC12ABE9ABE62",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_00_1.png",
+    "old": "assets/buildings/village/kominka_00_1.png"
+  },
+  {
+    "sha256": "2DD89723A07FCE4BE068E279571533DFF00E92A6C173DB24D376B940CF7C945B",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_00_2.png",
+    "old": "assets/buildings/village/kominka_00_2.png"
+  },
+  {
+    "sha256": "7AFBBF66E19A666B227E81407ECB42A0805A3CBF4EDD964CDD7BA5654D395C2D",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_00_3.png",
+    "old": "assets/buildings/village/kominka_00_3.png"
+  },
+  {
+    "sha256": "1F48E61BB8BC95E34A12956EFB863E272882FE4AE60249B23CF6E4EE5232E6E2",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_01.glb",
+    "old": "assets/buildings/village/kominka_01.glb"
+  },
+  {
+    "sha256": "142BCAAA363F1FB9DFD453ACC6CD4A7F1C6C3B20EBDE436A5EF39DEB87E711F0",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_01_0.png",
+    "old": "assets/buildings/village/kominka_01_0.png"
+  },
+  {
+    "sha256": "16B9363CD559E226CFC8F7B36A8108B8FD56AA0DBE8D04AFFDCAC12ABE9ABE62",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_01_1.png",
+    "old": "assets/buildings/village/kominka_01_1.png"
+  },
+  {
+    "sha256": "2DD89723A07FCE4BE068E279571533DFF00E92A6C173DB24D376B940CF7C945B",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_01_2.png",
+    "old": "assets/buildings/village/kominka_01_2.png"
+  },
+  {
+    "sha256": "7AFBBF66E19A666B227E81407ECB42A0805A3CBF4EDD964CDD7BA5654D395C2D",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_01_3.png",
+    "old": "assets/buildings/village/kominka_01_3.png"
+  },
+  {
+    "sha256": "E83AD4C292B83D1104776F6833D5DEFCEA0B744C951C5CD45BCCFBAF3CBD1F7A",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_02.glb",
+    "old": "assets/buildings/village/kominka_02.glb"
+  },
+  {
+    "sha256": "142BCAAA363F1FB9DFD453ACC6CD4A7F1C6C3B20EBDE436A5EF39DEB87E711F0",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_02_0.png",
+    "old": "assets/buildings/village/kominka_02_0.png"
+  },
+  {
+    "sha256": "16B9363CD559E226CFC8F7B36A8108B8FD56AA0DBE8D04AFFDCAC12ABE9ABE62",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_02_1.png",
+    "old": "assets/buildings/village/kominka_02_1.png"
+  },
+  {
+    "sha256": "2DD89723A07FCE4BE068E279571533DFF00E92A6C173DB24D376B940CF7C945B",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_02_2.png",
+    "old": "assets/buildings/village/kominka_02_2.png"
+  },
+  {
+    "sha256": "7AFBBF66E19A666B227E81407ECB42A0805A3CBF4EDD964CDD7BA5654D395C2D",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_02_3.png",
+    "old": "assets/buildings/village/kominka_02_3.png"
+  },
+  {
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "new": "archive/legacy_3d/assets/characters/akira/.gitkeep",
+    "old": "assets/characters/akira/.gitkeep"
+  },
+  {
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "new": "archive/legacy_3d/assets/characters/akira/proxy/.gitkeep",
+    "old": "assets/characters/akira/proxy/.gitkeep"
+  },
+  {
+    "sha256": "142BCAAA363F1FB9DFD453ACC6CD4A7F1C6C3B20EBDE436A5EF39DEB87E711F0",
+    "new": "archive/legacy_3d/assets/environment/materials/aged_plaster.png",
+    "old": "assets/environment/materials/aged_plaster.png"
+  },
+  {
+    "sha256": "7E85D26E2694AF5B2330B1F241AA773B7B552B15051DC640B9DE0C05418FECDF",
+    "new": "archive/legacy_3d/assets/environment/materials/damp_earth.png",
+    "old": "assets/environment/materials/damp_earth.png"
+  },
+  {
+    "sha256": "2DD89723A07FCE4BE068E279571533DFF00E92A6C173DB24D376B940CF7C945B",
+    "new": "archive/legacy_3d/assets/environment/materials/slate_roof.png",
+    "old": "assets/environment/materials/slate_roof.png"
+  },
+  {
+    "sha256": "16B9363CD559E226CFC8F7B36A8108B8FD56AA0DBE8D04AFFDCAC12ABE9ABE62",
+    "new": "archive/legacy_3d/assets/environment/materials/weathered_cedar.png",
+    "old": "assets/environment/materials/weathered_cedar.png"
+  },
+  {
+    "sha256": "7AFBBF66E19A666B227E81407ECB42A0805A3CBF4EDD964CDD7BA5654D395C2D",
+    "new": "archive/legacy_3d/assets/environment/materials/wet_stone.png",
+    "old": "assets/environment/materials/wet_stone.png"
+  },
+  {
+    "sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "new": "archive/legacy_3d/assets/environment/mountain_path/.gitkeep",
+    "old": "assets/environment/mountain_path/.gitkeep"
+  },
+  {
+    "sha256": "A76DD78AA7F7DF8576D44BD198AC92AA714CFED25ABB064536995A51785D27C7",
+    "new": "archive/legacy_3d/docs/AKIRA_PROXY.md",
+    "old": "docs/AKIRA_PROXY.md"
+  },
+  {
+    "sha256": "591EC7EA9ADB2D380CFC88E7A94A09E2523930FA48DD25B539B1758736E3ECE0",
+    "new": "archive/legacy_3d/docs/ANIMATION_PASS_V02.md",
+    "old": "docs/ANIMATION_PASS_V02.md"
+  },
+  {
+    "sha256": "E6309F30A837750B0587EFDF2F28375FE25E327744584F2157C05B4544E91B72",
+    "new": "archive/legacy_3d/docs/ASSET_EVALUATION_PLAN.md",
+    "old": "docs/ASSET_EVALUATION_PLAN.md"
+  },
+  {
+    "sha256": "2F1F1D01C619D77E58E683C9A3B7D17A462E2E94306B17E4DEAAE9061E85F3F2",
+    "new": "archive/legacy_3d/docs/ASSET_STATUS.md",
+    "old": "docs/ASSET_STATUS.md"
+  },
+  {
+    "sha256": "D5E398DD77ACBD39157AB084A8D646B4EE9658E2153837670790A49D30361275",
+    "new": "archive/legacy_3d/docs/CAMERA.md",
+    "old": "docs/CAMERA.md"
+  },
+  {
+    "sha256": "2DC51ABFD9E91C634CD5994EB01386434AD25BAB1DCF7D0D5A56D5E75D958725",
+    "new": "archive/legacy_3d/docs/CLINIC_BLOCKOUT.md",
+    "old": "docs/CLINIC_BLOCKOUT.md"
+  },
+  {
+    "sha256": "2AF92A0CC7B154F260EC7BCD47A480BD7C538E5D5F84F77099DCD001D48B9A91",
+    "new": "archive/legacy_3d/docs/ENVIRONMENT_ART_PASS.md",
+    "old": "docs/ENVIRONMENT_ART_PASS.md"
+  },
+  {
+    "sha256": "5CE39F16448D206AE86212D0ABA188B6E931CE48B5CB84310B51481DC01140FF",
+    "new": "archive/legacy_3d/docs/EVENING_VISUAL_PASS.md",
+    "old": "docs/EVENING_VISUAL_PASS.md"
+  },
+  {
+    "sha256": "F92E0D4DD164A42A2B4517FE168D9C83A980FF0BA530990CD5ADFC7204BF8A61",
+    "new": "archive/legacy_3d/docs/FIRST_STREET_BLOCKOUT.md",
+    "old": "docs/FIRST_STREET_BLOCKOUT.md"
+  },
+  {
+    "sha256": "9CB70D0B48345CBB28E2B6C0FCBC492275ADBD12B10AB45121A4D09ECB31F288",
+    "new": "archive/legacy_3d/docs/FIRST_STREET_NARRATIVE_PASS.md",
+    "old": "docs/FIRST_STREET_NARRATIVE_PASS.md"
+  },
+  {
+    "sha256": "33879B88D0E78A2FE3A93901839028B5D8F626AF264DD4C6F09E064100D70A26",
+    "new": "archive/legacy_3d/docs/GODOT_ASSET_SHORTLIST.md",
+    "old": "docs/GODOT_ASSET_SHORTLIST.md"
+  },
+  {
+    "sha256": "7F299A79916467DBF51E3DE179A9E6B4BF3B076A434B257437FDDB1C5888D7C8",
+    "new": "archive/legacy_3d/docs/GRAPHICS_TARGET_AND_SETUP.md",
+    "old": "docs/GRAPHICS_TARGET_AND_SETUP.md"
+  },
+  {
+    "sha256": "FEFCB25911422D898A6C7E5CAD555354881267DD75DD035E660DA920EE984830",
+    "new": "archive/legacy_3d/docs/MIYAKO_FIRST_ENCOUNTER.md",
+    "old": "docs/MIYAKO_FIRST_ENCOUNTER.md"
+  },
+  {
+    "sha256": "45E4483037A7D0098257CF3000DC034624193E5F9566CCD00027D97398CD9F0A",
+    "new": "archive/legacy_3d/docs/MOUNTAIN_PATH_BLOCKOUT.md",
+    "old": "docs/MOUNTAIN_PATH_BLOCKOUT.md"
+  },
+  {
+    "sha256": "4F89FE6C22D53AF757A11845AE34B94F60296C3B6A63FE700FEDC8D146567058",
+    "new": "archive/legacy_3d/docs/MOUNTAIN_PATH_NARRATIVE_PASS.md",
+    "old": "docs/MOUNTAIN_PATH_NARRATIVE_PASS.md"
+  },
+  {
+    "sha256": "7A801E28456C419A20C89580D89A6E2FD01F5688079852D933DFB5A960FD22ED",
+    "new": "archive/legacy_3d/docs/SHARED_HOME_PROTOTYPE.md",
+    "old": "docs/SHARED_HOME_PROTOTYPE.md"
+  },
+  {
+    "sha256": "E766F7F2B8056E72893C2916CBE64D54DC15C773D1121B9D3A3710AD0C3FEA80",
+    "new": "archive/legacy_3d/docs/VILLAGE_LAYOUT.md",
+    "old": "docs/VILLAGE_LAYOUT.md"
+  },
+  {
+    "sha256": "E597BE5084A32880AE21818A17F18BA2F6C65996F2F2B6809C0152010C1482F6",
+    "new": "archive/legacy_3d/scenes/dev/asset_sandbox.tscn",
+    "old": "scenes/dev/asset_sandbox.tscn"
+  },
+  {
+    "sha256": "E91AB586CEE02876F5E7E9B98E66EE6EE5F3A0BED1133F68B03F28148570B118",
+    "new": "archive/legacy_3d/scenes/dev/shared_home_preview.tscn",
+    "old": "scenes/dev/shared_home_preview.tscn"
+  },
+  {
+    "sha256": "5B82CF49D8D12FBD0B0DDA53A30D87E07C945EE6B315FCCBE386E0E14CDFBDBC",
+    "new": "archive/legacy_3d/scenes/main.tscn",
+    "old": "scenes/main.tscn"
+  },
+  {
+    "sha256": "0CC0725E9550CDF18C73857BA92AB36A7654D4B8FA580D7F5D0412AB4D5B136D",
+    "new": "archive/legacy_3d/scenes/player/player.tscn",
+    "old": "scenes/player/player.tscn"
+  },
+  {
+    "sha256": "B28A8DDD0AF8624B1A767806FC90BAD35BC407CB3545E2845739509E70C2664E",
+    "new": "archive/legacy_3d/scenes/world/first_street.tscn",
+    "old": "scenes/world/first_street.tscn"
+  },
+  {
+    "sha256": "B6F21CFB88A8746D1DFCE73112790B1BCC349238444871B2145C10BC8A65EC6E",
+    "new": "archive/legacy_3d/scenes/world/mountain_path.tscn",
+    "old": "scenes/world/mountain_path.tscn"
+  },
+  {
+    "sha256": "5F7B53D34239BE59D15B825EB9668CB04B462642E1827313C10A6E9F3D10BB1C",
+    "new": "archive/legacy_3d/scripts/camera_zone.gd",
+    "old": "scripts/camera_zone.gd"
+  },
+  {
+    "sha256": "902DF290AF037C22DC1136C5CFAADFF760350178BF55FED57AC56D77F771C4C9",
+    "new": "archive/legacy_3d/scripts/camera_zone.gd.uid",
+    "old": "scripts/camera_zone.gd.uid"
+  },
+  {
+    "sha256": "855C439C9D4CD3DFE3057A524ACDB4166A9509B10D646ED4DD0D576891D62789",
+    "new": "archive/legacy_3d/scripts/clinic_blockout.gd",
+    "old": "scripts/clinic_blockout.gd"
+  },
+  {
+    "sha256": "7CDD1934A99DDD92731F7389D219E69509454F24FCCC1703F3636D30541E3FAA",
+    "new": "archive/legacy_3d/scripts/clinic_blockout.gd.uid",
+    "old": "scripts/clinic_blockout.gd.uid"
+  },
+  {
+    "sha256": "129D24D7DF0D4E8F423EDA09717E29EE989A85A28451D0C08D677824D34BFEDB",
+    "new": "archive/legacy_3d/scripts/directed_camera.gd",
+    "old": "scripts/directed_camera.gd"
+  },
+  {
+    "sha256": "2659C58BC2C10D900153D970A0AC1C523D1580F8E729B94EA3E6045358BEC6D9",
+    "new": "archive/legacy_3d/scripts/directed_camera.gd.uid",
+    "old": "scripts/directed_camera.gd.uid"
+  },
+  {
+    "sha256": "9A82C5B19C100BA8049FD6154CF32E2FED98B0DE9E30F13CC5B242A25C38C407",
+    "new": "archive/legacy_3d/scripts/first_street.gd",
+    "old": "scripts/first_street.gd"
+  },
+  {
+    "sha256": "E8563C441C53F2A86867B00BD8A430B175A5F096AE21A0B60812983BD389A3AC",
+    "new": "archive/legacy_3d/scripts/first_street.gd.uid",
+    "old": "scripts/first_street.gd.uid"
+  },
+  {
+    "sha256": "9D7BE3AF88C051A243AF1C2C6D8699371E6530D34FF7CB78FB644C92F9ED14FA",
+    "new": "archive/legacy_3d/scripts/mountain_ambient.gd",
+    "old": "scripts/mountain_ambient.gd"
+  },
+  {
+    "sha256": "7C7E7B3E40FC3A1E0E16435A1486C9A8D9E949397BB0B4A13C3186C895D0941C",
+    "new": "archive/legacy_3d/scripts/mountain_ambient.gd.uid",
+    "old": "scripts/mountain_ambient.gd.uid"
+  },
+  {
+    "sha256": "E500DADACD85B5BD522F5AA679A3FCAE4E06C01CE7B93FEC82761726DD05DC4E",
+    "new": "archive/legacy_3d/scripts/mountain_path.gd",
+    "old": "scripts/mountain_path.gd"
+  },
+  {
+    "sha256": "B4BE02FF32866DE5216739F442FCA16956183FED1DF447FC2F9350BBF691FC27",
+    "new": "archive/legacy_3d/scripts/mountain_path.gd.uid",
+    "old": "scripts/mountain_path.gd.uid"
+  },
+  {
+    "sha256": "5A7609F96BBE31DADBCABD913A623113966E84117B48898024FA7A1FF669D0BF",
+    "new": "archive/legacy_3d/scripts/player_controller.gd",
+    "old": "scripts/player_controller.gd"
+  },
+  {
+    "sha256": "03BC005900246E0E210BBFC929ECD08234BBA97E813CDFB2B5C49AA5CD95E24E",
+    "new": "archive/legacy_3d/scripts/player_controller.gd.uid",
+    "old": "scripts/player_controller.gd.uid"
+  },
+  {
+    "sha256": "E907D5FAD5C5297A166909DEADFAC274E88A84CB09BEA9D9C2005DB0E856C69C",
+    "new": "archive/legacy_3d/scripts/proxy_visual.gd",
+    "old": "scripts/proxy_visual.gd"
+  },
+  {
+    "sha256": "31F83BC6FEDF9A45FFEA668590EE7F1E795F41965BEEAD74A3BC88063B378835",
+    "new": "archive/legacy_3d/scripts/proxy_visual.gd.uid",
+    "old": "scripts/proxy_visual.gd.uid"
+  },
+  {
+    "sha256": "F4040C59FDD36039C7F3BBB19D8EBF6881272454BE5E44D938490DCBA8C80E97",
+    "new": "archive/legacy_3d/scripts/shared_home_visual.gd",
+    "old": "scripts/shared_home_visual.gd"
+  },
+  {
+    "sha256": "2E410662828940503A3F1CD89F5FCA0FFE5D5828A757C082773FCDDBAE4FB899",
+    "new": "archive/legacy_3d/scripts/shared_home_visual.gd.uid",
+    "old": "scripts/shared_home_visual.gd.uid"
+  },
+  {
+    "sha256": "67961064B2E3928F9F40224D59AE110CF1807BE93E2DE6A15D98EEB1138053AE",
+    "new": "archive/legacy_3d/scripts/street_ambient.gd",
+    "old": "scripts/street_ambient.gd"
+  },
+  {
+    "sha256": "5290FC70DC8ABC82C083625A4E361EFA62EB804A431267A99F40F2E9A8915DB6",
+    "new": "archive/legacy_3d/scripts/street_ambient.gd.uid",
+    "old": "scripts/street_ambient.gd.uid"
+  },
+  {
+    "sha256": "7E0FCC4BBE5C5BFCE9BA4738C1EDDDCA5E8F8A98CD1C77F98D8BAA043977D87F",
+    "new": "archive/legacy_3d/scripts/villager_proxy.gd",
+    "old": "scripts/villager_proxy.gd"
+  },
+  {
+    "sha256": "AF3804480799C994D2932A60027026D2F72C0FCC95C59F2DAD99B226BADC0304",
+    "new": "archive/legacy_3d/scripts/villager_proxy.gd.uid",
+    "old": "scripts/villager_proxy.gd.uid"
+  },
+  {
+    "sha256": "B5ECB84DCD5B7F676BE9B2C97A26E96FE4BBD77D48BED0D8368024DA62E9F220",
+    "new": "archive/legacy_3d/tests/camera_regression.gd",
+    "old": "tests/camera_regression.gd"
+  },
+  {
+    "sha256": "CB8DD2CD1AA5DF950C94288DA29B7A4D743FBECA322FC67969BD0C38F9DBFB8B",
+    "new": "archive/legacy_3d/tests/camera_regression.gd.uid",
+    "old": "tests/camera_regression.gd.uid"
+  },
+  {
+    "sha256": "BD7942E7CBCE2F366B7D5D01D405F330474E5F6A3345784FBA6DDF7F01FAA286",
+    "new": "archive/legacy_3d/tests/first_street_regression.gd",
+    "old": "tests/first_street_regression.gd"
+  },
+  {
+    "sha256": "F00F2E9A370BBD2F154DC859D7A35B97415AF5B45A91B211A533A537EF2F59BF",
+    "new": "archive/legacy_3d/tests/first_street_regression.gd.uid",
+    "old": "tests/first_street_regression.gd.uid"
+  },
+  {
+    "sha256": "8FA1AA949F977967DFC57ADDFB5B6DCD4D7E0E4349124E761CB2A831D59951FE",
+    "new": "archive/legacy_3d/tests/portable_proxy_regression.gd",
+    "old": "tests/portable_proxy_regression.gd"
+  },
+  {
+    "sha256": "6D681B1D236200227BA323B9688D96E4384677BB7F6B36CF469D750EBCD6A440",
+    "new": "archive/legacy_3d/tests/portable_proxy_regression.gd.uid",
+    "old": "tests/portable_proxy_regression.gd.uid"
+  },
+  {
+    "sha256": "718D41C9B6BC3116E3E3186530B5169EACABD0312995B60F160BB702A73E85F7",
+    "new": "archive/legacy_3d/tools/art/generate_environment_textures.py",
+    "old": "tools/art/generate_environment_textures.py"
+  },
+  {
+    "sha256": "C77A79D03144BF100752304A5EF73D197374DFFD4D5F1795C34FDDF90D1A1F98",
+    "new": "archive/legacy_3d/tools/blender/create_akira_proxy.py",
+    "old": "tools/blender/create_akira_proxy.py"
+  },
+  {
+    "sha256": "35EBD257CBA7FF87C50FBDF93C427A651D614B23CD4D125605DEBC8AF99C837E",
+    "new": "archive/legacy_3d/tools/blender/create_shared_home.py",
+    "old": "tools/blender/create_shared_home.py"
+  },
+  {
+    "sha256": "AEC02D836101C0A4CF55BDA22396A6B442466FB887F14B12E73D659F4F08E712",
+    "new": "archive/legacy_3d/tools/blender/create_village_houses.py",
+    "old": "tools/blender/create_village_houses.py"
+  },
+  {
+    "sha256": "BE53F0A43FB341EF2D3C7071576511C11B09A10CAC4FA447E27A111FA20BD1FF",
+    "new": "archive/legacy_3d/tools/blender/glb_writer.py",
+    "old": "tools/blender/glb_writer.py"
+  },
+  {
+    "sha256": "74106C9E878B47557C705ECBF1EFFB9BA810D4D8E4B77E567763A8B76ED35CA8",
+    "new": "archive/legacy_3d/tools/blender/validate_village_glbs.py",
+    "old": "tools/blender/validate_village_glbs.py"
+  },
+  {
+    "sha256": "0936181CF156E72D7D7DEF4B6140DC95539E47CB1EADB19E53D42BF740D9CB38",
+    "new": "archive/legacy_3d/assets/buildings/shared_home/tsukimori_shared_home.glb.import",
+    "old": "assets/buildings/shared_home/tsukimori_shared_home.glb.import"
+  },
+  {
+    "sha256": "4326C341135B39A8B7EA9883CA819CE380957E0ABF9296919EB09211CF49C23C",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_00.glb.import",
+    "old": "assets/buildings/village/kominka_00.glb.import"
+  },
+  {
+    "sha256": "7D9863846723269FC5B21CBF06164348B7876BD35B5210EB90C5FDCB5420E5AF",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_00_0.png.import",
+    "old": "assets/buildings/village/kominka_00_0.png.import"
+  },
+  {
+    "sha256": "3718550197B0458871C9A00B489ADDF7A564733DDCFA6E6DE250DE2D60CB25B2",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_00_1.png.import",
+    "old": "assets/buildings/village/kominka_00_1.png.import"
+  },
+  {
+    "sha256": "E436B4D4567FB325F71103419D90D4746DD9F39B9DFA0E438E191C0F8305CD5E",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_00_2.png.import",
+    "old": "assets/buildings/village/kominka_00_2.png.import"
+  },
+  {
+    "sha256": "DC3643892CB87FFDEF13C1A278FC19414EDBFEE9FC24CB302944CB6BA33B51B0",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_00_3.png.import",
+    "old": "assets/buildings/village/kominka_00_3.png.import"
+  },
+  {
+    "sha256": "924AAAB7F595D7350466DAE71DB4467EBCD011E9AF46292D53DBDB109C01A381",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_01.glb.import",
+    "old": "assets/buildings/village/kominka_01.glb.import"
+  },
+  {
+    "sha256": "1036C9247AABCFEE6A9A6D140246F1F25A50E3B8A64110F951FD8FAF53D4E3EA",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_01_0.png.import",
+    "old": "assets/buildings/village/kominka_01_0.png.import"
+  },
+  {
+    "sha256": "0F308E6C50DDB55B94D425552F780037CE680CF64A08DCE944A4ADBFCC43E98A",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_01_1.png.import",
+    "old": "assets/buildings/village/kominka_01_1.png.import"
+  },
+  {
+    "sha256": "0A46CC402D72CE7CF20B416FD70624E42DB458FD9D870A2A3BE1A0ACBD72D69F",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_01_2.png.import",
+    "old": "assets/buildings/village/kominka_01_2.png.import"
+  },
+  {
+    "sha256": "3DDC98C47789B5ABA63065156ECF5B663C29AB2D02D3418E78BF06B326DDFC77",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_01_3.png.import",
+    "old": "assets/buildings/village/kominka_01_3.png.import"
+  },
+  {
+    "sha256": "2626BBCECF951D3D297034F318DB08221B86A26D9F5D20D3D52255F4CD7919A7",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_02.glb.import",
+    "old": "assets/buildings/village/kominka_02.glb.import"
+  },
+  {
+    "sha256": "55B0D889BCF372F1C523EB5EFFE9014DD10A325EECE60073C355D9DD392B43E3",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_02_0.png.import",
+    "old": "assets/buildings/village/kominka_02_0.png.import"
+  },
+  {
+    "sha256": "1F4A857BC9EB24F5D775A15739AD4CC2BAB76EBABAF2974E5B58130C1C67060E",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_02_1.png.import",
+    "old": "assets/buildings/village/kominka_02_1.png.import"
+  },
+  {
+    "sha256": "A7C8C382091D2182C46213437D2B9A47BDA856A8C1E4C90BF94CF7D34543204E",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_02_2.png.import",
+    "old": "assets/buildings/village/kominka_02_2.png.import"
+  },
+  {
+    "sha256": "E4379909B8D16901A8E27C1ECA08681B32BF23508F1AFBE50484380E61C88711",
+    "new": "archive/legacy_3d/assets/buildings/village/kominka_02_3.png.import",
+    "old": "assets/buildings/village/kominka_02_3.png.import"
+  },
+  {
+    "sha256": "E17472CC208FAC9DA10A4EAB7470C98AB94FF96E2741ABC38A7FD6BCBEFC1B94",
+    "new": "archive/legacy_3d/assets/environment/materials/aged_plaster.png.import",
+    "old": "assets/environment/materials/aged_plaster.png.import"
+  },
+  {
+    "sha256": "CAA2BCAADBD6205AE36B7DC50133D9D2B10D661A67ECB0148ECC3F0A62E886D5",
+    "new": "archive/legacy_3d/assets/environment/materials/damp_earth.png.import",
+    "old": "assets/environment/materials/damp_earth.png.import"
+  },
+  {
+    "sha256": "354EBD22C5312FD69B013B0CA8D9E094608E376FFE9C3201CD4A32298E9FC580",
+    "new": "archive/legacy_3d/assets/environment/materials/slate_roof.png.import",
+    "old": "assets/environment/materials/slate_roof.png.import"
+  },
+  {
+    "sha256": "5BC88F4A6D663E3AEC82DD96C86080C4D4C2779BA04E1EC9CA6694BA2F6DCA34",
+    "new": "archive/legacy_3d/assets/environment/materials/weathered_cedar.png.import",
+    "old": "assets/environment/materials/weathered_cedar.png.import"
+  },
+  {
+    "sha256": "2F1B7EAD83FE1BB5FDFCEA3C3F607A1306D5A7874DD996273730CC82A00BAFCC",
+    "new": "archive/legacy_3d/assets/environment/materials/wet_stone.png.import",
+    "old": "assets/environment/materials/wet_stone.png.import"
+  }
+]
