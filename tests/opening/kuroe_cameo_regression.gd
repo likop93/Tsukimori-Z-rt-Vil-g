@@ -15,12 +15,22 @@ func _ready() -> void:
 	await get_tree().process_frame
 	check(not cameo.started,"Gate spawn does not auto-trigger cameo")
 	runner.street.player.position = Vector2(535,240)
-	await get_tree().create_timer(1.65).timeout
+	await get_tree().create_timer(3.0).timeout
 	check(cameo.visible and cameo.visual.frame >= 4,"Passing glance appears near player")
 	check(runner.street.player.input_enabled and not runner.dialogue.visible,"Cameo never locks input or starts dialogue")
 	await RenderingServer.frame_post_draw
 	get_viewport().get_texture().get_image().save_png("res://review/kuroe_cameo.png")
-	await get_tree().create_timer(2.6).timeout
+	check(cameo.modulate.a == 1.0,"Architecture masks the actor without fading")
+	# Capture architectural entry/exit with a frozen actor for visual review.
+	var saved_position: Vector2 = cameo.position
+	cameo.set_physics_process(false)
+	for x in [425.0,625.0]:
+		cameo.position.x = x
+		await RenderingServer.frame_post_draw
+		get_viewport().get_texture().get_image().save_png("res://review/kuroe_occlusion_"+str(int(x))+".png")
+	cameo.position = saved_position
+	cameo.set_physics_process(true)
+	await get_tree().create_timer(4.0).timeout
 	check(cameo.done and not cameo.visible and GameState.has_flag("kuroe_cameo_passed"),"Cameo exits and finishes once")
 	check(cameo.visited.size() >= 6,"Walk and glance animation frames are used")
 	var elapsed: float = cameo.elapsed

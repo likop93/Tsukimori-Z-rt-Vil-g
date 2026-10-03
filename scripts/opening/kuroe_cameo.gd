@@ -5,9 +5,9 @@ var elapsed := 0.0
 var started := false
 var done := false
 var visited: Dictionary = {}
-const SPEED := 40.0
-const START := Vector2(455,177)
-const END_X := 615.0
+const SPEED := 45.0
+const START := Vector2(380,177)
+const END_X := 685.0
 
 func _ready() -> void:
 	visual = Sprite2D.new()
@@ -17,6 +17,14 @@ func _ready() -> void:
 	visual.centered = false
 	visual.position = Vector2(-48,-124)
 	visual.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	# Clip this actor and its shadow at the painted house edges, in world
+	# coordinates. The rest of the cast and camera remain untouched.
+	var mask := Shader.new()
+	mask.code = "shader_type canvas_item; varying vec2 world; void vertex(){ world=(MODEL_MATRIX*vec4(VERTEX,0.0,1.0)).xy; } void fragment(){ float left_edge=430.0-0.18*(177.0-world.y); float right_edge=615.0+0.08*(177.0-world.y); if(world.x<left_edge || world.x>right_edge) discard; }"
+	var occlusion := ShaderMaterial.new()
+	occlusion.shader = mask
+	material = occlusion
+	visual.use_parent_material = true
 	add_child(visual)
 	position = START
 	scale = Vector2.ONE*1.15
@@ -36,10 +44,11 @@ func _physics_process(delta: float) -> void:
 		show()
 	elapsed += delta
 	position.x = minf(END_X,START.x+elapsed*SPEED)
-	var glance: bool = elapsed >= 1.3 and elapsed < 2.1 and street.player.position.distance_to(position) < 200
+	var glance: bool = position.x >= 500 and position.x < 536 and street.player.position.distance_to(position) < 200
 	visual.frame = int((position.x-START.x)/28.0*4.0)%4 + (4 if glance else 0)
 	visited[visual.frame] = true
-	modulate.a = minf(clampf(elapsed/0.3,0,1),clampf((END_X-position.x)/14.0,0,1))
+	# Keep opaque: appearance/disappearance is caused by architecture.
+	modulate.a = 1.0
 	queue_redraw()
 	if position.x >= END_X:
 		finish()
