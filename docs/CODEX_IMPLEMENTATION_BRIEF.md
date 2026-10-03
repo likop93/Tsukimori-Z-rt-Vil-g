@@ -69,6 +69,36 @@ Ha Shion modelljét, rigjét, animációját, materialját vagy outfit variáns�
 
 A zöld szem, a hosszú fekete/ibolyás haj, a víz/holdfény vizuális nyelv és a visszafogott mozgás LOCKED. A referencia-lap automatikus életrajzi számai vagy hibás szövegei nem használhatók történeti kánonként.
 
+### Kuroe FINAL karaktermunka
+
+Ha Kuroe sprite-ját, portréját, animációját, outfitjét vagy cameo-ját érinti a feladat, kötelező forrás:
+- `docs/KUROE_PRODUCTION_SPEC.md`
+- `docs/VISUAL_REFERENCE_INDEX.md`
+
+Primary visual reference:
+- `characters/KUROE_PRIMARY_CHARACTER_REFERENCE_V1.png`
+
+Supporting references:
+- `characters/KUROE_STORY_KEY_VISUAL_V1.png`
+- `characters/KUROE_MUSIC_ROOM_REFERENCE_V1.png`
+
+LOCKED jegyek:
+- nagyon hosszú sötétlila / majdnem fekete haj;
+- ametiszt/lila szem;
+- fekete-lila modern gótikus glamour outfit;
+- csipke, hosszú fekete kabát/blézer, lila kristály/lánc részletek;
+- elegáns homokóra-sziluett;
+- **nagyon nagy, telt mellkas**, a primary referencia arányánál is hangsúlyosabb production megjelenéssel;
+- keskenyebb/elegánsabb testvonal, hogy ne legyen Himiko vagy Hana másolata.
+
+Kuroe nem generikus goth NPC és nem generikus sexy villager. A pixel-art adaptáció redesign nélkül kövesse a LOCKED identitást.
+
+Első cameo:
+- rövid háttérkeresztezés / glimpse;
+- nincs névtábla;
+- nincs teljes dialógus;
+- a játékos akár majdnem le is maradhat róla.
+
 ### Hana FINAL karaktermunka
 
 Ha Hana sprite-ját, portréját, animációját, 3D modelljét, materialját vagy outfit variánsát érinti a feladat, kötelező forrás:
