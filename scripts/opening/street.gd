@@ -104,6 +104,8 @@ func lane_limits(feet_y: float) -> Vector2:
 	return Vector2(395+clearance,680-clearance)
 
 func constrain_position(at: Vector2) -> Vector2:
+	if location == "interior":
+		return Vector2(clampf(at.x,125,500),clampf(at.y,263,269))
 	if location == "bridge":
 		at.x = clampf(at.x,75,555)
 		for i in range(1,BRIDGE_PATH.size()):
@@ -160,6 +162,20 @@ func show_location(next_location: String) -> void:
 		bridge_rail.hide()
 	if is_instance_valid(house_rail):
 		house_rail.hide()
+	if location == "interior":
+		backdrop.texture = preload("res://assets/opening/reference/SHARED_HOME_CLINIC_INTERIOR_PIXEL_V1.png")
+		backdrop.scale = Vector2(640.0/backdrop.texture.get_width(),360.0/backdrop.texture.get_height())
+		camera.position = Vector2(320,180)
+		camera_x = 320
+		player.position = Vector2(190,266)
+		player.scale = Vector2.ONE*1.15
+		player.facing = 3
+		player.velocity = Vector2.ZERO
+		if is_instance_valid(featured_actor):
+			featured_actor.position = Vector2(290,266)
+			featured_actor.scale = Vector2.ONE*0.72
+			featured_actor.set_active(true)
+		return
 	var file := "BRIDGE_PIXEL_V1.png" if location == "bridge" else "MIYAKO_HOUSE_EXTERIOR_PIXEL_V1.png"
 	backdrop.texture = load("res://assets/opening/reference/"+file)
 	backdrop.scale = Vector2(640.0/backdrop.texture.get_width(),360.0/backdrop.texture.get_height())

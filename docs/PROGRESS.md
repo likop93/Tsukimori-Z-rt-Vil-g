@@ -10,7 +10,9 @@ Működik: négy női ambient NPC, nyolcképkockás oldalirányú járás és n�
 
 Miyako külső találkozása már kézzel léptethető VN-jelenet: névtábla, REVIEW referenciaportré, eredeti Ren’Py-narráció, zárolt mozgás és lezáráskor állított jelzők. Részletek: [MIYAKO_VN_REVIEW](MIYAKO_VN_REVIEW.md).
 
-Hátralévő: a jóváhagyott Hana/Kuroe/Shion cameók, házbelső és benti beszélgetés/döntés, teljes 10–15 perces narratív flow, végleges VN-portrék, animáció és hang. Combat/inventory/route/komplex mentés nincs kész.
+Az első benti beszélgetés és két eredeti választása működik, explicit E-belépéssel, Library háttérrel, halkuló esővel és egyszeri állapotmódosítással. Lezárás után a nappali első járósávja használható. Részletek: [MIYAKO_INTERIOR_REVIEW](MIYAKO_INTERIOR_REVIEW.md).
+
+Hátralévő: a jóváhagyott Hana/Kuroe/Shion cameók, teljes házbelső és interakciók, első éjszaka, teljes 10–15 perces narratív flow, végleges VN-portrék, animáció és hang. Combat/inventory/route/komplex mentés nincs kész.
 
 2026-10-01 technikai rendezés: a régi 3D ág archive/legacy_3d alá került, importbeállításokkal és szerkesztőeszközökkel együtt. Az aktív arrival_director már csak Miyako köszöntését vezérli; Akira explicit street referenciát kap. A korábbi szöveg-, talaj- és ütközésjavítások megmaradtak.
 

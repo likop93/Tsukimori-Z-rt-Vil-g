@@ -44,6 +44,16 @@ func advance(delta: float) -> void:
 				runner.arrival.done = true
 				runner.arrival.show_miyako()
 		"house":
+			if GameState.has_flag("met_miyako"):
+				runner.hint.text = "E · belépés a házba" if actor.position.x >= 255 and actor.position.x < 320 else runner.words.controls
+				if interact and actor.position.x >= 255 and actor.position.x < 320 and not GameState.has_flag("entered_shared_home"):
+					var previous: Node = runner.arrival
+					runner.arrival = preload("res://scripts/opening/interior_director.gd").new()
+					runner.add_child(runner.arrival)
+					runner.arrival.runner = runner
+					runner.arrival.begin()
+					previous.queue_free()
+				return
 			near_exit = actor.position.x >= 255 and actor.position.x < 310 and not GameState.has_flag("met_miyako")
 			runner.hint.text = "E · Miyako" if near_exit else runner.words.controls
 			if near_exit and interact:
@@ -53,3 +63,5 @@ func advance(delta: float) -> void:
 				runner.arrival.phase = "greeting"
 				runner.arrival.elapsed = 0
 				runner.arrival.done = false
+		"interior":
+			runner.hint.text = "WASD / nyilak · séta    Az első esti beszélgetés véget ért."

@@ -57,8 +57,7 @@ func _ready() -> void:
 	await press(KEY_E)
 	check(GameState.has_flag("met_miyako") and GameState.has_flag("miyako_first_dialogue_seen"),"Completion sets flags")
 	check(not vn.active and runner.street.player.input_enabled,"Final acknowledgement returns control")
-	await press(KEY_E)
-	check(not vn.active,"Completed greeting does not replay")
+	check(runner.arrival.done,"Completed greeting remains done until explicit house entry")
 	var report := {"passed":failures.is_empty(),"failures":failures}
 	FileAccess.open("res://review/vn_dialogue_results.json",FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
 	print("VN_DIALOGUE: "+JSON.stringify(report))

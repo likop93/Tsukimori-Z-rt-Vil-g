@@ -5,6 +5,9 @@ extends Node
 
 var flags: Dictionary = {}
 var story_phase: int = 0
+var aff_miyako := 0
+var akira_gyogyulas := 0
+var miyako_first_choice := ""
 
 func set_flag(flag_name: String, value: bool = true) -> void:
     flags[flag_name] = value
@@ -15,3 +18,6 @@ func has_flag(flag_name: String) -> bool:
 func clear_runtime_state() -> void:
     flags.clear()
     story_phase = 0
+    aff_miyako = 0
+    akira_gyogyulas = 0
+    miyako_first_choice = ""
