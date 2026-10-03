@@ -1,8 +1,10 @@
 # Tsukimori — aktuális fejlesztési állapot
 
-Frissítve: 2026-10-01. Technikai REVIEW; a LOCKED kreatív döntések változatlanok.
+Frissítve: 2026-10-03. Technikai REVIEW; a LOCKED kreatív döntések változatlanok.
 
-A jelenleg játszható ág a scenes/opening/opening.tscn. Nyitás (70 mp) → kapunál kontroll → Village Street → híd → ház → Miyako köszöntése. A falun belüli útvonal játékosvezérelt.
+A belépési pont a scenes/ui/main_menu.tscn. Főmenü → Játék indítása → scenes/opening/opening.tscn: nyitás (70 mp) → kapunál kontroll → Village Street → híd → ház → Miyako köszöntése. A falun belüli útvonal játékosvezérelt.
+
+2026-10-03: főmenü a felhasználó kifejezett kérésére. Játék indítása, Beállítások, Irányítás, Kilépés. Hangerő és teljes képernyő mentése külön beállításfájlba; ez nem játékállás-mentés. Meglévő erdei kapu REVIEW háttér, eső és halk esőhang. Részletek: [MENU_REVIEW](MENU_REVIEW.md). Kuroe cameója a jóváhagyott referencia hiányában függőben marad.
 
 Működik: négy női ambient NPC, nyolcképkockás oldalirányú járás és négyképkockás előre/hátra ciklus, kamera, eső, előtér-takarás, mozgáshatárok, talajhoz igazított Miyako, ütközés, látható feliratok. A Space nem ugrik a cinematic idővonalán; a teljes kihagyás a kapunál csak opening_intro_seen és entered_tsukimori flaget állít.
 

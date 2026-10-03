@@ -1,12 +1,14 @@
 # Tsukimori — Zárt Világ
 
-A jelenleg futó játék egy high-detail pixel-art 2D/2.5D narratív prototípus. F5 a 70 másodperces nyitást indítja: busz, Akira monológja, emléktöredék, leszállás, erdei séta, kapu. A kapunál visszakapod az irányítást; a híd és Miyako találkozása játékosvezérelt.
+A jelenleg futó játék egy high-detail pixel-art 2D/2.5D narratív prototípus. F5 a főmenüt indítja. A „Játék indítása” innen vezet a 70 másodperces nyitásba: busz, Akira monológja, emléktöredék, leszállás, erdei séta, kapu. A kapunál visszakapod az irányítást; a híd és Miyako találkozása játékosvezérelt.
 
 ## Indítás
 
 1. A teljes ZIP-et csomagold ki egy új mappába.
 2. Godot 4.7.2 → Importálás → a gyökérben lévő project.godot.
-3. Várd meg az importálást, majd F5.
+3. Várd meg az importálást, majd F5 → Játék indítása.
+
+A főmenü egérrel vagy nyilakkal és Enterrel kezelhető. Beállítások: hangerő és teljes képernyő; ezek a következő indításra is megmaradnak. Az Irányítás megnyitja a gombok leírását, a Kilépés bezárja a játékot. Esc visszalép az almenükből. Játékállás-mentés még nincs.
 
 WASD / nyilak: séta. E: figyelés, továbbhaladás a helyszín kijáratánál, beszélgetés Miyakóval. Space / Enter: a nyitás szövegének gyorsítása, a mozgás átugrása nélkül. Esc: a nyitás kihagyása. F1: vezérlési segítség.
 

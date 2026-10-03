@@ -8,6 +8,13 @@ INDÍTÁS
 1. Csomagold ki a teljes ZIP-et egy külön mappába.
 2. Indítsd el a Tsukimori_Review.exe fájlt.
 3. Godot telepítése nem szükséges.
+4. A főmenüben válaszd a Játék indítása gombot.
+
+FŐMENÜ
+Egér vagy nyilak + Enter: választás. Esc: vissza az almenükből.
+Beállítások: hangerő és teljes képernyő, megmaradnak újraindítás után.
+Irányítás: gombok leírása. Kilépés: játék bezárása.
+Játékállás-mentés ebben a buildben még nincs.
 
 IRÁNYÍTÁS
 WASD / nyilak — mozgás

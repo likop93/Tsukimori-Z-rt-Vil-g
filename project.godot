@@ -6,7 +6,7 @@ config_version=5
 
 [application]
 config/name="Tsukimori — Opening + Village Street [REVIEW]"
-run/main_scene="res://scenes/opening/opening.tscn"
+run/main_scene="res://scenes/ui/main_menu.tscn"
 
 [display]
 window/size/viewport_width=640
@@ -27,3 +27,4 @@ textures/canvas_textures/default_texture_filter=0
 
 [autoload]
 GameState="*res://scripts/game_state.gd"
+AppSettings="*res://scripts/ui/app_settings.gd"
