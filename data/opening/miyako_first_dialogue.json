@@ -1,0 +1,10 @@
+{
+  "id": "miyako_first_encounter",
+  "status": "REVIEW",
+  "source": "canonical_html_story.rpy / canonical_html_chapter_1, exterior first meeting before canonical_bg_interior",
+  "lines": [
+    {"speaker": "Miyako", "text": "Dr. Akira. Már vártam."},
+    {"speaker": "", "text": "Nem úgy hatott, mint egy gyászoló özvegy a falusi történetekből."},
+    {"speaker": "", "text": "Nem tört meg, nem omlott össze. Valami sötét, csendes fegyelem ült rajta."}
+  ]
+}

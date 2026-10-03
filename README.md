@@ -14,6 +14,8 @@ WASD / nyilak: séta. E: figyelés, továbbhaladás a helyszín kijáratánál, 
 
 ## Aktuális állapot
 
+Miyako előtt E indítja az első VN-jelenetet. E / Space / Enter / bal kattintás kiírja az aktuális mondatot, majd továbblép. A beszélgetés megvárja az olvasót; az utolsó oldal lezárásakor visszatér a mozgás. A portré REVIEW referencia-kivágás. A benti beszélgetés még nincs beépítve.
+
 REVIEW / PLACEHOLDER: négy női ambient NPC, mozgás, kamera, eső, járható úthatárok, előtér-takarás, kapunál állapotbiztos átadás, híd és Miyako köszöntése. Az oldalirányú járás nyolc képkockás, az előre/hátra ciklus négyképkockás. Ez nem a teljes 10–15 perces történeti flow.
 
 Még hiányzik: Hana/Kuroe/Shion jóváhagyott cameói, játszható házbelső, végleges karakteranimáció és hangjáték. Combat, inventory, route-rendszer és komplex save/load nincs megvalósítva.

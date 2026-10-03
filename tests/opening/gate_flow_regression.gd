@@ -78,10 +78,13 @@ func _ready() -> void:
 	await interact()
 	Engine.time_scale = 4
 	await get_tree().create_timer(4).timeout
-	check(runner.narration.text.contains("Dr. Akira. Már vártam."),"Miyako meeting is still available after exploration")
-	check(runner.dialogue.is_visible_in_tree() and runner.dialogue.modulate.a == 1.0 and runner.narration.modulate.a == 1.0,"Miyako text actually renders after natural intro")
+	check(runner.arrival.vn.body.text.contains("Dr. Akira. Már vártam."),"Miyako meeting is still available after exploration")
+	check(runner.arrival.vn.root.is_visible_in_tree(),"Miyako VN actually renders after natural intro")
 	await capture("miyako_after_exploration_REVIEW")
 	await get_tree().create_timer(7).timeout
+	check(not GameState.has_flag("met_miyako") and not runner.street.player.input_enabled,"VN waits for player instead of timing out")
+	while runner.arrival.vn.active:
+		runner.arrival.vn.advance()
 	Engine.time_scale = 1
 	check(GameState.has_flag("met_miyako") and runner.street.player.input_enabled,"Meeting alone sets met_miyako and returns control")
 	Input.action_press("walk_left")

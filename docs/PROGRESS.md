@@ -8,7 +8,9 @@ A belépési pont a scenes/ui/main_menu.tscn. Főmenü → Játék indítása �
 
 Működik: négy női ambient NPC, nyolcképkockás oldalirányú járás és négyképkockás előre/hátra ciklus, kamera, eső, előtér-takarás, mozgáshatárok, talajhoz igazított Miyako, ütközés, látható feliratok. A Space nem ugrik a cinematic idővonalán; a teljes kihagyás a kapunál csak opening_intro_seen és entered_tsukimori flaget állít.
 
-Hátralévő: a jóváhagyott Hana/Kuroe/Shion cameók, házbelső, teljes 10–15 perces narratív flow, végleges animáció és hang. Combat/inventory/route/komplex mentés nincs kész.
+Miyako külső találkozása már kézzel léptethető VN-jelenet: névtábla, REVIEW referenciaportré, eredeti Ren’Py-narráció, zárolt mozgás és lezáráskor állított jelzők. Részletek: [MIYAKO_VN_REVIEW](MIYAKO_VN_REVIEW.md).
+
+Hátralévő: a jóváhagyott Hana/Kuroe/Shion cameók, házbelső és benti beszélgetés/döntés, teljes 10–15 perces narratív flow, végleges VN-portrék, animáció és hang. Combat/inventory/route/komplex mentés nincs kész.
 
 2026-10-01 technikai rendezés: a régi 3D ág archive/legacy_3d alá került, importbeállításokkal és szerkesztőeszközökkel együtt. Az aktív arrival_director már csak Miyako köszöntését vezérli; Akira explicit street referenciát kap. A korábbi szöveg-, talaj- és ütközésjavítások megmaradtak.
 

@@ -303,6 +303,7 @@ func finish_arrival() -> void:
 	heading.text = "Miyako háza"
 	heading.show()
 	hint.text = "WASD / nyilak · séta    F1 · segítség"
+	hint.visible = help_visible
 	street.enable_control()
 	print("MIYAKO_ENCOUNTER_COMPLETE: met_miyako=true")
 
