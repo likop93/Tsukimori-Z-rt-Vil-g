@@ -36,7 +36,8 @@ func _ready() -> void:
 		get_tree().quit(1)
 		return
 	check(vn.index == 0,"Trigger press did not consume greeting")
-	check(vn.portrait.size == Vector2(140,190),"Reference portrait fits its frame")
+	check(vn.portrait.size == Vector2(228,342) and vn.portrait.get_parent() == vn.root,"Character has no portrait panel")
+	check(vn.portrait.texture.get_image().get_pixel(0,0).a < 0.01,"Character background is transparent")
 	await press(KEY_SPACE)
 	check(vn.index == 0 and vn.body.visible_characters == vn.body.get_total_character_count(),"First press reveals greeting")
 	Input.action_press("walk_right")

@@ -17,22 +17,18 @@ func _ready() -> void:
 	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(root)
-	var frame := panel(Vector2(468,49),Vector2(148,198))
 	portrait = TextureRect.new()
 	portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	# Runtime reference crop only; no new face or outfit, not a production portrait.
-	var crop := AtlasTexture.new()
-	crop.atlas = preload("res://assets/opening/reference/MIYAKO_FINAL_DESIGN_A_PRIMARY.png")
-	crop.region = Rect2(792,8,275,371)
-	portrait.texture = crop
-	portrait.position = Vector2(4,4)
-	portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	portrait.size = Vector2(140,190)
-	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	# REVIEW transparent cutout based on the approved Primary Design A.
+	# Characters sit directly over the world, behind the dialogue panel.
+	portrait.texture = preload("res://assets/opening/vn_portraits/miyako_cutout_v1_REVIEW.png")
+	portrait.position = Vector2(404,18)
+	portrait.size = Vector2(228,342)
+	portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	portrait.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	frame.add_child(portrait)
-	portrait.set_deferred("size",Vector2(140,190))
+	root.add_child(portrait)
+	portrait.set_deferred("size",Vector2(228,342))
 	panel(Vector2(24,250),Vector2(592,98))
 	nameplate = panel(Vector2(24,224),Vector2(170,27))
 	speaker = text_at(Vector2(38,226),Vector2(145,23),17)
