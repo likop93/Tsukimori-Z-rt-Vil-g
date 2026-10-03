@@ -24,7 +24,7 @@ Esc — a nyitó jelenet kihagyása
 F1 — vezérlési segítség megjelenítése/elrejtése
 
 MIT TARTALMAZ A BUILD?
-- kb. 70 másodperces nyitójelenet
+- kb. 66 másodperces nyitójelenet
 - buszos érkezés és Akira belső monológja
 - rövid emléktöredék
 - erdei séta Tsukimori kapujáig

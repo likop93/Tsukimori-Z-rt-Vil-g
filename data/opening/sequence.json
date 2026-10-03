@@ -13,7 +13,8 @@
       "shots": [
         "bus_cabin"
       ],
-      "duration": 23,
+      "duration": 19,
+      "line_times": [0, 3, 7.5, 12, 14.3, 16.5],
       "lines": [
         "Az eső már órák óta verte az ablakot.",
         "A sofőr egyszer sem kérdezte meg, biztosan itt akarok-e leszállni.",

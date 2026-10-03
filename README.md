@@ -1,6 +1,6 @@
 # Tsukimori — Zárt Világ
 
-A jelenleg futó játék egy high-detail pixel-art 2D/2.5D narratív prototípus. F5 a főmenüt indítja. A „Játék indítása” innen vezet a 70 másodperces nyitásba: busz, Akira monológja, emléktöredék, leszállás, erdei séta, kapu. A kapunál visszakapod az irányítást; a híd és Miyako találkozása játékosvezérelt.
+A jelenleg futó játék egy high-detail pixel-art 2D/2.5D narratív prototípus. F5 a főmenüt indítja. A „Játék indítása” innen vezet a 66 másodperces nyitásba: busz, Akira monológja, emléktöredék, leszállás, erdei séta, kapu. A kapunál visszakapod az irányítást; a híd és Miyako találkozása játékosvezérelt.
 
 ## Indítás
 

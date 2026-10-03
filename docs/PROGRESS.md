@@ -2,7 +2,7 @@
 
 Frissítve: 2026-10-03. Technikai REVIEW; a LOCKED kreatív döntések változatlanok.
 
-A belépési pont a scenes/ui/main_menu.tscn. Főmenü → Játék indítása → scenes/opening/opening.tscn: nyitás (70 mp) → kapunál kontroll → Village Street → híd → ház → Miyako köszöntése. A falun belüli útvonal játékosvezérelt.
+A belépési pont a scenes/ui/main_menu.tscn. Főmenü → Játék indítása → scenes/opening/opening.tscn: nyitás (66 mp) → kapunál kontroll → Village Street → híd → ház → Miyako köszöntése. A falun belüli útvonal játékosvezérelt.
 
 2026-10-03: főmenü a felhasználó kifejezett kérésére. Játék indítása, Beállítások, Irányítás, Kilépés. Hangerő és teljes képernyő mentése külön beállításfájlba; ez nem játékállás-mentés. Meglévő erdei kapu REVIEW háttér, eső és halk esőhang. Részletek: [MENU_REVIEW](MENU_REVIEW.md). Kuroe cameója a jóváhagyott referencia hiányában függőben marad.
 

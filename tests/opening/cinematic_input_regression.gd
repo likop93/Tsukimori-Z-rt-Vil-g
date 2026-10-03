@@ -30,6 +30,18 @@ func _ready() -> void:
 		check(runner.shot.position.is_equal_approx(camera_at),"Space must not jump camera")
 		check(runner.ambience.cue_cursor == sound_cursor,"Space must not replay audio")
 	check(not runner.completed,"Space cannot skip the cinematic")
+	runner.set_beat(1)
+	runner._process(0.0)
+	for press in 20:
+		runner._unhandled_input(space)
+		runner._process(0.0)
+	check(runner.line_index == 0,"Repeated Space cannot consume future monologue")
+	check(runner.narration.visible_characters >= runner.narration.text.length(),"Space reveals current thought")
+	for i in runner.beats[1].line_times.size():
+		runner.beat_time = float(runner.beats[1].line_times[i])+0.01
+		runner._process(0.0)
+		check(runner.line_index == i,"Bus thoughts follow authored cues")
+	check(float(runner.beats[1].duration)-float(runner.beats[1].line_times[-1]) <= 2.5,"Last short thought lasts at most 2.5 seconds")
 	var shots := [
 		[1,15.0,"bus_katsuro"],[2,1.8,"memory_warm"],[2,4.0,"memory_touch"],
 		[2,5.8,"memory_cold"],[2,7.5,"memory_wrist"],[2,9.5,"memory_recoil"],

@@ -12,7 +12,6 @@ var beat_index := 0
 var beat_time := 0.0
 var shot_index := -1
 var line_index := -1
-var manual_line := -1
 var reveal_time := 0.0
 var completed := false
 var arrival: Node
@@ -152,7 +151,11 @@ func _process(delta: float) -> void:
 	var lines: Array = beat.lines
 	if not lines.is_empty():
 		var next_line := mini(lines.size()-1,int(beat_time / (float(beat.duration)/lines.size())))
-		next_line = maxi(next_line,manual_line)
+		if beat.has("line_times"):
+			next_line = 0
+			for i in beat.line_times.size():
+				if beat_time >= float(beat.line_times[i]):
+					next_line = i
 		if next_line != line_index:
 			line_index = next_line
 			reveal_time = 0
@@ -176,7 +179,6 @@ func set_beat(index: int) -> void:
 	shot_index = -1
 	reveal_time = 0
 	line_index = -1
-	manual_line = -1
 	overlay.modulate.a = 1.0
 	dialogue.modulate.a = 1.0
 	var beat: Dictionary = beats[index]
@@ -236,17 +238,12 @@ func set_shot(id: String, index: int) -> void:
 func advance_line() -> void:
 	if completed or skip_dialog.visible:
 		return
-	var beat: Dictionary = beats[beat_index]
 	if narration.visible_characters >= 0 and narration.visible_characters < narration.text.length() and dialogue.visible:
 		reveal_time = 100
 		narration.visible_characters = -1
 		return
-	if not beat.lines.is_empty() and line_index < beat.lines.size()-1:
-		manual_line = line_index+1
-		line_index = manual_line
-		narration.text = beat.lines[line_index]
-		reveal_time = 0
-		narration.visible_characters = 0
+	# Keep subsequent thoughts on their film cues. Consuming them early left
+	# the final short sentence on screen for most of the bus ride.
 	# Text input never seeks the cinematic clock, actors, camera or audio.
 	# ESC is the sole explicit path for skipping the full cinematic.
 
