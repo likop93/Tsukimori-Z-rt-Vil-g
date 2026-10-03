@@ -46,7 +46,15 @@ Ha egy képen lévő szöveg ütközik a dokumentált kánonnal, a dokumentált 
 | `characters/SHION_FINAL_CHARACTER_DESIGN_V1.png` | **LOCKED PRIMARY** | Shion arc, zöld szem, fekete/ibolyás haj, primary outfit, holdfény/víz vizuális nyelv | `e65d15d6192e78c795a5083b1e695106a309161c188a41453b779d5ec9560653` |
 | `characters/RENKA_CHARACTER_DESIGN_V1_REFERENCE.png` | **APPROVED REFERENCE** | Renka jelenlegi vizuális irány; még nem production lock | `25ea70919fe0719bb901d12faa6c3af08d6ac594d2d7fdae2c556c399c003de1` |
 | `characters/HANA_FINAL_CHARACTER_DESIGN_V1.png` | **LOCKED PRIMARY** | Hana arc, tan bőr, nagyon hosszú hullámos haj, arany hajdísz, telt/buja testalkat, fekete–bordó–arany primary outfit | `c63ac780162addddf4e9cfef470038483f200f8b3ba88ac62de18e1a16d3ff9c` |
+| `characters/KUROE_PRIMARY_CHARACTER_REFERENCE_V1.png` | **LOCKED PRIMARY** | Kuroe arc, hosszú sötétlila haj, ametiszt szem, primary outfit, expression language, elegáns homokóra-sziluett; productionben még teltebb/nagyobb mellkas | `54b56b61527dabba164712ca9cd7fa7631bc14552cd3f5641415b3c94249a5fd` |
+| `characters/KUROE_STORY_KEY_VISUAL_V1.png` | **LOCKED SUPPORTING CHARACTER / STORY REFERENCE** | Kuroe zenei/művészi tér, testtartás, Akira–Kuroe scene mood és karakterkontraszt | `3a6dcb9939e6f1f227e5cd87bd25b1bb01f52b7647f16765fb16d639c5f3282b` |
+| `characters/KUROE_MUSIC_ROOM_REFERENCE_V1.png` | **LOCKED SUPPORTING CHARACTER REFERENCE** | Kuroe részletes outfit, zenei tér, testarány és ülő karakterjelenlét | `6c9edd35da3308ba008a4c0ede65d7cf9e161737e066270d9aa6e3a2aa4309f0` |
 | `characters/HIMIKO_FINAL_CHARACTER_DESIGN_V1.png` | **LOCKED PRIMARY** | Himiko Empress-design: vörös haj, heterokrómia, kb. 200 cm-es karakterérzet, extrém homokóra sziluett, extrém nagy mellkas, szélesebb csípő, nagyobb far és erősebb combok, fehér–fekete városi/orvosi primary outfit | `8e7bacadbb0bc98bfef6096705fdad8f0585a3dbf303e66f1c4b0b7e57bd777a` |
+
+
+### Kuroe megjegyzés
+
+A `KUROE_PRIMARY_CHARACTER_REFERENCE_V1.png` a karakter elsődleges vizuális authorityja. A két zenei/interior kép támogató történeti és staging referencia. Tulajdonosi kiegészítés szerint a production Kuroe mellkasa **nagyobb/teltebb legyen a referencián láthatónál**, miközben az elegáns, keskenyebb sötét glamour homokóra-sziluett megmarad. Részletek: `docs/KUROE_PRODUCTION_SPEC.md`.
 
 ### Himiko megjegyzés
 
