@@ -1,5 +1,7 @@
 # Tsukimori — aktuális fejlesztési állapot
 
+Kuroe korai Village Street cameója elkészült REVIEW atlasszal: egyszeri áthaladás és rövid pillantás, névtábla/dialógus/kontrollzár nélkül. [Részletek](KUROE_CAMEO_REVIEW.md). Hana és Shion cameója továbbra is hiányzik; Kuroe végleges animációs finomítása még szükséges.
+
 Frissítve: 2026-10-03. Technikai REVIEW; a LOCKED kreatív döntések változatlanok.
 
 A belépési pont a scenes/ui/main_menu.tscn. Főmenü → Játék indítása → scenes/opening/opening.tscn: nyitás (66 mp) → kapunál kontroll → Village Street → híd → ház → Miyako köszöntése. A falun belüli útvonal játékosvezérelt.

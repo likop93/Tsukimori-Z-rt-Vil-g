@@ -14,6 +14,7 @@ var location := "street"
 var bridge_rail: Node2D
 var house_rail: Node2D
 var featured_actor: Node2D
+var kuroe_cameo: Node2D
 const BRIDGE_PATH := [Vector2(75,191),Vector2(185,190),Vector2(265,181),Vector2(345,182),Vector2(435,192),Vector2(555,205)]
 # Surveyed inner road edges; add the actor's foot clearance before clamping.
 const STREET_EDGES := [Vector3(150,440,630),Vector3(215,410,655),Vector3(270,415,655),Vector3(339,395,680)]
@@ -36,6 +37,9 @@ func _ready() -> void:
 	player.controlled = true
 	player.position = Vector2(data.spawn[0],data.spawn[1])
 	cast.add_child(player)
+	kuroe_cameo = preload("res://scripts/opening/kuroe_cameo.gd").new()
+	kuroe_cameo.street = self
+	cast.add_child(kuroe_cameo)
 	for spec in data.npc:
 		var resident := Resident.new()
 		resident.name = spec.id
