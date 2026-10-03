@@ -202,11 +202,55 @@ Első animációs batch:
 
 # Kuroe
 
-- fiatal goth művész;
-- Shion exbarátnője;
+## Identitás
+
+- felnőtt nő;
+- sötét, modern, zenei/művészi karakter;
+- Shion korábbi barátnője;
+- leszbikus;
+- Akira az első férfi, aki iránt később valódi vonzalom alakulhat ki benne;
 - hegedű/zongora/zene motívum;
 - Akira jövőbeli mahagóni gitárjának ötlete tőle ered;
 - a hangszer külső motívumai közül Miyako motívumai dominálnak.
+
+## FINAL vizuális irány — LOCKED
+
+- nagyon hosszú, sötétlila / majdnem fekete haj;
+- lila / ametiszt szem;
+- fekete/lila virágos-masnis hajdísz;
+- elegáns, modern, enyhén gótikus összhatás;
+- fekete testhezálló ruha, áttetsző csipkés felsőrész;
+- fekete öv, finom láncos/lila kristályos kiegészítők;
+- combpánt / harisnyapánt részletek;
+- hosszú fekete kabát vagy blézer;
+- erősen nőies homokóra-sziluett;
+- keskeny derék, hangsúlyos csípő és telt combok;
+- **nagyon nagy, telt mellkas**, a primary referenciánál is hangsúlyosabb production aránnyal;
+- karakterkülönbség: Hana földeltebb/bujább, Himiko monumentális Empress, Kuroe elegánsabb és sötét glamour jellegű.
+
+Elsődleges képi referencia:
+`/Tsukimori Visual References/characters/KUROE_PRIMARY_CHARACTER_REFERENCE_V1.png`
+
+Támogató referenciák:
+- `KUROE_STORY_KEY_VISUAL_V1.png`
+- `KUROE_MUSIC_ROOM_REFERENCE_V1.png`
+
+Production specifikáció:
+`docs/KUROE_PRODUCTION_SPEC.md`
+
+## Mozgásnyelv — PRODUCTION LOCK
+
+Alapelv:
+> Kuroe úgy mozog, mintha mindig tudná, hogy figyelik — de nem azért mozog, hogy figyeljék.
+
+- lassú, kontrollált testsúlyváltás;
+- elegáns járás;
+- kevés fölösleges kézmozgás;
+- oldalról megfigyelő testtartás;
+- késleltetett fejfordítás szemkontaktus után;
+- finom félmosoly;
+- haj/kabát visszafogott secondary motion;
+- nincs komikus fanservice animáció.
 
 ---
 
