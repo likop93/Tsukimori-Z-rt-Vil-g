@@ -64,4 +64,14 @@ func advance(delta: float) -> void:
 				runner.arrival.elapsed = 0
 				runner.arrival.done = false
 		"interior":
-			runner.hint.text = "WASD / nyilak · séta    Az első esti beszélgetés véget ért."
+			if GameState.has_flag("first_night_seen"):
+				return
+			near_exit = actor.position.x > 435
+			runner.hint.text = "E · az este folytatása" if near_exit else "A folytatáshoz sétálj jobbra.    WASD / nyilak · séta"
+			if near_exit and interact and GameState.has_flag("miyako_interior_dialogue_seen"):
+				var previous: Node = runner.arrival
+				runner.arrival = preload("res://scripts/opening/first_night_director.gd").new()
+				runner.add_child(runner.arrival)
+				runner.arrival.runner = runner
+				runner.arrival.begin()
+				previous.queue_free()

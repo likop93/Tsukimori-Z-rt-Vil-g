@@ -58,8 +58,27 @@ func _ready() -> void:
 		await get_tree().create_timer(0.4).timeout
 		Input.action_release("walk_down")
 		check(runner.street.player.position.y <= 269,"Interior feet stay on the floor")
+		Input.action_press("walk_right")
+		await get_tree().create_timer(3.0).timeout
+		Input.action_release("walk_right")
+		check(runner.street.player.position.x > 340,"Player can walk past Miyako on the floor")
+		Input.action_press("walk_left")
+		await get_tree().create_timer(3.0).timeout
+		Input.action_release("walk_left")
+		check(runner.street.player.position.x < 240,"Player can pass Miyako in reverse too")
 		await RenderingServer.frame_post_draw
 		get_viewport().get_texture().get_image().save_png("res://review/interior_complete.png")
+		runner.street.player.position = Vector2(460,266)
+		await key(KEY_E)
+		await get_tree().create_timer(0.9).timeout
+		var night: CanvasLayer = runner.arrival.vn
+		check(night.active and not night.portrait.visible,"Next interaction starts night narration without Miyako portrait")
+		while night.active:
+			check(night.next_button.visible,"Narration has a visible advance button")
+			night.next_button.pressed.emit()
+			await get_tree().process_frame
+			check(night.body.get_line_count()*night.body.get_line_height() <= night.body.size.y,"Night text fits")
+		check(GameState.has_flag("first_night_seen"),"Night closes only after final acknowledgement")
 		runner.queue_free()
 		await get_tree().process_frame
 	GameState.clear_runtime_state()

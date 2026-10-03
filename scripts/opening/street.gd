@@ -172,7 +172,8 @@ func show_location(next_location: String) -> void:
 		player.facing = 3
 		player.velocity = Vector2.ZERO
 		if is_instance_valid(featured_actor):
-			featured_actor.position = Vector2(290,266)
+			# Stand beside the front walking lane, leaving room to pass her collider.
+			featured_actor.position = Vector2(290,244)
 			featured_actor.scale = Vector2.ONE*0.72
 			featured_actor.set_active(true)
 		return

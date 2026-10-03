@@ -13,6 +13,7 @@ var speaker: Label
 var nameplate: Panel
 var portrait: TextureRect
 var prompt: Label
+var next_button: Button
 
 func _ready() -> void:
 	layer = 30
@@ -38,8 +39,14 @@ func _ready() -> void:
 	speaker.add_theme_color_override("font_color",Color("#e8b38c"))
 	body = text_at(Vector2(40,260),Vector2(560,62),16)
 	body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	prompt = text_at(Vector2(40,326),Vector2(558,18),10)
+	prompt = text_at(Vector2(40,326),Vector2(450,18),10)
 	prompt.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	next_button = Button.new()
+	next_button.position = Vector2(504,322)
+	next_button.size = Vector2(96,24)
+	next_button.add_theme_font_size_override("font_size",12)
+	next_button.pressed.connect(advance)
+	root.add_child(next_button)
 	choice_box = VBoxContainer.new()
 	choice_box.position = Vector2(24,124)
 	choice_box.size = Vector2(410,100)
@@ -76,6 +83,7 @@ func begin(data: Dictionary) -> void:
 		return
 	lines = data.lines
 	choices = data.get("choices",[])
+	portrait.visible = bool(data.get("portrait",true))
 	index = 0
 	active = true
 	root.show()
@@ -92,9 +100,13 @@ func show_line() -> void:
 
 func update_prompt() -> void:
 	if choice_box != null and choice_box.visible:
+		next_button.hide()
 		return
-	var action := "Kiírás" if body.visible_characters < body.get_total_character_count() else ("Befejezés" if index == lines.size()-1 else "Tovább")
-	prompt.text = "E / Space / Enter / kattintás · "+action
+	var ending := "Válasz" if not choices.is_empty() else "Befejezés"
+	var action := "Kiírás" if body.visible_characters < body.get_total_character_count() else (ending if index == lines.size()-1 else "Tovább")
+	next_button.text = action
+	next_button.show()
+	prompt.text = "E / Space / Enter · tovább"
 
 func _process(delta: float) -> void:
 	if not active:
@@ -123,6 +135,7 @@ func advance() -> void:
 
 func show_choices() -> void:
 	choice_box.show()
+	next_button.hide()
 	prompt.text = "Nyilak + Enter / kattintás · választás"
 	for option in choices:
 		var button := Button.new()
@@ -161,6 +174,8 @@ func _input(event: InputEvent) -> void:
 		return
 	var key: bool = event is InputEventKey and event.pressed and not event.echo and event.keycode in [KEY_E,KEY_SPACE,KEY_ENTER]
 	var click: bool = event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT
+	if click and next_button.get_global_rect().has_point(next_button.get_global_mouse_position()):
+		return # The actual button handles this click, once.
 	if key or click:
 		advance()
 		get_viewport().set_input_as_handled()
