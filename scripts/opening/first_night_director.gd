@@ -125,6 +125,10 @@ func start_first_day() -> void:
 		return
 	phase = "dawn_transition"
 	end_card.queue_free()
+	begin_first_day()
+
+func begin_first_day() -> void:
+	phase = "morning"
 	night_image.hide()
 	runner.street.show_location("interior")
 	runner.street.backdrop.texture = load("res://assets/home_day1/morning_REVIEW.png")
@@ -158,6 +162,10 @@ func start_hana_day() -> void:
 		return
 	phase = "hana_day"
 	end_card.queue_free()
+	begin_hana_day()
+
+func begin_hana_day() -> void:
+	phase = "hana_day"
 	next_day = preload("res://scripts/opening/hana_day_director.gd").new()
 	add_child(next_day)
 	next_day.runner = runner

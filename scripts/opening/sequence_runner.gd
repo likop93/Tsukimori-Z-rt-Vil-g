@@ -107,6 +107,9 @@ func _ready() -> void:
 	pause_menu = preload("res://scripts/ui/pause_menu.gd").new()
 	pause_menu.runner = self
 	add_child(pause_menu)
+	var requested := GameState.chapter_start
+	GameState.chapter_start = "" # One-shot request; scene reload cannot replay it.
+	preload("res://scripts/ui/chapter_catalog.gd").enter(self,requested)
 
 func make_label(parent: Node, at: Vector2, dimensions: Vector2, font_size: int) -> Label:
 	var label := Label.new()

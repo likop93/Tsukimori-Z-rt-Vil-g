@@ -4,6 +4,8 @@ Hana, Kuroe és Shion korai cameója működik REVIEW atlasszal, névtábla/dial
 
 Frissítve: 2026-10-04. Technikai REVIEW; a LOCKED kreatív döntések változatlanok.
 
+Főmenü → Fejezetválasztás: hat működő tesztbelépés (nyitány, falusi séta, Miyako, első éjszaka, első rendelési nap, Hana). Előzményeket beállít, múltbeli döntésekért pontot nem ad. Nem save/load vagy route rendszer. [Működés és ellenőrzés](CHAPTER_SELECT_REVIEW.md).
+
 Az első nap lezárása továbbvezet a következő reggelhez és Hana teljes első terápiás jelenetéhez. Két eredeti választás, négy tesztelt kombináció, változó arckifejezésű keret nélküli portré, megismerési flag és karakterlap. A külön klinikai kiegészítés és a késő délutáni folytatás még külön feladat. [Forrás és generation napló](HANA_FIRST_SESSION_REVIEW.md).
 
 Tulajdonosi arány-visszajelzés alapján az új szoba/rendelő VN-háttér lett, járó Akira nélkül. Gombok vagy fel/le + Enter indítják a megfigyeléseket és a nap állomásait. Az eredeti nappali- és külső járás megmaradt. [Megjelenítés és ellenőrzés](ROOM_CLINIC_VN_REVIEW.md).

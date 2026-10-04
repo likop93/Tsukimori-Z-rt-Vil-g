@@ -10,6 +10,8 @@ A jelenleg futó játék egy high-detail pixel-art 2D/2.5D narratív prototípus
 
 A főmenü egérrel vagy nyilakkal és Enterrel kezelhető. Beállítások: hangerő és teljes képernyő; ezek a következő indításra is megmaradnak. Az Irányítás megnyitja a gombok leírását, a Kilépés bezárja a játékot. Esc visszalép az almenükből. Játékállás-mentés még nincs.
 
+Teszteléshez a Fejezetválasztás közvetlenül a nyitányhoz, falusi sétához, Miyako első találkozásához, első éjszakához, első rendelési naphoz vagy Hana fejezetéhez vezet. A kiválasztott rész új tesztállapotból indul, szükséges előzményekkel és az eredeti nulla pontos korábbi döntésekkel. [Belépési pontok és állapotkezelés](docs/CHAPTER_SELECT_REVIEW.md).
+
 WASD / nyilak: séta. Shift nyomva: futás. E: figyelés, továbbhaladás a helyszín kijáratánál, beszélgetés Miyakóval. Space / Enter: szöveg gyorsítása / tovább. Esc: szünetmenü (intróban kihagyás). Tab / jobb felső Menü gomb: szünet bármikor. F1: vezérlési segítség.
 
 A szünetmenüben folytatás, karakterlapok és kapcsolati státusz, hangerő, teljes képernyő, irányítás és főmenübe visszatérés található. A világ és a párbeszéd szünet alatt megáll. [Menü és futás REVIEW](docs/PAUSE_AND_RUN_REVIEW.md).

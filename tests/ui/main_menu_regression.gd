@@ -34,6 +34,8 @@ func _ready() -> void:
 	check(not menu.starting,"No automatic cinematic start")
 	await capture("main")
 	await key(KEY_DOWN)
+	check(get_viewport().gui_get_focus_owner() == menu.chapters_button,"Down selects chapter selector")
+	await key(KEY_DOWN)
 	check(get_viewport().gui_get_focus_owner() == menu.settings_button,"Down selects settings")
 	await key(KEY_ENTER)
 	check(is_instance_valid(menu.modal) and menu.settings_open,"Enter opens settings")

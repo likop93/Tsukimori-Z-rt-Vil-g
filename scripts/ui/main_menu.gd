@@ -1,6 +1,8 @@
 extends Control
 const OPENING := "res://scenes/opening/opening.tscn"
 var start_button: Button
+var chapters_button: Button
+var chapter_buttons: Array[Button] = []
 var settings_button: Button
 var controls_button: Button
 var quit_button: Button
@@ -46,11 +48,12 @@ func _ready() -> void:
 	line.color = Color("#725346")
 	line.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(line)
-	start_button = button(self,"Játék indítása",Vector2(40,165),Vector2(220,32),start_game)
-	settings_button = button(self,"Beállítások",Vector2(40,204),Vector2(220,32),open_settings)
-	controls_button = button(self,"Irányítás",Vector2(40,243),Vector2(220,32),open_controls)
-	quit_button = button(self,"Kilépés",Vector2(40,282),Vector2(220,32),quit_game)
-	buttons = [start_button,settings_button,controls_button,quit_button]
+	start_button = button(self,"Játék indítása",Vector2(40,156),Vector2(220,30),start_game)
+	chapters_button = button(self,"Fejezetválasztás",Vector2(40,190),Vector2(220,30),open_chapters)
+	settings_button = button(self,"Beállítások",Vector2(40,224),Vector2(220,30),open_settings)
+	controls_button = button(self,"Irányítás",Vector2(40,258),Vector2(220,30),open_controls)
+	quit_button = button(self,"Kilépés",Vector2(40,292),Vector2(220,30),quit_game)
+	buttons = [start_button,chapters_button,settings_button,controls_button,quit_button]
 	label(self,"Nyilak · választás     Enter · megnyitás",Vector2(40,333),Vector2(340,17),10,Color("#a3a3b1"))
 	start_button.grab_focus()
 	var ambience := preload("res://scripts/opening/ambience.gd").new()
@@ -144,6 +147,20 @@ func open_settings() -> void:
 	modal.add_child(fullscreen)
 	slider.grab_focus()
 
+func open_chapters() -> void:
+	if starting or is_instance_valid(modal):
+		return
+	prepare_modal("Fejezetválasztás",chapters_button)
+	modal.position = Vector2(70,22)
+	modal.size = Vector2(500,318)
+	back_button.position.y = 282
+	label(modal,"Teszteléshez · új állapotból, az előzmények beállításával.",Vector2(26,58),Vector2(448,24),11)
+	chapter_buttons.clear()
+	var entries: Array[Dictionary] = preload("res://scripts/ui/chapter_catalog.gd").entries()
+	for i in entries.size():
+		chapter_buttons.append(button(modal,str(entries[i].title),Vector2(26,90+i*30),Vector2(448,28),launch_chapter.bind(str(entries[i].id))))
+	chapter_buttons[0].grab_focus()
+
 func volume_changed(value: float) -> void:
 	AppSettings.set_volume(value/100)
 	volume_label.text = "Hangerő · "+str(roundi(value))+"%"
@@ -156,7 +173,7 @@ func open_controls() -> void:
 	back_button.grab_focus()
 
 func close_modal() -> void:
-	if not is_instance_valid(modal):
+	if starting or not is_instance_valid(modal):
 		return
 	if settings_open:
 		var error := AppSettings.save_settings()
@@ -169,6 +186,7 @@ func close_modal() -> void:
 	modal.queue_free()
 	modal_shade.queue_free()
 	modal = null
+	chapter_buttons.clear()
 	for item in buttons:
 		item.disabled = false
 	return_focus.grab_focus()
@@ -176,10 +194,19 @@ func close_modal() -> void:
 func start_game() -> void:
 	if starting or is_instance_valid(modal):
 		return
+	launch_chapter("intro")
+
+func launch_chapter(id: String) -> void:
+	if starting or not preload("res://scripts/ui/chapter_catalog.gd").valid(id):
+		return
 	starting = true
 	for item in buttons:
 		item.disabled = true
-	GameState.clear_runtime_state()
+	for item in chapter_buttons:
+		item.disabled = true
+	if is_instance_valid(back_button):
+		back_button.disabled = true
+	preload("res://scripts/ui/chapter_catalog.gd").prepare(id)
 	var transition := create_tween()
 	transition.tween_property(fade,"color:a",1.0,0.35)
 	transition.tween_callback(func() -> void: get_tree().change_scene_to_file(OPENING))
