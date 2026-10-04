@@ -4,6 +4,8 @@ Hana, Kuroe és Shion korai cameója működik REVIEW atlasszal, névtábla/dial
 
 Frissítve: 2026-10-04. Technikai REVIEW; a LOCKED kreatív döntések változatlanok.
 
+Következő tulajdonosi menüigény: karakterlapok, leírások és kapcsolati státusz; inventory később. Még nincs implementálva. [Rögzített terv](CHARACTER_MENU_AND_INVENTORY_PLAN.md).
+
 Játék közbeni szünetmenü és Shift-futás működik. A menü az intró és a VN idővonalát is megállítja. Külön REVIEW oldalfutó atlasz, front/back futás még ideiglenes. [Részletek és ellenőrzés](PAUSE_AND_RUN_REVIEW.md).
 
 A monológ első buszos Akira-képe részletesebb, a karakterlaphoz és az emlékképhez igazított REVIEW CG-re cserélve. [Képi folytonosság és prompt](AKIRA_OPENING_CONTINUITY_REVIEW.md). A történet és az intró időzítése változatlan.
