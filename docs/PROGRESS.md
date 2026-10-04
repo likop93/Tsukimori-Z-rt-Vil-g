@@ -4,7 +4,7 @@ Hana, Kuroe és Shion korai cameója működik REVIEW atlasszal, névtábla/dial
 
 Frissítve: 2026-10-04. Technikai REVIEW; a LOCKED kreatív döntések változatlanok.
 
-Következő tulajdonosi menüigény: karakterlapok, leírások és kapcsolati státusz; inventory később. Még nincs implementálva. [Rögzített terv](CHARACTER_MENU_AND_INVENTORY_PLAN.md).
+Karakterlapok, leírások és megtörtént eseményekből képzett kapcsolati státusz implementálva. Első éjszaka → közös reggel → két eredeti névtelen konzultáció működik. Inventory később. [Források, asset státusz és hiányok](CHARACTERS_NIGHT_CLINIC_REVIEW.md).
 
 Játék közbeni szünetmenü és Shift-futás működik. A menü az intró és a VN idővonalát is megállítja. Külön REVIEW oldalfutó atlasz, front/back futás még ideiglenes. [Részletek és ellenőrzés](PAUSE_AND_RUN_REVIEW.md).
 
@@ -20,9 +20,9 @@ Miyako külső találkozása már kézzel léptethető VN-jelenet: névtábla, R
 
 Az első benti beszélgetés és két eredeti választása működik, explicit E-belépéssel, Library háttérrel, halkuló esővel és egyszeri állapotmódosítással. Lezárás után a nappali első járósávja használható. Részletek: [MIYAKO_INTERIOR_REVIEW](MIYAKO_INTERIOR_REVIEW.md).
 
-Az átjárás javítva: Miyako mellett mindkét irányban el lehet menni. A VN külön Tovább gombot kapott. Jobbra E indítja az első éjszaka szöveges átvezetését, majd fejezetzárás és főmenü-gomb következik. Részletek: [INTERIOR_PASSAGE_AND_CONTINUATION_REVIEW](INTERIOR_PASSAGE_AND_CONTINUATION_REVIEW.md).
+Az átjárás javítva: Miyako mellett mindkét irányban el lehet menni. A VN külön Tovább gombot kapott. Jobbra E már Akira bejárható szobájába vezet; a korábbi fejezetzárást felváltja az éjszaka–reggel–rendelő folytatás. A korábbi javítás történeti leírása: [INTERIOR_PASSAGE_AND_CONTINUATION_REVIEW](INTERIOR_PASSAGE_AND_CONTINUATION_REVIEW.md).
 
-Hátralévő: teljes házbelső és interakciók, éjszakai kép/hang, II. fejezet, teljes 10–15 perces narratív flow, végleges VN-portrék, animáció és hang. Combat/inventory/route/komplex mentés nincs kész.
+Hátralévő: teljes házbelső és interakciók, éjszakai férfihang/alvás animáció, a II–III. fejezet teljes adaptációja, Hana klinikai szövegének és első napi sorrendjének egyeztetése, napközbeni falusi/szabadidős folytatás, végleges portrék és animáció. Combat/inventory/route/komplex mentés nincs kész.
 
 2026-10-01 technikai rendezés: a régi 3D ág archive/legacy_3d alá került, importbeállításokkal és szerkesztőeszközökkel együtt. Az aktív arrival_director már csak Miyako köszöntését vezérli; Akira explicit street referenciát kap. A korábbi szöveg-, talaj- és ütközésjavítások megmaradtak.
 

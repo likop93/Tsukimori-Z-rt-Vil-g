@@ -8,6 +8,10 @@ var story_phase: int = 0
 var aff_miyako := 0
 var akira_gyogyulas := 0
 var miyako_first_choice := ""
+var miyako_morning_choice := ""
+var clinic_first_choice := ""
+var aff_hana := 0
+var aff_shion := 0
 
 func set_flag(flag_name: String, value: bool = true) -> void:
     flags[flag_name] = value
@@ -21,3 +25,7 @@ func clear_runtime_state() -> void:
     aff_miyako = 0
     akira_gyogyulas = 0
     miyako_first_choice = ""
+    miyako_morning_choice = ""
+    clinic_first_choice = ""
+    aff_hana = 0
+    aff_shion = 0

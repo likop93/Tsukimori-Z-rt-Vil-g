@@ -1,0 +1,43 @@
+{
+  "id": "first_day_consultation_1",
+  "portrait": false,
+  "source": "canonical_html_story.rpy / chapter_3 / dialogue excerpt; anonymous identities retained pending order confirmation",
+  "lines": [
+    {
+      "speaker": "",
+      "text": "Az első páciens a hiányról és arról beszél, milyen nehéz a saját vágyait kimondania."
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Nem arról van szó, hogy hiányzik valami. Csak... nehéz úgy beszélni a vágyamról, mintha jogom volna hozzá."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Kinek a hangján hallja ezt, amikor megpróbálja kimondani?"
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Az anyósomén. De azt hiszem, ő is csak valaki más hangját ismételte. Itt mindenki ugyanazt mondja, csak más szájjal."
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Mintha a testem csak addig lenne az enyém, amíg valaki más szükségéhez tudom igazítani."
+    },
+    {
+      "speaker": "Akira",
+      "text": "És ha most, itt, csak a sajátjáról beszélne — mit mondana?"
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Nem tudom. Még sosem kérdezte tőlem senki így."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Köszönöm, hogy elmondta. Legközelebb is szívesen folytatjuk."
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Köszönöm, doktor úr."
+    }
+  ]
+}

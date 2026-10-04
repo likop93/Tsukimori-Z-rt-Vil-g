@@ -12,17 +12,17 @@ A főmenü egérrel vagy nyilakkal és Enterrel kezelhető. Beállítások: hang
 
 WASD / nyilak: séta. Shift nyomva: futás. E: figyelés, továbbhaladás a helyszín kijáratánál, beszélgetés Miyakóval. Space / Enter: szöveg gyorsítása / tovább. Esc: szünetmenü (intróban kihagyás). Tab / jobb felső Menü gomb: szünet bármikor. F1: vezérlési segítség.
 
-A szünetmenüben folytatás, hangerő, teljes képernyő, irányítás és főmenübe visszatérés található. A világ és a párbeszéd szünet alatt megáll. [Menü és futás REVIEW](docs/PAUSE_AND_RUN_REVIEW.md).
+A szünetmenüben folytatás, karakterlapok és kapcsolati státusz, hangerő, teljes képernyő, irányítás és főmenübe visszatérés található. A világ és a párbeszéd szünet alatt megáll. [Menü és futás REVIEW](docs/PAUSE_AND_RUN_REVIEW.md).
 
 ## Aktuális állapot
 
-Miyako előtt E indítja az első VN-jelenetet. E / Space / Enter / bal kattintás kiírja az aktuális mondatot, majd továbblép. A beszélgetés megvárja az olvasót. Utána újabb E belép a házba: benti beszélgetés, két eredeti választás, majd rövid bejárható belső sáv. A karakter keret nélküli, átlátszó hátterű REVIEW kép. A beszélgetés után jobbra sétálva E indítja az első éjszaka szöveges átvezetését. A fejezet végén visszatérhetsz a főmenübe.
+Miyako előtt E indítja az első VN-jelenetet. E / Space / Enter / bal kattintás kiírja az aktuális mondatot, majd továbblép. A beszélgetés megvárja az olvasót. Utána újabb E belép a házba: benti beszélgetés, két eredeti választás, majd bejárható belső sáv. Jobbra E → Akira szobája. Középen E: fénykép; jobbra E: lefekvés. Első éjszaka → reggel Miyakóval és két eredeti döntés → rendelő. Középen E indítja a két konzultációt egymás után. [Karakterlapok és folytatás, források és hiányok](docs/CHARACTERS_NIGHT_CLINIC_REVIEW.md).
 
 REVIEW / PLACEHOLDER: négy női ambient NPC, mozgás, kamera, eső, járható úthatárok, előtér-takarás, kapunál állapotbiztos átadás, híd és Miyako köszöntése. Az oldalirányú járás nyolc képkockás, az előre/hátra ciklus négyképkockás. Ez nem a teljes 10–15 perces történeti flow.
 
 A korai cameók működnek: Hana a meleg bejáratnál felpillant, Kuroe áthalad a házközön, Shion a híd falusi oldaláról figyel és elfordul. Mindhárom REVIEW asset, névtábla és dialógus nélkül. [Hana és Shion részletei](docs/HANA_SHION_CAMEOS_REVIEW.md).
 
-Még hiányzik: teljes házbelső, végleges karakteranimáció, éjszakai kép/hang és a II. fejezet. Combat, inventory, route-rendszer és komplex save/load nincs megvalósítva.
+Még hiányzik: teljes házbelső, végleges karakteranimáció, fénykép-CG, alvás animáció/hang, páciensportrék és Hana jóváhagyott klinikai szövege/sorrendje. A szoba, a reggeli háttér és a rendelő REVIEW. Combat, inventory, route-rendszer és komplex save/load nincs megvalósítva.
 
 - [Fejlesztési állapot](docs/PROGRESS.md)
 - [Nyitás és Space-javítás](docs/CINEMATIC_V2_REVIEW.md)

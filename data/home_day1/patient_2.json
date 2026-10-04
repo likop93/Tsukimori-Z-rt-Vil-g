@@ -1,0 +1,35 @@
+{
+  "id": "first_day_consultation_2",
+  "portrait": false,
+  "source": "canonical_html_story.rpy / chapter_3 / dialogue excerpt; anonymous identities retained pending order confirmation",
+  "lines": [
+    {
+      "speaker": "",
+      "text": "A második páciens az éjszakai egyedüllétről és az utána visszatérő szégyenről beszél."
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Nem tudom, miért teszem. Csak... amikor egyedül vagyok odakint, egy pillanatra a testem tényleg az enyém."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Mit érez, amikor visszaindul a faluba?"
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Mintha visszabújnék egy ruhába, ami sosem volt rám szabva. De azt hittem, ez a normális — hogy mindenkinek szoros."
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Aztán reggel már megint szégyellem. Mintha két külön nő laknék bennem."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Nincs ebben semmi szégyellnivaló. Beszéljünk erről legközelebb is."
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Rendben... köszönöm."
+    }
+  ]
+}

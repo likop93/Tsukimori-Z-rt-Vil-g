@@ -115,6 +115,8 @@ func lane_limits(feet_y: float) -> Vector2:
 	return Vector2(395+clearance,680-clearance)
 
 func constrain_position(at: Vector2) -> Vector2:
+	if location in ["akira_room","clinic"]:
+		return Vector2(clampf(at.x,85,535 if location == "akira_room" else 495),clampf(at.y,272,280))
 	if location == "interior":
 		return Vector2(clampf(at.x,125,500),clampf(at.y,263,269))
 	if location == "bridge":
@@ -175,6 +177,17 @@ func show_location(next_location: String) -> void:
 		bridge_rail.hide()
 	if is_instance_valid(house_rail):
 		house_rail.hide()
+	if location in ["akira_room","clinic"]:
+		backdrop.texture = load("res://assets/home_day1/"+location+"_REVIEW.png")
+		backdrop.scale = Vector2(640.0/backdrop.texture.get_width(),360.0/backdrop.texture.get_height())
+		camera.position = Vector2(320,180)
+		camera_x = 320
+		player.position = Vector2(100,276)
+		player.scale = Vector2.ONE*1.15
+		player.velocity = Vector2.ZERO
+		player.scripted_axis = Vector2.ZERO
+		player.facing = 3
+		return
 	if location == "interior":
 		backdrop.texture = preload("res://assets/opening/reference/SHARED_HOME_CLINIC_INTERIOR_PIXEL_V1.png")
 		backdrop.scale = Vector2(640.0/backdrop.texture.get_width(),360.0/backdrop.texture.get_height())

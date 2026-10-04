@@ -11,6 +11,8 @@ var fullscreen: CheckButton
 var confirmation: ConfirmationDialog
 var previous_focus: Control
 var page := "main"
+var journal_entries: Array[Dictionary] = []
+var selected_character := 0
 
 func _ready() -> void:
 	layer = 80
@@ -70,6 +72,8 @@ func label(text: String, at: Vector2, size: Vector2, font_size := 16) -> Label:
 	return item
 
 func clear_page(title: String) -> void:
+	panel.position = Vector2(140,34)
+	panel.size = Vector2(360,292)
 	if is_instance_valid(body):
 		panel.remove_child(body)
 		body.queue_free()
@@ -81,10 +85,11 @@ func clear_page(title: String) -> void:
 func show_main() -> void:
 	page = "main"
 	clear_page("Szünet")
-	resume_button = make_button(body,"Folytatás",Vector2(24,70),Vector2(312,36),resume)
-	make_button(body,"Beállítások",Vector2(24,115),Vector2(312,36),show_settings)
-	make_button(body,"Irányítás",Vector2(24,160),Vector2(312,36),show_controls)
-	make_button(body,"Főmenü",Vector2(24,205),Vector2(312,36),func(): confirmation.popup_centered(Vector2i(410,120)))
+	resume_button = make_button(body,"Folytatás",Vector2(24,64),Vector2(312,32),resume)
+	make_button(body,"Karakterek",Vector2(24,101),Vector2(312,32),show_characters)
+	make_button(body,"Beállítások",Vector2(24,138),Vector2(312,32),show_settings)
+	make_button(body,"Irányítás",Vector2(24,175),Vector2(312,32),show_controls)
+	make_button(body,"Főmenü",Vector2(24,212),Vector2(312,32),func(): confirmation.popup_centered(Vector2i(410,120)))
 	label("Esc / Tab · folytatás",Vector2(24,257),Vector2(312,18),12)
 	if root.visible:
 		resume_button.grab_focus()
@@ -137,6 +142,64 @@ func show_controls() -> void:
 	clear_page("Irányítás")
 	label("WASD / nyilak · séta\nShift nyomva · futás\nE · figyelés / beszélgetés / tovább\nSpace / Enter · szöveg\nEsc · szünet (intróban kihagyás)\nTab / Menü · szünet bármikor\nF1 · segítség",Vector2(24,68),Vector2(312,150),14)
 	make_button(body,"Vissza",Vector2(24,229),Vector2(312,36),back).grab_focus()
+
+func show_characters() -> void:
+	journal_entries = preload("res://scripts/ui/character_journal.gd").entries()
+	selected_character = clampi(selected_character,0,journal_entries.size()-1)
+	show_character(selected_character)
+
+func show_character(index: int) -> void:
+	selected_character = index
+	page = "characters"
+	clear_page("Karakterek")
+	panel.position = Vector2(24,16)
+	panel.size = Vector2(592,328)
+	var selected_button: Button
+	for i in journal_entries.size():
+		var entry: Dictionary = journal_entries[i]
+		var button := make_button(body,str(entry.title),Vector2(16,62+i*38),Vector2(158,32),show_character.bind(i))
+		button.add_theme_font_size_override("font_size",13)
+		if i == index:
+			selected_button = button
+	var entry: Dictionary = journal_entries[index]
+	if entry.known:
+		var portrait := TextureRect.new()
+		var texture: Texture2D = load(entry.portrait)
+		if entry.has("crop"):
+			var c: Array = entry.crop
+			var crop := AtlasTexture.new()
+			crop.atlas = texture
+			crop.region = Rect2(Vector2(c[0],c[1])*texture.get_size(),Vector2(c[2],c[3])*texture.get_size())
+			texture = crop
+		portrait.texture = texture
+		portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		portrait.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		portrait.position = Vector2(183,58)
+		portrait.size = Vector2(146,244)
+		portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		body.add_child(portrait)
+	else:
+		label("?",Vector2(225,113),Vector2(80,100),64)
+	label(str(entry.title),Vector2(344,60),Vector2(232,26),19)
+	var scroll := ScrollContainer.new()
+	scroll.position = Vector2(344,95)
+	scroll.size = Vector2(232,217)
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	body.add_child(scroll)
+	var details := VBoxContainer.new()
+	details.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	details.add_theme_constant_override("separation",12)
+	scroll.add_child(details)
+	for text in [str(entry.description),"Kapcsolati státusz",str(entry.status),"\n".join(entry.events)]:
+		var item := Label.new()
+		item.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		item.text = text
+		item.custom_minimum_size.x = 210
+		item.add_theme_font_size_override("font_size",13)
+		details.add_child(item)
+	make_button(body,"Vissza",Vector2(16,280),Vector2(158,32),back)
+	selected_button.grab_focus()
 
 func back() -> void:
 	if page == "settings" and AppSettings.save_settings() != OK:

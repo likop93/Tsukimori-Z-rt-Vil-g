@@ -1,0 +1,19 @@
+{
+ "id":"first_clinic_morning","source":"canonical_html_story.rpy / chapter_2 / selected lines 229-326 and 435-496","lines":[
+ {"speaker":"Miyako","text":"Katsurónak volt egy külön szobája. Nem a rendelő. Egy személyes dolgozószoba a ház hátsó részében."},
+ {"speaker":"Akira","text":"Megnézhetem?"},
+ {"speaker":"Miyako","text":"Most még ne."},
+ {"speaker":"Akira","text":"Rendben."},
+ {"speaker":"Akira","text":"Az ajtó zárva van?"},
+ {"speaker":"Miyako","text":"Igen."},
+ {"speaker":"Akira","text":"Kinél van a kulcs?"},
+ {"speaker":"Miyako","text":"Nálam."},
+ {"speaker":"Miyako","text":"Az első páciensek mindig a legnehezebbek. utána már könnyebb lesz — vagy legalábbis megszokottabb."},
+ {"speaker":"Akira","text":"Ez most vigasztalásnak szánt, vagy figyelmeztetésnek?"},
+ {"speaker":"Miyako","text":"Mindkettőnek."},
+ {"speaker":"","text":"Mielőtt bemegy a rendelőbe, Akira eldönti, hogyan viszonyul majd a páciensekhez."}
+ ],"choices":[
+ {"id":"empathy","label":"Empátiával — hagyja, hogy az érzései is megérintsék.","lines":[{"speaker":"","text":"Elhatározta: nem tartja majd távol magát attól, amit hall. Ha ez fájni fog, hát fájjon — legalább közelebb viszi ahhoz, amit a falu valójában elrejt."}]},
+ {"id":"clinical","label":"Klinikai távolsággal — megőrzi a szakmai határt.","lines":[{"speaker":"","text":"Elhatározta: megtartja a távolságot. Biztonságosabb így — de valami azt súgta neki, hogy ennek a biztonságnak is lesz még ára valakinek."}]}
+ ]
+}
