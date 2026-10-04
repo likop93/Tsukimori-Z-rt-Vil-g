@@ -4,7 +4,8 @@
   "lines": [
     {
       "speaker": "Miyako",
-      "text": "Katsurónak volt egy külön szobája. Nem a rendelő. Egy személyes dolgozószoba a ház hátsó részében."
+      "text": "Katsurónak volt egy külön szobája. Nem a rendelő. Egy személyes dolgozószoba a ház hátsó részében.",
+      "expression": "neutral"
     },
     {
       "speaker": "Akira",
@@ -12,7 +13,8 @@
     },
     {
       "speaker": "Miyako",
-      "text": "Most még ne."
+      "text": "Most még ne.",
+      "expression": "worried"
     },
     {
       "speaker": "Akira",
@@ -24,7 +26,8 @@
     },
     {
       "speaker": "Miyako",
-      "text": "Igen."
+      "text": "Igen.",
+      "expression": "neutral"
     },
     {
       "speaker": "Akira",
@@ -32,11 +35,13 @@
     },
     {
       "speaker": "Miyako",
-      "text": "Nálam."
+      "text": "Nálam.",
+      "expression": "neutral"
     },
     {
       "speaker": "Miyako",
-      "text": "Ideges vagy."
+      "text": "Ideges vagy.",
+      "expression": "worried"
     },
     {
       "speaker": "Akira",
@@ -44,7 +49,8 @@
     },
     {
       "speaker": "Miyako",
-      "text": "Itt senki sem tudja pontosan, mire számítson. Csak lassan megszokod, hogy ez így normális."
+      "text": "Itt senki sem tudja pontosan, mire számítson. Csak lassan megszokod, hogy ez így normális.",
+      "expression": "neutral"
     },
     {
       "speaker": "Akira",
@@ -52,11 +58,13 @@
     },
     {
       "speaker": "Miyako",
-      "text": "Nem is annak szántam."
+      "text": "Nem is annak szántam.",
+      "expression": "warm"
     },
     {
       "speaker": "Miyako",
-      "text": "Az első páciensek mindig a legnehezebbek. utána már könnyebb lesz — vagy legalábbis megszokottabb."
+      "text": "Az első páciensek mindig a legnehezebbek. utána már könnyebb lesz — vagy legalábbis megszokottabb.",
+      "expression": "neutral"
     },
     {
       "speaker": "Akira",
@@ -64,7 +72,8 @@
     },
     {
       "speaker": "Miyako",
-      "text": "Mindkettőnek."
+      "text": "Mindkettőnek.",
+      "expression": "warm"
     },
     {
       "speaker": "Akira",
@@ -72,15 +81,18 @@
     },
     {
       "speaker": "Miyako",
-      "text": "Ma ketten."
+      "text": "Ma ketten.",
+      "expression": "neutral"
     },
     {
       "speaker": "Akira",
-      "text": "Csak ketten?"
+      "text": "Csak ketten?",
+      "expression": "surprised"
     },
     {
       "speaker": "Miyako",
-      "text": "Első napra elég lesz."
+      "text": "Első napra elég lesz.",
+      "expression": "warm"
     },
     {
       "speaker": "Akira",
@@ -88,7 +100,8 @@
     },
     {
       "speaker": "Miyako",
-      "text": "Katsuro az első rendelési napja után hajnalig ült ugyanebben a konyhában."
+      "text": "Katsuro az első rendelési napja után hajnalig ült ugyanebben a konyhában.",
+      "expression": "worried"
     },
     {
       "speaker": "Akira",
@@ -96,7 +109,8 @@
     },
     {
       "speaker": "Miyako",
-      "text": "Igen."
+      "text": "Igen.",
+      "expression": "neutral"
     },
     {
       "speaker": "Akira",
@@ -104,11 +118,13 @@
     },
     {
       "speaker": "Miyako",
-      "text": "Nem. Csak azt mondta, hogy eddig azt hitte, a faluban sok különálló probléma létezik."
+      "text": "Nem. Csak azt mondta, hogy eddig azt hitte, a faluban sok különálló probléma létezik.",
+      "expression": "neutral"
     },
     {
       "speaker": "Miyako",
-      "text": "Aznap este értette meg, hogy valószínűleg mind ugyanannak a történetnek a részei."
+      "text": "Aznap este értette meg, hogy valószínűleg mind ugyanannak a történetnek a részei.",
+      "expression": "neutral"
     },
     {
       "speaker": "Akira",
@@ -116,11 +132,13 @@
     },
     {
       "speaker": "Miyako",
-      "text": "Ezt már nem mondta el."
+      "text": "Ezt már nem mondta el.",
+      "expression": "worried"
     },
     {
       "speaker": "Miyako",
-      "text": "Talán azt várta, hogy magamtól is megértsem."
+      "text": "Talán azt várta, hogy magamtól is megértsem.",
+      "expression": "worried"
     },
     {
       "speaker": "Akira",
@@ -128,7 +146,8 @@
     },
     {
       "speaker": "Miyako",
-      "text": "Én ebben nőttem fel. Néha éppen az lát a legkevesebbet, aki egész életében ugyanazt nézte."
+      "text": "Én ebben nőttem fel. Néha éppen az lát a legkevesebbet, aki egész életében ugyanazt nézte.",
+      "expression": "worried"
     },
     {
       "speaker": "",
@@ -156,5 +175,12 @@
         }
       ]
     }
-  ]
+  ],
+  "portrait_side": "left",
+  "portrait_variants": {
+    "neutral": "res://assets/opening/vn_portraits/miyako_cutout_v1_REVIEW.png",
+    "warm": "res://assets/opening/vn_portraits/miyako_warm_v1_REVIEW.png",
+    "worried": "res://assets/opening/vn_portraits/miyako_worried_v1_REVIEW.png",
+    "surprised": "res://assets/opening/vn_portraits/miyako_surprised_v1_REVIEW.png"
+  }
 }

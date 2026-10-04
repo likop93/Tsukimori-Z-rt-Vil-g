@@ -31,3 +31,5 @@ Hátralévő: teljes házbelső és interakciók, éjszakai férfihang/alvás an
 2026-10-01 technikai rendezés: a régi 3D ág archive/legacy_3d alá került, importbeállításokkal és szerkesztőeszközökkel együtt. Az aktív arrival_director már csak Miyako köszöntését vezérli; Akira explicit street referenciát kap. A korábbi szöveg-, talaj- és ütközésjavítások megmaradtak.
 
 A korábbi 3D állapotjelentés: [archivált PROGRESS](../archive/legacy_3d/docs/PROGRESS_BEFORE_ARCHIVE.md). Az ott leírt klinika, 3D falusi párok és belső terek nem a jelenlegi pixel-art játékmenet funkciói.
+
+2026-10-04 portréfrissítés: partner balra, Akira jobbra a keret nélküli párbeszédekben. Hana öt, Miyako négy képi reakció; az első két névtelen páciens saját eredeti portrékkal és reakciókkal. Éjszakai CG-k és megfigyelések továbbra is portré nélkül. [REVIEW assetek, források és ellenőrzés](DIALOGUE_PORTRAITS_REVIEW.md).

@@ -23,7 +23,7 @@
     {
       "speaker": "",
       "text": "Az egyik névtelen füzet leesett a polcról. A kötet nyitva feküdt a padlón — a nedves lapokon lassan egy név rajzolódott ki, mintha vízzel írták volna: AKIRA. A betűk",
-      "expression": "sad"
+      "expression": "surprised"
     },
     {
       "speaker": "",
@@ -133,12 +133,12 @@
     {
       "speaker": "",
       "text": "Hana nem válaszolt. A rendelés ideje már régen lejárt, de Akira mégsem zárta le azonnal a beszélgetést. Megvárta, amíg a nő légzése megnyugszik.",
-      "expression": "neutral"
+      "expression": "warm"
     },
     {
       "speaker": "Hana",
       "text": "Legközelebb is jöhetek? Akkor is, ha nem viselkedem jól?",
-      "expression": "smile"
+      "expression": "warm"
     },
     {
       "speaker": "Akira",
@@ -148,7 +148,7 @@
     {
       "speaker": "",
       "text": "Hana szeme egy pillanatra megremegett, mintha egy sokkal fiatalabb nő hallotta volna meg a mondatot.",
-      "expression": "smile"
+      "expression": "surprised"
     },
     {
       "speaker": "Hana",
@@ -170,6 +170,9 @@
   "portrait_variants": {
     "smile": "res://assets/opening/vn_portraits/hana_neutral_v1_REVIEW.png",
     "neutral": "res://assets/opening/vn_portraits/hana_guarded_v1_REVIEW.png",
-    "sad": "res://assets/opening/vn_portraits/hana_guarded_v1_REVIEW.png"
-  }
+    "sad": "res://assets/opening/vn_portraits/hana_sad_v1_REVIEW.png",
+    "surprised": "res://assets/opening/vn_portraits/hana_surprised_v1_REVIEW.png",
+    "warm": "res://assets/opening/vn_portraits/hana_warm_v1_REVIEW.png"
+  },
+  "portrait_side": "left"
 }

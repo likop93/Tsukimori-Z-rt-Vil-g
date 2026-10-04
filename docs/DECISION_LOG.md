@@ -100,4 +100,6 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 Tulajdonosi kérésre a régi 3D prototípus az archive/legacy_3d alá került, az assetek és importbeállítások megőrzésével. A kreatív kánon és a pixel-art production irány változatlan. Az aktív játékból eltávolítottuk a használaton kívüli automatikus érkezési fázisokat; Miyako jelenlegi talaj-, ütközés- és feliratjavításai megmaradtak. Az aktuális működést a README és PROGRESS írja le; az eredeti állapotleírások az archívumban is megmaradtak.
 # Technikai folytatás — 2026-10-04, REVIEW
 
+Tulajdonosi új vizuális kérés: Hana balra, Akira a beszélgetésekben, két eredeti névtelen páciens portréja, több Hana/Miyako képi reakció. Technikai staging és REVIEW cutoutok; LOCKED karakter-identitások, szöveg és döntések változatlanok. [Források és pontos promptok](DIALOGUE_PORTRAITS_REVIEW.md).
+
 Tulajdonosi kérés alapján karakterlapok/kapcsolati státusz, majd első éjszaka és rendelési nap. LOCKED dizájn/történeti döntést nem módosít. A III. fejezet két eredeti névtelen konzultációja technikai folytatásként szerepel; a Hana-első sorrend és Hana pontos vizsgálati szövege még tisztázandó. REVIEW környezetek, hiányzó fénykép-CG és páciens production assetek: [részletek](CHARACTERS_NIGHT_CLINIC_REVIEW.md). Inventory továbbra is későbbi feladat.

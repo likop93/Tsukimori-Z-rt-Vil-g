@@ -262,7 +262,10 @@
   "portrait_variants": {
     "smile": "res://assets/opening/vn_portraits/hana_neutral_v1_REVIEW.png",
     "neutral": "res://assets/opening/vn_portraits/hana_guarded_v1_REVIEW.png",
-    "sad": "res://assets/opening/vn_portraits/hana_guarded_v1_REVIEW.png"
+    "sad": "res://assets/opening/vn_portraits/hana_sad_v1_REVIEW.png",
+    "surprised": "res://assets/opening/vn_portraits/hana_surprised_v1_REVIEW.png",
+    "warm": "res://assets/opening/vn_portraits/hana_warm_v1_REVIEW.png"
   },
-  "met_at_line": 3
+  "met_at_line": 3,
+  "portrait_side": "left"
 }

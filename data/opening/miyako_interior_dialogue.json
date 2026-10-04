@@ -2,22 +2,74 @@
   "id": "miyako_interior_first_evening",
   "source": "canonical_html_story.rpy / canonical_html_chapter_1 / canonical_bg_interior before canonical_bg_first_night",
   "lines": [
-    {"speaker":"", "text":"A ház belsejében azonnal megcsapta a tea, a papír és a régi fa illata."},
-    {"speaker":"", "text":"De a csöndben volt valami többlet, amitől Akira háta mentén finom hideg futott végig."},
-    {"speaker":"Miyako", "text":"Itt az emberek túl sokáig hallgattak. És túl sokáig beszéltek rossz nyelven a saját testükről."},
-    {"speaker":"Akira", "text":"A mondat túl pontos volt ahhoz, hogy udvarias bevezetésnek vegyem."},
-    {"speaker":"", "text":"Akira nem szólt azonnal. Mit tesz?"}
+    {
+      "speaker": "",
+      "text": "A ház belsejében azonnal megcsapta a tea, a papír és a régi fa illata."
+    },
+    {
+      "speaker": "",
+      "text": "De a csöndben volt valami többlet, amitől Akira háta mentén finom hideg futott végig."
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Itt az emberek túl sokáig hallgattak. És túl sokáig beszéltek rossz nyelven a saját testükről.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "A mondat túl pontos volt ahhoz, hogy udvarias bevezetésnek vegyem."
+    },
+    {
+      "speaker": "",
+      "text": "Akira nem szólt azonnal. Mit tesz?"
+    }
   ],
   "choices": [
-    {"id":"listen", "label":"Csendben marad, és hagyja, hogy Miyako folytassa.", "lines":[
-      {"speaker":"", "text":"Akira hallgatott. Ezt a csendet a városban taktikának nevezte volna."},
-      {"speaker":"", "text":"Itt inkább figyelmes tiszteletnek érződött."},
-      {"speaker":"Miyako", "text":"Fáradt vagy az úttól. Majd holnap többet mesélek a házról."}
-    ]},
-    {"id":"ask", "label":"Visszakérdez: milyen nyelven beszéltek eddig?", "lines":[
-      {"speaker":"Akira", "text":"Milyen nyelven beszéltek eddig a testükről?"},
-      {"speaker":"Miyako", "text":"Olyanon, ami mindig másnak szólt. Sosem nekik."},
-      {"speaker":"", "text":"Miyako már el is fordult, mintha többet nem akarna mondani az első estén."}
-    ]}
-  ]
+    {
+      "id": "listen",
+      "label": "Csendben marad, és hagyja, hogy Miyako folytassa.",
+      "lines": [
+        {
+          "speaker": "",
+          "text": "Akira hallgatott. Ezt a csendet a városban taktikának nevezte volna."
+        },
+        {
+          "speaker": "",
+          "text": "Itt inkább figyelmes tiszteletnek érződött."
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Fáradt vagy az úttól. Majd holnap többet mesélek a házról.",
+          "expression": "warm"
+        }
+      ]
+    },
+    {
+      "id": "ask",
+      "label": "Visszakérdez: milyen nyelven beszéltek eddig?",
+      "lines": [
+        {
+          "speaker": "Akira",
+          "text": "Milyen nyelven beszéltek eddig a testükről?",
+          "expression": "surprised"
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Olyanon, ami mindig másnak szólt. Sosem nekik.",
+          "expression": "worried"
+        },
+        {
+          "speaker": "",
+          "text": "Miyako már el is fordult, mintha többet nem akarna mondani az első estén."
+        }
+      ]
+    }
+  ],
+  "portrait_side": "left",
+  "portrait_variants": {
+    "neutral": "res://assets/opening/vn_portraits/miyako_cutout_v1_REVIEW.png",
+    "warm": "res://assets/opening/vn_portraits/miyako_warm_v1_REVIEW.png",
+    "worried": "res://assets/opening/vn_portraits/miyako_worried_v1_REVIEW.png",
+    "surprised": "res://assets/opening/vn_portraits/miyako_surprised_v1_REVIEW.png"
+  }
 }

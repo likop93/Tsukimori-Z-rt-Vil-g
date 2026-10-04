@@ -1,10 +1,51 @@
 {
- "id":"second_morning","source":"canonical_html_story.rpy / chapter_2 / lines 186-218","lines":[
- {"speaker":"","text":"A második reggelre a ház kevésbé tűnt idegennek. Miyako viszont nem."},
- {"speaker":"Miyako","text":"Katsuro jó terapeuta volt. De sokszor többet figyelt a falu titkaira, mint azokra, akik segítséget kértek tőle."},
- {"speaker":"","text":"A csészék átadásánál Miyako keze egy pillanatra túl sokáig Akiráén marad. Mit tesz?"}
- ],"choices":[
- {"id":"stay","label":"Hagyja, hadd maradjon ott — nem húzódik el.","lines":[{"speaker":"","text":"Nem húzódott el. Ez volt az első pillanat, amikor tudatosan választotta a közelséget — nem csak eltűrte."}]},
- {"id":"withdraw","label":"Finoman visszahúzza a kezét, tartja a távolságot.","lines":[{"speaker":"","text":"Finoman visszahúzta a kezét. A szabály, amit magának mondott ki, most a testében is érvényesült."}]}
- ]
+  "id": "second_morning",
+  "source": "canonical_html_story.rpy / chapter_2 / lines 186-218",
+  "lines": [
+    {
+      "speaker": "",
+      "text": "A második reggelre a ház kevésbé tűnt idegennek. Miyako viszont nem."
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Katsuro jó terapeuta volt. De sokszor többet figyelt a falu titkaira, mint azokra, akik segítséget kértek tőle.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "",
+      "text": "A csészék átadásánál Miyako keze egy pillanatra túl sokáig Akiráén marad. Mit tesz?",
+      "expression": "warm"
+    }
+  ],
+  "choices": [
+    {
+      "id": "stay",
+      "label": "Hagyja, hadd maradjon ott — nem húzódik el.",
+      "lines": [
+        {
+          "speaker": "",
+          "text": "Nem húzódott el. Ez volt az első pillanat, amikor tudatosan választotta a közelséget — nem csak eltűrte.",
+          "expression": "warm"
+        }
+      ]
+    },
+    {
+      "id": "withdraw",
+      "label": "Finoman visszahúzza a kezét, tartja a távolságot.",
+      "lines": [
+        {
+          "speaker": "",
+          "text": "Finoman visszahúzta a kezét. A szabály, amit magának mondott ki, most a testében is érvényesült.",
+          "expression": "worried"
+        }
+      ]
+    }
+  ],
+  "portrait_side": "left",
+  "portrait_variants": {
+    "neutral": "res://assets/opening/vn_portraits/miyako_cutout_v1_REVIEW.png",
+    "warm": "res://assets/opening/vn_portraits/miyako_warm_v1_REVIEW.png",
+    "worried": "res://assets/opening/vn_portraits/miyako_worried_v1_REVIEW.png",
+    "surprised": "res://assets/opening/vn_portraits/miyako_surprised_v1_REVIEW.png"
+  }
 }

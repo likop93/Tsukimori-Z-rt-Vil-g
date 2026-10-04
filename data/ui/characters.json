@@ -1,6 +1,6 @@
 {
   "characters": [
-    {"id":"akira","name":"Dr. Akira","description":"Orvos. Nyugodt, megfigyelő természetű.","portrait":"res://assets/opening/shot_review_v2/bus_cabin_REVIEW.png","crop":[0.03,0.04,0.59,0.94]},
+    {"id":"akira","name":"Dr. Akira","description":"Orvos. Nyugodt, megfigyelő természetű.","portrait":"res://assets/opening/vn_portraits/akira_neutral_v1_REVIEW.png"},
     {"id":"miyako","name":"Miyako","reveal":"met_miyako","description":"Katsuro özvegye. A közös háznál várt rád. Csendes, fegyelmezett jelenlét.","portrait":"res://assets/opening/vn_portraits/miyako_cutout_v1_REVIEW.png"},
     {"id":"hana","name":"Hana","glimpse":"hana_cameo_seen","reveal":"met_hana","unknown":"A meleg bejáratnál felpillantó nő.","description":"Közvetlen, magabiztos nő. Korábban Katsuróhoz járt; most a rendelőben beszélgettetek.","portrait":"res://assets/opening/vn_portraits/hana_neutral_v1_REVIEW.png"},
     {"id":"kuroe","name":"Kuroe","glimpse":"kuroe_cameo_passed","reveal":"met_kuroe","unknown":"A házközön áthaladó nő.","description":"Személyesen is megismerted.","portrait":"res://assets/opening/vn_portraits/kuroe_neutral_v1_REVIEW.png"},

@@ -26,7 +26,9 @@ REVIEW / PLACEHOLDER: négy női ambient NPC, mozgás, kamera, eső, járható �
 
 A korai cameók működnek: Hana a meleg bejáratnál felpillant, Kuroe áthalad a házközön, Shion a híd falusi oldaláról figyel és elfordul. Mindhárom REVIEW asset, névtábla és dialógus nélkül. [Hana és Shion részletei](docs/HANA_SHION_CAMEOS_REVIEW.md).
 
-Még hiányzik: teljes házbelső, végleges karakteranimáció, fénykép-CG, alvás animáció/hang, páciensportrék és Hana jóváhagyott klinikai szövege/sorrendje. A szoba, a reggeli háttér és a rendelő REVIEW. Combat, inventory, route-rendszer és komplex save/load nincs megvalósítva.
+A párbeszédekben a partner balra, Akira jobbra jelenik meg keret nélkül. Hana öt, Miyako négy képi reakciót kapott. Az első két névtelen páciens eredeti, dekoratív felnőtt női portréja és reakciói is megjelennek. [Assetforrások, promptok és REVIEW státusz](docs/DIALOGUE_PORTRAITS_REVIEW.md).
+
+Még hiányzik: teljes házbelső, végleges karakteranimáció és portrék, fénykép-CG, alvás animáció/hang és Hana jóváhagyott klinikai szövege/sorrendje. A szoba, a reggeli háttér és a rendelő REVIEW. Combat, inventory, route-rendszer és komplex save/load nincs megvalósítva.
 
 - [Fejlesztési állapot](docs/PROGRESS.md)
 - [Nyitás és Space-javítás](docs/CINEMATIC_V2_REVIEW.md)

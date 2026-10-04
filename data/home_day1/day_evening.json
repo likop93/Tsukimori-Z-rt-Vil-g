@@ -17,7 +17,8 @@
     },
     {
       "speaker": "Miyako",
-      "text": "Igen. Ezért féltem attól, hogy túl hamar rájössz."
+      "text": "Igen. Ezért féltem attól, hogy túl hamar rájössz.",
+      "expression": "worried"
     },
     {
       "speaker": "Akira",
@@ -25,7 +26,8 @@
     },
     {
       "speaker": "Miyako",
-      "text": "Mert ha valaki egyszer ezt tényleg meglátja, utána már nem tud úgy élni itt, mintha csak terápiát vezetne."
+      "text": "Mert ha valaki egyszer ezt tényleg meglátja, utána már nem tud úgy élni itt, mintha csak terápiát vezetne.",
+      "expression": "neutral"
     },
     {
       "speaker": "Akira",
@@ -33,7 +35,8 @@
     },
     {
       "speaker": "Miyako",
-      "text": "Én nem láttam meg. Én belenőttem. Van különbség."
+      "text": "Én nem láttam meg. Én belenőttem. Van különbség.",
+      "expression": "worried"
     },
     {
       "speaker": "",
@@ -41,15 +44,24 @@
     },
     {
       "speaker": "Akira",
-      "text": "Ha valaha úgy döntenél, hogy te is meg akarod látni — nem leszel egyedül vele."
+      "text": "Ha valaha úgy döntenél, hogy te is meg akarod látni — nem leszel egyedül vele.",
+      "expression": "surprised"
     },
     {
       "speaker": "Miyako",
-      "text": "Tudom. Ez az, amitől a legjobban félek."
+      "text": "Tudom. Ez az, amitől a legjobban félek.",
+      "expression": "worried"
     },
     {
       "speaker": "",
       "text": "A mondat Akirában maradt. Nem azért, mert különösen titokzatos volt. Hanem mert túl igaznak érződött."
     }
-  ]
+  ],
+  "portrait_side": "left",
+  "portrait_variants": {
+    "neutral": "res://assets/opening/vn_portraits/miyako_cutout_v1_REVIEW.png",
+    "warm": "res://assets/opening/vn_portraits/miyako_warm_v1_REVIEW.png",
+    "worried": "res://assets/opening/vn_portraits/miyako_worried_v1_REVIEW.png",
+    "surprised": "res://assets/opening/vn_portraits/miyako_surprised_v1_REVIEW.png"
+  }
 }

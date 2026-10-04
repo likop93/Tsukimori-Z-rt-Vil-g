@@ -1,6 +1,6 @@
 {
   "id": "patient_2",
-  "portrait": false,
+  "portrait": true,
   "source": "canonical_html_story.rpy / chapter III; matched PDF pages 9–15, REVIEW spatial staging; PDF pages 11–13 selected additional dialogue",
   "lines": [
     {
@@ -9,7 +9,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Nem tudom, miért jöttem el."
+      "text": "Nem tudom, miért jöttem el.",
+      "expression": "thoughtful"
     },
     {
       "speaker": "Akira",
@@ -17,7 +18,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Nem akar marasztalni?"
+      "text": "Nem akar marasztalni?",
+      "expression": "surprised"
     },
     {
       "speaker": "Akira",
@@ -25,7 +27,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Katsuro doktor mindig azt mondta, hogy várjak még néhány percet."
+      "text": "Katsuro doktor mindig azt mondta, hogy várjak még néhány percet.",
+      "expression": "sad"
     },
     {
       "speaker": "Akira",
@@ -33,7 +36,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Néha."
+      "text": "Néha.",
+      "expression": "thoughtful"
     },
     {
       "speaker": "Akira",
@@ -45,7 +49,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Nem tudom, miért teszem. Csak... amikor egyedül vagyok odakint, egy pillanatra a testem tényleg az enyém."
+      "text": "Nem tudom, miért teszem. Csak... amikor egyedül vagyok odakint, egy pillanatra a testem tényleg az enyém.",
+      "expression": "thoughtful"
     },
     {
       "speaker": "Akira",
@@ -53,11 +58,13 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Mintha visszabújnék egy ruhába, ami sosem volt rám szabva. De azt hittem, ez a normális — hogy mindenkinek szoros."
+      "text": "Mintha visszabújnék egy ruhába, ami sosem volt rám szabva. De azt hittem, ez a normális — hogy mindenkinek szoros.",
+      "expression": "sad"
     },
     {
       "speaker": "Páciens",
-      "text": "Aztán reggel már megint szégyellem. Mintha két külön nő laknék bennem."
+      "text": "Aztán reggel már megint szégyellem. Mintha két külön nő laknék bennem.",
+      "expression": "sad"
     },
     {
       "speaker": "Akira",
@@ -65,7 +72,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Az egyik tudja, hogyan kell viselkedni. Felkel, dolgozik, köszön az időseknek, és nem mond semmi illetlent. A másik… csak lélegezni akar."
+      "text": "Az egyik tudja, hogyan kell viselkedni. Felkel, dolgozik, köszön az időseknek, és nem mond semmi illetlent. A másik… csak lélegezni akar.",
+      "expression": "sad"
     },
     {
       "speaker": "Akira",
@@ -73,7 +81,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Nem tudom."
+      "text": "Nem tudom.",
+      "expression": "thoughtful"
     },
     {
       "speaker": "Akira",
@@ -81,7 +90,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Akkor az egyik részem rossz."
+      "text": "Akkor az egyik részem rossz.",
+      "expression": "sad"
     },
     {
       "speaker": "Akira",
@@ -89,7 +99,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Mindenki."
+      "text": "Mindenki.",
+      "expression": "sad"
     },
     {
       "speaker": "",
@@ -101,7 +112,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "A szelet."
+      "text": "A szelet.",
+      "expression": "sad"
     },
     {
       "speaker": "Akira",
@@ -109,7 +121,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Néha olyan, mintha valaki lélegezne velem."
+      "text": "Néha olyan, mintha valaki lélegezne velem.",
+      "expression": "sad"
     },
     {
       "speaker": "Akira",
@@ -117,7 +130,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Nem hang. Inkább… jelenlét."
+      "text": "Nem hang. Inkább… jelenlét.",
+      "expression": "sad"
     },
     {
       "speaker": "Akira",
@@ -125,7 +139,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Odakint nem."
+      "text": "Odakint nem.",
+      "expression": "sad"
     },
     {
       "speaker": "Akira",
@@ -133,7 +148,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Itt igen."
+      "text": "Itt igen.",
+      "expression": "sad"
     },
     {
       "speaker": "Akira",
@@ -141,11 +157,24 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Rendben... köszönöm."
+      "text": "Rendben... köszönöm.",
+      "expression": "warm_smile"
     },
     {
       "speaker": "",
       "text": "A nő felállt, még mindig lesütött szemmel, de valamivel könnyebb léptekkel, mint amivel bejött."
     }
-  ]
+  ],
+  "portrait_speaker": "Páciens",
+  "portrait_side": "left",
+  "portrait_path": "res://assets/opening/vn_portraits/patient_2_neutral_v1_REVIEW.png",
+  "portrait_variants": {
+    "neutral": "res://assets/opening/vn_portraits/patient_2_neutral_v1_REVIEW.png",
+    "sad": "res://assets/opening/vn_portraits/patient_2_sad_v1_REVIEW.png",
+    "surprised": "res://assets/opening/vn_portraits/patient_2_surprised_v1_REVIEW.png",
+    "warm_smile": "res://assets/opening/vn_portraits/patient_2_warm_smile_v1_REVIEW.png",
+    "thoughtful": "res://assets/opening/vn_portraits/patient_2_thoughtful_v1_REVIEW.png",
+    "smile": "res://assets/opening/vn_portraits/patient_2_smile_v1_REVIEW.png"
+  },
+  "portrait_trim": true
 }

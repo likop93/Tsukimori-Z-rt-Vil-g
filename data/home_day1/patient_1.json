@@ -1,6 +1,6 @@
 {
   "id": "patient_1",
-  "portrait": false,
+  "portrait": true,
   "source": "canonical_html_story.rpy / chapter III; matched PDF pages 9–15, REVIEW spatial staging; PDF pages 9–10 selected additional dialogue",
   "lines": [
     {
@@ -13,7 +13,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Nem arról van szó, hogy hiányzik valami. Csak... nehéz úgy beszélni a vágyamról, mintha jogom volna hozzá."
+      "text": "Nem arról van szó, hogy hiányzik valami. Csak... nehéz úgy beszélni a vágyamról, mintha jogom volna hozzá.",
+      "expression": "sad"
     },
     {
       "speaker": "Akira",
@@ -21,7 +22,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Az anyósomén. De azt hiszem, ő is csak valaki más hangját ismételte. Itt mindenki ugyanazt mondja, csak más szájjal."
+      "text": "Az anyósomén. De azt hiszem, ő is csak valaki más hangját ismételte. Itt mindenki ugyanazt mondja, csak más szájjal.",
+      "expression": "sad"
     },
     {
       "speaker": "Akira",
@@ -29,15 +31,18 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Hogy egy rendes nő nem akar dolgokat önmagáért. Egy rendes nőnek a férje hiányozhat. Gyermeket akarhat. Családot akarhat."
+      "text": "Hogy egy rendes nő nem akar dolgokat önmagáért. Egy rendes nőnek a férje hiányozhat. Gyermeket akarhat. Családot akarhat.",
+      "expression": "sad"
     },
     {
       "speaker": "Páciens",
-      "text": "De nem… egyszerűen csak valamit a saját teste miatt."
+      "text": "De nem… egyszerűen csak valamit a saját teste miatt.",
+      "expression": "sad"
     },
     {
       "speaker": "Páciens",
-      "text": "Mintha a testem csak addig lenne az enyém, amíg valaki más szükségéhez tudom igazítani."
+      "text": "Mintha a testem csak addig lenne az enyém, amíg valaki más szükségéhez tudom igazítani.",
+      "expression": "sad"
     },
     {
       "speaker": "Akira",
@@ -45,7 +50,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Nem tudom. Még sosem kérdezte tőlem senki így."
+      "text": "Nem tudom. Még sosem kérdezte tőlem senki így.",
+      "expression": "thoughtful"
     },
     {
       "speaker": "Akira",
@@ -53,7 +59,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Ez nem önzőség?"
+      "text": "Ez nem önzőség?",
+      "expression": "surprised"
     },
     {
       "speaker": "Akira",
@@ -61,7 +68,8 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Az, hogy egyáltalán számítson."
+      "text": "Az, hogy egyáltalán számítson.",
+      "expression": "sad"
     },
     {
       "speaker": "Akira",
@@ -77,11 +85,24 @@
     },
     {
       "speaker": "Páciens",
-      "text": "Köszönöm, doktor úr."
+      "text": "Köszönöm, doktor úr.",
+      "expression": "warm_smile"
     },
     {
       "speaker": "",
       "text": "Az asszony halkan meghajolt, és kifelé indult — kicsit egyenesebb tartással, mint ahogy érkezett."
     }
-  ]
+  ],
+  "portrait_speaker": "Páciens",
+  "portrait_side": "left",
+  "portrait_path": "res://assets/opening/vn_portraits/patient_1_neutral_v1_REVIEW.png",
+  "portrait_variants": {
+    "neutral": "res://assets/opening/vn_portraits/patient_1_neutral_v1_REVIEW.png",
+    "sad": "res://assets/opening/vn_portraits/patient_1_sad_v1_REVIEW.png",
+    "surprised": "res://assets/opening/vn_portraits/patient_1_surprised_v1_REVIEW.png",
+    "warm_smile": "res://assets/opening/vn_portraits/patient_1_warm_smile_v1_REVIEW.png",
+    "thoughtful": "res://assets/opening/vn_portraits/patient_1_thoughtful_v1_REVIEW.png",
+    "smile": "res://assets/opening/vn_portraits/patient_1_smile_v1_REVIEW.png"
+  },
+  "portrait_trim": true
 }

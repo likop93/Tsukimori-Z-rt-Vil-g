@@ -13,10 +13,13 @@ var body: Label
 var speaker: Label
 var nameplate: Panel
 var portrait: TextureRect
+var akira_portrait: TextureRect
 var prompt: Label
 var next_button: Button
 var portrait_speaker := "Miyako"
 var portrait_variants: Dictionary = {}
+var portrait_trim := false
+var portrait_source_path := ""
 
 func _ready() -> void:
 	layer = 30
@@ -35,7 +38,14 @@ func _ready() -> void:
 	portrait.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.add_child(portrait)
-	portrait.set_deferred("size",Vector2(228,342))
+	akira_portrait = TextureRect.new()
+	akira_portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	akira_portrait.position = Vector2(404,48)
+	akira_portrait.size = Vector2(228,312)
+	akira_portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	akira_portrait.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	akira_portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	root.add_child(akira_portrait)
 	panel(Vector2(24,232),Vector2(592,116))
 	nameplate = panel(Vector2(24,206),Vector2(170,27))
 	speaker = text_at(Vector2(38,208),Vector2(145,23),17)
@@ -87,9 +97,18 @@ func begin(data: Dictionary) -> void:
 	lines = data.lines
 	choices = data.get("choices",[])
 	portrait.visible = bool(data.get("portrait",true))
+	akira_portrait.visible = portrait.visible and bool(data.get("akira_portrait",true))
+	akira_portrait.texture = load("res://assets/opening/vn_portraits/akira_neutral_v1_REVIEW.png") if akira_portrait.visible else null
+	# Stable two-character staging; partner stays left, Akira stays right.
+	var partner_left := str(data.get("portrait_side","left")) == "left"
+	portrait.position = Vector2(8 if partner_left else 404,48)
+	akira_portrait.position = Vector2(404 if partner_left else 8,48)
+	portrait.size = Vector2(228,312)
+	portrait_trim = bool(data.get("portrait_trim",false))
 	portrait_speaker = str(data.get("portrait_speaker","Miyako"))
 	portrait_variants = data.get("portrait_variants",{})
-	portrait.texture = load(str(data.get("portrait_path","res://assets/opening/vn_portraits/miyako_cutout_v1_REVIEW.png")))
+	portrait_source_path = ""
+	set_partner_texture(str(data.get("portrait_path","res://assets/opening/vn_portraits/miyako_cutout_v1_REVIEW.png")))
 	index = 0
 	active = true
 	root.show()
@@ -98,15 +117,31 @@ func begin(data: Dictionary) -> void:
 func show_line() -> void:
 	var expression := str(lines[index].get("expression",""))
 	if portrait_variants.has(expression):
-		portrait.texture = load(str(portrait_variants[expression]))
+		set_partner_texture(str(portrait_variants[expression]))
 	speaker.text = str(lines[index].speaker)
 	nameplate.visible = not speaker.text.is_empty()
 	portrait.modulate = Color.WHITE if speaker.text == portrait_speaker else Color(0.65,0.65,0.7)
+	akira_portrait.modulate = Color.WHITE if speaker.text == "Akira" else Color(0.65,0.65,0.7)
 	body.text = str(lines[index].text)
 	body.visible_characters = 0
 	revealed = 0
 	update_prompt()
 	line_shown.emit(index)
+
+func set_partner_texture(path: String) -> void:
+	if path == portrait_source_path:
+		return
+	portrait_source_path = path
+	var source := load(path) as Texture2D
+	if portrait_trim and source != null:
+		# Legacy portraits have different transparent margins. Trim at display
+		# time so the head and body fit the same VN stage; keep source PNGs intact.
+		var framed := AtlasTexture.new()
+		framed.atlas = source
+		framed.region = source.get_image().get_used_rect()
+		portrait.texture = framed
+	else:
+		portrait.texture = source
 
 func update_prompt() -> void:
 	if choice_box != null and choice_box.visible:

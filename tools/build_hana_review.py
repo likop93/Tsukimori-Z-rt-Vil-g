@@ -2,6 +2,7 @@
 import argparse
 import json
 import re
+from dialogue_portrait_staging import configure_hana
 from pathlib import Path
 
 parser = argparse.ArgumentParser()
@@ -61,6 +62,7 @@ for name,(lines,choices) in zip(["hana_arrival","hana_memory","hana_close"],grou
     data["portrait_variants"]={"smile":data["portrait_path"],"neutral":"res://assets/opening/vn_portraits/hana_guarded_v1_REVIEW.png","sad":"res://assets/opening/vn_portraits/hana_guarded_v1_REVIEW.png"}
     if name=="hana_arrival":
         data["met_at_line"]=next(i for i,line in enumerate(lines) if line["speaker"]=="Hana")
+    configure_hana(data)
     (root/(name+".json")).write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(name,len(lines),"choices",len(choices))
 tail=source.split("# --- A visszatért füzet ---",1)[1].split("label canonical_html_chapter_4:",1)[0]

@@ -1,5 +1,6 @@
 extends Node
 var failures: Array[String] = []
+var miyako_reactions: Dictionary = {}
 func check(ok: bool, message: String) -> void:
 	if not ok:
 		failures.append(message)
@@ -18,6 +19,8 @@ func finish(vn: CanvasLayer, choice := "") -> void:
 			vn.advance()
 		await get_tree().process_frame
 		if is_instance_valid(vn) and vn.active:
+			if vn.portrait.visible and vn.portrait_speaker == "Miyako":
+				miyako_reactions[vn.portrait_source_path] = true
 			check(vn.body.get_line_count()*vn.body.get_line_height() <= vn.body.size.y,"Dialogue fits: "+vn.body.text)
 			check(vn.body.position.y+vn.body.size.y <= vn.next_button.position.y-4,"Dialogue stays clear of continue button: "+vn.body.text)
 	check(false,"Dialogue failed to terminate")
@@ -138,6 +141,11 @@ func _ready() -> void:
 		for i in 2:
 			await choose(night,"Első konzultáció" if i == 0 else "Második konzultáció")
 			check(night.phase == "patient","E opens next consultation")
+			check(night.vn.portrait.visible and night.vn.akira_portrait.visible,"Both consultation participants have portraits")
+			check(night.vn.portrait_source_path.ends_with("patient_%d_neutral_v1_REVIEW.png" % (i+1)),"Each anonymous patient has her own source portrait")
+			check(night.vn.portrait_speaker == "Páciens","Patient remains anonymous")
+			night.vn.advance()
+			await capture("patient_%d_portrait_REVIEW" % (i+1))
 			check(not runner.street.player.input_enabled,"Consultation locks movement")
 			await finish(night.vn)
 			check(GameState.has_flag("first_day_consultation_%d_seen" % (i+1)),"Acknowledged consultation recorded")
@@ -164,6 +172,7 @@ func _ready() -> void:
 		runner.queue_free()
 		await get_tree().process_frame
 	GameState.clear_runtime_state()
+	check(miyako_reactions.size() >= 4,"Miyako shows four reactions during the actual morning and evening sequence")
 	check(not GameState.has_flag("first_day_complete") and not GameState.has_flag("hana_name_heard"),"New game clears first-day progress")
 	print("NIGHT_DAY: "+JSON.stringify({"passed":failures.is_empty(),"failures":failures}))
 	get_tree().quit(0 if failures.is_empty() else 1)

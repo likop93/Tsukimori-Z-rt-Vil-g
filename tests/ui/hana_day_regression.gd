@@ -1,5 +1,6 @@
 extends Node
 var failures: Array[String] = []
+var reactions: Dictionary = {}
 func check(ok: bool, message: String) -> void:
 	if not ok:
 		failures.append(message)
@@ -29,6 +30,11 @@ func finish(vn: CanvasLayer, choice := "") -> void:
 			vn.advance()
 		await get_tree().process_frame
 		if is_instance_valid(vn) and vn.active:
+			var path: String = vn.portrait_source_path
+			if not reactions.has(path):
+				reactions[path] = true
+				if "hana_sad" in path or "hana_warm" in path or "hana_surprised" in path:
+					await capture(path.get_file().get_basename())
 			check(vn.body.position.y+vn.body.size.y <= vn.next_button.position.y-4,"Text clears controls: "+vn.body.text)
 	check(false,"Dialogue terminates")
 
@@ -86,6 +92,8 @@ func _ready() -> void:
 				day.vn.advance()
 				await get_tree().process_frame
 			check(GameState.has_flag("met_hana"),"Personal greeting reveals Hana")
+			check(day.vn.portrait.position.x < 320 and day.vn.akira_portrait.position.x > 320,"Hana left, Akira right")
+			check(day.vn.akira_portrait.visible and day.vn.akira_portrait.texture != null,"Akira participates in Hana dialogue")
 			check(not runner.street.player.visible and not runner.street.player.input_enabled,"Clinic stays VN-only")
 			day.vn.advance()
 			await capture("hana_first_meeting_REVIEW")
@@ -96,7 +104,7 @@ func _ready() -> void:
 			runner.pause_menu.resume()
 			await finish(day.vn,boundary)
 			check(day.phase == "hana_memory","Boundary branch rejoins the full conversation")
-			check(day.vn.portrait.texture.resource_path.ends_with("hana_guarded_v1_REVIEW.png"),"Serious conversation uses guarded expression")
+			check(day.vn.portrait.texture.resource_path.ends_with("hana_sad_v1_REVIEW.png"),"Vulnerable conversation uses sad reaction")
 			var points: int = GameState.aff_hana
 			day.on_choice(boundary)
 			check(GameState.aff_hana == points,"First choice cannot apply twice")
@@ -122,6 +130,7 @@ func _ready() -> void:
 			runner.queue_free()
 			await get_tree().process_frame
 	GameState.clear_runtime_state()
+	check(reactions.size() >= 5,"Appointment shows five different Hana reactions through real dialogue branches")
 	check(GameState.hana_first_choice.is_empty() and GameState.hana_memory_choice.is_empty() and GameState.akira_elmerules == 0,"New game clears Hana choices")
 	print("HANA_DAY: "+JSON.stringify({"passed":failures.is_empty(),"failures":failures}))
 	get_tree().quit(0 if failures.is_empty() else 1)
