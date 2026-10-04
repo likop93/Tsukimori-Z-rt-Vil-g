@@ -44,19 +44,62 @@ func _ready() -> void:
 		if is_instance_valid(previous):
 			previous.queue_free()
 		await get_tree().process_frame
+		await finish(night.vn)
 		check(runner.street.location == "akira_room" and runner.street.player.input_enabled,"Room exploration returns control")
 		check(not GameState.has_flag("first_night_seen"),"Room entry does not finish night")
 		await capture("night_room_REVIEW")
+		runner.street.player.position = Vector2(130,276)
+		await interact()
+		await finish(night.vn)
+		check(GameState.has_flag("night_window_seen"),"Window observation acknowledged")
+		runner.street.player.position = Vector2(210,276)
+		await interact()
+		await finish(night.vn)
+		check(GameState.has_flag("night_bag_seen"),"Professional bag observation acknowledged")
+		runner.street.player.position = Vector2(90,276)
+		await interact()
+		check(night.phase == "evening_living" and (not is_instance_valid(runner.street.featured_actor) or not runner.street.featured_actor.visible),"Living room remains accessible after Miyako retires")
+		await interact()
+		check(night.phase == "room","E returns to bedroom")
 		runner.street.player.position = Vector2(310,276)
 		await interact()
 		check(night.phase == "photo","E at desk opens photo")
+		await capture("night_photo_REVIEW")
 		await finish(night.vn)
 		check(GameState.has_flag("katsuro_first_clue_seen"),"Photo acknowledgement records clue")
 		runner.street.player.position = Vector2(490,276)
 		await interact()
+		runner.pause_menu.open_menu()
+		await get_tree().create_timer(0.5).timeout
+		check(night.phase == "settling","Menu pauses bedtime transition")
+		runner.pause_menu.resume()
+		await get_tree().create_timer(1.0).timeout
 		check(night.phase == "night","E at bed starts night")
+		check(not runner.street.player.visible,"No standing sprite remains during sleep")
+		night.vn.advance()
+		await capture("night_sleep_REVIEW")
+		Input.action_press("observe")
 		await finish(night.vn)
-		check(GameState.has_flag("first_night_seen") and night.phase == "morning","Night continues into morning")
+		await get_tree().process_frame
+		check(not night.card_armed,"Held dialogue input cannot arm morning")
+		night.start_first_day()
+		check(night.phase == "dawn_card","Held input cannot bypass ending")
+		Input.action_release("observe")
+		check(GameState.has_flag("first_night_seen") and night.phase == "dawn_card","Night has a separate acknowledged ending")
+		check(GameState.has_flag("opening_prologue_complete") and not GameState.has_flag("first_clinic_day_started"),"Prologue ends before clinic starts")
+		check(GameState.has_flag("night_voice_noticed"),"Canonical ambiguous voice beat is included")
+		await capture("night_complete_REVIEW")
+		await get_tree().process_frame
+		var continue_key := InputEventKey.new()
+		continue_key.keycode = KEY_SPACE
+		continue_key.pressed = true
+		Input.parse_input_event(continue_key)
+		await get_tree().process_frame
+		continue_key = InputEventKey.new()
+		continue_key.keycode = KEY_SPACE
+		continue_key.pressed = false
+		Input.parse_input_event(continue_key)
+		check(night.phase == "morning","Explicit continuation starts morning")
 		check(not runner.street.player.input_enabled,"Morning dialogue locks movement")
 		await capture("morning_REVIEW")
 		await finish(night.vn,"stay" if branch == 0 else "withdraw")

@@ -91,6 +91,8 @@ func make_effect(kind: String) -> AudioStreamWAV:
 		seconds = 1.15
 	elif kind == "door":
 		seconds = 0.7
+	elif kind in ["wood","wind","murmur"]:
+		seconds = 3.5
 	var stream := AudioStreamWAV.new()
 	stream.format = AudioStreamWAV.FORMAT_16_BITS
 	stream.mix_rate = 22050
@@ -108,6 +110,14 @@ func make_effect(kind: String) -> AudioStreamWAV:
 		var envelope := sin(PI*phase)
 		var sample := 0.0
 		match kind:
+			"wood":
+				sample = sin(TAU*(115+sin(t*3.0)*12)*t)*envelope*0.07 + filtered*envelope*0.12
+			"wind":
+				sample = filtered*envelope*0.45
+			"murmur":
+				# Ambiguous nonverbal REVIEW cue. No spoken words or voice identity.
+				var syllable := 0.4+0.6*absf(sin(t*4.2))
+				sample = (sin(TAU*94*t)*0.12+sin(TAU*188*t)*0.04+filtered*0.08)*envelope*syllable
 			"warm":
 				sample = (sin(TAU*220*t)+0.35*sin(TAU*330*t))*exp(-t)*envelope*0.25
 			"dread":

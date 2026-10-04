@@ -72,8 +72,15 @@ func _ready() -> void:
 		await key(KEY_E)
 		await get_tree().create_timer(0.9).timeout
 		check(runner.street.location == "akira_room","Evening opens Akira's playable room")
+		while runner.arrival.vn.active:
+			await key(KEY_SPACE)
 		runner.street.player.position = Vector2(490,276)
 		await key(KEY_E)
+		# Missing desk inspection is presented naturally before sleeping.
+		if runner.arrival.phase == "photo":
+			while runner.arrival.vn.active:
+				await key(KEY_SPACE)
+		await get_tree().create_timer(1.0).timeout
 		var night: CanvasLayer = runner.arrival.vn
 		check(night.active and not night.portrait.visible,"Next interaction starts night narration without Miyako portrait")
 		while is_instance_valid(night) and night.active:
@@ -83,6 +90,7 @@ func _ready() -> void:
 			if is_instance_valid(night):
 				check(night.body.get_line_count()*night.body.get_line_height() <= night.body.size.y,"Night text fits")
 		check(GameState.has_flag("first_night_seen"),"Night closes only after final acknowledgement")
+		check(GameState.has_flag("katsuro_first_clue_seen") and GameState.has_flag("opening_prologue_complete"),"Bed path includes personal clue and prologue ending")
 		runner.queue_free()
 		await get_tree().process_frame
 	GameState.clear_runtime_state()

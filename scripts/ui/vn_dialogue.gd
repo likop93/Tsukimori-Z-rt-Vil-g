@@ -1,6 +1,7 @@
 extends CanvasLayer
 signal finished
 signal choice_selected(id: String)
+signal line_shown(index: int)
 var choices: Array = []
 var choice_box: VBoxContainer
 var active := false
@@ -100,6 +101,7 @@ func show_line() -> void:
 	body.visible_characters = 0
 	revealed = 0
 	update_prompt()
+	line_shown.emit(index)
 
 func update_prompt() -> void:
 	if choice_box != null and choice_box.visible:

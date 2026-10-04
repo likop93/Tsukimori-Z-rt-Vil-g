@@ -4,6 +4,7 @@
   "source":"canonical_html_story.rpy / canonical_html_chapter_1 / canonical_bg_first_night",
   "lines":[
     {"speaker":"", "text":"Aznap éjjel Akira nem aludt sokat."},
+    {"speaker":"", "text":"A ház neszei idegenek maradtak: a padló halk recsegése, a papírfalak mögötti mozdulatlanság, a szél finom, húzó hangja."},
     {"speaker":"", "text":"És valamikor hajnal előtt, félálomban, mintha meghallott volna egy idegen férfihangot is."},
     {"speaker":"", "text":"Nem szólt tisztán. Csak érzésként maradt utána: mintha valaki azt mondaná, hogy a puszta józanság itt nem lesz elég."}
   ]
