@@ -1,0 +1,42 @@
+{
+  "id": "morning_hana",
+  "portrait": false,
+  "source": "canonical_html_story.rpy / chapter III ending; PDF before chapter IV",
+  "lines": [
+    {
+      "speaker": "",
+      "text": "Másnap reggel Miyako nem várta a konyhában. Akira egyedül találta az asztalon a teát és egy rövid üzenetet.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "„A falugyűlésre kellett mennem. Hana tízkor érkezik. Ne hagyd, hogy ő döntse el, miről beszéltek.” A mondat végén nem volt aláírás.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "Akira átment a rendelőbe, és kinyitotta Hana mappáját. A feljegyzések szokatlanul rövidek voltak: harminchárom éves, hajadon, visszatérő alvászavarok, testérzetek,",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "impulzív viselkedés, konfliktusok a falu asszonyaival.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "Katsuro kézírásával: „Nem szégyelli a vágyát. Azt szégyelli, hogy mások csak azt látják benne.” Egy másik bejegyzés: „Provokál, hogy előre meghatározza az elutasítás",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "formáját. Ha ő kezdi, kevésbé fáj.”",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "Az utolsó sor mellett egy apró, fekete félkör állt. Legyezőre emlékeztetett.",
+      "expression": "smile"
+    }
+  ]
+}

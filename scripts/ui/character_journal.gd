@@ -42,5 +42,14 @@ static func entries() -> Array[Dictionary]:
 				if GameState.has_flag("miyako_first_day_evening_seen"):
 					entry.status = "Megosztottad vele az első nap tapasztalatait."
 					entry.events.append("Beszéltetek a faluban örökölt szabályokról.")
+			elif spec.id == "hana":
+				entry.status = "Találkoztatok a rendelőben."
+				if GameState.has_flag("hana_first_boundary_seen"):
+					entry.events.append("Beszéltetek a saját vágyairól és a szakmai határokról.")
+				if GameState.has_flag("hana_memory_discussed"):
+					entry.events.append("Megosztotta veled egy régi barátság emlékét.")
+				if GameState.has_flag("hana_first_session_seen"):
+					entry.status = "Az első terápiás beszélgetésetek lezárult."
+					entry.events.append("Tudja, hogy visszajöhet, és nem kell szerepet játszania.")
 		result.append(entry)
 	return result

@@ -113,8 +113,11 @@ func show_night_end() -> void:
 	button.grab_focus()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if phase == "dawn_card" and card_armed and event is InputEventKey and event.pressed and not event.echo and event.keycode in [KEY_E,KEY_SPACE,KEY_ENTER]:
-		start_first_day()
+	if phase in ["dawn_card","day_complete"] and card_armed and event is InputEventKey and event.pressed and not event.echo and event.keycode in [KEY_E,KEY_SPACE,KEY_ENTER]:
+		if phase == "dawn_card":
+			start_first_day()
+		else:
+			start_hana_day()
 		get_viewport().set_input_as_handled()
 
 func start_first_day() -> void:
@@ -148,6 +151,18 @@ var sleep_after_photo := false
 var actions: Control
 var action_buttons: Array[Button] = []
 var actions_armed := false
+var next_day: Node
+
+func start_hana_day() -> void:
+	if phase != "day_complete" or not card_armed:
+		return
+	phase = "hana_day"
+	end_card.queue_free()
+	next_day = preload("res://scripts/opening/hana_day_director.gd").new()
+	add_child(next_day)
+	next_day.runner = runner
+	next_day.chapter = self
+	next_day.begin()
 
 func hide_actors() -> void:
 	runner.street.player.input_enabled = false
@@ -245,6 +260,9 @@ func resume(next_phase: String) -> void:
 		show_actions([["evening","Visszatérek Miyakóhoz"]])
 
 func advance(_delta: float) -> void:
+	if is_instance_valid(next_day):
+		next_day.advance(_delta)
+		return
 	var down := Input.is_action_pressed("observe")
 	var interact := down and not observe_down
 	observe_down = down
@@ -254,7 +272,7 @@ func advance(_delta: float) -> void:
 			for button in action_buttons:
 				button.disabled = false
 			action_buttons[0].grab_focus()
-	if phase == "dawn_card":
+	if phase in ["dawn_card","day_complete"]:
 		if not Input.is_action_pressed("observe") and not Input.is_key_pressed(KEY_SPACE) and not Input.is_key_pressed(KEY_ENTER) and not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			card_armed = true
 		return
@@ -368,6 +386,7 @@ func show_day_evening() -> void:
 
 func show_day_end() -> void:
 	phase = "day_complete"
+	card_armed = false
 	night_cue.stop()
 	end_card = Control.new()
 	presentation.add_child(end_card)
@@ -384,11 +403,17 @@ func show_day_end() -> void:
 	title.add_theme_font_size_override("font_size",26)
 	end_card.add_child(title)
 	var button := Button.new()
-	button.text = "Főmenü"
-	button.position = Vector2(235,225)
-	button.size = Vector2(170,38)
-	button.pressed.connect(return_to_main)
+	button.text = "Második reggel · folytatás"
+	button.position = Vector2(185,225)
+	button.size = Vector2(270,38)
+	button.pressed.connect(start_hana_day)
 	end_card.add_child(button)
+	var back := Button.new()
+	back.text = "Főmenü"
+	back.position = Vector2(235,274)
+	back.size = Vector2(170,32)
+	back.pressed.connect(return_to_main)
+	end_card.add_child(back)
 
 func return_to_main() -> void:
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")

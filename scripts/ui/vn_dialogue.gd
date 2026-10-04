@@ -16,6 +16,7 @@ var portrait: TextureRect
 var prompt: Label
 var next_button: Button
 var portrait_speaker := "Miyako"
+var portrait_variants: Dictionary = {}
 
 func _ready() -> void:
 	layer = 30
@@ -87,6 +88,7 @@ func begin(data: Dictionary) -> void:
 	choices = data.get("choices",[])
 	portrait.visible = bool(data.get("portrait",true))
 	portrait_speaker = str(data.get("portrait_speaker","Miyako"))
+	portrait_variants = data.get("portrait_variants",{})
 	portrait.texture = load(str(data.get("portrait_path","res://assets/opening/vn_portraits/miyako_cutout_v1_REVIEW.png")))
 	index = 0
 	active = true
@@ -94,6 +96,9 @@ func begin(data: Dictionary) -> void:
 	show_line()
 
 func show_line() -> void:
+	var expression := str(lines[index].get("expression",""))
+	if portrait_variants.has(expression):
+		portrait.texture = load(str(portrait_variants[expression]))
 	speaker.text = str(lines[index].speaker)
 	nameplate.visible = not speaker.text.is_empty()
 	portrait.modulate = Color.WHITE if speaker.text == portrait_speaker else Color(0.65,0.65,0.7)

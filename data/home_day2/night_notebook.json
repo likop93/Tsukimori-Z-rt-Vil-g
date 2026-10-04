@@ -1,0 +1,42 @@
+{
+  "id": "night_notebook",
+  "portrait": false,
+  "source": "canonical_html_story.rpy / chapter III ending; PDF before chapter IV",
+  "lines": [
+    {
+      "speaker": "",
+      "text": "A ház mélyéről érkező férfihang már elhallgatott, de az egyetlen szó továbbra is ott maradt Akirában. Hana. Nem úgy hangzott, mint egy név, amelyet valaki",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "segítségért mond ki. Inkább figyelmeztetés volt. Vagy utasítás.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "Akira benyitott a rendelőbe. A névtelen füzet, amelyet korábban szándékosan kissé kijjebb hagyott, most teljesen vissza volt tolva a többi közé.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "Kihúzta. Az előzőleg kitépett oldal után újabb bejegyzést talált — biztos volt benne, hogy délután még nem szerepelt a füzetben.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "„Aki nevetve beszél a vágyáról, gyakran attól fél a legjobban, hogy egyszer komolyan veszik.” Alatta egyetlen név állt: Hana.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "Valaki bemehetett a rendelőbe. Miyako ismerte a házat, talán volt másik kulcsa. A bejegyzés korábban is ott lehetett, csak Akira nem vette észre. Mindegyik lehetőség",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "elfogadható lett volna. Egyikben sem hitt igazán.",
+      "expression": "smile"
+    }
+  ]
+}

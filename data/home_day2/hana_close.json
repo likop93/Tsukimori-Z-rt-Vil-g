@@ -1,0 +1,175 @@
+{
+  "id": "hana_close",
+  "source": "canonical_html_story.rpy / chapter IV first appointment; PDF pages 16–26",
+  "portrait": true,
+  "portrait_speaker": "Hana",
+  "portrait_path": "res://assets/opening/vn_portraits/hana_neutral_v1_REVIEW.png",
+  "lines": [
+    {
+      "speaker": "",
+      "text": "A rendelő levegője lehűlt. A polcokon álló könyvek közül halk rezgés indult el — nem hangosabban, mint amikor egy távoli jármű halad el a ház mellett, de Akira",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "érezte a talpa alatt.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Ez akkor is így volt. Amikor Katsurónak beszéltem róla.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "",
+      "text": "Az egyik névtelen füzet leesett a polcról. A kötet nyitva feküdt a padlón — a nedves lapokon lassan egy név rajzolódott ki, mintha vízzel írták volna: AKIRA. A betűk",
+      "expression": "sad"
+    },
+    {
+      "speaker": "",
+      "text": "körül a papír finoman megrepedt.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "",
+      "text": "Alatta Katsuro kézírása: „A test emlékszik arra is, amit a faluból kitöröltek.”",
+      "expression": "sad"
+    },
+    {
+      "speaker": "",
+      "text": "Hana felállt, és a hegre szorította a tenyerét.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Ezt nem akarom látni. Maga szerint ezért érint meg valami éjszakánként?",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Nem tudom.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Katsuro adott választ.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Akira",
+      "text": "És segített?",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "",
+      "text": "Hana nem felelt.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Mit mondott?",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Hogy a jel nem engem választott. Hanem azt, ahogyan a falu lát engem.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "",
+      "text": "Akira Katsuro korábbi sorára gondolt: a falu nem tiltja a vágyat, irányítja. Talán Hana nem azért reagált erősebben a falu erejére, mert szabadabban élt, mint a",
+      "expression": "sad"
+    },
+    {
+      "speaker": "",
+      "text": "többiek. Hanem mert egész életében ő hordozta mindazt, amit a többi nőnek nem volt szabad kimondania.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Lehet, hogy nem maga veszélyes. Hanem az a szerep, amelyet a falu magára tett.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Mi a különbség?",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Az, hogy a szerepet le lehet tenni.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "És ha alatta nincs semmi?",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Akkor együtt kiderítjük.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Nem fél tőlem?",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Nem.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Pedig kellene.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Ezt maga gondolja, vagy valaki megtanította rá?",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "",
+      "text": "Hana nem válaszolt. A rendelés ideje már régen lejárt, de Akira mégsem zárta le azonnal a beszélgetést. Megvárta, amíg a nő légzése megnyugszik.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Legközelebb is jöhetek? Akkor is, ha nem viselkedem jól?",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Nem azért van itt, hogy jól viselkedjen.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "Hana szeme egy pillanatra megremegett, mintha egy sokkal fiatalabb nő hallotta volna meg a mondatot.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Vigyázzon Miyakóval, doktor úr. Mert én legalább megmutatom, amikor akarok valamit.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "Mielőtt eltűnt volna a kert felé vezető ösvényen, még egyszer hátranézett.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Ő nem mindig tudja.",
+      "expression": "smile"
+    }
+  ],
+  "choices": [],
+  "portrait_variants": {
+    "smile": "res://assets/opening/vn_portraits/hana_neutral_v1_REVIEW.png",
+    "neutral": "res://assets/opening/vn_portraits/hana_guarded_v1_REVIEW.png",
+    "sad": "res://assets/opening/vn_portraits/hana_guarded_v1_REVIEW.png"
+  }
+}

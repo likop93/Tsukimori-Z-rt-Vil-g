@@ -1,0 +1,348 @@
+{
+  "id": "hana_memory",
+  "source": "canonical_html_story.rpy / chapter IV first appointment; PDF pages 16–26",
+  "portrait": true,
+  "portrait_speaker": "Hana",
+  "portrait_path": "res://assets/opening/vn_portraits/hana_neutral_v1_REVIEW.png",
+  "lines": [
+    {
+      "speaker": "Hana",
+      "text": "Maga mit akar tőlem, doktor úr?",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Akkor azt kérdezem, mi történne magával, ha nemet mondanék.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Semmi. Megszoktam, hogy a férfiak egyszerre akarnak és félnek tőlem.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "És ha valaki egyik szerepet sem vállalja?",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Olyan nincs.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Most van.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "",
+      "text": "A szobában csend lett. Hana tekintete először vált bizonytalanná.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Nem tart vonzónak?",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Nem fogom a külsejét terápiás eszközként használni.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Ez nem válasz.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Akira",
+      "text": "De határ.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Azt gondolom, hogy egész életében mások reakcióiból kellett megtudnia, mennyit ér. Ha kívánták, volt hatalma. Ha féltek magától, legalább nem bánthatták váratlanul.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Ha elutasították, elmondhatta magának, hogy előre tudta.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "",
+      "text": "Hana felállt.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Maga túl sokat képzel magáról.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Lehet. De azt látom, hogy valahányszor közel kerülünk ahhoz, ami valóban fáj, megpróbálja elérni, hogy én érezzem magam kényelmetlenül.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "",
+      "text": "Hana az ajtóhoz indult. Akira nem próbálta megállítani. A nő keze már a kilincsen volt, amikor megszólalt.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Katsuro utánam jött volna.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Lehetséges.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Maga nem fog?",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Ha el szeretne menni, tiszteletben tartom.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "És ha azt akarom, hogy marasztaljon?",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Akkor szeretném, ha ezt nem próbával, hanem mondattal közölné.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "",
+      "text": "Hana lassan elengedte a kilincset. Amikor visszanézett, az arca már nem volt dühös. Csak kimerült.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Nem akarok most elmenni.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Rendben.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "",
+      "text": "Hana visszaült — ezúttal nem a heverőre, hanem az Akirával szemben álló székre. Akira tudta: ez volt az első valódi döntés, amelyet a nő a rendelőben meghozott.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "",
+      "text": "Elmondta, hogy a faluban mindig különbözőként kezelték. Gyerekként túl hangos volt, túl kíváncsi. Kamaszként a teste hamarabb változott meg, mint a többi lányé — és",
+      "expression": "sad"
+    },
+    {
+      "speaker": "",
+      "text": "attól kezdve minden mozdulatának jelentést tulajdonítottak.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Egy idő után egyszerűbb lett előre megadni nekik azt a nőt, akit úgyis látni akartak. Így legalább én dönthettem el, mikor kezdődik az előadás.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Akira",
+      "text": "És mikor ér véget?",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Amikor egyedül maradok.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Akkor milyen?",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Csendes. Nem tudom, mit gondoljak olyankor magamról.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Talán nem kell rögtön gondolnia semmit.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Katsuro azt mondta, veszélyes vagyok. Azt mondta, valami reagál rám.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Maga szerint?",
+      "expression": "sad"
+    },
+    {
+      "speaker": "",
+      "text": "Hana a nyakához nyúlt. A kimonó gallérját kissé félrehúzta. A kulcscsontja alatt halvány, ívelt jel húzódott — öt vékony vonal indult egyetlen pontból, akár egy",
+      "expression": "sad"
+    },
+    {
+      "speaker": "",
+      "text": "félig szétnyitott legyező bordái.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Mióta van ott?",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Tizenhét éves korom óta. Egyik reggel ott volt.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Előző este történt valami?",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "A szentélynél jártam. Egyedül. Fogadásból.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Kivel fogadott?",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "",
+      "text": "A nő elmosolyodott, de ezúttal nem játékosan.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Egy lánnyal, aki másnapra elfelejtette, hogy valaha ismert engem. Úgy nézett rám, mint idegenre. A családja szerint soha nem voltunk barátok. Senki nem emlékezett",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "rá, hogy együtt nőttünk fel.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Mi volt a neve?",
+      "expression": "sad"
+    },
+    {
+      "speaker": "",
+      "text": "Hana ajkai szétnyíltak. Nem jött ki hang.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Hana?",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Tudtam. A nevét.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Most nem emlékszik rá?",
+      "expression": "sad"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Eddig emlékeztem.",
+      "expression": "sad"
+    },
+    {
+      "speaker": "",
+      "text": "Akira mit tesz, hogy segítsen Hanának megtartani az emléket?",
+      "expression": "sad"
+    }
+  ],
+  "choices": [
+    {
+      "id": "recall",
+      "label": "Egy konkrét emlékről kérdezem.",
+      "source_label": "Kéri, mondjon el egy konkrét emléket a lányról — ne a nevet, hanem egy pillanatot.",
+      "lines": [
+        {
+          "speaker": "Akira",
+          "text": "Mondjon valamit róla. Nem a nevét. Egy emléket.",
+          "expression": "smile"
+        },
+        {
+          "speaker": "Hana",
+          "text": "A folyónál játszottunk. Mindig ő ment be először a vízbe. Félt a békáktól. Volt egy piros szalagja, amit soha nem adott kölcsön.",
+          "expression": "sad"
+        },
+        {
+          "speaker": "Akira",
+          "text": "Jó. Még egyet.",
+          "expression": "sad"
+        },
+        {
+          "speaker": "Hana",
+          "text": "Egyszer elbújtunk Oto kertjében. Elloptunk két szilvát. Ő sírt, mert azt hitte, Oto meg fogja átkozni minket.",
+          "expression": "sad"
+        },
+        {
+          "speaker": "Akira",
+          "text": "Látja az arcát?",
+          "expression": "sad"
+        },
+        {
+          "speaker": "Hana",
+          "text": "Már nem.",
+          "expression": "sad"
+        }
+      ],
+      "source_effects": [
+        "$aff_hana += 2",
+        "$akira_elmerules += 1"
+      ]
+    },
+    {
+      "id": "wait",
+      "label": "Nem sürgetem, hagyom dönteni.",
+      "source_label": "Nem erőlteti tovább — hagyja, hogy Hana maga döntse el, akar-e mélyebbre menni.",
+      "lines": [
+        {
+          "speaker": "",
+          "text": "Akira nem sürgette. Hana hosszan hallgatott, aztán maga kezdett beszélni.",
+          "expression": "smile"
+        },
+        {
+          "speaker": "Hana",
+          "text": "A folyónál játszottunk. Ennyire emlékszem. Utána már csak köd.",
+          "expression": "sad"
+        }
+      ],
+      "source_effects": [
+        "$akira_gyogyulas += 1",
+        "$flag_hana_emlek_tavolsag = True"
+      ]
+    }
+  ],
+  "portrait_variants": {
+    "smile": "res://assets/opening/vn_portraits/hana_neutral_v1_REVIEW.png",
+    "neutral": "res://assets/opening/vn_portraits/hana_guarded_v1_REVIEW.png",
+    "sad": "res://assets/opening/vn_portraits/hana_guarded_v1_REVIEW.png"
+  }
+}

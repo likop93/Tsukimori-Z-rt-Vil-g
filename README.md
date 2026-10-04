@@ -20,6 +20,8 @@ Miyako előtt E indítja az első VN-jelenetet. E / Space / Enter / bal kattint�
 
 Akira szobája és a rendelő VN-háttérként működik, járó Akira nélkül. Egér vagy fel/le + Enter választja a megfigyeléseket, a lefekvést és a két konzultációt. Reggel Miyakóval és két eredeti döntés → rendelő → nap tanulságai és Katsuro füzete → esti beszélgetés → második éjszakai „Hana” záróhang → az első nap vége. [Aktuális VN-kezelés](docs/ROOM_CLINIC_VN_REVIEW.md), [éjszaka története](docs/FIRST_NIGHT_IMPLEMENTATION_REVIEW.md), [első nap és hiányok](docs/FIRST_DAY_IMPLEMENTATION_REVIEW.md).
 
+Az első nap végén a Második reggel · folytatás gomb (vagy új E/Space/Enter) továbbvisz az éjszakai füzethez, Miyako üzenetéhez és Hana első terápiás beszélgetéséhez. Két eredeti választás, keret nélküli Hana-portré változó arckifejezéssel és megismerés után frissülő karakterlap. [Hana-jelenet, források és hiányok](docs/HANA_FIRST_SESSION_REVIEW.md).
+
 REVIEW / PLACEHOLDER: négy női ambient NPC, mozgás, kamera, eső, járható úthatárok, előtér-takarás, kapunál állapotbiztos átadás, híd és Miyako köszöntése. Az oldalirányú járás nyolc képkockás, az előre/hátra ciklus négyképkockás. Ez nem a teljes 10–15 perces történeti flow.
 
 A korai cameók működnek: Hana a meleg bejáratnál felpillant, Kuroe áthalad a házközön, Shion a híd falusi oldaláról figyel és elfordul. Mindhárom REVIEW asset, névtábla és dialógus nélkül. [Hana és Shion részletei](docs/HANA_SHION_CAMEOS_REVIEW.md).

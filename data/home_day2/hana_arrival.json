@@ -1,0 +1,268 @@
+{
+  "id": "hana_arrival",
+  "source": "canonical_html_story.rpy / chapter IV first appointment; PDF pages 16–26",
+  "portrait": true,
+  "portrait_speaker": "Hana",
+  "portrait_path": "res://assets/opening/vn_portraits/hana_neutral_v1_REVIEW.png",
+  "lines": [
+    {
+      "speaker": "",
+      "text": "Tíz óra előtt néhány perccel léptek közeledtek a verandán — nem bizonytalanul, nem is sietve. Az ajtó anélkül nyílt ki, hogy bárki kopogott volna.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "A nő, aki belépett, nem hasonlított egyik korábbi pácienshez sem. Meleg, barna bőre erős kontrasztot alkotott fekete-vörös virágmintás kimonójával. Vörösesbarna",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "szeme egyenesen Akirára szegeződött — nem úgy, mint orvosra, hanem mint valamire, amiről már hallott, és most saját szemével akarta eldönteni, igazat mondtak-e róla.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Maga fiatalabb, mint képzeltem.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Jó reggelt.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Az attól függ.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Minden ugyanúgy maradt.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Járt már itt?",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Katsurónál.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Páciens volt?",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Maga szerint?",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Akira",
+      "text": "A mappája szerint igen.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Akkor minek kérdezi?",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Mert nem szeretném egy halott ember jegyzeteiből eldönteni, maga hogyan gondol erre.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "Hana mosolya nem tűnt el, de a tekintete élesebbé vált.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Maga tényleg terapeuta. Tsukimori majd leszoktatja róla.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "Hana nem ült le azonnal. Lassan megkerülte az alacsony asztalt, végighúzta ujját a szék támláján, majd Akira helyett a heverőt választotta — oldalasan, egyik lábát a",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "másikra húzva, úgy, hogy egész testével felé fordulhasson.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Miyako mit mondott rólam?",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Hogy tízkor érkezik. És hogy ne hagyjam, hogy maga döntse el, miről beszélünk.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "Hana hangosan felnevetett. A nevetése meleg volt és valódi, mégis Akira rögtön megértette Katsuro bejegyzését — mintha előre elfoglalta volna a szobát, hogy ne",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "maradjon benne hely semmilyen más reakciónak.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Ez nagyon Miyako. Mindig úgy figyelmeztet más nőkre, mintha attól félne, hogy egyszer kiderül: nem ő az egyetlen veszélyes asszony a faluban.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Maga veszélyes?",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Ezt is nekem kell eldöntenem?",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Inkább azt szeretném tudni, miért fontos magának, hogy én annak lássam.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "Hana nevetése hirtelen elhalt. Nem sértődött meg. Inkább érdeklődni kezdett.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Katsuro nem ilyen volt. Sokáig hagyta, hogy játsszak vele.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Én nem szeretnék magával játszani.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Kár.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "Hana előrehajolt. A mozdulat szándékos volt — a kimonó felső rétege kissé elvált a nyakánál, de Akira nem nézett le. A nő ezt rögtön észrevette.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Miyako azt is mondta, hogy fél az érintéstől?",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Nem beszélek a magánéletemről a pácienseimmel.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Akkor igaz.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Az, hogy nem válaszolok, nem jelent beleegyezést a következtetésébe.",
+      "expression": "neutral"
+    },
+    {
+      "speaker": "Hana",
+      "text": "Maga érdekesebb, mint gondoltam.",
+      "expression": "smile"
+    },
+    {
+      "speaker": "",
+      "text": "Hana tesztel — az elutasítás körül köröz. Akira mit tesz?",
+      "expression": "smile"
+    }
+  ],
+  "choices": [
+    {
+      "id": "ask_body",
+      "label": "Rákérdezek, mit akar a saját testétől.",
+      "source_label": "Nyíltan megkérdezi, mit akar tőle a testétől — visszafordítja rá a kérdést.",
+      "lines": [
+        {
+          "speaker": "Akira",
+          "text": "Maga mit akar a testétől?",
+          "expression": "smile"
+        },
+        {
+          "speaker": "Hana",
+          "text": "Ez furcsa kérdés.",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "Akira",
+          "text": "Az első páciens tegnap azt mondta, nem tudja, mit kezdjen a testével, amikor senki más nem tart rá igényt. Maga mintha az ellenkezőjét mondaná.",
+          "expression": "neutral"
+        },
+        {
+          "speaker": "Hana",
+          "text": "Mert így van.",
+          "expression": "sad"
+        },
+        {
+          "speaker": "Akira",
+          "text": "Én most nem mindenkit kérdeztem.",
+          "expression": "sad"
+        }
+      ],
+      "source_effects": [
+        "$aff_hana += 1",
+        "$akira_gyogyulas += 1",
+        "$gain_potential(\"hana\", 1, \"hana_sajat_test\")",
+        "$intimacy[\"hana\"] = min(5, intimacy.get(\"hana\", 0) + 1)",
+        "$gain_akira_growth(\"women_safety\", 1, \"hana_terapias_hatar\")"
+      ]
+    },
+    {
+      "id": "let_lead",
+      "label": "Figyelem, merre vezeti a beszélgetést.",
+      "source_label": "Hagyja, hadd vezesse tovább a beszélgetést — figyel, hová megy ezzel.",
+      "lines": [
+        {
+          "speaker": "Hana",
+          "text": "Maga mit akar tőlem, doktor úr?",
+          "expression": "smile"
+        },
+        {
+          "speaker": "Akira",
+          "text": "Hogy a kérdésemre válaszoljon, amennyiben szeretne.",
+          "expression": "smile"
+        },
+        {
+          "speaker": "Hana",
+          "text": "És ha azt mondom, magát?",
+          "expression": "smile"
+        }
+      ],
+      "source_effects": [
+        "$flag_hana_hagyja_vezetni = True",
+        "$gain_attraction(\"hana\", 1, \"hana_provokacio\")",
+        "$gain_attention_hunger(1, \"hana_provokacio\")"
+      ]
+    }
+  ],
+  "portrait_variants": {
+    "smile": "res://assets/opening/vn_portraits/hana_neutral_v1_REVIEW.png",
+    "neutral": "res://assets/opening/vn_portraits/hana_guarded_v1_REVIEW.png",
+    "sad": "res://assets/opening/vn_portraits/hana_guarded_v1_REVIEW.png"
+  },
+  "met_at_line": 3
+}

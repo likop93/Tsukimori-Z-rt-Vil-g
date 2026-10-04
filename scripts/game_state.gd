@@ -12,6 +12,9 @@ var miyako_morning_choice := ""
 var clinic_first_choice := ""
 var aff_hana := 0
 var aff_shion := 0
+var hana_first_choice := ""
+var hana_memory_choice := ""
+var akira_elmerules := 0
 
 func set_flag(flag_name: String, value: bool = true) -> void:
     flags[flag_name] = value
@@ -29,3 +32,6 @@ func clear_runtime_state() -> void:
     clinic_first_choice = ""
     aff_hana = 0
     aff_shion = 0
+    hana_first_choice = ""
+    hana_memory_choice = ""
+    akira_elmerules = 0

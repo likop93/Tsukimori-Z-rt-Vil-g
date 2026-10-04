@@ -4,6 +4,8 @@ Hana, Kuroe és Shion korai cameója működik REVIEW atlasszal, névtábla/dial
 
 Frissítve: 2026-10-04. Technikai REVIEW; a LOCKED kreatív döntések változatlanok.
 
+Az első nap lezárása továbbvezet a következő reggelhez és Hana teljes első terápiás jelenetéhez. Két eredeti választás, négy tesztelt kombináció, változó arckifejezésű keret nélküli portré, megismerési flag és karakterlap. A külön klinikai kiegészítés és a késő délutáni folytatás még külön feladat. [Forrás és generation napló](HANA_FIRST_SESSION_REVIEW.md).
+
 Tulajdonosi arány-visszajelzés alapján az új szoba/rendelő VN-háttér lett, járó Akira nélkül. Gombok vagy fel/le + Enter indítják a megfigyeléseket és a nap állomásait. Az eredeti nappali- és külső járás megmaradt. [Megjelenítés és ellenőrzés](ROOM_CLINIC_VN_REVIEW.md).
 
 Karakterlapok, leírások és megtörtént eseményekből képzett kapcsolati státusz implementálva. Első éjszaka külön lezárással → közös reggel → két bővített eredeti névtelen konzultáció → Katsuro rendelői füzete → esti beszélgetés Miyakóval → „Hana” záróhang és első napi végpont működik. A teljes éjszaka–nap lánc egyben átnézhető. Inventory később. [Éjszaka](FIRST_NIGHT_IMPLEMENTATION_REVIEW.md), [első nap, források és production hiányok](FIRST_DAY_IMPLEMENTATION_REVIEW.md).
