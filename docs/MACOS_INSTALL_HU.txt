@@ -1,0 +1,19 @@
+TSUKIMORI — MAC TESZTVERZIÓ — 2026-10-04
+
+1. A ZIP-et Macen, dupla kattintással csomagold ki.
+2. A Tsukimori nevű .app alkalmazást húzd az Alkalmazások mappába.
+3. Indítsd el. Godot telepítése nem szükséges.
+
+Intel és Apple Silicon változatot egyaránt tartalmaz.
+Minimum deklarált rendszer: Intel macOS 10.13; Apple Silicon macOS 11.
+Macen még nem történt futtatási teszt.
+
+Ez ad-hoc aláírt tesztverzió, Apple-notarizáció nélkül. Első indításkor
+a macOS blokkolhatja. Ekkor a Rendszerbeállítások > Adatvédelem és
+biztonság résznél az alkalmazáshoz tartozó Megnyitás mindenképp
+lehetőséget használd. Régebbi macOS-en jobb kattintás > Megnyitás is működhet.
+
+Indítás után a főmenü és a fejezetválasztó érhető el.
+Továbblépés: E / Space / Enter; mozgás: a játék Vezérlés menüje szerint.
+
+Forrás: https://docs.godotengine.org/en/stable/tutorials/export/running_on_macos.html
