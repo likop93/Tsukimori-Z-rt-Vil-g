@@ -30,6 +30,8 @@ A korai cameók működnek: Hana a meleg bejáratnál felpillant, Kuroe áthalad
 
 A párbeszédekben a partner balra, Akira jobbra jelenik meg keret nélkül. Hana öt, Miyako négy képi reakciót kapott. Az első két névtelen páciens eredeti, dekoratív felnőtt női portréja és reakciói is megjelennek. [Assetforrások, promptok és REVIEW státusz](docs/DIALOGUE_PORTRAITS_REVIEW.md).
 
+A portrék egymás felé fordulnak; a páciensek mérete és elhelyezése igazított. A rendelőben külön orvosi Akira-portré látszik. Hana nagy történeti pillanatai öt külön jelenetképet kapnak (leülés, ajtó, jel, füzet, elköszönés), a megfelelő mondatoknál; ezek alatt a VN-portrék elrejtőznek. [Új képek, rendezés és pontos promptok](docs/MEDICAL_AKIRA_HANA_CG_REVIEW.md).
+
 Még hiányzik: teljes házbelső, végleges karakteranimáció és portrék, fénykép-CG, alvás animáció/hang és Hana jóváhagyott klinikai szövege/sorrendje. A szoba, a reggeli háttér és a rendelő REVIEW. Combat, inventory, route-rendszer és komplex save/load nincs megvalósítva.
 
 - [Fejlesztési állapot](docs/PROGRESS.md)

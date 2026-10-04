@@ -1,6 +1,7 @@
 extends Node
 var failures: Array[String] = []
 var reactions: Dictionary = {}
+var story_shots: Dictionary = {}
 func check(ok: bool, message: String) -> void:
 	if not ok:
 		failures.append(message)
@@ -11,6 +12,7 @@ func finish(vn: CanvasLayer, choice := "") -> void:
 		if not is_instance_valid(vn) or not vn.active:
 			return
 		if vn.choice_box.visible:
+			check(not vn.cg.visible,"Choice returns to the conversation stage")
 			var found := false
 			for option in vn.choices:
 				if option.id == choice:
@@ -30,6 +32,16 @@ func finish(vn: CanvasLayer, choice := "") -> void:
 			vn.advance()
 		await get_tree().process_frame
 		if is_instance_valid(vn) and vn.active:
+			check(vn.body.get_line_count()*vn.body.get_line_height() <= vn.body.size.y,"Dialogue and CG captions fit without clipping")
+			if vn.cg.visible:
+				check(not vn.portrait.visible and not vn.akira_portrait.visible,"Story CG replaces both portraits")
+				if not story_shots.has(vn.cg_path):
+					story_shots[vn.cg_path] = true
+					vn.revealed = vn.body.get_total_character_count()
+					vn.body.visible_characters = vn.body.get_total_character_count()
+					await capture("cg_"+vn.cg_path.get_file().get_basename())
+			if vn.body.text == "Miyako mit mondott rólam?" or vn.body.text == "Mióta van ott?" or "Hana visszaült" in vn.body.text:
+				check(not vn.cg.visible and vn.portrait.visible and vn.akira_portrait.visible,"CG returns to normal dialogue after story beat")
 			var path: String = vn.portrait_source_path
 			if not reactions.has(path):
 				reactions[path] = true
@@ -94,6 +106,8 @@ func _ready() -> void:
 			check(GameState.has_flag("met_hana"),"Personal greeting reveals Hana")
 			check(day.vn.portrait.position.x < 320 and day.vn.akira_portrait.position.x > 320,"Hana left, Akira right")
 			check(day.vn.akira_portrait.visible and day.vn.akira_portrait.texture != null,"Akira participates in Hana dialogue")
+			check(day.vn.portrait.flip_h and not day.vn.akira_portrait.flip_h,"Hana and Akira face each other")
+			check(day.vn.akira_portrait.texture.resource_path.ends_with("akira_doctor_v1_REVIEW.png"),"Hana meets Akira in his clinic outfit")
 			check(not runner.street.player.visible and not runner.street.player.input_enabled,"Clinic stays VN-only")
 			day.vn.advance()
 			await capture("hana_first_meeting_REVIEW")
@@ -131,6 +145,7 @@ func _ready() -> void:
 			await get_tree().process_frame
 	GameState.clear_runtime_state()
 	check(reactions.size() >= 5,"Appointment shows five different Hana reactions through real dialogue branches")
+	check(story_shots.size() == 5,"Five unique story CGs are reached through the full appointment")
 	check(GameState.hana_first_choice.is_empty() and GameState.hana_memory_choice.is_empty() and GameState.akira_elmerules == 0,"New game clears Hana choices")
 	print("HANA_DAY: "+JSON.stringify({"passed":failures.is_empty(),"failures":failures}))
 	get_tree().quit(0 if failures.is_empty() else 1)

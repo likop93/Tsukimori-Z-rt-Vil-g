@@ -23,7 +23,9 @@
     {
       "speaker": "",
       "text": "Az egyik névtelen füzet leesett a polcról. A kötet nyitva feküdt a padlón — a nedves lapokon lassan egy név rajzolódott ki, mintha vízzel írták volna: AKIRA. A betűk",
-      "expression": "surprised"
+      "expression": "surprised",
+      "cg": "res://assets/home_day2/hana_notebook_v1_REVIEW.png",
+      "cg_zoom": 1.2
     },
     {
       "speaker": "",
@@ -38,7 +40,8 @@
     {
       "speaker": "",
       "text": "Hana felállt, és a hegre szorította a tenyerét.",
-      "expression": "sad"
+      "expression": "sad",
+      "cg": ""
     },
     {
       "speaker": "Hana",
@@ -158,7 +161,8 @@
     {
       "speaker": "",
       "text": "Mielőtt eltűnt volna a kert felé vezető ösvényen, még egyszer hátranézett.",
-      "expression": "smile"
+      "expression": "smile",
+      "cg": "res://assets/home_day2/hana_farewell_v2_REVIEW.png"
     },
     {
       "speaker": "Hana",
@@ -174,5 +178,7 @@
     "surprised": "res://assets/opening/vn_portraits/hana_surprised_v1_REVIEW.png",
     "warm": "res://assets/opening/vn_portraits/hana_warm_v1_REVIEW.png"
   },
-  "portrait_side": "left"
+  "portrait_side": "left",
+  "portrait_facing": "left",
+  "akira_portrait_path": "res://assets/opening/vn_portraits/akira_doctor_v1_REVIEW.png"
 }

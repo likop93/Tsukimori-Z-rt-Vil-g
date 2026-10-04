@@ -176,5 +176,7 @@
     "thoughtful": "res://assets/opening/vn_portraits/patient_2_thoughtful_v1_REVIEW.png",
     "smile": "res://assets/opening/vn_portraits/patient_2_smile_v1_REVIEW.png"
   },
-  "portrait_trim": true
+  "portrait_trim": true,
+  "portrait_facing": "left",
+  "akira_portrait_path": "res://assets/opening/vn_portraits/akira_doctor_v1_REVIEW.png"
 }

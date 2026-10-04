@@ -88,7 +88,8 @@
     {
       "speaker": "",
       "text": "Hana az ajtóhoz indult. Akira nem próbálta megállítani. A nő keze már a kilincsen volt, amikor megszólalt.",
-      "expression": "sad"
+      "expression": "sad",
+      "cg": "res://assets/home_day2/hana_door_v1_REVIEW.png"
     },
     {
       "speaker": "Hana",
@@ -138,7 +139,8 @@
     {
       "speaker": "",
       "text": "Hana visszaült — ezúttal nem a heverőre, hanem az Akirával szemben álló székre. Akira tudta: ez volt az első valódi döntés, amelyet a nő a rendelőben meghozott.",
-      "expression": "sad"
+      "expression": "sad",
+      "cg": ""
     },
     {
       "speaker": "",
@@ -193,7 +195,8 @@
     {
       "speaker": "",
       "text": "Hana a nyakához nyúlt. A kimonó gallérját kissé félrehúzta. A kulcscsontja alatt halvány, ívelt jel húzódott — öt vékony vonal indult egyetlen pontból, akár egy",
-      "expression": "sad"
+      "expression": "sad",
+      "cg": "res://assets/home_day2/hana_mark_v1_REVIEW.png"
     },
     {
       "speaker": "",
@@ -203,7 +206,8 @@
     {
       "speaker": "Akira",
       "text": "Mióta van ott?",
-      "expression": "sad"
+      "expression": "sad",
+      "cg": ""
     },
     {
       "speaker": "Hana",
@@ -347,5 +351,7 @@
     "surprised": "res://assets/opening/vn_portraits/hana_surprised_v1_REVIEW.png",
     "warm": "res://assets/opening/vn_portraits/hana_warm_v1_REVIEW.png"
   },
-  "portrait_side": "left"
+  "portrait_side": "left",
+  "portrait_facing": "left",
+  "akira_portrait_path": "res://assets/opening/vn_portraits/akira_doctor_v1_REVIEW.png"
 }

@@ -142,6 +142,8 @@ A korábbi 3D production render irány **SUPERSEDED**.
 
 ## Work / Codex használati szabály
 
+2026-10-04 REVIEW kiegészítés: assets/opening/vn_portraits/akira_doctor_v1_REVIEW.png és assets/home_day2/Hana történeti CG-k. Az érkezési outfit és LOCKED képi authorityk megmaradnak. [Tételes képek, promptok és rendezés](MEDICAL_AKIRA_HANA_CG_REVIEW.md).
+
 2026-10-04 dialogue production REVIEW: Akira VN cutout, Hana öt és Miyako négy arckifejezése, valamint a két névtelen páciens eredeti prototípusportréi az assets/opening/vn_portraits alatt. A LOCKED referenciák authority státusza változatlan. [Teljes forrás- és promptjegyzék](DIALOGUE_PORTRAITS_REVIEW.md).
 
 Ha a Work/Codex környezet közvetlenül hozzáfér a ChatGPT Library-hez, a fenti fájlneveket és mappát kell használni.

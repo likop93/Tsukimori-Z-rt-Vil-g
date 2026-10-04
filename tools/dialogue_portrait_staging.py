@@ -3,6 +3,8 @@ import json
 from pathlib import Path
 
 BASE = "res://assets/opening/vn_portraits/"
+CG = "res://assets/home_day2/"
+DOCTOR = BASE + "akira_doctor_v1_REVIEW.png"
 
 def all_lines(data):
     yield from data.get("lines", [])
@@ -11,6 +13,8 @@ def all_lines(data):
 
 def configure_hana(data):
     data["portrait_side"] = "left"
+    data["portrait_facing"] = "left"
+    data["akira_portrait_path"] = DOCTOR
     data["portrait_variants"] = {
         "smile": BASE + "hana_neutral_v1_REVIEW.png",
         "neutral": BASE + "hana_guarded_v1_REVIEW.png",
@@ -25,6 +29,21 @@ def configure_hana(data):
             line["expression"] = "surprised"
         elif "Legközelebb is jöhetek?" in text or "Megvárta, amíg a nő légzése megnyugszik" in text:
             line["expression"] = "warm"
+        starts = {
+            "Hana nem ült le azonnal": "hana_couch",
+            "Hana az ajtóhoz indult": "hana_door",
+            "Hana a nyakához nyúlt": "hana_mark",
+            "Az egyik névtelen füzet leesett": "hana_notebook",
+            "Mielőtt eltűnt volna a kert": "hana_farewell",
+        }
+        for cue, image in starts.items():
+            if cue in text:
+                version = "2" if image == "hana_farewell" else "1"
+                line["cg"] = CG + image + "_v" + version + "_REVIEW.png"
+                if image == "hana_notebook":
+                    line["cg_zoom"] = 1.2 # Keep the written name above the dialogue panel.
+        if text == "Miyako mit mondott rólam?" or "Hana visszaült" in text or text == "Mióta van ott?" or "Hana felállt, és a hegre" in text:
+            line["cg"] = ""
     return data
 
 def apply(root):
@@ -40,7 +59,8 @@ def apply(root):
             n = path.stem[-1]
             data.pop("portrait_square", None)
             data.update(portrait=True, portrait_speaker="Páciens", portrait_trim=True,
-                        portrait_side="left", portrait_path=BASE + f"patient_{n}_neutral_v1_REVIEW.png")
+                        portrait_side="left", portrait_facing="left", akira_portrait_path=DOCTOR,
+                        portrait_path=BASE + f"patient_{n}_neutral_v1_REVIEW.png")
             data["portrait_variants"] = {m: BASE + f"patient_{n}_{m}_v1_REVIEW.png" for m in ("neutral", "sad", "surprised", "warm_smile", "thoughtful", "smile")}
             for line in all_lines(data):
                 if line["speaker"] == "Páciens":

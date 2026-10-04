@@ -88,7 +88,8 @@
     {
       "speaker": "",
       "text": "Hana nem ült le azonnal. Lassan megkerülte az alacsony asztalt, végighúzta ujját a szék támláján, majd Akira helyett a heverőt választotta — oldalasan, egyik lábát a",
-      "expression": "smile"
+      "expression": "smile",
+      "cg": "res://assets/home_day2/hana_couch_v1_REVIEW.png"
     },
     {
       "speaker": "",
@@ -98,7 +99,8 @@
     {
       "speaker": "Hana",
       "text": "Miyako mit mondott rólam?",
-      "expression": "smile"
+      "expression": "smile",
+      "cg": ""
     },
     {
       "speaker": "Akira",
@@ -267,5 +269,7 @@
     "warm": "res://assets/opening/vn_portraits/hana_warm_v1_REVIEW.png"
   },
   "met_at_line": 3,
-  "portrait_side": "left"
+  "portrait_side": "left",
+  "portrait_facing": "left",
+  "akira_portrait_path": "res://assets/opening/vn_portraits/akira_doctor_v1_REVIEW.png"
 }

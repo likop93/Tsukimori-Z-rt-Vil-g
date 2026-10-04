@@ -20,6 +20,11 @@ var portrait_speaker := "Miyako"
 var portrait_variants: Dictionary = {}
 var portrait_trim := false
 var portrait_source_path := ""
+var portraits_enabled := true
+var akira_enabled := true
+var cg: TextureRect
+var cg_path := ""
+var dialogue_panel: Panel
 
 func _ready() -> void:
 	layer = 30
@@ -27,6 +32,14 @@ func _ready() -> void:
 	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(root)
+	cg = TextureRect.new()
+	cg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	cg.size = Vector2(640,360)
+	cg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	cg.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	cg.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	cg.hide()
+	root.add_child(cg)
 	portrait = TextureRect.new()
 	portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	# REVIEW transparent cutout based on the approved Primary Design A.
@@ -46,7 +59,7 @@ func _ready() -> void:
 	akira_portrait.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	akira_portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.add_child(akira_portrait)
-	panel(Vector2(24,232),Vector2(592,116))
+	dialogue_panel = panel(Vector2(24,232),Vector2(592,116))
 	nameplate = panel(Vector2(24,206),Vector2(170,27))
 	speaker = text_at(Vector2(38,208),Vector2(145,23),17)
 	speaker.add_theme_color_override("font_color",Color("#e8b38c"))
@@ -96,14 +109,21 @@ func begin(data: Dictionary) -> void:
 		return
 	lines = data.lines
 	choices = data.get("choices",[])
-	portrait.visible = bool(data.get("portrait",true))
-	akira_portrait.visible = portrait.visible and bool(data.get("akira_portrait",true))
-	akira_portrait.texture = load("res://assets/opening/vn_portraits/akira_neutral_v1_REVIEW.png") if akira_portrait.visible else null
+	portraits_enabled = bool(data.get("portrait",true))
+	akira_enabled = bool(data.get("akira_portrait",true))
+	akira_portrait.texture = load(str(data.get("akira_portrait_path","res://assets/opening/vn_portraits/akira_neutral_v1_REVIEW.png"))) if portraits_enabled and akira_enabled else null
+	cg_path = ""
 	# Stable two-character staging; partner stays left, Akira stays right.
 	var partner_left := str(data.get("portrait_side","left")) == "left"
 	portrait.position = Vector2(8 if partner_left else 404,48)
 	akira_portrait.position = Vector2(404 if partner_left else 8,48)
+	portrait.flip_h = partner_left if str(data.get("portrait_facing","left")) == "left" else not partner_left
+	akira_portrait.flip_h = not partner_left if str(data.get("akira_facing","left")) == "left" else partner_left
 	portrait.size = Vector2(228,312)
+	if data.get("portrait_trim",false):
+		# Seated clinic patients share the doctor's eyeline, with a lower body frame.
+		portrait.position += Vector2(10 if partner_left else -10,20)
+		portrait.size = Vector2(208,292)
 	portrait_trim = bool(data.get("portrait_trim",false))
 	portrait_speaker = str(data.get("portrait_speaker","Miyako"))
 	portrait_variants = data.get("portrait_variants",{})
@@ -115,6 +135,15 @@ func begin(data: Dictionary) -> void:
 	show_line()
 
 func show_line() -> void:
+	if lines[index].has("cg"):
+		cg_path = str(lines[index].cg)
+		cg.texture = load(cg_path) if not cg_path.is_empty() else null
+		var zoom := float(lines[index].get("cg_zoom",1.0))
+		cg.size = Vector2(640,360)*zoom
+		cg.position = (Vector2(640,360)-cg.size)*Vector2(0.5,1.0)
+	cg.visible = not cg_path.is_empty()
+	portrait.visible = portraits_enabled and not cg.visible
+	akira_portrait.visible = portraits_enabled and akira_enabled and not cg.visible
 	var expression := str(lines[index].get("expression",""))
 	if portrait_variants.has(expression):
 		set_partner_texture(str(portrait_variants[expression]))
@@ -123,10 +152,24 @@ func show_line() -> void:
 	portrait.modulate = Color.WHITE if speaker.text == portrait_speaker else Color(0.65,0.65,0.7)
 	akira_portrait.modulate = Color.WHITE if speaker.text == "Akira" else Color(0.65,0.65,0.7)
 	body.text = str(lines[index].text)
+	set_story_layout(cg.visible)
 	body.visible_characters = 0
 	revealed = 0
 	update_prompt()
 	line_shown.emit(index)
+
+func set_story_layout(story_image: bool) -> void:
+	# CG captions leave the character gesture and collarbone mark visible.
+	# Three shorter lines still fit, with a separate bottom row for controls.
+	dialogue_panel.position.y = 264 if story_image else 232
+	dialogue_panel.size.y = 92 if story_image else 116
+	body.add_theme_font_size_override("font_size",13 if story_image else 16)
+	body.position.y = 272 if story_image else 242
+	body.size.y = 54 if story_image else 76
+	nameplate.position.y = 238 if story_image else 206
+	speaker.position.y = 240 if story_image else 208
+	next_button.position.y = 332 if story_image else 322
+	prompt.position.y = 336 if story_image else 326
 
 func set_partner_texture(path: String) -> void:
 	if path == portrait_source_path:

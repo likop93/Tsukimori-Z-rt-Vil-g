@@ -16,6 +16,8 @@ static func entries() -> Array[Dictionary]:
 		if known:
 			entry.status = "Személyesen megismerted."
 			if spec.id == "akira":
+				if GameState.has_flag("first_clinic_day_started"):
+					entry.portrait = "res://assets/opening/vn_portraits/akira_doctor_v1_REVIEW.png"
 				entry.status = "Te"
 				if GameState.has_flag("first_night_seen"):
 					entry.events.append("Nyugtalan első éjszakád volt a házban.")

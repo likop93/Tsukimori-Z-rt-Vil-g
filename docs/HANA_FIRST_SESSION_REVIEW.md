@@ -1,5 +1,7 @@
 # Hana első terápiás találkozása — REVIEW
 
+Vizuális frissítés: az öt Hana-reaction mellett most öt külön történeti CG is működik (heverő, ajtó, jel, füzet, kerti távozás), rendelői Akira-outfittel és befelé néző VN-portrékkal. A lenti két alapexpression leírása az eredeti implementáció történeti naplója. [Aktuális képek és pontos promptok](MEDICAL_AKIRA_HANA_CG_REVIEW.md).
+
 2026-10-04. A tulajdonos az új szoba/rendelő VN-javítás után további haladást kért. Az első nap lezárásától végigjátszható a következő reggel és Hana első terápiás beszélgetése. LOCKED dizájnok változatlanok.
 
 ## Folyamat
