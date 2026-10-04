@@ -177,6 +177,8 @@ func _input(event: InputEvent) -> void:
 		return
 	var key: bool = event is InputEventKey and event.pressed and not event.echo and event.keycode in [KEY_E,KEY_SPACE,KEY_ENTER]
 	var click: bool = event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT
+	if click and get_viewport().gui_get_hovered_control() is Button:
+		return # Menu and dialogue buttons handle their own click.
 	if click and next_button.get_global_rect().has_point(next_button.get_global_mouse_position()):
 		return # The actual button handles this click, once.
 	if key or click:

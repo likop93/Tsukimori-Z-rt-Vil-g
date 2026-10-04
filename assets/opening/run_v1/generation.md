@@ -1,0 +1,15 @@
+# Akira run — REVIEW / PLACEHOLDER, 2026-10-04
+
+Provider: built-in image_gen, transparent_background=true. References: ../reference/AKIRA_FINAL_CHARACTER_DESIGN_V1.png and ../gait_v5/side_atlas_REVIEW.png. Final retained source: side_source_REVIEW.png (targeted revision of the first generated strip).
+
+Technical pack: tools/opening/pack_run.gd → side_atlas_REVIEW.png, four 64x96 cells, common body scale of 71px maximum height, common head top at y23, contact baseline y94. Head alignment prevents foot bounds from shifting the torso. Flight poses retain their shorter bounds above the baseline. Nearest interpolation, true transparent alpha, fringe threshold 0.5. Existing contact shadow stays on the ground. Left run mirrors the right sheet.
+
+Production gaps: four generated phases are a technical placeholder; opposite leg/arm separation and weight transfer need hand-authored cleanup and intermediate frames. Front/back running currently reuses the existing four-frame walk sprites at distance-driven run cadence; dedicated directional run atlases are missing. No final animation/design approval implied.
+
+## Initial prompt
+
+Create a FOUR FRAME restrained RUN cycle sprite sheet of adult Dr Akira, identity from image 1 approved character board, consistent with image 2 current game walk sprites. Actual transparent alpha. Exactly FOUR equal-width cells in ONE horizontal row, full body facing RIGHT, equal head/body scale with plenty empty padding. Match black tousled hair, charcoal modern jacket, grey hoodie and pale grey shirt, black slim trousers and dark sneakers, adult slender athletic human proportions, NOT chibi. Detailed crisp pixel art for 71px body height. Distinct consecutive RUN poses: CELL1 forward right foot contact, left leg bent behind, opposing bent arm swing; CELL2 airborne passing with knees flexed under hips; CELL3 forward left foot contact, right leg bent behind, opposite arm swing; CELL4 airborne passing opposite legs. Slight controlled forward torso lean, eyes forward, same body and outfit all cells. The airborne poses show both shoes raised relative to the contact ground line. No jumping action, no exaggerated sprint, no duplicate contacts, no labels, scenery, shadows, motion lines, props or extra people. All complete shoes visible.
+
+## Targeted revision prompt
+
+Edit this four-cell Akira run strip, preserving transparent alpha, character face/outfit/rendering and one horizontal row. Keep first two poses. FIX third and fourth poses: third must be opposite-leg contact and opposite-arm swing from first (far leg extended forward, near leg folded behind; near arm back and far arm forward). Fourth must be AIRBORNE PASSING opposite of second: both knees bent, feet tucked close below body, both shoes visibly ABOVE ground baseline, far knee forward and near knee backward. Do not repeat first contact in fourth. Four equal-width cells, identical body scale and stable head position. Full body all shoes within each cell generous blank padding; no text shadow background extra parts.

@@ -70,7 +70,7 @@
     }
   ],
   "ui": {
-    "controls": "WASD / nyilak · séta    E · figyelés    F1 · segítség",
+    "controls": "WASD · séta   Shift · futás   E · figyelés   Esc · menü   F1 · segítség",
     "end": "A híd felé vezető szakasz a következő mérföldkő.",
     "review": "Opening + Village Street · REVIEW / PLACEHOLDER",
     "intro": "Enter / Szóköz · szöveg gyorsítása    Esc · intro kihagyása",

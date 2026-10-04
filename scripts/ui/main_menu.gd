@@ -152,7 +152,7 @@ func open_controls() -> void:
 	if starting or is_instance_valid(modal):
 		return
 	prepare_modal("Irányítás",controls_button)
-	label(modal,"WASD / nyilak     Séta\nE                           Figyelés / beszélgetés / tovább\nSpace / Enter        A nyitó szöveg gyorsítása\nEsc                        A nyitás kihagyása\nF1                          Segítség megjelenítése",Vector2(26,69),Vector2(448,127),14)
+	label(modal,"WASD / nyilak · séta       Shift nyomva · futás\nE · figyelés / beszélgetés / tovább\nSpace / Enter · szöveg gyorsítása / tovább\nEsc · szünet (intróban kihagyás)\nTab / Menü · szünet bármikor      F1 · segítség",Vector2(26,69),Vector2(448,127),14)
 	back_button.grab_focus()
 
 func close_modal() -> void:

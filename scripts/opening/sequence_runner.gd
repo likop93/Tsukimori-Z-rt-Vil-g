@@ -33,6 +33,7 @@ var bubble_time := 0.0
 var bubble_anchor := Vector2.ZERO
 var shown_phrases: Dictionary = {}
 var help_visible := true
+var pause_menu: CanvasLayer
 
 func _ready() -> void:
 	install_input()
@@ -103,6 +104,9 @@ func _ready() -> void:
 	skip_dialog.confirmed.connect(skip_all)
 	hud.add_child(skip_dialog)
 	set_beat(0)
+	pause_menu = preload("res://scripts/ui/pause_menu.gd").new()
+	pause_menu.runner = self
+	add_child(pause_menu)
 
 func make_label(parent: Node, at: Vector2, dimensions: Vector2, font_size: int) -> Label:
 	var label := Label.new()
@@ -118,7 +122,7 @@ func install_input() -> void:
 	var mapping := {
 		"walk_left":[KEY_A,KEY_LEFT],"walk_right":[KEY_D,KEY_RIGHT],
 		"walk_up":[KEY_W,KEY_UP],"walk_down":[KEY_S,KEY_DOWN],
-		"observe":[KEY_E]
+		"observe":[KEY_E],"run":[KEY_SHIFT]
 	}
 	for action in mapping:
 		if not InputMap.has_action(action):
