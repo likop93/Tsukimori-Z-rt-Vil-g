@@ -30,6 +30,26 @@ func interact() -> void:
 	await get_tree().process_frame
 	Input.action_release("observe")
 	await get_tree().process_frame
+func choose(night: Node, label: String) -> void:
+	await get_tree().process_frame
+	await get_tree().process_frame
+	for button in night.action_buttons:
+		if button.text == label:
+			check(not button.disabled,"Action is armed: "+label)
+			button.grab_focus()
+			var press := InputEventKey.new()
+			press.keycode = KEY_ENTER
+			press.physical_keycode = KEY_ENTER
+			press.pressed = true
+			Input.parse_input_event(press)
+			await get_tree().process_frame
+			var release := InputEventKey.new()
+			release.keycode = KEY_ENTER
+			release.physical_keycode = KEY_ENTER
+			Input.parse_input_event(release)
+			await get_tree().process_frame
+			return
+	check(false,"Missing action: "+label)
 func _ready() -> void:
 	for branch in 2:
 		GameState.clear_runtime_state()
@@ -46,30 +66,30 @@ func _ready() -> void:
 			previous.queue_free()
 		await get_tree().process_frame
 		await finish(night.vn)
-		check(runner.street.location == "akira_room" and runner.street.player.input_enabled,"Room exploration returns control")
+		check(runner.street.location == "akira_room" and not runner.street.player.input_enabled and not runner.street.player.visible,"Room uses VN backdrop without walking sprite")
 		check(not GameState.has_flag("first_night_seen"),"Room entry does not finish night")
 		await capture("night_room_REVIEW")
-		runner.street.player.position = Vector2(130,276)
-		await interact()
+		var stationary: Vector2 = runner.street.player.position
+		Input.action_press("walk_right")
+		await get_tree().create_timer(0.2).timeout
+		Input.action_release("walk_right")
+		check(runner.street.player.position == stationary,"Movement cannot move hidden actor in VN room")
+		await choose(night,"Az ablakhoz fordulok")
 		await finish(night.vn)
 		check(GameState.has_flag("night_window_seen"),"Window observation acknowledged")
-		runner.street.player.position = Vector2(210,276)
-		await interact()
+		await choose(night,"Megnézem az orvosi táskát")
 		await finish(night.vn)
 		check(GameState.has_flag("night_bag_seen"),"Professional bag observation acknowledged")
-		runner.street.player.position = Vector2(90,276)
-		await interact()
+		await choose(night,"Vissza a nappaliba")
 		check(night.phase == "evening_living" and (not is_instance_valid(runner.street.featured_actor) or not runner.street.featured_actor.visible),"Living room remains accessible after Miyako retires")
 		await interact()
 		check(night.phase == "room","E returns to bedroom")
-		runner.street.player.position = Vector2(310,276)
-		await interact()
+		await choose(night,"Megnézem a fényképet")
 		check(night.phase == "photo","E at desk opens photo")
 		await capture("night_photo_REVIEW")
 		await finish(night.vn)
 		check(GameState.has_flag("katsuro_first_clue_seen"),"Photo acknowledgement records clue")
-		runner.street.player.position = Vector2(490,276)
-		await interact()
+		await choose(night,"Lefekszem")
 		runner.pause_menu.open_menu()
 		await get_tree().create_timer(0.5).timeout
 		check(night.phase == "settling","Menu pauses bedtime transition")
@@ -112,32 +132,24 @@ func _ready() -> void:
 		check(GameState.aff_miyako == (1 if branch == 0 else 0),"Canonical morning affinity")
 		check(GameState.aff_hana == (1 if branch == 0 else 0),"Canonical clinic effect")
 		check(GameState.akira_gyogyulas == (2 if branch == 0 else 0),"Canonical healing effects")
-		check(runner.street.location == "clinic" and runner.street.player.input_enabled,"Clinic opens as playable scene")
+		check(runner.street.location == "clinic" and not runner.street.player.input_enabled and not runner.street.player.visible,"Clinic uses VN backdrop without walking sprite")
 		check(not GameState.has_flag("first_clinic_day_seen"),"Starting day does not complete consultations")
 		await capture("clinic_REVIEW")
 		for i in 2:
-			runner.street.player.position = Vector2(310,276)
-			await interact()
+			await choose(night,"Első konzultáció" if i == 0 else "Második konzultáció")
 			check(night.phase == "patient","E opens next consultation")
 			check(not runner.street.player.input_enabled,"Consultation locks movement")
 			await finish(night.vn)
 			check(GameState.has_flag("first_day_consultation_%d_seen" % (i+1)),"Acknowledged consultation recorded")
 			check(GameState.has_flag("first_clinic_day_seen") == (i == 1),"Day completes only after second consultation")
-		var grounded: Vector2 = runner.street.constrain_position(Vector2(1000,0))
-		check(grounded == Vector2(495,272),"Clinic feet remain inside clear floor strip")
-		runner.street.player.position = Vector2(310,276)
-		await interact()
+		await choose(night,"Átgondolom a napot")
 		check(night.phase == "day_reflection","Completed consultations open reflection")
 		check(not GameState.has_flag("first_day_complete"),"Consultations alone do not complete the whole day")
 		await finish(night.vn)
 		check(GameState.has_flag("katsuro_clinic_notebook_seen"),"Notebook clue records only after acknowledgement")
-		check(night.phase == "clinic_after","Reflection leaves a walkable clinic")
-		runner.street.player.position = Vector2(90,276)
-		await interact()
-		check(night.phase == "day_evening_walk" and runner.street.location == "interior","Clinic returns to shared living room")
-		runner.street.player.position = Vector2(300,266)
-		await interact()
-		check(night.phase == "day_evening","E at Miyako opens evening VN")
+		check(night.phase == "clinic_after","Reflection leaves an explicit continuation")
+		await choose(night,"Visszatérek Miyakóhoz")
+		check(night.phase == "day_evening" and not runner.street.player.visible,"Continuation opens evening VN without tiny actor")
 		night.vn.advance()
 		await capture("first_day_evening_REVIEW")
 		await finish(night.vn)

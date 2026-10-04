@@ -37,6 +37,8 @@ func start_sleep() -> void:
 	if phase != "room":
 		return
 	phase = "settling"
+	if is_instance_valid(actions):
+		actions.hide()
 	runner.street.player.input_enabled = false
 	runner.street.player.velocity = Vector2.ZERO
 	runner.street.player.scripted_axis = Vector2.ZERO
@@ -143,6 +145,71 @@ var end_card: Control
 var night_cue: AudioStreamPlayer
 var shot_tween: Tween
 var sleep_after_photo := false
+var actions: Control
+var action_buttons: Array[Button] = []
+var actions_armed := false
+
+func hide_actors() -> void:
+	runner.street.player.input_enabled = false
+	runner.street.player.velocity = Vector2.ZERO
+	runner.street.player.scripted_axis = Vector2.ZERO
+	runner.street.player.hide()
+	if is_instance_valid(runner.street.featured_actor):
+		runner.street.featured_actor.set_active(false)
+
+func show_actions(options: Array) -> void:
+	if is_instance_valid(actions):
+		actions.queue_free()
+	actions = Control.new()
+	presentation.add_child(actions)
+	action_buttons.clear()
+	actions_armed = false
+	for i in options.size():
+		var button := Button.new()
+		button.text = options[i][1]
+		button.position = Vector2(32,80+i*42)
+		button.size = Vector2(276,34)
+		button.add_theme_font_size_override("font_size",15)
+		button.disabled = true
+		button.pressed.connect(select_action.bind(options[i][0],phase))
+		actions.add_child(button)
+		action_buttons.append(button)
+	runner.hint.text = "↑ / ↓ · választás    Enter · kiválasztás"
+
+func select_action(id: String, expected_phase: String) -> void:
+	if phase != expected_phase or not actions_armed or get_tree().paused:
+		return
+	actions.hide()
+	match id:
+		"window", "bag":
+			play(read_data("res://data/home_day1/night_"+id+".json"),id)
+		"photo":
+			photo_back.show()
+			play(read_data("res://data/home_day1/night_photo.json"),"photo")
+		"sleep":
+			if not GameState.has_flag("katsuro_first_clue_seen"):
+				sleep_after_photo = true
+				photo_back.show()
+				play(read_data("res://data/home_day1/night_photo.json"),"photo")
+			else:
+				start_sleep()
+		"living":
+			runner.street.show_location("interior")
+			if is_instance_valid(runner.street.featured_actor):
+				runner.street.featured_actor.set_active(false)
+			runner.street.player.position = Vector2(460,266)
+			runner.street.player.show()
+			runner.street.enable_control()
+			phase = "evening_living"
+			observe_down = Input.is_action_pressed("observe")
+			runner.heading.text = "Közös otthon · este"
+		"patient":
+			play(read_data("res://data/home_day1/patient_%d.json" % (patient_index+1)),"patient")
+		"reflection":
+			runner.street.backdrop.modulate = Color(0.76,0.70,0.79)
+			play(read_data("res://data/home_day1/day_reflection.json"),"day_reflection")
+		"evening":
+			show_day_evening()
 
 func begin() -> void:
 	runner.dialogue.hide()
@@ -162,17 +229,31 @@ func begin() -> void:
 func resume(next_phase: String) -> void:
 	phase = next_phase
 	observe_down = Input.is_action_pressed("observe")
-	runner.street.enable_control()
+	hide_actors()
 	runner.hint.show()
 	runner.heading.text = "Akira szobája · első este" if phase == "room" else "Rendelő · első nap"
-	runner.street.player.show()
 	if is_instance_valid(photo_back):
 		photo_back.hide()
+	if phase == "room":
+		show_actions([["window","Az ablakhoz fordulok"],["bag","Megnézem az orvosi táskát"],["photo","Megnézem a fényképet"],["sleep","Lefekszem"],["living","Vissza a nappaliba"]])
+	elif phase == "clinic":
+		if patient_index < 2:
+			show_actions([["patient","Első konzultáció" if patient_index == 0 else "Második konzultáció"]])
+		else:
+			show_actions([["reflection","Átgondolom a napot"]])
+	elif phase == "clinic_after":
+		show_actions([["evening","Visszatérek Miyakóhoz"]])
 
 func advance(_delta: float) -> void:
 	var down := Input.is_action_pressed("observe")
 	var interact := down and not observe_down
 	observe_down = down
+	if is_instance_valid(actions) and actions.visible and not actions_armed:
+		if not down and not Input.is_action_pressed("ui_accept") and not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			actions_armed = true
+			for button in action_buttons:
+				button.disabled = false
+			action_buttons[0].grab_focus()
 	if phase == "dawn_card":
 		if not Input.is_action_pressed("observe") and not Input.is_key_pressed(KEY_SPACE) and not Input.is_key_pressed(KEY_ENTER) and not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			card_armed = true
@@ -183,64 +264,15 @@ func advance(_delta: float) -> void:
 			runner.street.show_location("akira_room")
 			resume("room")
 		return
-	if phase == "clinic_after":
-		runner.hint.text = "E · vissza Miyakóhoz" if runner.street.player.position.x < 125 else "Bal szélen: nappali    WASD · séta / Shift · futás"
-		if interact and runner.street.player.position.x < 125:
-			show_day_evening()
-		return
-	if phase == "day_evening_walk":
-		runner.hint.text = "E · beszélgetés Miyakóval" if runner.street.player.position.x > 250 and runner.street.player.position.x < 370 else "Miyako az asztalnál vár.    WASD · séta"
-		if interact and runner.street.player.position.x > 250 and runner.street.player.position.x < 370:
-			if is_instance_valid(runner.street.featured_actor):
-				runner.street.featured_actor.set_active(false)
-			runner.street.player.hide()
-			play(read_data("res://data/home_day1/day_evening.json"),"day_evening")
-		return
-	if phase not in ["room","clinic"]:
-		return
-	var x: float = runner.street.player.position.x
-	if phase == "room":
-		var action := "E · ablak" if x < 160 else ("E · orvosi táska" if x < 250 else ("E · fénykép" if x < 380 else ("E · lefekvés" if x > 460 else "WASD · séta / Shift · futás")))
-		runner.hint.text = action + "    Bal szélen: nappali" if x < 110 else action
-		if interact:
-			if x < 110:
-				runner.street.show_location("interior")
-				if is_instance_valid(runner.street.featured_actor):
-					runner.street.featured_actor.set_active(false)
-				runner.street.player.position = Vector2(460,266)
-				phase = "evening_living"
-				runner.heading.text = "Közös otthon · este"
-			elif x < 160:
-				play(read_data("res://data/home_day1/night_window.json"),"window")
-			elif x < 250:
-				play(read_data("res://data/home_day1/night_bag.json"),"bag")
-			elif x < 380:
-				photo_back.show()
-				play(read_data("res://data/home_day1/night_photo.json"),"photo")
-			elif x > 460:
-				if not GameState.has_flag("katsuro_first_clue_seen"):
-					sleep_after_photo = true
-					photo_back.show()
-					play(read_data("res://data/home_day1/night_photo.json"),"photo")
-				else:
-					start_sleep()
-	else:
-		runner.hint.text = ("E · következő konzultáció" if patient_index < 2 else "E · a nap tanulságai / Katsuro füzete") if x > 240 and x < 390 else "Sétálj az asztalhoz.    WASD · séta / Shift · futás"
-		if interact and x > 240 and x < 390:
-			if patient_index < 2:
-				play(read_data("res://data/home_day1/patient_%d.json" % (patient_index+1)),"patient")
-			else:
-				runner.street.backdrop.modulate = Color(0.76,0.70,0.79)
-				play(read_data("res://data/home_day1/day_reflection.json"),"day_reflection")
 
 func read_data(path: String) -> Dictionary:
 	return JSON.parse_string(FileAccess.get_file_as_string(path))
 
 func play(data: Dictionary, next_phase: String) -> void:
 	phase = next_phase
-	runner.street.player.input_enabled = false
-	runner.street.player.velocity = Vector2.ZERO
-	runner.street.player.scripted_axis = Vector2.ZERO
+	hide_actors()
+	if is_instance_valid(actions):
+		actions.hide()
 	runner.hint.hide()
 	if is_instance_valid(vn):
 		vn.queue_free()
@@ -331,8 +363,8 @@ func show_day_evening() -> void:
 	runner.street.show_location("interior")
 	runner.street.player.position = Vector2(150,266)
 	runner.ambience.rain.volume_db = -27
-	resume("day_evening_walk")
 	runner.heading.text = "Közös otthon · az első nap estéje"
+	play(read_data("res://data/home_day1/day_evening.json"),"day_evening")
 
 func show_day_end() -> void:
 	phase = "day_complete"

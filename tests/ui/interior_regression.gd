@@ -71,11 +71,14 @@ func _ready() -> void:
 		runner.street.player.position = Vector2(460,266)
 		await key(KEY_E)
 		await get_tree().create_timer(0.9).timeout
-		check(runner.street.location == "akira_room","Evening opens Akira's playable room")
+		check(runner.street.location == "akira_room" and not runner.street.player.visible,"Evening opens Akira's VN room")
 		while runner.arrival.vn.active:
 			await key(KEY_SPACE)
-		runner.street.player.position = Vector2(490,276)
-		await key(KEY_E)
+		await get_tree().process_frame
+		await get_tree().process_frame
+		for button in runner.arrival.action_buttons:
+			if button.text == "Lefekszem":
+				button.pressed.emit()
 		# Missing desk inspection is presented naturally before sleeping.
 		if runner.arrival.phase == "photo":
 			while runner.arrival.vn.active:

@@ -16,9 +16,9 @@ A szünetmenüben folytatás, karakterlapok és kapcsolati státusz, hangerő, t
 
 ## Aktuális állapot
 
-Miyako előtt E indítja az első VN-jelenetet. E / Space / Enter / bal kattintás kiírja az aktuális mondatot, majd továbblép. A beszélgetés megvárja az olvasót. Utána újabb E belép a házba: benti beszélgetés, két eredeti választás, majd bejárható belső sáv. Jobbra E → Akira szobája. Ablak, orvosi táska, fénykép; jobbra E: lefekvés. Az első éjszaka külön lezárásából explicit folytatás vezet a reggelhez.
+Miyako előtt E indítja az első VN-jelenetet. E / Space / Enter / bal kattintás kiírja az aktuális mondatot, majd továbblép. A beszélgetés megvárja az olvasót. Utána újabb E belép a házba: benti beszélgetés, két eredeti választás, majd bejárható belső sáv. Jobbra E → Akira VN-szobája, ahol gombokkal választható az ablak, az orvosi táska, a fénykép és a lefekvés. Az első éjszaka külön lezárásából explicit folytatás vezet a reggelhez.
 
-Reggel Miyakóval és két eredeti döntés → rendelő. Középen E indítja a két konzultációt egymás után, majd újabb E a nap tanulságait és Katsuro füzetét. Utána a bal szélen E → nappali; Miyakóhoz sétálva E → esti beszélgetés → második éjszakai „Hana” záróhang → az első nap vége. [Első éjszaka](docs/FIRST_NIGHT_IMPLEMENTATION_REVIEW.md), [első nap, források és hiányok](docs/FIRST_DAY_IMPLEMENTATION_REVIEW.md).
+Akira szobája és a rendelő VN-háttérként működik, járó Akira nélkül. Egér vagy fel/le + Enter választja a megfigyeléseket, a lefekvést és a két konzultációt. Reggel Miyakóval és két eredeti döntés → rendelő → nap tanulságai és Katsuro füzete → esti beszélgetés → második éjszakai „Hana” záróhang → az első nap vége. [Aktuális VN-kezelés](docs/ROOM_CLINIC_VN_REVIEW.md), [éjszaka története](docs/FIRST_NIGHT_IMPLEMENTATION_REVIEW.md), [első nap és hiányok](docs/FIRST_DAY_IMPLEMENTATION_REVIEW.md).
 
 REVIEW / PLACEHOLDER: négy női ambient NPC, mozgás, kamera, eső, járható úthatárok, előtér-takarás, kapunál állapotbiztos átadás, híd és Miyako köszöntése. Az oldalirányú járás nyolc képkockás, az előre/hátra ciklus négyképkockás. Ez nem a teljes 10–15 perces történeti flow.
 
