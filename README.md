@@ -18,7 +18,9 @@ Miyako előtt E indítja az első VN-jelenetet. E / Space / Enter / bal kattint�
 
 REVIEW / PLACEHOLDER: négy női ambient NPC, mozgás, kamera, eső, járható úthatárok, előtér-takarás, kapunál állapotbiztos átadás, híd és Miyako köszöntése. Az oldalirányú járás nyolc képkockás, az előre/hátra ciklus négyképkockás. Ez nem a teljes 10–15 perces történeti flow.
 
-Még hiányzik: Hana/Kuroe/Shion jóváhagyott cameói, játszható házbelső, végleges karakteranimáció és hangjáték. Combat, inventory, route-rendszer és komplex save/load nincs megvalósítva.
+A korai cameók működnek: Hana a meleg bejáratnál felpillant, Kuroe áthalad a házközön, Shion a híd falusi oldaláról figyel és elfordul. Mindhárom REVIEW asset, névtábla és dialógus nélkül. [Hana és Shion részletei](docs/HANA_SHION_CAMEOS_REVIEW.md).
+
+Még hiányzik: teljes házbelső, végleges karakteranimáció, éjszakai kép/hang és a II. fejezet. Combat, inventory, route-rendszer és komplex save/load nincs megvalósítva.
 
 - [Fejlesztési állapot](docs/PROGRESS.md)
 - [Nyitás és Space-javítás](docs/CINEMATIC_V2_REVIEW.md)

@@ -15,6 +15,7 @@ var bridge_rail: Node2D
 var house_rail: Node2D
 var featured_actor: Node2D
 var kuroe_cameo: Node2D
+var quiet_cameos: Array[Node2D] = []
 const BRIDGE_PATH := [Vector2(75,191),Vector2(185,190),Vector2(265,181),Vector2(345,182),Vector2(435,192),Vector2(555,205)]
 # Surveyed inner road edges; add the actor's foot clearance before clamping.
 const STREET_EDGES := [Vector3(150,440,630),Vector3(215,410,655),Vector3(270,415,655),Vector3(339,395,680)]
@@ -40,6 +41,12 @@ func _ready() -> void:
 	kuroe_cameo = preload("res://scripts/opening/kuroe_cameo.gd").new()
 	kuroe_cameo.street = self
 	cast.add_child(kuroe_cameo)
+	for identity in ["hana", "shion"]:
+		var cameo := preload("res://scripts/opening/quiet_cameo.gd").new()
+		cameo.street = self
+		cameo.identity = identity
+		cast.add_child(cameo)
+		quiet_cameos.append(cameo)
 	for spec in data.npc:
 		var resident := Resident.new()
 		resident.name = spec.id
@@ -156,6 +163,8 @@ func build_house_rail() -> void:
 
 func show_location(next_location: String) -> void:
 	location = next_location
+	for cameo in quiet_cameos:
+		cameo.refresh_visibility()
 	if is_instance_valid(featured_actor):
 		featured_actor.set_active(location == "house")
 	for resident in residents:
