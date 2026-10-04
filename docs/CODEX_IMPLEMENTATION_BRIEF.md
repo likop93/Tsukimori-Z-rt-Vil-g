@@ -302,3 +302,13 @@ Szabály:
 - minden új production vizuális asset pixel-art / 2.5D legyen;
 - hagyományos combatot továbbra se implementálj;
 - a korábbi painterly/smooth-anime prototípus asset ne váljon automatikusan FINAL-lá.
+
+
+---
+
+## Következő implementációs blokk — közös ház / rendelő / első éjszaka
+
+A meglévő házbelépési rész kész alap, nem újratervezendő. A következő belső tér- és első éjszaka batch kötelező előkészítő briefje:
+- `docs/SHARED_HOME_CLINIC_NEXT_BLOCK_PREP.md`
+
+A briefet a meglévő `MIYAKO_INTERIOR_REVIEW.md` és `INTERIOR_PASSAGE_AND_CONTINUATION_REVIEW.md` működés megtartásával kell végrehajtani.
