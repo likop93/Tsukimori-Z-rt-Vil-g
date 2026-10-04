@@ -61,16 +61,18 @@ func _ready() -> void:
 	root.add_child(akira_portrait)
 	dialogue_panel = panel(Vector2(24,232),Vector2(592,116))
 	nameplate = panel(Vector2(24,206),Vector2(170,27))
-	speaker = text_at(Vector2(38,208),Vector2(145,23),17)
+	speaker = text_at(Vector2(50,208),Vector2(138,23),17)
 	speaker.add_theme_color_override("font_color",Color("#e8b38c"))
 	body = text_at(Vector2(40,242),Vector2(560,76),16)
 	body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	prompt = text_at(Vector2(40,326),Vector2(450,18),10)
 	prompt.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	prompt.add_theme_color_override("font_color",Color("#bfa8a4"))
 	next_button = Button.new()
 	next_button.position = Vector2(504,322)
 	next_button.size = Vector2(96,24)
 	next_button.add_theme_font_size_override("font_size",12)
+	style_button(next_button)
 	next_button.pressed.connect(advance)
 	root.add_child(next_button)
 	choice_box = VBoxContainer.new()
@@ -87,12 +89,33 @@ func panel(at: Vector2, dimensions: Vector2) -> Panel:
 	item.size = dimensions
 	item.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var style := StyleBoxFlat.new()
-	style.bg_color = Color(0.035,0.025,0.05,0.96)
-	style.border_color = Color("#a46170")
+	style.bg_color = Color(0.04,0.025,0.045,0.94)
+	style.border_color = Color("#89515e")
 	style.set_border_width_all(1)
+	style.shadow_color = Color(0,0,0,0.45)
+	style.shadow_size = 4
 	item.add_theme_stylebox_override("panel",style)
 	root.add_child(item)
+	var ornament := Control.new()
+	ornament.set_script(preload("res://scripts/ui/vn_frame.gd"))
+	item.add_child(ornament)
+	ornament.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	return item
+
+func style_button(button: Button) -> void:
+	for state in ["normal","hover","pressed","focus"]:
+		var style := StyleBoxFlat.new()
+		style.bg_color = Color("#211823") if state == "normal" else Color("#48303c")
+		style.border_color = Color("#8e5d67") if state == "normal" else Color("#e4ba87")
+		style.set_border_width_all(1)
+		style.border_width_left = 3
+		style.set_content_margin_all(3)
+		if state == "focus":
+			style.bg_color = Color.TRANSPARENT
+		button.add_theme_stylebox_override(state,style)
+	button.add_theme_color_override("font_color",Color("#efdfcc"))
+	button.add_theme_color_override("font_hover_color",Color("#fff2da"))
+	button.add_theme_color_override("font_focus_color",Color("#fff2da"))
 
 func text_at(at: Vector2, dimensions: Vector2, font_size: int) -> Label:
 	var item := Label.new()
@@ -230,16 +253,7 @@ func show_choices() -> void:
 		button.text = str(option.label)
 		button.custom_minimum_size = Vector2(410,42)
 		button.add_theme_font_size_override("font_size",13)
-		var style := StyleBoxFlat.new()
-		style.bg_color = Color(0.045,0.025,0.05,0.96)
-		style.border_color = Color("#a46170")
-		style.set_border_width_all(1)
-		button.add_theme_stylebox_override("normal",style)
-		var selected := style.duplicate() as StyleBoxFlat
-		selected.bg_color = Color("#372333")
-		selected.border_color = Color("#e8b38c")
-		button.add_theme_stylebox_override("hover",selected)
-		button.add_theme_stylebox_override("focus",selected)
+		style_button(button)
 		button.pressed.connect(select_choice.bind(option))
 		choice_box.add_child(button)
 	choice_box.get_child(0).grab_focus()
