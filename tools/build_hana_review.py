@@ -26,6 +26,12 @@ def extract(rows):
             continue
         speaker={"akira":"Akira","hana":"Hana","miyako":"Miyako"}.get(match[1],"")
         text=json.loads(match[2])
+        # User-approved seating correction, 2026-10-04. Keep synced source intact.
+        if text.startswith("Hana nem ült le azonnal.") and "heverőt választotta" in text:
+            text = ("Hana nem ült le azonnal. Megkerülte az alacsony asztalt, és szándékosan az Akirához legközelebb álló széket választotta. "
+                    "Oldalasan ült le, egyik lábát a másikra téve, majd egész testével felé fordult. A köztük hagyott csekély távolság aligha volt véletlen.")
+        elif text.startswith("Hana visszaült") and "nem a heverőre" in text:
+            text = "Hana visszaült az Akira közelében álló székre. Most már nem próbált hatást kelteni. Akira érezte: ezúttal valóban úgy döntött, hogy marad."
         # Split at sentence boundaries and then words, retaining all source text.
         parts=re.split(r"(?<=[.!?])\s+(?=[A-ZÁÉÍÓÖŐÚÜŰ„])",text)
         part=""
