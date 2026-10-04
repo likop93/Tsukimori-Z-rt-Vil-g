@@ -38,7 +38,7 @@ def configure_hana(data):
         }
         for cue, image in starts.items():
             if cue in text:
-                version = "2" if image in ("hana_farewell", "hana_door") else "1"
+                version = "3" if image == "hana_door" else ("2" if image == "hana_farewell" else "1")
                 line["cg"] = CG + image + "_v" + version + "_REVIEW.png"
                 if image == "hana_notebook":
                     line["cg_zoom"] = 1.2 # Keep the written name above the dialogue panel.
