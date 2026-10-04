@@ -1,0 +1,19 @@
+{
+  "id": "day_hook",
+  "portrait": false,
+  "source": "canonical_html_story.rpy / chapter III; matched PDF pages 9–15, REVIEW spatial staging",
+  "lines": [
+    {
+      "speaker": "",
+      "text": "Aznap éjjel, amikor visszament a szobájába, a ház mélyéről ismét hallotta a halk férfihangot."
+    },
+    {
+      "speaker": "",
+      "text": "Ezúttal csak egyetlen szót értett belőle."
+    },
+    {
+      "speaker": "",
+      "text": "Hana."
+    }
+  ]
+}

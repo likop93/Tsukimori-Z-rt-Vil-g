@@ -17,6 +17,16 @@ static func entries() -> Array[Dictionary]:
 			entry.status = "Személyesen megismerted."
 			if spec.id == "akira":
 				entry.status = "Te"
+				if GameState.has_flag("first_night_seen"):
+					entry.events.append("Nyugtalan első éjszakád volt a házban.")
+				if GameState.has_flag("katsuro_first_clue_seen"):
+					entry.events.append("Láttad a régi közös fényképet Katsuróval.")
+				if GameState.has_flag("first_clinic_day_seen"):
+					entry.events.append("Lezártad az első két konzultációt.")
+				if GameState.has_flag("katsuro_clinic_notebook_seen"):
+					entry.events.append("Megnézted Katsuro füzetét a rendelőben.")
+				if GameState.has_flag("hana_name_heard"):
+					entry.events.append("Éjszaka a Hana nevet hallottad.")
 			elif spec.id == "miyako":
 				entry.events.append("Várt rád Katsuro házánál.")
 				if GameState.has_flag("miyako_interior_dialogue_seen"):
@@ -29,5 +39,8 @@ static func entries() -> Array[Dictionary]:
 				if GameState.has_flag("miyako_morning_seen"):
 					entry.status = "Az első közös reggelen is beszélgettetek."
 					entry.events.append("Nem húzódtál el a kezétől." if GameState.miyako_morning_choice == "stay" else "Finoman visszahúztad a kezed.")
+				if GameState.has_flag("miyako_first_day_evening_seen"):
+					entry.status = "Megosztottad vele az első nap tapasztalatait."
+					entry.events.append("Beszéltetek a faluban örökölt szabályokról.")
 		result.append(entry)
 	return result

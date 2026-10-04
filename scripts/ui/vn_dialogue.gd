@@ -35,11 +35,11 @@ func _ready() -> void:
 	portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.add_child(portrait)
 	portrait.set_deferred("size",Vector2(228,342))
-	panel(Vector2(24,250),Vector2(592,98))
-	nameplate = panel(Vector2(24,224),Vector2(170,27))
-	speaker = text_at(Vector2(38,226),Vector2(145,23),17)
+	panel(Vector2(24,232),Vector2(592,116))
+	nameplate = panel(Vector2(24,206),Vector2(170,27))
+	speaker = text_at(Vector2(38,208),Vector2(145,23),17)
 	speaker.add_theme_color_override("font_color",Color("#e8b38c"))
-	body = text_at(Vector2(40,260),Vector2(560,62),16)
+	body = text_at(Vector2(40,242),Vector2(560,76),16)
 	body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	prompt = text_at(Vector2(40,326),Vector2(450,18),10)
 	prompt.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT

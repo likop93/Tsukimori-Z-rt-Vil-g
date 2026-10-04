@@ -1,11 +1,47 @@
 {
-  "id": "first_day_consultation_2",
+  "id": "patient_2",
   "portrait": false,
-  "source": "canonical_html_story.rpy / chapter_3 / dialogue excerpt; anonymous identities retained pending order confirmation",
+  "source": "canonical_html_story.rpy / chapter III; matched PDF pages 9–15, REVIEW spatial staging; PDF pages 11–13 selected additional dialogue",
   "lines": [
     {
       "speaker": "",
-      "text": "A második páciens az éjszakai egyedüllétről és az utána visszatérő szégyenről beszél."
+      "text": "A második páciens sokkal zavartabban ült le. Ő volt az, aki éjjelente kiment a falu szélére, levetkőzött, és utána szégyent érzett, mintha valami szörnyűséget követett volna el."
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Nem tudom, miért jöttem el."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Elmehet, ha úgy érzi, nem szeretne itt lenni."
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Nem akar marasztalni?"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Az nem segítene, ha én döntenék maga helyett."
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Katsuro doktor mindig azt mondta, hogy várjak még néhány percet."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Segített?"
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Néha."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Most szeretne várni néhány percet?"
+    },
+    {
+      "speaker": "",
+      "text": "A nő lassan bólintott. Csendben ültek. Akira hagyta, hogy megszokja a szobát és azt a lehetőséget, hogy bármikor felállhat."
     },
     {
       "speaker": "Páciens",
@@ -25,11 +61,91 @@
     },
     {
       "speaker": "Akira",
+      "text": "Milyenek?"
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Az egyik tudja, hogyan kell viselkedni. Felkel, dolgozik, köszön az időseknek, és nem mond semmi illetlent. A másik… csak lélegezni akar."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Melyikük az igazi?"
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Nem tudom."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Lehet, hogy mindkettő maga?"
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Akkor az egyik részem rossz."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Ki mondta?"
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Mindenki."
+    },
+    {
+      "speaker": "",
+      "text": "Ugyanaz a szó. Ugyanaz a láthatatlan tekintély, amely az első páciens mondatai mögött is ott állt."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Amikor odakint van, hall valamit?"
+    },
+    {
+      "speaker": "Páciens",
+      "text": "A szelet."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Csak a szelet?"
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Néha olyan, mintha valaki lélegezne velem."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Női vagy férfihang?"
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Nem hang. Inkább… jelenlét."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Fél tőle?"
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Odakint nem."
+    },
+    {
+      "speaker": "Akira",
+      "text": "És itt?"
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Itt igen."
+    },
+    {
+      "speaker": "Akira",
       "text": "Nincs ebben semmi szégyellnivaló. Beszéljünk erről legközelebb is."
     },
     {
       "speaker": "Páciens",
       "text": "Rendben... köszönöm."
+    },
+    {
+      "speaker": "",
+      "text": "A nő felállt, még mindig lesütött szemmel, de valamivel könnyebb léptekkel, mint amivel bejött."
     }
   ]
 }

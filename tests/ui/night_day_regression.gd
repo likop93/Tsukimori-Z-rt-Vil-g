@@ -5,7 +5,7 @@ func check(ok: bool, message: String) -> void:
 		failures.append(message)
 		push_error(message)
 func finish(vn: CanvasLayer, choice := "") -> void:
-	for step in 100:
+	for step in 300:
 		if not is_instance_valid(vn) or not vn.active:
 			return
 		if vn.choice_box.visible:
@@ -19,6 +19,7 @@ func finish(vn: CanvasLayer, choice := "") -> void:
 		await get_tree().process_frame
 		if is_instance_valid(vn) and vn.active:
 			check(vn.body.get_line_count()*vn.body.get_line_height() <= vn.body.size.y,"Dialogue fits: "+vn.body.text)
+			check(vn.body.position.y+vn.body.size.y <= vn.next_button.position.y-4,"Dialogue stays clear of continue button: "+vn.body.text)
 	check(false,"Dialogue failed to terminate")
 func capture(file: String) -> void:
 	await RenderingServer.frame_post_draw
@@ -124,7 +125,33 @@ func _ready() -> void:
 			check(GameState.has_flag("first_clinic_day_seen") == (i == 1),"Day completes only after second consultation")
 		var grounded: Vector2 = runner.street.constrain_position(Vector2(1000,0))
 		check(grounded == Vector2(495,272),"Clinic feet remain inside clear floor strip")
+		runner.street.player.position = Vector2(310,276)
+		await interact()
+		check(night.phase == "day_reflection","Completed consultations open reflection")
+		check(not GameState.has_flag("first_day_complete"),"Consultations alone do not complete the whole day")
+		await finish(night.vn)
+		check(GameState.has_flag("katsuro_clinic_notebook_seen"),"Notebook clue records only after acknowledgement")
+		check(night.phase == "clinic_after","Reflection leaves a walkable clinic")
+		runner.street.player.position = Vector2(90,276)
+		await interact()
+		check(night.phase == "day_evening_walk" and runner.street.location == "interior","Clinic returns to shared living room")
+		runner.street.player.position = Vector2(300,266)
+		await interact()
+		check(night.phase == "day_evening","E at Miyako opens evening VN")
+		night.vn.advance()
+		await capture("first_day_evening_REVIEW")
+		await finish(night.vn)
+		check(night.phase == "day_hook" and not runner.street.player.visible,"Second night uses cinematic presentation without standing sprite")
+		await finish(night.vn)
+		check(GameState.has_flag("first_day_complete") and night.phase == "day_complete","Day ends after its hook")
+		check(GameState.has_flag("hana_name_heard") and not GameState.has_flag("met_hana"),"Heard name does not invent a Hana meeting")
+		var journal: Array[Dictionary] = preload("res://scripts/ui/character_journal.gd").entries()
+		var self_entry: Dictionary = journal.filter(func(item: Dictionary): return item.id == "akira")[0]
+		check("Éjszaka a Hana nevet hallottad." in self_entry.events,"Journal records only the heard name")
+		await capture("first_day_complete_REVIEW")
 		runner.queue_free()
 		await get_tree().process_frame
+	GameState.clear_runtime_state()
+	check(not GameState.has_flag("first_day_complete") and not GameState.has_flag("hana_name_heard"),"New game clears first-day progress")
 	print("NIGHT_DAY: "+JSON.stringify({"passed":failures.is_empty(),"failures":failures}))
 	get_tree().quit(0 if failures.is_empty() else 1)

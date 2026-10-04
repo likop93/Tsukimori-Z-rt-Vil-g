@@ -1,0 +1,55 @@
+{
+  "id": "day_evening",
+  "portrait": true,
+  "source": "canonical_html_story.rpy / chapter III; matched PDF pages 9–15, REVIEW spatial staging",
+  "lines": [
+    {
+      "speaker": "",
+      "text": "Estére Akira már biztos volt benne: Tsukimori asszonyai nem egyszerűen frusztráltak vagy magányosak. Egy kollektív, generációkon átörökített hazugság hordozói voltak."
+    },
+    {
+      "speaker": "",
+      "text": "Csendben ültek egy darabig a gőzölgő csészék fölött, mielőtt bármelyikük megszólalt volna."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Nem egyetlen nő beteg itt. Hanem maga a hely tanította meg őket rosszul érezni a saját testükben."
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Igen. Ezért féltem attól, hogy túl hamar rájössz."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Miért?"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Mert ha valaki egyszer ezt tényleg meglátja, utána már nem tud úgy élni itt, mintha csak terápiát vezetne."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Te hogyan éltél így eddig? Te is meglátod."
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Én nem láttam meg. Én belenőttem. Van különbség."
+    },
+    {
+      "speaker": "",
+      "text": "Akira nem erőltette tovább. De a válasz ott maradt közöttük az asztalon, mint egy le nem tett csésze."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Ha valaha úgy döntenél, hogy te is meg akarod látni — nem leszel egyedül vele."
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Tudom. Ez az, amitől a legjobban félek."
+    },
+    {
+      "speaker": "",
+      "text": "A mondat Akirában maradt. Nem azért, mert különösen titokzatos volt. Hanem mert túl igaznak érződött."
+    }
+  ]
+}

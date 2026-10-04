@@ -4,7 +4,7 @@ Hana, Kuroe és Shion korai cameója működik REVIEW atlasszal, névtábla/dial
 
 Frissítve: 2026-10-04. Technikai REVIEW; a LOCKED kreatív döntések változatlanok.
 
-Karakterlapok, leírások és megtörtént eseményekből képzett kapcsolati státusz implementálva. Első éjszaka → közös reggel → két eredeti névtelen konzultáció működik. Inventory később. [Források, asset státusz és hiányok](CHARACTERS_NIGHT_CLINIC_REVIEW.md).
+Karakterlapok, leírások és megtörtént eseményekből képzett kapcsolati státusz implementálva. Első éjszaka külön lezárással → közös reggel → két bővített eredeti névtelen konzultáció → Katsuro rendelői füzete → esti beszélgetés Miyakóval → „Hana” záróhang és első napi végpont működik. A teljes éjszaka–nap lánc egyben átnézhető. Inventory később. [Éjszaka](FIRST_NIGHT_IMPLEMENTATION_REVIEW.md), [első nap, források és production hiányok](FIRST_DAY_IMPLEMENTATION_REVIEW.md).
 
 Játék közbeni szünetmenü és Shift-futás működik. A menü az intró és a VN idővonalát is megállítja. Külön REVIEW oldalfutó atlasz, front/back futás még ideiglenes. [Részletek és ellenőrzés](PAUSE_AND_RUN_REVIEW.md).
 

@@ -183,6 +183,19 @@ func advance(_delta: float) -> void:
 			runner.street.show_location("akira_room")
 			resume("room")
 		return
+	if phase == "clinic_after":
+		runner.hint.text = "E · vissza Miyakóhoz" if runner.street.player.position.x < 125 else "Bal szélen: nappali    WASD · séta / Shift · futás"
+		if interact and runner.street.player.position.x < 125:
+			show_day_evening()
+		return
+	if phase == "day_evening_walk":
+		runner.hint.text = "E · beszélgetés Miyakóval" if runner.street.player.position.x > 250 and runner.street.player.position.x < 370 else "Miyako az asztalnál vár.    WASD · séta"
+		if interact and runner.street.player.position.x > 250 and runner.street.player.position.x < 370:
+			if is_instance_valid(runner.street.featured_actor):
+				runner.street.featured_actor.set_active(false)
+			runner.street.player.hide()
+			play(read_data("res://data/home_day1/day_evening.json"),"day_evening")
+		return
 	if phase not in ["room","clinic"]:
 		return
 	var x: float = runner.street.player.position.x
@@ -212,9 +225,13 @@ func advance(_delta: float) -> void:
 				else:
 					start_sleep()
 	else:
-		runner.hint.text = "E · következő konzultáció" if x > 240 and x < 390 and patient_index < 2 else ("A mai két konzultáció lezárult.    Tab / Esc · menü" if patient_index == 2 else "Sétálj a konzultáció helyéhez.    WASD · séta")
-		if interact and x > 240 and x < 390 and patient_index < 2:
-			play(read_data("res://data/home_day1/patient_%d.json" % (patient_index+1)),"patient")
+		runner.hint.text = ("E · következő konzultáció" if patient_index < 2 else "E · a nap tanulságai / Katsuro füzete") if x > 240 and x < 390 else "Sétálj az asztalhoz.    WASD · séta / Shift · futás"
+		if interact and x > 240 and x < 390:
+			if patient_index < 2:
+				play(read_data("res://data/home_day1/patient_%d.json" % (patient_index+1)),"patient")
+			else:
+				runner.street.backdrop.modulate = Color(0.76,0.70,0.79)
+				play(read_data("res://data/home_day1/day_reflection.json"),"day_reflection")
 
 func read_data(path: String) -> Dictionary:
 	return JSON.parse_string(FileAccess.get_file_as_string(path))
@@ -286,3 +303,60 @@ func finish_dialogue() -> void:
 			if patient_index == 2:
 				GameState.set_flag("first_clinic_day_seen")
 			resume("clinic")
+			runner.heading.text = "Rendelő · első nap · %d/2 konzultáció lezárva" % patient_index
+		"day_reflection":
+			GameState.set_flag("katsuro_clinic_notebook_seen")
+			resume("clinic_after")
+			runner.heading.text = "Rendelő · alkony"
+		"day_evening":
+			GameState.set_flag("miyako_first_day_evening_seen")
+			runner.street.show_location("akira_room")
+			runner.street.backdrop.modulate = Color.WHITE
+			runner.street.player.hide()
+			runner.heading.hide()
+			night_image.texture = load("res://assets/home_day1/akira_sleep_REVIEW.png")
+			night_image.modulate = Color(0.70,0.76,0.87)
+			night_image.show()
+			night_cue.stream = runner.ambience.make_effect("murmur")
+			night_cue.volume_db = -28
+			night_cue.play()
+			play(read_data("res://data/home_day1/day_hook.json"),"day_hook")
+		"day_hook":
+			GameState.set_flag("hana_name_heard")
+			GameState.set_flag("first_day_complete")
+			show_day_end()
+
+func show_day_evening() -> void:
+	runner.street.backdrop.modulate = Color.WHITE
+	runner.street.show_location("interior")
+	runner.street.player.position = Vector2(150,266)
+	runner.ambience.rain.volume_db = -27
+	resume("day_evening_walk")
+	runner.heading.text = "Közös otthon · az első nap estéje"
+
+func show_day_end() -> void:
+	phase = "day_complete"
+	night_cue.stop()
+	end_card = Control.new()
+	presentation.add_child(end_card)
+	var shade := ColorRect.new()
+	shade.size = Vector2(640,360)
+	shade.color = Color(0.01,0.02,0.04,0.86)
+	shade.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	end_card.add_child(shade)
+	var title := Label.new()
+	title.text = "Az első nap vége\nHana."
+	title.position = Vector2(40,110)
+	title.size = Vector2(560,80)
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	title.add_theme_font_size_override("font_size",26)
+	end_card.add_child(title)
+	var button := Button.new()
+	button.text = "Főmenü"
+	button.position = Vector2(235,225)
+	button.size = Vector2(170,38)
+	button.pressed.connect(return_to_main)
+	end_card.add_child(button)
+
+func return_to_main() -> void:
+	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")

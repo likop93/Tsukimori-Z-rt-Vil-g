@@ -1,11 +1,15 @@
 {
-  "id": "first_day_consultation_1",
+  "id": "patient_1",
   "portrait": false,
-  "source": "canonical_html_story.rpy / chapter_3 / dialogue excerpt; anonymous identities retained pending order confirmation",
+  "source": "canonical_html_story.rpy / chapter III; matched PDF pages 9–15, REVIEW spatial staging; PDF pages 9–10 selected additional dialogue",
   "lines": [
     {
       "speaker": "",
-      "text": "Az első páciens a hiányról és arról beszél, milyen nehéz a saját vágyait kimondania."
+      "text": "Az első rendelési nap délutánján Akira már tudta, hogy a faluban a pszichológiai fájdalom és a testi szégyen nem válik el egymástól."
+    },
+    {
+      "speaker": "",
+      "text": "Az első páciens férjes asszony volt, akinek a férje a falun kívül dolgozott. Nem dühösebbnek látszott a kelleténél, inkább fáradtabbnak."
     },
     {
       "speaker": "Páciens",
@@ -18,6 +22,18 @@
     {
       "speaker": "Páciens",
       "text": "Az anyósomén. De azt hiszem, ő is csak valaki más hangját ismételte. Itt mindenki ugyanazt mondja, csak más szájjal."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Mit mond ez a hang?"
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Hogy egy rendes nő nem akar dolgokat önmagáért. Egy rendes nőnek a férje hiányozhat. Gyermeket akarhat. Családot akarhat."
+    },
+    {
+      "speaker": "Páciens",
+      "text": "De nem… egyszerűen csak valamit a saját teste miatt."
     },
     {
       "speaker": "Páciens",
@@ -33,11 +49,39 @@
     },
     {
       "speaker": "Akira",
+      "text": "Akkor talán nem azzal kell kezdenünk, hogy megtaláljuk a választ. Először elég lehet megengedni, hogy a kérdés létezzen."
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Ez nem önzőség?"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Az, hogy tudni szeretné, mit érez?"
+    },
+    {
+      "speaker": "Páciens",
+      "text": "Az, hogy egyáltalán számítson."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Nem. Az nem önzőség, hogy a saját életében maga is jelen szeretne lenni."
+    },
+    {
+      "speaker": "",
+      "text": "Akira hallgatta, és lassan megértette: ez a nő nem egyszerűen magányos. Valami azt tanította neki, hogy a saját vágya illetlenség."
+    },
+    {
+      "speaker": "Akira",
       "text": "Köszönöm, hogy elmondta. Legközelebb is szívesen folytatjuk."
     },
     {
       "speaker": "Páciens",
       "text": "Köszönöm, doktor úr."
+    },
+    {
+      "speaker": "",
+      "text": "Az asszony halkan meghajolt, és kifelé indult — kicsit egyenesebb tartással, mint ahogy érkezett."
     }
   ]
 }
