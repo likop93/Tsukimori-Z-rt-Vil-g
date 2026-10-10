@@ -115,3 +115,5 @@ Tulajdonosi kérés alapján karakterlapok/kapcsolati státusz, majd első éjsz
 2026-10-10 OWNER / REVIEW: Miyako ismételt elutasításánál testi horrorváltozat engedélyezett: világosodó haj, kék szem, teltebb mellkas és mániákus mosoly. Alapmegjelenése változatlan; alakos kivágás és ruha megtartva. CHARACTER_PRESSURE_REVIEW.md.
 
 2026-10-10 OWNER / REVIEW: Hana elutasítási fejlődése felülírja a korábbi követelőző irányt: teltebb test és egyre alárendelődő, jóváhagyást kereső viselkedés, az alap magabiztosság ellentéteként. Zártabb ruhás alternatív portré REVIEW; alapdesign változatlan. CHARACTER_PRESSURE_REVIEW.md.
+
+2026-10-10 OWNER / REVIEW: hétköznapi ruhatár idővel minden nőnek, egyéni karakterjegyekkel. Első Hana-alternatíva: bordó top és farmer rövidnadrág, karakterlapi előnézet. Kimonó megmarad, történeti ruhaváltás későbbi jelenethez kötendő. EVERYDAY_WARDROBE_REVIEW.md.

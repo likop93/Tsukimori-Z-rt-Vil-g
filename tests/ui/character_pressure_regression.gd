@@ -53,6 +53,14 @@ func _ready() -> void:
 		runner.pause_menu.show_character(1 if id == "miyako" else 2)
 		await RenderingServer.frame_post_draw
 		get_viewport().get_texture().get_image().save_png("res://review/"+id+"_pressure_sheet_REVIEW.png")
+		if id == "hana":
+			var wardrobe: Button = runner.pause_menu.body.get_node("HanaWardrobePreview")
+			wardrobe.button_pressed = true
+			await RenderingServer.frame_post_draw
+			check(wardrobe.text == "Kimonó","Casual wardrobe preview can return to kimono")
+			get_viewport().get_texture().get_image().save_png("res://review/hana_casual_sheet_REVIEW.png")
+			wardrobe.button_pressed = false
+			check(GameState.character_stage("hana") == 2,"Clothing preview leaves story state untouched")
 		runner.pause_menu.resume()
 	var pressure: int = GameState.character_pressure("hana")
 	GameState.record_distance("hana_memory","wait")

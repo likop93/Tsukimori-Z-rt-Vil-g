@@ -179,6 +179,16 @@ func show_character(index: int) -> void:
 		portrait.size = Vector2(146,244)
 		portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		body.add_child(portrait)
+		if str(entry.id) == "hana" and int(entry.get("reaction_stage",0)) == 2:
+			portrait.size.y = 216
+			var wardrobe := make_button(body,"Hétköznapi",Vector2(183,282),Vector2(146,28),func(): pass)
+			wardrobe.name = "HanaWardrobePreview"
+			wardrobe.toggle_mode = true
+			wardrobe.add_theme_font_size_override("font_size",12)
+			wardrobe.toggled.connect(func(casual: bool):
+				portrait.texture = load("res://assets/opening/vn_portraits/hana_casual_deferential_v1_REVIEW.png" if casual else str(entry.portrait))
+				wardrobe.text = "Kimonó" if casual else "Hétköznapi"
+			)
 	else:
 		label("?",Vector2(225,113),Vector2(80,100),64)
 	label(str(entry.title),Vector2(344,60),Vector2(232,26),19)
