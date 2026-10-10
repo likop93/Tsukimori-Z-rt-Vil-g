@@ -186,7 +186,7 @@ func show_character(index: int) -> void:
 			wardrobe.toggle_mode = true
 			wardrobe.add_theme_font_size_override("font_size",12)
 			wardrobe.toggled.connect(func(casual: bool):
-				portrait.texture = load("res://assets/opening/vn_portraits/hana_casual_deferential_v1_REVIEW.png" if casual else str(entry.portrait))
+				portrait.texture = load("res://assets/opening/vn_portraits/hana_casual_deferential_v2_REVIEW.png" if casual else str(entry.portrait))
 				wardrobe.text = "Kimonó" if casual else "Hétköznapi"
 			)
 	else:
@@ -243,3 +243,4 @@ func _input(event: InputEvent) -> void:
 				back()
 			else:
 				resume()
+
