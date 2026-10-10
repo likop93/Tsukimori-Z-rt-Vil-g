@@ -191,7 +191,12 @@ func show_character(index: int) -> void:
 	details.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	details.add_theme_constant_override("separation",12)
 	scroll.add_child(details)
-	for text in [str(entry.description),"Kapcsolati státusz",str(entry.status),"\n".join(entry.events)]:
+	var sections: Array = [str(entry.description),"Kapcsolati státusz",str(entry.status)]
+	if entry.has("reaction_label"):
+		sections.append("Jelenlegi viselkedés · "+str(entry.reaction_label))
+		sections.append(str(entry.reaction_description))
+	sections.append("\n".join(entry.events))
+	for text in sections:
 		var item := Label.new()
 		item.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		item.text = text

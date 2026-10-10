@@ -189,5 +189,30 @@
       "expression": "worried",
       "event": "window_whisper"
     }
-  ]
+  ],
+  "choices": [
+    {
+      "id": "accept_concern",
+      "label": "Elfogadom Miyako aggodalmát.",
+      "lines": [
+        {
+          "speaker": "Akira",
+          "text": "Értem, hogy aggódsz. Nem fogom félvállról venni.",
+          "expression": "warm"
+        }
+      ]
+    },
+    {
+      "id": "keep_distance",
+      "label": "Jelzem, hogy egyedül szeretnék maradni.",
+      "lines": [
+        {
+          "speaker": "Akira",
+          "text": "Hallottam, amit mondtál. Most mégis egyedül szeretnék maradni.",
+          "expression": "worried"
+        }
+      ]
+    }
+  ],
+  "review_addition": "Owner-approved rejection progression: closing choice and character responses are new REVIEW writing."
 }

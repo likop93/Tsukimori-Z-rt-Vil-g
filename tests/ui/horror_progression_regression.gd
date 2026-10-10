@@ -17,7 +17,8 @@ func choose(path: String, id: String) -> void:
 	vn.select_choice(option)
 	check(option.lines.size() == original_count,"Source branch untouched")
 	if GameState.horror_level() > 0:
-		check(vn.lines.size() == original_count+1,"New rejection gets one atmospheric response")
+		var extra := 1 if GameState.rejection_actor(str(data.id),id).is_empty() else 2
+		check(vn.lines.size() == original_count+extra,"New rejection gets atmosphere and its character response")
 		vn.index = vn.lines.size()-1
 		vn.show_line()
 		vn.revealed = 1000

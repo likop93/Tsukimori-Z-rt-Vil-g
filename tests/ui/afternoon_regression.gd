@@ -26,7 +26,7 @@ func _ready() -> void:
 	check(day.vn.portrait.flip_h and not day.vn.akira_portrait.flip_h,"Miyako and Akira face inward")
 	check(not runner.street.player.visible,"Clinic stays VN-only")
 	await capture("miyako_afternoon_REVIEW")
-	await finish(day.vn)
+	await finish(day.vn,"accept_concern")
 	check(day.phase == "afternoon_complete","Full afternoon ends on its own card")
 	check(GameState.has_flag("miyako_hana_afternoon_seen") and GameState.has_flag("akira_wrist_mark_seen") and GameState.has_flag("katsuro_notebook_awakening_seen"),"Story flags committed at their events")
 	check(GameState.aff_hana == 0 and GameState.aff_miyako == 0,"Linear scene awards no invented relationship points")

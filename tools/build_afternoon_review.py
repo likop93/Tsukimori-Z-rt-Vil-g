@@ -39,5 +39,10 @@ for row in block.splitlines():
         lines.append(line)
 base = 'res://assets/opening/vn_portraits/'
 data = dict(id='miyako_afternoon', source='canonical_html_story.rpy / chapter IV / Késő délután; text unchanged, wrapped only', portrait=True, portrait_speaker='Miyako', portrait_side='left', portrait_facing='left', portrait_path=base+'miyako_worried_v1_REVIEW.png', akira_portrait_path=base+'akira_doctor_v1_REVIEW.png', portrait_variants={m:base+'miyako_'+m+'_v1_REVIEW.png' for m in ['worried','surprised','warm']}, lines=lines)
+data['choices'] = [
+    dict(id='accept_concern', label='Elfogadom Miyako aggodalmát.', lines=[dict(speaker='Akira',text='Értem, hogy aggódsz. Nem fogom félvállról venni.',expression='warm')]),
+    dict(id='keep_distance', label='Jelzem, hogy egyedül szeretnék maradni.', lines=[dict(speaker='Akira',text='Hallottam, amit mondtál. Most mégis egyedül szeretnék maradni.',expression='worried')]),
+]
+data['review_addition'] = 'Owner-approved rejection progression: closing choice and character responses are new REVIEW writing.'
 (Path(__file__).resolve().parents[1]/'data/home_day2/miyako_afternoon.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(len(lines), 'afternoon pages')

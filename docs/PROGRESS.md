@@ -41,3 +41,5 @@ Hátralévő: teljes házbelső és interakciók, éjszakai férfihang/alvás an
 A korábbi 3D állapotjelentés: [archivált PROGRESS](../archive/legacy_3d/docs/PROGRESS_BEFORE_ARCHIVE.md). Az ott leírt klinika, 3D falusi párok és belső terek nem a jelenlegi pixel-art játékmenet funkciói.
 
 2026-10-04 portréfrissítés: partner balra, Akira jobbra a keret nélküli párbeszédekben. Hana öt, Miyako négy képi reakció; az első két névtelen páciens saját eredeti portrékkal és reakciókkal. Éjszakai CG-k és megfigyelések továbbra is portré nélkül. [REVIEW assetek, források és ellenőrzés](DIALOGUE_PORTRAITS_REVIEW.md).
+
+2026-10-10: Miyako és Hana személyes elutasítási állapota, reakciómondatai és változó alakos karakterlapképei működnek. Godot character_pressure, horror_progression, afternoon és Hana ellenőrzés sikeres. Részletek: CHARACTER_PRESSURE_REVIEW.md.

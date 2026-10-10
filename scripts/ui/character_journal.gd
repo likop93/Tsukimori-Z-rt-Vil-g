@@ -53,5 +53,12 @@ static func entries() -> Array[Dictionary]:
 				if GameState.has_flag("hana_first_session_seen"):
 					entry.status = "Az első terápiás beszélgetésetek lezárult."
 					entry.events.append("Tudja, hogy visszajöhet, és nem kell szerepet játszania.")
+		if known:
+			var reaction := preload("res://scripts/ui/character_reactions.gd").profile(str(spec.id))
+			if not reaction.is_empty():
+				entry.portrait = reaction.portrait
+				entry.reaction_label = reaction.label
+				entry.reaction_description = reaction.description
+				entry.reaction_stage = reaction.stage
 		result.append(entry)
 	return result

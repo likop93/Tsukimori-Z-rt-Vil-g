@@ -172,6 +172,16 @@ func show_line() -> void:
 	var expression := str(lines[index].get("expression",""))
 	if portrait_variants.has(expression):
 		set_partner_texture(str(portrait_variants[expression]))
+	var partner_id := portrait_speaker.to_lower()
+	if GameState.character_stage(partner_id) > 0 and expression in ["","neutral","smile","warm"]:
+		var mood := preload("res://scripts/ui/character_reactions.gd").profile(partner_id)
+		if not mood.is_empty():
+			set_partner_texture(str(mood.portrait))
+	var pressure_actor := str(lines[index].get("pressure_actor",""))
+	if not pressure_actor.is_empty():
+		var reaction := preload("res://scripts/ui/character_reactions.gd").profile(pressure_actor)
+		if not reaction.is_empty():
+			set_partner_texture(str(reaction.portrait))
 	speaker.text = str(lines[index].speaker)
 	nameplate.visible = not speaker.text.is_empty()
 	portrait.modulate = Color.WHITE if speaker.text == portrait_speaker else Color(0.65,0.65,0.7)
@@ -270,6 +280,9 @@ func select_choice(option: Dictionary) -> void:
 	choices = []
 	lines = option.lines.duplicate(true)
 	if GameState.record_distance(dialogue_id,str(option.id)):
+		var response := GameState.character_response(GameState.rejection_actor(dialogue_id,str(option.id)))
+		if not response.is_empty():
+			lines.append(response)
 		lines.append({"speaker":"","text":GameState.horror_response()})
 	index = 0
 	choice_selected.emit(str(option.id))

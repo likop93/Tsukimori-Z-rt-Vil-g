@@ -109,3 +109,5 @@ Tulajdonosi kérés alapján tesztelési fejezetválasztó a főmenüben; kizár
 Tulajdonosi új vizuális kérés: Hana balra, Akira a beszélgetésekben, két eredeti névtelen páciens portréja, több Hana/Miyako képi reakció. Technikai staging és REVIEW cutoutok; LOCKED karakter-identitások, szöveg és döntések változatlanok. [Források és pontos promptok](DIALOGUE_PORTRAITS_REVIEW.md).
 
 Tulajdonosi kérés alapján karakterlapok/kapcsolati státusz, majd első éjszaka és rendelési nap. LOCKED dizájn/történeti döntést nem módosít. A III. fejezet két eredeti névtelen konzultációja technikai folytatásként szerepel; a Hana-első sorrend és Hana pontos vizsgálati szövege még tisztázandó. REVIEW környezetek, hiányzó fénykép-CG és páciens production assetek: [részletek](CHARACTERS_NIGHT_CLINIC_REVIEW.md). Inventory továbbra is későbbi feladat.
+
+2026-10-10 OWNER / REVIEW: egyéni elutasítási reakciók Miyako és Hana számára; menübeli képek és viselkedésleírások döntésfüggők. A képek megtartják a meglévő alakos kivágást, közeli arcképre nem váltanak. Részletek: CHARACTER_PRESSURE_REVIEW.md.

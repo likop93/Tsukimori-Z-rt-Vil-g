@@ -1,0 +1,42 @@
+extends "res://tests/ui/horror_progression_regression.gd"
+
+func _ready() -> void:
+	GameState.clear_runtime_state()
+	GameState.set_flag("met_miyako")
+	GameState.set_flag("met_hana")
+	var runner: Node = load("res://scenes/opening/opening.tscn").instantiate()
+	add_child(runner)
+	runner.skip_all()
+	await choose("res://data/home_day1/morning.json","withdraw")
+	check(GameState.character_stage("miyako") == 1 and GameState.character_stage("hana") == 0,"Personal rejection remains isolated")
+	await choose("res://data/home_day1/clinic_morning.json","clinical")
+	check(GameState.character_stage("miyako") == 1 and GameState.character_stage("hana") == 0,"General clinical stance is not personal rejection")
+	await choose("res://data/home_day2/miyako_afternoon.json","keep_distance")
+	check(GameState.character_stage("miyako") == 2,"Repeated Miyako rejection escalates")
+	await choose("res://data/home_day2/hana_arrival.json","ask_body")
+	await choose("res://data/home_day2/hana_memory.json","wait")
+	check(GameState.character_stage("hana") == 2,"Hana has her own escalation")
+	var entries := preload("res://scripts/ui/character_journal.gd").entries()
+	for id in ["miyako","hana"]:
+		var entry: Dictionary = entries.filter(func(item): return item.id == id)[0]
+		check(entry.reaction_stage == 2,"Journal tracks "+id)
+		check(ResourceLoader.exists(entry.portrait),"Portrait exists for "+id)
+		var image: Image = load(entry.portrait).get_image()
+		check(image.get_pixel(0,0).a < 0.1,"Portrait remains transparent")
+		runner.pause_menu.open_menu()
+		runner.pause_menu.show_characters()
+		runner.pause_menu.show_character(1 if id == "miyako" else 2)
+		await RenderingServer.frame_post_draw
+		get_viewport().get_texture().get_image().save_png("res://review/"+id+"_pressure_sheet_REVIEW.png")
+		runner.pause_menu.resume()
+	var pressure: int = GameState.character_pressure("hana")
+	GameState.record_distance("hana_memory","wait")
+	check(GameState.character_pressure("hana") == pressure,"Repeated callbacks do not escalate again")
+	GameState.clear_runtime_state()
+	GameState.set_flag("hana_cameo_seen")
+	entries = preload("res://scripts/ui/character_journal.gd").entries()
+	var unknown: Dictionary = entries.filter(func(item): return item.id == "hana")[0]
+	check(not unknown.known and not unknown.has("reaction_label"),"Unknown character does not reveal reaction data")
+	check(GameState.character_stage("hana") == 0 and GameState.character_stage("miyako") == 0,"Reset clears personal states")
+	print("CHARACTER_PRESSURE: "+JSON.stringify({"passed":failures.is_empty(),"failures":failures}))
+	get_tree().quit(0 if failures.is_empty() else 1)
