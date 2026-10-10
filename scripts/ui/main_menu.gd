@@ -158,7 +158,7 @@ func open_chapters() -> void:
 	chapter_buttons.clear()
 	var entries: Array[Dictionary] = preload("res://scripts/ui/chapter_catalog.gd").entries()
 	for i in entries.size():
-		chapter_buttons.append(button(modal,str(entries[i].title),Vector2(26,90+i*30),Vector2(448,28),launch_chapter.bind(str(entries[i].id))))
+		chapter_buttons.append(button(modal,str(entries[i].title),Vector2(26,82+i*27),Vector2(448,25),launch_chapter.bind(str(entries[i].id))))
 	chapter_buttons[0].grab_focus()
 
 func volume_changed(value: float) -> void:

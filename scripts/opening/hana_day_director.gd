@@ -37,6 +37,11 @@ func play(id: String) -> void:
 	vn.begin(data)
 
 func on_line(index: int) -> void:
+	if phase == "night_visitor":
+		var event := str(vn.lines[index].get("event",""))
+		var flags := {"dream_pool":"black_pool_dream_seen","wet_notebook":"wet_notebook_seen","visitor_seen":"night_visitor_glimpsed","visitor_named":"shion_name_heard","appointment":"shion_appointment_expected"}
+		if flags.has(event):
+			GameState.set_flag(flags[event])
 	if phase == "miyako_afternoon":
 		var event := str(vn.lines[index].get("event",""))
 		if event == "notebook_awakening":
@@ -102,6 +107,20 @@ func finish_dialogue() -> void:
 			GameState.set_flag("miyako_hana_afternoon_seen")
 			phase = "afternoon_complete"
 			show_end()
+		"night_visitor":
+			GameState.set_flag("night_visitor_complete")
+			phase = "visitor_complete"
+			show_end()
+
+func start_night_visitor(checkpoint := false) -> void:
+	if not checkpoint and (phase != "afternoon_complete" or not continue_armed or get_tree().paused):
+		return
+	if is_instance_valid(end_card):
+		end_card.queue_free()
+	set_location("clinic","Az éjszakai látogató")
+	runner.street.backdrop.modulate = Color(0.42,0.48,0.64)
+	runner.ambience.rain.stop()
+	play("night_visitor")
 
 func start_afternoon() -> void:
 	if phase != "hana_complete" or not continue_armed or get_tree().paused:
@@ -123,6 +142,8 @@ func show_end() -> void:
 	card.add_child(shade)
 	var title := Label.new()
 	title.text = "Hana első beszélgetése lezárult" if phase == "hana_complete" else "Késő délután\nA jel Akira csuklóján"
+	if phase == "visitor_complete":
+		title.text = "Az éjszakai látogató\nFolytatás: Shion időpontja"
 	title.position = Vector2(30,130)
 	title.size = Vector2(580,50)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -134,18 +155,21 @@ func show_end() -> void:
 	button.size = Vector2(170,38)
 	button.pressed.connect(chapter.return_to_main)
 	card.add_child(button)
-	if phase == "hana_complete":
+	if phase in ["hana_complete","afternoon_complete"]:
 		button.position.y = 277
 		continue_button = Button.new()
-		continue_button.text = "Késő délután · Miyako"
+		continue_button.text = "Késő délután · Miyako" if phase == "hana_complete" else "Az éjszakai látogató"
 		continue_button.position = Vector2(180,225)
 		continue_button.size = Vector2(280,38)
 		continue_button.disabled = true
-		continue_button.pressed.connect(start_afternoon)
+		if phase == "hana_complete":
+			continue_button.pressed.connect(start_afternoon)
+		else:
+			continue_button.pressed.connect(start_night_visitor)
 		card.add_child(continue_button)
 
 func advance(_delta: float) -> void:
-	if phase == "hana_complete" and not continue_armed:
+	if phase in ["hana_complete","afternoon_complete"] and not continue_armed:
 		if not Input.is_action_pressed("observe") and not Input.is_key_pressed(KEY_SPACE) and not Input.is_key_pressed(KEY_ENTER) and not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			continue_armed = true
 			continue_button.disabled = false

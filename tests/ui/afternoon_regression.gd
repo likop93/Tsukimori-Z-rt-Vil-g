@@ -30,6 +30,10 @@ func _ready() -> void:
 	check(day.phase == "afternoon_complete","Full afternoon ends on its own card")
 	check(GameState.has_flag("miyako_hana_afternoon_seen") and GameState.has_flag("akira_wrist_mark_seen") and GameState.has_flag("katsuro_notebook_awakening_seen"),"Story flags committed at their events")
 	check(GameState.aff_hana == 0 and GameState.aff_miyako == 0,"Linear scene awards no invented relationship points")
+	day.advance(0.0)
+	day.continue_button.pressed.emit()
+	await get_tree().process_frame
+	check(day.phase == "night_visitor","Afternoon continues into night visitor")
 	GameState.clear_runtime_state()
 	check(not GameState.has_flag("akira_wrist_mark_seen"),"New game clears afternoon flags")
 	print("AFTERNOON: "+JSON.stringify({"passed":failures.is_empty(),"failures":failures}))

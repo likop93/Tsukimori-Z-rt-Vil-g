@@ -38,7 +38,7 @@ func _ready() -> void:
 		await get_tree().process_frame
 		menu.chapters_button.grab_focus()
 		await key(KEY_ENTER)
-		check(is_instance_valid(menu.modal) and menu.chapter_buttons.size() == 6,"Selector exposes implemented checkpoints")
+		check(is_instance_valid(menu.modal) and menu.chapter_buttons.size() == 7,"Selector exposes implemented checkpoints")
 		check(get_viewport().gui_get_focus_owner() == menu.chapter_buttons[0],"First chapter receives keyboard focus")
 		check(GameState.aff_hana == 99 and GameState.has_flag("stale_test_flag"),"Opening selector does not mutate current session")
 		for button in menu.chapter_buttons:
@@ -82,7 +82,9 @@ func _ready() -> void:
 				check(GameState.has_flag("first_day_complete") and not GameState.has_flag("met_hana"),"Hana chapter has prior day but no invented meeting")
 				check(GameState.miyako_morning_choice == "withdraw" and GameState.clinic_first_choice == "clinical","Skipped choices use canonical zero-point defaults")
 				check(GameState.aff_miyako == 0 and GameState.akira_gyogyulas == 0,"Skipped choices grant no affinity or healing")
-		if id in ["miyako","night","clinic","hana"]:
+		if id == "visitor":
+			check(runner.arrival.next_day.phase == "night_visitor","Visitor starts at the new night scene")
+		if id in ["miyako","night","clinic","hana","visitor"]:
 			runner.pause_menu.open_menu()
 			check(get_tree().paused,"Pause works after direct chapter entry")
 			runner.pause_menu.resume()

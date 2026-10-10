@@ -8,6 +8,7 @@ static func entries() -> Array[Dictionary]:
 		{"id":"night","title":"II. Az első éjszaka"},
 		{"id":"clinic","title":"III. Az első rendelési nap"},
 		{"id":"hana","title":"IV. Hana · első beszélgetés"},
+		{"id":"visitor","title":"IV. Az éjszakai látogató"},
 	]
 
 static func valid(id: String) -> bool:
@@ -44,6 +45,9 @@ static func prepare(id: String) -> bool:
 	GameState.clinic_first_choice = "clinical"
 	for flag in ["miyako_morning_seen","flag_miyako_tavolsag","flag_klinikai_tavolsag","first_clinic_day_started","first_day_consultation_1_seen","first_day_consultation_2_seen","first_clinic_day_seen","katsuro_clinic_notebook_seen","miyako_first_day_evening_seen","hana_name_heard","first_day_complete"]:
 		GameState.set_flag(flag)
+	if id == "visitor":
+		for flag in ["met_hana","hana_first_session_seen","miyako_hana_afternoon_seen","akira_wrist_mark_seen","katsuro_notebook_awakening_seen"]:
+			GameState.set_flag(flag)
 	return true
 
 static func enter(runner: Node, id: String) -> void:
@@ -80,3 +84,6 @@ static func enter(runner: Node, id: String) -> void:
 		chapter.begin_first_day()
 	elif id == "hana":
 		chapter.begin_hana_day()
+	elif id == "visitor":
+		chapter.begin_hana_day()
+		chapter.next_day.start_night_visitor(true)

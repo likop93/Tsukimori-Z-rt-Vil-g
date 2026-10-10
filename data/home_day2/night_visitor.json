@@ -1,0 +1,307 @@
+{
+  "id": "night_visitor",
+  "source": "canonical_html_story.rpy / chapter IV / Az éjszakai látogató; original text, wrapped only",
+  "portrait": true,
+  "portrait_speaker": "Miyako",
+  "portrait_side": "left",
+  "portrait_facing": "left",
+  "portrait_path": "res://assets/opening/vn_portraits/miyako_worried_v1_REVIEW.png",
+  "akira_portrait_path": "res://assets/opening/vn_portraits/akira_neutral_v1_REVIEW.png",
+  "lines": [
+    {
+      "speaker": "",
+      "text": "Akira azon az éjszakán mégsem maradt a szobájában. Sokáig feküdt mozdulatlanul, a takaró fölött tartva a jobb kezét, és a csuklóján megjelent öt sötét",
+      "cg": "res://assets/home_day1/akira_room_REVIEW.png",
+      "expression": "worried",
+      "cg_tint": "#6b7aa3"
+    },
+    {
+      "speaker": "",
+      "text": "vonalat figyelte.",
+      "cg": "res://assets/home_day1/akira_room_REVIEW.png",
+      "expression": "worried",
+      "cg_tint": "#6b7aa3"
+    },
+    {
+      "speaker": "",
+      "text": "A jel nem halványult. Nem emelkedett ki a bőrből, nem vérzett, mégis idegennek érezte — mintha nem a felszínén lenne, hanem mélyebben, az erei és az",
+      "cg": "res://assets/home_day1/akira_room_REVIEW.png",
+      "expression": "worried",
+      "cg_tint": "#6b7aa3"
+    },
+    {
+      "speaker": "",
+      "text": "idegei között. Időnként lüktetett, mindig akkor, amikor a szél nekifeszült a ház falának.",
+      "cg": "res://assets/home_day1/akira_room_REVIEW.png",
+      "expression": "worried",
+      "cg_tint": "#6b7aa3"
+    },
+    {
+      "speaker": "",
+      "text": "Akira megpróbált aludni, de valahányszor lehunyta a szemét, vizet látott. Nem folyót vagy tengert — egy sekély, fekete medencét, amelynek felszínén",
+      "cg": "res://assets/home_day1/akira_room_REVIEW.png",
+      "expression": "worried",
+      "cg_tint": "#6b7aa3"
+    },
+    {
+      "speaker": "",
+      "text": "nem tükröződött az ég.",
+      "cg": "res://assets/home_day1/akira_room_REVIEW.png",
+      "expression": "worried",
+      "cg_tint": "#6b7aa3"
+    },
+    {
+      "speaker": "",
+      "text": "A víz közepén egy gyermek állt háttal neki. Vékony vállát fehér ruha takarta, hosszú, sötét haja nedvesen tapadt a hátára. Akira szólt hozzá, de a",
+      "cg": "res://assets/home_day2/night_dream_pool_REVIEW.png",
+      "expression": "worried",
+      "event": "dream_pool"
+    },
+    {
+      "speaker": "",
+      "text": "saját hangja nem jutott el a gyermekig.",
+      "cg": "res://assets/home_day2/night_dream_pool_REVIEW.png",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "A lány lassan megfordult. Az arcát nem látta — csak két zöld szemet. Ugyanolyan zöldet, amilyenné az övé kezdett válni.",
+      "cg": "res://assets/home_day2/night_dream_pool_REVIEW.png",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Akira felriadt. A szoba sötét volt, a szél elült. Mégis valami halk, szabályos hang érkezett a folyosóról. Cseppenés. Szünet. Újabb cseppenés.",
+      "cg": "res://assets/home_day1/akira_room_REVIEW.png",
+      "expression": "worried",
+      "cg_tint": "#6b7aa3"
+    },
+    {
+      "speaker": "",
+      "text": "Túl közeli hang volt ahhoz, hogy az eső okozza. Akira felvette az ingét, és óvatosan elindult felé — a padló most nem recsegett alatta, mintha a ház",
+      "cg": "res://assets/home_day1/akira_room_REVIEW.png",
+      "expression": "worried",
+      "cg_tint": "#6b7aa3"
+    },
+    {
+      "speaker": "",
+      "text": "maga segítené, hogy észrevétlenül haladjon.",
+      "cg": "res://assets/home_day1/akira_room_REVIEW.png",
+      "expression": "worried",
+      "cg_tint": "#6b7aa3"
+    },
+    {
+      "speaker": "",
+      "text": "A rendelő ajtaja résnyire nyitva állt, pedig biztos volt benne, hogy Miyako este bezárta. A szoba üres volt — de Katsuro névtelen füzete nyitva feküdt",
+      "cg": "res://assets/home_day1/clinic_REVIEW.png",
+      "expression": "worried",
+      "cg_tint": "#6b7aa3",
+      "event": "wet_notebook"
+    },
+    {
+      "speaker": "",
+      "text": "a padlón, a lapjai nedvesek.",
+      "cg": "res://assets/home_day1/clinic_REVIEW.png",
+      "expression": "worried",
+      "cg_tint": "#6b7aa3"
+    },
+    {
+      "speaker": "",
+      "text": "A tatamin apró vízcseppek húzódtak végig a könyvespolctól az ablakig. Nem lábnyomok voltak — inkább egy keskeny ösvény, mintha valaki vizes hajából",
+      "cg": "res://assets/home_day1/clinic_REVIEW.png",
+      "expression": "worried",
+      "cg_tint": "#6b7aa3"
+    },
+    {
+      "speaker": "",
+      "text": "hullottak volna a padlóra. A nyomok az ablaknál értek véget.",
+      "cg": "res://assets/home_day1/clinic_REVIEW.png",
+      "expression": "worried",
+      "cg_tint": "#6b7aa3"
+    },
+    {
+      "speaker": "",
+      "text": "Akira széthúzta a függönyt. A kertben, a kis kőmedence mellett egy nő állt. Halvány szürke-zöld kimonót viselt, fekete haja egyenesen hullott a",
+      "cg": "res://assets/home_day2/shion_pond_night_REVIEW.png",
+      "expression": "worried",
+      "event": "visitor_seen"
+    },
+    {
+      "speaker": "",
+      "text": "vállára, arca sápadt volt a holdfényben.",
+      "cg": "res://assets/home_day2/shion_pond_night_REVIEW.png",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Nem a ház felé nézett. A víz felszínét figyelte.",
+      "cg": "res://assets/home_day2/shion_pond_night_REVIEW.png",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "A nő lassan felemelte a fejét. Zöld szeme volt. Akira csuklóján a jel égetni kezdett — egyetlen pillanatra a kert eltűnt előle, és ismét a fekete",
+      "cg": "res://assets/home_day2/shion_pond_night_REVIEW.png",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "vizet, a gyermeket látta nedves hajjal, fehér ruhában.",
+      "cg": "res://assets/home_day2/shion_pond_night_REVIEW.png",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "A látomás olyan gyorsan múlt el, ahogy érkezett. A kert újra a helyén volt. De a nő eltűnt.",
+      "cg": "res://assets/home_day1/clinic_REVIEW.png",
+      "expression": "worried",
+      "cg_tint": "#6b7aa3"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Akira?",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Miyako hangja közvetlenül mögötte szólalt meg. Sötét köntösben állt a rendelő ajtajában — az arcán nem harag látszott, inkább rémület.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Azt mondtam, ne hagyd el a szobádat.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Valaki volt a kertben. Egy nő. Fekete haj, világos kimonó. A medencénél állt.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Látta az arcodat?",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Nem tudom.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Hozzád szólt?",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Nem.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Miyako gyorsan odalépett az ablakhoz, becsukta és reteszelte.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Ki volt az?",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Shion.",
+      "cg": "",
+      "expression": "worried",
+      "event": "visitor_named"
+    },
+    {
+      "speaker": "",
+      "text": "A név ismerősen csengett. Akira tudta, hogy már hallotta — Miyako mappái között, és talán az első éjszaka, amikor a ház is suttogott róla.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Ő is páciens lesz?",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Katsuróé volt. Holnapra kért időpontot.",
+      "cg": "",
+      "expression": "worried",
+      "event": "appointment"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Akkor miért jött ide éjjel?",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Lehet, hogy nem is jött.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Láttam.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Elhiszem. Shionnal kapcsolatban néha nehéz eldönteni, mi történt meg valójában, és mire csak valaki emlékszik úgy, mintha megtörtént volna.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Miyako leguggolt a vizes füzet mellé, anélkül hogy megérintette volna. A nyitott oldalon Katsuro kézírása állt, a tinta több helyen elmosódott, de egy",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "mondat még olvasható maradt: „A víz nem őrzi meg a neveket. Csak azt, amit a nevük előtt éreztünk.” Az oldal alján egy gyermek halvány kézlenyomata",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "rajzolódott ki.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Menj vissza aludni.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Nem fogok.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Akkor legalább ne maradj egyedül. Maradj a konyhában — főzök teát.",
+      "cg": "",
+      "expression": "worried"
+    }
+  ]
+}

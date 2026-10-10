@@ -167,6 +167,7 @@ func show_line() -> void:
 		cg.size = Vector2(640,360)*zoom
 		cg.position = (Vector2(640,360)-cg.size)*Vector2(0.5,1.0)
 	cg.visible = not cg_path.is_empty()
+	cg.modulate = Color(str(lines[index].get("cg_tint","#ffffff")))
 	portrait.visible = portraits_enabled and not cg.visible
 	akira_portrait.visible = portraits_enabled and akira_enabled and not cg.visible
 	var expression := str(lines[index].get("expression",""))
