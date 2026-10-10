@@ -5,6 +5,9 @@ var chapter: Node
 var phase := "night_notebook"
 var vn: CanvasLayer
 var met_at_line := -1
+var end_card: Control
+var continue_button: Button
+var continue_armed := false
 
 func begin() -> void:
 	GameState.set_flag("hana_day_started")
@@ -34,6 +37,19 @@ func play(id: String) -> void:
 	vn.begin(data)
 
 func on_line(index: int) -> void:
+	if phase == "miyako_afternoon":
+		var event := str(vn.lines[index].get("event",""))
+		if event == "notebook_awakening":
+			GameState.set_flag("katsuro_notebook_awakening_seen")
+			runner.street.backdrop.modulate = Color(0.68,0.72,0.85)
+		elif event == "wrist_mark":
+			GameState.set_flag("akira_wrist_mark_seen")
+		elif event == "knock":
+			chapter.night_cue.stream = runner.ambience.make_effect("wood")
+			chapter.night_cue.volume_db = -27
+			chapter.night_cue.play()
+		elif event == "window_whisper":
+			runner.ambience.rain.stop()
 	if phase == "hana_arrival" and index >= met_at_line and met_at_line >= 0:
 		GameState.set_flag("met_hana")
 
@@ -82,17 +98,31 @@ func finish_dialogue() -> void:
 			GameState.set_flag("hana_first_session_seen")
 			phase = "hana_complete"
 			show_end()
+		"miyako_afternoon":
+			GameState.set_flag("miyako_hana_afternoon_seen")
+			phase = "afternoon_complete"
+			show_end()
+
+func start_afternoon() -> void:
+	if phase != "hana_complete" or not continue_armed or get_tree().paused:
+		return
+	end_card.queue_free()
+	set_location("clinic","Késő délután · Miyako")
+	runner.street.backdrop.modulate = Color(0.82,0.76,0.78)
+	play("miyako_afternoon")
 
 func show_end() -> void:
 	chapter.hide_actors()
 	var card := Control.new()
+	end_card = card
+	continue_armed = false
 	chapter.presentation.add_child(card)
 	var shade := ColorRect.new()
 	shade.size = Vector2(640,360)
 	shade.color = Color(0.01,0.02,0.04,0.85)
 	card.add_child(shade)
 	var title := Label.new()
-	title.text = "Hana első beszélgetése lezárult"
+	title.text = "Hana első beszélgetése lezárult" if phase == "hana_complete" else "Késő délután\nA jel Akira csuklóján"
 	title.position = Vector2(30,130)
 	title.size = Vector2(580,50)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -104,6 +134,19 @@ func show_end() -> void:
 	button.size = Vector2(170,38)
 	button.pressed.connect(chapter.return_to_main)
 	card.add_child(button)
+	if phase == "hana_complete":
+		button.position.y = 277
+		continue_button = Button.new()
+		continue_button.text = "Késő délután · Miyako"
+		continue_button.position = Vector2(180,225)
+		continue_button.size = Vector2(280,38)
+		continue_button.disabled = true
+		continue_button.pressed.connect(start_afternoon)
+		card.add_child(continue_button)
 
 func advance(_delta: float) -> void:
-	pass
+	if phase == "hana_complete" and not continue_armed:
+		if not Input.is_action_pressed("observe") and not Input.is_key_pressed(KEY_SPACE) and not Input.is_key_pressed(KEY_ENTER) and not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			continue_armed = true
+			continue_button.disabled = false
+			continue_button.grab_focus()

@@ -1,0 +1,193 @@
+{
+  "id": "miyako_afternoon",
+  "source": "canonical_html_story.rpy / chapter IV / Késő délután; text unchanged, wrapped only",
+  "portrait": true,
+  "portrait_speaker": "Miyako",
+  "portrait_side": "left",
+  "portrait_facing": "left",
+  "portrait_path": "res://assets/opening/vn_portraits/miyako_worried_v1_REVIEW.png",
+  "akira_portrait_path": "res://assets/opening/vn_portraits/akira_doctor_v1_REVIEW.png",
+  "portrait_variants": {
+    "worried": "res://assets/opening/vn_portraits/miyako_worried_v1_REVIEW.png",
+    "surprised": "res://assets/opening/vn_portraits/miyako_surprised_v1_REVIEW.png",
+    "warm": "res://assets/opening/vn_portraits/miyako_warm_v1_REVIEW.png"
+  },
+  "lines": [
+    {
+      "speaker": "",
+      "text": "Miyako késő délután tért vissza. Amikor belépett a rendelőbe, egyetlen pillantással észrevette az asztalon fekvő nyitott füzetet.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Hana megmutatta a jelet?",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Igen.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Mit mondott róla?",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Hogy a szentélynél jelent meg rajta. Egy lány társaságában, akire azóta senki nem emlékszik.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Miyako mozdulata megállt.",
+      "expression": "surprised"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Milyen lány?",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Hana sem emlékszik már a nevére.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Katsuro egyszer kérdezett tőlem egy eltűnt lányról. Azt hittem, valamelyik régi falusi történetet kutatja.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Mit tudott róla?",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Csak egy nevet mondott.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Mire emlékszel?",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Miyako arca elsápadt.",
+      "expression": "surprised"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Semmire. Tudom, hogy kimondta. De magára a névre nem emlékszem.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "A szoba ismét lehűlt. A névtelen füzet, amelybe Katsuro Hana megfigyeléseit írta, magától kinyílt. A lapok gyorsan peregni kezdtek, noha az ablakok",
+      "expression": "worried",
+      "cg": "res://assets/home_day2/notebook_awakening_v1_REVIEW.png",
+      "event": "notebook_awakening"
+    },
+    {
+      "speaker": "",
+      "text": "zárva voltak.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Végül egy üres oldalnál álltak meg. A papír közepén lassan nedves folt jelent meg. A víz szétterült a rostok között, majd vékony vonalakká",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "rendeződött. Egy név kezdett kirajzolódni.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Az első jel még felismerhető volt. A második már elmosódott. Mire a teljes név megjelenhetett volna, a lap feketévé vált, és finom repedés futott",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "végig rajta.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "A ház mélyéről ekkor női nevetés hallatszott. Nem Hana hangja volt.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Akira csuklója égetni kezdett. Amikor lenézett, öt vékony, sötét vonalat látott a bőrén — egy félig szétnyitott legyező bordáit.",
+      "expression": "worried",
+      "cg": "",
+      "event": "wrist_mark"
+    },
+    {
+      "speaker": "",
+      "text": "Miyako megragadta a kezét. Ezúttal Akira nem húzódott el.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Ez eddig nem volt ott.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Tudom.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Akira... mit csinált veled Hana?",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Semmit.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "A válasz gyorsabban érkezett, mint kellett volna. Miyako felnézett rá — a tekintetében nem féltékenységet látott, hanem valami régebbi félelmet.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Mintha nem attól tartana, hogy Hana elvett tőle valamit, hanem attól, hogy egy régi folyamat újra elkezdődött.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "A ház alatt halk koppanás hallatszott. Egyszer. Majd még egyszer. Mintha valaki belülről ütötte volna meg a padlót.",
+      "expression": "worried",
+      "event": "knock"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Ma éjjel ne menj ki a szobádból.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Miért?",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Katsuro is ezzel kezdte. Azzal, hogy mások jelei megjelentek rajta.",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Odakint elállt az eső. A szél azonban tovább fújt. És a kert felől, közvetlenül a bezárt ablak mögül, egy női hang suttogta Akira nevét.",
+      "expression": "worried",
+      "event": "window_whisper"
+    }
+  ]
+}

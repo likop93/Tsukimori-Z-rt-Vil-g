@@ -21,13 +21,14 @@ func build_presentation() -> void:
 	paper.set_border_width_all(6)
 	photo_back.add_theme_stylebox_override("panel",paper)
 	presentation.add_child(photo_back)
-	var caption := Label.new()
-	caption.text = "FÉNYKÉP\nAkira és Katsuro"
-	caption.position = Vector2(20,55)
-	caption.size = Vector2(260,65)
-	caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	caption.add_theme_color_override("font_color",Color("#453d35"))
-	caption.add_theme_font_size_override("font_size",21)
+	var caption := TextureRect.new()
+	caption.texture = preload("res://assets/home_day1/akira_katsuro_photo_v1_REVIEW.png")
+	caption.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	caption.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	caption.position = Vector2(6,6)
+	caption.size = Vector2(288,158)
+	caption.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	caption.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	photo_back.add_child(caption)
 	photo_back.hide()
 	night_cue = AudioStreamPlayer.new()
