@@ -29,6 +29,18 @@ func _ready() -> void:
 	await choose("res://data/home_day2/hana_arrival.json","ask_body")
 	await choose("res://data/home_day2/hana_memory.json","wait")
 	check(GameState.character_stage("hana") == 2,"Hana has her own escalation")
+	check(GameState.character_response("hana").text.contains("Így maradjak?"),"Hana seeks approval rather than demands compliance")
+	var hana_vn := preload("res://scripts/ui/vn_dialogue.gd").new()
+	add_child(hana_vn)
+	var hana_data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/home_day2/hana_arrival.json"))
+	hana_vn.begin(hana_data)
+	for expression in ["neutral","warm","guarded","sad"]:
+		hana_vn.lines[0]["expression"] = expression
+		hana_vn.index = 0
+		hana_vn.show_line()
+		check(hana_vn.portrait.texture.resource_path.ends_with("hana_transformed_deferential_v1_REVIEW.png"),"Hana transformation persists across "+expression)
+	hana_vn.queue_free()
+	await get_tree().process_frame
 	var entries := preload("res://scripts/ui/character_journal.gd").entries()
 	for id in ["miyako","hana"]:
 		var entry: Dictionary = entries.filter(func(item): return item.id == id)[0]

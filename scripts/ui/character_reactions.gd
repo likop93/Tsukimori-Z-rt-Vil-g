@@ -8,8 +8,8 @@ static func profile(id: String) -> Dictionary:
 			"description":["Távolságtartó nyugalommal figyel.","Számon tartja a visszahúzódásodat. A mosolya túl sokáig marad az arcán.","Haja ezüstösre világosodik, szeme jégkékké válik, alakja a ruha alatt is teltebb. Mániákus mosollyal figyel; gondoskodása egyre követelőzőbb."][stage],
 			"portrait":BASE+["miyako_cutout_v1_REVIEW.png","miyako_possessive_v1_REVIEW.png","miyako_transformed_manic_v1_REVIEW.png"][stage]}
 	if id == "hana":
-		return {"stage":stage, "label":["Magabiztos","Sértett","Követelőző"][stage],
-			"description":["Közvetlenül, magabiztosan közeledik.","A mosolya megfeszül. Élesebb megjegyzésekkel próbál reakciót kiváltani.","A provokáció nyílt számonkérésbe fordul. Türelmetlenebb, és nem hagyja könnyen elengedni a témát."][stage],
-			"portrait":BASE+["hana_neutral_v1_REVIEW.png","hana_guarded_v1_REVIEW.png","hana_demanding_v1_REVIEW.png"][stage]}
+		return {"stage":stage, "label":["Magabiztos","Elbizonytalanodó","Alárendelődő"][stage],
+			"description":["Közvetlenül, magabiztosan közeledik.","Elakad a megszokott magabiztossága. Óvatosabban beszél, és a jóváhagyásodat keresi.","Teste teltebbé válik, miközben visszahúzódik. Kezeit összefogva vár, minden apró döntéshez az engedélyedet keresi. A túlzott alkalmazkodás szokatlan, nyugtalanító változás."][stage],
+			"portrait":BASE+["hana_neutral_v1_REVIEW.png","hana_guarded_v1_REVIEW.png","hana_transformed_deferential_v1_REVIEW.png"][stage]}
 	return {}
 

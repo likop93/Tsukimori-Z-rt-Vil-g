@@ -173,7 +173,7 @@ func show_line() -> void:
 	if portrait_variants.has(expression):
 		set_partner_texture(str(portrait_variants[expression]))
 	var partner_id := portrait_speaker.to_lower()
-	var transformed := partner_id == "miyako" and GameState.character_stage(partner_id) >= 2
+	var transformed := partner_id in ["miyako","hana"] and GameState.character_stage(partner_id) >= 2
 	if transformed or (GameState.character_stage(partner_id) > 0 and expression in ["","neutral","smile","warm"]):
 		var mood := preload("res://scripts/ui/character_reactions.gd").profile(partner_id)
 		if not mood.is_empty():

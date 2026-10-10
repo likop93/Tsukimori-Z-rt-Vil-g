@@ -43,7 +43,7 @@ func character_response(character: String) -> Dictionary:
     if character == "miyako":
         return {"speaker":"Miyako", "text":"Már megint távolabb húzódsz. Attól még észreveszem, ha valami történik veled." if stage == 2 else "Visszahúztad a kezed. Észrevettem, Akira.", "pressure_actor":character}
     if character == "hana":
-        return {"speaker":"Hana", "text":"Ne döntsön helyettem, doktor. Ha egyszer kérdez, maradjon is itt a válaszomhoz." if stage == 2 else "Maga nagyon ügyesen tart távol mindent. Engem is.", "pressure_actor":character}
+        return {"speaker":"Hana", "text":"Jól van… megvárom, amíg szól. Így maradjak? Csak mondja meg, doktor, mi lenne jó." if stage == 2 else "Talán túl közvetlen voltam. Mondja, ha inkább csendben maradjak.", "pressure_actor":character}
     return {}
 
 func horror_level() -> int:
