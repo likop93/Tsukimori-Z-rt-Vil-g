@@ -21,3 +21,18 @@ Edit the attached adult Hana game character illustration. Keep the exact existin
 ## Validation
 
 Godot regression covers independent character stages, actual dialogue choices, duplicate callbacks, journal textures/alpha, unknown-character privacy and reset. Hana narrative regression passed with persistent reaction override. All art remains REVIEW pending owner review.
+## 2026-10-10 owner-directed Miyako transformation — REVIEW
+
+Owner explicitly requested lighter hair, blue eyes, increased bust and a developing manic smile. This is an alternate supernatural state, not a replacement of Miyako's baseline design. Stage 1 uses the restrained possessive smile; stage 2 after repeated personal rejection uses miyako_transformed_manic_v1_REVIEW.png. Same body framing, opaque mourning outfit, pose and identity. Dialogue and journal share the state. Stage 2 overrides old expression textures to avoid dark-hair/brown-eye reversions. Separate transformed expression variants and state-aware story CGs are not yet produced; fixed story illustrations remain their existing art.
+
+Provider: built-in ImageGen. First edit reference: miyako_possessive_v1_REVIEW.png. Second edit reference: generated exec-2ac00aff-ca5a-4c8b-aa5d-3dfcce4c1719.png. Final generated output: exec-4f386976-e225-4250-94c5-b09300107c57.png, copied into assets/opening/vn_portraits/miyako_transformed_manic_v1_REVIEW.png. Both calls requested transparent_background=true.
+
+Exact first prompt:
+
+Edit target: attached adult Miyako VN game illustration. Create her supernatural transformation variant after repeated rejection. Her dark brown hair is turning pale ash-silver: prominent silver locks around her face and through the length, darker roots still visible. Both irises are clearly icy blue, with natural pupils and no beams of light. Her bust is visibly fuller beneath the same fully opaque high-neck black mourning kimono, with believable adjusted fabric folds. Keep her face identity, mature adult age, restrained unsettling expression, gold hair ornaments, pose and hands, waist, lower body and clothing design. Keep EXACTLY the same head-to-lower-body framing and illustration style as the input; no close-up crop. She is fully clothed. Transparent alpha background, no backdrop, no text or frame. A single character, production REVIEW variant.
+
+Exact smile refinement prompt:
+
+Edit the attached adult Miyako supernatural transformation game portrait. Change only the face expression: a visibly manic, unsettling wide smile, slightly parted lips showing a small line of normal teeth, lifted corners that look unnaturally persistent, wide intent icy blue eyes fixed on the viewer. Human face, recognizable identity, no monster teeth. Preserve all other details exactly: silver-streaked hair with dark roots, gold ornaments, fully opaque high-neck black kimono, fuller bust beneath the clothing, hands, pose, body proportions, illustration style and the same head-to-lower-body framing. Transparent alpha background. Do not crop or zoom in. No text or border.
+
+Validation: character_pressure regression passes, including actual repeated rejection, journal alpha, reset, isolation, and transformed portrait persistence through neutral/warm/worried/sad expression requests. In-game dialogue and menu screenshots inspected. Existing Godot ObjectDB shutdown warning remains.

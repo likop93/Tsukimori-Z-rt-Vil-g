@@ -13,6 +13,19 @@ func _ready() -> void:
 	check(GameState.character_stage("miyako") == 1 and GameState.character_stage("hana") == 0,"General clinical stance is not personal rejection")
 	await choose("res://data/home_day2/miyako_afternoon.json","keep_distance")
 	check(GameState.character_stage("miyako") == 2,"Repeated Miyako rejection escalates")
+	var transformed_vn := preload("res://scripts/ui/vn_dialogue.gd").new()
+	add_child(transformed_vn)
+	var afternoon: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/home_day2/miyako_afternoon.json"))
+	transformed_vn.begin(afternoon)
+	for expression in ["neutral","warm","worried","sad"]:
+		transformed_vn.lines[0]["expression"] = expression
+		transformed_vn.index = 0
+		transformed_vn.show_line()
+		check(transformed_vn.portrait.texture.resource_path.ends_with("miyako_transformed_manic_v1_REVIEW.png"),"Transformation persists across "+expression)
+	await RenderingServer.frame_post_draw
+	get_viewport().get_texture().get_image().save_png("res://review/miyako_transformed_dialogue_REVIEW.png")
+	transformed_vn.queue_free()
+	await get_tree().process_frame
 	await choose("res://data/home_day2/hana_arrival.json","ask_body")
 	await choose("res://data/home_day2/hana_memory.json","wait")
 	check(GameState.character_stage("hana") == 2,"Hana has her own escalation")
