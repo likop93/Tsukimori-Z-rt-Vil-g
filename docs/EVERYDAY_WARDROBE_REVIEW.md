@@ -1,5 +1,7 @@
 # Everyday wardrobe — REVIEW
 
+Latest owner approval, 2026-10-10: V2's visibly slimmer, more feminine Hana is accepted as the transformation direction. Earlier instructions to preserve/increase fullness below are historical generation records, superseded for future transformed assets. Keep deferential behavior and original baseline identity. Matching kimono variants and story-integrated wardrobe transitions remain to be produced.
+
 2026-10-10 owner request: Hana may wear a top and denim shorts, contrasting with her traditional outfit; all women may receive individual everyday clothing over time.
 
 Hana asset: assets/opening/vn_portraits/hana_casual_deferential_v1_REVIEW.png. Reference: hana_transformed_deferential_v1_REVIEW.png. Built-in ImageGen; transparent_background=true. Output exec-a579e8ba-496e-4ba9-af2c-02ddb8459837.png. Fuller transformed build and hesitant pose retained, burgundy top and knee-length denim shorts. Kimono retained. This is a REVIEW wardrobe alternate, not a replacement baseline.

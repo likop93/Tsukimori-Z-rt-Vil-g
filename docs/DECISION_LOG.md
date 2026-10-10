@@ -117,3 +117,5 @@ Tulajdonosi kérés alapján karakterlapok/kapcsolati státusz, majd első éjsz
 2026-10-10 OWNER / REVIEW: Hana elutasítási fejlődése felülírja a korábbi követelőző irányt: teltebb test és egyre alárendelődő, jóváhagyást kereső viselkedés, az alap magabiztosság ellentéteként. Zártabb ruhás alternatív portré REVIEW; alapdesign változatlan. CHARACTER_PRESSURE_REVIEW.md.
 
 2026-10-10 OWNER / REVIEW: hétköznapi ruhatár idővel minden nőnek, egyéni karakterjegyekkel. Első Hana-alternatíva: bordó top és farmer rövidnadrág, karakterlapi előnézet. Kimonó megmarad, történeti ruhaváltás későbbi jelenethez kötendő. EVERYDAY_WARDROBE_REVIEW.md.
+
+2026-10-10 OWNER APPROVED / SUPERSEDES: Hana átalakulásakor karcsúbb és nőiesebb lesz; a hétköznapi V2 kép erre elfogadott referencia. A korábbi nagyobb/teltebb átalakulási testirány visszavonva. Alárendelődő viselkedés megmarad. Alapdesign változatlan. A korábbi kimonós változat arányait később ehhez kell igazítani.

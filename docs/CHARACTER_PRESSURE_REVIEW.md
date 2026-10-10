@@ -1,5 +1,7 @@
 # Character pressure — REVIEW
 
+Latest owner revision, 2026-10-10: Hana's slimmer, softer, more feminine transformed appearance in hana_casual_deferential_v2_REVIEW.png is explicitly accepted. This supersedes earlier larger/fuller-body transformation requirements below. Deferential, approval-seeking behavior remains. Baseline design is unchanged. Existing fuller kimono transformation is transitional art awaiting alignment; do not use it as the future body-proportion target. See CHARACTER_BIBLE.md.
+
 2026-10-10. Owner request: rejection and professional boundaries gradually increase horror, with individual behavior and menu portraits. Portrait variants retain existing body-length framing; headshot fallback rejected and not used.
 
 Miyako: withdrawn hand + afternoon request for solitude. Controlled observation develops into possessive insistence. Hana: clinical question + waiting during memory; wounded pride develops into demanding remarks. Each has three stages derived from unique decision events. General clinical distance increases atmosphere without assigning rejection to a specific woman. Reset clears stages; unknown characters reveal no reaction data. Existing relationship points are unchanged.

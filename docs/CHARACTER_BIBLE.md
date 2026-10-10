@@ -256,6 +256,12 @@ Alapelv:
 
 # Hana
 
+## Átalakulási irány — OWNER APPROVED, 2026-10-10
+
+Az átalakult Hana karcsúbb, lágyabb, nőiesebb megjelenése elfogadott irány. Ez kifejezetten felülírja a korábbi, átalakuláskor nagyobb/teltebb testre vonatkozó kérést. Viselkedése az alap magabiztosság ellentéteként elbizonytalanodó, majd alárendelődő és jóváhagyást kereső. A viselkedés és a testalkat együtt a karakter saját természetfeletti változása, nem általános összefüggés.
+
+Az elfogadott átalakulási vizuális referencia: `assets/opening/vn_portraits/hana_casual_deferential_v2_REVIEW.png` (bordó nőies top, magas derekú farmer rövidnadrág). Az eredeti Hana alapdesignja megmarad. A korábbi teltebb kimonós átalakulási asset átmeneti REVIEW; későbbi változatait a karcsúbb irányhoz kell igazítani. A hétköznapi ruhaváltás történeti bevezetése még hátralévő munka.
+
 ## Identitás
 
 - felnőtt nő;
