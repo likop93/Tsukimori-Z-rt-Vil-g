@@ -37,6 +37,10 @@ func play(id: String) -> void:
 	vn.begin(data)
 
 func on_line(index: int) -> void:
+	if phase.begins_with("shion_"):
+		var event := str(vn.lines[index].get("event",""))
+		if event in ["met_shion","shion_eye_recognition_seen","shion_tape_found","shion_shared_memory_seen"]:
+			GameState.set_flag(event)
 	if phase == "night_visitor":
 		var event := str(vn.lines[index].get("event",""))
 		var flags := {"dream_pool":"black_pool_dream_seen","wet_notebook":"wet_notebook_seen","visitor_seen":"night_visitor_glimpsed","visitor_named":"shion_name_heard","appointment":"shion_appointment_expected"}
@@ -59,6 +63,24 @@ func on_line(index: int) -> void:
 		GameState.set_flag("met_hana")
 
 func on_choice(id: String) -> void:
+	if phase == "shion_arrival" and not GameState.has_flag("shion_melody_decided") and id in ["join_melody","wait_melody"]:
+		GameState.set_flag("shion_melody_decided")
+		if id == "join_melody":
+			GameState.aff_shion += 2
+			GameState.akira_elmerules += 1
+			GameState.set_flag("flag_shion_dallam_azonnal")
+		else:
+			GameState.akira_gyogyulas += 1
+			GameState.set_flag("flag_shion_dallam_var")
+	elif phase == "shion_memory" and not GameState.has_flag("shion_tape_decided") and id in ["play_tape","ask_consent"]:
+		GameState.set_flag("shion_tape_decided")
+		if id == "play_tape":
+			GameState.akira_elmerules += 2
+			GameState.set_flag("flag_akira_kazetta_surget")
+		else:
+			GameState.aff_shion += 1
+			GameState.akira_gyogyulas += 1
+			GameState.set_flag("flag_akira_kazetta_beleegyezes")
 	if phase == "hana_arrival" and GameState.hana_first_choice.is_empty() and id in ["ask_body","let_lead"]:
 		GameState.hana_first_choice = id
 		if id == "ask_body":
@@ -111,6 +133,24 @@ func finish_dialogue() -> void:
 			GameState.set_flag("night_visitor_complete")
 			phase = "visitor_complete"
 			show_end()
+		"shion_arrival":
+			play("shion_memory")
+		"shion_memory":
+			play("shion_close")
+		"shion_close":
+			GameState.set_flag("shion_first_session_seen")
+			phase = "shion_complete"
+			show_end()
+
+func start_shion(checkpoint := false) -> void:
+	if not checkpoint and (phase != "visitor_complete" or not continue_armed or get_tree().paused):
+		return
+	if is_instance_valid(end_card):
+		end_card.queue_free()
+	set_location("clinic","Másnap · Shion · 10:00")
+	runner.street.backdrop.modulate = Color.WHITE
+	runner.ambience.rain.stop()
+	play("shion_arrival")
 
 func start_night_visitor(checkpoint := false) -> void:
 	if not checkpoint and (phase != "afternoon_complete" or not continue_armed or get_tree().paused):
@@ -144,6 +184,8 @@ func show_end() -> void:
 	title.text = "Hana első beszélgetése lezárult" if phase == "hana_complete" else "Késő délután\nA jel Akira csuklóján"
 	if phase == "visitor_complete":
 		title.text = "Az éjszakai látogató\nFolytatás: Shion időpontja"
+	if phase == "shion_complete":
+		title.text = "Shion · A közös emlék\nAz első konzultáció lezárult"
 	title.position = Vector2(30,130)
 	title.size = Vector2(580,50)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -155,21 +197,25 @@ func show_end() -> void:
 	button.size = Vector2(170,38)
 	button.pressed.connect(chapter.return_to_main)
 	card.add_child(button)
-	if phase in ["hana_complete","afternoon_complete"]:
+	if phase in ["hana_complete","afternoon_complete","visitor_complete"]:
 		button.position.y = 277
 		continue_button = Button.new()
 		continue_button.text = "Késő délután · Miyako" if phase == "hana_complete" else "Az éjszakai látogató"
+		if phase == "visitor_complete":
+			continue_button.text = "Másnap · Shion konzultációja"
 		continue_button.position = Vector2(180,225)
 		continue_button.size = Vector2(280,38)
 		continue_button.disabled = true
 		if phase == "hana_complete":
 			continue_button.pressed.connect(start_afternoon)
-		else:
+		elif phase == "afternoon_complete":
 			continue_button.pressed.connect(start_night_visitor)
+		else:
+			continue_button.pressed.connect(start_shion)
 		card.add_child(continue_button)
 
 func advance(_delta: float) -> void:
-	if phase in ["hana_complete","afternoon_complete"] and not continue_armed:
+	if phase in ["hana_complete","afternoon_complete","visitor_complete"] and not continue_armed:
 		if not Input.is_action_pressed("observe") and not Input.is_key_pressed(KEY_SPACE) and not Input.is_key_pressed(KEY_ENTER) and not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			continue_armed = true
 			continue_button.disabled = false

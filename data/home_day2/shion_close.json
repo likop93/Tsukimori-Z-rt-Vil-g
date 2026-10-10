@@ -1,0 +1,235 @@
+{
+  "lines": [
+    {
+      "speaker": "",
+      "text": "A vászonzsák ekkor megmozdult az asztalon. Nem remegett — lassan összehúzódott, mintha valami belülről markolná meg az anyagot.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Shion felsikoltott. Akira odalépett, és ösztönösen ráhelyezte a kezét. A szövet jéghideg volt.",
+      "expression": "surprised",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "A csuklóján lévő jel fellángolt. A sötét vonalak zöld fénnyel teltek meg, a zsák pedig hirtelen szétnyílt. Víz ömlött belőle az asztalra — több, mint",
+      "expression": "surprised",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "amennyi fizikailag elférhetett volna benne.",
+      "expression": "surprised",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "A víz végigfolyt a fa lapján, majd megállt a peremén. Nem cseppent le. Egyetlen összefüggő felületként terült szét, akár egy apró tó. A közepén fekete",
+      "expression": "surprised",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "kő feküdt: lapos, keskeny tárgy, egyik végén öt vékony vájattal. Egy legyező bordájának darabja.",
+      "expression": "surprised",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Vigye el innen.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Látta már?",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Igen. A fiú szájában.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "A víz felszíne megremegett. Akira és Shion egyszerre nézett bele. Nem a saját arcukat látták.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Két gyermeket. Egy fekete hajú fiút és egy nála valamivel idősebb lányt. A sekély vízben álltak, egymás kezét fogva. A fiú szeme zölden világított.",
+      "expression": "sad",
+      "cg": "res://assets/home_day2/shion_childhood_REVIEW.png"
+    },
+    {
+      "speaker": "",
+      "text": "Mögöttük Katsuro térdelt — fiatalabban, mint amilyennek Akira a fényképekről ismerte. Egyik kezében fekete legyezőt tartott, a másikat a fiú homlokára",
+      "expression": "sad",
+      "cg": "res://assets/home_day2/shion_childhood_REVIEW.png"
+    },
+    {
+      "speaker": "",
+      "text": "helyezte.",
+      "expression": "sad",
+      "cg": "res://assets/home_day2/shion_childhood_REVIEW.png"
+    },
+    {
+      "speaker": "",
+      "text": "A gyermek Akira sírt.",
+      "expression": "sad",
+      "cg": "res://assets/home_day2/shion_childhood_REVIEW.png",
+      "event": "shion_shared_memory_seen"
+    },
+    {
+      "speaker": "",
+      "text": "„Nem akarom elfelejteni” — mondta.",
+      "expression": "sad",
+      "cg": "res://assets/home_day2/shion_childhood_REVIEW.png"
+    },
+    {
+      "speaker": "",
+      "text": "A gyermek Shion megszorította a kezét.",
+      "expression": "sad",
+      "cg": "res://assets/home_day2/shion_childhood_REVIEW.png"
+    },
+    {
+      "speaker": "",
+      "text": "„Akkor én emlékezni fogok helyetted” — felelte.",
+      "expression": "sad",
+      "cg": "res://assets/home_day2/shion_childhood_REVIEW.png"
+    },
+    {
+      "speaker": "",
+      "text": "Katsuro felnézett — egyenesen a víz felszínén át figyelő, felnőtt Akirára.",
+      "expression": "sad",
+      "cg": "res://assets/home_day2/shion_childhood_REVIEW.png"
+    },
+    {
+      "speaker": "",
+      "text": "„Még ne” — mondta.",
+      "expression": "sad",
+      "cg": "res://assets/home_day2/shion_childhood_REVIEW.png"
+    },
+    {
+      "speaker": "",
+      "text": "A kép eltűnt. Az asztalon lévő víz egyszerre lezúdult a padlóra.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Shion térdre esett. Akira odalépett hozzá, de megállt, mielőtt megérintette volna.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Megfoghatom a vállát?",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "A nő remegve bólintott. Akira letérdelt mellé, óvatosan a vállára tette a kezét. Shion teste hideg volt, de nem húzódott el.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Lélegezzen velem. Lassan.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Néhány lélegzet után a remegése csillapodni kezdett.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Maga volt az.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Úgy tűnik.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Miért nem emlékszik?",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Nem tudom.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Én megígértem. Hogy emlékezni fogok maga helyett.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Akira nem tudta, mit mondhatna. Az érintése most nem idézett fel benne félelmet. Csak egy régi, fájdalmas ismerősséget érzett — mintha a teste",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "emlékezne arra, amit az elméjéből valóban eltávolítottak.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Nem kellett volna egyedül hordoznia.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Nem emlékszem, mit hordoztam.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Akkor együtt fogjuk kideríteni.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Shion az ajtóból még egyszer visszanézett rá. A búcsújuk most először nem lezárásnak, hanem egy közös ígéret kezdetének érződött.",
+      "expression": "sad",
+      "cg": "res://assets/home_day2/shion_farewell_REVIEW.png"
+    }
+  ],
+  "choices": [],
+  "id": "shion_close",
+  "source": "canonical_html_story.rpy / chapter V through Shion farewell; original text wrapped only",
+  "portrait": true,
+  "portrait_speaker": "Shion",
+  "portrait_side": "left",
+  "portrait_facing": "left",
+  "portrait_path": "res://assets/opening/vn_portraits/shion_neutral_v1_REVIEW.png",
+  "akira_portrait_path": "res://assets/opening/vn_portraits/akira_doctor_v1_REVIEW.png",
+  "portrait_variants": {
+    "neutral": "res://assets/opening/vn_portraits/shion_neutral_v1_REVIEW.png",
+    "sad": "res://assets/opening/vn_portraits/shion_sad_v1_REVIEW.png",
+    "surprised": "res://assets/opening/vn_portraits/shion_surprised_v1_REVIEW.png"
+  }
+}

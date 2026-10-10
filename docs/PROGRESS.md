@@ -45,3 +45,5 @@ A korábbi 3D állapotjelentés: [archivált PROGRESS](../archive/legacy_3d/docs
 2026-10-10: Miyako és Hana személyes elutasítási állapota, reakciómondatai és változó alakos karakterlapképei működnek. Godot character_pressure, horror_progression, afternoon és Hana ellenőrzés sikeres. Részletek: CHARACTER_PRESSURE_REVIEW.md.
 
 2026-10-10: Az éjszakai látogató teljes 46 oldalas blokkja elkészült, fejezetválasztóval, álom- és Shion-képpel, eseményjelzőkkel. Következő: V. fejezet, Shion konzultációja. Részletek: NIGHT_VISITOR_REVIEW.md.
+
+2026-10-10: Shion teljes első konzultációja a búcsúig, két eredeti döntés négy kombinációval, három alakos reakció, három történeti CG, karakterlap és közvetlen fejezetindítás elkészült. Nedves füzet CG pótolva. Következő: Miyako visszatérése és a pecsét. SHION_FIRST_SESSION_REVIEW.md.

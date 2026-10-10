@@ -93,31 +93,27 @@
     {
       "speaker": "",
       "text": "A rendelő ajtaja résnyire nyitva állt, pedig biztos volt benne, hogy Miyako este bezárta. A szoba üres volt — de Katsuro névtelen füzete nyitva feküdt",
-      "cg": "res://assets/home_day1/clinic_REVIEW.png",
+      "cg": "res://assets/home_day2/wet_notebook_v1_REVIEW.png",
       "expression": "worried",
-      "cg_tint": "#6b7aa3",
       "event": "wet_notebook"
     },
     {
       "speaker": "",
       "text": "a padlón, a lapjai nedvesek.",
-      "cg": "res://assets/home_day1/clinic_REVIEW.png",
-      "expression": "worried",
-      "cg_tint": "#6b7aa3"
+      "cg": "res://assets/home_day2/wet_notebook_v1_REVIEW.png",
+      "expression": "worried"
     },
     {
       "speaker": "",
       "text": "A tatamin apró vízcseppek húzódtak végig a könyvespolctól az ablakig. Nem lábnyomok voltak — inkább egy keskeny ösvény, mintha valaki vizes hajából",
-      "cg": "res://assets/home_day1/clinic_REVIEW.png",
-      "expression": "worried",
-      "cg_tint": "#6b7aa3"
+      "cg": "res://assets/home_day2/wet_notebook_v1_REVIEW.png",
+      "expression": "worried"
     },
     {
       "speaker": "",
       "text": "hullottak volna a padlóra. A nyomok az ablaknál értek véget.",
-      "cg": "res://assets/home_day1/clinic_REVIEW.png",
-      "expression": "worried",
-      "cg_tint": "#6b7aa3"
+      "cg": "res://assets/home_day2/wet_notebook_v1_REVIEW.png",
+      "expression": "worried"
     },
     {
       "speaker": "",
@@ -153,9 +149,8 @@
     {
       "speaker": "",
       "text": "A látomás olyan gyorsan múlt el, ahogy érkezett. A kert újra a helyén volt. De a nő eltűnt.",
-      "cg": "res://assets/home_day1/clinic_REVIEW.png",
-      "expression": "worried",
-      "cg_tint": "#6b7aa3"
+      "cg": "res://assets/home_day2/wet_notebook_v1_REVIEW.png",
+      "expression": "worried"
     },
     {
       "speaker": "Miyako",

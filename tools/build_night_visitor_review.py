@@ -10,7 +10,7 @@ cg = 'res://assets/home_day1/akira_room_REVIEW.png'
 for row in block.splitlines():
     if 'scene canonical_bg_akiradreampool' in row: cg = 'res://assets/home_day2/night_dream_pool_REVIEW.png'
     elif 'scene canonical_bg_night' in row: cg = 'res://assets/home_day1/akira_room_REVIEW.png'
-    elif 'scene canonical_bg_office' in row: cg = 'res://assets/home_day1/clinic_REVIEW.png'
+    elif 'scene canonical_bg_office' in row: cg = 'res://assets/home_day2/wet_notebook_v1_REVIEW.png'
     elif 'scene canonical_bg_shionpondnight' in row: cg = 'res://assets/home_day2/shion_pond_night_REVIEW.png'
     match = pattern.fullmatch(row)
     if not match: continue

@@ -53,6 +53,17 @@ static func entries() -> Array[Dictionary]:
 				if GameState.has_flag("hana_first_session_seen"):
 					entry.status = "Az első terápiás beszélgetésetek lezárult."
 					entry.events.append("Tudja, hogy visszajöhet, és nem kell szerepet játszania.")
+		if known and spec.id == "shion":
+			entry.portrait = "res://assets/opening/vn_portraits/shion_neutral_v1_REVIEW.png"
+			entry.erase("crop")
+			entry.description = "Csendes, visszafogott nő. Korábban Katsuróhoz járt. Emlékei a vízhez kötődnek."
+			entry.status = "Találkoztatok a rendelőben."
+			if GameState.has_flag("shion_tape_found"):
+				entry.events.append("Megtaláltátok az AKIRA — SHION feliratú kazettát.")
+			if GameState.has_flag("shion_shared_memory_seen"):
+				entry.events.append("Közös gyermekkori emléket láttatok a vízben.")
+			if GameState.has_flag("shion_first_session_seen"):
+				entry.status = "Megígértétek, hogy együtt jártok utána az emlékeknek."
 		if known:
 			var reaction := preload("res://scripts/ui/character_reactions.gd").profile(str(spec.id))
 			if not reaction.is_empty():

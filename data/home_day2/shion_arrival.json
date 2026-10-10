@@ -1,0 +1,513 @@
+{
+  "lines": [
+    {
+      "speaker": "",
+      "text": "Shion másnap pontosan tízkor érkezett. Miyako aznap nem maradt a házban — dolga volt a faluban, de indulás előtt háromszor is ellenőrizte, hogy a",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "kertre néző ablak zárva van-e.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "A küszöbön ugyanaz a nő állt, akit éjjel látott. Nappali fényben kevésbé tűnt kísértetiesnek — fekete haja simán keretezte keskeny arcát, zöld szeme",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "azonban továbbra is szokatlanul világos maradt. A kezében kis, kék vászonzsákot tartott.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Dr. Akira?",
+      "expression": "neutral",
+      "cg": "",
+      "event": "met_shion"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Igen. Maga Shion?",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "A nő bólintott, és belépett. Nem nézett körbe úgy, mint aki új helyen jár — pontosan tudta, hol állt Katsuro széke, hol tartotta a jegyzeteit.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Járt itt korábban.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Sokszor. Katsuróhoz. A halála előtti napon utoljára.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Szeretné elmondani, miért keresett fel?",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Miyako szerint maga máshogy kérdez. Mint mindenki.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Ezt jó vagy rossz értelemben mondja?",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Még nem tudom.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Akkor kezdhetjük azzal, hogy kiderítjük.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Én nem azért jöttem, mert beteg vagyok. Nem hallok hangokat. Nem látok szellemeket.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Nem is feltételeztem.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Nem akar meggyőzni arról, hogy mégis? Katsuro mindig azt kérdezte, biztos vagyok-e benne, hogy amit látok, valóban ott van.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Mit lát?",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Vizet. Mindenütt. A falak mögött. A padló alatt. Néha az emberekben.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Mit jelent az, hogy az emberekben?",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Van, aki sekély. Van, aki mély. Van, akibe belenézek, és csak a saját arcomat látom vissza.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "És bennem mit lát?",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Shion azonnal Akirára nézett. Nem úgy, mint Hana, aki felmérte és próbára tette — egyenesen a szemébe nézett, mintha valami mögé próbálna látni. Aztán",
+      "expression": "neutral",
+      "cg": "res://assets/home_day2/shion_recognition_REVIEW.png"
+    },
+    {
+      "speaker": "",
+      "text": "megmerevedett.",
+      "expression": "neutral",
+      "cg": "res://assets/home_day2/shion_recognition_REVIEW.png"
+    },
+    {
+      "speaker": "Shion",
+      "text": "Nem lehet. A szeme.",
+      "expression": "neutral",
+      "cg": "res://assets/home_day2/shion_recognition_REVIEW.png"
+    },
+    {
+      "speaker": "",
+      "text": "Akira tudta, mire gondol. A jobb szeme reggel óta zöldebbnek tűnt — a barna íriszben már tisztán látszott egy keskeny, smaragdszínű gyűrű.",
+      "expression": "neutral",
+      "cg": "res://assets/home_day2/shion_recognition_REVIEW.png",
+      "event": "shion_eye_recognition_seen"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Mi van vele?",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Shion felállt. A szék lába élesen végigkarcolta a tatamit.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Maga volt ott. A vízben.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Mikor?",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Nem emlékszem.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "De felismer engem?",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Nem magát. A szemét.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Üljön vissza, Shion.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Ne mondja ki így a nevemet. Mert ő is így mondta.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Katsuro?",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "A fiú.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "A szobában mintha csökkent volna a levegő nyomása. Akira csuklóján a jel lüktetni kezdett.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Milyen fiú?",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Nem tudom. Vizes volt a haja. Sírt. Azt mondta, nem akar aludni.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Akira lélegzete elakadt. Ugyanezt hallotta az álmában? Nem — az álomban a gyermek nem beszélt. Mégis úgy érezte, már ismeri a szavakat.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Mikor látta ezt?",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Gyerekkoromban. A szentély alatt. De soha nem jártam ott.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Akira felállt, de nem ment közelebb hozzá.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Mi van a zsákban?",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Shion lenézett, mintha megfeledkezett volna róla.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Nem tudom. Reggel az ajtóm előtt volt. Rajta volt a neve.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Az én nevem?",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Shion bólintott, és remegő kézzel az asztalra tette a zsákot. A vászon nedvesnek tűnt, noha odakint nem esett. A szöveten sötétebb foltok rajzoltak ki",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "egy legyezőhöz hasonló alakot.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Kinyitotta?",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Nem. Mert lélegzett.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Akira lassan a zsák fölé hajolt. Nem hallott légzést — csak halk, szabályos csobbanást, mintha a vászon belsejében egy apró hullám verődne neki",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "valaminek.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Katsuro azt mondta, soha ne nyissak ki semmit, amit a víz hoz nekem.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Mit hozott korábban?",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Köveket. Hajszálakat. Egyszer egy gyermekfogakat tartalmazó dobozt. Katsuro mindet elvitte.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "A dolgozószobájába?",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Shion arca megváltozott.",
+      "expression": "surprised",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Katsurónak nem volt dolgozószobája. A rendelő után mindig hazament.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Ide?",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Nem.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Hová?",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Shion nem válaszolt rögtön. A tekintete az ablak felé fordult.",
+      "expression": "neutral",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "A vízhez.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Akira nem nyitotta ki a zsákot. Ehelyett megkérte Shiont, üljön vissza. A vászonzsák közöttük feküdt az asztalon.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Beszéljünk arról, amire emlékszik.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Nem szeretek emlékezni. Mert utána mindig elveszítek valamit. Néha egy arcot. Néha egy nevet. Néha egy egész napot.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Emlékszik a vízre?",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Fekete volt. A bokámig ért. Féltem tőle, mert valaki alulról fogta a lábamat.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Hallotta, ki volt?",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Shion ajkai mozdultak, de hang nem jött ki rajtuk. Akira megvárta.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Azt mondta, hogy engedjem el. A fiút.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Akira",
+      "text": "Mondta a nevét?",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "Shion",
+      "text": "Aki. Azt mondta, így hívják.",
+      "expression": "sad",
+      "cg": ""
+    },
+    {
+      "speaker": "",
+      "text": "Egy dallam kezd formálódni Akirában, valahonnan nagyon mélyről. Mit tesz?",
+      "expression": "sad",
+      "cg": ""
+    }
+  ],
+  "choices": [
+    {
+      "id": "join_melody",
+      "label": "Rögtön folytatja a dallamot, ha Shion elkezdi — hagyja, hogy a teste emlékezzen.",
+      "lines": [
+        {
+          "speaker": "",
+          "text": "Akira nem várt. Amint az első hangok elhagyták Shion ajkát, ő már folytatta is — mintha a teste előbb emlékezett volna, mint az elméje engedélyt adott",
+          "expression": "sad",
+          "cg": ""
+        },
+        {
+          "speaker": "",
+          "text": "volna rá.",
+          "expression": "sad",
+          "cg": ""
+        }
+      ]
+    },
+    {
+      "id": "wait_melody",
+      "label": "Megkéri, hogy előbb ő fejezze be egyedül — nem akarja elvenni tőle ezt a pillanatot.",
+      "lines": [
+        {
+          "speaker": "Akira",
+          "text": "Fejezze be egyedül. Utána én is megpróbálom.",
+          "expression": "sad",
+          "cg": ""
+        },
+        {
+          "speaker": "",
+          "text": "Shion egy pillanatra meglepődött, majd bólintott — mintha ez volna az első alkalom, hogy valaki teret adott neki egy emlék végigéléséhez.",
+          "expression": "sad",
+          "cg": ""
+        }
+      ]
+    }
+  ],
+  "id": "shion_arrival",
+  "source": "canonical_html_story.rpy / chapter V through Shion farewell; original text wrapped only",
+  "portrait": true,
+  "portrait_speaker": "Shion",
+  "portrait_side": "left",
+  "portrait_facing": "left",
+  "portrait_path": "res://assets/opening/vn_portraits/shion_neutral_v1_REVIEW.png",
+  "akira_portrait_path": "res://assets/opening/vn_portraits/akira_doctor_v1_REVIEW.png",
+  "portrait_variants": {
+    "neutral": "res://assets/opening/vn_portraits/shion_neutral_v1_REVIEW.png",
+    "sad": "res://assets/opening/vn_portraits/shion_sad_v1_REVIEW.png",
+    "surprised": "res://assets/opening/vn_portraits/shion_surprised_v1_REVIEW.png"
+  }
+}
