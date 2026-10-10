@@ -1,5 +1,7 @@
 # Tsukimori — aktuális fejlesztési állapot
 
+2026-10-10: elutasításra és szakmai távolságtartásra fokozódó horror-atmoszféra, három fokozatú környezeti narrációval és halk neszekkel. Egyszeri döntésszámítás, szünet/reset és pont nélküli tesztbelépések. [Horrorszál első lépése](REJECTION_HORROR_REVIEW.md).
+
 2026-10-10: Akira–Katsuro fénykép a korábbi helyőrző helyett; Hana lezárása után külön folytatásgombbal a teljes késő délutáni Miyako-jelenet, füzet-CG és időzített jelzők. Katsuro arca REVIEW; az éjszakai látogató a következő blokk. [Részletek és képpromptok](AFTERNOON_PHOTO_REVIEW.md).
 
 Hana, Kuroe és Shion korai cameója működik REVIEW atlasszal, névtábla/dialógus/kontrollzár nélkül. Hana felpillant és visszatér a ruhaigazításhoz; Kuroe áthalad a házközön; Shion a híd falusi oldaláról figyel, majd elfordul. [Hana/Shion részletek](HANA_SHION_CAMEOS_REVIEW.md), [Kuroe részletek](KUROE_CAMEO_REVIEW.md). A végleges gesztus- és járásanimáció még hiányzik.

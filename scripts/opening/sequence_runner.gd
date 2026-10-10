@@ -43,6 +43,9 @@ func _ready() -> void:
 	add_child(street)
 	ambience = Ambience.new()
 	add_child(ambience)
+	var horror := preload("res://scripts/opening/horror_atmosphere.gd").new()
+	horror.ambience = ambience
+	add_child(horror)
 	var canvas := CanvasLayer.new()
 	add_child(canvas)
 	overlay = Control.new()

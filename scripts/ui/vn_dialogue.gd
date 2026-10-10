@@ -25,6 +25,7 @@ var akira_enabled := true
 var cg: TextureRect
 var cg_path := ""
 var dialogue_panel: Panel
+var dialogue_id := ""
 
 func _ready() -> void:
 	layer = 30
@@ -131,6 +132,7 @@ func begin(data: Dictionary) -> void:
 	if active:
 		return
 	lines = data.lines
+	dialogue_id = str(data.get("id",""))
 	choices = data.get("choices",[])
 	portraits_enabled = bool(data.get("portrait",true))
 	akira_enabled = bool(data.get("akira_portrait",true))
@@ -266,7 +268,9 @@ func select_choice(option: Dictionary) -> void:
 		choice_box.remove_child(button)
 		button.queue_free()
 	choices = []
-	lines = option.lines
+	lines = option.lines.duplicate(true)
+	if GameState.record_distance(dialogue_id,str(option.id)):
+		lines.append({"speaker":"","text":GameState.horror_response()})
 	index = 0
 	choice_selected.emit(str(option.id))
 	show_line()

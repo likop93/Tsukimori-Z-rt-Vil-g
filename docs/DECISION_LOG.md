@@ -100,6 +100,8 @@ Ha implementáció ütközik egy LOCKED döntéssel:
 Tulajdonosi kérésre a régi 3D prototípus az archive/legacy_3d alá került, az assetek és importbeállítások megőrzésével. A kreatív kánon és a pixel-art production irány változatlan. Az aktív játékból eltávolítottuk a használaton kívüli automatikus érkezési fázisokat; Miyako jelenlegi talaj-, ütközés- és feliratjavításai megmaradtak. Az aktuális működést a README és PROGRESS írja le; az eredeti állapotleírások az archívumban is megmaradtak.
 # Technikai folytatás — 2026-10-04, REVIEW
 
+2026-10-10 — Tulajdonosi döntés: a közeledés elutasítása ÉS a szakmai távolságtartás finoman, halmozódva erősítse a párhuzamos horrorszálat. Első implementáció: döntésfüggő környezeti narráció, fokozatos képszéli fényváltozás és halk neszek; meglévő kapcsolati hatások megőrzése. [Pontos súlyok és korlátok](REJECTION_HORROR_REVIEW.md).
+
 Tulajdonosi kérés: Akira külön rendelői megjelenése, VN-szereplők helyes tájolása és Hana nagy történeti pillanataihoz külön jelenetképek. Jóváhagyott identitásokon alapuló REVIEW outfit/CG/staging; nem új karakter-design vagy történeti lock. [Részletek](MEDICAL_AKIRA_HANA_CG_REVIEW.md).
 
 Tulajdonosi kérés alapján tesztelési fejezetválasztó a főmenüben; kizárólag működő jelenetekhez, egyszeri belépési kéréssel és dokumentált előzményállapottal. LOCKED kreatív döntéseket nem módosít. [Belépési pontok](CHAPTER_SELECT_REVIEW.md).
