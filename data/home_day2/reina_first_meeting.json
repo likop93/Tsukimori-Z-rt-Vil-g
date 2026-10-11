@@ -1,0 +1,78 @@
+{
+  "id": "reina_first_meeting",
+  "portrait": true,
+  "portrait_speaker": "Reina",
+  "portrait_path": "res://assets/opening/vn_portraits/reina_teacher_v1_REVIEW.webp",
+  "portrait_side": "left",
+  "source": "OWNER APPROVED 2026-10-11; new Tsukimori character introduction, placed after the currently implemented early chapter so it does not overwrite existing canon scenes.",
+  "lines": [
+    {
+      "speaker": "",
+      "text": "A következő szabad délutánon kopogtak a rendelő ajtaján. A nő, aki belépett, egy fekete motoros sisakot tartott a hóna alatt, de a ruhája inkább egy városi tanárnőé volt, mint motorosé."
+    },
+    {
+      "speaker": "Reina",
+      "text": "Szóval maga az új doktor."
+    },
+    {
+      "speaker": "Akira",
+      "text": "És maga?"
+    },
+    {
+      "speaker": "Reina",
+      "text": "Reina. A helyi iskolában tanítok. És mielőtt megkérdezné: igen, a motor is az enyém."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Nem ezt akartam megkérdezni."
+    },
+    {
+      "speaker": "Reina",
+      "text": "Kár. Az lett volna a könnyebb kérdés."
+    },
+    {
+      "speaker": "",
+      "text": "Reina mosolya játékos volt, de amikor az iskoláról kezdett beszélni, a hangja rögtön komolyabbá vált."
+    },
+    {
+      "speaker": "Reina",
+      "text": "Szeretném, ha egyszer átjönne az iskolába. A nagyobb lányoknak jól jönne egy orvos, aki a testükről nem úgy beszél, mintha az egész falu tulajdona lenne."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Ez elég határozott bemutatkozás."
+    },
+    {
+      "speaker": "Reina",
+      "text": "Tsukimoriban túl sokáig kerülgették a mondatokat. Én nem vagyok benne különösebben jó."
+    },
+    {
+      "speaker": "Akira",
+      "text": "És ezért költözött vissza?"
+    },
+    {
+      "speaker": "Reina",
+      "text": "Részben. Azt hittem, ezt a helyet utálom. Később rájöttem, hogy inkább azt utáltam, amit itt mondtak nekem arról, milyennek kell lennem."
+    },
+    {
+      "speaker": "",
+      "text": "A sisak pántja halkan koppant Reina gyűrűjén. Akira észrevette a tetoválásokat, a piercingeket, a városi ruhát — és azt, milyen természetesen áll mindez a régi rendelőben."
+    },
+    {
+      "speaker": "Reina",
+      "text": "A testem nem közösségi projekt. Ezt a mondatot szeretném, ha a lányaim hamarabb megtanulnák, mint én."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Átmegyek."
+    },
+    {
+      "speaker": "Reina",
+      "text": "Jó. Akkor legközelebb megmutatom az iskolát. És talán azt is, hol lehet ebben a faluban normális kávét inni."
+    },
+    {
+      "speaker": "",
+      "text": "Távozásakor a motor hangja rövid időre betöltötte az udvart. Tsukimori régi házai között meglepően idegenül szólt — és mégis úgy, mintha mindig is ide tartozott volna."
+    }
+  ]
+}

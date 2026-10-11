@@ -412,3 +412,25 @@ FINAL karakterhez kell:
 - sziluett;
 - rig-kompatibilitás;
 - animációs language review.
+
+
+---
+
+# Reina
+
+## Identitás — LOCKED 2026-10-11
+
+- felnőtt, 29 éves nő;
+- kb. 177 cm;
+- Tsukimoriban született, éveket élt városban, majd visszaköltözött;
+- a helyi iskola modern tanárnője;
+- platina/hamvasszőke haj sötét tövekkel, szemüveg, piercingek, tetoválások;
+- magas, erős homokóra-sziluett;
+- School/Teacher és Riding/Casual fő outfit;
+- fekete modern motor;
+- gyors észjárású, ironikus, közvetlen; az iskolában professzionális és türelmes;
+- kulcsmondat: **„A testem nem közösségi projekt.”**
+
+Reina nem generikus modern/sexy NPC. Funkciója a falu hétköznapi, fiatalabb és modernebb életének megmutatása, valamint a későbbi szabadidős rendszer egyik természetes kapcsolódási pontja.
+
+Kötelező production spec: `docs/REINA_PRODUCTION_SPEC.md`.

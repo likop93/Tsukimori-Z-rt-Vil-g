@@ -159,3 +159,13 @@ A képi referencia hiánya nem jogosít fel LOCKED design újratervezésére.
 ## 2026-10-11 — Miyako esti ruhatár, OWNER / REVIEW
 
 Az assets/opening/vn_portraits/miyako_evening_v1_REVIEW.png, miyako_evening_watchful_v1_REVIEW.png és miyako_evening_transformed_v1_REVIEW.png a meglévő Miyako-identitás esti outfitváltozatai. Nem új primary design. Pontos referenciák, generálási promptok és hiányzó production variánsok: [MIYAKO_TEA_WARDROBE_REVIEW.md](MIYAKO_TEA_WARDROBE_REVIEW.md).
+
+
+## Reina — OWNER APPROVED / LOCKED identity
+
+Primary owner-approved visual direction: a 2026-10-11 generated Tsukimori high-detail cinematic pixel-art character sheet featuring Reina in School/Teacher and Riding/Casual looks, expression studies, world sprites and motorcycle context.
+
+Repository REVIEW derivative used by the current VN implementation:
+- `assets/opening/vn_portraits/reina_teacher_v1_REVIEW.webp`
+
+Authority rule: the sheet's generated age/height/text labels are non-canon. Canon identity values are recorded in `docs/REINA_PRODUCTION_SPEC.md` and `docs/CHARACTER_BIBLE.md`.

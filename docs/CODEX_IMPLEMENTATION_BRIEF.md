@@ -312,3 +312,24 @@ A meglévő házbelépési rész kész alap, nem újratervezendő. A következő
 - `docs/SHARED_HOME_CLINIC_NEXT_BLOCK_PREP.md`
 
 A briefet a meglévő `MIYAKO_INTERIOR_REVIEW.md` és `INTERIOR_PASSAGE_AND_CONTINUATION_REVIEW.md` működés megtartásával kell végrehajtani.
+
+
+### Reina FINAL karaktermunka — LOCKED 2026-10-11
+
+Ha Reina sprite-ját, portréját, animációját, outfitjét, motorját, iskolai jelenetét vagy szabadidős eseményét érinti a feladat, kötelező forrás:
+- `docs/REINA_PRODUCTION_SPEC.md`
+- `docs/CHARACTER_BIBLE.md`
+- `docs/VISUAL_REFERENCE_INDEX.md`
+
+LOCKED jegyek:
+- 29 éves, kb. 177 cm-es felnőtt nő;
+- Tsukimori-születésű, városi múlt után visszaköltözött;
+- helyi tanárnő;
+- platina/hamvasszőke haj sötét tövekkel;
+- szemüveg, piercingek, tetoválások;
+- magas, erős homokóra-sziluett;
+- modern School/Teacher és Riding/Casual outfit;
+- fekete motor;
+- ironikus/közvetlen, de pedagógusként professzionális karakter.
+
+A jelenlegi első playable Reina-jelenet a már implementált korai történeti blokk után, egy következő szabad délutánon indul. Ne helyezd vissza automatikusan a nyitányba, és ne írj neki korai természetfeletti problémát.

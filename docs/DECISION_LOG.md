@@ -125,3 +125,21 @@ Tulajdonosi kérés alapján karakterlapok/kapcsolati státusz, majd első éjsz
 2026-10-10 OWNER APPROVED / SUPERSEDES: Hana átalakulásakor karcsúbb és nőiesebb lesz; a hétköznapi V2 kép erre elfogadott referencia. A korábbi nagyobb/teltebb átalakulási testirány visszavonva. Alárendelődő viselkedés megmarad. Alapdesign változatlan. A korábbi kimonós változat arányait később ehhez kell igazítani.
 
 2026-10-10 REVIEW: Shion első konzultációjának eredeti szövege és két döntése átültetve. Világos kimonó a forrás jelenetspecifikus ruhájaként; sötét primary design változatlan. Saját horrorátalakulás nincs még kijelölve. SHION_FIRST_SESSION_REVIEW.md.
+
+
+## 2026-10-11 — Reina FINAL Character Design v1 — LOCKED
+
+Tulajdonosi jóváhagyás: Reina karaktere és Tsukimori-stílusú vizuális iránya elfogadva, játékba integrálható.
+
+LOCKED mag:
+- 29 éves, kb. 177 cm magas felnőtt nő;
+- Tsukimori-születésű, városi múlt után visszaköltözött;
+- helyi tanárnő;
+- platina/hamvasszőke haj sötét tövekkel;
+- szemüveg, piercingek, tetoválások;
+- magas, erős homokóra-sziluett;
+- modern School/Teacher és Riding/Casual outfit;
+- fekete motor;
+- közvetlen, ironikus, intelligens, pedagógusként felelősségteljes.
+
+A generált reference sheet automatikus feliratai/számai nem authorityk. Részletek: `docs/REINA_PRODUCTION_SPEC.md`.
