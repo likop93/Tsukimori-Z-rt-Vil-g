@@ -19,6 +19,11 @@ static func entries() -> Array[Dictionary]:
 				if GameState.has_flag("first_clinic_day_started"):
 					entry.portrait = "res://assets/opening/vn_portraits/akira_doctor_v1_REVIEW.png"
 				entry.status = "Te"
+				if GameState.has_flag("akira_seal_revealed"):
+					entry.events.append("Miyako szerint Katsuro a benned lévő pecsétet kutatta.")
+				if GameState.has_flag("akira_right_eye_green"):
+					entry.portrait = "res://assets/opening/vn_portraits/akira_doctor_green_eye_v1_REVIEW.png"
+					entry.events.append("A jobb szemed teljesen zölddé változott.")
 				if GameState.has_flag("first_night_seen"):
 					entry.events.append("Nyugtalan első éjszakád volt a házban.")
 				if GameState.has_flag("katsuro_first_clue_seen"):

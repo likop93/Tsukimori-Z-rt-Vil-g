@@ -1,0 +1,211 @@
+{
+  "id": "miyako_seal",
+  "source": "canonical_html_story.rpy / end of chapter V; unchanged text, wrapped only",
+  "portrait": true,
+  "portrait_speaker": "Miyako",
+  "portrait_side": "left",
+  "portrait_facing": "left",
+  "portrait_path": "res://assets/opening/vn_portraits/miyako_worried_v1_REVIEW.png",
+  "akira_portrait_path": "res://assets/opening/vn_portraits/akira_doctor_v1_REVIEW.png",
+  "lines": [
+    {
+      "speaker": "",
+      "text": "Miyako akkor érkezett vissza, amikor Shion már elment. Akira a padlón térdelt, és a kiömlött vizet törölte fel. A fekete követ nem mozdította el az",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "asztalról. A kazetta mellette feküdt.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Miyako az ajtóban megállt. Először a követ látta meg. Aztán a kazettát. Végül Akira arcát.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Mi történt?",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Shion emlékezett rám. Gyerekkorunkban együtt voltunk a szentély alatt. Katsuro is ott volt.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Miyako a kazettához lépett. Amikor meglátta a címkén szereplő neveket, a szája kissé szétnyílt.",
+      "cg": "res://assets/home_day2/seal_cassette_REVIEW.png",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Ezt kereste. Katsuro. A halála előtti héten. Azt mondta, eltűnt egy felvétel, amely nélkül nem tudja befejezni a pecsét történetét.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Milyen pecsétet?",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Miyako a jobb szemére nézett.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "A tiédet.",
+      "cg": "",
+      "expression": "worried",
+      "event": "akira_seal_revealed"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Tudtad?",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Nem. De sejtettem. Katsuro többször beszélt egy gyermekről, akit évekkel korábban ki kellett vinni a faluból. Azt mondta, ha itt marad, valami",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "felébred benne.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Miért hozott vissza mégis?",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Nem ő hívott ide. A levelet, amelyben a falusi rendelő átvételét ajánlották neked, Oto írta alá.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Igen.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Oto nem tud írni. Soha nem tanult meg.",
+      "cg": "",
+      "expression": "worried",
+      "event": "invitation_authorship_questioned"
+    },
+    {
+      "speaker": "Akira",
+      "text": "Akkor ki küldte a levelet?",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "A ház mélyéről halk férfihang érkezett. Ezúttal mindketten hallották. Katsuro hangja volt.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Hang a mélyből",
+      "text": "Én.",
+      "cg": "",
+      "expression": "worried",
+      "event": "katsuro_voice_shared"
+    },
+    {
+      "speaker": "",
+      "text": "A rendelő ajtaja magától becsukódott. Az asztalon fekvő kazetta orsói lassan forogni kezdtek, noha semmilyen készülékben nem voltak.",
+      "cg": "res://assets/home_day2/seal_cassette_REVIEW.png",
+      "expression": "worried",
+      "event": "tape_awakened"
+    },
+    {
+      "speaker": "",
+      "text": "A sötétzöld szalagból halk gyermekhang szólt: „Shion… ne engedd el a kezem.”",
+      "cg": "res://assets/home_day2/seal_cassette_REVIEW.png",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Akira jobb szeme égetni kezdett.",
+      "cg": "res://assets/home_day2/seal_cassette_REVIEW.png",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Ne hallgasd.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "De már késő volt. A szoba helyén fekete víz jelent meg. Akira bokáig állt benne.",
+      "cg": "res://assets/home_day2/seal_fan_vision_REVIEW.png",
+      "expression": "worried",
+      "event": "seal_fan_vision_seen"
+    },
+    {
+      "speaker": "",
+      "text": "A túloldalon egy fehér ruhás alak figyelte. Arcát fekete legyező takarta, de a hangja nem Katsuróé volt. Sokkal régebbi.",
+      "cg": "res://assets/home_day2/seal_fan_vision_REVIEW.png",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Hang a mélyből",
+      "text": "A víz visszaadta az első nevet. A szél hamarosan visszakéri a testet.",
+      "cg": "res://assets/home_day2/seal_fan_vision_REVIEW.png",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "A látomás megszűnt. Akira ismét a rendelőben állt.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Miyako két kézzel tartotta az arcát.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Nézz rám. Akira, nézz rám.",
+      "cg": "",
+      "expression": "worried"
+    },
+    {
+      "speaker": "",
+      "text": "Miyako tekintetében tükröződve látta, hogy a jobb szeme már nem részben volt zöld. Teljesen azzá vált.",
+      "cg": "",
+      "expression": "worried",
+      "event": "akira_right_eye_green"
+    },
+    {
+      "speaker": "",
+      "text": "Az asztalon fekvő fekete kő pedig öt vékony darabra repedt. Pontosan úgy, akár egy lassan szétnyíló legyező.",
+      "cg": "",
+      "expression": "worried",
+      "event": "seal_stone_split"
+    }
+  ]
+}

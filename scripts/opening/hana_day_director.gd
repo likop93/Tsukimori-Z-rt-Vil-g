@@ -37,6 +37,12 @@ func play(id: String) -> void:
 	vn.begin(data)
 
 func on_line(index: int) -> void:
+	if phase == "miyako_seal":
+		var event := str(vn.lines[index].get("event",""))
+		if not event.is_empty():
+			GameState.set_flag(event)
+		if event == "akira_right_eye_green":
+			vn.akira_portrait.texture = load("res://assets/opening/vn_portraits/akira_doctor_green_eye_v1_REVIEW.png")
 	if phase.begins_with("shion_"):
 		var event := str(vn.lines[index].get("event",""))
 		if event in ["met_shion","shion_eye_recognition_seen","shion_tape_found","shion_shared_memory_seen"]:
@@ -141,6 +147,18 @@ func finish_dialogue() -> void:
 			GameState.set_flag("shion_first_session_seen")
 			phase = "shion_complete"
 			show_end()
+		"miyako_seal":
+			GameState.set_flag("miyako_seal_complete")
+			phase = "seal_complete"
+			show_end()
+
+func start_seal() -> void:
+	if phase != "shion_complete" or not continue_armed or get_tree().paused:
+		return
+	end_card.queue_free()
+	set_location("clinic","Miyako · A pecsét")
+	runner.street.backdrop.modulate = Color.WHITE
+	play("miyako_seal")
 
 func start_shion(checkpoint := false) -> void:
 	if not checkpoint and (phase != "visitor_complete" or not continue_armed or get_tree().paused):
@@ -186,6 +204,8 @@ func show_end() -> void:
 		title.text = "Az éjszakai látogató\nFolytatás: Shion időpontja"
 	if phase == "shion_complete":
 		title.text = "Shion · A közös emlék\nAz első konzultáció lezárult"
+	if phase == "seal_complete":
+		title.text = "A pecsét\nAz első név visszatért"
 	title.position = Vector2(30,130)
 	title.size = Vector2(580,50)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -197,12 +217,14 @@ func show_end() -> void:
 	button.size = Vector2(170,38)
 	button.pressed.connect(chapter.return_to_main)
 	card.add_child(button)
-	if phase in ["hana_complete","afternoon_complete","visitor_complete"]:
+	if phase in ["hana_complete","afternoon_complete","visitor_complete","shion_complete"]:
 		button.position.y = 277
 		continue_button = Button.new()
 		continue_button.text = "Késő délután · Miyako" if phase == "hana_complete" else "Az éjszakai látogató"
 		if phase == "visitor_complete":
 			continue_button.text = "Másnap · Shion konzultációja"
+		if phase == "shion_complete":
+			continue_button.text = "Miyako visszatérése · A pecsét"
 		continue_button.position = Vector2(180,225)
 		continue_button.size = Vector2(280,38)
 		continue_button.disabled = true
@@ -210,12 +232,14 @@ func show_end() -> void:
 			continue_button.pressed.connect(start_afternoon)
 		elif phase == "afternoon_complete":
 			continue_button.pressed.connect(start_night_visitor)
-		else:
+		elif phase == "visitor_complete":
 			continue_button.pressed.connect(start_shion)
+		else:
+			continue_button.pressed.connect(start_seal)
 		card.add_child(continue_button)
 
 func advance(_delta: float) -> void:
-	if phase in ["hana_complete","afternoon_complete","visitor_complete"] and not continue_armed:
+	if phase in ["hana_complete","afternoon_complete","visitor_complete","shion_complete"] and not continue_armed:
 		if not Input.is_action_pressed("observe") and not Input.is_key_pressed(KEY_SPACE) and not Input.is_key_pressed(KEY_ENTER) and not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			continue_armed = true
 			continue_button.disabled = false
