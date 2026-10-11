@@ -157,8 +157,20 @@ func open_chapters() -> void:
 	label(modal,"Teszteléshez · új állapotból, az előzmények beállításával.",Vector2(26,58),Vector2(448,24),11)
 	chapter_buttons.clear()
 	var entries: Array[Dictionary] = preload("res://scripts/ui/chapter_catalog.gd").entries()
+	var scroll := ScrollContainer.new()
+	scroll.position = Vector2(26,82)
+	scroll.size = Vector2(448,192)
+	scroll.follow_focus = true
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	modal.add_child(scroll)
+	var list := VBoxContainer.new()
+	list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	list.add_theme_constant_override("separation",1)
+	scroll.add_child(list)
 	for i in entries.size():
-		chapter_buttons.append(button(modal,str(entries[i].title),Vector2(26,82+i*24),Vector2(448,23),launch_chapter.bind(str(entries[i].id))))
+		var item := button(list,str(entries[i].title),Vector2.ZERO,Vector2(424,23),launch_chapter.bind(str(entries[i].id)))
+		item.custom_minimum_size = Vector2(424,23)
+		chapter_buttons.append(item)
 	chapter_buttons[0].grab_focus()
 
 func volume_changed(value: float) -> void:

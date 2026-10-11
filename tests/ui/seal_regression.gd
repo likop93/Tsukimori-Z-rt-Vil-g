@@ -28,6 +28,16 @@ func _ready() -> void:
 	check(GameState.aff_miyako == before_aff,"No invented affinity")
 	var entry: Dictionary = preload("res://scripts/ui/character_journal.gd").entries()[0]
 	check(entry.portrait.ends_with("akira_doctor_green_eye_v1_REVIEW.png"),"Journal tracks eye change")
+	day.continue_armed = false
+	Input.action_press("observe")
+	day.advance(0.0)
+	day.start_tea()
+	check(day.phase == "seal_complete","Held ending input cannot start tea")
+	Input.action_release("observe")
+	day.advance(0.0)
+	day.continue_button.pressed.emit()
+	await get_tree().process_frame
+	check(day.phase == "miyako_tea" and day.vn.index == 0,"Seal continues to tea without losing first line")
 	GameState.clear_runtime_state()
 	check(not GameState.has_flag("miyako_seal_complete"),"Reset clears seal progress")
 	print("SEAL: "+JSON.stringify({"passed":failures.is_empty(),"failures":failures}))

@@ -179,6 +179,16 @@ func show_character(index: int) -> void:
 		portrait.size = Vector2(146,244)
 		portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		body.add_child(portrait)
+		if entry.has("outfit_preview"):
+			portrait.size.y = 216
+			var wardrobe := make_button(body,"Esti ruha",Vector2(183,282),Vector2(146,28),func(): pass)
+			wardrobe.name = "MiyakoWardrobePreview"
+			wardrobe.toggle_mode = true
+			wardrobe.add_theme_font_size_override("font_size",12)
+			wardrobe.toggled.connect(func(evening: bool):
+				portrait.texture = load(str(entry.outfit_preview) if evening else str(entry.portrait))
+				wardrobe.text = "Kimonó" if evening else "Esti ruha"
+			)
 		if str(entry.id) == "hana" and int(entry.get("reaction_stage",0)) == 2:
 			portrait.size.y = 216
 			var wardrobe := make_button(body,"Hétköznapi",Vector2(183,282),Vector2(146,28),func(): pass)

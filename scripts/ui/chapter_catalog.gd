@@ -10,6 +10,7 @@ static func entries() -> Array[Dictionary]:
 		{"id":"hana","title":"IV. Hana · első beszélgetés"},
 		{"id":"visitor","title":"IV. Az éjszakai látogató"},
 		{"id":"shion","title":"V. Shion · első konzultáció"},
+		{"id":"tea","title":"V. Esti tea · Miyako (új jelenet)"},
 	]
 
 static func valid(id: String) -> bool:
@@ -46,11 +47,14 @@ static func prepare(id: String) -> bool:
 	GameState.clinic_first_choice = "clinical"
 	for flag in ["miyako_morning_seen","flag_miyako_tavolsag","flag_klinikai_tavolsag","first_clinic_day_started","first_day_consultation_1_seen","first_day_consultation_2_seen","first_clinic_day_seen","katsuro_clinic_notebook_seen","miyako_first_day_evening_seen","hana_name_heard","first_day_complete"]:
 		GameState.set_flag(flag)
-	if id in ["visitor","shion"]:
+	if id in ["visitor","shion","tea"]:
 		for flag in ["met_hana","hana_first_session_seen","miyako_hana_afternoon_seen","akira_wrist_mark_seen","katsuro_notebook_awakening_seen"]:
 			GameState.set_flag(flag)
-	if id == "shion":
+	if id in ["shion","tea"]:
 		for flag in ["night_visitor_complete","black_pool_dream_seen","wet_notebook_seen","night_visitor_glimpsed","shion_name_heard","shion_appointment_expected"]:
+			GameState.set_flag(flag)
+	if id == "tea":
+		for flag in ["met_shion","shion_first_session_seen","akira_seal_revealed","invitation_authorship_questioned","katsuro_voice_shared","tape_awakened","seal_fan_vision_seen","akira_right_eye_green","seal_stone_split","miyako_seal_complete"]:
 			GameState.set_flag(flag)
 	return true
 
@@ -94,3 +98,6 @@ static func enter(runner: Node, id: String) -> void:
 	elif id == "shion":
 		chapter.begin_hana_day()
 		chapter.next_day.start_shion(true)
+	elif id == "tea":
+		chapter.begin_hana_day()
+		chapter.next_day.start_tea(true)

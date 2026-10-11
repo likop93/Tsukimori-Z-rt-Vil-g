@@ -26,6 +26,7 @@ var cg: TextureRect
 var cg_path := ""
 var dialogue_panel: Panel
 var dialogue_id := ""
+var outfit := ""
 
 func _ready() -> void:
 	layer = 30
@@ -133,6 +134,7 @@ func begin(data: Dictionary) -> void:
 		return
 	lines = data.lines
 	dialogue_id = str(data.get("id",""))
+	outfit = ""
 	choices = data.get("choices",[])
 	portraits_enabled = bool(data.get("portrait",true))
 	akira_enabled = bool(data.get("akira_portrait",true))
@@ -184,6 +186,12 @@ func show_line() -> void:
 		var reaction := preload("res://scripts/ui/character_reactions.gd").profile(pressure_actor)
 		if not reaction.is_empty():
 			set_partner_texture(str(reaction.portrait))
+	if lines[index].has("outfit"):
+		outfit = str(lines[index].outfit)
+	if not outfit.is_empty():
+		var outfit_path := preload("res://scripts/ui/character_reactions.gd").outfit_portrait(partner_id,outfit)
+		if not outfit_path.is_empty():
+			set_partner_texture(outfit_path)
 	speaker.text = str(lines[index].speaker)
 	nameplate.visible = not speaker.text.is_empty()
 	portrait.modulate = Color.WHITE if speaker.text == portrait_speaker else Color(0.65,0.65,0.7)
@@ -259,6 +267,7 @@ func advance() -> void:
 		finished.emit()
 
 func show_choices() -> void:
+	choice_box.position.y = maxf(16,dialogue_panel.position.y-choices.size()*42-(choices.size()-1)*8-8)
 	choice_box.show()
 	next_button.hide()
 	prompt.text = "Nyilak + Enter / kattintás · választás"

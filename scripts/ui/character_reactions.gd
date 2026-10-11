@@ -1,6 +1,11 @@
 extends RefCounted
 const BASE := "res://assets/opening/vn_portraits/"
 
+static func outfit_portrait(id: String, outfit: String) -> String:
+	if id == "miyako" and outfit == "evening":
+		return BASE+["miyako_evening_v1_REVIEW.png","miyako_evening_watchful_v1_REVIEW.png","miyako_evening_transformed_v1_REVIEW.png"][GameState.character_stage(id)]
+	return ""
+
 static func profile(id: String) -> Dictionary:
 	var stage := GameState.character_stage(id)
 	if id == "miyako":

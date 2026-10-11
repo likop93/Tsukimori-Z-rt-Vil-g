@@ -28,6 +28,9 @@ func play(id: String) -> void:
 	if is_instance_valid(vn):
 		vn.queue_free()
 	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/home_day2/"+id+".json"))
+	if id == "miyako_tea" and GameState.character_stage("miyako") > 0:
+		var stage := GameState.character_stage("miyako")
+		data.lines.insert(3,{"speaker":"","text":"Miyako mosolya azután is az arcán maradt, hogy Akira elfordult. Tekintete minden mozdulatát követte." if stage == 2 else "Miyako pillantása megállt a két szék közti távolságon. Csak azután nézett vissza Akirára."})
 	met_at_line = int(data.get("met_at_line",-1))
 	vn = preload("res://scripts/ui/vn_dialogue.gd").new()
 	add_child(vn)
@@ -69,6 +72,8 @@ func on_line(index: int) -> void:
 		GameState.set_flag("met_hana")
 
 func on_choice(id: String) -> void:
+	if phase == "miyako_tea":
+		GameState.record_personal_choice(phase,id)
 	if phase == "shion_arrival" and not GameState.has_flag("shion_melody_decided") and id in ["join_melody","wait_melody"]:
 		GameState.set_flag("shion_melody_decided")
 		if id == "join_melody":
@@ -151,6 +156,19 @@ func finish_dialogue() -> void:
 			GameState.set_flag("miyako_seal_complete")
 			phase = "seal_complete"
 			show_end()
+		"miyako_tea":
+			GameState.set_flag("miyako_tea_complete")
+			phase = "tea_complete"
+			show_end()
+
+func start_tea(checkpoint := false) -> void:
+	if not checkpoint and (phase != "seal_complete" or not continue_armed or get_tree().paused):
+		return
+	if is_instance_valid(end_card):
+		end_card.queue_free()
+	set_location("interior","Miyako · Egy este szerepek nélkül")
+	runner.street.backdrop.modulate = Color(0.8,0.72,0.72)
+	play("miyako_tea")
 
 func start_seal() -> void:
 	if phase != "shion_complete" or not continue_armed or get_tree().paused:
@@ -206,6 +224,8 @@ func show_end() -> void:
 		title.text = "Shion · A közös emlék\nAz első konzultáció lezárult"
 	if phase == "seal_complete":
 		title.text = "A pecsét\nAz első név visszatért"
+	if phase == "tea_complete":
+		title.text = "Miyako · Esti tea\nEgy személyesebb beszélgetés"
 	title.position = Vector2(30,130)
 	title.size = Vector2(580,50)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -217,7 +237,7 @@ func show_end() -> void:
 	button.size = Vector2(170,38)
 	button.pressed.connect(chapter.return_to_main)
 	card.add_child(button)
-	if phase in ["hana_complete","afternoon_complete","visitor_complete","shion_complete"]:
+	if phase in ["hana_complete","afternoon_complete","visitor_complete","shion_complete","seal_complete"]:
 		button.position.y = 277
 		continue_button = Button.new()
 		continue_button.text = "Késő délután · Miyako" if phase == "hana_complete" else "Az éjszakai látogató"
@@ -225,6 +245,8 @@ func show_end() -> void:
 			continue_button.text = "Másnap · Shion konzultációja"
 		if phase == "shion_complete":
 			continue_button.text = "Miyako visszatérése · A pecsét"
+		if phase == "seal_complete":
+			continue_button.text = "Esti tea · Miyako"
 		continue_button.position = Vector2(180,225)
 		continue_button.size = Vector2(280,38)
 		continue_button.disabled = true
@@ -234,12 +256,14 @@ func show_end() -> void:
 			continue_button.pressed.connect(start_night_visitor)
 		elif phase == "visitor_complete":
 			continue_button.pressed.connect(start_shion)
-		else:
+		elif phase == "shion_complete":
 			continue_button.pressed.connect(start_seal)
+		else:
+			continue_button.pressed.connect(start_tea)
 		card.add_child(continue_button)
 
 func advance(_delta: float) -> void:
-	if phase in ["hana_complete","afternoon_complete","visitor_complete","shion_complete"] and not continue_armed:
+	if phase in ["hana_complete","afternoon_complete","visitor_complete","shion_complete","seal_complete"] and not continue_armed:
 		if not Input.is_action_pressed("observe") and not Input.is_key_pressed(KEY_SPACE) and not Input.is_key_pressed(KEY_ENTER) and not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 			continue_armed = true
 			continue_button.disabled = false

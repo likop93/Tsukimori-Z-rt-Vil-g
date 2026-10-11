@@ -38,11 +38,11 @@ func _ready() -> void:
 		await get_tree().process_frame
 		menu.chapters_button.grab_focus()
 		await key(KEY_ENTER)
-		check(is_instance_valid(menu.modal) and menu.chapter_buttons.size() == 8,"Selector exposes implemented checkpoints")
+		check(is_instance_valid(menu.modal) and menu.chapter_buttons.size() == entries.size(),"Selector exposes implemented checkpoints")
 		check(get_viewport().gui_get_focus_owner() == menu.chapter_buttons[0],"First chapter receives keyboard focus")
 		check(GameState.aff_hana == 99 and GameState.has_flag("stale_test_flag"),"Opening selector does not mutate current session")
-		for button in menu.chapter_buttons:
-			check(button.position.y+button.size.y < menu.back_button.position.y,"Chapter choices clear back button")
+		var chapter_scroll: ScrollContainer = menu.chapter_buttons[0].get_parent().get_parent()
+		check(chapter_scroll.position.y+chapter_scroll.size.y < menu.back_button.position.y,"Chapter scroll clears back button")
 		await key(KEY_ESCAPE)
 		check(not is_instance_valid(menu.modal) and get_viewport().gui_get_focus_owner() == menu.chapters_button,"Cancel restores focus without starting")
 		await key(KEY_ENTER)
@@ -84,6 +84,9 @@ func _ready() -> void:
 				check(GameState.aff_miyako == 0 and GameState.akira_gyogyulas == 0,"Skipped choices grant no affinity or healing")
 		if id == "visitor":
 			check(runner.arrival.next_day.phase == "night_visitor","Visitor starts at the new night scene")
+		if id == "tea":
+			check(runner.arrival.next_day.phase == "miyako_tea","Tea opens the new personal scene")
+			check(GameState.has_flag("akira_right_eye_green") and GameState.personal_choices.is_empty(),"Tea checkpoint has prior eye change but no personal decision")
 		if id == "shion":
 			check(runner.arrival.next_day.phase == "shion_arrival" and not GameState.has_flag("met_shion"),"Shion starts before personal introduction")
 		if id in ["miyako","night","clinic","hana","visitor","shion"]:

@@ -155,3 +155,7 @@ Ha a képek nem érhetők el közvetlenül:
 4. jelezze, hogy a konkrét képi referencia szinkronizálása szükséges.
 
 A képi referencia hiánya nem jogosít fel LOCKED design újratervezésére.
+
+## 2026-10-11 — Miyako esti ruhatár, OWNER / REVIEW
+
+Az assets/opening/vn_portraits/miyako_evening_v1_REVIEW.png, miyako_evening_watchful_v1_REVIEW.png és miyako_evening_transformed_v1_REVIEW.png a meglévő Miyako-identitás esti outfitváltozatai. Nem új primary design. Pontos referenciák, generálási promptok és hiányzó production variánsok: [MIYAKO_TEA_WARDROBE_REVIEW.md](MIYAKO_TEA_WARDROBE_REVIEW.md).

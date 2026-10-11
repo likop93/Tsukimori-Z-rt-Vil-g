@@ -1,0 +1,245 @@
+{
+  "id": "miyako_tea",
+  "status": "OWNER REQUEST / NEW WRITING / REVIEW",
+  "portrait_speaker": "Miyako",
+  "portrait_side": "left",
+  "portrait_facing": "left",
+  "akira_portrait_path": "res://assets/opening/vn_portraits/akira_doctor_green_eye_v1_REVIEW.png",
+  "lines": [
+    {
+      "speaker": "",
+      "text": "Később, a ház közös szobájában Miyako vizet tett fel. Akira a rendelőből jött; a nap még mindig ott feszült a vállában."
+    },
+    {
+      "speaker": "Akira",
+      "text": "A szemem még mindig olyan?"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Igen. De most már nyugodtan veszed a levegőt."
+    },
+    {
+      "speaker": "",
+      "text": "Miyako félretette a tálcát. Az asztal másik oldalán állt meg, és kivárt."
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Maradsz egy teára? Nem a pecsétről akarok beszélni."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Hanem?"
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Valamiről, ami csak a miénk. Akár arról, milyen teát nem szeretsz."
+    },
+    {
+      "speaker": "Akira",
+      "text": "Rólad szívesebben hallanék."
+    },
+    {
+      "speaker": "Miyako",
+      "text": "Akkor ma ne a házra figyelj. Rám."
+    },
+    {
+      "speaker": "",
+      "text": "Nem húzta közelebb Akira székét. A kezét a támla tetején hagyta, és megvárta a választ."
+    }
+  ],
+  "choices": [
+    {
+      "id": "closer",
+      "label": "Szeretnélek közelebbről megismerni.",
+      "lines": [
+        {
+          "speaker": "Akira",
+          "text": "Maradok. Nem csak a tea miatt. Szeretnélek közelebbről megismerni."
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Örülök, hogy ezt te mondtad ki."
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Várj meg itt. Átveszek valami kényelmesebbet, és hozom a teát."
+        },
+        {
+          "speaker": "",
+          "text": "Néhány perc múlva puha, vállat szabadon hagyó felsőben és hosszú szoknyában tért vissza. Két csészét tett az asztalra.",
+          "outfit": "evening"
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Ebben legalább nem érzem úgy, hogy még mindig vendéget fogadok."
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Ideülhetek melléd?"
+        },
+        {
+          "speaker": "Akira",
+          "text": "Igen."
+        },
+        {
+          "speaker": "",
+          "text": "Miyako a mellette álló széket választotta. Egy pillanatra összeért a kezük a cukortartónál; most egyikük sem kapta el."
+        },
+        {
+          "speaker": "",
+          "text": "A tea lassan kihűlt. Miyako a csészéjét két kézzel tartotta; ezúttal nem sietett elmosogatni."
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Régen szerettem hajnal előtt felkelni. Akkor még senki nem kért tőlem semmit."
+        },
+        {
+          "speaker": "Akira",
+          "text": "Mit csináltál olyankor?"
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Kiültem az udvarra. Néha csak azt figyeltem, mikor lesz színe a fáknak."
+        },
+        {
+          "speaker": "",
+          "text": "Akira nem kérdezett tovább a pecsétről. A törött kő most egy másik szobában maradt."
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Ma ennyi elég. Holnap visszatérhetünk arra, amit láttál."
+        },
+        {
+          "speaker": "",
+          "text": "A folyosón egy deszka halkan megroppant. Mindketten az ajtó felé néztek, aztán vissza egymásra."
+        }
+      ]
+    },
+    {
+      "id": "slow",
+      "label": "Maradok, de szeretnék lassan haladni.",
+      "lines": [
+        {
+          "speaker": "Akira",
+          "text": "Szeretnék itt maradni. De ma túl sok minden történt. Haladjunk lassan."
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Akkor nem kérdezem meg, mit jelent majd a holnap. Ma megisszuk a teát."
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Várj meg itt. Átveszek valami kényelmesebbet, és hozom a teát."
+        },
+        {
+          "speaker": "",
+          "text": "Néhány perc múlva puha, vállat szabadon hagyó felsőben és hosszú szoknyában tért vissza. Két csészét tett az asztalra.",
+          "outfit": "evening"
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Ebben legalább nem érzem úgy, hogy még mindig vendéget fogadok."
+        },
+        {
+          "speaker": "",
+          "text": "Miyako kissé oldalra húzta a saját székét. Elég közel ült a beszélgetéshez, de meghagyta köztük a helyet."
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Majd szólsz, ha mást szeretnél."
+        },
+        {
+          "speaker": "",
+          "text": "A tea lassan kihűlt. Miyako a csészéjét két kézzel tartotta; ezúttal nem sietett elmosogatni."
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Régen szerettem hajnal előtt felkelni. Akkor még senki nem kért tőlem semmit."
+        },
+        {
+          "speaker": "Akira",
+          "text": "Mit csináltál olyankor?"
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Kiültem az udvarra. Néha csak azt figyeltem, mikor lesz színe a fáknak."
+        },
+        {
+          "speaker": "",
+          "text": "Akira nem kérdezett tovább a pecsétről. A törött kő most egy másik szobában maradt."
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Ma ennyi elég. Holnap visszatérhetünk arra, amit láttál."
+        },
+        {
+          "speaker": "",
+          "text": "A folyosón egy deszka halkan megroppant. Mindketten az ajtó felé néztek, aztán vissza egymásra."
+        }
+      ]
+    },
+    {
+      "id": "friends",
+      "label": "Jólesne a társaságod, barátként.",
+      "lines": [
+        {
+          "speaker": "Akira",
+          "text": "Jólesne a társaságod. De nem szeretnék olyasmit ígérni, amit nem érzek. Barátként maradnék."
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Értem. Akkor a tea nem jelent mást, mint egy közös estét."
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Várj meg itt. Átveszek valami kényelmesebbet, és hozom a teát."
+        },
+        {
+          "speaker": "",
+          "text": "Néhány perc múlva puha, vállat szabadon hagyó felsőben és hosszú szoknyában tért vissza. Két csészét tett az asztalra.",
+          "outfit": "evening"
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Ebben legalább nem érzem úgy, hogy még mindig vendéget fogadok."
+        },
+        {
+          "speaker": "",
+          "text": "Miyako a szemközti székre ült. A második csészét ugyanúgy Akira elé tette."
+        },
+        {
+          "speaker": "Akira",
+          "text": "Köszönöm, hogy meghallgattál."
+        },
+        {
+          "speaker": "",
+          "text": "A tea lassan kihűlt. Miyako a csészéjét két kézzel tartotta; ezúttal nem sietett elmosogatni."
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Régen szerettem hajnal előtt felkelni. Akkor még senki nem kért tőlem semmit."
+        },
+        {
+          "speaker": "Akira",
+          "text": "Mit csináltál olyankor?"
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Kiültem az udvarra. Néha csak azt figyeltem, mikor lesz színe a fáknak."
+        },
+        {
+          "speaker": "",
+          "text": "Akira nem kérdezett tovább a pecsétről. A törött kő most egy másik szobában maradt."
+        },
+        {
+          "speaker": "Miyako",
+          "text": "Ma ennyi elég. Holnap visszatérhetünk arra, amit láttál."
+        },
+        {
+          "speaker": "",
+          "text": "A folyosón egy deszka halkan megroppant. Mindketten az ajtó felé néztek, aztán vissza egymásra."
+        }
+      ]
+    }
+  ]
+}

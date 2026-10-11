@@ -76,5 +76,9 @@ static func entries() -> Array[Dictionary]:
 				entry.reaction_label = reaction.label
 				entry.reaction_description = reaction.description
 				entry.reaction_stage = reaction.stage
+		if known and spec.id == "miyako" and GameState.personal_choices.has("miyako_tea"):
+			entry.status = {"closer":"Kölcsönösen közelebb szeretnétek kerülni.","slow":"Lassan, egymás tempójára figyelve ismerkedtek.","friends":"Baráti társaságot kértél; ezt kimondtátok."}[GameState.personal_choices["miyako_tea"]]
+			entry.events.append("Egy esti tea mellett a saját életéről beszélt.")
+			entry.outfit_preview = preload("res://scripts/ui/character_reactions.gd").outfit_portrait("miyako","evening")
 		result.append(entry)
 	return result

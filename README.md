@@ -18,6 +18,8 @@ A szünetmenüben folytatás, karakterlapok és kapcsolati státusz, hangerő, t
 
 ## Aktuális állapot
 
+2026-10-11: a pecsét után Miyako esti teázása következik, három személyes válasszal és új, horrorállapothoz illeszkedő esti ruhákkal. Közvetlenül: Fejezetválasztás → V. Esti tea. A karakterlap megőrzi a kimondott kapcsolati megállapodást és az új ruha előnézetét. Új REVIEW-kiegészítés, nem az eredeti forrás átirata. [Részletek, assetek, korlátok](docs/MIYAKO_TEA_WARDROBE_REVIEW.md).
+
 Miyako előtt E indítja az első VN-jelenetet. E / Space / Enter / bal kattintás kiírja az aktuális mondatot, majd továbblép. A beszélgetés megvárja az olvasót. Utána újabb E belép a házba: benti beszélgetés, két eredeti választás, majd bejárható belső sáv. Jobbra E → Akira VN-szobája, ahol gombokkal választható az ablak, az orvosi táska, a fénykép és a lefekvés. Az első éjszaka külön lezárásából explicit folytatás vezet a reggelhez.
 
 Akira szobája és a rendelő VN-háttérként működik, járó Akira nélkül. Egér vagy fel/le + Enter választja a megfigyeléseket, a lefekvést és a két konzultációt. Reggel Miyakóval és két eredeti döntés → rendelő → nap tanulságai és Katsuro füzete → esti beszélgetés → második éjszakai „Hana” záróhang → az első nap vége. [Aktuális VN-kezelés](docs/ROOM_CLINIC_VN_REVIEW.md), [éjszaka története](docs/FIRST_NIGHT_IMPLEMENTATION_REVIEW.md), [első nap és hiányok](docs/FIRST_DAY_IMPLEMENTATION_REVIEW.md).

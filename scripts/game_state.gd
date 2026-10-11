@@ -19,6 +19,15 @@ var akira_elmerules := 0
 signal horror_changed(level: int)
 var horror_events: Dictionary = {}
 var horror_pressure := 0
+var personal_choices: Dictionary = {}
+
+func record_personal_choice(scene: String, choice: String) -> bool:
+    # Personal agreement is independent of horror and canonical affinity.
+    if scene != "miyako_tea" or choice not in ["closer","slow","friends"] or personal_choices.has(scene):
+        return false
+    personal_choices[scene] = choice
+    set_flag("miyako_evening_outfit_seen")
+    return true
 
 func rejection_actor(dialogue_id: String, choice_id: String) -> String:
     return str({"second_morning:withdraw":"miyako", "miyako_afternoon:keep_distance":"miyako",
@@ -76,6 +85,7 @@ func has_flag(flag_name: String) -> bool:
 
 func clear_runtime_state() -> void:
     flags.clear()
+    personal_choices.clear()
     horror_events.clear()
     horror_pressure = 0
     horror_changed.emit(0)
