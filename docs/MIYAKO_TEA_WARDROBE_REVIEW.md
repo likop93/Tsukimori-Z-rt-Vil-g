@@ -2,6 +2,8 @@
 2026-10-11. Tulajdonosi kérés: karakterenként eltérő személyes történet és a közeledéssel megjelenő merészebb ruhák. Első megvalósított jelenet: Miyako esti teázása a pecsét után.
 
 ## Jelenet és állapot
+
+**Tulajdonosi ütemezési korrekció, 2026-10-11:** a jelenlegi történetben a teljes mániákus kép nem jelenik meg. Egy személyes határhúzásnál az alapmegjelenés marad; a két jelenlegi eltérő döntés után legfeljebb figyelő állapot. A testi átalakuláshoz a felgyűlt személyes nyomáson túl a későbbi, megírandó miyako_transformation_revealed történeti esemény szükséges. Ezt most egyetlen játékjelenet vagy fejezetválasztó sem állítja be. A háromállapotú grafikai teszt a későbbi képet kizárólag mesterséges tesztállapotban ellenőrzi. A köztes történeti folyamat még megírandó; nem tekinthető kész hosszú karakterívnek.
 ÚJ, tulajdonosi kérésre írt kiegészítés; nem az eredeti Ren'Py/PDF szöveg átirata, nem új kreatív LOCK. A VI. fejezet eredeti folytatása még nincs átültetve.
 A pecsét lezárókártyájáról folytatható; közvetlen teszt: Fejezetválasztás → V. Esti tea.
 Miyako balra, Akira jobbra; Akira megváltozott jobb szeme megmarad. A közös szoba VN-only, játékosmozgás nélkül.

@@ -6,8 +6,10 @@ func _ready() -> void:
 			preload("res://scripts/ui/chapter_catalog.gd").prepare("tea")
 			if stage > 0:
 				GameState.record_distance("second_morning","withdraw")
-			if stage > 1:
 				GameState.record_distance("miyako_afternoon","keep_distance")
+			if stage > 1:
+				# Future-state asset fixture, not reachable in current story.
+				GameState.set_flag("miyako_transformation_revealed")
 			var pressure := GameState.horror_pressure
 			var runner: Node = load("res://scenes/opening/opening.tscn").instantiate()
 			add_child(runner)

@@ -18,7 +18,8 @@ func _ready() -> void:
 	await get_tree().process_frame
 	check(day.phase == "miyako_seal","Shion ending continues to Miyako")
 	check(not GameState.has_flag("akira_right_eye_green"),"Eye change is not premature")
-	check(day.vn.portrait_source_path.ends_with("miyako_transformed_manic_v1_REVIEW.png"),"Miyako transformation persists")
+	check(day.vn.portrait_source_path.ends_with("miyako_possessive_v1_REVIEW.png"),"Early rejections remain watchful through seal")
+	check(not GameState.has_flag("miyako_transformation_revealed"),"Seal does not reveal Miyako transformation")
 	var before_aff: int = GameState.aff_miyako
 	await finish(day.vn)
 	check(day.phase == "seal_complete","Seal scene finishes")

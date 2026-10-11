@@ -43,14 +43,22 @@ func character_pressure(character: String) -> int:
 
 func character_stage(character: String) -> int:
     var pressure := character_pressure(character)
+    if character == "miyako":
+        # Early decisions only reveal watchfulness. A later authored story beat
+        # must explicitly reveal the physical change; no current scene sets it.
+        if pressure < 4:
+            return 0
+        return 2 if has_flag("miyako_transformation_revealed") else 1
     return 2 if pressure >= 3 else (1 if pressure > 0 else 0)
 
 func character_response(character: String) -> Dictionary:
     var stage := character_stage(character)
+    if character == "miyako" and stage == 0 and character_pressure(character) > 0:
+        return {"speaker":"", "text":"Miyako egy pillanatig hallgatott, aztán folytatta, amit félbehagyott."}
     if stage == 0:
         return {}
     if character == "miyako":
-        return {"speaker":"Miyako", "text":"Már megint távolabb húzódsz. Attól még észreveszem, ha valami történik veled." if stage == 2 else "Visszahúztad a kezed. Észrevettem, Akira.", "pressure_actor":character}
+        return {"speaker":"Miyako", "text":"Már megint távolabb húzódsz. Attól még észreveszem, ha valami történik veled." if stage == 2 else "Rendben. Majd szólsz, ha beszélgetnél.", "pressure_actor":character}
     if character == "hana":
         return {"speaker":"Hana", "text":"Jól van… megvárom, amíg szól. Így maradjak? Csak mondja meg, doktor, mi lenne jó." if stage == 2 else "Talán túl közvetlen voltam. Mondja, ha inkább csendben maradjak.", "pressure_actor":character}
     return {}
