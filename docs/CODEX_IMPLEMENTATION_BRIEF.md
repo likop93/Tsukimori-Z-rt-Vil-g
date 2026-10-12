@@ -354,3 +354,22 @@ Szabályok:
 - Himiko nem jelenhet meg az első falubejáráson;
 - a discovery flag-ek egyszerű story-state-ek maradnak, ne építs teljes open-world/route rendszert;
 - a jelenlegi village/bridge képek REVIEW stand-inek; külön helyszínart későbbi batch.
+
+
+### Sora FINAL adaptáció — LOCKED 2026-10-12
+
+Sora nem újragenerálandó karakter.
+
+Kötelező forrás:
+- `docs/SORA_PRODUCTION_SPEC.md`
+- `docs/CHARACTER_BIBLE.md`
+- `/Tsukimori Visual References/npc/VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` / 1. SORA — INNKEEPER panel.
+
+A `INN_COURTESAN_NPC_PACK_V1.png` csak fogadói environment/outfit supporting reference.
+
+Ha VN cutout/world sprite készül:
+- a meglévő Sora arc/haj/sziluett maradjon felismerhető;
+- ne cseréld generic inn workerre;
+- ne tervezz neki új hajszínt vagy új testidentitást;
+- első expression batch: neutral, small_smile, watchful, tired_soft;
+- első motion batch: idle, walk, sweep, tray/glass interaction.

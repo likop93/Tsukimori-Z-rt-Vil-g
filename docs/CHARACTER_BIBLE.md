@@ -434,3 +434,34 @@ FINAL karakterhez kell:
 Reina nem generikus modern/sexy NPC. Funkciója a falu hétköznapi, fiatalabb és modernebb életének megmutatása, valamint a későbbi szabadidős rendszer egyik természetes kapcsolódási pontja.
 
 Kötelező production spec: `docs/REINA_PRODUCTION_SPEC.md`.
+
+
+---
+
+# Sora
+
+## Identitás — LOCKED 2026-10-12
+
+- felnőtt, középkorú nő;
+- Tsukimori fogadójának vezetője;
+- a fogadó több generáción át öröklődött a családjában;
+- figyeli, ki érkezik és ki tűnik el a faluból;
+- óvatos, figyelő, felnőtt jelenlét;
+- nem fáradt-karakter, inkább belenyugvó és sokat látott;
+- természetes információs csomópont a falu társasági életében.
+
+## Vizuális identitás — LOCKED
+
+Primary existing visual authority:
+`/Tsukimori Visual References/npc/VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` — **1. SORA — INNKEEPER** panel.
+
+- hosszú, nagyon sötét fekete/kékes-lilás haj;
+- lila/ibolyás részletnyelv;
+- érett, meleg, magabiztos arc;
+- magasnak és fizikailag erősnek ható, telt nőies sziluett;
+- mély lila / indigó / bordó fogadói outfit;
+- elegáns, kissé érzéki, de földelt fogadói jelenlét.
+
+A generic inn-worker/courtesan pack csak supporting environment/outfit reference; nem írhatja felül Sora saját karakterdesignját.
+
+Részletek: `docs/SORA_PRODUCTION_SPEC.md`.

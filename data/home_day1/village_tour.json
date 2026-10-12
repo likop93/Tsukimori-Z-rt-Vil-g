@@ -1,123 +1,297 @@
 {
   "stops": {
     "school": {
-      "label":"Iskola",
-      "title":"Iskola · Reina",
-      "flag":"school_discovered",
-      "background":"village",
-      "portrait":true,
-      "portrait_speaker":"Reina",
-      "portrait_path":"res://assets/opening/vn_portraits/reina_teacher_v1_REVIEW.webp",
-      "portrait_side":"left",
-      "source":"OWNER APPROVED 2026-10-12; Reina formal introduction moved to the first village orientation.",
-      "lines":[
-        {"speaker":"","text":"Az iskola előtt egy fekete motor állt. A régi faépülethez képest szinte illetlenül modernnek hatott."},
-        {"speaker":"","text":"A bejáratnál egy platinaszőke nő vette le a sisakját. Amikor észrevette Akirát, úgy nézett rá, mintha már tudná, ki ő."},
-        {"speaker":"Reina","text":"Maga lehet az új doktor."},
-        {"speaker":"Akira","text":"És maga a tanár."},
-        {"speaker":"Reina","text":"A motorból jött rá?"},
-        {"speaker":"Akira","text":"A krétaporból."},
-        {"speaker":"Reina","text":"Jó. Legalább nem teljesen unalmas."},
-        {"speaker":"Reina","text":"Reina. Itt tanítok. Egyszer jöjjön be. Van pár dolog, amiről jó lenne, ha a nagyobb lányok nem csak a nagymamáiktól hallanának."},
-        {"speaker":"Akira","text":"Egészségügyi beszélgetés?"},
-        {"speaker":"Reina","text":"Többek között. Majd szólok, doktor úr."}
+      "label": "Iskola",
+      "title": "Iskola · Reina",
+      "flag": "school_discovered",
+      "background": "village",
+      "portrait": true,
+      "portrait_speaker": "Reina",
+      "portrait_path": "res://assets/opening/vn_portraits/reina_teacher_v1_REVIEW.webp",
+      "portrait_side": "left",
+      "source": "OWNER APPROVED 2026-10-12; Reina formal introduction moved to the first village orientation.",
+      "lines": [
+        {
+          "speaker": "",
+          "text": "Az iskola előtt egy fekete motor állt. A régi faépülethez képest szinte illetlenül modernnek hatott."
+        },
+        {
+          "speaker": "",
+          "text": "A bejáratnál egy platinaszőke nő vette le a sisakját. Amikor észrevette Akirát, úgy nézett rá, mintha már tudná, ki ő."
+        },
+        {
+          "speaker": "Reina",
+          "text": "Maga lehet az új doktor."
+        },
+        {
+          "speaker": "Akira",
+          "text": "És maga a tanár."
+        },
+        {
+          "speaker": "Reina",
+          "text": "A motorból jött rá?"
+        },
+        {
+          "speaker": "Akira",
+          "text": "A krétaporból."
+        },
+        {
+          "speaker": "Reina",
+          "text": "Jó. Legalább nem teljesen unalmas."
+        },
+        {
+          "speaker": "Reina",
+          "text": "Reina. Itt tanítok. Egyszer jöjjön be. Van pár dolog, amiről jó lenne, ha a nagyobb lányok nem csak a nagymamáiktól hallanának."
+        },
+        {
+          "speaker": "Akira",
+          "text": "Egészségügyi beszélgetés?"
+        },
+        {
+          "speaker": "Reina",
+          "text": "Többek között. Majd szólok, doktor úr."
+        }
       ]
     },
     "shop": {
-      "label":"Vegyesbolt",
-      "title":"Vegyesbolt · Aoi",
-      "flag":"shop_discovered",
-      "background":"village",
-      "portrait":false,
-      "lines":[
-        {"speaker":"","text":"A bolt kicsi volt, de szinte mindent tartott, amire egy elzárt hegyi faluban szükség lehetett."},
-        {"speaker":"Aoi","text":"Maga az új doktor, igaz? Aoi. Ha valamit nem talál a polcon, kérdezzen. Attól még lehet, hogy van."},
-        {"speaker":"Akira","text":"És ha nincs?"},
-        {"speaker":"Aoi","text":"Akkor holnapra lesz. Tsukimoriban ez már majdnem ugyanaz."}
+      "label": "Vegyesbolt",
+      "title": "Vegyesbolt · Aoi",
+      "flag": "shop_discovered",
+      "background": "village",
+      "portrait": false,
+      "lines": [
+        {
+          "speaker": "",
+          "text": "A bolt kicsi volt, de szinte mindent tartott, amire egy elzárt hegyi faluban szükség lehetett."
+        },
+        {
+          "speaker": "Aoi",
+          "text": "Maga az új doktor, igaz? Aoi. Ha valamit nem talál a polcon, kérdezzen. Attól még lehet, hogy van."
+        },
+        {
+          "speaker": "Akira",
+          "text": "És ha nincs?"
+        },
+        {
+          "speaker": "Aoi",
+          "text": "Akkor holnapra lesz. Tsukimoriban ez már majdnem ugyanaz."
+        }
       ]
     },
     "inn": {
-      "label":"Fogadó",
-      "title":"Fogadó · Sora",
-      "flag":"inn_discovered",
-      "background":"village",
-      "portrait":false,
-      "source":"Adapted from the authored Sora free-day scene.",
-      "lines":[
-        {"speaker":"","text":"A fogadó előtt egy középkorú nő söpörte a bejáratot. Amikor meglátta Akirát, megállt."},
-        {"speaker":"Sora","text":"Maga az új doktor. Sora vagyok, a fogadóé."},
-        {"speaker":"Akira","text":"Örvendek."},
-        {"speaker":"Sora","text":"Itt mindenki tudja, ki maga, mielőtt bemutatkozna."},
-        {"speaker":"Akira","text":"Ez itt megszokott?"},
-        {"speaker":"Sora","text":"Tsukimoriban semmi nem marad sokáig titok. Csak az, aminek tényleg szánják, hogy titok maradjon."}
+      "label": "Fogadó",
+      "title": "Fogadó · Sora",
+      "flag": "inn_discovered",
+      "background": "village",
+      "portrait": false,
+      "source": "Adapted directly from the authored Sora free-day scene; existing Sora visual authority is the VILLAGE_NPC_PACK_V1_WOMEN_ONLY / 1. SORA — INNKEEPER panel.",
+      "lines": [
+        {
+          "speaker": "",
+          "text": "A fogadó előtt egy középkorú nő söpörte a bejáratot. Amikor meglátta Akirát, megállt, és biccentett — nem barátságtalanul, inkább óvatosan, mint aki még mindig méregeti, mit gondoljon róla."
+        },
+        {
+          "speaker": "Sora",
+          "text": "Maga az új doktor. Sora vagyok, a fogadóé."
+        },
+        {
+          "speaker": "Akira",
+          "text": "Örvendek. Akira."
+        },
+        {
+          "speaker": "Sora",
+          "text": "Tudom. Itt mindenki tudja, ki maga, mielőtt még bemutatkozna."
+        },
+        {
+          "speaker": "",
+          "text": "Nem gúnyból mondta. Inkább úgy, mint aki már belefáradt abba, hogy ezt a tényt bárkinek is magyarázza."
+        },
+        {
+          "speaker": "Akira",
+          "text": "Ez itt megszokott?"
+        },
+        {
+          "speaker": "Sora",
+          "text": "Tsukimoriban semmi nem marad sokáig titok. Csak az, aminek tényleg szánják, hogy titok maradjon."
+        },
+        {
+          "speaker": "Akira",
+          "text": "Régóta vezeti a fogadót?"
+        },
+        {
+          "speaker": "Sora",
+          "text": "Az anyámtól örököltem, ő a nagyanyjától. Itt semmi nem az enyém igazán — csak kölcsönben van nálam egy darabig."
+        },
+        {
+          "speaker": "Akira",
+          "text": "Ez fáradtan hangzik."
+        },
+        {
+          "speaker": "Sora",
+          "text": "Nem fáradtság. Inkább belenyugvás. Van különbség, még ha kívülről nem is látszik."
+        },
+        {
+          "speaker": "Akira",
+          "text": "Gondolkozott már azon, hogy elmegy?"
+        },
+        {
+          "speaker": "Sora",
+          "text": "Fiatalabb koromban. Aztán rájöttem, hogy a fogadó nélkül ki figyelné, ki jön és ki megy ebbe a faluba. Valakinek számon kell tartania."
+        },
+        {
+          "speaker": "Akira",
+          "text": "Ez fontos feladatnak hangzik."
+        },
+        {
+          "speaker": "Sora",
+          "text": "Fontosabb, mint gondolná. A legtöbb dolog, ami itt rosszra fordul, azzal kezdődik, hogy valaki észrevétlenül érkezik, vagy észrevétlenül tűnik el."
+        },
+        {
+          "speaker": "Sora",
+          "text": "Ha valaha bort keresne, ami nem a szentélyi ünnepekről való — nálam mindig van."
+        },
+        {
+          "speaker": "Akira",
+          "text": "Számon fogja tartani, ha legközelebb bemegyek?"
+        },
+        {
+          "speaker": "Sora",
+          "text": "Már számon tartom, doktor úr. Amióta betette a lábát a faluba."
+        }
       ]
     },
     "workshop": {
-      "label":"Ritsu műhelye",
-      "title":"Hangszerkészítő műhely · Ritsu",
-      "flag":"workshop_discovered",
-      "background":"village",
-      "portrait":false,
-      "source":"Adapted from the authored Ritsu workshop scene.",
-      "lines":[
-        {"speaker":"","text":"A keskeny mellékutcából fűrészpor illata és halk kopogás szűrődött ki. Egy nő egy félkész hangszer teste fölé hajolt."},
-        {"speaker":"Akira","text":"Mit épít?"},
-        {"speaker":"Ritsu","text":"Gitárt. Vagy legalábbis azt szeretném, hogy egyszer az legyen."},
-        {"speaker":"Akira","text":"Akira."},
-        {"speaker":"Ritsu","text":"Tudom, ki maga. Ritsu. Nem, nem fogok meghajolni, ha ez a következő kérdése."},
-        {"speaker":"Akira","text":"Nem is akartam megkérdezni."}
+      "label": "Ritsu műhelye",
+      "title": "Hangszerkészítő műhely · Ritsu",
+      "flag": "workshop_discovered",
+      "background": "village",
+      "portrait": false,
+      "source": "Adapted from the authored Ritsu workshop scene.",
+      "lines": [
+        {
+          "speaker": "",
+          "text": "A keskeny mellékutcából fűrészpor illata és halk kopogás szűrődött ki. Egy nő egy félkész hangszer teste fölé hajolt."
+        },
+        {
+          "speaker": "Akira",
+          "text": "Mit épít?"
+        },
+        {
+          "speaker": "Ritsu",
+          "text": "Gitárt. Vagy legalábbis azt szeretném, hogy egyszer az legyen."
+        },
+        {
+          "speaker": "Akira",
+          "text": "Akira."
+        },
+        {
+          "speaker": "Ritsu",
+          "text": "Tudom, ki maga. Ritsu. Nem, nem fogok meghajolni, ha ez a következő kérdése."
+        },
+        {
+          "speaker": "Akira",
+          "text": "Nem is akartam megkérdezni."
+        }
       ]
     },
     "market": {
-      "label":"Piactér",
-      "title":"Piactér",
-      "flag":"market_discovered",
-      "background":"village",
-      "portrait":false,
-      "lines":[
-        {"speaker":"","text":"A piactér délutánra megtelt hangokkal. Kofák, kosarak, esernyők és egymást kerülgető falusi nők töltötték meg a kis teret."},
-        {"speaker":"","text":"Akira egy pillanatra meglátta ugyanazt a meleg tekintetű nőt, akit érkezésekor a bejáratnál is észrevett. Valamin nevetett egy árussal."},
-        {"speaker":"","text":"A nő is felismerte őt. Röviden biccentett, de nem jött oda."},
-        {"speaker":"","text":"Akira továbbindult. A nevét még nem tudta."}
+      "label": "Piactér",
+      "title": "Piactér",
+      "flag": "market_discovered",
+      "background": "village",
+      "portrait": false,
+      "lines": [
+        {
+          "speaker": "",
+          "text": "A piactér délutánra megtelt hangokkal. Kofák, kosarak, esernyők és egymást kerülgető falusi nők töltötték meg a kis teret."
+        },
+        {
+          "speaker": "",
+          "text": "Akira egy pillanatra meglátta ugyanazt a meleg tekintetű nőt, akit érkezésekor a bejáratnál is észrevett. Valamin nevetett egy árussal."
+        },
+        {
+          "speaker": "",
+          "text": "A nő is felismerte őt. Röviden biccentett, de nem jött oda."
+        },
+        {
+          "speaker": "",
+          "text": "Akira továbbindult. A nevét még nem tudta."
+        }
       ]
     },
     "stream": {
-      "label":"Patak",
-      "title":"Patak és kishíd",
-      "flag":"stream_discovered",
-      "background":"bridge",
-      "portrait":false,
-      "lines":[
-        {"speaker":"","text":"A főutcától távolabb a házak ritkultak, a patak hangja pedig elnyomta a falu beszédét."},
-        {"speaker":"","text":"Egy kisebb fahíd alatt fekete víz futott. Fentebb, a patak fölött sorakozó házak közül a harmadik verandáján szélcsengő lógott."},
-        {"speaker":"","text":"A túlparton egy sötét hajú nő állt egy pillanatig. Mire Akira újra odanézett, már csak a cédrusok mozogtak."}
+      "label": "Patak",
+      "title": "Patak és kishíd",
+      "flag": "stream_discovered",
+      "background": "bridge",
+      "portrait": false,
+      "lines": [
+        {
+          "speaker": "",
+          "text": "A főutcától távolabb a házak ritkultak, a patak hangja pedig elnyomta a falu beszédét."
+        },
+        {
+          "speaker": "",
+          "text": "Egy kisebb fahíd alatt fekete víz futott. Fentebb, a patak fölött sorakozó házak közül a harmadik verandáján szélcsengő lógott."
+        },
+        {
+          "speaker": "",
+          "text": "A túlparton egy sötét hajú nő állt egy pillanatig. Mire Akira újra odanézett, már csak a cédrusok mozogtak."
+        }
       ]
     },
     "music": {
-      "label":"Zene a mellékutcából",
-      "title":"A ház, ahonnan zene szól",
-      "flag":"music_house_discovered",
-      "background":"village",
-      "portrait":false,
-      "lines":[
-        {"speaker":"","text":"Az egyik csendes mellékutcában Akira zenét hallott egy félig nyitott ablak mögül."},
-        {"speaker":"","text":"Nem gyakorlásnak hangzott. Túl pontos volt hozzá — és túl személyes."},
-        {"speaker":"","text":"A függöny mögött egy hosszú, sötét hajtömeg mozdult. Akira csak egy pillanatra látott ametisztfényű profilt."},
-        {"speaker":"","text":"A zene megszakadt. Akira nem kopogott be."}
+      "label": "Zene a mellékutcából",
+      "title": "A ház, ahonnan zene szól",
+      "flag": "music_house_discovered",
+      "background": "village",
+      "portrait": false,
+      "lines": [
+        {
+          "speaker": "",
+          "text": "Az egyik csendes mellékutcában Akira zenét hallott egy félig nyitott ablak mögül."
+        },
+        {
+          "speaker": "",
+          "text": "Nem gyakorlásnak hangzott. Túl pontos volt hozzá — és túl személyes."
+        },
+        {
+          "speaker": "",
+          "text": "A függöny mögött egy hosszú, sötét hajtömeg mozdult. Akira csak egy pillanatra látott ametisztfényű profilt."
+        },
+        {
+          "speaker": "",
+          "text": "A zene megszakadt. Akira nem kopogott be."
+        }
       ]
     },
     "shrine": {
-      "label":"Szentély felé",
-      "title":"A szentélyhez vezető út",
-      "flag":"shrine_approach_discovered",
-      "background":"bridge",
-      "portrait":false,
-      "lines":[
-        {"speaker":"","text":"A szentélyhez vezető lépcsősor a falu felső szélén kezdődött. A köd itt sűrűbbnek tűnt, mint az utcák között."},
-        {"speaker":"","text":"A legfelső kapunál egy idős nő állt. Nem intett, nem szólt — csak figyelte Akirát."},
-        {"speaker":"","text":"Amikor Akira elindult volna felfelé, a nő lassan megrázta a fejét."},
-        {"speaker":"","text":"Nem fenyegetés volt. Inkább közlés: ma eddig jöhet."},
-        {"speaker":"","text":"Akira nem erőltette. A szentély helyét már tudta. Azt még nem, mi van alatta."}
+      "label": "Szentély felé",
+      "title": "A szentélyhez vezető út",
+      "flag": "shrine_approach_discovered",
+      "background": "bridge",
+      "portrait": false,
+      "lines": [
+        {
+          "speaker": "",
+          "text": "A szentélyhez vezető lépcsősor a falu felső szélén kezdődött. A köd itt sűrűbbnek tűnt, mint az utcák között."
+        },
+        {
+          "speaker": "",
+          "text": "A legfelső kapunál egy idős nő állt. Nem intett, nem szólt — csak figyelte Akirát."
+        },
+        {
+          "speaker": "",
+          "text": "Amikor Akira elindult volna felfelé, a nő lassan megrázta a fejét."
+        },
+        {
+          "speaker": "",
+          "text": "Nem fenyegetés volt. Inkább közlés: ma eddig jöhet."
+        },
+        {
+          "speaker": "",
+          "text": "Akira nem erőltette. A szentély helyét már tudta. Azt még nem, mi van alatta."
+        }
       ]
     }
   }

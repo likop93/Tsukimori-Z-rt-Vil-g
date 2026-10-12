@@ -78,6 +78,16 @@ A Renka-kép jelenleg **APPROVED REFERENCE**, nem teljes FINAL production lock. 
 | `npc/VILLAGE_NPC_ATTRACTIVE_VARIANTS_V2.png` | **APPROVED VARIATION REFERENCE** | a falusi női NPC-k többségéhez vonzóbb/elegánsabb karakter- és outfit-variációk, miközben a fő route-karakterek továbbra is vizuálisan kiemelkednek | `6232a637c11f853d1e6b1ac860e73ebb059cae02317151add6d71e0f4f547e91` |
 | `npc/INN_COURTESAN_NPC_PACK_V1.png` | **APPROVED INN / COURTESAN REFERENCE** | a fogadóban dolgozó felnőtt nők külön, léhább/szenzuálisabb outfit-nyelve és ambient/worker sprite iránya | `1158f13f4bdeb5d81f00680026174b64e52a5916d68201b65eacb26a9ea63c9a` |
 
+### Sora megjegyzés
+
+A `VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` **1. SORA — INNKEEPER** panelje 2026-10-12-től Sora saját meglévő vizuális identitásának **LOCKED PRIMARY SOURCE PANEL** státuszú része.
+
+A panel képi tartalma authority Sora arcához, hajához, sziluettjéhez, lila/indigó fogadói detail language-éhez és általános jelenlétéhez. A lapon automatikusan generált konkrét számok (például pontos magasság) továbbra sem válnak automatikusan kánonná.
+
+Az `INN_COURTESAN_NPC_PACK_V1.png` Sora esetében csak **SUPPORTING INN ENVIRONMENT / OUTFIT LANGUAGE**. Nem használható Sora arcának vagy identitásának lecserélésére.
+
+Production spec: `docs/SORA_PRODUCTION_SPEC.md`.
+
 ### Population szabály
 
 Tsukimori falusi ambient lakossága **nőkből áll**. A crowd packban nem használható generikus férfi falusi NPC.

@@ -164,3 +164,23 @@ APPROVED:
 - Hana, Shion, Kuroe és Oto korai jelenléte nem írhatja felül későbbi formális történeti jeleneteiket.
 
 Himiko nem része az első falubejárásnak. Külön érkezési eseményt kap a Hana/Shion korai periódus után, nagyjából a 3–4. játéknap környékén.
+
+
+## 2026-10-12 — Sora existing design — LOCKED
+
+Tulajdonosi korrekció: Sorának már korábban elkészült vizuális terve volt, ezért nem szabad újratervezni.
+
+LOCKED source:
+- `VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` / **1. SORA — INNKEEPER**.
+
+LOCKED vizuális mag:
+- hosszú nagyon sötét haj;
+- ibolyás/lila részletnyelv;
+- érett, meleg, magabiztos arc;
+- magasnak/erősnek ható, telt nőies sziluett;
+- lila/indigó/bordó fogadói outfit;
+- felnőtt, figyelő, földelt fogadósi jelenlét.
+
+A generic `INN_COURTESAN_NPC_PACK_V1.png` supporting referencia, nem Sora redesign.
+
+A történeti hang és első találkozás a már megírt Sora-szabadnapi jelenetből marad authority.
