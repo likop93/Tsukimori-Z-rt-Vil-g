@@ -333,3 +333,24 @@ LOCKED jegyek:
 - ironikus/közvetlen, de pedagógusként professzionális karakter.
 
 A jelenlegi első playable Reina-jelenet a már implementált korai történeti blokk után, egy következő szabad délutánon indul. Ne helyezd vissza automatikusan a nyitányba, és ne írj neki korai természetfeletti problémát.
+
+
+### Első village orientation / hub — APPROVED 2026-10-12
+
+Az első rendelési nap után kötelező átvezető blokk:
+**Katsuro rendelői füzet → Ismerd meg Tsukimorit → esti Miyako → második nap / Hana**.
+
+Implementáció:
+- `scripts/opening/village_tour_director.gd`
+- `data/home_day1/village_tour.json`
+- `docs/VILLAGE_TOUR_REVIEW.md`
+
+Szabályok:
+- a falubejárás sorrendje szabad;
+- Reina formális első bemutatkozása az iskolánál történik;
+- Aoi, Sora és Ritsu röviden bemutatkozhat;
+- Hana, Shion, Kuroe és Oto itt csak kánon-kompatibilis glimpse/tease;
+- a Mélység nem nyílhat meg;
+- Himiko nem jelenhet meg az első falubejáráson;
+- a discovery flag-ek egyszerű story-state-ek maradnak, ne építs teljes open-world/route rendszert;
+- a jelenlegi village/bridge képek REVIEW stand-inek; külön helyszínart későbbi batch.

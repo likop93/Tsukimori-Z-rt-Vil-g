@@ -157,6 +157,7 @@ var actions: Control
 var action_buttons: Array[Button] = []
 var actions_armed := false
 var next_day: Node
+var village_tour: Node
 
 func start_hana_day() -> void:
 	if phase != "day_complete" or not card_armed:
@@ -232,6 +233,8 @@ func select_action(id: String, expected_phase: String) -> void:
 		"reflection":
 			runner.street.backdrop.modulate = Color(0.76,0.70,0.79)
 			play(read_data("res://data/home_day1/day_reflection.json"),"day_reflection")
+		"tour":
+			start_village_tour()
 		"evening":
 			show_day_evening()
 
@@ -266,9 +269,11 @@ func resume(next_phase: String) -> void:
 		else:
 			show_actions([["reflection","Átgondolom a napot"]])
 	elif phase == "clinic_after":
-		show_actions([["evening","Visszatérek Miyakóhoz"]])
+		show_actions([["tour","Bejárom Tsukimorit"]])
 
 func advance(_delta: float) -> void:
+	if is_instance_valid(village_tour):
+		return
 	if is_instance_valid(next_day):
 		next_day.advance(_delta)
 		return
@@ -384,6 +389,22 @@ func finish_dialogue() -> void:
 			GameState.set_flag("hana_name_heard")
 			GameState.set_flag("first_day_complete")
 			show_day_end()
+
+func start_village_tour() -> void:
+	phase = "village_tour"
+	if is_instance_valid(actions):
+		actions.hide()
+	village_tour = preload("res://scripts/opening/village_tour_director.gd").new()
+	add_child(village_tour)
+	village_tour.runner = runner
+	village_tour.chapter = self
+	village_tour.completed.connect(on_village_tour_complete)
+	village_tour.begin()
+
+func on_village_tour_complete() -> void:
+	village_tour = null
+	GameState.set_flag("village_tour_complete")
+	show_day_evening()
 
 func show_day_evening() -> void:
 	runner.street.backdrop.modulate = Color.WHITE

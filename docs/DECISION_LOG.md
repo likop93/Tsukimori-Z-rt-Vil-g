@@ -143,3 +143,24 @@ LOCKED mag:
 - közvetlen, ironikus, intelligens, pedagógusként felelősségteljes.
 
 A generált reference sheet automatikus feliratai/számai nem authorityk. Részletek: `docs/REINA_PRODUCTION_SPEC.md`.
+
+
+## 2026-10-12 — Első szabad falubejárás — APPROVED
+
+Az első rendelési nap után, az esti Miyako-zárás előtt Akira feladata: **Ismerd meg Tsukimorit**.
+
+APPROVED:
+- szabad sorrendben bejárható első orientáció;
+- iskola / Reina;
+- bolt / Aoi;
+- fogadó / Sora;
+- Ritsu műhelye;
+- piactér;
+- patak / kishíd;
+- Kuroe zenei helyének tease-e;
+- szentély megközelítése / Oto távoli jelenléte;
+- a Mélység ekkor még zárt;
+- Reina itt mutatkozik be először;
+- Hana, Shion, Kuroe és Oto korai jelenléte nem írhatja felül későbbi formális történeti jeleneteiket.
+
+Himiko nem része az első falubejárásnak. Külön érkezési eseményt kap a Hana/Shion korai periódus után, nagyjából a 3–4. játéknap környékén.
