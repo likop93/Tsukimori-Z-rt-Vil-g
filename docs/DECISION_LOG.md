@@ -219,3 +219,19 @@ LOCKED képi mag:
 - alkonyati átmenet vizuálisan fokozatos;
 - a két forma nem külön személy;
 - a képi design nem redesignolható külön tulajdonosi döntés nélkül.
+
+
+## 2026-10-12 — Oto night identity concealment — LOCKED
+
+Tulajdonosi döntés:
+
+- Akira az első éjszakai fiatalos Oto-találkozáskor **nem tudja**, hogy ugyanaz a személy, mint a nappali idős Oto;
+- az első éjszakai jelenet egy szabad esti séta közben, a szentély előtt történik;
+- a fiatal nő a szentély előtt ül;
+- a prezentáció kezdetben név nélküli / „Ismeretlen nő”;
+- Oto nem mondja el, hogy ő Oto;
+- hamis alteregó vagy hamis név nem szükséges;
+- Akira és a fiatalos Oto önállóan ismerkednek;
+- 2–3 későbbi találkozás során azonos gesztusok, szem, motívumok és tudás alapján Akira gyanakodni kezd;
+- a tényleges felismerés külön későbbi story beat;
+- a reveal előtt Oto kettős megjelenése nem lehet menüből/UI-ból elspoilerezve.

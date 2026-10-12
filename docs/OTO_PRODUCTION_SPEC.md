@@ -94,7 +94,16 @@ A két forma között kötelezően meg kell maradnia:
 - ugyanannak a kéz- és testgesztusnyelvnek;
 - ugyanannak a tekintetnek.
 
-A játékosnak a fiatalos forma első teljes revealjénél rövid bizonytalanság után **fel kell ismernie Otot**.
+Az első éjszakai találkozáskor **sem Akira, sem a prezentáció nem erősítheti meg**, hogy a fiatal nő Oto.
+
+- nincs „Oto” névtábla;
+- nincs azonnali felismerő monológ;
+- a karakter kezdetben „Ismeretlen nő” / név nélküli beszélőként kezelendő;
+- Oto nem mondja el, hogy ő az;
+- lehetősége van a nevét is elkerülni anélkül, hogy hamis nevet adna;
+- Akira és az éjszakai nő külön ismerkedési szálat él meg addig, amíg a gyanú össze nem áll.
+
+A felismerés **fokozatos**: Akira előbb hasonlóságokat vesz észre, később kezd sejteni, és csak külön történeti beatben kap bizonyosságot.
 
 ## Személyiség
 
@@ -113,13 +122,15 @@ A játékosnak a fiatalos forma első teljes revealjénél rövid bizonytalansá
 
 A kapcsolat íve:
 
-1. tisztelet / óvatosság;
-2. kíváncsiság;
-3. bizalom;
-4. a nappali–éjszakai kettősség felismerése;
-5. női-férfi feszültség;
-6. spirituális és érzelmi intimitás;
-7. opcionális romance-route.
+1. nappali idős Oto: tisztelet / óvatosság;
+2. éjszakai ismeretlen nő: kíváncsiság / vonzalom;
+3. párhuzamos ismeretség a két „külön” nővel;
+4. ismétlődő apró egyezések;
+5. Akira gyanúja;
+6. nappali–éjszakai kettősség tényleges felismerése;
+7. bizalom és a titok megosztása;
+8. spirituális és érzelmi intimitás;
+9. opcionális romance-route.
 
 Fontos: Akira ne csak az éjszakai fiatalos Otohoz vonzódjon. A route érzelmi hitelességéhez a nappali, idős Oto iránti tisztelet és kötődés előbb alakuljon ki.
 
@@ -127,11 +138,25 @@ Fontos: Akira ne csak az éjszakai fiatalos Otohoz vonzódjon. A route érzelmi 
 
 Az első falubejárás nappal / késő délután történik, ezért ott **idős Oto** jelenik meg a szentélyhez vezető út tetején.
 
-Első teljes éjszakai reveal:
-- későbbi jelenetben;
-- Akira először bizonytalan lehet benne, hogy ugyanazt a nőt látja;
-- ne legyen azonnal magyarázat;
-- a felismerés egy vizuális/story beat legyen.
+Első éjszakai találkozás:
+- Akira egy szabad esti séta során a szentély előtt ülve látja meg a fiatalos Otot;
+- Akira **nem tudja**, hogy ő Oto;
+- a nő nem mondja el, hogy ő a nappali szentélyőr;
+- a jelenet név nélküli / „Ismeretlen nő” prezentációt használ;
+- nem kell természetfeletti magyarázat;
+- beszélgetni kezdenek, és önálló ismeretség alakul ki közöttük;
+- az első jelenet célja vonzalom + kíváncsiság, nem a titok megfejtése.
+
+Fokozatos gyanú:
+1. azonos szem / tekintet;
+2. azonos hajdísz vagy apró szentélyi motívum;
+3. ugyanaz a szófordulat vagy kézmozdulat;
+4. az éjszakai nő olyan részletet tud, amit Akira nappal csak Oto előtt mondott;
+5. Akira ettől kezdve gyanítja, hogy a két nő ugyanaz;
+6. Oto még ezután sem feltétlenül vallja be azonnal;
+7. a valódi identitás-reveal külön későbbi történeti jelenet.
+
+Fontos: a nyomok közül ne legyen minden egyszerre jelen; legalább 2–3 külön találkozás alatt épüljön fel a gyanú.
 
 ## Romance hangulat
 

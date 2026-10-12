@@ -418,6 +418,17 @@ Nappal: ezüstös/ősz haj, idős, tradicionális, méltóságteljes.
 Elsődleges képi referencia:
 `/Tsukimori Visual References/characters/OTO_DAY_NIGHT_FINAL_CHARACTER_DESIGN_V1.png`
 
+### Első éjszakai identitáskezelés — LOCKED
+
+Az első éjszakai fiatalos találkozáskor Akira **nem tudja**, hogy a nő Oto.
+- a nő a szentély előtt ül egy esti séta során;
+- nincs Oto-névtábla;
+- Oto nem mondja el, hogy ő a nappali idős szentélyőr;
+- hamis név nem szükséges: a nevét kikerülheti;
+- Akira külön ismerkedik vele;
+- több későbbi apró egyezésből kezd gyanakodni;
+- a valódi felismerés és Oto beismerése külön, későbbi story beat.
+
 Részletes production spec: `docs/OTO_PRODUCTION_SPEC.md`.
 
 ---

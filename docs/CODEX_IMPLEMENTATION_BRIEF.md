@@ -395,3 +395,26 @@ LOCKED szabály:
 - a fiatalos formát ne kezeld külön karakterként vagy alteregóként.
 
 Oto FINAL visual sheetje jóváhagyva. A Work/Codex ebből készítsen pixel-art adaptációt, ne generáljon eltérő design-authorityt.
+
+
+### Oto éjszakai identitástitok — LOCKED 2026-10-12
+
+Első fiatalos Oto-találkozás:
+- egy későbbi esti szabad séta közben;
+- hely: szentély előtti lépcső / ülőhely;
+- Akira nem tudja, hogy a nő Oto;
+- UI speaker name: üres vagy `Ismeretlen nő`;
+- NE használd az Oto karaktermenü-azonosítóját úgy, hogy az identitást elspoilerezze;
+- Oto nem mondja el a valódi azonosságát;
+- ne adj neki szükségtelen hamis nevet;
+- az első 2–3 találkozás külön ismeretségként működjön;
+- a gyanút apró közös identity anchorok építsék: szem, hajdísz, kézmozdulat, szófordulat, olyan tudás, amit csak nappali Oto tudhat;
+- csak későbbi explicit reveal után nevezhető a NIGHT forma nyíltan Oto-nak.
+
+Ajánlott state-ek, ha implementálásra kerül:
+- `met_shrine_night_woman`
+- `shrine_night_woman_encounter_2`
+- `akira_suspects_night_woman_oto`
+- `oto_identity_revealed`
+
+Ne implementálj automatikus romance-pontot pusztán a reveal miatt.
