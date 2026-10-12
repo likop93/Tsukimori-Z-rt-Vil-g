@@ -446,3 +446,14 @@ Faluvezető:
 - a név és a családi háttér további részletei még nyitottak.
 
 Ne implementálj végleges nevet vagy romance-route-ot külön tulajdonosi döntés nélkül.
+
+
+### Work / Codex character-reference handoff — 2026-10-12
+
+Before creating or adapting the current priority character assets, read:
+- `reference/characters/README.md`
+- `reference/characters/manifest.json`
+
+These files provide the canonical Library paths and repo-side specs for Reina, Renka, the clinic assistant, Renka's mother / village leader, Sora and Oto.
+
+If a Library binary cannot be opened, use the associated production spec and report the missing binary. Do not redesign or substitute the character.
