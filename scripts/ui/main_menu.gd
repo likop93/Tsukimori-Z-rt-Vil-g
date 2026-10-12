@@ -6,6 +6,7 @@ var chapter_buttons: Array[Button] = []
 var settings_button: Button
 var controls_button: Button
 var quit_button: Button
+var gallery_button: Button
 var modal: Panel
 var modal_shade: ColorRect
 var slider: HSlider
@@ -53,7 +54,11 @@ func _ready() -> void:
 	settings_button = button(self,"Beállítások",Vector2(40,224),Vector2(220,30),open_settings)
 	controls_button = button(self,"Irányítás",Vector2(40,258),Vector2(220,30),open_controls)
 	quit_button = button(self,"Kilépés",Vector2(40,292),Vector2(220,30),quit_game)
-	buttons = [start_button,chapters_button,settings_button,controls_button,quit_button]
+	gallery_button = button(self,"Karaktergaléria · tervek",Vector2.ZERO,Vector2(220,26),open_gallery)
+	buttons = [start_button,chapters_button,settings_button,controls_button,gallery_button,quit_button]
+	for i in buttons.size():
+		buttons[i].position = Vector2(40,156+i*29)
+		buttons[i].size.y = 26
 	label(self,"Nyilak · választás     Enter · megnyitás",Vector2(40,333),Vector2(340,17),10,Color("#a3a3b1"))
 	start_button.grab_focus()
 	var ambience := preload("res://scripts/opening/ambience.gd").new()
@@ -226,6 +231,12 @@ func launch_chapter(id: String) -> void:
 func quit_game() -> void:
 	if not starting and not is_instance_valid(modal):
 		get_tree().quit()
+
+func open_gallery() -> void:
+	if starting or is_instance_valid(modal):
+		return
+	starting = true
+	get_tree().change_scene_to_file("res://scenes/ui/character_gallery.tscn")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and is_instance_valid(modal):

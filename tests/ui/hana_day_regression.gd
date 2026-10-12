@@ -135,7 +135,7 @@ func _ready() -> void:
 			check(GameState.hana_first_choice == boundary and GameState.hana_memory_choice == memory,"Choices retained")
 			var entries: Array[Dictionary] = preload("res://scripts/ui/character_journal.gd").entries()
 			var hana: Dictionary = entries.filter(func(item: Dictionary): return item.id == "hana")[0]
-			check(hana.known and hana.events.size() == 3,"Journal shows completed earned knowledge")
+			check(hana.known and hana.events.has("Tudja, hogy visszajöhet, és nem kell szerepet játszania.") and hana.events.has("A magabiztos fellépése mögött a saját kívánságairól is beszéltetek."),"Journal shows completed earned knowledge")
 			runner.pause_menu.open_menu()
 			runner.pause_menu.show_characters()
 			runner.pause_menu.show_character(1)

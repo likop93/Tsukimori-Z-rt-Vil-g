@@ -58,6 +58,7 @@ static func entries() -> Array[Dictionary]:
 				if GameState.has_flag("hana_first_session_seen"):
 					entry.status = "Az első terápiás beszélgetésetek lezárult."
 					entry.events.append("Tudja, hogy visszajöhet, és nem kell szerepet játszania.")
+					entry.events.append("A magabiztos fellépése mögött a saját kívánságairól is beszéltetek.")
 		if known and spec.id == "shion":
 			entry.portrait = "res://assets/opening/vn_portraits/shion_neutral_v1_REVIEW.png"
 			entry.erase("crop")
@@ -69,6 +70,14 @@ static func entries() -> Array[Dictionary]:
 				entry.events.append("Közös gyermekkori emléket láttatok a vízben.")
 			if GameState.has_flag("shion_first_session_seen"):
 				entry.status = "Megígértétek, hogy együtt jártok utána az emlékeknek."
+			if GameState.has_flag("flag_shion_dallam_azonnal"):
+				entry.events.append("Bekapcsolódtál a dallamába.")
+			elif GameState.has_flag("flag_shion_dallam_var"):
+				entry.events.append("Hagytál neki időt a dallamra.")
+			if GameState.has_flag("flag_akira_kazetta_beleegyezes"):
+				entry.events.append("A kazetta lejátszása előtt kikérted a beleegyezését.")
+		if known and spec.id == "kuroe":
+			entry.description = "Hűvös, kontrollált jelenlétű nő. Sötét, modern ruhája és finom félmosolya könnyen felismerhető."
 		if known:
 			var reaction := preload("res://scripts/ui/character_reactions.gd").profile(str(spec.id))
 			if not reaction.is_empty():

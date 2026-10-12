@@ -1,0 +1,298 @@
+{
+  "status": "REVIEW — concept gallery; not story unlocks",
+  "characters": [
+    {
+      "id": "hana",
+      "name": "Hana",
+      "tagline": "Közvetlenség · saját akarat · biztonság",
+      "portrait": "res://assets/opening/vn_portraits/hana_neutral_v1_REVIEW.png",
+      "casual": "res://assets/opening/vn_portraits/hana_casual_confident_v1_REVIEW.png",
+      "essence": "Meleg, földközeli és kezdeményező. A közelséget természetesen keresi, de a története akkor mélyül, amikor a mosolya mögötti saját kívánságait is kimondja.",
+      "trust": "A bizalom jele, hogy nem minden kérdésre felel csábító tréfával. Elmondja azt is, amit Akira esetleg nem szeretne hallani. A közeledés személyes jelenetben történik, nem egy vizsgálat jutalmaként.",
+      "wardrobe": "Bordó hímzett top és farmer rövidnadrág. A magabiztos alapváltozat megtartja Hana eredeti testalkatát. A korábban elfogadott karcsúbb, alárendelődő változat külön késői állapot.",
+      "stages": [
+        "Alap: könnyed humor, egyenes tekintet, stabil tartás.",
+        "Korai repedés: egy félbehagyott tréfa, rövid bizonytalanság. Külső változás még nincs.",
+        "Későbbi eltolódás: egyre többször kér jóváhagyást olyan dolgokhoz is, amelyekről korábban maga döntött.",
+        "Késői felfedés: a jóváhagyott karcsúbb, nőiesebb alak és kényszeres alkalmazkodás együtt válik nyugtalanítóvá. Külön történeti jelenet szükséges."
+      ],
+      "scene": "Jelenetterv: rendelésen kívül, egy közös séta előtt Hana először elmondja, ő hová szeretne menni. Akira nem választ helyette.",
+      "lines": [
+        {
+          "speaker": "",
+          "text": "Egy későbbi délután, rendelésen kívül. Hana a kapunál várt; ezúttal nem hozott magával kérdést a testéről."
+        },
+        {
+          "speaker": "Hana",
+          "text": "Ma én választanék útvonalat. Van egy hely, ahol nem hallani a főutcát."
+        },
+        {
+          "speaker": "Akira",
+          "text": "És mit szeretnél ott csinálni?"
+        },
+        {
+          "speaker": "Hana",
+          "text": "Még nem döntöttem el. Jó volna, ha egyszer ez is beleférne."
+        },
+        {
+          "speaker": "",
+          "text": "Hana nem indult el rögtön. Kíváncsian nézte, mit válaszol Akira."
+        }
+      ],
+      "choices": [
+        {
+          "id": "join",
+          "label": "Menjünk. Mutasd meg, amit szeretsz.",
+          "lines": [
+            {
+              "speaker": "Akira",
+              "text": "Menjünk. Ma te mutatod az utat."
+            },
+            {
+              "speaker": "Hana",
+              "text": "Akkor ne próbáld rögtön megfejteni, miért szeretem."
+            },
+            {
+              "speaker": "",
+              "text": "Hana elmosolyodott, és megindult. Nem húzta magával Akirát; hagyta, hogy mellé érjen."
+            }
+          ]
+        },
+        {
+          "id": "slow",
+          "label": "Egy rövid sétára szívesen veled tartok.",
+          "lines": [
+            {
+              "speaker": "Akira",
+              "text": "Egy rövid sétára szívesen veled tartok."
+            },
+            {
+              "speaker": "Hana",
+              "text": "Rövidet kérsz, rövid lesz. De az útvonal az enyém."
+            },
+            {
+              "speaker": "",
+              "text": "Most nem volt szüksége arra, hogy minden apró döntését jóváhagyják."
+            }
+          ]
+        },
+        {
+          "id": "later",
+          "label": "Ma pihennék. Beszéljük meg máskor.",
+          "lines": [
+            {
+              "speaker": "Akira",
+              "text": "Ma pihennék. Máskor szívesen meghallgatlak."
+            },
+            {
+              "speaker": "",
+              "text": "Hana egy pillanatig a kapufélfát nézte."
+            },
+            {
+              "speaker": "Hana",
+              "text": "Rendben. Az út addig sem tűnik el."
+            },
+            {
+              "speaker": "",
+              "text": "A mondat végén visszatért a mosolya. Hogy a rövid csönd mit jelentett, abból még nem lehetett következtetni."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shion",
+      "name": "Shion",
+      "tagline": "Csend · emlékezet · különállás",
+      "portrait": "res://assets/opening/vn_portraits/shion_neutral_v1_REVIEW.png",
+      "casual": "res://assets/opening/vn_portraits/shion_casual_v1_REVIEW.png",
+      "essence": "Csendes, de nem üres vagy örökké szomorú. Figyel, emlékezik és önállóan dönt. A közös múlt megközelíthetővé teszi Akirát, de nem ad automatikusan romantikus jogot egyiküknek sem.",
+      "trust": "Apró kezdeményezések: Shion maga választ helyet, feltesz egy személyes kérdést, vagy kimondja, hogy ma nem akar az emlékekről beszélni. A nyugalma idővel valódi humorral és kíváncsisággal egészül ki.",
+      "wardrobe": "Füstös lila blúz, hosszú sötét szoknya, könnyű cipő. Zöld szem és hosszú sötét haj megmarad. A könnyedebb ruha a hétköznapi bizalom jele lehet, nem egy új személyiség.",
+      "stages": [
+        "Alap: figyelmes, kevés gesztussal, saját tempóval.",
+        "Korai repedés: egy válasz előtt szokatlanul hosszú csönd; még hétköznapi magyarázata is lehet.",
+        "Későbbi eltolódás — terv: olyan közös pillanatra hivatkozik, amelyet Akira másként őriz. Mindketten emlékeznek, de másra.",
+        "Késői felfedés — terv: a víztükör vagy egy visszatérő mozdulat megszegi a valóságot. Nincs még jóváhagyott testi torzulás; nem kap Miyako-féle mosolyt."
+      ],
+      "scene": "Jelenetterv: a patak falusi oldalán egy későbbi találkozáskor Shion arról kérdez, amit Akira most szeret, nem arról, amire gyerekkorából emlékeznie kellene.",
+      "lines": [
+        {
+          "speaker": "",
+          "text": "Egy későbbi találkozás a patak falusi oldalán. Shion a vizet nézte, majd helyet hagyott maga mellett."
+        },
+        {
+          "speaker": "Shion",
+          "text": "Ma nem szeretnék a kazettáról beszélni."
+        },
+        {
+          "speaker": "Akira",
+          "text": "Miről szeretnél?"
+        },
+        {
+          "speaker": "Shion",
+          "text": "Arról, milyen zenét hallgatsz most. Amit magadtól választasz."
+        },
+        {
+          "speaker": "",
+          "text": "A kérdés egyszerű volt. Talán éppen ezért nem kellett rögtön válaszolnia."
+        }
+      ],
+      "choices": [
+        {
+          "id": "share",
+          "label": "Mesélek, aztán te is ajánlasz valamit.",
+          "lines": [
+            {
+              "speaker": "Akira",
+              "text": "Mesélek. De utána te is ajánlasz valamit."
+            },
+            {
+              "speaker": "Shion",
+              "text": "Olyat is, amit még biztosan nem hallottunk együtt."
+            },
+            {
+              "speaker": "",
+              "text": "Shion halványan elmosolyodott. Ez a beszélgetés a jelenhez tartozott."
+            }
+          ]
+        },
+        {
+          "id": "quiet",
+          "label": "Előbb maradjunk egy kicsit csendben.",
+          "lines": [
+            {
+              "speaker": "Akira",
+              "text": "Előbb maradjunk egy kicsit csendben."
+            },
+            {
+              "speaker": "Shion",
+              "text": "Jó. De ma nem azért, mert félünk kérdezni."
+            },
+            {
+              "speaker": "",
+              "text": "Shion visszanézett a vízre. Nem követelte, hogy Akira ugyanoda nézzen."
+            }
+          ]
+        },
+        {
+          "id": "later",
+          "label": "Most egyedül lennék. Majd máskor.",
+          "lines": [
+            {
+              "speaker": "Akira",
+              "text": "Most egyedül lennék. Majd máskor."
+            },
+            {
+              "speaker": "",
+              "text": "Shion csak egy lélegzetvétellel később bólintott."
+            },
+            {
+              "speaker": "Shion",
+              "text": "Jó. Akkor nem várlak meg itt."
+            },
+            {
+              "speaker": "",
+              "text": "Elindult a háza felé. A víz hangja töltötte ki a helyét."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kuroe",
+      "name": "Kuroe",
+      "tagline": "Zene · kíváncsiság · kontroll",
+      "portrait": "res://assets/opening/vn_portraits/kuroe_neutral_v1_REVIEW.png",
+      "casual": "res://assets/opening/vn_portraits/kuroe_casual_v1_REVIEW.png",
+      "essence": "Hűvös, önálló, művészi karakter, száraz humorral. Shion korábbi barátnője; Akira iránti esetleges későbbi vonzalma kivételes, lassan felépülő személyes tapasztalat.",
+      "trust": "Először szakmai és emberi kíváncsiság: meghallgatja Akira eltérő véleményét. Később egy befejezetlen zenei ötletét is megmutatja, amely felett még nincs teljes kontrollja. Az első közös próba nem vallomás.",
+      "wardrobe": "Fekete felső, nyitott ing, mély szilvaszínű szabott nadrág és bokacsizma. Ametiszt ékszer és lila hajdísz megmarad. Hétköznapi művészi megjelenés, a primary fekete ruhát nem helyettesíti.",
+      "stages": [
+        "Alap: kimért megfigyelés, pontos kérdések, finom irónia.",
+        "Korai repedés — terv: egy ütem túl sokszor ismétlődik; Kuroe türelmetlenebb lesz a megszakítással.",
+        "Későbbi eltolódás — terv: a beszélgetés ritmusát is szabályozni próbálja. A kontrollvesztésre nem könyörgéssel reagál.",
+        "Késői felfedés — terv: egy hang a megszólaltatása előtt hallatszik, vagy a második ritmus nem áll le. Új testi átalakulás még nincs kijelölve."
+      ],
+      "scene": "Jelenetterv: csak a valódi első találkozás és további bizalmi események után. Kuroe egy befejezetlen zenei mondatot mutat Akirának; azt figyeli, mer-e őszinte választ adni.",
+      "lines": [
+        {
+          "speaker": "",
+          "text": "Egy későbbi közös próba terve. Kuroe félretette a kottát, mielőtt befejezte volna a zenei mondatot."
+        },
+        {
+          "speaker": "Kuroe",
+          "text": "Ne azt mondd, hogy szép. Azt mondd, hol hagytad abba a figyelést."
+        },
+        {
+          "speaker": "Akira",
+          "text": "És ha egyáltalán nem hagytam abba?"
+        },
+        {
+          "speaker": "Kuroe",
+          "text": "Akkor kénytelen leszek elhinni. De előbb hallgassuk meg még egyszer."
+        },
+        {
+          "speaker": "",
+          "text": "A szék az asztal másik oldalán üresen maradt. Kuroe nem tett úgy, mintha Akira már mindenestül ide tartozna."
+        }
+      ],
+      "choices": [
+        {
+          "id": "honest",
+          "label": "A végén elveszítettem a dallamot.",
+          "lines": [
+            {
+              "speaker": "Akira",
+              "text": "A végén elveszítettem a dallamot."
+            },
+            {
+              "speaker": "Kuroe",
+              "text": "Én is. Csak kíváncsi voltam, megmondod-e."
+            },
+            {
+              "speaker": "",
+              "text": "Először nézett rá úgy, mint akitől használható választ kapott."
+            }
+          ]
+        },
+        {
+          "id": "listen",
+          "label": "Játsszd el újra. Most csak figyelek.",
+          "lines": [
+            {
+              "speaker": "Akira",
+              "text": "Játsszd el újra. Most csak figyelek."
+            },
+            {
+              "speaker": "Kuroe",
+              "text": "Rendben. Nem kell kitöltened minden csöndet."
+            },
+            {
+              "speaker": "",
+              "text": "A következő próbán nem magyarázta meg előre, mit kellene hallani."
+            }
+          ]
+        },
+        {
+          "id": "later",
+          "label": "Ma nem tudok jól figyelni. Máskor?",
+          "lines": [
+            {
+              "speaker": "Akira",
+              "text": "Ma nem tudok jól figyelni. Próbáljuk máskor."
+            },
+            {
+              "speaker": "Kuroe",
+              "text": "Ez legalább pontos válasz."
+            },
+            {
+              "speaker": "",
+              "text": "Kuroe becsukta a kottát. Egy ütemet még lekopogott az ujjával, aztán abbahagyta."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

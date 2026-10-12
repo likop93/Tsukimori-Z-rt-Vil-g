@@ -27,6 +27,7 @@ var cg_path := ""
 var dialogue_panel: Panel
 var dialogue_id := ""
 var outfit := ""
+var preview_mode := false
 
 func _ready() -> void:
 	layer = 30
@@ -134,6 +135,7 @@ func begin(data: Dictionary) -> void:
 		return
 	lines = data.lines
 	dialogue_id = str(data.get("id",""))
+	preview_mode = bool(data.get("preview_mode",false))
 	outfit = ""
 	choices = data.get("choices",[])
 	portraits_enabled = bool(data.get("portrait",true))
@@ -177,12 +179,12 @@ func show_line() -> void:
 		set_partner_texture(str(portrait_variants[expression]))
 	var partner_id := portrait_speaker.to_lower()
 	var transformed := partner_id in ["miyako","hana"] and GameState.character_stage(partner_id) >= 2
-	if transformed or (GameState.character_stage(partner_id) > 0 and expression in ["","neutral","smile","warm"]):
+	if not preview_mode and (transformed or (GameState.character_stage(partner_id) > 0 and expression in ["","neutral","smile","warm"])):
 		var mood := preload("res://scripts/ui/character_reactions.gd").profile(partner_id)
 		if not mood.is_empty():
 			set_partner_texture(str(mood.portrait))
 	var pressure_actor := str(lines[index].get("pressure_actor",""))
-	if not pressure_actor.is_empty():
+	if not preview_mode and not pressure_actor.is_empty():
 		var reaction := preload("res://scripts/ui/character_reactions.gd").profile(pressure_actor)
 		if not reaction.is_empty():
 			set_partner_texture(str(reaction.portrait))
@@ -290,7 +292,7 @@ func select_choice(option: Dictionary) -> void:
 		button.queue_free()
 	choices = []
 	lines = option.lines.duplicate(true)
-	if GameState.record_distance(dialogue_id,str(option.id)):
+	if not preview_mode and GameState.record_distance(dialogue_id,str(option.id)):
 		var response := GameState.character_response(GameState.rejection_actor(dialogue_id,str(option.id)))
 		if not response.is_empty():
 			lines.append(response)

@@ -158,4 +158,6 @@ A képi referencia hiánya nem jogosít fel LOCKED design újratervezésére.
 
 ## 2026-10-11 — Miyako esti ruhatár, OWNER / REVIEW
 
+2026-10-12 további hétköznapi változatok: hana_casual_confident_v1_REVIEW.png, shion_casual_v1_REVIEW.png, kuroe_casual_v1_REVIEW.png az assets/opening/vn_portraits mappában. Teljes alakos, külön ruhaalternatívák; nem írják felül az alapdizájnt és nem horrorváltozatok. [Források, pontos promptok és tesztek](WOMEN_CHARACTER_DEVELOPMENT_REVIEW.md).
+
 Az assets/opening/vn_portraits/miyako_evening_v1_REVIEW.png, miyako_evening_watchful_v1_REVIEW.png és miyako_evening_transformed_v1_REVIEW.png a meglévő Miyako-identitás esti outfitváltozatai. Nem új primary design. Pontos referenciák, generálási promptok és hiányzó production variánsok: [MIYAKO_TEA_WARDROBE_REVIEW.md](MIYAKO_TEA_WARDROBE_REVIEW.md).

@@ -35,7 +35,10 @@ func _ready() -> void:
 	await get_tree().process_frame
 	await choose("res://data/home_day2/hana_arrival.json","ask_body")
 	await choose("res://data/home_day2/hana_memory.json","wait")
-	check(GameState.character_stage("hana") == 2,"Hana has her own escalation")
+	check(GameState.character_stage("hana") == 1,"Hana early decisions stop at uncertainty")
+	check(not GameState.has_flag("hana_transformation_revealed"),"Current scenes do not transform Hana")
+	GameState.set_flag("hana_transformation_revealed")
+	check(GameState.character_stage("hana") == 2,"Late Hana reveal requires accumulated pressure")
 	check(GameState.character_response("hana").text.contains("Így maradjak?"),"Hana seeks approval rather than demands compliance")
 	var hana_vn := preload("res://scripts/ui/vn_dialogue.gd").new()
 	add_child(hana_vn)

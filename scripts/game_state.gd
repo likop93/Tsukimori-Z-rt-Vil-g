@@ -49,12 +49,18 @@ func character_stage(character: String) -> int:
         if pressure < 4:
             return 0
         return 2 if has_flag("miyako_transformation_revealed") else 1
+    if character == "hana":
+        if pressure < 3:
+            return 0
+        return 2 if has_flag("hana_transformation_revealed") else 1
     return 2 if pressure >= 3 else (1 if pressure > 0 else 0)
 
 func character_response(character: String) -> Dictionary:
     var stage := character_stage(character)
     if character == "miyako" and stage == 0 and character_pressure(character) > 0:
         return {"speaker":"", "text":"Miyako egy pillanatig hallgatott, aztán folytatta, amit félbehagyott."}
+    if character == "hana" and stage == 0 and character_pressure(character) > 0:
+        return {"speaker":"", "text":"Hana mosolya egy pillanatra elhalványult. Aztán bólintott, és megvárta a következő kérdést."}
     if stage == 0:
         return {}
     if character == "miyako":

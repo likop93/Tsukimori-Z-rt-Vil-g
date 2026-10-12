@@ -18,6 +18,8 @@ A szünetmenüben folytatás, karakterlapok és kapcsolati státusz, hangerő, t
 
 ## Aktuális állapot
 
+2026-10-12: Főmenü → Karaktergaléria · tervek. Hana, Shion és Kuroe teljes alakos hétköznapi ruhái, saját fejlődési iránya és három-három választható jelenetpróba. A galéria nem módosítja a játék állapotát és nem helyettesíti a fő történetet. Hana korai átalakulása is lassabb. [Kidolgozás és korlátok](docs/WOMEN_CHARACTER_DEVELOPMENT_REVIEW.md).
+
 Miyako horrorátalakulása lassabb: a jelenlegi fejezetekben legfeljebb finoman figyelő lesz. A teljes testi változás és mániákus mosoly későbbi történeti felfedésre van fenntartva.
 
 2026-10-11: a pecsét után Miyako esti teázása következik, három személyes válasszal és új, horrorállapothoz illeszkedő esti ruhákkal. Közvetlenül: Fejezetválasztás → V. Esti tea. A karakterlap megőrzi a kimondott kapcsolati megállapodást és az új ruha előnézetét. Új REVIEW-kiegészítés, nem az eredeti forrás átirata. [Részletek, assetek, korlátok](docs/MIYAKO_TEA_WARDROBE_REVIEW.md).
