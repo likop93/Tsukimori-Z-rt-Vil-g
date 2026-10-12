@@ -213,3 +213,17 @@ Design lineage:
 - az új FINAL sheet ezt adaptálja és részletezi, nem írja át Sora identitását.
 
 A sheet automatikus szövegei nem történeti authorityk.
+
+
+### New supporting characters — OWNER APPROVED concepts
+
+| Library path | Státusz | Szerep | SHA-256 |
+|---|---|---|---|
+| `characters/CLINIC_ASSISTANT_APPROVED_CONCEPT_V1.png` | **OWNER APPROVED CONCEPT** | új, név nélküli klinikasszisztens vizuális alapja; a lapon szereplő Reina-felirat nem kánon | `66b2c7e233224bbf47ce972851843682157a12a19922915909efeb7e616ea6a2` |
+| `characters/VILLAGE_LEADER_RENKA_FAMILY_APPROVED_CONCEPT_V1.png` | **OWNER APPROVED CONCEPT** | Tsukimori világi vezetője / Renka anyja vizuális alapja; a lapon szereplő Miyako-felirat nem kánon | `6d9f966e2a516947b00018804cee4cbdd68e0e8b7c61d767962310661dc679c8` |
+
+Canonical Library paths:
+- `/Tsukimori Visual References/characters/CLINIC_ASSISTANT_APPROVED_CONCEPT_V1.png`
+- `/Tsukimori Visual References/characters/VILLAGE_LEADER_RENKA_FAMILY_APPROVED_CONCEPT_V1.png`
+
+Ezek nem írják felül a meglévő Reina vagy Miyako FINAL/LOCKED designját.

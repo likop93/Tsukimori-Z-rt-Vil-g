@@ -421,3 +421,28 @@ Ajánlott state-ek, ha implementálásra kerül:
 - `oto_identity_revealed`
 
 Ne implementálj automatikus romance-pontot pusztán a reveal miatt.
+
+
+### Új támogató karakterek — OWNER APPROVED 2026-10-12
+
+Forrás:
+- `docs/NEW_SUPPORTING_CHARACTERS_APPROVED.md`
+
+Klinikasszisztens:
+- új karakter, nem Reina;
+- Akira rendelőjének asszisztense/recepciósa;
+- tényleges egészségügyi gyakorlattal;
+- approved concept: `/Tsukimori Visual References/characters/CLINIC_ASSISTANT_APPROVED_CONCEPT_V1.png`;
+- a képen lévő Reina-feliratot figyelmen kívül kell hagyni;
+- a név és Katsurohoz való múlt még nincs lezárva.
+
+Faluvezető:
+- új karakter, nem Miyako;
+- Tsukimori világi/közösségi vezetője;
+- Renka anyja;
+- approved concept: `/Tsukimori Visual References/characters/VILLAGE_LEADER_RENKA_FAMILY_APPROVED_CONCEPT_V1.png`;
+- a képen lévő Miyako-feliratot figyelmen kívül kell hagyni;
+- Oto spirituális tekintélyét nem helyettesíti;
+- a név és a családi háttér további részletei még nyitottak.
+
+Ne implementálj végleges nevet vagy romance-route-ot külön tulajdonosi döntés nélkül.

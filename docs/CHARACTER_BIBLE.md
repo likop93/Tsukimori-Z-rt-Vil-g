@@ -514,3 +514,40 @@ Eredeti design-lineage:
 `/Tsukimori Visual References/npc/VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` — **1. SORA — INNKEEPER**.
 
 Részletek: `docs/SORA_PRODUCTION_SPEC.md`.
+
+
+---
+
+# Klinikasszisztens — név nyitott
+
+## OWNER APPROVED direction — 2026-10-12
+
+- felnőtt, helyi nő;
+- Akira rendelőjének állandó asszisztense és recepciósa;
+- tényleges egészségügyi gyakorlattal;
+- közvetlenebb, hétköznapibb jelenlét;
+- a klinika működésének emberi arca;
+- nem azonos Reinával, és nem Reina redesignja.
+
+Approved visual concept:
+`/Tsukimori Visual References/characters/CLINIC_ASSISTANT_APPROVED_CONCEPT_V1.png`
+
+A képi lapon szereplő „Reina” név nem kánon.
+
+# Tsukimori faluvezetője — Renka anyja, név nyitott
+
+## OWNER APPROVED direction — 2026-10-12
+
+- felnőtt, tekintélyes nő;
+- Tsukimori világi/közösségi vezetője;
+- Renka anyja;
+- hivatalos, adminisztratív pólus Oto spirituális tekintélye mellett;
+- községi iratok és Katsuro hivatalos nyomainak természetes kapuőre;
+- nem azonos Miyakóval, és nem Miyako redesignja.
+
+Approved visual concept:
+`/Tsukimori Visual References/characters/VILLAGE_LEADER_RENKA_FAMILY_APPROVED_CONCEPT_V1.png`
+
+A képi lapon szereplő „Miyako” név nem kánon.
+
+Részletek: `docs/NEW_SUPPORTING_CHARACTERS_APPROVED.md`.

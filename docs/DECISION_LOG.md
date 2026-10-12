@@ -256,3 +256,28 @@ LOCKED képi mag:
 - expression set és fogadói környezet/staging irány a jóváhagyott sheet szerint.
 
 Az eredeti `VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` / 1. SORA — INNKEEPER panel design-lineage marad; az új sheet production authorityként részletezi azt, nem redesignolja.
+
+
+## 2026-10-12 — Clinic assistant + Renka mother village leader — OWNER APPROVED
+
+Két véletlenül generált, de tulajdonos által kifejezetten jónak ítélt vizuális design új karakterhez kerül át; egyik sem írja felül az eredeti Miyako vagy Reina karaktert.
+
+### Klinikasszisztens
+- új, név nélküli felnőtt nő;
+- Akira állandó rendelői asszisztense / recepciósa;
+- tényleges egészségügyi gyakorlattal rendelkezzen;
+- a klinika hétköznapi működésének és a falubeliekhez való kapcsolódásnak fontos szereplője;
+- Katsuróhoz való pontos korábbi viszonya nyitott;
+- APPROVED visual reference: `/Tsukimori Visual References/characters/CLINIC_ASSISTANT_APPROVED_CONCEPT_V1.png`.
+
+### Faluvezető / Renka anyja
+- új, név nélküli felnőtt nő;
+- Tsukimori világi/közösségi vezetője;
+- **Renka anyja**;
+- Oto spirituális tekintélyétől különálló hivatalos vezetői pólus;
+- Akira hivatalos státuszához, községi iratokhoz és Katsuro hivatalos nyomaihoz természetes kapcsolódási pont;
+- APPROVED visual reference: `/Tsukimori Visual References/characters/VILLAGE_LEADER_RENKA_FAMILY_APPROVED_CONCEPT_V1.png`.
+
+A képeken szereplő „Reina” és „Miyako” feliratok hibás/örökölt generált feliratok és **nem kánonok**.
+
+Részletek: `docs/NEW_SUPPORTING_CHARACTERS_APPROVED.md`.
