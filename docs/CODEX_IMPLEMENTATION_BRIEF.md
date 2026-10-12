@@ -312,3 +312,148 @@ A meglévő házbelépési rész kész alap, nem újratervezendő. A következő
 - `docs/SHARED_HOME_CLINIC_NEXT_BLOCK_PREP.md`
 
 A briefet a meglévő `MIYAKO_INTERIOR_REVIEW.md` és `INTERIOR_PASSAGE_AND_CONTINUATION_REVIEW.md` működés megtartásával kell végrehajtani.
+
+
+### Reina FINAL karaktermunka — LOCKED 2026-10-11
+
+Ha Reina sprite-ját, portréját, animációját, outfitjét, motorját, iskolai jelenetét vagy szabadidős eseményét érinti a feladat, kötelező forrás:
+- `docs/REINA_PRODUCTION_SPEC.md`
+- `docs/CHARACTER_BIBLE.md`
+- `docs/VISUAL_REFERENCE_INDEX.md`
+
+LOCKED jegyek:
+- 29 éves, kb. 177 cm-es felnőtt nő;
+- Tsukimori-születésű, városi múlt után visszaköltözött;
+- helyi tanárnő;
+- platina/hamvasszőke haj sötét tövekkel;
+- szemüveg, piercingek, tetoválások;
+- magas, erős homokóra-sziluett;
+- modern School/Teacher és Riding/Casual outfit;
+- fekete motor;
+- ironikus/közvetlen, de pedagógusként professzionális karakter.
+
+A jelenlegi első playable Reina-jelenet a már implementált korai történeti blokk után, egy következő szabad délutánon indul. Ne helyezd vissza automatikusan a nyitányba, és ne írj neki korai természetfeletti problémát.
+
+
+### Első village orientation / hub — APPROVED 2026-10-12
+
+Az első rendelési nap után kötelező átvezető blokk:
+**Katsuro rendelői füzet → Ismerd meg Tsukimorit → esti Miyako → második nap / Hana**.
+
+Implementáció:
+- `scripts/opening/village_tour_director.gd`
+- `data/home_day1/village_tour.json`
+- `docs/VILLAGE_TOUR_REVIEW.md`
+
+Szabályok:
+- a falubejárás sorrendje szabad;
+- Reina formális első bemutatkozása az iskolánál történik;
+- Aoi, Sora és Ritsu röviden bemutatkozhat;
+- Hana, Shion, Kuroe és Oto itt csak kánon-kompatibilis glimpse/tease;
+- a Mélység nem nyílhat meg;
+- Himiko nem jelenhet meg az első falubejáráson;
+- a discovery flag-ek egyszerű story-state-ek maradnak, ne építs teljes open-world/route rendszert;
+- a jelenlegi village/bridge képek REVIEW stand-inek; külön helyszínart későbbi batch.
+
+
+### Sora FINAL adaptáció — LOCKED 2026-10-12
+
+Sora nem újragenerálandó karakter.
+
+Kötelező forrás:
+- `docs/SORA_PRODUCTION_SPEC.md`
+- `docs/CHARACTER_BIBLE.md`
+- `/Tsukimori Visual References/characters/SORA_FINAL_CHARACTER_SHEET_V1.png` — **FINAL / LOCKED production sheet**
+- `/Tsukimori Visual References/npc/VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` / 1. SORA — INNKEEPER panel — original design lineage.
+
+A `INN_COURTESAN_NPC_PACK_V1.png` csak fogadói environment/outfit supporting reference.
+
+Ha VN cutout/world sprite készül:
+- a `SORA_FINAL_CHARACTER_SHEET_V1.png` legyen a közvetlen képi authority;
+- a meglévő Sora arc/haj/sziluett maradjon felismerhető;
+- ne cseréld generic inn workerre;
+- ne tervezz neki új hajszínt vagy új testidentitást;
+- első expression batch: neutral, small_smile, watchful, tired_soft;
+- első motion batch: idle, walk, sweep, tray/glass interaction;
+- nappali és esti outfit is ugyanazon Sora-identitás variánsa, nem külön redesign.
+
+
+### Oto FINAL karakterirány — LOCKED 2026-10-12
+
+Kötelező forrás:
+- `docs/OTO_PRODUCTION_SPEC.md`
+- `docs/CHARACTER_BIBLE.md`
+- `docs/DECISION_LOG.md`
+- `/Tsukimori Visual References/characters/OTO_DAY_NIGHT_FINAL_CHARACTER_DESIGN_V1.png`
+
+LOCKED szabály:
+- nappal Oto idős;
+- éjszaka Oto fiatalosabb, érett késő 30-as / 40 körüli vizuális érzetben;
+- a transzformáció napszakhoz kötött, nem a szentélyhez;
+- ugyanaz a személy, ugyanaz a tudat;
+- arc/szem/hajmotívum/dísz/gesztus kötelezően azonosítható mindkét formában;
+- első village orientation során a nappali/idős Oto használható;
+- első éjszakai fiatalos reveal későbbi külön story beat, ne spoilerezd az első falubejárásnál;
+- Oto romance route lehetséges, de slow-burn és későbbi rendszer; ne implementálj most teljes route frameworköt;
+- a fiatalos formát ne kezeld külön karakterként vagy alteregóként.
+
+Oto FINAL visual sheetje jóváhagyva. A Work/Codex ebből készítsen pixel-art adaptációt, ne generáljon eltérő design-authorityt.
+
+
+### Oto éjszakai identitástitok — LOCKED 2026-10-12
+
+Első fiatalos Oto-találkozás:
+- egy későbbi esti szabad séta közben;
+- hely: szentély előtti lépcső / ülőhely;
+- Akira nem tudja, hogy a nő Oto;
+- UI speaker name: üres vagy `Ismeretlen nő`;
+- NE használd az Oto karaktermenü-azonosítóját úgy, hogy az identitást elspoilerezze;
+- Oto nem mondja el a valódi azonosságát;
+- ne adj neki szükségtelen hamis nevet;
+- az első 2–3 találkozás külön ismeretségként működjön;
+- a gyanút apró közös identity anchorok építsék: szem, hajdísz, kézmozdulat, szófordulat, olyan tudás, amit csak nappali Oto tudhat;
+- csak későbbi explicit reveal után nevezhető a NIGHT forma nyíltan Oto-nak.
+
+Ajánlott state-ek, ha implementálásra kerül:
+- `met_shrine_night_woman`
+- `shrine_night_woman_encounter_2`
+- `akira_suspects_night_woman_oto`
+- `oto_identity_revealed`
+
+Ne implementálj automatikus romance-pontot pusztán a reveal miatt.
+
+
+### Új támogató karakterek — OWNER APPROVED 2026-10-12
+
+Forrás:
+- `docs/NEW_SUPPORTING_CHARACTERS_APPROVED.md`
+
+Klinikasszisztens:
+- új karakter, nem Reina;
+- Akira rendelőjének asszisztense/recepciósa;
+- tényleges egészségügyi gyakorlattal;
+- approved concept: `/Tsukimori Visual References/characters/CLINIC_ASSISTANT_APPROVED_CONCEPT_V1.png`;
+- a képen lévő Reina-feliratot figyelmen kívül kell hagyni;
+- a név és Katsurohoz való múlt még nincs lezárva.
+
+Faluvezető:
+- új karakter, nem Miyako;
+- Tsukimori világi/közösségi vezetője;
+- Renka anyja;
+- approved concept: `/Tsukimori Visual References/characters/VILLAGE_LEADER_RENKA_FAMILY_APPROVED_CONCEPT_V1.png`;
+- a képen lévő Miyako-feliratot figyelmen kívül kell hagyni;
+- Oto spirituális tekintélyét nem helyettesíti;
+- a név és a családi háttér további részletei még nyitottak.
+
+Ne implementálj végleges nevet vagy romance-route-ot külön tulajdonosi döntés nélkül.
+
+
+### Work / Codex character-reference handoff — 2026-10-12
+
+Before creating or adapting the current priority character assets, read:
+- `reference/characters/README.md`
+- `reference/characters/manifest.json`
+
+These files provide the canonical Library paths and repo-side specs for Reina, Renka, the clinic assistant, Renka's mother / village leader, Sora and Oto.
+
+If a Library binary cannot be opened, use the associated production spec and report the missing binary. Do not redesign or substitute the character.

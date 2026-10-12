@@ -127,3 +127,168 @@ Tulajdonosi kérés alapján karakterlapok/kapcsolati státusz, majd első éjsz
 2026-10-10 OWNER APPROVED / SUPERSEDES: Hana átalakulásakor karcsúbb és nőiesebb lesz; a hétköznapi V2 kép erre elfogadott referencia. A korábbi nagyobb/teltebb átalakulási testirány visszavonva. Alárendelődő viselkedés megmarad. Alapdesign változatlan. A korábbi kimonós változat arányait később ehhez kell igazítani.
 
 2026-10-10 REVIEW: Shion első konzultációjának eredeti szövege és két döntése átültetve. Világos kimonó a forrás jelenetspecifikus ruhájaként; sötét primary design változatlan. Saját horrorátalakulás nincs még kijelölve. SHION_FIRST_SESSION_REVIEW.md.
+
+
+## 2026-10-11 — Reina FINAL Character Design v1 — LOCKED
+
+Tulajdonosi jóváhagyás: Reina karaktere és Tsukimori-stílusú vizuális iránya elfogadva, játékba integrálható.
+
+LOCKED mag:
+- 29 éves, kb. 177 cm magas felnőtt nő;
+- Tsukimori-születésű, városi múlt után visszaköltözött;
+- helyi tanárnő;
+- platina/hamvasszőke haj sötét tövekkel;
+- szemüveg, piercingek, tetoválások;
+- magas, erős homokóra-sziluett;
+- modern School/Teacher és Riding/Casual outfit;
+- fekete motor;
+- közvetlen, ironikus, intelligens, pedagógusként felelősségteljes.
+
+A generált reference sheet automatikus feliratai/számai nem authorityk. Részletek: `docs/REINA_PRODUCTION_SPEC.md`.
+
+
+## 2026-10-12 — Első szabad falubejárás — APPROVED
+
+Az első rendelési nap után, az esti Miyako-zárás előtt Akira feladata: **Ismerd meg Tsukimorit**.
+
+APPROVED:
+- szabad sorrendben bejárható első orientáció;
+- iskola / Reina;
+- bolt / Aoi;
+- fogadó / Sora;
+- Ritsu műhelye;
+- piactér;
+- patak / kishíd;
+- Kuroe zenei helyének tease-e;
+- szentély megközelítése / Oto távoli jelenléte;
+- a Mélység ekkor még zárt;
+- Reina itt mutatkozik be először;
+- Hana, Shion, Kuroe és Oto korai jelenléte nem írhatja felül későbbi formális történeti jeleneteiket.
+
+Himiko nem része az első falubejárásnak. Külön érkezési eseményt kap a Hana/Shion korai periódus után, nagyjából a 3–4. játéknap környékén.
+
+
+## 2026-10-12 — Sora existing design — LOCKED
+
+Tulajdonosi korrekció: Sorának már korábban elkészült vizuális terve volt, ezért nem szabad újratervezni.
+
+LOCKED source:
+- `VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` / **1. SORA — INNKEEPER**.
+
+LOCKED vizuális mag:
+- hosszú nagyon sötét haj;
+- ibolyás/lila részletnyelv;
+- érett, meleg, magabiztos arc;
+- magasnak/erősnek ható, telt nőies sziluett;
+- lila/indigó/bordó fogadói outfit;
+- felnőtt, figyelő, földelt fogadósi jelenlét.
+
+A generic `INN_COURTESAN_NPC_PACK_V1.png` supporting referencia, nem Sora redesign.
+
+A történeti hang és első találkozás a már megírt Sora-szabadnapi jelenetből marad authority.
+
+
+## 2026-10-12 — Oto day/night dual form — LOCKED
+
+Tulajdonosi döntés:
+
+- Oto önálló romance-opció lehet;
+- az Akira–Oto kapcsolatban tudatos idősebb nő / fiatalabb férfi dinamika jelenhet meg;
+- **nappal Oto idős, éjszaka fiatalosabb**;
+- a fiatalodás nem szentélyhelyszínhez kötött;
+- alkonyatkor átmenet megengedett, hajnalnál visszaöregedés;
+- az éjszakai forma érett, kb. késő 30-as / 40 körüli vizuális érzet, nem huszonéves/tinédzseres;
+- a két forma ugyanaz a személy, azonos tudattal és emlékezettel;
+- a nappali/éjszakai testállapot Tsukimori természetfeletti idő-/testtorzító hatásának vizuális jele;
+- a két forma arcban, szemben, hajalapban, hajdíszben és gesztusnyelvben kötelezően felismerhetően azonos;
+- Oto route-ja slow-burn, spirituális, intim, nem gyors/comedic romance.
+
+Kötelező production spec: `docs/OTO_PRODUCTION_SPEC.md`.
+
+
+## 2026-10-12 — Oto FINAL visual design v1 — LOCKED
+
+Tulajdonosi jóváhagyás: a nappali/éjszakai kettős Oto character sheet elfogadva.
+
+Primary visual authority:
+- `/Tsukimori Visual References/characters/OTO_DAY_NIGHT_FINAL_CHARACTER_DESIGN_V1.png`
+- SHA-256: `e84b3b542f2a5224ddae61630fdf7f87ba731a8699c6f67e6d1be0c083431761`
+
+LOCKED képi mag:
+- DAY: idős, ezüsthajú, tradicionális, méltóságteljes Oto;
+- NIGHT: ugyanaz a nő fiatalosabb, érett, nőiesebb formában;
+- közös arc/szem/haj/hajdísz/ruhamotívum;
+- alkonyati átmenet vizuálisan fokozatos;
+- a két forma nem külön személy;
+- a képi design nem redesignolható külön tulajdonosi döntés nélkül.
+
+
+## 2026-10-12 — Oto night identity concealment — LOCKED
+
+Tulajdonosi döntés:
+
+- Akira az első éjszakai fiatalos Oto-találkozáskor **nem tudja**, hogy ugyanaz a személy, mint a nappali idős Oto;
+- az első éjszakai jelenet egy szabad esti séta közben, a szentély előtt történik;
+- a fiatal nő a szentély előtt ül;
+- a prezentáció kezdetben név nélküli / „Ismeretlen nő”;
+- Oto nem mondja el, hogy ő Oto;
+- hamis alteregó vagy hamis név nem szükséges;
+- Akira és a fiatalos Oto önállóan ismerkednek;
+- 2–3 későbbi találkozás során azonos gesztusok, szem, motívumok és tudás alapján Akira gyanakodni kezd;
+- a tényleges felismerés külön későbbi story beat;
+- a reveal előtt Oto kettős megjelenése nem lehet menüből/UI-ból elspoilerezve.
+
+
+## 2026-10-12 — Sora FINAL production sheet v1 — LOCKED
+
+Tulajdonosi jóváhagyás: a korábbi Sora-designból készített új production character sheet elfogadva és FINAL/LOCKED státuszú.
+
+Primary visual authority:
+- `/Tsukimori Visual References/characters/SORA_FINAL_CHARACTER_SHEET_V1.png`
+- SHA-256: `ba9cc9576ae76d4f4418984dd7de33087a7d6fd0f22a557cb6fad65dad5c7dfc`
+
+LOCKED képi mag:
+- hosszú nagyon sötét fekete/kékes-lilás haj;
+- ibolyás/lila szem- és részletnyelv;
+- virágos hajdísz;
+- érett, meleg, magabiztos arc;
+- telt, erőteljes felnőtt női sziluett;
+- mély lila/indigó/bordó fogadói ruha;
+- nappali work/innkeeper és esti elegánsabb innkeeper megjelenés;
+- expression set és fogadói környezet/staging irány a jóváhagyott sheet szerint.
+
+Az eredeti `VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` / 1. SORA — INNKEEPER panel design-lineage marad; az új sheet production authorityként részletezi azt, nem redesignolja.
+
+
+## 2026-10-12 — Clinic assistant + Renka mother village leader — OWNER APPROVED
+
+Két véletlenül generált, de tulajdonos által kifejezetten jónak ítélt vizuális design új karakterhez kerül át; egyik sem írja felül az eredeti Miyako vagy Reina karaktert.
+
+### Klinikasszisztens
+- új, név nélküli felnőtt nő;
+- Akira állandó rendelői asszisztense / recepciósa;
+- tényleges egészségügyi gyakorlattal rendelkezzen;
+- a klinika hétköznapi működésének és a falubeliekhez való kapcsolódásnak fontos szereplője;
+- Katsuróhoz való pontos korábbi viszonya nyitott;
+- APPROVED visual reference: `/Tsukimori Visual References/characters/CLINIC_ASSISTANT_APPROVED_CONCEPT_V1.png`.
+
+### Faluvezető / Renka anyja
+- új, név nélküli felnőtt nő;
+- Tsukimori világi/közösségi vezetője;
+- **Renka anyja**;
+- Oto spirituális tekintélyétől különálló hivatalos vezetői pólus;
+- Akira hivatalos státuszához, községi iratokhoz és Katsuro hivatalos nyomaihoz természetes kapcsolódási pont;
+- APPROVED visual reference: `/Tsukimori Visual References/characters/VILLAGE_LEADER_RENKA_FAMILY_APPROVED_CONCEPT_V1.png`.
+
+A képeken szereplő „Reina” és „Miyako” feliratok hibás/örökölt generált feliratok és **nem kánonok**.
+
+Részletek: `docs/NEW_SUPPORTING_CHARACTERS_APPROVED.md`.
+
+
+## 2026-10-12 — Reina + Renka design correction — LOCKED
+
+Tulajdonosi korrekció:
+- **Reina marad a korábban LOCKED platina/hamvasszőke, sötét tövű tanárnő-designnal.**
+- **Renka marad a korábbi `RENKA_CHARACTER_DESIGN_V1_REFERENCE.png` APPROVED vizuális referenciáján.**
+- A később véletlenül generált vörös–fekete–arany „Renka örökösnő” sheet **ELVETVE / NEM KÁNON**.
+- Az elvetett kép sem Reinát, sem Renkát nem írhatja felül.

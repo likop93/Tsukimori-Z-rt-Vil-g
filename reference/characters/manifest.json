@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "updated": "2026-10-12",
+  "references": [
+    {
+      "character": "Reina",
+      "status": "LOCKED",
+      "repo_preview": "assets/opening/vn_portraits/reina_teacher_v1_REVIEW.webp",
+      "repo_spec": "docs/REINA_PRODUCTION_SPEC.md",
+      "note": "Keep the platinum/ash-blonde teacher design with dark roots, glasses, piercings and tattoos."
+    },
+    {
+      "character": "Renka",
+      "status": "APPROVED REFERENCE",
+      "library_path": "/Tsukimori Visual References/characters/RENKA_CHARACTER_DESIGN_V1_REFERENCE.png",
+      "note": "Keep the earlier approved Renka design. Later redesign attempts are non-canon."
+    },
+    {
+      "character": "Clinic Assistant",
+      "status": "OWNER APPROVED CONCEPT",
+      "library_path": "/Tsukimori Visual References/characters/CLINIC_ASSISTANT_APPROVED_CONCEPT_V1.png",
+      "repo_spec": "docs/NEW_SUPPORTING_CHARACTERS_APPROVED.md",
+      "note": "Separate new adult clinic assistant; not Reina."
+    },
+    {
+      "character": "Village Leader / Renka's Mother",
+      "status": "OWNER APPROVED CONCEPT",
+      "library_path": "/Tsukimori Visual References/characters/VILLAGE_LEADER_RENKA_FAMILY_APPROVED_CONCEPT_V1.png",
+      "repo_spec": "docs/NEW_SUPPORTING_CHARACTERS_APPROVED.md",
+      "note": "Separate new character; Tsukimori's secular village leader and Renka's mother; not Miyako."
+    },
+    {
+      "character": "Sora",
+      "status": "FINAL / LOCKED",
+      "library_path": "/Tsukimori Visual References/characters/SORA_FINAL_CHARACTER_SHEET_V1.png",
+      "repo_spec": "docs/SORA_PRODUCTION_SPEC.md"
+    },
+    {
+      "character": "Oto",
+      "status": "FINAL / LOCKED",
+      "library_path": "/Tsukimori Visual References/characters/OTO_DAY_NIGHT_FINAL_CHARACTER_DESIGN_V1.png",
+      "repo_spec": "docs/OTO_PRODUCTION_SPEC.md"
+    }
+  ]
+}

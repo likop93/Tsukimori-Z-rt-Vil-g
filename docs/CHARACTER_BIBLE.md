@@ -384,9 +384,52 @@ Alapelv:
 
 # Oto
 
-- idős ritualista nő;
-- régi rend / living seals;
-- Shion gyerekkori szentélytörténetéhez kötődik.
+## Identitás — LOCKED 2026-10-12
+
+- felnőtt, idősebb nő;
+- ritualista / régi rend / living seals;
+- Shion gyerekkori szentélytörténetéhez kötődik;
+- önálló slow-burn romance-opció lehet;
+- Akirával tudatos idősebb nő / fiatalabb férfi dinamika épülhet.
+
+## Nappal / éjszaka kettősség — LOCKED
+
+**Nappal Oto idős, éjszaka fiatalosabb.**
+
+- a változás napszakhoz kötött, nem a szentélyhez;
+- alkonyatkor átmenet lehetséges;
+- éjszaka érett, késő 30-as / 40 körüli vizuális érzetű formát vesz fel;
+- hajnal felé visszaöregszik;
+- mindkét forma ugyanaz a személy, ugyanazzal a tudattal és emlékezetével;
+- a jelenség Tsukimori időt/testet torzító természetfeletti hatásának egyik közvetlen jele.
+
+## Vizuális felismerhetőség — LOCKED
+
+Mindkét formában maradjon:
+- ugyanaz a szemforma;
+- ugyanaz az arccsont/orr-struktúra;
+- ugyanaz a hajalap;
+- ugyanaz a hajdísz/szentélyi motívum;
+- ugyanaz a gesztusnyelv és tekintet.
+
+Nappal: ezüstös/ősz haj, idős, tradicionális, méltóságteljes.  
+Éjszaka: ugyanaz az arc visszafiatalodva, simább bőrrel, egyenesebb tartással, élőbb és nőiesebb jelenléttel.
+
+Elsődleges képi referencia:
+`/Tsukimori Visual References/characters/OTO_DAY_NIGHT_FINAL_CHARACTER_DESIGN_V1.png`
+
+### Első éjszakai identitáskezelés — LOCKED
+
+Az első éjszakai fiatalos találkozáskor Akira **nem tudja**, hogy a nő Oto.
+- a nő a szentély előtt ül egy esti séta során;
+- nincs Oto-névtábla;
+- Oto nem mondja el, hogy ő a nappali idős szentélyőr;
+- hamis név nem szükséges: a nevét kikerülheti;
+- Akira külön ismerkedik vele;
+- több későbbi apró egyezésből kezd gyanakodni;
+- a valódi felismerés és Oto beismerése külön, későbbi story beat.
+
+Részletes production spec: `docs/OTO_PRODUCTION_SPEC.md`.
 
 ---
 
@@ -412,3 +455,99 @@ FINAL karakterhez kell:
 - sziluett;
 - rig-kompatibilitás;
 - animációs language review.
+
+
+---
+
+# Reina
+
+## Identitás — LOCKED 2026-10-11
+
+- felnőtt, 29 éves nő;
+- kb. 177 cm;
+- Tsukimoriban született, éveket élt városban, majd visszaköltözött;
+- a helyi iskola modern tanárnője;
+- platina/hamvasszőke haj sötét tövekkel, szemüveg, piercingek, tetoválások;
+- magas, erős homokóra-sziluett;
+- School/Teacher és Riding/Casual fő outfit;
+- fekete modern motor;
+- gyors észjárású, ironikus, közvetlen; az iskolában professzionális és türelmes;
+- kulcsmondat: **„A testem nem közösségi projekt.”**
+
+Reina nem generikus modern/sexy NPC. Funkciója a falu hétköznapi, fiatalabb és modernebb életének megmutatása, valamint a későbbi szabadidős rendszer egyik természetes kapcsolódási pontja.
+
+Kötelező production spec: `docs/REINA_PRODUCTION_SPEC.md`.
+
+
+---
+
+# Sora
+
+## Identitás — LOCKED 2026-10-12
+
+- felnőtt, középkorú nő;
+- Tsukimori fogadójának vezetője;
+- a fogadó több generáción át öröklődött a családjában;
+- figyeli, ki érkezik és ki tűnik el a faluból;
+- óvatos, figyelő, felnőtt jelenlét;
+- nem fáradt-karakter, inkább belenyugvó és sokat látott;
+- természetes információs csomópont a falu társasági életében.
+
+## Vizuális identitás — LOCKED
+
+Primary existing visual authority:
+`/Tsukimori Visual References/npc/VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` — **1. SORA — INNKEEPER** panel.
+
+- hosszú, nagyon sötét fekete/kékes-lilás haj;
+- lila/ibolyás részletnyelv;
+- érett, meleg, magabiztos arc;
+- magasnak és fizikailag erősnek ható, telt nőies sziluett;
+- mély lila / indigó / bordó fogadói outfit;
+- elegáns, kissé érzéki, de földelt fogadói jelenlét.
+
+A generic inn-worker/courtesan pack csak supporting environment/outfit reference; nem írhatja felül Sora saját karakterdesignját.
+
+Elsődleges FINAL képi referencia:
+`/Tsukimori Visual References/characters/SORA_FINAL_CHARACTER_SHEET_V1.png`
+
+Eredeti design-lineage:
+`/Tsukimori Visual References/npc/VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` — **1. SORA — INNKEEPER**.
+
+Részletek: `docs/SORA_PRODUCTION_SPEC.md`.
+
+
+---
+
+# Klinikasszisztens — név nyitott
+
+## OWNER APPROVED direction — 2026-10-12
+
+- felnőtt, helyi nő;
+- Akira rendelőjének állandó asszisztense és recepciósa;
+- tényleges egészségügyi gyakorlattal;
+- közvetlenebb, hétköznapibb jelenlét;
+- a klinika működésének emberi arca;
+- nem azonos Reinával, és nem Reina redesignja.
+
+Approved visual concept:
+`/Tsukimori Visual References/characters/CLINIC_ASSISTANT_APPROVED_CONCEPT_V1.png`
+
+A képi lapon szereplő „Reina” név nem kánon.
+
+# Tsukimori faluvezetője — Renka anyja, név nyitott
+
+## OWNER APPROVED direction — 2026-10-12
+
+- felnőtt, tekintélyes nő;
+- Tsukimori világi/közösségi vezetője;
+- Renka anyja;
+- hivatalos, adminisztratív pólus Oto spirituális tekintélye mellett;
+- községi iratok és Katsuro hivatalos nyomainak természetes kapuőre;
+- nem azonos Miyakóval, és nem Miyako redesignja.
+
+Approved visual concept:
+`/Tsukimori Visual References/characters/VILLAGE_LEADER_RENKA_FAMILY_APPROVED_CONCEPT_V1.png`
+
+A képi lapon szereplő „Miyako” név nem kánon.
+
+Részletek: `docs/NEW_SUPPORTING_CHARACTERS_APPROVED.md`.

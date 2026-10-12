@@ -78,6 +78,16 @@ A Renka-kép jelenleg **APPROVED REFERENCE**, nem teljes FINAL production lock. 
 | `npc/VILLAGE_NPC_ATTRACTIVE_VARIANTS_V2.png` | **APPROVED VARIATION REFERENCE** | a falusi női NPC-k többségéhez vonzóbb/elegánsabb karakter- és outfit-variációk, miközben a fő route-karakterek továbbra is vizuálisan kiemelkednek | `6232a637c11f853d1e6b1ac860e73ebb059cae02317151add6d71e0f4f547e91` |
 | `npc/INN_COURTESAN_NPC_PACK_V1.png` | **APPROVED INN / COURTESAN REFERENCE** | a fogadóban dolgozó felnőtt nők külön, léhább/szenzuálisabb outfit-nyelve és ambient/worker sprite iránya | `1158f13f4bdeb5d81f00680026174b64e52a5916d68201b65eacb26a9ea63c9a` |
 
+### Sora megjegyzés
+
+A `VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` **1. SORA — INNKEEPER** panelje 2026-10-12-től Sora saját meglévő vizuális identitásának **LOCKED PRIMARY SOURCE PANEL** státuszú része.
+
+A panel képi tartalma authority Sora arcához, hajához, sziluettjéhez, lila/indigó fogadói detail language-éhez és általános jelenlétéhez. A lapon automatikusan generált konkrét számok (például pontos magasság) továbbra sem válnak automatikusan kánonná.
+
+Az `INN_COURTESAN_NPC_PACK_V1.png` Sora esetében csak **SUPPORTING INN ENVIRONMENT / OUTFIT LANGUAGE**. Nem használható Sora arcának vagy identitásának lecserélésére.
+
+Production spec: `docs/SORA_PRODUCTION_SPEC.md`.
+
 ### Population szabály
 
 Tsukimori falusi ambient lakossága **nőkből áll**. A crowd packban nem használható generikus férfi falusi NPC.
@@ -161,3 +171,61 @@ A képi referencia hiánya nem jogosít fel LOCKED design újratervezésére.
 2026-10-12 további hétköznapi változatok: hana_casual_confident_v1_REVIEW.png, shion_casual_v1_REVIEW.png, kuroe_casual_v1_REVIEW.png az assets/opening/vn_portraits mappában. Teljes alakos, külön ruhaalternatívák; nem írják felül az alapdizájnt és nem horrorváltozatok. [Források, pontos promptok és tesztek](WOMEN_CHARACTER_DEVELOPMENT_REVIEW.md).
 
 Az assets/opening/vn_portraits/miyako_evening_v1_REVIEW.png, miyako_evening_watchful_v1_REVIEW.png és miyako_evening_transformed_v1_REVIEW.png a meglévő Miyako-identitás esti outfitváltozatai. Nem új primary design. Pontos referenciák, generálási promptok és hiányzó production variánsok: [MIYAKO_TEA_WARDROBE_REVIEW.md](MIYAKO_TEA_WARDROBE_REVIEW.md).
+
+
+## Reina — OWNER APPROVED / LOCKED identity
+
+Primary owner-approved visual direction: a 2026-10-11 generated Tsukimori high-detail cinematic pixel-art character sheet featuring Reina in School/Teacher and Riding/Casual looks, expression studies, world sprites and motorcycle context.
+
+Repository REVIEW derivative used by the current VN implementation:
+- `assets/opening/vn_portraits/reina_teacher_v1_REVIEW.webp`
+
+Authority rule: the sheet's generated age/height/text labels are non-canon. Canon identity values are recorded in `docs/REINA_PRODUCTION_SPEC.md` and `docs/CHARACTER_BIBLE.md`.
+
+
+### Oto — FINAL / LOCKED day-night character reference
+
+| Library path | Státusz | Szerep | SHA-256 |
+|---|---|---|---|
+| `characters/OTO_DAY_NIGHT_FINAL_CHARACTER_DESIGN_V1.png` | **FINAL / LOCKED** | nappali idős Oto + éjszakai fiatalos Oto közös identity sheet; expressionök; day/night outfit; dusk transition; sprite és shrine staging reference | `e84b3b542f2a5224ddae61630fdf7f87ba731a8699c6f67e6d1be0c083431761` |
+
+Canonical Library path:
+`/Tsukimori Visual References/characters/OTO_DAY_NIGHT_FINAL_CHARACTER_DESIGN_V1.png`
+
+LOCKED:
+- DAY = idős Oto;
+- NIGHT = ugyanaz a nő érett, fiatalosabb formában;
+- a változás napszakhoz kötött, nem a szentélyhez;
+- arc, szem, hajalap, hajdísz és gesztusnyelv közös identity anchor;
+- a konkrét képi sheet mostantól visual authority.
+
+
+
+### Sora — FINAL / LOCKED production character sheet
+
+| Library path | Státusz | Szerep | SHA-256 |
+|---|---|---|---|
+| `characters/SORA_FINAL_CHARACTER_SHEET_V1.png` | **FINAL / LOCKED** | Sora végleges production character sheet: arc, expressionök, nappali/esti outfit, részletek, sprite- és fogadó-staging referencia | `ba9cc9576ae76d4f4418984dd7de33087a7d6fd0f22a557cb6fad65dad5c7dfc` |
+
+Canonical Library path:
+`/Tsukimori Visual References/characters/SORA_FINAL_CHARACTER_SHEET_V1.png`
+
+Design lineage:
+- `npc/VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` / **1. SORA — INNKEEPER** = eredeti karakterdesign-forrás;
+- az új FINAL sheet ezt adaptálja és részletezi, nem írja át Sora identitását.
+
+A sheet automatikus szövegei nem történeti authorityk.
+
+
+### New supporting characters — OWNER APPROVED concepts
+
+| Library path | Státusz | Szerep | SHA-256 |
+|---|---|---|---|
+| `characters/CLINIC_ASSISTANT_APPROVED_CONCEPT_V1.png` | **OWNER APPROVED CONCEPT** | új, név nélküli klinikasszisztens vizuális alapja; a lapon szereplő Reina-felirat nem kánon | `66b2c7e233224bbf47ce972851843682157a12a19922915909efeb7e616ea6a2` |
+| `characters/VILLAGE_LEADER_RENKA_FAMILY_APPROVED_CONCEPT_V1.png` | **OWNER APPROVED CONCEPT** | Tsukimori világi vezetője / Renka anyja vizuális alapja; a lapon szereplő Miyako-felirat nem kánon | `6d9f966e2a516947b00018804cee4cbdd68e0e8b7c61d767962310661dc679c8` |
+
+Canonical Library paths:
+- `/Tsukimori Visual References/characters/CLINIC_ASSISTANT_APPROVED_CONCEPT_V1.png`
+- `/Tsukimori Visual References/characters/VILLAGE_LEADER_RENKA_FAMILY_APPROVED_CONCEPT_V1.png`
+
+Ezek nem írják felül a meglévő Reina vagy Miyako FINAL/LOCKED designját.

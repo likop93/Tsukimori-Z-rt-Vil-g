@@ -1,9 +1,57 @@
 {
   "characters": [
-    {"id":"akira","name":"Dr. Akira","description":"Orvos. Nyugodt, megfigyelő természetű.","portrait":"res://assets/opening/vn_portraits/akira_neutral_v1_REVIEW.png"},
-    {"id":"miyako","name":"Miyako","reveal":"met_miyako","description":"Katsuro özvegye. A közös háznál várt rád. Csendes, fegyelmezett jelenlét.","portrait":"res://assets/opening/vn_portraits/miyako_cutout_v1_REVIEW.png"},
-    {"id":"hana","name":"Hana","glimpse":"hana_cameo_seen","reveal":"met_hana","unknown":"A meleg bejáratnál felpillantó nő.","description":"Közvetlen, magabiztos nő. Korábban Katsuróhoz járt; most a rendelőben beszélgettetek.","portrait":"res://assets/opening/vn_portraits/hana_neutral_v1_REVIEW.png"},
-    {"id":"kuroe","name":"Kuroe","glimpse":"kuroe_cameo_passed","reveal":"met_kuroe","unknown":"A házközön áthaladó nő.","description":"Személyesen is megismerted.","portrait":"res://assets/opening/vn_portraits/kuroe_neutral_v1_REVIEW.png"},
-    {"id":"shion","name":"Shion","glimpse":"shion_cameo_seen","reveal":"met_shion","unknown":"A híd mellett figyelő nő.","description":"Személyesen is megismerted.","portrait":"res://assets/opening/hana_shion_cameos/shion_source_REVIEW.png","crop":[0,0,0.5,1]}
+    {
+      "id": "akira",
+      "name": "Dr. Akira",
+      "description": "Orvos. Nyugodt, megfigyelő természetű.",
+      "portrait": "res://assets/opening/vn_portraits/akira_neutral_v1_REVIEW.png"
+    },
+    {
+      "id": "miyako",
+      "name": "Miyako",
+      "reveal": "met_miyako",
+      "description": "Katsuro özvegye. A közös háznál várt rád. Csendes, fegyelmezett jelenlét.",
+      "portrait": "res://assets/opening/vn_portraits/miyako_cutout_v1_REVIEW.png"
+    },
+    {
+      "id": "hana",
+      "name": "Hana",
+      "glimpse": "hana_cameo_seen",
+      "reveal": "met_hana",
+      "unknown": "A meleg bejáratnál felpillantó nő.",
+      "description": "Közvetlen, magabiztos nő. Korábban Katsuróhoz járt; most a rendelőben beszélgettetek.",
+      "portrait": "res://assets/opening/vn_portraits/hana_neutral_v1_REVIEW.png"
+    },
+    {
+      "id": "kuroe",
+      "name": "Kuroe",
+      "glimpse": "kuroe_cameo_passed",
+      "reveal": "met_kuroe",
+      "unknown": "A házközön áthaladó nő.",
+      "description": "Személyesen is megismerted.",
+      "portrait": "res://assets/opening/vn_portraits/kuroe_neutral_v1_REVIEW.png"
+    },
+    {
+      "id": "shion",
+      "name": "Shion",
+      "glimpse": "shion_cameo_seen",
+      "reveal": "met_shion",
+      "unknown": "A híd mellett figyelő nő.",
+      "description": "Személyesen is megismerted.",
+      "portrait": "res://assets/opening/hana_shion_cameos/shion_source_REVIEW.png",
+      "crop": [
+        0,
+        0,
+        0.5,
+        1
+      ]
+    },
+    {
+      "id": "reina",
+      "name": "Reina",
+      "reveal": "met_reina",
+      "description": "A helyi iskola modern tanárnője. Tsukimoriban született, éveket élt a városban, majd visszaköltözött. Motorral jár, és feltűnően kevéssé kér bocsánatot azért, aki.",
+      "portrait": "res://assets/opening/vn_portraits/reina_teacher_v1_REVIEW.webp"
+    }
   ]
 }
