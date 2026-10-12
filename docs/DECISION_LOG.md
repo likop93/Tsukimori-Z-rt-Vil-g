@@ -202,3 +202,20 @@ Tulajdonosi döntés:
 - Oto route-ja slow-burn, spirituális, intim, nem gyors/comedic romance.
 
 Kötelező production spec: `docs/OTO_PRODUCTION_SPEC.md`.
+
+
+## 2026-10-12 — Oto FINAL visual design v1 — LOCKED
+
+Tulajdonosi jóváhagyás: a nappali/éjszakai kettős Oto character sheet elfogadva.
+
+Primary visual authority:
+- `/Tsukimori Visual References/characters/OTO_DAY_NIGHT_FINAL_CHARACTER_DESIGN_V1.png`
+- SHA-256: `e84b3b542f2a5224ddae61630fdf7f87ba731a8699c6f67e6d1be0c083431761`
+
+LOCKED képi mag:
+- DAY: idős, ezüsthajú, tradicionális, méltóságteljes Oto;
+- NIGHT: ugyanaz a nő fiatalosabb, érett, nőiesebb formában;
+- közös arc/szem/haj/hajdísz/ruhamotívum;
+- alkonyati átmenet vizuálisan fokozatos;
+- a két forma nem külön személy;
+- a képi design nem redesignolható külön tulajdonosi döntés nélkül.

@@ -381,6 +381,7 @@ Kötelező forrás:
 - `docs/OTO_PRODUCTION_SPEC.md`
 - `docs/CHARACTER_BIBLE.md`
 - `docs/DECISION_LOG.md`
+- `/Tsukimori Visual References/characters/OTO_DAY_NIGHT_FINAL_CHARACTER_DESIGN_V1.png`
 
 LOCKED szabály:
 - nappal Oto idős;
@@ -393,4 +394,4 @@ LOCKED szabály:
 - Oto romance route lehetséges, de slow-burn és későbbi rendszer; ne implementálj most teljes route frameworköt;
 - a fiatalos formát ne kezeld külön karakterként vagy alteregóként.
 
-Amíg nincs tulajdonos által jóváhagyott Oto visual sheet, ne készíts eltérő saját design-authorityt.
+Oto FINAL visual sheetje jóváhagyva. A Work/Codex ebből készítsen pixel-art adaptációt, ne generáljon eltérő design-authorityt.

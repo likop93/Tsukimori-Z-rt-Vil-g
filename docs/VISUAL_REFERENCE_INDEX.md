@@ -181,14 +181,19 @@ Repository REVIEW derivative used by the current VN implementation:
 Authority rule: the sheet's generated age/height/text labels are non-canon. Canon identity values are recorded in `docs/REINA_PRODUCTION_SPEC.md` and `docs/CHARACTER_BIBLE.md`.
 
 
-### Oto — visual lock pending image
+### Oto — FINAL / LOCKED day-night character reference
 
-Oto konkrét FINAL képi reference sheetje még nincs rögzítve ebben az indexben, de a **vizuális szabályrendszer LOCKED** a `docs/OTO_PRODUCTION_SPEC.md` és `docs/CHARACTER_BIBLE.md` alapján.
+| Library path | Státusz | Szerep | SHA-256 |
+|---|---|---|---|
+| `characters/OTO_DAY_NIGHT_FINAL_CHARACTER_DESIGN_V1.png` | **FINAL / LOCKED** | nappali idős Oto + éjszakai fiatalos Oto közös identity sheet; expressionök; day/night outfit; dusk transition; sprite és shrine staging reference | `e84b3b542f2a5224ddae61630fdf7f87ba731a8699c6f67e6d1be0c083431761` |
 
-Kötelező képi kettősség:
-- DAY: idős, ezüstös/ősz hajú, tradicionális, méltóságteljes Oto;
-- NIGHT: ugyanaz a nő visszafiatalodva, érett késő 30-as / 40 körüli vizuális érzetben;
-- a változás napszakhoz kötött, nem szentélyhez;
-- az arc/szem/hajmotívum/dísz/gesztus közös identity anchor.
+Canonical Library path:
+`/Tsukimori Visual References/characters/OTO_DAY_NIGHT_FINAL_CHARACTER_DESIGN_V1.png`
 
-Amíg külön Oto character sheet nincs jóváhagyva, Work/Codex **nem generálhat saját eltérő visual authorityt**.
+LOCKED:
+- DAY = idős Oto;
+- NIGHT = ugyanaz a nő érett, fiatalosabb formában;
+- a változás napszakhoz kötött, nem a szentélyhez;
+- arc, szem, hajalap, hajdísz és gesztusnyelv közös identity anchor;
+- a konkrét képi sheet mostantól visual authority.
+

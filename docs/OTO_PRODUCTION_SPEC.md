@@ -3,6 +3,17 @@
 **Státusz:** OWNER APPROVED / LOCKED  
 **Dátum:** 2026-10-12
 
+## FINAL visual authority
+
+Primary approved image:
+- `/Tsukimori Visual References/characters/OTO_DAY_NIGHT_FINAL_CHARACTER_DESIGN_V1.png`
+- SHA-256: `e84b3b542f2a5224ddae61630fdf7f87ba731a8699c6f67e6d1be0c083431761`
+- státusz: **FINAL / LOCKED**
+
+A character sheet képi identitása authority a nappali és éjszakai Oto arcához, hajához, hajdíszéhez, ruhanyelvéhez, testarányaihoz, expression irányához és az alkonyati átmenet vizuális kapcsolatának kialakításához.
+
+A képen esetleg szereplő automatikus szövegek vagy feliratok nem írhatják felül ezt a production specet.
+
 ## Karakterfunkció
 
 Oto felnőtt, idősebb női karakter, a régi rendhez, a szentélyhez és a living seal rendszerhez kötődik. Shion gyerekkori szentélytörténetében kulcsszereplő.

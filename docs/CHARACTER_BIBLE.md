@@ -415,6 +415,9 @@ Mindkét formában maradjon:
 Nappal: ezüstös/ősz haj, idős, tradicionális, méltóságteljes.  
 Éjszaka: ugyanaz az arc visszafiatalodva, simább bőrrel, egyenesebb tartással, élőbb és nőiesebb jelenléttel.
 
+Elsődleges képi referencia:
+`/Tsukimori Visual References/characters/OTO_DAY_NIGHT_FINAL_CHARACTER_DESIGN_V1.png`
+
 Részletes production spec: `docs/OTO_PRODUCTION_SPEC.md`.
 
 ---
