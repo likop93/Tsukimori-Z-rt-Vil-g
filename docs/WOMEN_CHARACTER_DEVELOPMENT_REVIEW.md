@@ -59,6 +59,8 @@ Eredeti output: exec-7e023cf4-6088-4c5f-af34-ebc0563720a2.png.
 Az eredeti outputok mappája: C:/Users/likop/.codex/generated_images/01a0de06-53bf-7c60-8a17-b76aceffe7c1.
 
 ## Ellenőrzés
+
+Közben érkezett GitHub main aee540c összeillesztve: Reina, Renka, Sora, Oto és az új támogató szereplők friss governance/handoff dokumentumai, valamint a nyolcállomásos első falubemutató megmaradtak. A hat ismert szereplő miatt a normál karakterlista görgethető lett. village_tour_merge_regression: mind a nyolc pont, visszatérés az esti Miyakóhoz, Oto/Kuroe korai identitásának védelme és a hatlapos menü elrendezése sikeres. Sora/Oto/Renka/új támogató szereplők Library master binárisai ebben a körben nem álltak rendelkezésre; nem készültek helyettesítő redesignok.
 Godot 4.7.2 import; character_gallery_regression: három karakter, két ruha, kilenc ág, állapotváltoztatás kizárása, szövegméret, menübelépés és Escape. character_pressure_regression: Hana és Miyako korai/késői különbsége, karakterlap és reset. chapter_select_regression: korábbi fejezetválasztás.
 A korábbi ObjectDB kilépési figyelmeztetés a pressure-teszt végén még előfordul; nem lett megoldottként állítva.
 

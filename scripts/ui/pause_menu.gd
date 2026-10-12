@@ -155,9 +155,20 @@ func show_character(index: int) -> void:
 	panel.position = Vector2(24,16)
 	panel.size = Vector2(592,328)
 	var selected_button: Button
+	var character_scroll := ScrollContainer.new()
+	character_scroll.position = Vector2(16,62)
+	character_scroll.size = Vector2(158,210)
+	character_scroll.follow_focus = true
+	character_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	body.add_child(character_scroll)
+	var character_list := VBoxContainer.new()
+	character_list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	character_list.add_theme_constant_override("separation",6)
+	character_scroll.add_child(character_list)
 	for i in journal_entries.size():
 		var entry: Dictionary = journal_entries[i]
-		var button := make_button(body,str(entry.title),Vector2(16,62+i*38),Vector2(158,32),show_character.bind(i))
+		var button := make_button(character_list,str(entry.title),Vector2.ZERO,Vector2(142,32),show_character.bind(i))
+		button.custom_minimum_size = Vector2(142,32)
 		button.add_theme_font_size_override("font_size",13)
 		if i == index:
 			selected_button = button
