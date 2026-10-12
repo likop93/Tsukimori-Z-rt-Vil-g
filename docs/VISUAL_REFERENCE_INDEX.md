@@ -197,3 +197,19 @@ LOCKED:
 - arc, szem, hajalap, hajdísz és gesztusnyelv közös identity anchor;
 - a konkrét képi sheet mostantól visual authority.
 
+
+
+### Sora — FINAL / LOCKED production character sheet
+
+| Library path | Státusz | Szerep | SHA-256 |
+|---|---|---|---|
+| `characters/SORA_FINAL_CHARACTER_SHEET_V1.png` | **FINAL / LOCKED** | Sora végleges production character sheet: arc, expressionök, nappali/esti outfit, részletek, sprite- és fogadó-staging referencia | `ba9cc9576ae76d4f4418984dd7de33087a7d6fd0f22a557cb6fad65dad5c7dfc` |
+
+Canonical Library path:
+`/Tsukimori Visual References/characters/SORA_FINAL_CHARACTER_SHEET_V1.png`
+
+Design lineage:
+- `npc/VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` / **1. SORA — INNKEEPER** = eredeti karakterdesign-forrás;
+- az új FINAL sheet ezt adaptálja és részletezi, nem írja át Sora identitását.
+
+A sheet automatikus szövegei nem történeti authorityk.

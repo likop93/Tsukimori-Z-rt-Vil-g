@@ -507,4 +507,10 @@ Primary existing visual authority:
 
 A generic inn-worker/courtesan pack csak supporting environment/outfit reference; nem írhatja felül Sora saját karakterdesignját.
 
+Elsődleges FINAL képi referencia:
+`/Tsukimori Visual References/characters/SORA_FINAL_CHARACTER_SHEET_V1.png`
+
+Eredeti design-lineage:
+`/Tsukimori Visual References/npc/VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` — **1. SORA — INNKEEPER**.
+
 Részletek: `docs/SORA_PRODUCTION_SPEC.md`.

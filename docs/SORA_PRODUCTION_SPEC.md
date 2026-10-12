@@ -3,6 +3,26 @@
 **Státusz:** OWNER APPROVED / LOCKED  
 **Dátum:** 2026-10-12
 
+## FINAL visual authority
+
+Primary approved production sheet:
+- `/Tsukimori Visual References/characters/SORA_FINAL_CHARACTER_SHEET_V1.png`
+- SHA-256: `ba9cc9576ae76d4f4418984dd7de33087a7d6fd0f22a557cb6fad65dad5c7dfc`
+- státusz: **FINAL / LOCKED**
+
+Ez a lap a korábbi Sora-designból készített jóváhagyott production reference. Nem új karakteridentitás, hanem a meglévő design véglegesített játék-art adaptációja.
+
+A sheet authority:
+- arc és haj;
+- lila/ibolyás szem- és részletnyelv;
+- nappali és esti fogadói outfit;
+- expression irány;
+- érett, telt nőies sziluett;
+- hajdísz és textilmotívumok;
+- fogadói nappali/esti staging.
+
+A képen szereplő automatikus feliratok vagy dekoratív részletek nem írhatják felül a story/character bible kánonját.
+
 ## Forrás-authority
 
 Sora meglévő vizuális alapja **nem új design**.
@@ -105,4 +125,4 @@ Első production batch:
 - rövid walk;
 - fogadói tálca/pohár interaction.
 
-A FINAL portrét és sprite-ot a meglévő Sora-panelből kell adaptálni, **nem új karaktert generálni helyette**.
+A FINAL portrét és sprite-ot a jóváhagyott `SORA_FINAL_CHARACTER_SHEET_V1.png` alapján kell elkészíteni, amely a korábbi Sora-panelből származó véglegesített production authority. **Nem szabad ettől eltérő új karaktert generálni helyette.**

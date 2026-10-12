@@ -235,3 +235,24 @@ Tulajdonosi döntés:
 - 2–3 későbbi találkozás során azonos gesztusok, szem, motívumok és tudás alapján Akira gyanakodni kezd;
 - a tényleges felismerés külön későbbi story beat;
 - a reveal előtt Oto kettős megjelenése nem lehet menüből/UI-ból elspoilerezve.
+
+
+## 2026-10-12 — Sora FINAL production sheet v1 — LOCKED
+
+Tulajdonosi jóváhagyás: a korábbi Sora-designból készített új production character sheet elfogadva és FINAL/LOCKED státuszú.
+
+Primary visual authority:
+- `/Tsukimori Visual References/characters/SORA_FINAL_CHARACTER_SHEET_V1.png`
+- SHA-256: `ba9cc9576ae76d4f4418984dd7de33087a7d6fd0f22a557cb6fad65dad5c7dfc`
+
+LOCKED képi mag:
+- hosszú nagyon sötét fekete/kékes-lilás haj;
+- ibolyás/lila szem- és részletnyelv;
+- virágos hajdísz;
+- érett, meleg, magabiztos arc;
+- telt, erőteljes felnőtt női sziluett;
+- mély lila/indigó/bordó fogadói ruha;
+- nappali work/innkeeper és esti elegánsabb innkeeper megjelenés;
+- expression set és fogadói környezet/staging irány a jóváhagyott sheet szerint.
+
+Az eredeti `VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png` / 1. SORA — INNKEEPER panel design-lineage marad; az új sheet production authorityként részletezi azt, nem redesignolja.
