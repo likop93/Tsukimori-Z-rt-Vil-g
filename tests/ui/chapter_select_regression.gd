@@ -82,6 +82,9 @@ func _ready() -> void:
 				check(GameState.has_flag("first_day_complete") and not GameState.has_flag("met_hana"),"Hana chapter has prior day but no invented meeting")
 				check(GameState.miyako_morning_choice == "withdraw" and GameState.clinic_first_choice == "clinical","Skipped choices use canonical zero-point defaults")
 				check(GameState.aff_miyako == 0 and GameState.akira_gyogyulas == 0,"Skipped choices grant no affinity or healing")
+			"tour":
+				check(runner.arrival.phase == "village_tour" and runner.street.player.input_enabled,"Village tour checkpoint enables walking")
+				check(GameState.has_flag("first_clinic_day_seen") and not GameState.has_flag("met_reina") and not GameState.has_flag("first_day_complete"),"Tour checkpoint preserves upcoming meetings and evening")
 		if id == "visitor":
 			check(runner.arrival.next_day.phase == "night_visitor","Visitor starts at the new night scene")
 		if id == "tea":

@@ -35,6 +35,53 @@ Első passzban a village street és bridge szolgál REVIEW stand-inként. Külö
 
 Reina a jóváhagyott REVIEW portrét használja. Aoi/Sora/Ritsu/Oto számára ez a commit nem talál ki új vizuális authorityt.
 
+## Sétálható REVIEW változat — 2026-10-12
+
+A helyszínválasztó menü helyett Akira ténylegesen mozog. Az utcán az iskola,
+bolt, fogadó és piac jelölése érhető el; a patakparti összekötőn a műhely,
+patak, zenei mellékutca és szentélyhez vezető út. Ezek technikai belépési
+pontok, nem végleges településtérkép vagy új épületdesignok.
+
+- WASD / nyilak: séta; Shift: futás; E: közeli pont megnyitása.
+- Utca alsó közepe ↔ híd bal széle: kétirányú átjáró.
+- Mind a nyolc pont után a híd jobb szélén hazatérés Miyakóhoz.
+- Beszélgetés után az előző hely és nézési irány áll vissza.
+- Párbeszéd közben az ambient szereplők, korlátok és jelölések rejtve maradnak.
+- A nyitány Hana/Shion/Kuroe cameói itt nem játszódnak újra.
+- Közvetlen teszt: Fejezetválasztó → III. Falubejárás · Reina és a többiek.
+
+Az eredeti JSON-szövegek és discovery flagek változatlanok. A bejárt pontok
+nem ismételhetők; Kuroe személyes találkozása és Oto kiléte továbbra sem nyílik meg.
+
+### Még hiányzó production assetek
+
+- Nappali/délutáni bejárható utca és híd: jelenleg az engedélyezett éjszakai
+  REVIEW plate-ek biztosítják a már bemért mozgássávot és takarást.
+- Külön iskola, bolt, fogadó, műhely, piac, patakpart, zenei ház és szentélyút
+  hátterek, saját járhatósági és takarási adatokkal.
+- Reina nagy felbontású jóváhagyott VN-kivágata: a repo kis felbontású preview-ja
+  látható; nem végleges beszélgetésportré.
+- Sora: `/Tsukimori Visual References/characters/SORA_FINAL_CHARACTER_SHEET_V1.png`.
+- Oto: `/Tsukimori Visual References/characters/OTO_DAY_NIGHT_FINAL_CHARACTER_DESIGN_V1.png`.
+- Aoi és Ritsu jóváhagyott production VN-kivágatai. Ezek nélkül a meglévő,
+  portré nélküli találkozások maradnak; új karakterdesign nem készült.
+
+A Library-masterek binárisai ebben a munkakörnyezetben nem hozzáférhetők.
+Authority: `reference/characters/manifest.json`; minden LOCKED státusz megmarad.
+
+### Ellenőrzés
+
+Godot 4.7.2: import, valódi bemenetes séta, megállási irány, szünet,
+nyolc E-interakció, VN-visszatérés, oda-vissza átjáró, esti folytatás;
+karakterlista és mind a tíz fejezetválasztó belépés.
+A futási képek: `review/village_walk_*_REVIEW.png`.
+Az első éjszaka → rendelés → falubejárás → esti Miyako teljes lánc mindkét
+tesztelt választási ágon lefutott. Parse/runtime hiba nincs. A teljes lánc
+tesztjének lezárásakor megmaradt a korábban is látott két ObjectDB-példányra
+vonatkozó kilépési figyelmeztetés; ezt a változtatás nem javította.
+
 ## Következő lépés
 
-Külön helyszínart + valódi hub-kapcsolatok + későbbi free-time destination rendszer. Himiko külön érkezési eseménye csak később, kb. a 3–4. játéknapon.
+Jóváhagyott masterek átvétele, nappali helyszínart és a technikai belépési pontok
+lecserélése saját helyszínekre. A későbbi szabadidős rendszer külön lépés.
+Himiko külön érkezési eseménye csak később, kb. a 3–4. játéknapon.

@@ -177,6 +177,24 @@ func show_location(next_location: String) -> void:
 		bridge_rail.hide()
 	if is_instance_valid(house_rail):
 		house_rail.hide()
+	if location == "street":
+		backdrop.texture = preload("res://assets/opening/village_target_v4/street_clean_source_REVIEW.png")
+		backdrop.scale = Vector2.ONE*0.5
+		foreground.show()
+		camera_x = 542.0
+		camera.position = Vector2(camera_x,180)
+		player.velocity = Vector2.ZERO
+		player.scripted_axis = Vector2.ZERO
+		player.position = Vector2(550,320)
+		player.scale = Vector2.ONE*lane_scale(player.position.y)
+		for i in residents.size():
+			var spec: Dictionary = data.npc[i]
+			residents[i].position = Vector2(spec.position[0],spec.position[1])
+			residents[i].home_x = residents[i].position.x
+			residents[i].watch_arrival = false
+			residents[i].show()
+			residents[i].set_physics_process(true)
+		return
 	if location in ["akira_room","clinic"]:
 		backdrop.texture = load("res://assets/home_day1/"+location+"_REVIEW.png")
 		backdrop.scale = Vector2(640.0/backdrop.texture.get_width(),360.0/backdrop.texture.get_height())

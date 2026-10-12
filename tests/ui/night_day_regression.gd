@@ -159,7 +159,17 @@ func _ready() -> void:
 		await finish(night.vn)
 		check(GameState.has_flag("katsuro_clinic_notebook_seen"),"Notebook clue records only after acknowledgement")
 		check(night.phase == "clinic_after","Reflection leaves an explicit continuation")
-		await choose(night,"Visszatérek Miyakóhoz")
+		await choose(night,"Bejárom Tsukimorit")
+		check(night.phase == "village_tour" and runner.street.player.input_enabled,"First clinic day hands off to playable village")
+		var tour: Node = night.village_tour
+		for stop in tour.STOP_ORDER:
+			tour.area = tour.PLACES[stop].area
+			tour.saved_positions[tour.area] = tour.PLACES[stop].at
+			tour.show_walk()
+			tour.open_stop(stop)
+			await finish(tour.vn)
+		tour.finish_tour()
+		await get_tree().process_frame
 		check(night.phase == "day_evening" and not runner.street.player.visible,"Continuation opens evening VN without tiny actor")
 		night.vn.advance()
 		await capture("first_day_evening_REVIEW")

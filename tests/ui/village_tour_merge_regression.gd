@@ -12,6 +12,9 @@ func _ready() -> void:
 	tour.finish_tour()
 	check(not GameState.has_flag("village_tour_complete"),"Tour cannot finish before all stops")
 	for stop in tour.STOP_ORDER:
+		tour.area = tour.PLACES[stop].area
+		tour.saved_positions[tour.area] = tour.PLACES[stop].at
+		tour.show_walk()
 		tour.open_stop(stop)
 		await finish(tour.vn)
 		check(tour.visited.has(stop),"Tour stop completes: "+stop)

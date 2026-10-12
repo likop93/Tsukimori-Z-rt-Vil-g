@@ -7,6 +7,7 @@ static func entries() -> Array[Dictionary]:
 		{"id":"miyako","title":"I. Miyako · első találkozás"},
 		{"id":"night","title":"II. Az első éjszaka"},
 		{"id":"clinic","title":"III. Az első rendelési nap"},
+		{"id":"tour","title":"III. Falubejárás · Reina és a többiek"},
 		{"id":"hana","title":"IV. Hana · első beszélgetés"},
 		{"id":"visitor","title":"IV. Az éjszakai látogató"},
 		{"id":"shion","title":"V. Shion · első konzultáció"},
@@ -45,6 +46,10 @@ static func prepare(id: String) -> bool:
 		return true
 	GameState.miyako_morning_choice = "withdraw"
 	GameState.clinic_first_choice = "clinical"
+	if id == "tour":
+		for flag in ["miyako_morning_seen","first_clinic_day_started","first_day_consultation_1_seen","first_day_consultation_2_seen","first_clinic_day_seen","katsuro_clinic_notebook_seen"]:
+			GameState.set_flag(flag)
+		return true
 	for flag in ["miyako_morning_seen","flag_miyako_tavolsag","flag_klinikai_tavolsag","first_clinic_day_started","first_day_consultation_1_seen","first_day_consultation_2_seen","first_clinic_day_seen","katsuro_clinic_notebook_seen","miyako_first_day_evening_seen","hana_name_heard","first_day_complete"]:
 		GameState.set_flag(flag)
 	if id in ["visitor","shion","tea"]:
@@ -90,6 +95,8 @@ static func enter(runner: Node, id: String) -> void:
 	chapter.hide_actors()
 	if id == "clinic":
 		chapter.begin_first_day()
+	elif id == "tour":
+		chapter.start_village_tour()
 	elif id == "hana":
 		chapter.begin_hana_day()
 	elif id == "visitor":

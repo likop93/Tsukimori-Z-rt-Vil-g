@@ -273,6 +273,7 @@ func resume(next_phase: String) -> void:
 
 func advance(_delta: float) -> void:
 	if is_instance_valid(village_tour):
+		village_tour.advance(_delta)
 		return
 	if is_instance_valid(next_day):
 		next_day.advance(_delta)
@@ -394,7 +395,7 @@ func start_village_tour() -> void:
 	phase = "village_tour"
 	if is_instance_valid(actions):
 		actions.hide()
-	village_tour = preload("res://scripts/opening/village_tour_director.gd").new()
+	village_tour = preload("res://scripts/opening/village_walk_director.gd").new()
 	add_child(village_tour)
 	village_tour.runner = runner
 	village_tour.chapter = self
