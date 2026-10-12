@@ -1,0 +1,16 @@
+{
+  "status": "REVIEW",
+  "method": "built-in image_gen",
+  "assets": [
+    {
+      "file": "street_afternoon_v1_REVIEW.png",
+      "reference": "assets/opening/village_target_v4/street_clean_source_REVIEW.png",
+      "prompt": "Use case: lighting-weather. EDIT TARGET is the attached Tsukimori game street clean plate. Create the identical composition in gentle late-afternoon daylight. Preserve EXACT camera, extremely wide 3:1 canvas, framing, every architectural outline, every building and barrel and flower, central walkable paving, steps, and foreground railing geometry. Absolutely no reframing, no perspective change, no people, no text. Replace nighttime blue light and dominant lantern reflections with natural warm late-afternoon sun and soft cool shadows; windows remain subtly warm but not glowing orange beacons. Preserve crisp detailed pixel-art clusters and outlines, no blur, no painterly smoothing. This is a lighting-only alternate of the same gameplay background; all collision and occlusion boundaries must align with the original. Output single full-bleed 3:1 landscape image."
+    },
+    {
+      "file": "bridge_afternoon_v1_REVIEW.png",
+      "reference": "assets/opening/reference/BRIDGE_PIXEL_V1.png",
+      "prompt": "Use case: lighting-weather. EDIT TARGET is the attached Tsukimori bridge pixel-art game background. Produce a late-afternoon daylight alternate with EXACTLY identical geometry and 16:9 framing. Preserve every bridge railing and post, the bridge deck walking profile, all houses and roofs, the river course, distant village and forest mountains, flowers and foreground occlusion shapes in the same pixel locations. Remove the night moon; show a natural pale blue late-afternoon sky, soft clouds and warm sun with clear cool shadows. Lamps can retain tiny warm accents but the scene is visibly daytime, not dusk/night. No people, no text, no UI, no new objects. Keep sharp detailed pixel art, no blur or watercolor. Full bleed single 16:9 image. Lighting only; camera and collision geometry must remain unchanged."
+    }
+  ]
+}

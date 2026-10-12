@@ -5,6 +5,11 @@
 
 This folder is the stable discovery point for the current priority character visual authorities.
 
+2026-10-12 local recovery: the original approved Renka image is now included
+as `RENKA_CHARACTER_DESIGN_V1_REFERENCE.png`, recovered unchanged from the
+owner-supplied September 27 visual ZIP. Its SHA-256 is in `manifest.json`.
+This is the earlier reference, not the rejected later redesign.
+
 The high-resolution master sheets are stored in the ChatGPT Library. Work/Codex should use the exact Library path listed in `manifest.json` when available. If the binary cannot be opened, use the linked repo production spec as fallback and report the missing reference instead of creating a replacement design.
 
 Rules:

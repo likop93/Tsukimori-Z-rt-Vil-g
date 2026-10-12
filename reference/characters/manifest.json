@@ -12,6 +12,8 @@
     {
       "character": "Renka",
       "status": "APPROVED REFERENCE",
+      "repo_reference": "reference/characters/RENKA_CHARACTER_DESIGN_V1_REFERENCE.png",
+      "sha256": "25ea70919fe0719bb901d12faa6c3af08d6ac594d2d7fdae2c556c399c003de1",
       "library_path": "/Tsukimori Visual References/characters/RENKA_CHARACTER_DESIGN_V1_REFERENCE.png",
       "note": "Keep the earlier approved Renka design. Later redesign attempts are non-canon."
     },

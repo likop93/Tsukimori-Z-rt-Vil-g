@@ -10,6 +10,7 @@ func _ready() -> void:
 	var tour: Node = chapter.village_tour
 	var player: CharacterBody2D = runner.street.player
 	check(tour.mode == "walk" and player.input_enabled,"Tour checkpoint is playable")
+	check("street_afternoon" in runner.street.backdrop.texture.resource_path and runner.street.foreground.texture == runner.street.backdrop.texture,"Afternoon street and foreground share a plate")
 	tour.open_stop("school")
 	check(not is_instance_valid(tour.vn),"Cannot interact with distant entrance")
 	tour.finish_tour()
@@ -38,6 +39,8 @@ func _ready() -> void:
 			await get_tree().process_frame
 			await key(KEY_E)
 			check(tour.area == "bridge" and runner.street.bridge_rail.visible,"Street exit reaches surveyed bridge")
+			for patch in runner.street.bridge_rail.get_children():
+				check(patch.texture == runner.street.backdrop.texture and "bridge_afternoon" in patch.texture.resource_path,"Daylight bridge rails match background")
 			await capture("village_walk_bridge_REVIEW")
 		for stop in tour.STOP_ORDER:
 			if tour.PLACES[stop].area != area:
@@ -78,5 +81,11 @@ func _ready() -> void:
 	await get_tree().process_frame
 	await key(KEY_E)
 	check(GameState.has_flag("village_tour_complete") and chapter.phase == "day_evening","Home exit resumes canonical evening")
+	runner.street.show_location("bridge")
+	check(runner.street.backdrop.texture.resource_path.ends_with("BRIDGE_PIXEL_V1.png"),"Evening bridge keeps the original lighting")
+	for patch in runner.street.bridge_rail.get_children():
+		check(patch.texture == runner.street.backdrop.texture,"Rail returns to night texture")
+	runner.street.show_location("street")
+	check(runner.street.foreground.texture.resource_path.ends_with("street_clean_source_REVIEW.png"),"Opening street remains unchanged")
 	print("VILLAGE_WALK: "+JSON.stringify({"passed":failures.is_empty(),"failures":failures}))
 	get_tree().quit(0 if failures.is_empty() else 1)

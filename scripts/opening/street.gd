@@ -163,7 +163,7 @@ func build_house_rail() -> void:
 	for post in [Rect2(137,260,21,67),Rect2(232,270,22,63),Rect2(314,272,20,45),Rect2(426,267,23,65),Rect2(516,265,22,68)]:
 		add_rail_patch(PackedVector2Array([post.position,post.position+Vector2(post.size.x,0),post.end,post.position+Vector2(0,post.size.y)]),house_rail)
 
-func show_location(next_location: String) -> void:
+func show_location(next_location: String, afternoon := false) -> void:
 	location = next_location
 	for cameo in quiet_cameos:
 		cameo.refresh_visibility()
@@ -178,8 +178,10 @@ func show_location(next_location: String) -> void:
 	if is_instance_valid(house_rail):
 		house_rail.hide()
 	if location == "street":
-		backdrop.texture = preload("res://assets/opening/village_target_v4/street_clean_source_REVIEW.png")
-		backdrop.scale = Vector2.ONE*0.5
+		backdrop.texture = load("res://assets/village_day1/street_afternoon_v1_REVIEW.png") if afternoon else preload("res://assets/opening/village_target_v4/street_clean_source_REVIEW.png")
+		backdrop.scale = Vector2(1085.0/backdrop.texture.get_width(),362.5/backdrop.texture.get_height())
+		foreground.texture = backdrop.texture
+		foreground.scale = backdrop.scale
 		foreground.show()
 		camera_x = 542.0
 		camera.position = Vector2(camera_x,180)
@@ -223,10 +225,19 @@ func show_location(next_location: String) -> void:
 		return
 	var file := "BRIDGE_PIXEL_V1.png" if location == "bridge" else "MIYAKO_HOUSE_EXTERIOR_PIXEL_V1.png"
 	backdrop.texture = load("res://assets/opening/reference/"+file)
+	if location == "bridge" and afternoon:
+		backdrop.texture = load("res://assets/village_day1/bridge_afternoon_v1_REVIEW.png")
 	backdrop.scale = Vector2(640.0/backdrop.texture.get_width(),360.0/backdrop.texture.get_height())
 	if location == "bridge":
 		if not is_instance_valid(bridge_rail):
 			build_bridge_rail()
+		# Near-rail fragments always use the current time-of-day plate.
+		for patch: Polygon2D in bridge_rail.get_children():
+			patch.texture = backdrop.texture
+			var texcoords := PackedVector2Array()
+			for point in patch.polygon:
+				texcoords.append(point*Vector2(backdrop.texture.get_width()/640.0,backdrop.texture.get_height()/360.0))
+			patch.uv = texcoords
 		bridge_rail.show()
 	else:
 		if not is_instance_valid(house_rail):

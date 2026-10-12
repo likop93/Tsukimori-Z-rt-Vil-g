@@ -20,6 +20,12 @@ var nearest := ""
 
 func set_background(kind: String) -> void:
 	super.set_background(kind)
+	var bridge := kind == "bridge"
+	runner.street.backdrop.texture = load("res://assets/village_day1/bridge_afternoon_v1_REVIEW.png" if bridge else "res://assets/village_day1/street_afternoon_v1_REVIEW.png")
+	var texture: Texture2D = runner.street.backdrop.texture
+	runner.street.backdrop.scale = Vector2(640.0/texture.get_width(),360.0/texture.get_height()) if bridge else Vector2(1085.0/texture.get_width(),362.5/texture.get_height())
+	runner.street.camera_x = 320 if bridge else 542
+	runner.street.camera.position = Vector2(runner.street.camera_x,180)
 	# Flat VN composition must not inherit playable rails or ambient actors.
 	runner.street.location = "tour_dialogue"
 	runner.street.foreground.hide()
@@ -44,7 +50,7 @@ func show_menu() -> void:
 func show_walk() -> void:
 	mode = "walk"
 	armed = false
-	runner.street.show_location(area)
+	runner.street.show_location(area,true)
 	runner.street.enabled = true
 	# The orientation only teases these places; their original opening cameos
 	# must not replay or reveal their occupants in the new afternoon sequence.
@@ -63,6 +69,10 @@ func show_walk() -> void:
 	player.show()
 	player.input_enabled = true
 	runner.heading.show()
+	runner.heading.add_theme_color_override("font_outline_color",Color("#16151e"))
+	runner.heading.add_theme_constant_override("outline_size",3)
+	runner.hint.add_theme_color_override("font_outline_color",Color("#16151e"))
+	runner.hint.add_theme_constant_override("outline_size",3)
 	runner.heading.text = ("Falusi utca" if area == "street" else "Patakpart és híd")+" · %d/8 hely" % visited.size()
 	runner.hint.show()
 	build_markers()
