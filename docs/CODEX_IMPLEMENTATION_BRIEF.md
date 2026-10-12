@@ -373,3 +373,24 @@ Ha VN cutout/world sprite készül:
 - ne tervezz neki új hajszínt vagy új testidentitást;
 - első expression batch: neutral, small_smile, watchful, tired_soft;
 - első motion batch: idle, walk, sweep, tray/glass interaction.
+
+
+### Oto FINAL karakterirány — LOCKED 2026-10-12
+
+Kötelező forrás:
+- `docs/OTO_PRODUCTION_SPEC.md`
+- `docs/CHARACTER_BIBLE.md`
+- `docs/DECISION_LOG.md`
+
+LOCKED szabály:
+- nappal Oto idős;
+- éjszaka Oto fiatalosabb, érett késő 30-as / 40 körüli vizuális érzetben;
+- a transzformáció napszakhoz kötött, nem a szentélyhez;
+- ugyanaz a személy, ugyanaz a tudat;
+- arc/szem/hajmotívum/dísz/gesztus kötelezően azonosítható mindkét formában;
+- első village orientation során a nappali/idős Oto használható;
+- első éjszakai fiatalos reveal későbbi külön story beat, ne spoilerezd az első falubejárásnál;
+- Oto romance route lehetséges, de slow-burn és későbbi rendszer; ne implementálj most teljes route frameworköt;
+- a fiatalos formát ne kezeld külön karakterként vagy alteregóként.
+
+Amíg nincs tulajdonos által jóváhagyott Oto visual sheet, ne készíts eltérő saját design-authorityt.

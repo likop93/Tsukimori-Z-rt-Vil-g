@@ -179,3 +179,16 @@ Repository REVIEW derivative used by the current VN implementation:
 - `assets/opening/vn_portraits/reina_teacher_v1_REVIEW.webp`
 
 Authority rule: the sheet's generated age/height/text labels are non-canon. Canon identity values are recorded in `docs/REINA_PRODUCTION_SPEC.md` and `docs/CHARACTER_BIBLE.md`.
+
+
+### Oto — visual lock pending image
+
+Oto konkrét FINAL képi reference sheetje még nincs rögzítve ebben az indexben, de a **vizuális szabályrendszer LOCKED** a `docs/OTO_PRODUCTION_SPEC.md` és `docs/CHARACTER_BIBLE.md` alapján.
+
+Kötelező képi kettősség:
+- DAY: idős, ezüstös/ősz hajú, tradicionális, méltóságteljes Oto;
+- NIGHT: ugyanaz a nő visszafiatalodva, érett késő 30-as / 40 körüli vizuális érzetben;
+- a változás napszakhoz kötött, nem szentélyhez;
+- az arc/szem/hajmotívum/dísz/gesztus közös identity anchor.
+
+Amíg külön Oto character sheet nincs jóváhagyva, Work/Codex **nem generálhat saját eltérő visual authorityt**.

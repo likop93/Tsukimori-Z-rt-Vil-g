@@ -384,9 +384,38 @@ Alapelv:
 
 # Oto
 
-- idős ritualista nő;
-- régi rend / living seals;
-- Shion gyerekkori szentélytörténetéhez kötődik.
+## Identitás — LOCKED 2026-10-12
+
+- felnőtt, idősebb nő;
+- ritualista / régi rend / living seals;
+- Shion gyerekkori szentélytörténetéhez kötődik;
+- önálló slow-burn romance-opció lehet;
+- Akirával tudatos idősebb nő / fiatalabb férfi dinamika épülhet.
+
+## Nappal / éjszaka kettősség — LOCKED
+
+**Nappal Oto idős, éjszaka fiatalosabb.**
+
+- a változás napszakhoz kötött, nem a szentélyhez;
+- alkonyatkor átmenet lehetséges;
+- éjszaka érett, késő 30-as / 40 körüli vizuális érzetű formát vesz fel;
+- hajnal felé visszaöregszik;
+- mindkét forma ugyanaz a személy, ugyanazzal a tudattal és emlékezetével;
+- a jelenség Tsukimori időt/testet torzító természetfeletti hatásának egyik közvetlen jele.
+
+## Vizuális felismerhetőség — LOCKED
+
+Mindkét formában maradjon:
+- ugyanaz a szemforma;
+- ugyanaz az arccsont/orr-struktúra;
+- ugyanaz a hajalap;
+- ugyanaz a hajdísz/szentélyi motívum;
+- ugyanaz a gesztusnyelv és tekintet.
+
+Nappal: ezüstös/ősz haj, idős, tradicionális, méltóságteljes.  
+Éjszaka: ugyanaz az arc visszafiatalodva, simább bőrrel, egyenesebb tartással, élőbb és nőiesebb jelenléttel.
+
+Részletes production spec: `docs/OTO_PRODUCTION_SPEC.md`.
 
 ---
 

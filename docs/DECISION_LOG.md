@@ -184,3 +184,21 @@ LOCKED vizuális mag:
 A generic `INN_COURTESAN_NPC_PACK_V1.png` supporting referencia, nem Sora redesign.
 
 A történeti hang és első találkozás a már megírt Sora-szabadnapi jelenetből marad authority.
+
+
+## 2026-10-12 — Oto day/night dual form — LOCKED
+
+Tulajdonosi döntés:
+
+- Oto önálló romance-opció lehet;
+- az Akira–Oto kapcsolatban tudatos idősebb nő / fiatalabb férfi dinamika jelenhet meg;
+- **nappal Oto idős, éjszaka fiatalosabb**;
+- a fiatalodás nem szentélyhelyszínhez kötött;
+- alkonyatkor átmenet megengedett, hajnalnál visszaöregedés;
+- az éjszakai forma érett, kb. késő 30-as / 40 körüli vizuális érzet, nem huszonéves/tinédzseres;
+- a két forma ugyanaz a személy, azonos tudattal és emlékezettel;
+- a nappali/éjszakai testállapot Tsukimori természetfeletti idő-/testtorzító hatásának vizuális jele;
+- a két forma arcban, szemben, hajalapban, hajdíszben és gesztusnyelvben kötelezően felismerhetően azonos;
+- Oto route-ja slow-burn, spirituális, intim, nem gyors/comedic romance.
+
+Kötelező production spec: `docs/OTO_PRODUCTION_SPEC.md`.
