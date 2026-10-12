@@ -62,3 +62,5 @@ Az eredeti outputok mappája: C:/Users/likop/.codex/generated_images/01a0de06-53
 Godot 4.7.2 import; character_gallery_regression: három karakter, két ruha, kilenc ág, állapotváltoztatás kizárása, szövegméret, menübelépés és Escape. character_pressure_regression: Hana és Miyako korai/késői különbsége, karakterlap és reset. chapter_select_regression: korábbi fejezetválasztás.
 A korábbi ObjectDB kilépési figyelmeztetés a pressure-teszt végén még előfordul; nem lett megoldottként állítva.
 
+Végső csomagellenőrzés: az eredeti Hana-fejezet négy választáskombinációja sikeres. A friss ZIP külön mappában kicsomagolva, mind a kilenc galériaág sikeres. A korlátozott környezetben az editor indításakor Safe save failed jelent meg; engedélyezett szerkesztőhozzáféréssel az import hibajelzés nélkül lefutott. A játékfuttatásban nincs parse/runtime script hiba. A galériateszt kilépésekor is előfordult a korábbi ObjectDB-figyelmeztetés.
+
