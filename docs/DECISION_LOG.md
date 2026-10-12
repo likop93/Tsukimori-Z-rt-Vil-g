@@ -281,3 +281,12 @@ Két véletlenül generált, de tulajdonos által kifejezetten jónak ítélt vi
 A képeken szereplő „Reina” és „Miyako” feliratok hibás/örökölt generált feliratok és **nem kánonok**.
 
 Részletek: `docs/NEW_SUPPORTING_CHARACTERS_APPROVED.md`.
+
+
+## 2026-10-12 — Reina + Renka design correction — LOCKED
+
+Tulajdonosi korrekció:
+- **Reina marad a korábban LOCKED platina/hamvasszőke, sötét tövű tanárnő-designnal.**
+- **Renka marad a korábbi `RENKA_CHARACTER_DESIGN_V1_REFERENCE.png` APPROVED vizuális referenciáján.**
+- A később véletlenül generált vörös–fekete–arany „Renka örökösnő” sheet **ELVETVE / NEM KÁNON**.
+- Az elvetett kép sem Reinát, sem Renkát nem írhatja felül.
