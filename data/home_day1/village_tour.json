@@ -7,7 +7,7 @@
       "background": "village",
       "portrait": true,
       "portrait_speaker": "Reina",
-      "portrait_path": "res://assets/opening/vn_portraits/reina_teacher_v1_REVIEW.webp",
+      "portrait_path": "res://assets/village_day1/characters/reina_v1_REVIEW.png",
       "portrait_side": "left",
       "source": "OWNER APPROVED 2026-10-12; Reina formal introduction moved to the first village orientation.",
       "lines": [
@@ -51,6 +51,14 @@
           "speaker": "Reina",
           "text": "Többek között. Majd szólok, doktor úr."
         }
+      ],
+      "portrait_facing": "right",
+      "portrait_frame_fraction": 0.65,
+      "portrait_region": [
+        295,
+        12,
+        461,
+        1495
       ]
     },
     "shop": {
@@ -58,7 +66,7 @@
       "title": "Vegyesbolt · Aoi",
       "flag": "shop_discovered",
       "background": "village",
-      "portrait": false,
+      "portrait": true,
       "lines": [
         {
           "speaker": "",
@@ -76,6 +84,17 @@
           "speaker": "Aoi",
           "text": "Akkor holnapra lesz. Tsukimoriban ez már majdnem ugyanaz."
         }
+      ],
+      "portrait_path": "res://assets/village_day1/characters/aoi_v1_REVIEW.png",
+      "portrait_speaker": "Aoi",
+      "portrait_side": "left",
+      "portrait_facing": "right",
+      "portrait_frame_fraction": 0.65,
+      "portrait_region": [
+        342,
+        7,
+        413,
+        1501
       ]
     },
     "inn": {
@@ -83,7 +102,7 @@
       "title": "Fogadó · Sora",
       "flag": "inn_discovered",
       "background": "village",
-      "portrait": false,
+      "portrait": true,
       "source": "Adapted directly from the authored Sora free-day scene; existing Sora visual authority is the VILLAGE_NPC_PACK_V1_WOMEN_ONLY / 1. SORA — INNKEEPER panel.",
       "lines": [
         {
@@ -158,6 +177,17 @@
           "speaker": "Sora",
           "text": "Már számon tartom, doktor úr. Amióta betette a lábát a faluba."
         }
+      ],
+      "portrait_path": "res://assets/village_day1/characters/sora_v1_PLACEHOLDER.png",
+      "portrait_side": "left",
+      "portrait_facing": "left",
+      "portrait_speaker": "Sora",
+      "portrait_frame_fraction": 0.65,
+      "portrait_region": [
+        108,
+        15,
+        792,
+        1509
       ]
     },
     "workshop": {
@@ -236,7 +266,7 @@
         },
         {
           "speaker": "",
-          "text": "A túlparton egy sötét hajú nő állt egy pillanatig. Mire Akira újra odanézett, már csak a cédrusok mozogtak."
+          "text": "A falu felőli part egyik verandáján egy sötét hajú nő állt egy pillanatig. Mire Akira újra odanézett, már csak a szélcsengő mozdult."
         }
       ]
     },
@@ -274,11 +304,11 @@
       "lines": [
         {
           "speaker": "",
-          "text": "A szentélyhez vezető lépcsősor a falu felső szélén kezdődött. A köd itt sűrűbbnek tűnt, mint az utcák között."
+          "text": "A szentélyhez vezető lépcsősor a falu felső szélén kezdődött. A cédrusok alatt hűvösebbnek tűnt a levegő, mint az utcák között."
         },
         {
           "speaker": "",
-          "text": "A legfelső kapunál egy idős nő állt. Nem intett, nem szólt — csak figyelte Akirát."
+          "text": "A lépcső alján egy idős nő állt. Nem intett, nem szólt — csak figyelte Akirát."
         },
         {
           "speaker": "",

@@ -229,3 +229,11 @@ Canonical Library paths:
 - `/Tsukimori Visual References/characters/VILLAGE_LEADER_RENKA_FAMILY_APPROVED_CONCEPT_V1.png`
 
 Ezek nem írják felül a meglévő Reina vagy Miyako FINAL/LOCKED designját.
+
+### 2026-10-13 — Falubejárás runtime REVIEW képek
+A hat tulajdonosi melléklet változatlan másolata: reference/incoming/2026-10-12/.
+Reina tanárnő, Aoi boltos és Oto nappali idős formája alapján külön kivágatok
+készültek; Sora a korábbi saját NPC-panelből ideiglenes adaptációt kapott.
+Új hátterek és kivágatok: assets/village_day1/places/, assets/village_day1/characters/.
+A forrás-hozzárendelés és a hiányzó végleges anyagok: docs/VILLAGE_HUB_REVIEW.md.
+A hibás feliratú lapok nem írnak felül LOCKED karakterazonosságot.

@@ -1,0 +1,215 @@
+{
+  "date": "2026-10-13",
+  "assets": [
+    {
+      "path": "assets/village_day1/places/craft_lane_v1_REVIEW.png",
+      "sha256": "3c502bdd72513f2dcf6598c0e57ba73d6c883f59a3cf92a4992c2f3474d5856a",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "REVIEW"
+    },
+    {
+      "path": "assets/village_day1/places/inn_interior_v1_REVIEW.png",
+      "sha256": "459b9b7d8fe5298993a74b029388cd8bf372b2543fe6f3f2225aace1ddc88b6f",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "REVIEW"
+    },
+    {
+      "path": "assets/village_day1/places/inn_v1_REVIEW.png",
+      "sha256": "d9f1db31449edd3e341aadf90bd3c1de632bb407b2ddcad39d6f3d9083f51d73",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "REVIEW"
+    },
+    {
+      "path": "assets/village_day1/places/market_v1_REVIEW.png",
+      "sha256": "b2c2c983801f2710a8df3e0e9f9433575ebd8b204d593186fc50997da4d469f2",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "REVIEW"
+    },
+    {
+      "path": "assets/village_day1/places/school_interior_v1_REVIEW.png",
+      "sha256": "fc1b35951b706e9b16e449dd0e1da5c39f4bad78e242ab42272db94b9a658bf9",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "REVIEW"
+    },
+    {
+      "path": "assets/village_day1/places/school_v1_REVIEW.png",
+      "sha256": "8a8eaddded68ae4b68844f40b3571db28942ea4ace5bb24b2e06fc4bb0a40bf0",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "REVIEW"
+    },
+    {
+      "path": "assets/village_day1/places/shop_interior_v1_REVIEW.png",
+      "sha256": "01143e074de408a1a3988579501f6f62ae78e86bf03d8212a68826b931a765e0",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "REVIEW"
+    },
+    {
+      "path": "assets/village_day1/places/shop_v1_REVIEW.png",
+      "sha256": "773bc9c78c148d4837a79461d10dc73671285c2fa5860dd7372bdba81c47d762",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "REVIEW"
+    },
+    {
+      "path": "assets/village_day1/places/shrine_v1_REVIEW.png",
+      "sha256": "955245cc0affe3424905480f1057ab2df41b4a14d23a5366e297a35241224ed1",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "REVIEW"
+    },
+    {
+      "path": "assets/village_day1/places/square_v1_REVIEW.png",
+      "sha256": "f29b056cd5fcd26e6259c633a9e7cd34b058ccf9c2fc7f22d8c31b194a59efa3",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "REVIEW"
+    },
+    {
+      "path": "assets/village_day1/places/stream_v1_REVIEW.png",
+      "sha256": "e3f5beccde4538ad96dfe1cab15846386c74ebb1b568598a576da1e01887ec61",
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "status": "REVIEW"
+    },
+    {
+      "path": "assets/village_day1/characters/aoi_v1_REVIEW.png",
+      "sha256": "9a9afe3d95b71e098066ea68c9bd7cfe0c43411a3232a3c194c0a138f9b6a338",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "status": "REVIEW"
+    },
+    {
+      "path": "assets/village_day1/characters/oto_v1_REVIEW.png",
+      "sha256": "f921af0af518a23c9315c3b88d8e3464f389b2a35a97b4a98ba94da2fbedb307",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "status": "REVIEW"
+    },
+    {
+      "path": "assets/village_day1/characters/reina_v1_REVIEW.png",
+      "sha256": "65a2c8c98bfaa4b2afdfcdd81d927174429532ee83d4fb6f63860333146abb48",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "status": "REVIEW"
+    },
+    {
+      "path": "assets/village_day1/characters/sora_v1_PLACEHOLDER.png",
+      "sha256": "b92e9c0344f8866b3de17d15f201fe90136ebb227f222f2c9fd2244a4c37192d",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "status": "PLACEHOLDER"
+    },
+    {
+      "path": "reference/incoming/2026-10-12/01_medical_assistant_labeled_reina.png",
+      "sha256": "bb214acdeb8f2b0d9401d7b8811501c87e84b4cbc07d1044a1956b73e4da2e6c",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "status": "SOURCE_REFERENCE"
+    },
+    {
+      "path": "reference/incoming/2026-10-12/02_four_character_overview.png",
+      "sha256": "5b2d79aa23102fc54d4f1bbf7eadfe79ece1080e1ba68169550a6e4ab5a128c7",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "status": "SOURCE_REFERENCE"
+    },
+    {
+      "path": "reference/incoming/2026-10-12/03_reina_teacher_rider_sheet.png",
+      "sha256": "329f8ba9c90e01b15c0a9e35f5d0f4a34c44a295a6fb4cf195c6acd3cad57e58",
+      "size": [
+        1312,
+        1199
+      ],
+      "mode": "RGB",
+      "status": "SOURCE_REFERENCE"
+    },
+    {
+      "path": "reference/incoming/2026-10-12/04_red_white_leader_sheet_labeled_renka.png",
+      "sha256": "f01c48914930ece7a946a4e3cd284b80bd01b291b680ed20beb925afad336e49",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "status": "SOURCE_REFERENCE"
+    },
+    {
+      "path": "reference/incoming/2026-10-12/05_oto_day_night_character_sheet.png",
+      "sha256": "5fbb113d93d56a7dfdd5498f619a1de335a4e1d0acad5993ed81ea44e32a7d08",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "status": "SOURCE_REFERENCE"
+    },
+    {
+      "path": "reference/incoming/2026-10-12/06_aoi_shopkeeper_character_sheet.png",
+      "sha256": "4ebe0cf93b64463985761e1134eeeeb66c9763555d80f1716c96d323c6c3733a",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGB",
+      "status": "SOURCE_REFERENCE"
+    }
+  ]
+}

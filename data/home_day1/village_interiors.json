@@ -1,0 +1,26 @@
+{
+  "school": {
+    "title": "Iskola · tanterem",
+    "background": "res://assets/village_day1/places/school_interior_v1_REVIEW.png",
+    "lines": [
+      {"speaker":"","text":"A tanterem most üres volt. A padokon könyvek maradtak; a délutáni fény hosszú sávokban feküdt a deszkákra."},
+      {"speaker":"","text":"Akira egy pillanatig körülnézett, majd visszalépett az iskola elé."}
+    ]
+  },
+  "shop": {
+    "title": "Vegyesbolt · belső",
+    "background": "res://assets/village_day1/places/shop_interior_v1_REVIEW.png",
+    "lines": [
+      {"speaker":"","text":"A polcokon tea, befőttek és összehajtott kelmék sorakoztak. A pult mellett gyümölcsökkel teli kosarak álltak."},
+      {"speaker":"","text":"Akira megjegyezte, hol találja Aoit, aztán visszatért az utcára."}
+    ]
+  },
+  "inn": {
+    "title": "Fogadó · közös terem",
+    "background": "res://assets/village_day1/places/inn_interior_v1_REVIEW.png",
+    "lines": [
+      {"speaker":"","text":"A fogadó közös termében halk volt a délután. A faasztalok és a gondosan elrendezett edények régóta működő házról árulkodtak."},
+      {"speaker":"","text":"Akira végignézett a termen. Sora későbbre szóló meghívását észben tartva visszament a bejárathoz."}
+    ]
+  }
+}

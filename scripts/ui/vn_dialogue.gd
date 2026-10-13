@@ -19,6 +19,8 @@ var next_button: Button
 var portrait_speaker := "Miyako"
 var portrait_variants: Dictionary = {}
 var portrait_trim := false
+var portrait_frame_fraction := 1.0
+var portrait_region: Array = []
 var portrait_source_path := ""
 var portraits_enabled := true
 var akira_enabled := true
@@ -154,6 +156,8 @@ func begin(data: Dictionary) -> void:
 		portrait.position += Vector2(10 if partner_left else -10,20)
 		portrait.size = Vector2(208,292)
 	portrait_trim = bool(data.get("portrait_trim",false))
+	portrait_frame_fraction = clampf(float(data.get("portrait_frame_fraction",1.0)),0.4,1.0)
+	portrait_region = data.get("portrait_region",[])
 	portrait_speaker = str(data.get("portrait_speaker","Miyako"))
 	portrait_variants = data.get("portrait_variants",{})
 	portrait_source_path = ""
@@ -223,12 +227,18 @@ func set_partner_texture(path: String) -> void:
 		return
 	portrait_source_path = path
 	var source := load(path) as Texture2D
-	if portrait_trim and source != null:
+	if (portrait_trim or portrait_frame_fraction < 1.0 or not portrait_region.is_empty()) and source != null:
 		# Legacy portraits have different transparent margins. Trim at display
 		# time so the head and body fit the same VN stage; keep source PNGs intact.
 		var framed := AtlasTexture.new()
 		framed.atlas = source
 		framed.region = source.get_image().get_used_rect()
+		if portrait_region.size() == 4:
+			framed.region = Rect2(portrait_region[0],portrait_region[1],portrait_region[2],portrait_region[3])
+		if portrait_frame_fraction < 1.0:
+			var region := framed.region
+			region.size.y *= portrait_frame_fraction
+			framed.region = region
 		portrait.texture = framed
 	else:
 		portrait.texture = source

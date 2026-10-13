@@ -173,7 +173,7 @@ func show_character(index: int) -> void:
 		if i == index:
 			selected_button = button
 	var entry: Dictionary = journal_entries[index]
-	if entry.known:
+	if entry.known and not str(entry.get("portrait","")).is_empty():
 		var portrait := TextureRect.new()
 		var texture: Texture2D = load(entry.portrait)
 		if entry.has("crop"):
@@ -211,7 +211,7 @@ func show_character(index: int) -> void:
 				wardrobe.text = "Kimonó" if casual else "Hétköznapi"
 			)
 	else:
-		label("?",Vector2(225,113),Vector2(80,100),64)
+		label(str(entry.title).left(1) if entry.known else "?",Vector2(225,113),Vector2(80,100),64)
 	label(str(entry.title),Vector2(344,60),Vector2(232,26),19)
 	var scroll := ScrollContainer.new()
 	scroll.position = Vector2(344,95)

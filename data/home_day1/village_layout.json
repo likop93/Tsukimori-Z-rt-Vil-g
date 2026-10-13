@@ -1,0 +1,555 @@
+{
+  "status": "REVIEW",
+  "locations": {
+    "square": {
+      "title": "Főtér",
+      "bounds": [
+        30,
+        252,
+        580,
+        67
+      ],
+      "spawn": [
+        325,
+        311
+      ],
+      "scale": 1.45,
+      "exits": [
+        {
+          "target": "school",
+          "label": "Iskola",
+          "at": [
+            48,
+            292
+          ]
+        },
+        {
+          "target": "shop",
+          "label": "Vegyesbolt",
+          "at": [
+            151,
+            265
+          ]
+        },
+        {
+          "target": "inn",
+          "label": "Fogadó",
+          "at": [
+            255,
+            260
+          ]
+        },
+        {
+          "target": "market",
+          "label": "Piactér",
+          "at": [
+            405,
+            260
+          ]
+        },
+        {
+          "target": "craft_lane",
+          "label": "Mellékutca",
+          "at": [
+            498,
+            265
+          ]
+        },
+        {
+          "target": "stream",
+          "label": "Patakpart",
+          "at": [
+            592,
+            291
+          ]
+        }
+      ],
+      "stops": {},
+      "actors": [],
+      "ambient": [
+        [
+          90,
+          280
+        ],
+        [
+          211,
+          280
+        ],
+        [
+          445,
+          278
+        ],
+        [
+          550,
+          293
+        ]
+      ],
+      "background": "res://assets/village_day1/places/square_v1_REVIEW.png"
+    },
+    "school": {
+      "title": "Iskola",
+      "bounds": [
+        38,
+        269,
+        564,
+        47
+      ],
+      "spawn": [
+        90,
+        304
+      ],
+      "scale": 1.45,
+      "exits": [
+        {
+          "target": "square",
+          "label": "Főtér",
+          "at": [
+            50,
+            306
+          ]
+        }
+      ],
+      "stops": {
+        "school": [
+          366,
+          298
+        ]
+      },
+      "actors": [
+        {
+          "id": "reina",
+          "path": "res://assets/village_day1/characters/reina_v1_REVIEW.png",
+          "at": [
+            320,
+            285
+          ],
+          "height": 99,
+          "region": [
+            295,
+            12,
+            461,
+            1495
+          ]
+        }
+      ],
+      "ambient": [
+        [
+          180,
+          278
+        ],
+        [
+          515,
+          278
+        ]
+      ],
+      "background": "res://assets/village_day1/places/school_v1_REVIEW.png"
+    },
+    "shop": {
+      "title": "Aoi vegyesboltja",
+      "bounds": [
+        38,
+        271,
+        564,
+        48
+      ],
+      "spawn": [
+        90,
+        305
+      ],
+      "scale": 1.45,
+      "exits": [
+        {
+          "target": "square",
+          "label": "Főtér",
+          "at": [
+            50,
+            307
+          ]
+        }
+      ],
+      "stops": {
+        "shop": [
+          421,
+          298
+        ]
+      },
+      "actors": [
+        {
+          "id": "aoi",
+          "path": "res://assets/village_day1/characters/aoi_v1_REVIEW.png",
+          "at": [
+            379,
+            285
+          ],
+          "height": 94,
+          "region": [
+            342,
+            7,
+            413,
+            1501
+          ]
+        }
+      ],
+      "ambient": [
+        [
+          160,
+          281
+        ],
+        [
+          541,
+          290
+        ]
+      ],
+      "background": "res://assets/village_day1/places/shop_v1_REVIEW.png"
+    },
+    "inn": {
+      "title": "Fogadó",
+      "bounds": [
+        38,
+        281,
+        564,
+        40
+      ],
+      "spawn": [
+        90,
+        308
+      ],
+      "scale": 1.45,
+      "exits": [
+        {
+          "target": "square",
+          "label": "Főtér",
+          "at": [
+            50,
+            311
+          ]
+        }
+      ],
+      "stops": {
+        "inn": [
+          370,
+          303
+        ]
+      },
+      "actors": [
+        {
+          "id": "sora",
+          "path": "res://assets/village_day1/characters/sora_v1_PLACEHOLDER.png",
+          "at": [
+            324,
+            293
+          ],
+          "height": 103,
+          "region": [
+            108,
+            15,
+            792,
+            1509
+          ],
+          "facing": "left"
+        }
+      ],
+      "ambient": [
+        [
+          185,
+          291
+        ],
+        [
+          526,
+          290
+        ]
+      ],
+      "background": "res://assets/village_day1/places/inn_v1_REVIEW.png"
+    },
+    "market": {
+      "title": "Piactér",
+      "bounds": [
+        38,
+        262,
+        564,
+        57
+      ],
+      "spawn": [
+        90,
+        305
+      ],
+      "scale": 1.45,
+      "exits": [
+        {
+          "target": "square",
+          "label": "Főtér",
+          "at": [
+            50,
+            308
+          ]
+        }
+      ],
+      "stops": {
+        "market": [
+          407,
+          291
+        ]
+      },
+      "actors": [
+        {
+          "id": "hana",
+          "path": "res://assets/opening/hana_shion_cameos/hana_atlas_REVIEW.png",
+          "region": [
+            0,
+            0,
+            96,
+            128
+          ],
+          "at": [
+            362,
+            273
+          ],
+          "height": 99
+        }
+      ],
+      "ambient": [
+        [
+          165,
+          273
+        ],
+        [
+          265,
+          275
+        ],
+        [
+          492,
+          277
+        ],
+        [
+          555,
+          290
+        ]
+      ],
+      "background": "res://assets/village_day1/places/market_v1_REVIEW.png"
+    },
+    "craft_lane": {
+      "title": "Műhelyek utcája",
+      "bounds": [
+        38,
+        277,
+        564,
+        43
+      ],
+      "spawn": [
+        95,
+        311
+      ],
+      "scale": 1.45,
+      "exits": [
+        {
+          "target": "square",
+          "label": "Főtér",
+          "at": [
+            50,
+            310
+          ]
+        }
+      ],
+      "stops": {
+        "workshop": [
+          211,
+          294
+        ],
+        "music": [
+          485,
+          294
+        ]
+      },
+      "actors": [
+        {
+          "id": "kuroe",
+          "path": "res://assets/opening/kuroe_cameo/atlas_REVIEW.png",
+          "region": [
+            0,
+            0,
+            96,
+            60
+          ],
+          "at": [
+            506,
+            101
+          ],
+          "height": 28,
+          "shadow": false,
+          "hide_after": "music"
+        }
+      ],
+      "ambient": [
+        [
+          325,
+          288
+        ],
+        [
+          565,
+          292
+        ]
+      ],
+      "background": "res://assets/village_day1/places/craft_lane_v1_REVIEW.png"
+    },
+    "stream": {
+      "title": "Patakpart · a falu felőli part",
+      "bounds": [
+        38,
+        281,
+        564,
+        39
+      ],
+      "spawn": [
+        100,
+        308
+      ],
+      "scale": 1.45,
+      "exits": [
+        {
+          "target": "square",
+          "label": "Főtér",
+          "at": [
+            50,
+            309
+          ]
+        },
+        {
+          "target": "shrine",
+          "label": "Szentélyút",
+          "at": [
+            390,
+            285
+          ]
+        },
+        {
+          "target": "bridge",
+          "label": "Híd · otthon",
+          "at": [
+            582,
+            310
+          ]
+        }
+      ],
+      "stops": {
+        "stream": [
+          172,
+          298
+        ]
+      },
+      "actors": [
+        {
+          "id": "shion",
+          "path": "res://assets/opening/hana_shion_cameos/shion_atlas_REVIEW.png",
+          "region": [
+            0,
+            0,
+            96,
+            128
+          ],
+          "at": [
+            132,
+            205
+          ],
+          "height": 68,
+          "hide_after": "stream"
+        }
+      ],
+      "ambient": [
+        [
+          275,
+          293
+        ],
+        [
+          483,
+          295
+        ]
+      ],
+      "background": "res://assets/village_day1/places/stream_v1_REVIEW.png"
+    },
+    "shrine": {
+      "title": "Szentély · a lépcső alja",
+      "bounds": [
+        38,
+        286,
+        564,
+        35
+      ],
+      "spawn": [
+        90,
+        313
+      ],
+      "scale": 1.45,
+      "exits": [
+        {
+          "target": "stream",
+          "label": "Patakpart",
+          "at": [
+            50,
+            312
+          ]
+        }
+      ],
+      "stops": {
+        "shrine": [
+          333,
+          299
+        ]
+      },
+      "actors": [
+        {
+          "id": "oto",
+          "path": "res://assets/village_day1/characters/oto_v1_REVIEW.png",
+          "at": [
+            334,
+            245
+          ],
+          "height": 83,
+          "region": [
+            48,
+            2,
+            913,
+            1512
+          ]
+        }
+      ],
+      "ambient": [
+        [
+          533,
+          294
+        ]
+      ],
+      "background": "res://assets/village_day1/places/shrine_v1_REVIEW.png"
+    },
+    "bridge": {
+      "title": "Híd · hazafelé",
+      "bounds": [],
+      "spawn": [
+        88,
+        191
+      ],
+      "scale": 1.12,
+      "exits": [
+        {
+          "target": "stream",
+          "label": "Patakpart",
+          "at": [
+            78,
+            191
+          ]
+        },
+        {
+          "target": "home",
+          "label": "Hazatérés",
+          "at": [
+            551,
+            205
+          ]
+        }
+      ],
+      "stops": {},
+      "actors": [],
+      "ambient": [],
+      "background": "res://assets/village_day1/bridge_afternoon_v1_REVIEW.png"
+    }
+  }
+}

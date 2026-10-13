@@ -27,7 +27,7 @@ func _ready() -> void:
 		GameState.set_flag("met_"+id)
 	runner.pause_menu.open_menu()
 	runner.pause_menu.show_characters()
-	check(runner.pause_menu.journal_entries.size() == 6,"All known character sheets coexist")
+	check(runner.pause_menu.journal_entries.size() >= 7,"Known character sheets coexist with village residents")
 	runner.pause_menu.show_character(5)
 	await get_tree().process_frame
 	var list_button: Control = get_viewport().gui_get_focus_owner()

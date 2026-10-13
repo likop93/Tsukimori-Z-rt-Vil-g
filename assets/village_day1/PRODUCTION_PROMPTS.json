@@ -1,0 +1,72 @@
+{
+  "tool": "built-in image_gen",
+  "status": "REVIEW",
+  "date": "2026-10-13",
+  "characters": [
+    {
+      "id": "reina",
+      "ref": "C:/Users/likop/.codex/.chatgpt-projects/g-p-69b00f1a50988191adb316b0d6893210/opening-main-2026-09-27/Tsukimori-Z-rt-Vil-g-main/reference/incoming/2026-10-12/03_reina_teacher_rider_sheet.png",
+      "desc": "Reina, the adult 29-year-old TEACHER from the SCHOOL front view in this exact sheet. Preserve platinum/ash blonde wavy tied-back hair with darker roots, glasses, ear piercings, tattoos, facial identity, full feminine adult proportions. Wear the exact SCHOOL outfit: light vertically ribbed blouse, dark high-waisted skirt and belt, translucent dark tights, black ankle boots, light long open outer layer, ID pendant, book held at side. Not medical assistant, no stethoscope. Calm confident half-smile."
+    },
+    {
+      "id": "aoi",
+      "ref": "C:/Users/likop/.codex/.chatgpt-projects/g-p-69b00f1a50988191adb316b0d6893210/opening-main-2026-09-27/Tsukimori-Z-rt-Vil-g-main/reference/incoming/2026-10-12/06_aoi_shopkeeper_character_sheet.png",
+      "desc": "Aoi, the adult general-store owner from the WORK/SHOP front view of this exact sheet. Preserve brown messy high bun and long side locks, cream tied bandanna, brown eyes, warm facial identity and proportions. Exact blue patterned apron, loose cream blouse, red waist sash, pendant, sandals. Friendly attentive smile; one relaxed hand at waist, one lowered naturally. Not a new costume."
+    },
+    {
+      "id": "oto",
+      "ref": "C:/Users/likop/.codex/.chatgpt-projects/g-p-69b00f1a50988191adb316b0d6893210/opening-main-2026-09-27/Tsukimori-Z-rt-Vil-g-main/reference/incoming/2026-10-12/05_oto_day_night_character_sheet.png",
+      "desc": "Oto in her DAY form ONLY: the visibly elderly elegant shrine keeper from the DAY outfit front view on the LEFT half of the sheet. Preserve silver hair in elaborate same arrangement, red/white floral comb, facial wrinkles and amber eyes, layered cream robe with burgundy/indigo/gold floral motifs, walking staff. Same age and face as daytime reference; no youthful night form. Quiet watchful expression."
+    }
+  ],
+  "backgrounds": [
+    {
+      "id": "market",
+      "refs": [
+        "C:/Users/likop/.codex/.chatgpt-projects/g-p-69b00f1a50988191adb316b0d6893210/opening-main-2026-09-27/Tsukimori-Z-rt-Vil-g-main/assets/village_day1/places/square_v1_REVIEW.png"
+      ],
+      "prompt": "Single 16:9 full-bleed Tsukimori game background, crisp detailed cinematic pixel art matching the architectural style reference. Late afternoon with natural sun and cool shadows, traditional Japanese timber and grey tile mountain village. NO people, no figures, no UI, no captions, no multi-panel sheet. Side-view playable framing at human scale. CRITICAL: uninterrupted flat paved walking strip across image from y=75% to y=90%, thresholds meet its rear edge. No objects, railings, stairs or water in this strip. Building doors approximately 38% of image height; adult player will be 27% image height at y=82%. Very bottom corner flowers allowed only in last 5%. A small village market square distinct from main plaza, unoccupied wooden produce stalls with red and cream parasols along rear plane, vegetables, baskets, pottery, open wooden houses behind. Leave room by a rear stall for Hana's cameo. Open left and right edges connect to other streets."
+    },
+    {
+      "id": "craft_lane",
+      "refs": [
+        "C:/Users/likop/.codex/.chatgpt-projects/g-p-69b00f1a50988191adb316b0d6893210/opening-main-2026-09-27/Tsukimori-Z-rt-Vil-g-main/assets/village_day1/places/square_v1_REVIEW.png"
+      ],
+      "prompt": "Single 16:9 full-bleed Tsukimori game background, crisp detailed cinematic pixel art matching the architectural style reference. Late afternoon with natural sun and cool shadows, traditional Japanese timber and grey tile mountain village. NO people, no figures, no UI, no captions, no multi-panel sheet. Side-view playable framing at human scale. CRITICAL: uninterrupted flat paved walking strip across image from y=75% to y=90%, thresholds meet its rear edge. No objects, railings, stairs or water in this strip. Building doors approximately 38% of image height; adult player will be 27% image height at y=82%. Very bottom corner flowers allowed only in last 5%. Quiet narrow artisan side street opened toward camera so walking plane remains horizontal. On left half an open musical-instrument-maker workshop with a wooden workbench, half-built acoustic guitar body, wood shavings and neatly hung tools behind threshold. On right half a different closed dark timber house, its partly open upper window and violet curtain suggesting music inside. No character or silhouette. Two distinct readable building identities, no shop signs or text."
+    },
+    {
+      "id": "shrine",
+      "refs": [
+        "C:/Users/likop/.codex/.chatgpt-projects/g-p-69b00f1a50988191adb316b0d6893210/opening-main-2026-09-27/Tsukimori-Z-rt-Vil-g-main/reference/incoming/2026-10-12/05_oto_day_night_character_sheet.png",
+        "C:/Users/likop/.codex/.chatgpt-projects/g-p-69b00f1a50988191adb316b0d6893210/opening-main-2026-09-27/Tsukimori-Z-rt-Vil-g-main/assets/village_day1/places/square_v1_REVIEW.png"
+      ],
+      "prompt": "Single 16:9 full-bleed Tsukimori game background, crisp detailed cinematic pixel art matching the architectural style reference. Late afternoon with natural sun and cool shadows, traditional Japanese timber and grey tile mountain village. NO people, no figures, no UI, no captions, no multi-panel sheet. Side-view playable framing at human scale. CRITICAL: uninterrupted flat paved walking strip across image from y=75% to y=90%, thresholds meet its rear edge. No objects, railings, stairs or water in this strip. Building doors approximately 38% of image height; adult player will be 27% image height at y=82%. Very bottom corner flowers allowed only in last 5%. Use the DAY shrine approach thumbnail on Oto sheet as direct architectural source. A quiet horizontal FORECOURT at the bottom of a stone stairway; stairs centered behind forecourt leading uphill through a modest torii gate among cedars and flowers. The playable forecourt stays flat in bottom quarter; stairs are behind and blocked for now. Space for elderly shrine keeper standing on first stair at y=69%. Shrine gate is NOT a bridge or village square. Soft atmospheric forest shade."
+    },
+    {
+      "id": "stream",
+      "refs": [
+        "C:/Users/likop/.codex/.chatgpt-projects/g-p-69b00f1a50988191adb316b0d6893210/opening-main-2026-09-27/Tsukimori-Z-rt-Vil-g-main/assets/village_day1/bridge_afternoon_v1_REVIEW.png",
+        "C:/Users/likop/.codex/.chatgpt-projects/g-p-69b00f1a50988191adb316b0d6893210/opening-main-2026-09-27/Tsukimori-Z-rt-Vil-g-main/assets/village_day1/places/square_v1_REVIEW.png"
+      ],
+      "prompt": "Single 16:9 full-bleed Tsukimori game background, crisp detailed cinematic pixel art matching the architectural style reference. Late afternoon with natural sun and cool shadows, traditional Japanese timber and grey tile mountain village. NO people, no figures, no UI, no captions, no multi-panel sheet. Side-view playable framing at human scale. CRITICAL: uninterrupted flat paved walking strip across image from y=75% to y=90%, thresholds meet its rear edge. No objects, railings, stairs or water in this strip. Building doors approximately 38% of image height; adult player will be 27% image height at y=82%. Very bottom corner flowers allowed only in last 5%. A quiet footpath on the VILLAGE SIDE of the stream, running horizontally in front of timber houses. Shion's modest house with veranda and small wind chime stands on this same village bank in rear left. River glints in the far right background beyond a low bank; do not put water through the walking strip. Show distant bridge only at right upper edge as upcoming connection. Empty rear veranda space for a fleeting woman; no baked person. This is the village-bank path, NOT across the bridge."
+    }
+  ],
+  "interiors": [
+    {
+      "id": "school_interior",
+      "ref": "03_reina_teacher_rider_sheet.png",
+      "prompt": "Interior of Reina's village school classroom after lessons, late afternoon sunlight through broad left windows, polished warm timber, chalkboard at back, orderly empty desks on right and back, teacher's table with books, traditional Japanese mountain village school with restrained modern teaching materials, no written text."
+    },
+    {
+      "id": "shop_interior",
+      "ref": "06_aoi_shopkeeper_character_sheet.png",
+      "prompt": "Interior of Aoi's general store, preserve the lower center daytime store interior reference on the sheet. Warm wooden shelves, everyday groceries, tea jars, baskets of fruit, folded cloth, shop counter at rear-left with a clear space beside it for Aoi, afternoon light from street entrance."
+    },
+    {
+      "id": "inn_interior",
+      "ref": null,
+      "prompt": "Interior common room of Sora's family inn in Tsukimori. Follow supporting inn-interior illustration reference's traditional timber architecture, warm lanterns, purple noren, simple serving counter at rear-left, low tables at sides, sake vessels and worn cared-for wood, late afternoon light through latticed windows. No courtesans or people."
+    }
+  ],
+  "interior_common": "Create ONE full-bleed 16:9 cinematic pixel-art background for Tsukimori, detailed sharp pixel clusters, same craftsmanship and warm late-afternoon palette as the exterior references. Eye-level to slightly raised side-view VN composition; open central floor in lower third, adult standing characters will be composited at left and right. Consistent believable adult door and furniture scale. No people, no character silhouettes, no UI, no captions, no split panels, no blur."
+}

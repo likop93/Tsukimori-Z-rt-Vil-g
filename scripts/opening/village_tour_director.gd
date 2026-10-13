@@ -107,7 +107,7 @@ func open_stop(id: String) -> void:
 		"portrait": bool(spec.get("portrait",false)),
 		"lines": spec.lines
 	}
-	for key in ["portrait_speaker","portrait_path","portrait_side","source"]:
+	for key in ["portrait_speaker","portrait_path","portrait_side","portrait_facing","portrait_trim","portrait_frame_fraction","portrait_region","portrait_variants","akira_portrait_path","source"]:
 		if spec.has(key):
 			data[key] = spec[key]
 

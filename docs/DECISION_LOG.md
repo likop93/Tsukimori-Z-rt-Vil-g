@@ -292,3 +292,12 @@ Tulajdonosi korrekció:
 - **Renka marad a korábbi `RENKA_CHARACTER_DESIGN_V1_REFERENCE.png` APPROVED vizuális referenciáján.**
 - A később véletlenül generált vörös–fekete–arany „Renka örökösnő” sheet **ELVETVE / NEM KÁNON**.
 - Az elvetett kép sem Reinát, sem Renkát nem írhatja felül.
+
+## 2026-10-13 — Főtérből elágazó falubejárás — IMPLEMENTED / REVIEW
+Tulajdonosi kérés: főtérből több külön helyszín, iskola, bolt, fogadó,
+a helyszínekhez tartozó szereplőkkel. Kilenc kültéri szakasz, visszautak,
+nyolc meglévő találkozás és három VN-belső; a képek REVIEW állapotúak.
+Részletek és hiányzó production assetek: docs/VILLAGE_HUB_REVIEW.md.
+Sora korábbi jóváhagyott panelből készült PLACEHOLDER; a FINAL sheet authority
+változatlan. Ritsu képi identitása nincs kitalálva. Mashiro későbbi időzítése
+megmarad. A változás nem új LOCKED vizuális jóváhagyás.

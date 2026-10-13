@@ -97,3 +97,8 @@ vonatkozó kilépési figyelmeztetés; ezt a változtatás nem javította.
 Jóváhagyott masterek átvétele, nappali helyszínart és a technikai belépési pontok
 lecserélése saját helyszínekre. A későbbi szabadidős rendszer külön lépés.
 Himiko külön érkezési eseménye csak később, kb. a 3–4. játéknapon.
+
+## 2026-10-13 — Újabb implementáció
+A korábbi két térképre helyezett nyolc pontot a VILLAGE_HUB_REVIEW.md-ben
+leírt, kilenc kültéri szakaszból és három belsőből álló falubejárás váltja.
+A dokumentum fenti teszteredményei a korábbi dd89c4c állapotra vonatkoznak.

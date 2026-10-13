@@ -11,6 +11,7 @@ var camera_locked := true
 var camera_x := 542.0
 var backdrop: Sprite2D
 var location := "street"
+var tour_bounds := Rect2()
 var bridge_rail: Node2D
 var house_rail: Node2D
 var featured_actor: Node2D
@@ -115,6 +116,8 @@ func lane_limits(feet_y: float) -> Vector2:
 	return Vector2(395+clearance,680-clearance)
 
 func constrain_position(at: Vector2) -> Vector2:
+	if tour_bounds.has_area():
+		return Vector2(clampf(at.x,tour_bounds.position.x,tour_bounds.end.x),clampf(at.y,tour_bounds.position.y,tour_bounds.end.y))
 	if location in ["akira_room","clinic"]:
 		return Vector2(clampf(at.x,85,535 if location == "akira_room" else 495),clampf(at.y,272,280))
 	if location == "interior":
@@ -164,6 +167,7 @@ func build_house_rail() -> void:
 		add_rail_patch(PackedVector2Array([post.position,post.position+Vector2(post.size.x,0),post.end,post.position+Vector2(0,post.size.y)]),house_rail)
 
 func show_location(next_location: String, afternoon := false) -> void:
+	tour_bounds = Rect2()
 	location = next_location
 	for cameo in quiet_cameos:
 		cameo.refresh_visibility()
@@ -269,3 +273,25 @@ func enable_control() -> void:
 	enabled = true
 	camera_locked = false
 	player.input_enabled = true
+
+func show_tour_location(path: String, bounds: Rect2, actor_scale: float) -> void:
+	# Isolate surveyed tour geometry from the original opening/bridge lanes.
+	show_location("street",true)
+	location = "tour"
+	tour_bounds = bounds
+	backdrop.texture = load(path)
+	backdrop.scale = Vector2(640.0/backdrop.texture.get_width(),360.0/backdrop.texture.get_height())
+	backdrop.modulate = Color.WHITE
+	foreground.hide()
+	for resident in residents:
+		resident.hide()
+		resident.set_physics_process(false)
+	for cameo in quiet_cameos:
+		cameo.hide()
+		cameo.set_physics_process(false)
+	kuroe_cameo.hide()
+	kuroe_cameo.set_physics_process(false)
+	camera_locked = true
+	camera_x = 320
+	camera.position = Vector2(320,180)
+	player.scale = Vector2.ONE*actor_scale

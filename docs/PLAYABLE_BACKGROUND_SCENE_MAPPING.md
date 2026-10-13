@@ -227,3 +227,11 @@ FINAL előtt kötelező:
 - lighting integration;
 - loopable VFX;
 - in-game review Akira FINAL pixel sprite-tal.
+
+## 2026-10-13 — Első szabad délután, külön helyszínek (REVIEW)
+A nyitó jelenetek mappingje változatlan. A falubejárás külön gráfja:
+data/home_day1/village_layout.json. Főtér, iskola, bolt, fogadó, piactér,
+műhelyek utcája, falusi patakpart, szentélyút és a meglévő délutáni híd.
+Az új plates mappa: assets/village_day1/places/.
+Az iskola/bolt/fogadó belső VN helyszín: village_interiors.json.
+Részletes geometria és karakter-hozzárendelés: VILLAGE_HUB_REVIEW.md.

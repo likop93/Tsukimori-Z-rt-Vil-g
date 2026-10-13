@@ -51,7 +51,46 @@
       "name": "Reina",
       "reveal": "met_reina",
       "description": "A helyi iskola modern tanárnője. Tsukimoriban született, éveket élt a városban, majd visszaköltözött. Motorral jár, és feltűnően kevéssé kér bocsánatot azért, aki.",
-      "portrait": "res://assets/opening/vn_portraits/reina_teacher_v1_REVIEW.webp"
+      "portrait": "res://assets/village_day1/characters/reina_v1_REVIEW.png",
+      "crop": [
+        0.288,
+        0.008,
+        0.45,
+        0.973
+      ]
+    },
+    {
+      "id": "aoi",
+      "reveal": "met_aoi",
+      "name": "Aoi",
+      "description": "A vegyesbolt közvetlen, kíváncsi tulajdonosa. Ismeri a falubelieket, és segít beszerezni, ami éppen hiányzik.",
+      "portrait": "res://assets/village_day1/characters/aoi_v1_REVIEW.png",
+      "crop": [
+        0.334,
+        0.005,
+        0.403,
+        0.977
+      ]
+    },
+    {
+      "reveal": "met_sora",
+      "id": "sora",
+      "portrait": "res://assets/village_day1/characters/sora_v1_PLACEHOLDER.png",
+      "name": "Sora",
+      "description": "A fogadó érett, figyelmes vezetője. A családjától örökölte a helyet; számon tartja, ki érkezik a faluba és ki távozik.",
+      "crop": [
+        0.105,
+        0.01,
+        0.774,
+        0.983
+      ]
+    },
+    {
+      "reveal": "met_ritsu",
+      "id": "ritsu",
+      "portrait": "",
+      "name": "Ritsu",
+      "description": "Hangszerkészítő. A mellékutcai műhelyben találkoztatok; éppen egy gitáron dolgozott."
     }
   ]
 }
