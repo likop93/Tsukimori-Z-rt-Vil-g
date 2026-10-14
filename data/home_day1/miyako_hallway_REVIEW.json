@@ -1,0 +1,10 @@
+{
+  "id": "miyako_hallway_review",
+  "status": "REVIEW — optional first-night insert; not final canon",
+  "portrait": false,
+  "lines": [
+    {"speaker": "Miyako", "text": "Akira… nem tud aludni?"},
+    {"speaker": "Akira", "text": "Hallottam valamit."},
+    {"speaker": "Miyako", "text": "Régi ház. Éjszaka mindig beszél egy kicsit."}
+  ]
+}

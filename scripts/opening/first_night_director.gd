@@ -158,6 +158,7 @@ var action_buttons: Array[Button] = []
 var actions_armed := false
 var next_day: Node
 var village_tour: Node
+var hallway: CanvasLayer
 
 func start_hana_day() -> void:
 	if phase != "day_complete" or not card_armed:
@@ -206,6 +207,8 @@ func select_action(id: String, expected_phase: String) -> void:
 		return
 	actions.hide()
 	match id:
+		"hallway":
+			start_hallway()
 		"window", "bag":
 			play(read_data("res://data/home_day1/night_"+id+".json"),id)
 		"photo":
@@ -262,7 +265,10 @@ func resume(next_phase: String) -> void:
 	if is_instance_valid(photo_back):
 		photo_back.hide()
 	if phase == "room":
-		show_actions([["window","Az ablakhoz fordulok"],["bag","Megnézem az orvosi táskát"],["photo","Megnézem a fényképet"],["sleep","Lefekszem"],["living","Vissza a nappaliba"]])
+		var options := [["window","Az ablakhoz fordulok"],["bag","Megnézem az orvosi táskát"],["photo","Megnézem a fényképet"],["sleep","Lefekszem"],["living","Vissza a nappaliba"]]
+		if not GameState.has_flag("miyako_hallway_glimpse_seen"):
+			options.append(["hallway","Kinézek a folyosóra · REVIEW"])
+		show_actions(options)
 	elif phase == "clinic":
 		if patient_index < 2:
 			show_actions([["patient","Első konzultáció" if patient_index == 0 else "Második konzultáció"]])
@@ -270,6 +276,24 @@ func resume(next_phase: String) -> void:
 			show_actions([["reflection","Átgondolom a napot"]])
 	elif phase == "clinic_after":
 		show_actions([["tour","Bejárom Tsukimorit"]])
+
+func start_hallway() -> bool:
+	if phase != "room" or is_instance_valid(hallway) or GameState.has_flag("miyako_hallway_glimpse_seen"):
+		return false
+	phase = "hallway"
+	actions.hide()
+	hide_actors()
+	runner.heading.hide()
+	runner.hint.hide()
+	hallway = preload("res://scripts/opening/miyako_hallway_director.gd").new()
+	add_child(hallway)
+	hallway.runner = runner
+	hallway.completed.connect(func():
+		hallway = null
+		runner.heading.show()
+		resume("room")
+	)
+	return hallway.begin()
 
 func advance(_delta: float) -> void:
 	if is_instance_valid(village_tour):

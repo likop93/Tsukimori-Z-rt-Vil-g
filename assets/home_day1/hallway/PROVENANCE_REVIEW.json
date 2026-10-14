@@ -1,0 +1,32 @@
+{
+  "status": "REVIEW / PLACEHOLDER, not final canon or production animation",
+  "provider": "Built-in image_gen; original generated files preserved",
+  "assets": [
+    {
+      "path": "assets/home_day1/hallway/hallway_night_v1_REVIEW.png",
+      "reference": "assets/opening/reference/SHARED_HOME_CLINIC_INTERIOR_PIXEL_V1.png",
+      "original": "C:/Users/likop/.codex/generated_images/01a0de06-53bf-7c60-8a17-b76aceffe7c1/exec-0d05b66b-1abf-4480-aad8-66c2a1261cc1.png",
+      "transparent": false,
+      "prompt": "Create a 16:9 empty hallway background for a Godot narrative game, using the attached approved shared-home image as architectural/style reference. View from Akira's bedroom doorway along the SAME house's dark wooden corridor at night. Fine crisp detailed pixel art matching reference, amber wall lanterns and dark timber/shoji, natural night, no weather anomaly. Strong readable perspective, floor extends toward a distant doorway centered at x=58% width; reserve clear standing area there at floor y=70%, with adult figure fitting from y=30% to70% when composited later. Empty: NO people, silhouettes, text, HUD, horror creatures. Foreground dark doorway edges frame left/right, floor clearly visible. Quiet ordinary house, restrained unease through composition only. This is a REVIEW layer, preserve original house design."
+    },
+    {
+      "path": "assets/home_day1/hallway/miyako_turn_v1_REVIEW.png",
+      "references": [
+        "assets/opening/miyako_review/source_REVIEW.png",
+        "assets/opening/vn_portraits/miyako_cutout_v1_REVIEW.png"
+      ],
+      "original": "C:/Users/likop/.codex/generated_images/01a0de06-53bf-7c60-8a17-b76aceffe7c1/exec-290c150b-cfae-4494-b944-706d5cdc8e7f.png",
+      "transparent": true,
+      "prompt": "Identity-preserving production pose strip, TRANSPARENT background. Attached image1 is approved full-body Miyako sprite sheet, image2 face/costume reference. SAME adult woman, dark brown long hair, brown eyes, black high-neck mourning kimono, gold obi/ornaments, unchanged normal body/face/clothing. No transformation. Create ONE horizontal sprite sheet with FIVE exactly equal-width cells, one full-body figure per cell, feet visible and identical baseline, identical scale and head height, generous transparent margins, no labels. Cell1 body and head profile facing left, hands resting together at waist. Cell2 intermediate three-quarter turning toward viewer. Cell3 frontal, quiet neutral face looking at viewer. Cell4 exactly same as3 but very slight closed-mouth half-smile (not manic). Cell5 exactly same as3 with eyes naturally closed for blink, neutral mouth. Keep hands/body/feet consistent across3/4/5. Crisp detailed game illustration suitable for scaling to 150px tall, faithful mature face from reference. No backgrounds, shadows, panels, text, extra objects, wardrobe change, blue eyes, white hair or anatomy change.",
+      "cell_x_edges": [
+        0,
+        460,
+        820,
+        1170,
+        1540,
+        1983
+      ],
+      "processing": "Original PNG preserved. Runtime AtlasTexture regions trim transparent gutters and align full-body feet; nearest sampling. No offline image editing."
+    }
+  ]
+}

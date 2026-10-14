@@ -71,6 +71,16 @@ func _ready() -> void:
 		await finish(night.vn)
 		check(runner.street.location == "akira_room" and not runner.street.player.input_enabled and not runner.street.player.visible,"Room uses VN backdrop without walking sprite")
 		check(not GameState.has_flag("first_night_seen"),"Room entry does not finish night")
+		# One branch bypasses the optional insert; the other exercises its full
+		# real-time handoff before the unchanged night -> clinic -> village chain.
+		if branch == 1:
+			await choose(night,"Kinézek a folyosóra · REVIEW")
+			while not is_instance_valid(night.hallway.vn):
+				await get_tree().process_frame
+			await finish(night.hallway.vn)
+			await get_tree().process_frame
+			check(night.phase == "room" and GameState.has_flag("miyako_hallway_glimpse_seen"),"Optional hallway returns before original first night")
+			check(not GameState.has_flag("miyako_transformation_revealed"),"Optional hallway preserves normal Miyako")
 		await capture("night_room_REVIEW")
 		var stationary: Vector2 = runner.street.player.position
 		Input.action_press("walk_right")
