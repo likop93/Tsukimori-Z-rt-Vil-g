@@ -129,13 +129,15 @@ func start_first_day() -> void:
 	begin_first_day()
 
 func begin_first_day() -> void:
+	GameState.set_story_time(1,"morning")
+	GameState.visit_location("home")
 	phase = "morning"
 	night_image.hide()
 	runner.street.show_location("interior")
 	runner.street.backdrop.texture = load("res://assets/home_day1/morning_REVIEW.png")
 	runner.street.backdrop.scale = Vector2(640.0/runner.street.backdrop.texture.get_width(),360.0/runner.street.backdrop.texture.get_height())
 	runner.street.player.show()
-	runner.heading.text = "Második reggel"
+	runner.heading.text = "Első rendelési nap · reggel"
 	runner.heading.show()
 	runner.ambience.rain.volume_db = -37
 	play(read_data("res://data/home_day1/morning.json"),"morning")
@@ -383,6 +385,8 @@ func finish_dialogue() -> void:
 			GameState.set_flag("miyako_morning_seen")
 			play(read_data("res://data/home_day1/clinic_morning.json"),"clinic_morning")
 		"clinic_morning":
+			GameState.set_story_time(1,"clinic")
+			GameState.visit_location("clinic")
 			GameState.set_flag("first_clinic_day_started")
 			runner.street.show_location("clinic")
 			resume("clinic")
@@ -398,6 +402,7 @@ func finish_dialogue() -> void:
 			resume("clinic_after")
 			runner.heading.text = "Rendelő · alkony"
 		"day_evening":
+			GameState.set_story_time(1,"night")
 			GameState.set_flag("miyako_first_day_evening_seen")
 			runner.street.show_location("akira_room")
 			runner.street.backdrop.modulate = Color.WHITE
@@ -416,6 +421,7 @@ func finish_dialogue() -> void:
 			show_day_end()
 
 func start_village_tour() -> void:
+	GameState.set_story_time(1,"afternoon")
 	phase = "village_tour"
 	if is_instance_valid(actions):
 		actions.hide()
@@ -431,6 +437,8 @@ func on_village_tour_complete() -> void:
 	show_day_evening()
 
 func show_day_evening() -> void:
+	GameState.set_story_time(1,"evening")
+	GameState.visit_location("home")
 	runner.street.backdrop.modulate = Color.WHITE
 	runner.street.show_location("interior")
 	runner.street.player.position = Vector2(150,266)

@@ -98,6 +98,7 @@ func _ready() -> void:
 			check(not GameState.has_flag("met_hana"),"File and note do not invent a meeting")
 			await finish(day.vn)
 			check(day.phase == "hana_arrival" and not GameState.has_flag("met_hana"),"Arrival begins before personal greeting")
+			check(GameState.day == 2 and GameState.time_of_day == "clinic","Hana occurs on second clinic day")
 			for step in 10:
 				if GameState.has_flag("met_hana"):
 					break

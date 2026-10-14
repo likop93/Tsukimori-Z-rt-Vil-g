@@ -62,6 +62,7 @@ func show_menu() -> void:
 	show_place()
 
 func show_place() -> void:
+	GameState.visit_location(area)
 	clear_ui()
 	clear_cast()
 	mode = "home" if area == "home" else "place"

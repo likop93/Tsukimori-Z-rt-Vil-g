@@ -134,6 +134,7 @@ func _ready() -> void:
 		continue_key.pressed = false
 		Input.parse_input_event(continue_key)
 		check(night.phase == "morning","Explicit continuation starts morning")
+		check(GameState.day == 1 and GameState.time_of_day == "morning","First clinic day calendar")
 		check(not runner.street.player.input_enabled,"Morning dialogue locks movement")
 		await capture("morning_REVIEW")
 		await finish(night.vn,"stay" if branch == 0 else "withdraw")
@@ -171,6 +172,7 @@ func _ready() -> void:
 		check(night.phase == "clinic_after","Reflection leaves an explicit continuation")
 		await choose(night,"Bejárom Tsukimorit")
 		check(night.phase == "village_tour" and not runner.street.player.input_enabled,"First clinic day hands off to destination map")
+		check(GameState.day == 1 and GameState.time_of_day == "afternoon","Village is first afternoon")
 		var tour: Node = night.village_tour
 		for stop in tour.STOP_ORDER:
 			await tour.navigate(tour.STOP_AREAS[stop])
@@ -180,6 +182,7 @@ func _ready() -> void:
 		tour.finish_tour()
 		await get_tree().process_frame
 		check(night.phase == "day_evening" and not runner.street.player.visible,"Continuation opens evening VN without tiny actor")
+		check(GameState.day == 1 and GameState.time_of_day == "evening","Home advances to evening")
 		night.vn.advance()
 		await capture("first_day_evening_REVIEW")
 		await finish(night.vn)

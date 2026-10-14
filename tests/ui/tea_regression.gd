@@ -17,6 +17,7 @@ func _ready() -> void:
 			var day: Node = runner.arrival.next_day
 			var vn: CanvasLayer = day.vn
 			check(day.phase == "miyako_tea","Checkpoint opens tea")
+			check(GameState.day == 3 and GameState.time_of_day == "evening","Tea checkpoint calendar without affinity rewards")
 			check(not runner.street.player.visible and not runner.street.player.input_enabled,"Tea is VN-only")
 			check(vn.akira_portrait.texture.resource_path.ends_with("akira_doctor_green_eye_v1_REVIEW.png"),"Akira retains his changed eye")
 			check(not GameState.has_flag("miyako_evening_outfit_seen"),"Outfit is not unlocked before the personal scene")

@@ -10,6 +10,7 @@ var continue_button: Button
 var continue_armed := false
 
 func begin() -> void:
+	GameState.set_story_time(1,"night")
 	GameState.set_flag("hana_day_started")
 	chapter.night_image.hide()
 	runner.heading.show()
@@ -114,6 +115,8 @@ func on_choice(id: String) -> void:
 func finish_dialogue() -> void:
 	match phase:
 		"night_notebook":
+			GameState.set_story_time(2,"morning")
+			GameState.visit_location("home")
 			GameState.set_flag("katsuro_returned_notebook_seen")
 			set_location("interior","Második rendelési nap · reggel")
 			runner.street.backdrop.texture = load("res://assets/home_day1/morning_REVIEW.png")
@@ -122,6 +125,8 @@ func finish_dialogue() -> void:
 			runner.ambience.rain.volume_db = -37
 			play("morning_hana")
 		"morning_hana":
+			GameState.set_story_time(2,"clinic")
+			GameState.visit_location("clinic")
 			GameState.set_flag("hana_appointment_prepared")
 			set_location("clinic","Rendelő · Hana")
 			runner.street.backdrop.modulate = Color.WHITE
@@ -166,6 +171,8 @@ func start_tea(checkpoint := false) -> void:
 		return
 	if is_instance_valid(end_card):
 		end_card.queue_free()
+	GameState.set_story_time(3,"evening")
+	GameState.visit_location("home")
 	set_location("interior","Miyako · Egy este szerepek nélkül")
 	runner.street.backdrop.modulate = Color(0.8,0.72,0.72)
 	play("miyako_tea")
@@ -175,6 +182,7 @@ func start_seal() -> void:
 		return
 	end_card.queue_free()
 	set_location("clinic","Miyako · A pecsét")
+	GameState.set_story_time(3,"afternoon")
 	runner.street.backdrop.modulate = Color.WHITE
 	play("miyako_seal")
 
@@ -184,6 +192,8 @@ func start_shion(checkpoint := false) -> void:
 	if is_instance_valid(end_card):
 		end_card.queue_free()
 	set_location("clinic","Másnap · Shion · 10:00")
+	GameState.set_story_time(3,"clinic")
+	GameState.visit_location("clinic")
 	runner.street.backdrop.modulate = Color.WHITE
 	runner.ambience.rain.stop()
 	play("shion_arrival")
@@ -194,6 +204,8 @@ func start_night_visitor(checkpoint := false) -> void:
 	if is_instance_valid(end_card):
 		end_card.queue_free()
 	set_location("clinic","Az éjszakai látogató")
+	GameState.set_story_time(2,"night")
+	GameState.visit_location("clinic")
 	runner.street.backdrop.modulate = Color(0.42,0.48,0.64)
 	runner.ambience.rain.stop()
 	play("night_visitor")
@@ -203,6 +215,7 @@ func start_afternoon() -> void:
 		return
 	end_card.queue_free()
 	set_location("clinic","Késő délután · Miyako")
+	GameState.set_story_time(2,"afternoon")
 	runner.street.backdrop.modulate = Color(0.82,0.76,0.78)
 	play("miyako_afternoon")
 
