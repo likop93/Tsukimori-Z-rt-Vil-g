@@ -428,7 +428,6 @@ func start_village_tour() -> void:
 
 func on_village_tour_complete() -> void:
 	village_tour = null
-	GameState.set_flag("village_tour_complete")
 	show_day_evening()
 
 func show_day_evening() -> void:

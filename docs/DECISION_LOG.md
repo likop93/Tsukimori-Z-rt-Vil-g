@@ -301,3 +301,7 @@ Részletek és hiányzó production assetek: docs/VILLAGE_HUB_REVIEW.md.
 Sora korábbi jóváhagyott panelből készült PLACEHOLDER; a FINAL sheet authority
 változatlan. Ritsu képi identitása nincs kitalálva. Mashiro későbbi időzítése
 megmarad. A változás nem új LOCKED vizuális jóváhagyás.
+
+## 2026-10-14 — Falubejárás navigációs korrekció — OWNER REQUEST / REVIEW
+
+A tulajdonos a nehezen követhető járható területek és Akira mozgása miatt térképes, kattintásos helyválasztást kért. A rendelés utáni falubejárás erre váltott; a képek és karakteridentitások változatlanok. Otthon bármikor elérhető, az esti folytatás külön választás. A kihagyott találkozások nem lesznek teljesítettnek jelölve. Részletek: docs/VILLAGE_DESTINATION_NAVIGATION_REVIEW.md. Nem új vizuális LOCK.

@@ -10,16 +10,15 @@ func _ready() -> void:
 	chapter.start_village_tour()
 	var tour: Node = chapter.village_tour
 	tour.finish_tour()
-	check(not GameState.has_flag("village_tour_complete"),"Tour cannot finish before all stops")
+	check(not GameState.has_flag("village_tour_complete"),"Tour must return home before ending afternoon")
 	for stop in tour.STOP_ORDER:
-		tour.area = tour.PLACES[stop].area
-		tour.saved_positions[tour.area] = tour.PLACES[stop].at
-		tour.show_walk()
+		await tour.navigate(tour.STOP_AREAS[stop])
 		tour.open_stop(stop)
 		await finish(tour.vn)
 		check(tour.visited.has(stop),"Tour stop completes: "+stop)
 	check(GameState.has_flag("met_reina") and not GameState.has_flag("met_kuroe"),"Tour reveals Reina but not Kuroe")
 	check(not GameState.has_flag("oto_identity_revealed"),"Oto identity remains hidden")
+	await tour.navigate("home")
 	tour.finish_tour()
 	await get_tree().process_frame
 	check(GameState.has_flag("village_tour_complete") and chapter.phase == "day_evening","Remote tour reconnects to existing evening")

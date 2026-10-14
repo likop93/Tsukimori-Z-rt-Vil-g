@@ -1,5 +1,8 @@
 # Tsukimori — Zárt Világ
 
+**2026-10-14 · Falubejárás:** kattintható térképes helyszínválasztás, külön találkozás/belépés gombok, bármikor elérhető Otthon. Akirát ebben a szakaszban nem kell irányítani. Teszt: Fejezetválasztás → III. Falubejárás · Reina és a többiek. [Részletek](docs/VILLAGE_DESTINATION_NAVIGATION_REVIEW.md).
+
+
 A jelenleg futó játék egy high-detail pixel-art 2D/2.5D narratív prototípus. F5 a főmenüt indítja. A „Játék indítása” innen vezet a 66 másodperces nyitásba: busz, Akira monológja, emléktöredék, leszállás, erdei séta, kapu. A kapunál visszakapod az irányítást; a híd és Miyako találkozása játékosvezérelt.
 
 ## Indítás

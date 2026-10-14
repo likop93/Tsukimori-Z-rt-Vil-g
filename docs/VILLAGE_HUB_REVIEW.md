@@ -1,4 +1,6 @@
 # Első szabad délután — összekötött falu
+**2026-10-14: az alábbi mozgásos navigáció történeti leírás. A tulajdonos kérésére a falubejárás kattintható térképre és helyszíni gombokra váltott; Otthon bármikor elérhető. Aktuális működés és tesztek: [VILLAGE_DESTINATION_NAVIGATION_REVIEW.md](VILLAGE_DESTINATION_NAVIGATION_REVIEW.md).**
+
 2026-10-13 · IMPLEMENTED / REVIEW
 
 A főtér kilenc egymással összekötött kültéri pályarész központja.
