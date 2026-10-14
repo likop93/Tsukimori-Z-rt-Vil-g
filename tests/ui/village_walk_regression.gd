@@ -3,6 +3,12 @@ var runner: Node
 var tour: Node
 var player: CharacterBody2D
 
+func wait_for_arrival() -> void:
+	var deadline := Time.get_ticks_msec()+5000
+	while (tour.mode == "travel" or not tour.actions_armed) and Time.get_ticks_msec() < deadline:
+		await get_tree().process_frame
+	check(tour.mode != "travel" and tour.actions_armed,"Destination controls become ready after fade")
+
 func click(button: Button) -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
@@ -28,7 +34,7 @@ func destination(id: String) -> void:
 	check(tour.mode == "map","Map opens by click")
 	await click(tour.map_panel.get_node("destination_"+id))
 	check(tour.mode == "travel","Destination click starts transition")
-	await get_tree().create_timer(0.5).timeout
+	await wait_for_arrival()
 	check(tour.area == id and tour.mode == ("home" if id == "home" else "place"),"Arrives at "+id)
 	check(not player.input_enabled and not player.visible,"No walking avatar on arrival")
 
@@ -113,7 +119,7 @@ func _ready() -> void:
 	await get_tree().create_timer(0.3).timeout
 	check(tour.mode == "travel" and tour.travel_fade.color.a == fade_alpha,"Pause freezes travel transition")
 	runner.pause_menu.resume()
-	await get_tree().create_timer(0.5).timeout
+	await wait_for_arrival()
 	await click(tour.menu.get_node("evening"))
 	check(runner.arrival.phase == "day_evening" and GameState.has_flag("village_tour_complete"),"Full exploration returns to evening")
 	check(GameState.has_flag("village_tour_returned_home"),"Evening handoff recorded once")

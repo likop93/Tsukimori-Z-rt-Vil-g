@@ -44,3 +44,5 @@ Godot 4.7.2 stable / Compatibility, valódi grafikus futás:
 Képi ellenőrzés: `review/navigation_map_REVIEW.png`, `navigation_home_REVIEW.png`, `navigation_school_REVIEW.png`, `navigation_controls_REVIEW.png`, `navigation_vn_*_REVIEW.png`. A sikeres futásokban nincs parse/runtime hiba; a korábbról ismert 2–4 ObjectDB kilépési figyelmeztetés néhány teszt lezárásánál megmarad.
 
 A térkép jelenleg áttekinthető, sematikus helyszínválasztó. Festett térkép és helyszínenként külön Akira-érkezési animáció még nincs; a hibás járóciklust nem használja átvezetésként sem. A korábbi Sora/Ritsu production assethiányok változatlanok.
+
+Csomagellenőrzés: külön kicsomagolt projekt importja és főmenüje elindult; a kattintásos regresszió ott is PASS (`review/map_clean_runtime.log`). A teszt az áttűnés és a kezelőszervek tényleges elkészültét várja meg, nem fix fél másodpercet; lassabb első képkockák mellett is determinisztikus.
