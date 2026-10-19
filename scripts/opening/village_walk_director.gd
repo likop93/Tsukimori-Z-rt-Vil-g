@@ -118,14 +118,15 @@ func build_actions() -> void:
 	menu.add_child(panel)
 	actions_armed = false
 	if area == "home":
-		make_button(menu,"evening","Lezárom a délutánt · esti beszélgetés",Vector2(24,265),Vector2(592,32),finish_tour)
+		make_button(menu,"evening","Esti folytatás",Vector2(24,265),Vector2(292,32),finish_tour)
+		make_button(menu,"clinic","Rendelőszárny",Vector2(324,265),Vector2(292,32),open_interior.bind("clinic"))
 	else:
 		var stops: Dictionary = layout[area].stops
 		var i := 0
 		for id in stops:
 			var label := str(tour_data.stops[id].label)
 			if visited.has(id):
-				label = "Belépek · "+label if interiors.has(id) else "✓ "+label+" · már felkerested"
+				label = str(interiors[id].get("label",label)) if interiors.has(id) else "✓ "+label+" · már felkerested"
 			else:
 				label = "Körülnézek · "+label
 			var button := make_button(menu,"stop_"+id,label,Vector2(24+i*300,265),Vector2(292,32),activate_stop.bind(id))
@@ -197,12 +198,18 @@ func open_stop(id: String) -> void:
 	super.open_stop(id)
 
 func open_interior(id: String) -> void:
-	if mode != "place" or get_tree().paused or not layout[area].stops.has(id) or not visited.has(id) or not interiors.has(id):
+	if get_tree().paused or not interiors.has(id):
+		return
+	if id == "clinic":
+		if area != "home" or mode != "home":
+			return
+	elif mode != "place" or not layout[area].stops.has(id) or not visited.has(id):
 		return
 	mode = "interior"
 	clear_ui()
 	set_background("")
 	var spec: Dictionary = interiors[id]
+	GameState.visit_location(str(spec.get("location_id",id)))
 	var texture: Texture2D = load(str(spec.background))
 	runner.street.backdrop.texture = texture
 	runner.street.backdrop.scale = Vector2(640.0/texture.get_width(),360.0/texture.get_height())
@@ -210,7 +217,13 @@ func open_interior(id: String) -> void:
 	vn = preload("res://scripts/ui/vn_dialogue.gd").new()
 	add_child(vn)
 	vn.finished.connect(show_menu)
-	vn.begin({"id":"village_interior_"+id,"portrait":false,"lines":spec.lines})
+	var dialogue := spec.duplicate(true)
+	dialogue["id"] = "village_interior_"+id
+	dialogue["portrait"] = bool(spec.get("portrait",false))
+	dialogue["akira_portrait_path"] = "res://assets/opening/vn_portraits/akira_doctor_v1_REVIEW.png"
+	if GameState.has_flag("akira_right_eye_green"):
+		dialogue["akira_portrait_path"] = "res://assets/opening/vn_portraits/akira_doctor_green_eye_v1_REVIEW.png"
+	vn.begin(dialogue)
 
 func advance(_delta: float) -> void:
 	pass # Exploration is driven exclusively by destination/action buttons.

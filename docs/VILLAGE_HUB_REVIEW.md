@@ -94,3 +94,7 @@ VILLAGE_TOUR_MERGE, CHAPTER_SELECT és NIGHT_DAY: passed=true.
 A tesztek valódi Godot ablakban futottak, képernyőképeik ellenőrizve.
 Parse/runtime hiba nem maradt. Néhány tesztfolyamat lezárásakor a korábban
 is előforduló 2–4 ObjectDB cleanup figyelmeztetés látható.
+
+## 2026-10-19 — Visszalátogatási pontok és naptár
+A kattintásos navigáció bővült: [VILLAGE_RETURN_VISITS_REVIEW.md](VILLAGE_RETURN_VISITS_REVIEW.md).
+Három belsőben meglévő karakterportrék; öt külön külső helyszínpont; otthoni rendelőgomb; napi látogatási nyilvántartás. A későbbi történeti belépők továbbra is zártak.

@@ -20,7 +20,7 @@ func _ready() -> void:
 	title.add_theme_font_size_override("font_size",17)
 	add_child(title)
 	var subtitle := Label.new()
-	subtitle.text = "Válassz helyszínt. Otthonról is bármikor visszatérhetsz."
+	subtitle.text = GameState.calendar_label()+" · Otthonról is visszatérhetsz."
 	subtitle.position = Vector2(24,43)
 	subtitle.add_theme_font_size_override("font_size",12)
 	add_child(subtitle)
@@ -49,6 +49,7 @@ func _ready() -> void:
 		if total > 0:
 			caption += "  ·  %d/%d" % [done,total]
 		var button: Button = tour.make_button(self,"destination_"+id,caption,POS[id],Vector2(176,53),tour.navigate.bind(id))
+		button.tooltip_text = "Ma már jártál itt." if GameState.visited_today(id) else "Ma még nem jártál itt."
 		if id == tour.area:
 			var selected := button.get_theme_stylebox("normal").duplicate() as StyleBoxFlat
 			selected.border_color = Color("#efd19a")

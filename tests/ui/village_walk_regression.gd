@@ -56,6 +56,11 @@ func _ready() -> void:
 	check(tour.visited.is_empty(),"Can return home before any encounter")
 	check(not GameState.has_flag("village_tour_complete"),"Home does not invent completed visits")
 	await capture("navigation_home_REVIEW")
+	await click(tour.menu.get_node("clinic"))
+	check(tour.mode == "interior" and GameState.current_location == "clinic","Home clinic is independently accessible")
+	check(not player.visible and not player.input_enabled,"Clinic visit keeps avatar disabled")
+	await finish(tour.vn)
+	check(tour.mode == "home" and not GameState.has_flag("katsuro_study_unlocked"),"Clinic returns home without opening study")
 	await destination("school")
 	check(runner.street.backdrop.texture.resource_path == tour.layout.school.background,"School background preserved")
 	var fixed := player.position
@@ -95,6 +100,11 @@ func _ready() -> void:
 			await click(tour.menu.get_node("stop_"+id))
 			check(tour.mode == "interior","Visited building opens interior: "+id)
 			check(runner.street.backdrop.texture.resource_path == tour.interiors[id].background,"Interior background retained")
+			check(GameState.visited_today(str(tour.interiors[id].location_id)),"Each character place has its own visit record")
+			if id in ["school","shop","inn"]:
+				check(tour.vn.portrait.visible and tour.vn.akira_portrait.visible,"Return visit retains approved character portraits")
+				check(tour.vn.akira_portrait.texture.resource_path.ends_with("akira_doctor_v1_REVIEW.png"),"After-clinic return uses Akira doctor portrait")
+				await capture("location_return_"+id+"_REVIEW")
 			await finish(tour.vn)
 			check(tour.mode == "place","Interior returns to same place")
 		else:

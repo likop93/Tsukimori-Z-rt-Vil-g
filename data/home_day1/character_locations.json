@@ -1,0 +1,96 @@
+{
+  "status": "REVIEW location integration; character identity remains gated by authored meetings",
+  "places": [
+    {
+      "id": "home",
+      "owner": "miyako",
+      "area": "home",
+      "access": "open",
+      "asset_status": "existing REVIEW"
+    },
+    {
+      "id": "clinic",
+      "owner": "akira",
+      "area": "home",
+      "access": "open",
+      "asset_status": "existing REVIEW"
+    },
+    {
+      "id": "school_room",
+      "owner": "reina",
+      "area": "school",
+      "access": "after school introduction",
+      "asset_status": "existing REVIEW"
+    },
+    {
+      "id": "shop_room",
+      "owner": "aoi",
+      "area": "shop",
+      "access": "after shop introduction",
+      "asset_status": "existing REVIEW"
+    },
+    {
+      "id": "inn_room",
+      "owner": "sora",
+      "area": "inn",
+      "access": "after inn introduction",
+      "asset_status": "REVIEW provisional Sora cutout"
+    },
+    {
+      "id": "workshop_door",
+      "owner": "ritsu",
+      "area": "craft_lane",
+      "access": "after workshop introduction",
+      "asset_status": "exterior REVIEW; Ritsu portrait and workshop interior missing"
+    },
+    {
+      "id": "music_door",
+      "owner": "kuroe",
+      "area": "craft_lane",
+      "access": "door only; interior needs authored invitation",
+      "asset_status": "exterior REVIEW; music room reference not a clean plate"
+    },
+    {
+      "id": "stream_door",
+      "owner": "shion",
+      "area": "stream",
+      "access": "village-side veranda only",
+      "asset_status": "exterior REVIEW; dedicated veranda plate missing"
+    },
+    {
+      "id": "market_door",
+      "owner": "hana",
+      "area": "market",
+      "access": "public meeting place, not her home",
+      "asset_status": "existing REVIEW; private home not inferred"
+    },
+    {
+      "id": "shrine_door",
+      "owner": "oto",
+      "area": "shrine",
+      "access": "foot of stairs only; identity not revealed",
+      "asset_status": "existing REVIEW"
+    },
+    {
+      "id": "greenhouse",
+      "owner": "mashiro",
+      "area": "planned",
+      "access": "invitation and following afternoon",
+      "asset_status": "MISSING approved binaries; not displayed"
+    },
+    {
+      "id": "himiko_location",
+      "owner": "himiko",
+      "area": "planned",
+      "access": "story scene missing",
+      "asset_status": "reference exists locally, production assets missing"
+    },
+    {
+      "id": "renka_location",
+      "owner": "renka",
+      "area": "planned",
+      "access": "story and specific location unresolved",
+      "asset_status": "approved reference only"
+    }
+  ]
+}

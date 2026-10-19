@@ -3,24 +3,187 @@
     "title": "Iskola · tanterem",
     "background": "res://assets/village_day1/places/school_interior_v1_REVIEW.png",
     "lines": [
-      {"speaker":"","text":"A tanterem most üres volt. A padokon könyvek maradtak; a délutáni fény hosszú sávokban feküdt a deszkákra."},
-      {"speaker":"","text":"Akira egy pillanatig körülnézett, majd visszalépett az iskola elé."}
+      {
+        "speaker": "Reina",
+        "text": "Most már tudja, merre talál. A beszélgetést az iskolában majd külön megbeszéljük."
+      },
+      {
+        "speaker": "Akira",
+        "text": "Köszönöm. Egyelőre csak ismerkedem a faluval."
+      },
+      {
+        "speaker": "",
+        "text": "Akira körülnézett, majd visszatért az utcára."
+      }
+    ],
+    "location_id": "school_room",
+    "label": "Reina · tanterem",
+    "status": "REVIEW staging; existing approved character and background",
+    "portrait": true,
+    "portrait_speaker": "Reina",
+    "portrait_path": "res://assets/village_day1/characters/reina_v1_REVIEW.png",
+    "portrait_side": "left",
+    "portrait_facing": "right",
+    "portrait_frame_fraction": 0.65,
+    "portrait_region": [
+      295,
+      12,
+      461,
+      1495
     ]
   },
   "shop": {
     "title": "Vegyesbolt · belső",
     "background": "res://assets/village_day1/places/shop_interior_v1_REVIEW.png",
     "lines": [
-      {"speaker":"","text":"A polcokon tea, befőttek és összehajtott kelmék sorakoztak. A pult mellett gyümölcsökkel teli kosarak álltak."},
-      {"speaker":"","text":"Akira megjegyezte, hol találja Aoit, aztán visszatért az utcára."}
+      {
+        "speaker": "Aoi",
+        "text": "Visszatalált, doktor úr. Ha keres valamit, szóljon."
+      },
+      {
+        "speaker": "Akira",
+        "text": "Köszönöm. Egyelőre csak ismerkedem a faluval."
+      },
+      {
+        "speaker": "",
+        "text": "Akira körülnézett, majd visszatért az utcára."
+      }
+    ],
+    "location_id": "shop_room",
+    "label": "Aoi · bolt",
+    "status": "REVIEW staging; existing approved character and background",
+    "portrait": true,
+    "portrait_path": "res://assets/village_day1/characters/aoi_v1_REVIEW.png",
+    "portrait_speaker": "Aoi",
+    "portrait_side": "left",
+    "portrait_facing": "right",
+    "portrait_frame_fraction": 0.65,
+    "portrait_region": [
+      342,
+      7,
+      413,
+      1501
     ]
   },
   "inn": {
     "title": "Fogadó · közös terem",
     "background": "res://assets/village_day1/places/inn_interior_v1_REVIEW.png",
     "lines": [
-      {"speaker":"","text":"A fogadó közös termében halk volt a délután. A faasztalok és a gondosan elrendezett edények régóta működő házról árulkodtak."},
-      {"speaker":"","text":"Akira végignézett a termen. Sora későbbre szóló meghívását észben tartva visszament a bejárathoz."}
+      {
+        "speaker": "Sora",
+        "text": "Jöjjön csak. A közös teremben leülhet egy kicsit."
+      },
+      {
+        "speaker": "Akira",
+        "text": "Köszönöm. Egyelőre csak ismerkedem a faluval."
+      },
+      {
+        "speaker": "",
+        "text": "Akira körülnézett, majd visszatért az utcára."
+      }
+    ],
+    "location_id": "inn_room",
+    "label": "Sora · közös terem",
+    "status": "REVIEW staging; existing approved character and background",
+    "portrait": true,
+    "portrait_path": "res://assets/village_day1/characters/sora_v1_PLACEHOLDER.png",
+    "portrait_side": "left",
+    "portrait_facing": "left",
+    "portrait_speaker": "Sora",
+    "portrait_frame_fraction": 0.65,
+    "portrait_region": [
+      108,
+      15,
+      792,
+      1509
+    ]
+  },
+  "workshop": {
+    "title": "Ritsu műhelye · bejárat",
+    "label": "Ritsu · műhely",
+    "location_id": "workshop_door",
+    "status": "REVIEW exterior staging; dedicated interior production plate missing",
+    "portrait": false,
+    "background": "res://assets/village_day1/places/craft_lane_v1_REVIEW.png",
+    "lines": [
+      {
+        "speaker": "",
+        "text": "A műhely saját bejárata a keskeny utcára nyílt. Akira innen talál vissza Ritsuhoz; nem zavarta meg újra a munkáját."
+      }
+    ]
+  },
+  "music": {
+    "title": "A zeneszoba ajtaja",
+    "label": "Zeneszoba · ajtó",
+    "location_id": "music_door",
+    "status": "REVIEW exterior staging; dedicated interior production plate missing",
+    "portrait": false,
+    "background": "res://assets/village_day1/places/craft_lane_v1_REVIEW.png",
+    "lines": [
+      {
+        "speaker": "",
+        "text": "Akira megállt annál a háznál, ahonnan korábban a zenét hallotta. Nem lépett be meghívás nélkül."
+      }
+    ]
+  },
+  "stream": {
+    "title": "Veranda · a patak falusi oldala",
+    "label": "Patakparti veranda",
+    "location_id": "stream_door",
+    "status": "REVIEW exterior staging; dedicated interior production plate missing",
+    "portrait": false,
+    "background": "res://assets/village_day1/places/stream_v1_REVIEW.png",
+    "lines": [
+      {
+        "speaker": "",
+        "text": "A veranda a patak falu felőli partján maradt. A közös otthonhoz innen a hídon át vezetett az út."
+      }
+    ]
+  },
+  "market": {
+    "title": "Piactér · árusok",
+    "label": "Piactéri standok",
+    "location_id": "market_door",
+    "status": "REVIEW exterior staging; dedicated interior production plate missing",
+    "portrait": false,
+    "background": "res://assets/village_day1/places/market_v1_REVIEW.png",
+    "lines": [
+      {
+        "speaker": "",
+        "text": "Akira a standok közötti szabad részen állt meg. Innen a főtérre és a bolthoz is visszatalált."
+      }
+    ]
+  },
+  "shrine": {
+    "title": "Szentély · a lépcső alja",
+    "label": "Szentély · lépcső",
+    "location_id": "shrine_door",
+    "status": "REVIEW exterior staging; dedicated interior production plate missing",
+    "portrait": false,
+    "background": "res://assets/village_day1/places/shrine_v1_REVIEW.png",
+    "lines": [
+      {
+        "speaker": "",
+        "text": "Akira a lépcső alján maradt. Attól, hogy megismerte az idevezető utat, még nem kapott meghívást a szentély belsejébe."
+      }
+    ]
+  },
+  "clinic": {
+    "title": "Rendelőszárny · délután",
+    "label": "Rendelőszárny",
+    "location_id": "clinic",
+    "status": "REVIEW existing clinic plate; no new patient event",
+    "portrait": false,
+    "background": "res://assets/home_day1/clinic_REVIEW.png",
+    "lines": [
+      {
+        "speaker": "",
+        "text": "Akira visszanézett a rendelőszárnyba. Az első rendelés már lezárult; a látogatás nem indított új konzultációt."
+      },
+      {
+        "speaker": "",
+        "text": "Katsuro zárt dolgozószobája a ház másik része. A rendelőből nem vezetett oda szabad átjárás."
+      }
     ]
   }
 }
