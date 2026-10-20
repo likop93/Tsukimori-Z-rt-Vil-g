@@ -237,3 +237,8 @@ készültek; Sora a korábbi saját NPC-panelből ideiglenes adaptációt kapott
 Új hátterek és kivágatok: assets/village_day1/places/, assets/village_day1/characters/.
 A forrás-hozzárendelés és a hiányzó végleges anyagok: docs/VILLAGE_HUB_REVIEW.md.
 A hibás feliratú lapok nem írnak felül LOCKED karakterazonosságot.
+
+
+## Beérkezett tulajdonosi ZIP-ek — 2026-10-20
+Mashiro 29 és Ayame 2 eredeti médiafájlja hash-ellenőrzött referenciaként elérhető: [REFERENCE_INTAKE_2026_10_20.md](REFERENCE_INTAKE_2026_10_20.md).
+Ez nem írja felül a LOCKED karakterbibliákat. A 3. napi Ayame-boltkép runtime AtlasTexture stagingje REVIEW; nincs új design vagy FINAL sprite-atlasz.

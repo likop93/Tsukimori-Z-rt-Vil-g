@@ -8,6 +8,7 @@ var met_at_line := -1
 var end_card: Control
 var continue_button: Button
 var continue_armed := false
+var afternoon_walk: Node
 
 func begin() -> void:
 	GameState.set_story_time(1,"night")
@@ -177,6 +178,30 @@ func start_tea(checkpoint := false) -> void:
 	runner.street.backdrop.modulate = Color(0.8,0.72,0.72)
 	play("miyako_tea")
 
+func start_day3_village() -> void:
+	if phase != "seal_complete" or not continue_armed or get_tree().paused:
+		return
+	if GameState.day != 3 or GameState.time_of_day != "afternoon":
+		return
+	if is_instance_valid(end_card):
+		end_card.queue_free()
+	phase = "day3_village"
+	afternoon_walk = preload("res://scripts/opening/village_walk_director.gd").new()
+	add_child(afternoon_walk)
+	afternoon_walk.runner = runner
+	afternoon_walk.chapter = chapter
+	afternoon_walk.completed.connect(finish_day3_village)
+	afternoon_walk.begin()
+
+func finish_day3_village() -> void:
+	if phase != "day3_village":
+		return
+	afternoon_walk = null
+	GameState.set_flag("day3_village_returned_home")
+	phase = "seal_complete"
+	continue_armed = true
+	start_tea()
+
 func start_seal() -> void:
 	if phase != "shion_complete" or not continue_armed or get_tree().paused:
 		return
@@ -259,7 +284,7 @@ func show_end() -> void:
 		if phase == "shion_complete":
 			continue_button.text = "Miyako visszatérése · A pecsét"
 		if phase == "seal_complete":
-			continue_button.text = "Esti tea · Miyako"
+			continue_button.text = "Délután · vissza a faluba"
 		continue_button.position = Vector2(180,225)
 		continue_button.size = Vector2(280,38)
 		continue_button.disabled = true
@@ -272,7 +297,7 @@ func show_end() -> void:
 		elif phase == "shion_complete":
 			continue_button.pressed.connect(start_seal)
 		else:
-			continue_button.pressed.connect(start_tea)
+			continue_button.pressed.connect(start_day3_village)
 		card.add_child(continue_button)
 
 func advance(_delta: float) -> void:

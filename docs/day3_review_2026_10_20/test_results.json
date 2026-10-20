@@ -1,0 +1,38 @@
+{
+  "engine": "Godot 4.7.2 stable Compatibility",
+  "base_commit": "1a02a6a",
+  "tests": [
+    {
+      "suite": "village",
+      "passed": true,
+      "log": "day3_village.log"
+    },
+    {
+      "suite": "seal",
+      "passed": true,
+      "log": "day3_seal.log"
+    },
+    {
+      "suite": "shion_session",
+      "passed": true,
+      "log": "day3_shion_session.log"
+    },
+    {
+      "suite": "village_walk",
+      "passed": true,
+      "log": "day3_village_walk.log"
+    },
+    {
+      "suite": "tea",
+      "passed": true,
+      "log": "day3_tea.log"
+    },
+    {
+      "suite": "chapter_select",
+      "passed": true,
+      "log": "day3_chapter_select.log"
+    }
+  ],
+  "import_initial": "editor safe-save error in sandbox",
+  "import_retry": "PASS; authorized retry without sandbox editor-settings restriction"
+}

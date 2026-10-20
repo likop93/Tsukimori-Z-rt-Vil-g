@@ -30,7 +30,11 @@ func _ready() -> void:
 			check(GameState.aff_shion == affinity,"Repeated callbacks cannot double rewards")
 			var entries := preload("res://scripts/ui/character_journal.gd").entries()
 			var entry: Dictionary = entries.filter(func(e): return e.id == "shion")[0]
-			check(entry.known and entry.events.size() == 2 and not entry.has("crop"),"Journal reveals earned memories with full portrait")
+			check(entry.known and not entry.has("crop"),"Journal reveals full portrait")
+			check("Megtaláltátok az AKIRA — SHION feliratú kazettát." in entry.events and "Közös gyermekkori emléket láttatok a vízben." in entry.events,"Journal retains the two earned memories")
+			check(("Bekapcsolódtál a dallamába." in entry.events) == (melody == "join_melody"),"Journal records the chosen melody branch")
+			check(("Hagytál neki időt a dallamra." in entry.events) == (melody == "wait_melody"),"Journal excludes the unchosen melody branch")
+			check(("A kazetta lejátszása előtt kikérted a beleegyezését." in entry.events) == (tape == "ask_consent"),"Journal does not invent consent")
 			check(load(entry.portrait).get_image().get_pixel(0,0).a < 0.1,"Portrait has alpha")
 			runner.pause_menu.open_menu()
 			runner.pause_menu.show_characters()

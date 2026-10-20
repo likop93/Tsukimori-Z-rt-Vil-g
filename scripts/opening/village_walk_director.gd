@@ -10,11 +10,19 @@ var map_panel: Control
 var action_buttons: Array[Button] = []
 var actions_armed := false
 var travel_fade: ColorRect
+var day3_data: Dictionary = {}
+var active_day3_event: Dictionary = {}
+var day3_backing: ColorRect
+var day3_choice := ""
 
 func begin() -> void:
 	layout = JSON.parse_string(FileAccess.get_file_as_string("res://data/home_day1/village_layout.json")).locations
 	interiors = JSON.parse_string(FileAccess.get_file_as_string("res://data/home_day1/village_interiors.json"))
 	super.begin()
+	if GameState.day == 3 and GameState.time_of_day == "afternoon" and GameState.has_flag("miyako_seal_complete"):
+		day3_data = JSON.parse_string(FileAccess.get_file_as_string("res://data/home_day3/village_events_REVIEW.json"))
+		# Rebuild after loading the optional third-day events.
+		show_place()
 	toggle_map()
 
 func point(value: Array) -> Vector2:
@@ -41,6 +49,9 @@ func clear_cast() -> void:
 		cast.hide()
 		cast.queue_free()
 	cast = null
+	if is_instance_valid(day3_backing):
+		day3_backing.queue_free()
+	day3_backing = null
 
 func set_background(_kind: String) -> void:
 	lock_player()
@@ -138,6 +149,12 @@ func build_actions() -> void:
 			caption.position = Vector2(24,270)
 			caption.add_theme_font_size_override("font_size",14)
 			menu.add_child(caption)
+		if area == "shop" and not day3_data.is_empty():
+			var met := GameState.has_flag("ayame_first_meeting_seen")
+			var ayame := make_button(menu,"ayame","Beszélgetés lezárva" if met else "Megszólítom a teákat rendező nőt",Vector2(324,265),Vector2(292,32),open_day3_event.bind("ayame"))
+			ayame.add_theme_font_size_override("font_size",12)
+			ayame.set_meta("unavailable",met or not visited.has("shop"))
+			ayame.tooltip_text = "Előbb nézz körül Aoi boltjában." if not visited.has("shop") else ""
 	make_button(menu,"map","Térkép · M",Vector2(24,311),Vector2(184,32),toggle_map)
 	make_button(menu,"square","Főtér",Vector2(228,311),Vector2(184,32),navigate.bind("square"))
 	make_button(menu,"home","Vissza a faluba" if area == "home" else "Hazamegyek",Vector2(432,311),Vector2(184,32),toggle_map if area == "home" else navigate.bind("home"))
@@ -185,6 +202,9 @@ func navigate(target: String) -> void:
 	mode = "home" if area == "home" else "place"
 
 func activate_stop(id: String) -> void:
+	if id == "market" and not day3_data.is_empty() and GameState.has_flag("met_hana") and not GameState.has_flag("himiko_arrival_mentioned"):
+		open_day3_event("himiko")
+		return
 	if visited.has(id) and interiors.has(id):
 		open_interior(id)
 	else:
@@ -196,6 +216,8 @@ func open_stop(id: String) -> void:
 	mode = "dialogue"
 	clear_ui()
 	super.open_stop(id)
+	if not day3_data.is_empty() and is_instance_valid(vn):
+		vn.akira_portrait.texture = load("res://assets/opening/vn_portraits/akira_doctor_green_eye_v1_REVIEW.png")
 
 func open_interior(id: String) -> void:
 	if get_tree().paused or not interiors.has(id):
@@ -254,14 +276,63 @@ func finish_tour() -> void:
 	if mode != "home" or get_tree().paused:
 		return
 	mode = "complete"
-	GameState.set_flag("village_tour_returned_home")
-	if visited.size() == STOP_ORDER.size():
-		GameState.set_flag("village_tour_complete")
+	if day3_data.is_empty():
+		GameState.set_flag("village_tour_returned_home")
+		if visited.size() == STOP_ORDER.size():
+			GameState.set_flag("village_tour_complete")
 	clear_ui()
 	clear_cast()
 	lock_player()
 	completed.emit()
 	queue_free()
+
+func open_day3_event(id: String) -> void:
+	if get_tree().paused or mode != "place" or not day3_data.has(id):
+		return
+	var spec: Dictionary = day3_data[id]
+	if area != str(spec.area) or not GameState.event_available(spec.event):
+		return
+	if id == "ayame" and not visited.has("shop"):
+		return
+	mode = "dialogue"
+	clear_ui()
+	set_background("")
+	active_day3_event = spec.event
+	day3_choice = ""
+	if spec.has("background"):
+		# Preserve the source PNG. Only its artwork region is displayed:
+		# the baked demonstration UI is never a second clickable dialogue.
+		var source: Texture2D = load(str(spec.background))
+		var region: Array = spec.background_region
+		var frame := AtlasTexture.new()
+		frame.atlas = source
+		frame.region = Rect2(region[0],region[1],region[2],region[3])
+		runner.street.backdrop.texture = frame
+		runner.street.backdrop.scale = Vector2.ONE * (640.0 / frame.get_width())
+		day3_backing = ColorRect.new()
+		day3_backing.position = Vector2(0,232)
+		day3_backing.size = Vector2(640,128)
+		day3_backing.color = Color("#111019")
+		chapter.presentation.add_child(day3_backing)
+	runner.heading.text = str(spec.title)
+	vn = preload("res://scripts/ui/vn_dialogue.gd").new()
+	add_child(vn)
+	vn.finished.connect(finish_day3_event.bind(id))
+	vn.choice_selected.connect(func(choice: String): day3_choice = choice)
+	vn.begin(spec.dialogue.duplicate(true))
+
+func finish_day3_event(id: String) -> void:
+	if mode != "dialogue" or active_day3_event.is_empty():
+		return
+	if GameState.complete_event(active_day3_event):
+		if not day3_choice.is_empty():
+			GameState.completed_events[str(active_day3_event.id)]["choice"] = day3_choice
+		for flag in day3_data[id].flags:
+			GameState.set_flag(str(flag))
+		if id == "himiko":
+			visited["market"] = true
+	active_day3_event = {}
+	show_menu()
 
 func build_cast() -> void:
 	cast = Node2D.new()

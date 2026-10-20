@@ -38,7 +38,14 @@ func _ready() -> void:
 	day.advance(0.0)
 	day.continue_button.pressed.emit()
 	await get_tree().process_frame
-	check(day.phase == "miyako_tea" and day.vn.index == 0,"Seal continues to tea without losing first line")
+	check(day.phase == "day3_village","Seal continues to the third-day afternoon")
+	var walk: Node = day.afternoon_walk
+	walk.navigate("home")
+	await get_tree().create_timer(0.5).timeout
+	walk.finish_tour()
+	await get_tree().process_frame
+	check(day.phase == "miyako_tea" and day.vn.index == 0,"Returning home continues to tea without losing first line")
+	check(not GameState.has_flag("met_ayame"),"Going straight home does not invent an Ayame meeting")
 	GameState.clear_runtime_state()
 	check(not GameState.has_flag("miyako_seal_complete"),"Reset clears seal progress")
 	print("SEAL: "+JSON.stringify({"passed":failures.is_empty(),"failures":failures}))

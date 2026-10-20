@@ -1,0 +1,78 @@
+{
+  "ayame": {
+    "title": "Aoi boltja · délután",
+    "area": "shop",
+    "event": {
+      "id": "day3_ayame_first_meeting",
+      "min_day": 3,
+      "max_day": 3,
+      "periods": ["afternoon"],
+      "location": "shop",
+      "requires": ["miyako_seal_complete", "met_aoi"]
+    },
+    "flags": ["met_ayame", "ayame_first_meeting_seen"],
+    "background": "res://assets/home_day3/ayame_shop_source_REVIEW.png",
+    "background_region": [0, 0, 1672, 650],
+    "dialogue": {
+      "id": "day3_ayame_first_meeting",
+      "source": "REVIEW adaptation of owner-approved day-3 ordinary introduction; owner-supplied shop reference. Newly written connective dialogue, not a verbatim base-story extract.",
+      "portrait": false,
+      "lines": [
+        {"speaker": "", "text": "A pultnál egy nő kis papírtasakokra írt. Minden csomagot gondosan visszatett a hozzá tartozó kosárba."},
+        {"speaker": "Ayame", "text": "Jó napot. Ayame vagyok. Néha besegítek Aoinak; a teákat és a gyógynövényeket többnyire én rendezem."},
+        {"speaker": "Akira", "text": "Akira. A rendelőből. Még próbálom megjegyezni, kit hol találok."},
+        {"speaker": "Ayame", "text": "Akkor jó helyen kezdte. Aoi általában tudja. Én csak azt, melyik dobozba mit tettem."},
+        {"speaker": "", "text": "Elmosolyodott, de a kezében maradt címkét előbb a helyére simította."},
+        {"speaker": "Ayame", "text": "Most érkezett egy új szállítmány. Megmutassam a teákat, vagy inkább nyugodtan körülnézne?"}
+      ],
+      "choices": [
+        {
+          "id": "ask_work",
+          "label": "Ön is készíti ezeket?",
+          "lines": [
+            {"speaker": "Ayame", "text": "Néhány keveréket igen. A címkékre mindent ráírok, ami bennük van. Szeretem tudni, mit adok tovább."},
+            {"speaker": "Akira", "text": "Ezt jó hallani. Egyszer szívesen megnézném, hogyan dolgozik."},
+            {"speaker": "Ayame", "text": "Majd amikor nem kell mindent egyszerre elpakolnom. Most még ezt a kosarat szeretném befejezni."},
+            {"speaker": "Akira", "text": "Nem tartom fel. Örülök, hogy megismerkedtünk."}
+          ]
+        },
+        {
+          "id": "browse",
+          "label": "Köszönöm, most csak körülnézek.",
+          "lines": [
+            {"speaker": "Ayame", "text": "Persze. Ha kérdése van, itt leszek a pultnál."},
+            {"speaker": "", "text": "Ayame visszatért a címkékhez. Akira egy darabig a polcokat nézte; most nem kellett semmit megfejtenie."}
+          ]
+        }
+      ]
+    }
+  },
+  "himiko": {
+    "title": "Piactér · Hana",
+    "area": "market",
+    "event": {
+      "id": "day3_himiko_arrival_mention",
+      "min_day": 3,
+      "max_day": 3,
+      "periods": ["afternoon"],
+      "location": "market",
+      "requires": ["miyako_seal_complete", "met_hana"]
+    },
+    "flags": ["himiko_arrival_mentioned", "market_discovered"],
+    "dialogue": {
+      "id": "day3_himiko_arrival_mention",
+      "source": "REVIEW connective dialogue: owner requests preparation for Himiko's later arrival; 120-day handoff identifies her as Hana's sister. No fixed arrival date or physical reveal.",
+      "portrait": true,
+      "portrait_speaker": "Hana",
+      "portrait_path": "res://assets/opening/vn_portraits/hana_neutral_v1_REVIEW.png",
+      "akira_portrait_path": "res://assets/opening/vn_portraits/akira_doctor_green_eye_v1_REVIEW.png",
+      "lines": [
+        {"speaker": "", "text": "Hana egy kosárral a karján állt meg Akira mellett."},
+        {"speaker": "Hana", "text": "Doktor úr. A nővérem, Himiko is ide készül. Majd bemutatom magának."},
+        {"speaker": "Akira", "text": "Mikor érkezik?"},
+        {"speaker": "Hana", "text": "Még nem mondott biztosat. Szólok, ha tudom."},
+        {"speaker": "", "text": "Hana megigazította a kosár fülét, és visszafordult az árushoz. Akira megjegyezte a nevet."}
+      ]
+    }
+  }
+}

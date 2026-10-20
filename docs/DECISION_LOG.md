@@ -312,3 +312,8 @@ A tulajdonosi átadás pontos szöveges feloldása: [STORY_DIRECTION_ADDENDUM_20
 Mashiro kizárólagos True Love útja megmarad; kizárólag a külön `moon_two_faces` Akira–Mashiro–Sayuri titkos út kaphat kivételt. A küszöbök/események/napok REVIEW, nincs globális exkluzivitás-feloldás.
 A következő blokk a 3. nap, a meglévő Shion–pecsét–Miyako sorrend megtartásával, Ayame hétköznapi bemutatkozásával és Himiko későbbi érkezésének előkészítésével. Hetedik Éjszaka csak a 3–6. nap összhangjának ellenőrzése után.
 A tényleges kiinduló állapot és regressziós hibák: [WORK_HANDOFF_AUDIT_2026_10_19.md](WORK_HANDOFF_AUDIT_2026_10_19.md). Ez nem a tervezett napok implementációjának jóváhagyása.
+
+
+## 2026-10-20 — Harmadik napi szabad délután — IMPLEMENTED / REVIEW
+Shion és a pecsét után a meglévő kattintásos falutérkép nyílik; a boltnál Ayame hétköznapi bemutatkozása, a piacnál Hana Himikót előkészítő mondatai érhetők el. Hazatérés után az eredeti esti tea folytatódik. Új szöveg és CG-staging REVIEW, nincs véglegesítve a 4–6. nap vagy a Hetedik Éjszaka.
+Tesztek és tényleges fájlok: [DAY3_VILLAGE_REVIEW.md](DAY3_VILLAGE_REVIEW.md). Beérkezett képek: [REFERENCE_INTAKE_2026_10_20.md](REFERENCE_INTAKE_2026_10_20.md).

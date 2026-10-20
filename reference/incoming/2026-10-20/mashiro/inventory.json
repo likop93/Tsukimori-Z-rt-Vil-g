@@ -1,0 +1,357 @@
+{
+  "source_archive": "MASHIRO_OSSZES_KEP (1).zip",
+  "archive_sha256": "7a447e8298395dee13d1c9f632dcff404ea0256ca98306e79696a5cbc08c6dc0",
+  "entries": [
+    {
+      "index": 1,
+      "archive_entry": "kepek/mashiro_the_fragile_angel.png",
+      "file": "01.png",
+      "sha256": "b3e68a2caa97771c17bb5447c8524e788063c3798a2534ba586313f23ffc61d1",
+      "bytes": 2586365,
+      "size": [
+        1448,
+        1086
+      ],
+      "frames": 1
+    },
+    {
+      "index": 2,
+      "archive_entry": "kepek/holdfényes_románc_cukimori_falujában.png",
+      "file": "02.png",
+      "sha256": "e3db99939d9827d3c5ab56945a4091ddfb708ec015bddedb237b71e0739304ff",
+      "bytes": 2590725,
+      "size": [
+        1448,
+        1086
+      ],
+      "frames": 1
+    },
+    {
+      "index": 3,
+      "archive_entry": "kepek/holdfényes_üvegházi_találkozás.png",
+      "file": "03.png",
+      "sha256": "11ec28ec13408799756fc2dbf1bf303924da1a457a77a0c60c87d2ef7437fb2e",
+      "bytes": 2690407,
+      "size": [
+        1672,
+        941
+      ],
+      "frames": 1
+    },
+    {
+      "index": 4,
+      "archive_entry": "kepek/esős_lánykérés_lámpafényben.png",
+      "file": "04.png",
+      "sha256": "9357ae090577332b2496d841eda4d9205cd54cd0c416110d3a41660c6fd10c48",
+      "bytes": 2794753,
+      "size": [
+        1448,
+        1086
+      ],
+      "frames": 1
+    },
+    {
+      "index": 5,
+      "archive_entry": "kepek/aranyfényes_találkozás_virágok_között.png",
+      "file": "05.png",
+      "sha256": "0fb0af16cb21ce10699a5cea223168b73c06c46ff7ce34eb97601f2444b3a025",
+      "bytes": 2445004,
+      "size": [
+        1672,
+        941
+      ],
+      "frames": 1
+    },
+    {
+      "index": 6,
+      "archive_entry": "kepek/aranyfényű_üvegházi_románc.png",
+      "file": "06.png",
+      "sha256": "bf692d36aa22ee870d2afc67667a3ea9f99b14578df6de9d86696214a1425129",
+      "bytes": 2760986,
+      "size": [
+        1448,
+        1086
+      ],
+      "frames": 1
+    },
+    {
+      "index": 7,
+      "archive_entry": "kepek/a_highly_detailed_romantic_anime_style_illustrati.png",
+      "file": "07.png",
+      "sha256": "0e67d43c6453435b4c6c4032304b6debb7d85b6dde1795046993e76eea143384",
+      "bytes": 2217332,
+      "size": [
+        1312,
+        1199
+      ],
+      "frames": 1
+    },
+    {
+      "index": 8,
+      "archive_entry": "kepek/alkonyati_séta_a_virágos_üvegháznál.png",
+      "file": "08.png",
+      "sha256": "acfb71309391a834b9e6b715186ba86f77b72bfd6fd18eee32556deb8fa210e0",
+      "bytes": 2781338,
+      "size": [
+        1672,
+        941
+      ],
+      "frames": 1
+    },
+    {
+      "index": 9,
+      "archive_entry": "kepek/naplementi_romantika_a_japán_fogadóban.png",
+      "file": "09.png",
+      "sha256": "acc09c91d4a46417399d822acac6f7626aaff34bf46b51e31e841090f64d1464",
+      "bytes": 2575383,
+      "size": [
+        1448,
+        1086
+      ],
+      "frames": 1
+    },
+    {
+      "index": 10,
+      "archive_entry": "kepek/holdfényes_üvegházi_vigasz.png",
+      "file": "10.png",
+      "sha256": "67476f3bb15e05c8008784bd009aa29e3c318ffaf75bde1c5a7a3284a4fbfc85",
+      "bytes": 3088386,
+      "size": [
+        1672,
+        941
+      ],
+      "frames": 1
+    },
+    {
+      "index": 11,
+      "archive_entry": "kepek/romantikus_üvegházi_vacsora_a_holdfényben.png",
+      "file": "11.png",
+      "sha256": "7493b3a355e1100a0cd87ff2a798c1ec53660e5946cdc5d89465687d44cbd347",
+      "bytes": 2540179,
+      "size": [
+        1448,
+        1086
+      ],
+      "frames": 1
+    },
+    {
+      "index": 12,
+      "archive_entry": "kepek/alkonyati_romantika_a_hegyi_onszenben.png",
+      "file": "12.png",
+      "sha256": "99794a0bb7063e6ed5ed11252ee5cc540b6086a194d5dc29a2e797bb25c4fd87",
+      "bytes": 2464773,
+      "size": [
+        1448,
+        1086
+      ],
+      "frames": 1
+    },
+    {
+      "index": 13,
+      "archive_entry": "kepek/mashiro_preview.jpg",
+      "file": "13.jpg",
+      "sha256": "38b4d1f0fa2f5d289293160ee091f71735adcbd3ed1676a60438522c624315e7",
+      "bytes": 193696,
+      "size": [
+        637,
+        850
+      ],
+      "frames": 1
+    },
+    {
+      "index": 14,
+      "archive_entry": "kepek/romantikus_alkonyati_onsen_pillanat.png",
+      "file": "14.png",
+      "sha256": "218f157cf0a84d776ea5fa70be771af9f968adfb9af03a7ba729ede64e533928",
+      "bytes": 2671796,
+      "size": [
+        1448,
+        1086
+      ],
+      "frames": 1
+    },
+    {
+      "index": 15,
+      "archive_entry": "kepek/aranyórás_románc_a_patakparton.png",
+      "file": "15.png",
+      "sha256": "dd5c3a1957eca4f3b54625646d469170936c75cc26487233f4b2a3390f9c1dca",
+      "bytes": 2722939,
+      "size": [
+        1448,
+        1086
+      ],
+      "frames": 1
+    },
+    {
+      "index": 16,
+      "archive_entry": "kepek/aranyórás_séta_a_japán_faluban.png",
+      "file": "16.png",
+      "sha256": "274eebf8c22f085b818cc7b42cdef11733544a9ce281b297fa3b1941fada4b9f",
+      "bytes": 2790035,
+      "size": [
+        1448,
+        1086
+      ],
+      "frames": 1
+    },
+    {
+      "index": 17,
+      "archive_entry": "kepek/a_highly_detailed_moody_cinematic_anime_style_il.png",
+      "file": "17.png",
+      "sha256": "abfdaab2cd48dccfe1c4027095356444aa1a9ce85159ccf5de8b4be707aada23",
+      "bytes": 2767785,
+      "size": [
+        1536,
+        1024
+      ],
+      "frames": 1
+    },
+    {
+      "index": 18,
+      "archive_entry": "kepek/mashiro_nappali_és_éjszakai_alakok.png",
+      "file": "18.png",
+      "sha256": "3bb2f19c7e764c822076a8d216df6f6b9543d97fa624336da6e5ba62d9f9636b",
+      "bytes": 3162938,
+      "size": [
+        1086,
+        1448
+      ],
+      "frames": 1
+    },
+    {
+      "index": 19,
+      "archive_entry": "kepek/holdfényes_onszenkert_két_elegáns_nővel.png",
+      "file": "19.png",
+      "sha256": "ef1c0a0f0f198046ae7486b598665e248d9292eeef2df57600ff866e698e9e69",
+      "bytes": 3159518,
+      "size": [
+        1122,
+        1402
+      ],
+      "frames": 1
+    },
+    {
+      "index": 20,
+      "archive_entry": "kepek/éjszakai_csók_a_lampionfényben.png",
+      "file": "20.png",
+      "sha256": "56ddd6734e3962afe9f9614e27a8461774cecd711b7fc25180a3c1b2b758e35c",
+      "bytes": 2621725,
+      "size": [
+        1448,
+        1086
+      ],
+      "frames": 1
+    },
+    {
+      "index": 21,
+      "archive_entry": "kepek/romantikus_üvegházi_találkozás.png",
+      "file": "21.png",
+      "sha256": "fca0cfd27ecfaccc7c7729269924a974334dc9a474e447d45465c3899c6fb2af",
+      "bytes": 2653332,
+      "size": [
+        1672,
+        941
+      ],
+      "frames": 1
+    },
+    {
+      "index": 22,
+      "archive_entry": "kepek/a_detailed_polished_anime_style_character_sheet_i.png",
+      "file": "22.png",
+      "sha256": "14a6508599fe002ad58dee2ae4be2a7270c06d304ebe943a107d836dce261631",
+      "bytes": 2771054,
+      "size": [
+        1214,
+        1295
+      ],
+      "frames": 1
+    },
+    {
+      "index": 23,
+      "archive_entry": "kepek/üvegházi_gondoskodás_fényben.png",
+      "file": "23.png",
+      "sha256": "231863f49a2558162dbcfaba3e7fec934008c6e3dd9089dd83fd458393cf2240",
+      "bytes": 2832880,
+      "size": [
+        1448,
+        1086
+      ],
+      "frames": 1
+    },
+    {
+      "index": 24,
+      "archive_entry": "kepek/aranyfényű_találkozás_virágcsokorral.png",
+      "file": "24.png",
+      "sha256": "ef2e8192ba4791d18dd1791362d03f5caaabb6ce20b09a1340a47a97e99a6b0f",
+      "bytes": 2399190,
+      "size": [
+        1672,
+        941
+      ],
+      "frames": 1
+    },
+    {
+      "index": 25,
+      "archive_entry": "kepek/mashiro_a_holdvirág_üvegház_őrzője.png",
+      "file": "25.png",
+      "sha256": "90f3c9b983df0ec18b59f7273d3c149f504b85bc33b7617ed4b1e35626d8338f",
+      "bytes": 3311256,
+      "size": [
+        1086,
+        1448
+      ],
+      "frames": 1
+    },
+    {
+      "index": 26,
+      "archive_entry": "kepek/üvegházi_virágajándék.png",
+      "file": "26.png",
+      "sha256": "d499827812cf1889f5160953139df63bd4568284f3f174db125ac5f8d9f20ed8",
+      "bytes": 2695638,
+      "size": [
+        1672,
+        941
+      ],
+      "frames": 1
+    },
+    {
+      "index": 27,
+      "archive_entry": "kepek/romantikus_találkozás_az_üvegházban.png",
+      "file": "27.png",
+      "sha256": "6a77effd7e6e647b9f23d81f7d1eeb482208126b8ba0f95abb7aba8f94524d7c",
+      "bytes": 2566780,
+      "size": [
+        1672,
+        941
+      ],
+      "frames": 1
+    },
+    {
+      "index": 28,
+      "archive_entry": "kepek/üvegházi_alkonyat_majdnemcsók.png",
+      "file": "28.png",
+      "sha256": "3b466df549a7c9511d5ae464f4f6585313b7888b85b2a98c41b75934f2c076d5",
+      "bytes": 2804450,
+      "size": [
+        1448,
+        1086
+      ],
+      "frames": 1
+    },
+    {
+      "index": 29,
+      "archive_entry": "kepek/MASHIRO_LOCKED_ANIMATED_CHARACTER_SHEET_V1.gif",
+      "file": "29.gif",
+      "sha256": "fc8b499bcfb7278550cd4a146f3b88b1fc4cde5e7b3a2f85299deca358243b5c",
+      "bytes": 4137316,
+      "size": [
+        640,
+        720
+      ],
+      "frames": 24
+    }
+  ],
+  "source": "Owner-supplied archive in this development chat; reference preservation, not a third-party provider package.",
+  "manifest_hashes_verified": true,
+  "status": "REFERENCE / REVIEW; not production animation or atlas"
+}

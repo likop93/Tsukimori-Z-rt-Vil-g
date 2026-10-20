@@ -27,3 +27,8 @@ A megnevezések **tervezett assetnevek**. Mielőtt a bináris képeket feltöltj
 5. Valódi, futtatható animációk és jelenettriggerek tesztelése.
 
 **Ne állítsuk késznek az animációt, a spritesheetet vagy az integrációt pusztán a képes referencialap alapján.**
+
+
+## 2026-10-20 — Az eredeti referenciák megérkeztek
+A tulajdonosi ZIP 29 médiafájlja a `reference/incoming/2026-10-20/mashiro/` alatt, SHA-256 leltárral rendelkezésre áll. A fenti tervezett production nevekre nem neveztük át automatikusan a több változatot. Pontos mapping-jelöltek és eltérések: [REFERENCE_INTAKE_2026_10_20.md](REFERENCE_INTAKE_2026_10_20.md).
+A korábbi „nincs feltöltve” bejegyzések a tervezett production útvonalakra továbbra is igazak; a forrásképek elérhetőségi blokkolója megszűnt. A GIF nem Godot-animáció.

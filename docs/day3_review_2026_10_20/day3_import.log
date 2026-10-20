@@ -1,0 +1,692 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Safe save failed. This may be a permissions problem, but also may happen because you are running a paranoid antivirus. If this is the case, please switch to Windows Defender or disable the 'safe save' option in editor settings. This makes it work, but increases the risk of file corruption in a crash.
+   at: _close (drivers/windows/file_access_windows.cpp:277)
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started Project initialization (5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Fájlstruktúra vizsgálata...[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | Loading global class names...[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | GDExtension-ök ellenőrzése...[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | Creating autoload scripts...[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | Bővítmény beállítása...[39m[0m
+[  83% ] [90m[1mfirst_scan_filesystem[22m | Starting file scan...[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started Registering global classes... (87 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   1% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   2% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   3% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   4% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   5% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   6% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   7% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   9% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  10% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  11% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  12% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  13% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  14% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  15% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  17% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  18% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  19% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  21% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  22% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  23% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  25% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  26% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  27% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  28% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  29% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  30% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  31% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  32% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  34% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  35% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  36% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  37% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  38% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  39% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  42% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  43% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  44% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  45% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  46% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  47% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  48% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  51% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  52% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  53% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  54% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  55% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  56% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  57% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  59% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  61% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  62% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  63% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  64% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  65% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  67% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  68% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  69% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  70% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  71% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  72% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  73% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  75% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  76% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  77% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  78% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  79% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  80% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  81% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  82% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  84% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  85% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  86% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  87% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  88% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  89% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  90% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  92% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  93% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  94% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  95% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  96% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  97% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started Scanning actions... (181 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | tsukimori_shared_home.glb[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | kominka_00.glb[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | kominka_00_0.png[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | kominka_00_1.png[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | kominka_00_2.png[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | kominka_00_3.png[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | kominka_01.glb[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | kominka_01_0.png[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | kominka_01_1.png[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | kominka_01_2.png[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | kominka_01_3.png[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | kominka_02.glb[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | kominka_02_0.png[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | kominka_02_1.png[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | kominka_02_2.png[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | kominka_02_3.png[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | aged_plaster.png[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | damp_earth.png[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | slate_roof.png[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | weathered_cedar.png[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | wet_stone.png[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | hallway_night_v1_REVIEW.png[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | miyako_turn_v1_REVIEW.png[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | akira_katsuro_photo_v1_REVIEW.png[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | akira_room_REVIEW.png[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | akira_sleep_REVIEW.png[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | clinic_REVIEW.png[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | morning_REVIEW.png[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | hana_couch_v1_REVIEW.png[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | hana_door_v1_REVIEW.png[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | hana_door_v2_REVIEW.png[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | hana_door_v3_REVIEW.png[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | hana_door_v4_REVIEW.png[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | hana_farewell_v1_REVIEW.png[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | hana_farewell_v2_REVIEW.png[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | hana_mark_v1_REVIEW.png[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | hana_notebook_v1_REVIEW.png[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | night_dream_pool_REVIEW.png[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | notebook_awakening_v1_REVIEW.png[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | seal_cassette_REVIEW.png[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | seal_fan_vision_REVIEW.png[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | shion_childhood_REVIEW.png[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | shion_farewell_REVIEW.png[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | shion_pond_night_REVIEW.png[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | shion_recognition_REVIEW.png[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | wet_notebook_v1_REVIEW.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | ayame_shop_source_REVIEW.png[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | akira_recover_REVIEW.png[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | memory_cold_REVIEW.png[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | memory_warm_REVIEW.png[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | side_atlas_REVIEW.png[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | side_source_REVIEW.png[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | resident_01_atlas.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | resident_02_atlas.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | resident_03_atlas.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | resident_04_atlas.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | actors_REVIEW.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | arrival_REVIEW.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | bus_REVIEW.png[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | foreground_REVIEW.png[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | gate_REVIEW.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | street_REVIEW.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | watch_REVIEW.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | hana_atlas_REVIEW.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | hana_source_REVIEW.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | shion_atlas_REVIEW.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | shion_source_REVIEW.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | atlas_REVIEW.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | glance_source_REVIEW.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | walk_source_REVIEW.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | atlas_REVIEW.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | source_REVIEW.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | resident_01_REVIEW.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | resident_02_REVIEW.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | resident_03_REVIEW.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | resident_04_REVIEW.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | AKIRA_FINAL_CHARACTER_DESIGN_V1.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | BRIDGE_PIXEL_V1.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | HANA_FINAL_CHARACTER_DESIGN_V1.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | INN_COURTESAN_NPC_PACK_V1.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | KUROE_MUSIC_ROOM_REFERENCE_V1.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | KUROE_PRIMARY_CHARACTER_REFERENCE_V1.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | KUROE_STORY_KEY_VISUAL_V1.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | MIYAKO_FINAL_DESIGN_A_PRIMARY.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | MIYAKO_HOUSE_EXTERIOR_PIXEL_V1.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | OPENING_SEQUENCE_STORYBOARD_V1.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | SHARED_HOME_CLINIC_INTERIOR_PIXEL_V1.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | SHION_FINAL_CHARACTER_DESIGN_V1.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | TSUKIMORI_PIXEL_ART_VISUAL_TARGET_V1.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | TSUKIMORI_PIXEL_DIALOGUE_UI_V1.png[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | VILLAGE_NPC_ATTRACTIVE_VARIANTS_V2.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | VILLAGE_STREET_PIXEL_V1.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | side_atlas_REVIEW.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | side_source_REVIEW.png[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | bus_REVIEW.png[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | forest_gate_REVIEW.png[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | memory_REVIEW.png[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | arrival_skyline_REVIEW.png[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | arrival_street_REVIEW.png[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | bus_akira_REVIEW.png[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | bus_cabin_REVIEW.png[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | bus_glass_REVIEW.png[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | bus_road_REVIEW.png[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | gate_close_REVIEW.png[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | gate_wide_REVIEW.png[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | watch_left_REVIEW.png[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | watch_right_REVIEW.png[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | akira_atlas.png[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | akira_REVIEW.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | akira_walk_REVIEW.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | foreground.png[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | foreground_close_REVIEW.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | street_REVIEW.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | street_stage.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | street_clean_source_REVIEW.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | akira_doctor_green_eye_v1_REVIEW.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | akira_doctor_v1_REVIEW.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | akira_neutral_v1_REVIEW.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | hana_casual_confident_v1_REVIEW.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | hana_casual_deferential_v1_REVIEW.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | hana_casual_deferential_v2_REVIEW.png[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | hana_demanding_v1_REVIEW.png[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | hana_guarded_v1_REVIEW.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | hana_neutral_v1_REVIEW.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | hana_sad_v1_REVIEW.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | hana_surprised_v1_REVIEW.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | hana_transformed_deferential_v1_REVIEW.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | hana_warm_v1_REVIEW.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | kuroe_casual_v1_REVIEW.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | kuroe_neutral_v1_REVIEW.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | miyako_cutout_v1_REVIEW.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | miyako_evening_transformed_v1_REVIEW.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | miyako_evening_v1_REVIEW.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | miyako_evening_watchful_v1_REVIEW.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | miyako_possessive_v1_REVIEW.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | miyako_surprised_v1_REVIEW.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | miyako_transformed_manic_v1_REVIEW.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | miyako_warm_v1_REVIEW.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | miyako_worried_v1_REVIEW.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | patient_1_neutral_v1_REVIEW.png[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | patient_1_sad_v1_REVIEW.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | patient_1_smile_v1_REVIEW.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | patient_1_surprised_v1_REVIEW.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | patient_1_thoughtful_v1_REVIEW.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | patient_1_warm_smile_v1_REVIEW.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | patient_2_neutral_v1_REVIEW.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | patient_2_sad_v1_REVIEW.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | patient_2_smile_v1_REVIEW.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | patient_2_surprised_v1_REVIEW.png[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | patient_2_thoughtful_v1_REVIEW.png[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | patient_2_warm_smile_v1_REVIEW.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | reina_teacher_v1_REVIEW.webp[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | shion_casual_v1_REVIEW.png[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | shion_neutral_v1_REVIEW.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | shion_sad_v1_REVIEW.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | shion_surprised_v1_REVIEW.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | aoi_v1_REVIEW.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | oto_v1_REVIEW.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | reina_v1_REVIEW.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | sora_v1_PLACEHOLDER.png[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | craft_lane_v1_REVIEW.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | inn_interior_v1_REVIEW.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | inn_v1_REVIEW.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | market_v1_REVIEW.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | school_interior_v1_REVIEW.png[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | school_v1_REVIEW.png[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | shop_interior_v1_REVIEW.png[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | shop_v1_REVIEW.png[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | shrine_v1_REVIEW.png[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | square_v1_REVIEW.png[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | stream_v1_REVIEW.png[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | bridge_afternoon_v1_REVIEW.png[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | street_afternoon_v1_REVIEW.png[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | RENKA_CHARACTER_DESIGN_V1_REFERENCE.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | 01_medical_assistant_labeled_reina.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | 02_four_character_overview.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | 03_reina_teacher_rider_sheet.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | 04_red_white_leader_sheet_labeled_renka.png[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | 05_oto_day_night_character_sheet.png[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | 06_aoi_shopkeeper_character_sheet.png[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started Eszközök (Újra) Betöltése (181 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   0% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   1% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   1% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   2% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   2% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   3% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   3% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   4% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   4% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   5% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   6% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   6% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   7% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   7% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   8% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   8% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   9% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   9% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  10% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  10% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  11% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  12% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  12% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  13% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  13% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  14% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  14% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  15% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  15% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  16% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  17% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  17% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  18% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  18% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  19% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  19% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  20% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  20% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  21% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  21% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  22% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  23% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  23% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  24% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  24% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  25% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  25% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  26% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  26% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  27% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  28% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  28% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  29% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  29% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  30% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  30% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  31% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  31% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  32% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  32% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  33% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  34% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  34% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  35% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  35% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  36% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  36% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  37% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  37% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  38% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  39% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  39% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  40% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  40% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  41% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  41% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  42% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  42% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  43% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  43% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  44% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  45% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  45% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  46% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  46% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  47% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  47% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  48% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  48% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  49% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  50% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  50% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  51% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  51% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  52% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  52% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  53% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  53% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  54% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  54% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  55% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  56% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  56% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  57% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  57% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  58% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  58% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  59% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  59% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  60% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  60% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  61% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  62% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  62% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  63% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  63% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  64% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  64% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  65% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  65% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  66% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  67% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  67% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  68% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  68% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  69% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  69% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  70% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  70% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  71% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  71% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  72% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  73% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  73% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  74% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  74% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  75% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  75% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  76% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  76% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  77% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  78% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  78% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  79% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  79% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  80% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  80% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  81% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  81% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  82% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  82% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  83% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  84% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  84% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  85% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  85% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  86% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  86% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  87% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  87% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  88% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  89% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  89% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  90% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  90% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  91% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  91% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  92% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  92% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  93% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  93% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  94% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  95% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  95% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  96% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  96% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  97% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  97% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  98% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[  98% ] [90m[1mreimport[22m | Fájlok felkészítése újraimportáláshoz...[39m[0m
+[   0% ] [90m[1mreimport[22m | Importálási előműveletek elvégzése...[39m[0m
+[   0% ] [90m[1mpreload_reimporting_scene[22m | Started Jelenetek felkészítése újratöltéshez (1 steps)[39m[0m
+[   0% ] [90m[1mpreload_reimporting_scene[22m | Jelenet elemzése [üres][39m[0m
+[  50% ] [90m[1mpreload_reimporting_scene[22m | Előkészítés befejeződött.[39m[0m
+[92m[ DONE ][39m [1mpreload_reimporting_scene[22m
+[0m
+[   0% ] [90m[1mreimport[22m | street_stage.png[39m[0m
+[   0% ] [90m[1mreimport[22m | street_clean_source_REVIEW.png[39m[0m
+[   1% ] [90m[1mreimport[22m | akira_doctor_green_eye_v1_REVIEW.png[39m[0m
+[   1% ] [90m[1mreimport[22m | akira_doctor_v1_REVIEW.png[39m[0m
+[   2% ] [90m[1mreimport[22m | akira_neutral_v1_REVIEW.png[39m[0m
+[   2% ] [90m[1mreimport[22m | hana_casual_confident_v1_REVIEW.png[39m[0m
+[   3% ] [90m[1mreimport[22m | hana_casual_deferential_v1_REVIEW.png[39m[0m
+[   3% ] [90m[1mreimport[22m | hana_casual_deferential_v2_REVIEW.png[39m[0m
+[   4% ] [90m[1mreimport[22m | hana_demanding_v1_REVIEW.png[39m[0m
+[   4% ] [90m[1mreimport[22m | hana_guarded_v1_REVIEW.png[39m[0m
+[   5% ] [90m[1mreimport[22m | hana_neutral_v1_REVIEW.png[39m[0m
+[   6% ] [90m[1mreimport[22m | hana_sad_v1_REVIEW.png[39m[0m
+[   6% ] [90m[1mreimport[22m | hana_surprised_v1_REVIEW.png[39m[0m
+[   7% ] [90m[1mreimport[22m | hana_transformed_deferential_v1_REVIEW.png[39m[0m
+[   7% ] [90m[1mreimport[22m | hana_warm_v1_REVIEW.png[39m[0m
+[   8% ] [90m[1mreimport[22m | kuroe_casual_v1_REVIEW.png[39m[0m
+[   8% ] [90m[1mreimport[22m | kuroe_neutral_v1_REVIEW.png[39m[0m
+[   9% ] [90m[1mreimport[22m | miyako_cutout_v1_REVIEW.png[39m[0m
+[   9% ] [90m[1mreimport[22m | miyako_evening_transformed_v1_REVIEW.png[39m[0m
+[  10% ] [90m[1mreimport[22m | miyako_evening_v1_REVIEW.png[39m[0m
+[  10% ] [90m[1mreimport[22m | miyako_evening_watchful_v1_REVIEW.png[39m[0m
+[  11% ] [90m[1mreimport[22m | miyako_possessive_v1_REVIEW.png[39m[0m
+[  12% ] [90m[1mreimport[22m | VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png[39m[0m
+[  12% ] [90m[1mreimport[22m | VILLAGE_STREET_PIXEL_V1.png[39m[0m
+[  13% ] [90m[1mreimport[22m | side_atlas_REVIEW.png[39m[0m
+[  13% ] [90m[1mreimport[22m | side_source_REVIEW.png[39m[0m
+[  14% ] [90m[1mreimport[22m | bus_REVIEW.png[39m[0m
+[  14% ] [90m[1mreimport[22m | forest_gate_REVIEW.png[39m[0m
+[  15% ] [90m[1mreimport[22m | memory_REVIEW.png[39m[0m
+[  15% ] [90m[1mreimport[22m | arrival_skyline_REVIEW.png[39m[0m
+[  16% ] [90m[1mreimport[22m | arrival_street_REVIEW.png[39m[0m
+[  17% ] [90m[1mreimport[22m | bus_akira_REVIEW.png[39m[0m
+[  17% ] [90m[1mreimport[22m | bus_cabin_REVIEW.png[39m[0m
+[  18% ] [90m[1mreimport[22m | bus_glass_REVIEW.png[39m[0m
+[  18% ] [90m[1mreimport[22m | bus_road_REVIEW.png[39m[0m
+[  19% ] [90m[1mreimport[22m | gate_close_REVIEW.png[39m[0m
+[  19% ] [90m[1mreimport[22m | gate_wide_REVIEW.png[39m[0m
+[  20% ] [90m[1mreimport[22m | watch_left_REVIEW.png[39m[0m
+[  20% ] [90m[1mreimport[22m | watch_right_REVIEW.png[39m[0m
+[  21% ] [90m[1mreimport[22m | akira_atlas.png[39m[0m
+[  21% ] [90m[1mreimport[22m | akira_REVIEW.png[39m[0m
+[  22% ] [90m[1mreimport[22m | akira_walk_REVIEW.png[39m[0m
+[  23% ] [90m[1mreimport[22m | foreground.png[39m[0m
+[  23% ] [90m[1mreimport[22m | foreground_close_REVIEW.png[39m[0m
+[  24% ] [90m[1mreimport[22m | street_REVIEW.png[39m[0m
+[  24% ] [90m[1mreimport[22m | reina_v1_REVIEW.png[39m[0m
+[  25% ] [90m[1mreimport[22m | sora_v1_PLACEHOLDER.png[39m[0m
+[  25% ] [90m[1mreimport[22m | craft_lane_v1_REVIEW.png[39m[0m
+[  26% ] [90m[1mreimport[22m | inn_interior_v1_REVIEW.png[39m[0m
+[  26% ] [90m[1mreimport[22m | inn_v1_REVIEW.png[39m[0m
+[  27% ] [90m[1mreimport[22m | market_v1_REVIEW.png[39m[0m
+[  28% ] [90m[1mreimport[22m | school_interior_v1_REVIEW.png[39m[0m
+[  28% ] [90m[1mreimport[22m | school_v1_REVIEW.png[39m[0m
+[  29% ] [90m[1mreimport[22m | shop_interior_v1_REVIEW.png[39m[0m
+[  29% ] [90m[1mreimport[22m | shop_v1_REVIEW.png[39m[0m
+[  30% ] [90m[1mreimport[22m | shrine_v1_REVIEW.png[39m[0m
+[  30% ] [90m[1mreimport[22m | square_v1_REVIEW.png[39m[0m
+[  31% ] [90m[1mreimport[22m | stream_v1_REVIEW.png[39m[0m
+[  31% ] [90m[1mreimport[22m | bridge_afternoon_v1_REVIEW.png[39m[0m
+[  32% ] [90m[1mreimport[22m | street_afternoon_v1_REVIEW.png[39m[0m
+[  32% ] [90m[1mreimport[22m | RENKA_CHARACTER_DESIGN_V1_REFERENCE.png[39m[0m
+[  33% ] [90m[1mreimport[22m | 01_medical_assistant_labeled_reina.png[39m[0m
+[  34% ] [90m[1mreimport[22m | 02_four_character_overview.png[39m[0m
+[  34% ] [90m[1mreimport[22m | 03_reina_teacher_rider_sheet.png[39m[0m
+[  35% ] [90m[1mreimport[22m | 04_red_white_leader_sheet_labeled_renka.png[39m[0m
+[  35% ] [90m[1mreimport[22m | 05_oto_day_night_character_sheet.png[39m[0m
+[  36% ] [90m[1mreimport[22m | 06_aoi_shopkeeper_character_sheet.png[39m[0m
+[  36% ] [90m[1mreimport[22m | miyako_surprised_v1_REVIEW.png[39m[0m
+[  37% ] [90m[1mreimport[22m | miyako_transformed_manic_v1_REVIEW.png[39m[0m
+[  37% ] [90m[1mreimport[22m | miyako_warm_v1_REVIEW.png[39m[0m
+[  38% ] [90m[1mreimport[22m | miyako_worried_v1_REVIEW.png[39m[0m
+[  39% ] [90m[1mreimport[22m | patient_1_neutral_v1_REVIEW.png[39m[0m
+[  39% ] [90m[1mreimport[22m | patient_1_sad_v1_REVIEW.png[39m[0m
+[  40% ] [90m[1mreimport[22m | patient_1_smile_v1_REVIEW.png[39m[0m
+[  40% ] [90m[1mreimport[22m | patient_1_surprised_v1_REVIEW.png[39m[0m
+[  41% ] [90m[1mreimport[22m | patient_1_thoughtful_v1_REVIEW.png[39m[0m
+[  41% ] [90m[1mreimport[22m | patient_1_warm_smile_v1_REVIEW.png[39m[0m
+[  42% ] [90m[1mreimport[22m | patient_2_neutral_v1_REVIEW.png[39m[0m
+[  42% ] [90m[1mreimport[22m | patient_2_sad_v1_REVIEW.png[39m[0m
+[  43% ] [90m[1mreimport[22m | patient_2_smile_v1_REVIEW.png[39m[0m
+[  43% ] [90m[1mreimport[22m | patient_2_surprised_v1_REVIEW.png[39m[0m
+[  44% ] [90m[1mreimport[22m | patient_2_thoughtful_v1_REVIEW.png[39m[0m
+[  45% ] [90m[1mreimport[22m | patient_2_warm_smile_v1_REVIEW.png[39m[0m
+[  45% ] [90m[1mreimport[22m | reina_teacher_v1_REVIEW.webp[39m[0m
+[  46% ] [90m[1mreimport[22m | shion_casual_v1_REVIEW.png[39m[0m
+[  46% ] [90m[1mreimport[22m | shion_neutral_v1_REVIEW.png[39m[0m
+[  47% ] [90m[1mreimport[22m | shion_sad_v1_REVIEW.png[39m[0m
+[  47% ] [90m[1mreimport[22m | shion_surprised_v1_REVIEW.png[39m[0m
+[  48% ] [90m[1mreimport[22m | aoi_v1_REVIEW.png[39m[0m
+[  48% ] [90m[1mreimport[22m | oto_v1_REVIEW.png[39m[0m
+[  49% ] [90m[1mreimport[22m | clinic_REVIEW.png[39m[0m
+[  50% ] [90m[1mreimport[22m | morning_REVIEW.png[39m[0m
+[  50% ] [90m[1mreimport[22m | hana_couch_v1_REVIEW.png[39m[0m
+[  51% ] [90m[1mreimport[22m | hana_door_v1_REVIEW.png[39m[0m
+[  51% ] [90m[1mreimport[22m | hana_door_v2_REVIEW.png[39m[0m
+[  52% ] [90m[1mreimport[22m | hana_door_v3_REVIEW.png[39m[0m
+[  52% ] [90m[1mreimport[22m | hana_door_v4_REVIEW.png[39m[0m
+[  53% ] [90m[1mreimport[22m | hana_farewell_v1_REVIEW.png[39m[0m
+[  53% ] [90m[1mreimport[22m | hana_farewell_v2_REVIEW.png[39m[0m
+[  54% ] [90m[1mreimport[22m | hana_mark_v1_REVIEW.png[39m[0m
+[  54% ] [90m[1mreimport[22m | hana_notebook_v1_REVIEW.png[39m[0m
+[  55% ] [90m[1mreimport[22m | night_dream_pool_REVIEW.png[39m[0m
+[  56% ] [90m[1mreimport[22m | notebook_awakening_v1_REVIEW.png[39m[0m
+[  56% ] [90m[1mreimport[22m | seal_cassette_REVIEW.png[39m[0m
+[  57% ] [90m[1mreimport[22m | seal_fan_vision_REVIEW.png[39m[0m
+[  57% ] [90m[1mreimport[22m | shion_childhood_REVIEW.png[39m[0m
+[  58% ] [90m[1mreimport[22m | shion_farewell_REVIEW.png[39m[0m
+[  58% ] [90m[1mreimport[22m | shion_pond_night_REVIEW.png[39m[0m
+[  59% ] [90m[1mreimport[22m | shion_recognition_REVIEW.png[39m[0m
+[  59% ] [90m[1mreimport[22m | wet_notebook_v1_REVIEW.png[39m[0m
+[  60% ] [90m[1mreimport[22m | ayame_shop_source_REVIEW.png[39m[0m
+[  60% ] [90m[1mreimport[22m | kominka_00_0.png[39m[0m
+[  61% ] [90m[1mreimport[22m | kominka_00_1.png[39m[0m
+[  62% ] [90m[1mreimport[22m | kominka_00_2.png[39m[0m
+[  62% ] [90m[1mreimport[22m | kominka_00_3.png[39m[0m
+[  63% ] [90m[1mreimport[22m | kominka_01_0.png[39m[0m
+[  63% ] [90m[1mreimport[22m | kominka_01_1.png[39m[0m
+[  64% ] [90m[1mreimport[22m | kominka_01_2.png[39m[0m
+[  64% ] [90m[1mreimport[22m | kominka_01_3.png[39m[0m
+[  65% ] [90m[1mreimport[22m | kominka_02_0.png[39m[0m
+[  65% ] [90m[1mreimport[22m | kominka_02_1.png[39m[0m
+[  66% ] [90m[1mreimport[22m | kominka_02_2.png[39m[0m
+[  67% ] [90m[1mreimport[22m | kominka_02_3.png[39m[0m
+[  67% ] [90m[1mreimport[22m | aged_plaster.png[39m[0m
+[  68% ] [90m[1mreimport[22m | damp_earth.png[39m[0m
+[  68% ] [90m[1mreimport[22m | slate_roof.png[39m[0m
+[  69% ] [90m[1mreimport[22m | weathered_cedar.png[39m[0m
+[  69% ] [90m[1mreimport[22m | wet_stone.png[39m[0m
+[  70% ] [90m[1mreimport[22m | hallway_night_v1_REVIEW.png[39m[0m
+[  70% ] [90m[1mreimport[22m | miyako_turn_v1_REVIEW.png[39m[0m
+[  71% ] [90m[1mreimport[22m | akira_katsuro_photo_v1_REVIEW.png[39m[0m
+[  71% ] [90m[1mreimport[22m | akira_room_REVIEW.png[39m[0m
+[  72% ] [90m[1mreimport[22m | akira_sleep_REVIEW.png[39m[0m
+[  73% ] [90m[1mreimport[22m | walk_source_REVIEW.png[39m[0m
+[  73% ] [90m[1mreimport[22m | atlas_REVIEW.png[39m[0m
+[  74% ] [90m[1mreimport[22m | source_REVIEW.png[39m[0m
+[  74% ] [90m[1mreimport[22m | resident_01_REVIEW.png[39m[0m
+[  75% ] [90m[1mreimport[22m | resident_02_REVIEW.png[39m[0m
+[  75% ] [90m[1mreimport[22m | resident_03_REVIEW.png[39m[0m
+[  76% ] [90m[1mreimport[22m | resident_04_REVIEW.png[39m[0m
+[  76% ] [90m[1mreimport[22m | AKIRA_FINAL_CHARACTER_DESIGN_V1.png[39m[0m
+[  77% ] [90m[1mreimport[22m | BRIDGE_PIXEL_V1.png[39m[0m
+[  78% ] [90m[1mreimport[22m | HANA_FINAL_CHARACTER_DESIGN_V1.png[39m[0m
+[  78% ] [90m[1mreimport[22m | INN_COURTESAN_NPC_PACK_V1.png[39m[0m
+[  79% ] [90m[1mreimport[22m | KUROE_MUSIC_ROOM_REFERENCE_V1.png[39m[0m
+[  79% ] [90m[1mreimport[22m | KUROE_PRIMARY_CHARACTER_REFERENCE_V1.png[39m[0m
+[  80% ] [90m[1mreimport[22m | KUROE_STORY_KEY_VISUAL_V1.png[39m[0m
+[  80% ] [90m[1mreimport[22m | MIYAKO_FINAL_DESIGN_A_PRIMARY.png[39m[0m
+[  81% ] [90m[1mreimport[22m | MIYAKO_HOUSE_EXTERIOR_PIXEL_V1.png[39m[0m
+[  81% ] [90m[1mreimport[22m | OPENING_SEQUENCE_STORYBOARD_V1.png[39m[0m
+[  82% ] [90m[1mreimport[22m | SHARED_HOME_CLINIC_INTERIOR_PIXEL_V1.png[39m[0m
+[  82% ] [90m[1mreimport[22m | SHION_FINAL_CHARACTER_DESIGN_V1.png[39m[0m
+[  83% ] [90m[1mreimport[22m | TSUKIMORI_PIXEL_ART_VISUAL_TARGET_V1.png[39m[0m
+[  84% ] [90m[1mreimport[22m | TSUKIMORI_PIXEL_DIALOGUE_UI_V1.png[39m[0m
+[  84% ] [90m[1mreimport[22m | VILLAGE_NPC_ATTRACTIVE_VARIANTS_V2.png[39m[0m
+[  85% ] [90m[1mreimport[22m | akira_recover_REVIEW.png[39m[0m
+[  85% ] [90m[1mreimport[22m | memory_cold_REVIEW.png[39m[0m
+[  86% ] [90m[1mreimport[22m | memory_warm_REVIEW.png[39m[0m
+[  86% ] [90m[1mreimport[22m | side_atlas_REVIEW.png[39m[0m
+[  87% ] [90m[1mreimport[22m | side_source_REVIEW.png[39m[0m
+[  87% ] [90m[1mreimport[22m | resident_01_atlas.png[39m[0m
+[  88% ] [90m[1mreimport[22m | resident_02_atlas.png[39m[0m
+[  89% ] [90m[1mreimport[22m | resident_03_atlas.png[39m[0m
+[  89% ] [90m[1mreimport[22m | resident_04_atlas.png[39m[0m
+[  90% ] [90m[1mreimport[22m | actors_REVIEW.png[39m[0m
+[  90% ] [90m[1mreimport[22m | arrival_REVIEW.png[39m[0m
+[  91% ] [90m[1mreimport[22m | bus_REVIEW.png[39m[0m
+[  91% ] [90m[1mreimport[22m | foreground_REVIEW.png[39m[0m
+[  92% ] [90m[1mreimport[22m | gate_REVIEW.png[39m[0m
+[  92% ] [90m[1mreimport[22m | street_REVIEW.png[39m[0m
+[  93% ] [90m[1mreimport[22m | watch_REVIEW.png[39m[0m
+[  93% ] [90m[1mreimport[22m | hana_atlas_REVIEW.png[39m[0m
+[  94% ] [90m[1mreimport[22m | hana_source_REVIEW.png[39m[0m
+[  95% ] [90m[1mreimport[22m | shion_atlas_REVIEW.png[39m[0m
+[  95% ] [90m[1mreimport[22m | shion_source_REVIEW.png[39m[0m
+[  96% ] [90m[1mreimport[22m | atlas_REVIEW.png[39m[0m
+[  96% ] [90m[1mreimport[22m | glance_source_REVIEW.png[39m[0m
+[  97% ] [90m[1mreimport[22m | kominka_02.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started Scene importálás (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | Jelenet importálása...[39m[0m
+[   1% ] [90m[1mimport[22m | Tetszőleges Szkript Futtatása...[39m[0m
+[  99% ] [90m[1mimport[22m | Mentés...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  97% ] [90m[1mreimport[22m | kominka_01.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started Scene importálás (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | Jelenet importálása...[39m[0m
+[   1% ] [90m[1mimport[22m | Tetszőleges Szkript Futtatása...[39m[0m
+[  99% ] [90m[1mimport[22m | Mentés...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  98% ] [90m[1mreimport[22m | kominka_00.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started Scene importálás (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | Jelenet importálása...[39m[0m
+[   1% ] [90m[1mimport[22m | Tetszőleges Szkript Futtatása...[39m[0m
+[  99% ] [90m[1mimport[22m | Mentés...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  98% ] [90m[1mreimport[22m | tsukimori_shared_home.glb[39m[0m
+[   0% ] [90m[1mimport[22m | Started Scene importálás (104 steps)[39m[0m
+[   0% ] [90m[1mimport[22m | Jelenet importálása...[39m[0m
+[   1% ] [90m[1mimport[22m | Tetszőleges Szkript Futtatása...[39m[0m
+[  99% ] [90m[1mimport[22m | Mentés...[39m[0m
+[92m[ DONE ][39m [1mimport[22m
+[0m
+[  99% ] [90m[1mreimport[22m | Eszköz Importálás Véglegesítése...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started Eszközök (Újra) Betöltése (181 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | Újraimportálási Utóműveletek Elvégzése...[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started Szerkesztő betöltése (5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Loading editor layout...[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | Loading docks...[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
