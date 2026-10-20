@@ -305,3 +305,10 @@ megmarad. A változás nem új LOCKED vizuális jóváhagyás.
 ## 2026-10-14 — Falubejárás navigációs korrekció — OWNER REQUEST / REVIEW
 
 A tulajdonos a nehezen követhető járható területek és Akira mozgása miatt térképes, kattintásos helyválasztást kért. A rendelés utáni falubejárás erre váltott; a képek és karakteridentitások változatlanok. Otthon bármikor elérhető, az esti folytatás külön választás. A kihagyott találkozások nem lesznek teljesítettnek jelölve. Részletek: docs/VILLAGE_DESTINATION_NAVIGATION_REVIEW.md. Nem új vizuális LOCK.
+
+
+## 2026-10-19/20 — Új történeti irányok és következő fejlesztési egység — OWNER APPROVED
+A tulajdonosi átadás pontos szöveges feloldása: [STORY_DIRECTION_ADDENDUM_2026_10_19.md](STORY_DIRECTION_ADDENDUM_2026_10_19.md).
+Mashiro kizárólagos True Love útja megmarad; kizárólag a külön `moon_two_faces` Akira–Mashiro–Sayuri titkos út kaphat kivételt. A küszöbök/események/napok REVIEW, nincs globális exkluzivitás-feloldás.
+A következő blokk a 3. nap, a meglévő Shion–pecsét–Miyako sorrend megtartásával, Ayame hétköznapi bemutatkozásával és Himiko későbbi érkezésének előkészítésével. Hetedik Éjszaka csak a 3–6. nap összhangjának ellenőrzése után.
+A tényleges kiinduló állapot és regressziós hibák: [WORK_HANDOFF_AUDIT_2026_10_19.md](WORK_HANDOFF_AUDIT_2026_10_19.md). Ez nem a tervezett napok implementációjának jóváhagyása.

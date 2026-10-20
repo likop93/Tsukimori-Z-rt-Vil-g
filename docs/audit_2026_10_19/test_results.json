@@ -1,0 +1,168 @@
+[
+  {
+    "scene": "tests/state/calendar_regression.tscn",
+    "exit_code": 0,
+    "passed": true,
+    "result_lines": [
+      "CALENDAR: {\"failures\":[],\"passed\":true}\r"
+    ],
+    "log": "review/audit_state_calendar_regression.log"
+  },
+  {
+    "scene": "tests/opening/regression.tscn",
+    "exit_code": 0,
+    "passed": true,
+    "result_lines": [
+      "GATE_FLOW_REGRESSION: {\"failures\":[],\"intro_seconds\":66.0,\"passed\":true,\"suite\":\"gate_flow\"}\r"
+    ],
+    "log": "review/audit_opening_regression.log"
+  },
+  {
+    "scene": "tests/ui/main_menu_regression.tscn",
+    "exit_code": 0,
+    "passed": true,
+    "result_lines": [
+      "MAIN_MENU: {\"failures\":[],\"passed\":true,\"suite\":\"main_menu\"}\r",
+      "WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details).\r"
+    ],
+    "log": "review/audit_ui_main_menu_regression.log"
+  },
+  {
+    "scene": "tests/ui/chapter_select_regression.tscn",
+    "exit_code": 0,
+    "passed": true,
+    "result_lines": [
+      "CHAPTER_SELECT: {\"failures\":[],\"passed\":true}\r"
+    ],
+    "log": "review/audit_ui_chapter_select_regression.log"
+  },
+  {
+    "scene": "tests/ui/vn_dialogue_regression.tscn",
+    "exit_code": 1,
+    "passed": false,
+    "result_lines": [
+      "ERROR: E starts VN at Miyako\r",
+      "WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details).\r"
+    ],
+    "log": "review/audit_ui_vn_dialogue_regression.log"
+  },
+  {
+    "scene": "tests/ui/interior_regression.tscn",
+    "exit_code": 0,
+    "passed": false,
+    "result_lines": [
+      "ERROR: Entry locks movement\r",
+      "ERROR: Explicit E enters interior\r",
+      "ERROR: Rain remains outdoors\r",
+      "SCRIPT ERROR: Invalid access to property or key 'choice_box' on a base object of type 'Nil'.\r",
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).\r"
+    ],
+    "log": "review/audit_ui_interior_regression.log"
+  },
+  {
+    "scene": "tests/ui/night_day_regression.tscn",
+    "exit_code": 0,
+    "passed": true,
+    "result_lines": [
+      "NIGHT_DAY: {\"failures\":[],\"passed\":true}\r"
+    ],
+    "log": "review/audit_ui_night_day_regression.log"
+  },
+  {
+    "scene": "tests/ui/village_walk_regression.tscn",
+    "exit_code": 0,
+    "passed": true,
+    "result_lines": [
+      "VILLAGE_NAVIGATION: {\"failures\":[],\"passed\":true}\r",
+      "WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details).\r"
+    ],
+    "log": "review/audit_ui_village_walk_regression.log"
+  },
+  {
+    "scene": "tests/ui/hana_day_regression.tscn",
+    "exit_code": 0,
+    "passed": true,
+    "result_lines": [
+      "HANA_DAY: {\"failures\":[],\"passed\":true}\r",
+      "WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).\r"
+    ],
+    "log": "review/audit_ui_hana_day_regression.log"
+  },
+  {
+    "scene": "tests/ui/afternoon_regression.tscn",
+    "exit_code": 0,
+    "passed": true,
+    "result_lines": [
+      "AFTERNOON: {\"failures\":[],\"passed\":true}\r",
+      "WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details).\r"
+    ],
+    "log": "review/audit_ui_afternoon_regression.log"
+  },
+  {
+    "scene": "tests/ui/night_visitor_regression.tscn",
+    "exit_code": 0,
+    "passed": true,
+    "result_lines": [
+      "NIGHT_VISITOR: {\"failures\":[],\"passed\":true}\r"
+    ],
+    "log": "review/audit_ui_night_visitor_regression.log"
+  },
+  {
+    "scene": "tests/ui/shion_session_regression.tscn",
+    "exit_code": 1,
+    "passed": false,
+    "result_lines": [
+      "ERROR: Journal reveals earned memories with full portrait\r",
+      "ERROR: Journal reveals earned memories with full portrait\r",
+      "ERROR: Journal reveals earned memories with full portrait\r",
+      "ERROR: Journal reveals earned memories with full portrait\r",
+      "SHION_SESSION: {\"failures\":[\"Journal reveals earned memories with full portrait\",\"Journal reveals earned memories with full portrait\",\"Journal reveals earned memories with full portrait\",\"Journal reveals earned memories with full portrait\"],\"passed\":false}\r"
+    ],
+    "log": "review/audit_ui_shion_session_regression.log"
+  },
+  {
+    "scene": "tests/ui/seal_regression.tscn",
+    "exit_code": 0,
+    "passed": true,
+    "result_lines": [
+      "SEAL: {\"failures\":[],\"passed\":true}\r"
+    ],
+    "log": "review/audit_ui_seal_regression.log"
+  },
+  {
+    "scene": "tests/ui/tea_regression.tscn",
+    "exit_code": 0,
+    "passed": true,
+    "result_lines": [
+      "TEA: {\"combinations\":9,\"failures\":[],\"passed\":true}\r"
+    ],
+    "log": "review/audit_ui_tea_regression.log"
+  },
+  {
+    "scene": "tests/ui/character_journal_regression.tscn",
+    "exit_code": 0,
+    "passed": true,
+    "result_lines": [
+      "CHARACTER_JOURNAL: {\"failures\":[],\"passed\":true}\r"
+    ],
+    "log": "review/audit_ui_character_journal_regression.log"
+  },
+  {
+    "scene": "tests/ui/character_pressure_regression.tscn",
+    "exit_code": 0,
+    "passed": true,
+    "result_lines": [
+      "CHARACTER_PRESSURE: {\"failures\":[],\"passed\":true}\r"
+    ],
+    "log": "review/audit_ui_character_pressure_regression.log"
+  },
+  {
+    "scene": "tests/ui/miyako_hallway_regression.tscn",
+    "exit_code": 0,
+    "passed": true,
+    "result_lines": [
+      "MIYAKO_HALLWAY: {\"failures\":[],\"passed\":true}\r"
+    ],
+    "log": "review/audit_ui_miyako_hallway_regression.log"
+  }
+]

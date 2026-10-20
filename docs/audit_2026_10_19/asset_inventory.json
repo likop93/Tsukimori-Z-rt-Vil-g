@@ -1,0 +1,1495 @@
+{
+  "source_commit": "ccf6fbc2677cc5348a06db02c471a7a4bc40357a",
+  "media_count": 159,
+  "literal_reference_count": 151,
+  "missing_literal_references": [
+    {
+      "resource": "res://data/home_day1/patient_%d.json",
+      "used_by": [
+        "scripts/opening/first_night_director.gd"
+      ]
+    },
+    {
+      "resource": "res://review/motion_frames",
+      "used_by": [
+        "scripts/opening/motion_review.gd"
+      ]
+    },
+    {
+      "resource": "res://review/motion_frames/%03d.png",
+      "used_by": [
+        "scripts/opening/motion_review.gd"
+      ]
+    },
+    {
+      "resource": "res://assets/opening/generated/npc_v2/resident_0",
+      "used_by": [
+        "scripts/opening/opening_stage.gd"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/home_day1/akira_katsuro_photo_v1_REVIEW.png",
+      "bytes": 2716503,
+      "sha256": "454ac684e0b44a6f5ffa2511f790b7994dff40c7c76d61eb589f6c65e225756a",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day1/akira_room_REVIEW.png",
+      "bytes": 2307451,
+      "sha256": "cf0c8f25645e0eb38f529fb96a82e5e02e99bad6a250f561c9233ea64246e4d9",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day1/akira_sleep_REVIEW.png",
+      "bytes": 2194447,
+      "sha256": "09c63d06b0ac248725837d81ccd5b8e21cf02ce2d39954071d5aecd0d0dbb16e",
+      "width": 1672,
+      "height": 940,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day1/clinic_REVIEW.png",
+      "bytes": 2192781,
+      "sha256": "35474ad1ae6821c46915306414400edfb4417e13c1e128af313323604b2521ed",
+      "width": 1671,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day1/hallway/hallway_night_v1_REVIEW.png",
+      "bytes": 2018448,
+      "sha256": "9123092d565d3abf31d08a6d1881c40aefb6ef924e5f69f929039740318eac7c",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day1/hallway/miyako_turn_v1_REVIEW.png",
+      "bytes": 1617201,
+      "sha256": "0a4c52c3dd17ba54053d353e6b94364123a8f77bf07eb2498085f8ba1b3daa7a",
+      "width": 1983,
+      "height": 793,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/home_day1/morning_REVIEW.png",
+      "bytes": 2396691,
+      "sha256": "6cd8606c9dc621a76ff7b3931c8235696a1253ddf101c680bad559e36534dc7a",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/hana_couch_v1_REVIEW.png",
+      "bytes": 2689531,
+      "sha256": "86def645f4ef02c73a8188f95b200d7ba94e5073d70d691ed9148872bb2ed748",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/hana_door_v1_REVIEW.png",
+      "bytes": 2264630,
+      "sha256": "58e366a57bad64b67c8b03c15aab1999403e1fc1c51c9336e154e61c8819d94b",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/hana_door_v2_REVIEW.png",
+      "bytes": 2043639,
+      "sha256": "adb9b617d830a888402f85c9e0b68e813f8b6d699ca48e4a5262fe6b0f5224b1",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/hana_door_v3_REVIEW.png",
+      "bytes": 2004573,
+      "sha256": "9085f01bd7874f1b257e1db620b5b82fe09a2185f90604b9ca90581b6c11b7da",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/hana_door_v4_REVIEW.png",
+      "bytes": 2062444,
+      "sha256": "c82ed4ca559b23b7421739dc6944617f73501ffe103a8d58116cf3b6d4b48800",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/hana_farewell_v1_REVIEW.png",
+      "bytes": 2848149,
+      "sha256": "d055a856457fa1b572558fafa40b97f771413e30558d079d59944d45bd20ae11",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/hana_farewell_v2_REVIEW.png",
+      "bytes": 2743900,
+      "sha256": "b0137db97ad946691b791c40941ce3aed810fa5bbd87bf4df513007246538b5d",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/hana_mark_v1_REVIEW.png",
+      "bytes": 2493122,
+      "sha256": "2dc5f4ef0091891d333ee7a40ec8caefbc0da8ea51ab737b8c04e05a17b18aac",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/hana_notebook_v1_REVIEW.png",
+      "bytes": 2360428,
+      "sha256": "b35a3dcad23536ca2de65b2227ce084962ffb250437d96f1f2345b9e13d81992",
+      "width": 1671,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/night_dream_pool_REVIEW.png",
+      "bytes": 1808239,
+      "sha256": "b0b19c6e9844b3f12be639afc1fca38ae8ace1aeec498cfb7dc90323a29f75b4",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/notebook_awakening_v1_REVIEW.png",
+      "bytes": 2196361,
+      "sha256": "f28e876df5794404b7490b041053ee5f3eaa8cd8bafde9da70bd301cc2c2bbf0",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/seal_cassette_REVIEW.png",
+      "bytes": 2247478,
+      "sha256": "07702b7f69937f41436850c32e6a4b323014df8786d7cab95f3141b7ff312372",
+      "width": 1671,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/seal_fan_vision_REVIEW.png",
+      "bytes": 2257243,
+      "sha256": "73387cf4919c1d4b4f2d2ce9aded3807a85b12118cfb5d7c7b85cc53591586a0",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/shion_childhood_REVIEW.png",
+      "bytes": 2372536,
+      "sha256": "1a5b0234bfd19594e6c015451e68a866948eb483103e29eb9428033907b7405c",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/shion_farewell_REVIEW.png",
+      "bytes": 2213443,
+      "sha256": "4dc45fd9864de220f8c4fc8a2b401c0d0e97e6e5f98f6c8db42d2e99d6d7d8a5",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/shion_pond_night_REVIEW.png",
+      "bytes": 2264058,
+      "sha256": "4d332bd9f21a58c22c1ea04c74e39772978e971d1f265aa64fb65500b2e649a5",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/shion_recognition_REVIEW.png",
+      "bytes": 2231223,
+      "sha256": "922f2f287005437af1273e70a40221994fba1dbef2324b231b1f099bae641ec2",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/home_day2/wet_notebook_v1_REVIEW.png",
+      "bytes": 2115334,
+      "sha256": "be9e41e0b1fe51b5348932335f3ecdfb3f2e8035c80315545e1bee16db7c9d67",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/cinematic_v2/akira_recover_REVIEW.png",
+      "bytes": 1957631,
+      "sha256": "bfb5d889ba65d23d796f6f40739478068f8535d22ca9e588dbc32a55b7445e65",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/cinematic_v2/memory_cold_REVIEW.png",
+      "bytes": 1803431,
+      "sha256": "1c411e5f74caba7cfe77dcf0413211dd279ed69b5469e3c5647be064cdda4745",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/cinematic_v2/memory_warm_REVIEW.png",
+      "bytes": 2128407,
+      "sha256": "0858d76d9b9c54fd2d44a2f2f3c86f3a7f54a955084001dd026256d25a53d8b5",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/gait_v5/side_atlas_REVIEW.png",
+      "bytes": 26741,
+      "sha256": "ee203128dd91a4ef6d0868284e8601046e3a15e788b25a6203995ad2147e10d5",
+      "width": 256,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/gait_v5/side_source_REVIEW.png",
+      "bytes": 1867709,
+      "sha256": "25d0d8c2b18ec9aaf75ed907446bb5f517f8eb4abba0449af0fc62393ab5b667",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/generated/actors_REVIEW.png",
+      "bytes": 52429,
+      "sha256": "89dec01d3986e03b261400c87f9c559ca184a0aa64cdf2fc1c53787a53656d72",
+      "width": 192,
+      "height": 400,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/generated/arrival_REVIEW.png",
+      "bytes": 266262,
+      "sha256": "8e6ab1538ca51d2b806c0e7c9333ad9be1fe29aaa4a689e4e2690fbcc4e2e07b",
+      "width": 526,
+      "height": 270,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/generated/bus_REVIEW.png",
+      "bytes": 146595,
+      "sha256": "cb62dc989bddbaae771ed96bd576eed73f7dbe9e38e9fb6bbca946c80b9526cc",
+      "width": 402,
+      "height": 230,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/generated/foreground_REVIEW.png",
+      "bytes": 103182,
+      "sha256": "2617b179810c89853fae8cf9ec2407d52e27a3c6f44149db29f2c47794bde8fb",
+      "width": 800,
+      "height": 450,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/generated/gate_REVIEW.png",
+      "bytes": 114255,
+      "sha256": "a82eb550eebf8351e3aeea3e0c74d7df41abf1f88c6373fe59f6db820a27ce91",
+      "width": 330,
+      "height": 168,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/generated/npc_v2/resident_01_atlas.png",
+      "bytes": 26358,
+      "sha256": "258a86d3119025484cc0874b8b46fe1e99fc9e378121547ed851c3b9c1cbc0dd",
+      "width": 256,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/generated/npc_v2/resident_02_atlas.png",
+      "bytes": 33557,
+      "sha256": "3b5a683cc42919172fcc4568832822378d5a94a8dd92fe1dbf607e73c0f547e1",
+      "width": 256,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/generated/npc_v2/resident_03_atlas.png",
+      "bytes": 27318,
+      "sha256": "63e8185d34fc3363949d3c24b3ff16adc1adeb7a0395aef2d8b4aad52696af90",
+      "width": 256,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/generated/npc_v2/resident_04_atlas.png",
+      "bytes": 30573,
+      "sha256": "4c528e1fcae8e1b44fb73c2c813b2b0cc8ef5f36b9ad1a8fa48ec1076ae50096",
+      "width": 256,
+      "height": 192,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/generated/street_REVIEW.png",
+      "bytes": 729631,
+      "sha256": "63ede58a28298651c406761d1018a50f878145376498f8c91fb89fd5883d1fc5",
+      "width": 800,
+      "height": 450,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/generated/watch_REVIEW.png",
+      "bytes": 129031,
+      "sha256": "dd13c9ff0938474c60dfc5de3a48e7fe7bfc1ace604f5c2fde721964a9a9fa54",
+      "width": 491,
+      "height": 166,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/hana_shion_cameos/hana_atlas_REVIEW.png",
+      "bytes": 19360,
+      "sha256": "a17076e9782432e39424c4b369c51be8fbf5f879f8235cb3dc4bb730bc9cae07",
+      "width": 192,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/hana_shion_cameos/hana_source_REVIEW.png",
+      "bytes": 2262555,
+      "sha256": "ac4a1c54cd580cc58f44f335c7f50f075ced181371b672d1a4f1498a7e1d5c72",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/hana_shion_cameos/shion_atlas_REVIEW.png",
+      "bytes": 14981,
+      "sha256": "3abc1b3a418d5fde00aadb022d85c775de7a79a8fb8321c7099da2aa9a9fe081",
+      "width": 192,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/hana_shion_cameos/shion_source_REVIEW.png",
+      "bytes": 1927879,
+      "sha256": "b88a1c6c4475b59037f8fface0a8db809bc50e45acc4848034550de35120b74a",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/kuroe_cameo/atlas_REVIEW.png",
+      "bytes": 74541,
+      "sha256": "5393cd1a9362bee8097d190fa58e409a1bbea0c386142faae98ac48346d7c333",
+      "width": 384,
+      "height": 256,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/kuroe_cameo/glance_source_REVIEW.png",
+      "bytes": 1396686,
+      "sha256": "2e4570e0a9817d53802b258c7827dd3998ccac272cb8fd83fbdfdf42a23ecd3c",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/kuroe_cameo/walk_source_REVIEW.png",
+      "bytes": 1425649,
+      "sha256": "9199404df0c47104e897e70be89fc66a134aac92b01da5f28ea30c40be158d0d",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/miyako_review/atlas_REVIEW.png",
+      "bytes": 35260,
+      "sha256": "ed77b9a49b1312fc35db56cd6a2c24c6fa5e0a3c94ef920209e6e23d94b493fa",
+      "width": 384,
+      "height": 128,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/miyako_review/source_REVIEW.png",
+      "bytes": 1354180,
+      "sha256": "f835c95d8a0d23ba1ca1fadae11d99aa905c4421a84ea6772125aa9c12cb9f75",
+      "width": 1774,
+      "height": 887,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/npc_review_v2/resident_01_REVIEW.png",
+      "bytes": 1952095,
+      "sha256": "f61ce3f9d7477d6dbbf695ce57315083fdc9e876583d5eeb44815e3fd9c8dd39",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/npc_review_v2/resident_02_REVIEW.png",
+      "bytes": 2264954,
+      "sha256": "34f4f153c88497bdf3fa4838055abf6cb8f124dc7eb5e52faf1da21f56669b35",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/npc_review_v2/resident_03_REVIEW.png",
+      "bytes": 2097152,
+      "sha256": "3551811acd797ae9f856460ce0bc79c3fb0462b512cf5f79aff406261a0d9775",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/npc_review_v2/resident_04_REVIEW.png",
+      "bytes": 2130864,
+      "sha256": "3c04e4ed50ec18c209fcc19609a28018e358d891c513c992f7a17d2ce4009978",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/reference/AKIRA_FINAL_CHARACTER_DESIGN_V1.png",
+      "bytes": 2346046,
+      "sha256": "20b842f6fd63816361b6f747ebb4cc232f5801ff1e70a97e16e27ec912661acd",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/reference/BRIDGE_PIXEL_V1.png",
+      "bytes": 2580306,
+      "sha256": "bb95030d7180f3c781cd3f4439cbaad0add9504ff4be61dcc4fa81a58b8991e3",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/reference/HANA_FINAL_CHARACTER_DESIGN_V1.png",
+      "bytes": 2841057,
+      "sha256": "c63ac780162addddf4e9cfef470038483f200f8b3ba88ac62de18e1a16d3ff9c",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/reference/INN_COURTESAN_NPC_PACK_V1.png",
+      "bytes": 2696795,
+      "sha256": "1158f13f4bdeb5d81f00680026174b64e52a5916d68201b65eacb26a9ea63c9a",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/reference/KUROE_MUSIC_ROOM_REFERENCE_V1.png",
+      "bytes": 1947778,
+      "sha256": "3749e75ef95a9d22f84013cb7f1ef2d664214e568ebc70918cb50939a0ef7476",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/reference/KUROE_PRIMARY_CHARACTER_REFERENCE_V1.png",
+      "bytes": 2138064,
+      "sha256": "19c63790c559aa54b9c1bd9ca057858295bef6183142f631cdc80e3f2f097073",
+      "width": 1122,
+      "height": 1402,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/reference/KUROE_STORY_KEY_VISUAL_V1.png",
+      "bytes": 2013070,
+      "sha256": "36d1df018ceccac4b57bc5915e64c1c8a82b02ce458b1c6e8beb8936d3abe0ea",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/reference/MIYAKO_FINAL_DESIGN_A_PRIMARY.png",
+      "bytes": 2453202,
+      "sha256": "18e84a9b2896e97772be590b231e0b27e6b960ace53f95d55329cbaa5e8f03c2",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/reference/MIYAKO_HOUSE_EXTERIOR_PIXEL_V1.png",
+      "bytes": 2456346,
+      "sha256": "e731fd70a8b8d80a26bdbd4ffe18dca86f87df09a631817a5739d8e16df9b18b",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/reference/OPENING_SEQUENCE_STORYBOARD_V1.png",
+      "bytes": 2826142,
+      "sha256": "fc7fa5d7a380ba372e3f72e95e4227765a594782c89f67ceceef5e073ef6cd4b",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/reference/SHARED_HOME_CLINIC_INTERIOR_PIXEL_V1.png",
+      "bytes": 2082349,
+      "sha256": "266666a5eec1e65b9f24a2f293a3bc2fc98e9f470687a22aec4d74fdfb2468d2",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/reference/SHION_FINAL_CHARACTER_DESIGN_V1.png",
+      "bytes": 2694543,
+      "sha256": "e65d15d6192e78c795a5083b1e695106a309161c188a41453b779d5ec9560653",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/reference/TSUKIMORI_PIXEL_ART_VISUAL_TARGET_V1.png",
+      "bytes": 2372399,
+      "sha256": "59470ab2bd3db4d9d584fbba7d3d846a3234d04eb8e854e056ce2049567d70a2",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/reference/TSUKIMORI_PIXEL_DIALOGUE_UI_V1.png",
+      "bytes": 2140855,
+      "sha256": "525387edbc8b7010a2eaf967d8335a7bf64316531d5af67ec4dba927922aed4a",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/reference/VILLAGE_NPC_ATTRACTIVE_VARIANTS_V2.png",
+      "bytes": 2710244,
+      "sha256": "6232a637c11f853d1e6b1ac860e73ebb059cae02317151add6d71e0f4f547e91",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/reference/VILLAGE_NPC_PACK_V1_WOMEN_ONLY.png",
+      "bytes": 3508866,
+      "sha256": "f4b3404ee19cb536af9b58e933db85b32e581aad192e6e27bd959be194aab116",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/reference/VILLAGE_STREET_PIXEL_V1.png",
+      "bytes": 2664151,
+      "sha256": "2185c7e7d8b0dbe99411b1453d276b41a50750c09ef923109819dce7ceecd38d",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/run_v1/side_atlas_REVIEW.png",
+      "bytes": 18058,
+      "sha256": "d268cc025efd27966296335a2af3ab899bd9d4d88a253af5610f214d058bd5e6",
+      "width": 256,
+      "height": 96,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/run_v1/side_source_REVIEW.png",
+      "bytes": 842538,
+      "sha256": "825c26a1763368340306ec95b39068b644147e643378b495082cd7da6536412e",
+      "width": 2097,
+      "height": 750,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/short_intro_v1/bus_REVIEW.png",
+      "bytes": 1633552,
+      "sha256": "e1483f5702358f973258eb2b6b8fe24296dba216bc52d8c72ee906b1c18bc7fa",
+      "width": 1774,
+      "height": 887,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/short_intro_v1/forest_gate_REVIEW.png",
+      "bytes": 2780134,
+      "sha256": "1d025567d82c5cf4abc4af039a113f72a98b6d6479dea16dc1bb59899fc28f92",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/short_intro_v1/memory_REVIEW.png",
+      "bytes": 1806414,
+      "sha256": "76d72d35d3b081c6f7998f2deb80c06fae4fc542cb74a07dd762454d6caa114b",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/shot_review_v2/arrival_skyline_REVIEW.png",
+      "bytes": 470610,
+      "sha256": "4b86e9d56449c5c2a2fb4178090c1d8d13397e207174da826f582cc864e75403",
+      "width": 640,
+      "height": 360,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/shot_review_v2/arrival_street_REVIEW.png",
+      "bytes": 485044,
+      "sha256": "c942376ff112c30e85a5b70e940043ded3ffc82e58167b4c688e7c09d462ad7c",
+      "width": 640,
+      "height": 360,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/shot_review_v2/bus_akira_REVIEW.png",
+      "bytes": 123325,
+      "sha256": "233c95eb92eec8e516d00cbf73458257eae14175d4c4168a654807c0fc602de7",
+      "width": 640,
+      "height": 360,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/shot_review_v2/bus_cabin_REVIEW.png",
+      "bytes": 2177529,
+      "sha256": "e275d53efeeaa9cbdeb8644de9a67558cac84771ce8995016f141be9b769edd8",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/shot_review_v2/bus_glass_REVIEW.png",
+      "bytes": 81936,
+      "sha256": "43ccaf516ab924d18eecf95e616da481d6c2fd94b4e15feb675f029e7724aba1",
+      "width": 640,
+      "height": 360,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/shot_review_v2/bus_road_REVIEW.png",
+      "bytes": 240670,
+      "sha256": "ec2db0c357e6c8088706f52d63669f41275c8742db9b00eef50d7acefb6a22e3",
+      "width": 640,
+      "height": 360,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/shot_review_v2/gate_close_REVIEW.png",
+      "bytes": 200054,
+      "sha256": "3d99f1ef27c643173f61bde18ab74b35f322107d4c8b85658299cd954de8686a",
+      "width": 640,
+      "height": 360,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/shot_review_v2/gate_wide_REVIEW.png",
+      "bytes": 250918,
+      "sha256": "69d15cd2a32919253055d136b3fa0aa570e312ca1517bf52384d2729116dae77",
+      "width": 640,
+      "height": 360,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/shot_review_v2/watch_left_REVIEW.png",
+      "bytes": 441773,
+      "sha256": "2490a3f7a16e4a3cccf58368d688d7f9b411f90c4fcfc5095dc29b71994108d3",
+      "width": 640,
+      "height": 360,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/shot_review_v2/watch_right_REVIEW.png",
+      "bytes": 415986,
+      "sha256": "be35db259595c28ac285e2a8d2c2a267b970f24e9ac3016ee32fda37741f35fc",
+      "width": 640,
+      "height": 360,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/staging_v3/akira_atlas.png",
+      "bytes": 52814,
+      "sha256": "922e1543302b2b4808d8316fb081f0d57c104f6985d3b26da6dc62a656496387",
+      "width": 256,
+      "height": 384,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/staging_v3/akira_REVIEW.png",
+      "bytes": 1996280,
+      "sha256": "c4fadab5c845abc5ece531eba8ef65c52714546ffffcdb372353112569c22a29",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/staging_v3/akira_walk_REVIEW.png",
+      "bytes": 1953293,
+      "sha256": "7663fe5bf6eba556af6eaa9001a1be8398b37b1a54f5d93cfcabd456130e1d58",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/staging_v3/foreground.png",
+      "bytes": 88089,
+      "sha256": "2a5aa4c48c7c22a3e9ebb4861b4667d879503671757428c59e4125eab0d7b778",
+      "width": 800,
+      "height": 67,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/staging_v3/foreground_close_REVIEW.png",
+      "bytes": 89926,
+      "sha256": "a6bd763dc2adb76108cfebde16a4cdb4828fd66c6adbf402a7e19a0287075ab9",
+      "width": 800,
+      "height": 48,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/staging_v3/street_REVIEW.png",
+      "bytes": 2620753,
+      "sha256": "e67da6ee2163cce75268255d13d746412ea1a00fa4fa7241a8f8fa29e8ad5ec2",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/staging_v3/street_stage.png",
+      "bytes": 618311,
+      "sha256": "8e6059149878f5948295f6b870546d74f7103e4cab4c825d5a2f838a630eeb76",
+      "width": 800,
+      "height": 383,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/village_target_v4/street_clean_source_REVIEW.png",
+      "bytes": 3061111,
+      "sha256": "afb67c0eb4e796f6ba95dca409f8e9b88c148fdfd7a3ec1146394af7cabe7ef4",
+      "width": 2170,
+      "height": 725,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/opening/vn_portraits/akira_doctor_green_eye_v1_REVIEW.png",
+      "bytes": 1810849,
+      "sha256": "58d7a97618f7c8e5e884a22417b3a617e4b5fc214ed7c68100379432fdc681d5",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/akira_doctor_v1_REVIEW.png",
+      "bytes": 1802944,
+      "sha256": "54aecd8b8ae06e83cbbcf78a596ff919c0a2e22f4429075810989d484ef69d55",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/akira_neutral_v1_REVIEW.png",
+      "bytes": 1927389,
+      "sha256": "3ad13d8f43024977eac964ae4dd5b8e44da91de3d06bd825aa5ba327c1c701b1",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/hana_casual_confident_v1_REVIEW.png",
+      "bytes": 2020129,
+      "sha256": "63b16286a362ed209876e66a74bbf4e8c5ad29f6c6cb50f3a312bcc700e0cac2",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/hana_casual_deferential_v1_REVIEW.png",
+      "bytes": 2494295,
+      "sha256": "0f6acc69ce1899c88e28c4cad32a8408dd61a1416d5ee001a869d9d2817366c5",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/hana_casual_deferential_v2_REVIEW.png",
+      "bytes": 2326329,
+      "sha256": "ab57210b5bf5351b117247ed0a8ef39178f1d1ce4c62175fd5629e1d3b904ed1",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/hana_demanding_v1_REVIEW.png",
+      "bytes": 2515692,
+      "sha256": "96a2b4e02b2319cf55d86e9373d8eb0f908c67504fcb88116316a19cfbc23133",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/hana_guarded_v1_REVIEW.png",
+      "bytes": 2488175,
+      "sha256": "4fbe122a4cad8b4def58cf778e132bde7bb3335ad7a75b76c60c20276a5bf4be",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/hana_neutral_v1_REVIEW.png",
+      "bytes": 2596948,
+      "sha256": "237d283c55191259a11be30152abe30e3ffc36fd8a45f48541d5178827fed989",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/hana_sad_v1_REVIEW.png",
+      "bytes": 2493929,
+      "sha256": "1f507c3ec29c76515b1abc8accffba1acb8d1f0d7437163de4361dbd1acbfe45",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/hana_surprised_v1_REVIEW.png",
+      "bytes": 2492165,
+      "sha256": "aa4ecf14ae61dd4e0fc7490cf44fe1e0050d7cbcef10c49b915223e965c48fe8",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/hana_transformed_deferential_v1_REVIEW.png",
+      "bytes": 2782537,
+      "sha256": "aa18f5897f55f2e4372dc8b6134943b7e0bba13afdbc8e4f135c74c6604d932b",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/hana_warm_v1_REVIEW.png",
+      "bytes": 2491378,
+      "sha256": "54bd18f168f97e815fb038a851c09dcb1155b2b717c8e123f4e6a538731cad28",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/kuroe_casual_v1_REVIEW.png",
+      "bytes": 1618056,
+      "sha256": "ca40c0743df83abf91b39f5303ad295eb0aeeceafee0e93e3c10b98311b1d13d",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/kuroe_neutral_v1_REVIEW.png",
+      "bytes": 1974780,
+      "sha256": "e45f42cd12239a3b24070cc9a09eabc0c23e964dd50046d2e386fc7308d55993",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/miyako_cutout_v1_REVIEW.png",
+      "bytes": 2356346,
+      "sha256": "bce6152f76a6a6c74418c59aeffba24f46b501b714c602a78325e23b80ff1e93",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/miyako_evening_transformed_v1_REVIEW.png",
+      "bytes": 2362095,
+      "sha256": "efdc294e227452d1e6a8bfaea4988702645e54f082f7a9f5dafa5d1621cd080d",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/miyako_evening_v1_REVIEW.png",
+      "bytes": 2277930,
+      "sha256": "69de12f9e242d489b6907c34bdc2289dd373e497f536a072c81b0f4161fd64e6",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/miyako_evening_watchful_v1_REVIEW.png",
+      "bytes": 2243588,
+      "sha256": "c96a68363ec0310f53a04bcc34c31959b0214d3f91ddb24b9afcafca71657a38",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/miyako_possessive_v1_REVIEW.png",
+      "bytes": 2241137,
+      "sha256": "cdb92f71d38111f60860dcd4eabe44af31d97efd83ac6df1bc4bfdcc0616f32e",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/miyako_surprised_v1_REVIEW.png",
+      "bytes": 2248733,
+      "sha256": "7970a26271f152138c6a26fdd395dfeca593a75c687dfe1aed9d3317be2be952",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/miyako_transformed_manic_v1_REVIEW.png",
+      "bytes": 2396464,
+      "sha256": "af9034e6ccd0c09c6d05a5947ff0d758db95bef4b385473344180949ab2849ea",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/miyako_warm_v1_REVIEW.png",
+      "bytes": 2257577,
+      "sha256": "dda143f06a5a28cc5b58077f5f6f9ea74d7e8566ce2d1a12b4bf59896216e008",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/miyako_worried_v1_REVIEW.png",
+      "bytes": 2291338,
+      "sha256": "a6ead3472832e78948e6caaa2a79e1bdb756f1c4fd7ae8132271c7efca5fd057",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/patient_1_neutral_v1_REVIEW.png",
+      "bytes": 270859,
+      "sha256": "448ca6fba1e002b33332090a54c2102699505a441f0cc54ed908b2afd093fd31",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/patient_1_sad_v1_REVIEW.png",
+      "bytes": 267068,
+      "sha256": "a078859e1ab38fad3241ce62428e6fa64ddb0b77a1b74c5b44d2a18c3d26db36",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/patient_1_smile_v1_REVIEW.png",
+      "bytes": 271133,
+      "sha256": "6cff6f6d48b033b846539d84e53164e12e40386d0b52ceef893003d5d47e84a1",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/patient_1_surprised_v1_REVIEW.png",
+      "bytes": 270633,
+      "sha256": "ff67bff35b521a86aefbfc6bdbb5b7bf7010b30cdb953b288e77a6bda44dd7c1",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/patient_1_thoughtful_v1_REVIEW.png",
+      "bytes": 276486,
+      "sha256": "d98a9c364347243096ef259e3ad29c99b52fb81a130cf4a962fd908c43f9efa2",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/patient_1_warm_smile_v1_REVIEW.png",
+      "bytes": 267853,
+      "sha256": "7c2a29a1b345f4a6a28528b8b021597ab4c9db37d9ca0fbc0679127086c15022",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/patient_2_neutral_v1_REVIEW.png",
+      "bytes": 307018,
+      "sha256": "de7aed550c4d3da351d4badd35cd311a3495cc4e716ddc3d3eb2738d41622b2d",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/patient_2_sad_v1_REVIEW.png",
+      "bytes": 310268,
+      "sha256": "1f75885d13e52076d96ecae86e2a1fc015c39f9dcedbe78357c26fdea9334336",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/patient_2_smile_v1_REVIEW.png",
+      "bytes": 306367,
+      "sha256": "9e84c6d82c1b443726ec4f4dcc57947f0112edd055841657e73a57791f74eb55",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/patient_2_surprised_v1_REVIEW.png",
+      "bytes": 347004,
+      "sha256": "16cd64ca17f081bc193d49f45a197102cb3b0e39edce17acc64cea008b6c9df6",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/patient_2_thoughtful_v1_REVIEW.png",
+      "bytes": 311008,
+      "sha256": "1246b3e823dc84fcd1de0b964de04df013f7ec08a2b4baab3894ec20b32fd80b",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/patient_2_warm_smile_v1_REVIEW.png",
+      "bytes": 307854,
+      "sha256": "f1327bdce83d9e0b4ab8dc95546925e6d052d76ce0126b95f282fc93764f1ae3",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/reina_teacher_v1_REVIEW.webp",
+      "bytes": 6020,
+      "sha256": "f02703c36616d93eefd3b0fbfea2e930216d6c66261c9f33f434aa05513a4095",
+      "width": 208,
+      "height": 292,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/shion_casual_v1_REVIEW.png",
+      "bytes": 2011620,
+      "sha256": "7e041b9a56921e74c5f5c50812f2d9d0bd82a81418abeadc852d0ec54c11cb37",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/shion_neutral_v1_REVIEW.png",
+      "bytes": 2247356,
+      "sha256": "0f7db72915a0fd6aafae0cee7b09204ab93149092f32c8b381b990728bf8d6ab",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/shion_sad_v1_REVIEW.png",
+      "bytes": 2200917,
+      "sha256": "084ede7cd66944184c988d50400c0d92b9b53c479633776d763107b1fd743b9d",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/opening/vn_portraits/shion_surprised_v1_REVIEW.png",
+      "bytes": 2220362,
+      "sha256": "d3b885962e2aff0e779975690dac119d452b8a18adf94749073261dd08ead3d4",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/village_day1/bridge_afternoon_v1_REVIEW.png",
+      "bytes": 3308320,
+      "sha256": "dc66f44a31eabbe190e6e5062a88df7e61b658ab01390190683be0cb9833342f",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/village_day1/characters/aoi_v1_REVIEW.png",
+      "bytes": 1595385,
+      "sha256": "9a9afe3d95b71e098066ea68c9bd7cfe0c43411a3232a3c194c0a138f9b6a338",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/village_day1/characters/oto_v1_REVIEW.png",
+      "bytes": 2297229,
+      "sha256": "f921af0af518a23c9315c3b88d8e3464f389b2a35a97b4a98ba94da2fbedb307",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/village_day1/characters/reina_v1_REVIEW.png",
+      "bytes": 1657868,
+      "sha256": "65a2c8c98bfaa4b2afdfcdd81d927174429532ee83d4fb6f63860333146abb48",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/village_day1/characters/sora_v1_PLACEHOLDER.png",
+      "bytes": 2303043,
+      "sha256": "b92e9c0344f8866b3de17d15f201fe90136ebb227f222f2c9fd2244a4c37192d",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA"
+    },
+    {
+      "path": "assets/village_day1/places/craft_lane_v1_REVIEW.png",
+      "bytes": 3358743,
+      "sha256": "3c502bdd72513f2dcf6598c0e57ba73d6c883f59a3cf92a4992c2f3474d5856a",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/village_day1/places/inn_interior_v1_REVIEW.png",
+      "bytes": 2746566,
+      "sha256": "459b9b7d8fe5298993a74b029388cd8bf372b2543fe6f3f2225aace1ddc88b6f",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/village_day1/places/inn_v1_REVIEW.png",
+      "bytes": 3238529,
+      "sha256": "d9f1db31449edd3e341aadf90bd3c1de632bb407b2ddcad39d6f3d9083f51d73",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/village_day1/places/market_v1_REVIEW.png",
+      "bytes": 3527201,
+      "sha256": "b2c2c983801f2710a8df3e0e9f9433575ebd8b204d593186fc50997da4d469f2",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/village_day1/places/school_interior_v1_REVIEW.png",
+      "bytes": 2490260,
+      "sha256": "fc1b35951b706e9b16e449dd0e1da5c39f4bad78e242ab42272db94b9a658bf9",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/village_day1/places/school_v1_REVIEW.png",
+      "bytes": 3114887,
+      "sha256": "8a8eaddded68ae4b68844f40b3571db28942ea4ace5bb24b2e06fc4bb0a40bf0",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/village_day1/places/shop_interior_v1_REVIEW.png",
+      "bytes": 2856549,
+      "sha256": "01143e074de408a1a3988579501f6f62ae78e86bf03d8212a68826b931a765e0",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/village_day1/places/shop_v1_REVIEW.png",
+      "bytes": 3376310,
+      "sha256": "773bc9c78c148d4837a79461d10dc73671285c2fa5860dd7372bdba81c47d762",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/village_day1/places/shrine_v1_REVIEW.png",
+      "bytes": 3673155,
+      "sha256": "955245cc0affe3424905480f1057ab2df41b4a14d23a5366e297a35241224ed1",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/village_day1/places/square_v1_REVIEW.png",
+      "bytes": 3574606,
+      "sha256": "f29b056cd5fcd26e6259c633a9e7cd34b058ccf9c2fc7f22d8c31b194a59efa3",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/village_day1/places/stream_v1_REVIEW.png",
+      "bytes": 3389352,
+      "sha256": "e3f5beccde4538ad96dfe1cab15846386c74ebb1b568598a576da1e01887ec61",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB"
+    },
+    {
+      "path": "assets/village_day1/street_afternoon_v1_REVIEW.png",
+      "bytes": 3687877,
+      "sha256": "666f4235bdab1eb415d4fa7260dd54e613a3add551fb720e77cf24dfaf8fbfbe",
+      "width": 2170,
+      "height": 725,
+      "mode": "RGB"
+    },
+    {
+      "path": "reference/characters/RENKA_CHARACTER_DESIGN_V1_REFERENCE.png",
+      "bytes": 2661008,
+      "sha256": "25ea70919fe0719bb901d12faa6c3af08d6ac594d2d7fdae2c556c399c003de1",
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGB"
+    },
+    {
+      "path": "reference/incoming/2026-10-12/01_medical_assistant_labeled_reina.png",
+      "bytes": 3050874,
+      "sha256": "bb214acdeb8f2b0d9401d7b8811501c87e84b4cbc07d1044a1956b73e4da2e6c",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB"
+    },
+    {
+      "path": "reference/incoming/2026-10-12/02_four_character_overview.png",
+      "bytes": 3401828,
+      "sha256": "5b2d79aa23102fc54d4f1bbf7eadfe79ece1080e1ba68169550a6e4ab5a128c7",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB"
+    },
+    {
+      "path": "reference/incoming/2026-10-12/03_reina_teacher_rider_sheet.png",
+      "bytes": 2978182,
+      "sha256": "329f8ba9c90e01b15c0a9e35f5d0f4a34c44a295a6fb4cf195c6acd3cad57e58",
+      "width": 1312,
+      "height": 1199,
+      "mode": "RGB"
+    },
+    {
+      "path": "reference/incoming/2026-10-12/04_red_white_leader_sheet_labeled_renka.png",
+      "bytes": 3191453,
+      "sha256": "f01c48914930ece7a946a4e3cd284b80bd01b291b680ed20beb925afad336e49",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB"
+    },
+    {
+      "path": "reference/incoming/2026-10-12/05_oto_day_night_character_sheet.png",
+      "bytes": 3148979,
+      "sha256": "5fbb113d93d56a7dfdd5498f619a1de335a4e1d0acad5993ed81ea44e32a7d08",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB"
+    },
+    {
+      "path": "reference/incoming/2026-10-12/06_aoi_shopkeeper_character_sheet.png",
+      "bytes": 3208320,
+      "sha256": "4ebe0cf93b64463985761e1134eeeeb66c9763555d80f1716c96d323c6c3733a",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGB"
+    }
+  ],
+  "narrative_files": [
+    {
+      "file": "data/home_day1/character_locations.json",
+      "id": "",
+      "source": ""
+    },
+    {
+      "file": "data/home_day1/clinic_morning.json",
+      "id": "first_clinic_morning",
+      "source": "canonical_html_story.rpy / chapter_2 / selected lines 229-326 and 435-496; PDF pages 8–9 breakfast excerpts; REVIEW compressed morning continuity"
+    },
+    {
+      "file": "data/home_day1/day_evening.json",
+      "id": "day_evening",
+      "source": "canonical_html_story.rpy / chapter III; matched PDF pages 9–15, REVIEW spatial staging"
+    },
+    {
+      "file": "data/home_day1/day_hook.json",
+      "id": "day_hook",
+      "source": "canonical_html_story.rpy / chapter III; matched PDF pages 9–15, REVIEW spatial staging"
+    },
+    {
+      "file": "data/home_day1/day_reflection.json",
+      "id": "day_reflection",
+      "source": "canonical_html_story.rpy / chapter III; matched PDF pages 9–15, REVIEW spatial staging"
+    },
+    {
+      "file": "data/home_day1/miyako_hallway_REVIEW.json",
+      "id": "miyako_hallway_review",
+      "source": ""
+    },
+    {
+      "file": "data/home_day1/morning.json",
+      "id": "second_morning",
+      "source": "canonical_html_story.rpy / chapter_2 / lines 186-218"
+    },
+    {
+      "file": "data/home_day1/night_arrival.json",
+      "id": "",
+      "source": "REVIEW connecting staging based on approved evening and PDF p3; no new lore"
+    },
+    {
+      "file": "data/home_day1/night_bag.json",
+      "id": "",
+      "source": "REVIEW environmental observation, approved Akira professional bag; no new plot fact"
+    },
+    {
+      "file": "data/home_day1/night_photo.json",
+      "id": "",
+      "source": "Approved owner addition: old Akira–Katsuro photo as first personal clue; REVIEW inner reaction, no invented date or location"
+    },
+    {
+      "file": "data/home_day1/night_window.json",
+      "id": "",
+      "source": "REVIEW observation adaptation, PDF p3: house noises and outside rain"
+    },
+    {
+      "file": "data/home_day1/patient_1.json",
+      "id": "patient_1",
+      "source": "canonical_html_story.rpy / chapter III; matched PDF pages 9–15, REVIEW spatial staging; PDF pages 9–10 selected additional dialogue"
+    },
+    {
+      "file": "data/home_day1/patient_2.json",
+      "id": "patient_2",
+      "source": "canonical_html_story.rpy / chapter III; matched PDF pages 9–15, REVIEW spatial staging; PDF pages 11–13 selected additional dialogue"
+    },
+    {
+      "file": "data/home_day1/village_interiors.json",
+      "id": "",
+      "source": ""
+    },
+    {
+      "file": "data/home_day1/village_layout.json",
+      "id": "",
+      "source": ""
+    },
+    {
+      "file": "data/home_day1/village_tour.json",
+      "id": "",
+      "source": ""
+    },
+    {
+      "file": "data/home_day2/hana_arrival.json",
+      "id": "hana_arrival",
+      "source": "canonical_html_story.rpy / chapter IV first appointment; PDF pages 16–26"
+    },
+    {
+      "file": "data/home_day2/hana_close.json",
+      "id": "hana_close",
+      "source": "canonical_html_story.rpy / chapter IV first appointment; PDF pages 16–26"
+    },
+    {
+      "file": "data/home_day2/hana_memory.json",
+      "id": "hana_memory",
+      "source": "canonical_html_story.rpy / chapter IV first appointment; PDF pages 16–26"
+    },
+    {
+      "file": "data/home_day2/miyako_afternoon.json",
+      "id": "miyako_afternoon",
+      "source": "canonical_html_story.rpy / chapter IV / Késő délután; text unchanged, wrapped only"
+    },
+    {
+      "file": "data/home_day2/miyako_seal.json",
+      "id": "miyako_seal",
+      "source": "canonical_html_story.rpy / end of chapter V; unchanged text, wrapped only"
+    },
+    {
+      "file": "data/home_day2/miyako_tea.json",
+      "id": "miyako_tea",
+      "source": ""
+    },
+    {
+      "file": "data/home_day2/morning_hana.json",
+      "id": "morning_hana",
+      "source": "canonical_html_story.rpy / chapter III ending; PDF before chapter IV"
+    },
+    {
+      "file": "data/home_day2/night_notebook.json",
+      "id": "night_notebook",
+      "source": "canonical_html_story.rpy / chapter III ending; PDF before chapter IV"
+    },
+    {
+      "file": "data/home_day2/night_visitor.json",
+      "id": "night_visitor",
+      "source": "canonical_html_story.rpy / chapter IV / Az éjszakai látogató; original text, wrapped only"
+    },
+    {
+      "file": "data/home_day2/reina_first_meeting.json",
+      "id": "reina_first_meeting",
+      "source": "OWNER APPROVED 2026-10-11; new Tsukimori character introduction, placed after the currently implemented early chapter so it does not overwrite existing canon scenes."
+    },
+    {
+      "file": "data/home_day2/shion_arrival.json",
+      "id": "shion_arrival",
+      "source": "canonical_html_story.rpy / chapter V through Shion farewell; original text wrapped only"
+    },
+    {
+      "file": "data/home_day2/shion_close.json",
+      "id": "shion_close",
+      "source": "canonical_html_story.rpy / chapter V through Shion farewell; original text wrapped only"
+    },
+    {
+      "file": "data/home_day2/shion_memory.json",
+      "id": "shion_memory",
+      "source": "canonical_html_story.rpy / chapter V through Shion farewell; original text wrapped only"
+    },
+    {
+      "file": "data/opening/first_night.json",
+      "id": "first_night",
+      "source": "canonical_html_story.rpy / canonical_html_chapter_1 / canonical_bg_first_night"
+    },
+    {
+      "file": "data/opening/miyako_first_dialogue.json",
+      "id": "miyako_first_encounter",
+      "source": "canonical_html_story.rpy / canonical_html_chapter_1, exterior first meeting before canonical_bg_interior"
+    },
+    {
+      "file": "data/opening/miyako_interior_dialogue.json",
+      "id": "miyako_interior_first_evening",
+      "source": "canonical_html_story.rpy / canonical_html_chapter_1 / canonical_bg_interior before canonical_bg_first_night"
+    },
+    {
+      "file": "data/opening/sequence.json",
+      "id": "",
+      "source": ""
+    },
+    {
+      "file": "data/opening/village.json",
+      "id": "",
+      "source": ""
+    },
+    {
+      "file": "data/ui/characters.json",
+      "id": "",
+      "source": ""
+    },
+    {
+      "file": "data/ui/character_development.json",
+      "id": "",
+      "source": ""
+    }
+  ],
+  "reference_scan_notes": {
+    "res://data/home_day1/patient_%d.json": "Dynamic pattern: patient_1.json and patient_2.json both exist.",
+    "res://review/motion_frames": "Generated review capture output directory, not required input.",
+    "res://review/motion_frames/%03d.png": "Generated review capture output pattern, not required input.",
+    "res://assets/opening/generated/npc_v2/resident_0": "String prefix concatenated in opening_stage.gd; not a literal file."
+  },
+  "image_decode_errors": [],
+  "missing_required_literal_inputs": []
+}
