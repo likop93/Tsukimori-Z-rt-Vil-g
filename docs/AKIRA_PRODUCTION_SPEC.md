@@ -75,6 +75,8 @@ Nem lehet:
 
 ## Szemüveg
 - **Nincs szemüveg, véglegesen** (tulajdonosi döntés, 2026-10-20). A korábbi opcionális variáns felülírva; szemüveg-mesh, -material és ki/be kapcsoló nem készül;
+
+**Aktuális identitásreferencia (2026-10-21, tulajdonos által küldve, REVIEW):** `assets/opening/reference/AKIRA_NO_GLASSES_FULLBODY_V1_REVIEW.png` — fekete haj, szemüveg nélkül, sötét kapucnis kabát. A régi `AKIRA_FINAL_CHARACTER_DESIGN_V1.png` karakterlap „Opcionális változatok” sorában látható szemüveges variáns **nem elfogadott**, a játékban és új képeken nem használható.
 - Loft vizuális ismertetőjegyeit továbbra sem szabad másolni.
 
 ---
