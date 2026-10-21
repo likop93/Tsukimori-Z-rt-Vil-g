@@ -317,3 +317,22 @@ A tényleges kiinduló állapot és regressziós hibák: [WORK_HANDOFF_AUDIT_202
 ## 2026-10-20 — Harmadik napi szabad délután — IMPLEMENTED / REVIEW
 Shion és a pecsét után a meglévő kattintásos falutérkép nyílik; a boltnál Ayame hétköznapi bemutatkozása, a piacnál Hana Himikót előkészítő mondatai érhetők el. Hazatérés után az eredeti esti tea folytatódik. Új szöveg és CG-staging REVIEW, nincs véglegesítve a 4–6. nap vagy a Hetedik Éjszaka.
 Tesztek és tényleges fájlok: [DAY3_VILLAGE_REVIEW.md](DAY3_VILLAGE_REVIEW.md). Beérkezett képek: [REFERENCE_INTAKE_2026_10_20.md](REFERENCE_INTAKE_2026_10_20.md).
+
+---
+
+## 2026-10-21 — Összevont tulajdonosi kánonkorrekció — LOCKED / pontosított státuszok
+
+**Részletes, szereplőnként és jelenetenként visszakövethető hivatkozás:** [CANON_SYNC_2026_10_21.md](CANON_SYNC_2026_10_21.md).
+
+1. **Nyitány: autó, nem busz — LOCKED / SUPERSEDES 2026-09-26 és 09-28 buszstaging.** Akira autóval a falu széléhez érkezik, Miyako házától távol parkol, kiszáll, filmes gyalogos átvezetésekkel megy át a falun és a hídon a házig; Miyakóval a háznál találkozik. Három új autós CG jóváhagyott képi kiindulópont, pixel-art productionre adaptálásuk külön REVIEW.
+2. **Nincs szabad sprite-vezérlés / WASD — LOCKED / SUPERSEDES korábbi in-place/CharacterBody3D gameplay-döntést.** Kattintásos falutérkép és helyszíninterakciók, automatikus filmes mozgások, VN. Legacy 3D mozgásadat/animáció csak archivált referenciaként, nem gameplay-követelményként marad.
+3. **Akira arc/szemüveg — LOCKED / OVERRIDES a 2026-09-24 opcionális szemüveges variánst.** Eredeti fekete hajú felnőtt arc, játékbeli Akira mindig szemüveg nélkül. Sötét/kapucnis civil outfit elsődleges; történet- és flashbackfüggő ruhaváltás megengedett; rendelőben fehér orvosi köpeny. Régi szemüveges CG-k javítandó REVIEW-k, a korábbi referencialap szemüveges sorát ki kell zárni a későbbi production használatból.
+4. **Miyako Design A és lassú horrorív — LOCKED.** Eredeti fekete ruhás/sötétbarna hajú/barna szemű, aranydíszes nő. Hibás, általános újrarajzolások REJECTED. Mimikák tervezve, de nem nyolc kész végleges portré. Teljes fizikai utánzás/átalakulás csak későbbi, előkészített eseményben; a korai első tea nem transformation reveal.
+5. **Történeti keret — LOCKED / OWNER APPROVED folytatás.** 120 nap, 4×30 nap, csak a 30. napon induló időjárás-anomália, egyedi karakterútvonalak, rejtély és fokozatos érzelmi/pszichológiai horror. A 4–10. naphoz új jelenetek még szükségesek.
+6. **Hetedik Éjszaka — OWNER APPROVED, kimeneti küszöbök REVIEW.** 7/14/21/28/…/119; Katsuro titkos, külön dolgozószobája, Miyako elhallgatása, Kollektíva fenyegetése. Nem szexuális menekülési/ellenállási ág kötelező, és kényszerből nem keletkezhet automatikus romantikus route.
+7. **Ayame — OWNER APPROVED.** Aoi mellett dolgozik; nap 3/5/7/14, józan döntéssel nap 15-től romantikus út. A 3. nap REVIEW-része implementált, nem a teljes route.
+8. **Mashiro és A Hold Két Arca — LOCKED/OWNER APPROVED.** Mashiro 25 éves, nap 5–10 első találkozás; True Love út exkluzív, egyetlen elkülönített kivétel a `moon_two_faces` Akira–Mashiro–Sayuri titkos kapcsolata. A meglévő Mashiro reference pack nem kész production képsor.
+9. **Natsume — APPROVED VISUAL CONCEPT ONLY, NEM LOCKED route.** Új felnőtt, rendkívül kövér, kacér fogadói/szakácsnő karakterjavaslat, nem Sora redesign; nem elkészült production/route. Az ettől eltérő európai külsejű holdfényes képpróbák nem elfogadott Natsume-replacementek.
+10. **Kuroe és Shion múltja, mahagóni gitár, Oto/Mélység — a legutóbbi beszélgetésben megerősített/kiegészített tervek** a részletes kánonszinkron szerinti szétválasztással, nem automatikusan IMPLEMENTED.
+
+**FONTOS:** Claude és más fejlesztő önálló kreatív átértelmezése nem emelhető a tulajdonosi kánon fölé. A meglévő Godot teljes működését ezen dokumentációs commit nem módosítja.
