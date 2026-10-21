@@ -1,4 +1,5 @@
 extends "res://tests/ui/hana_day_regression.gd"
+const WalkSim := preload("res://tests/support/walk_sim.gd")
 var runner: Node
 var tour: Node
 var player: CharacterBody2D
@@ -64,12 +65,10 @@ func _ready() -> void:
 	await destination("school")
 	check(runner.street.backdrop.texture.resource_path == tour.layout.school.background,"School background preserved")
 	var fixed := player.position
-	Input.action_press("walk_right")
-	Input.action_press("run")
+	WalkSim.press(player,"walk_right")
 	await get_tree().create_timer(0.3).timeout
-	Input.action_release("walk_right")
-	Input.action_release("run")
-	check(player.position == fixed,"WASD and run cannot move hidden player")
+	WalkSim.release(player,"walk_right")
+	check(player.position == fixed,"Walking cannot move the hidden player")
 	await capture("navigation_school_REVIEW")
 	runner.pause_menu.open_menu()
 	runner.pause_menu.show_controls()

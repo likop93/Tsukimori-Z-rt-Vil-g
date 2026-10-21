@@ -318,7 +318,7 @@ func advance(_delta: float) -> void:
 			card_armed = true
 		return
 	if phase == "evening_living":
-		runner.hint.text = "E · Akira szobája" if runner.street.player.position.x > 435 else "WASD · séta / Shift · futás"
+		runner.hint.text = "E · Akira szobája" if runner.street.player.position.x > 435 else "Akira a nappaliban várakozik…"
 		if interact and runner.street.player.position.x > 435:
 			runner.street.show_location("akira_room")
 			resume("room")

@@ -22,6 +22,7 @@ func advance(delta: float) -> void:
 			runner.hint.text = "E · tovább a hídhoz" if near_exit else runner.words.controls
 			if near_exit and interact:
 				street.show_location("bridge")
+				street.start_autowalk()
 				runner.heading.text = "A patakhíd"
 		"bridge":
 			if actor.position.x > 290 and not bridge_noticed:
@@ -37,6 +38,7 @@ func advance(delta: float) -> void:
 			if near_exit and interact:
 				GameState.set_flag("crossed_bridge")
 				street.show_location("house")
+				street.start_autowalk()
 				runner.heading.text = "A túlparti ház"
 				runner.arrival = preload("res://scripts/opening/arrival_director.gd").new()
 				runner.add_child(runner.arrival)
@@ -67,7 +69,7 @@ func advance(delta: float) -> void:
 			if GameState.has_flag("first_night_seen"):
 				return
 			near_exit = actor.position.x > 435
-			runner.hint.text = "E · az este folytatása" if near_exit else "A folytatáshoz sétálj jobbra.    WASD / nyilak · séta"
+			runner.hint.text = "E · az este folytatása" if near_exit else "Akira a nappali felé tart…"
 			if near_exit and interact and GameState.has_flag("miyako_interior_dialogue_seen"):
 				var previous: Node = runner.arrival
 				runner.arrival = preload("res://scripts/opening/first_night_director.gd").new()

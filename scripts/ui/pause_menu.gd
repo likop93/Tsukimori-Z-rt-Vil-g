@@ -140,7 +140,7 @@ func show_settings() -> void:
 func show_controls() -> void:
 	page = "controls"
 	clear_page("Irányítás")
-	label("Falu · kattints a helyszínekre\nM · térkép   Hazamegyek · otthon\nNyitány · WASD / nyilak; Shift: futás\nE · figyelés / beszélgetés / tovább\nSpace / Enter · szöveg\nEsc · szünet (intróban kihagyás)\nTab / Menü · szünet bármikor",Vector2(24,68),Vector2(312,150),13)
+	label("Falu · kattints a helyszínekre\nM · térkép   Hazamegyek · otthon\nNyitány · Akira magától megy; E: tovább\nE · figyelés / beszélgetés / tovább\nSpace / Enter · szöveg\nEsc · szünet (intróban kihagyás)\nTab / Menü · szünet bármikor",Vector2(24,68),Vector2(312,150),13)
 	make_button(body,"Vissza",Vector2(24,229),Vector2(312,36),back).grab_focus()
 
 func show_characters() -> void:

@@ -1,4 +1,5 @@
 extends Node
+const WalkSim := preload("res://tests/support/walk_sim.gd")
 var failures: Array[String] = []
 var miyako_reactions: Dictionary = {}
 func check(ok: bool, message: String) -> void:
@@ -83,9 +84,9 @@ func _ready() -> void:
 			check(not GameState.has_flag("miyako_transformation_revealed"),"Optional hallway preserves normal Miyako")
 		await capture("night_room_REVIEW")
 		var stationary: Vector2 = runner.street.player.position
-		Input.action_press("walk_right")
+		WalkSim.press(runner.street.player,"walk_right")
 		await get_tree().create_timer(0.2).timeout
-		Input.action_release("walk_right")
+		WalkSim.release(runner.street.player,"walk_right")
 		check(runner.street.player.position == stationary,"Movement cannot move hidden actor in VN room")
 		await choose(night,"Az ablakhoz fordulok")
 		await finish(night.vn)

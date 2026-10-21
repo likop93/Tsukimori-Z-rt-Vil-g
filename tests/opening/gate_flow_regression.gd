@@ -13,6 +13,12 @@ func make_runner() -> Node:
 	add_child(runner)
 	await get_tree().process_frame
 	return runner
+func wait_autowalk(runner: Node, seconds := 12.0) -> void:
+	var waited := 0.0
+	while runner.street.player.autowalk_active and waited < seconds:
+		await get_tree().process_frame
+		waited += get_process_delta_time()
+	check(not runner.street.player.autowalk_active,"Autowalk reaches its goal")
 func interact() -> void:
 	Input.action_press("observe")
 	await get_tree().process_frame
@@ -28,10 +34,8 @@ func _ready() -> void:
 		duration += float(beat.duration)
 	check(duration >= 45 and duration <= 70,"Opening is 45–70 seconds")
 	var start: Vector2 = runner.street.player.position
-	Input.action_press("walk_right")
 	await get_tree().create_timer(0.2).timeout
-	Input.action_release("walk_right")
-	check(runner.street.player.position.is_equal_approx(start),"Opening blocks player input")
+	check(runner.street.player.position.is_equal_approx(start) and not runner.street.player.autowalk_active,"Opening keeps Akira locked until the handoff")
 	Engine.time_scale = 4
 	var captured := {}
 	while not runner.completed:
@@ -45,34 +49,23 @@ func _ready() -> void:
 	check(runner.dialogue.modulate.a == 1.0,"Natural handoff restores dialogue opacity")
 	check(runner.handoff_count == 1 and not GameState.has_flag("met_miyako") and not GameState.has_flag("crossed_bridge"),"Gate handoff does not invent later story progress")
 	await capture("short_intro_playable_gate")
-	# The street must remain still until the player provides input.
-	start = runner.street.player.position
-	await get_tree().create_timer(0.4).timeout
-	check(runner.street.player.position.distance_to(start) < 0.1,"No automatic village walk remains")
-	Input.action_press("walk_up")
-	await get_tree().create_timer(2.5).timeout
-	Input.action_release("walk_up")
-	await get_tree().create_timer(0.2).timeout
-	check(runner.street.player.position.y == 150,"Player cannot walk up painted background stairs")
+	# No free keyboard movement: the handoff starts Akira's own walk up the street.
+	check(runner.street.player.autowalk_active,"Handoff starts the automatic street walk")
+	await wait_autowalk(runner)
+	check(runner.street.player.position.y >= 150 and runner.street.player.position.y < 166,"Street walk ends at the bridge junction, below the painted stairs")
+	check(not InputMap.has_action("walk_right") and not InputMap.has_action("run"),"No WASD/run actions exist")
 	await interact()
 	check(runner.street.location == "bridge","Player explicitly enters bridge")
-	Input.action_press("walk_right")
-	await get_tree().create_timer(3.4).timeout
-	Input.action_release("walk_right")
+	check(runner.street.player.autowalk_active,"Bridge entry starts the automatic crossing")
+	await wait_autowalk(runner)
 	await capture("bridge_grounding_REVIEW")
-	check(runner.street.bridge_rail.visible and runner.street.player.position.y >= 177 and runner.street.player.position.y <= 183,"Bridge feet stay on the deck behind the near rail")
-	await get_tree().create_timer(2.7).timeout
-	check(runner.street.player.input_enabled,"Bridge microbeat returns control")
-	Input.action_press("walk_right")
-	await get_tree().create_timer(4).timeout
-	Input.action_release("walk_right")
+	check(runner.street.bridge_rail.visible and runner.street.player.position.y >= 170 and runner.street.player.position.y <= 205,"Bridge feet stay on the deck behind the near rail")
+	check(runner.street.player.input_enabled,"Bridge microbeat returned control")
 	await get_tree().create_timer(0.3).timeout
 	await interact()
 	check(runner.street.location == "house" and GameState.has_flag("crossed_bridge"),"House follows player crossing")
 	check(runner.street.player.position.x < 200 and not GameState.has_flag("met_miyako"),"House entry remains on the left without premature meeting")
-	Input.action_press("walk_right")
-	await get_tree().create_timer(1.85).timeout
-	Input.action_release("walk_right")
+	await wait_autowalk(runner)
 	await get_tree().create_timer(0.3).timeout
 	check(runner.street.player.visual.frame == 3 and not runner.street.player.visual.flip_h,"Right idle preserves direction")
 	await interact()
@@ -87,9 +80,9 @@ func _ready() -> void:
 		runner.arrival.vn.advance()
 	Engine.time_scale = 1
 	check(GameState.has_flag("met_miyako") and runner.street.player.input_enabled,"Meeting alone sets met_miyako and returns control")
-	Input.action_press("walk_left")
-	await get_tree().create_timer(0.5).timeout
-	Input.action_release("walk_left")
+	await wait_autowalk(runner)
+	runner.street.player.walk_to(Vector2(200,274))
+	await wait_autowalk(runner)
 	await get_tree().create_timer(0.4).timeout
 	check(runner.street.player.visual.frame == 1 and not runner.street.player.visual.flip_h,"Left idle no longer flips to right")
 	await capture("akira_left_idle_REVIEW")

@@ -16,7 +16,7 @@
 | 3. nap: Shion → pecsét → délutáni falu (Ayame, Hana/Himiko-említés) → esti tea | IMPLEMENTED / szövegek és CG-staging REVIEW |
 | GameState: 0. nap + 1–120, napszakok, események, látogatások | IMPLEMENTED infrastruktúra; történeti ütemező nincs |
 | Időjárási anomália a 30. nap előtt | tiltott (API-korlát) |
-| WASD-alapú mozgás | **kivezetendő** (2026-10-20 döntés); a falutérkép már kattintásos |
+| Szabad (WASD) mozgás | **kivezetve** → automatikus séta ([részletek](AUTOWALK_NO_WASD.md)), REVIEW, Godot-ban még nem futtatva; a falutérkép kattintásos |
 | Akira szemüveg nélkül | **döntés rögzítve**; a meglévő portrék/CG-k ellenőrzése hátra van |
 | 4–10. nap, Hetedik Éjszaka, Katsuro nyomozás, Himiko érkezése | MISSING |
 | Mashiro jelenetek, moon_two_faces, Sayuri | MISSING (Mashiro/Ayame referenciák beérkeztek: [intake](REFERENCE_INTAKE_2026_10_20.md)) |
@@ -29,7 +29,7 @@
 1. Döntések rögzítése — [DECISION_LOG](DECISION_LOG.md), 2026-10-20. ✔
 2. Dokumentáció egységesítése (ez a változtatás). ✔
 3. Nyitány v3: **✔ autós érkezés + parkolás implementálva (REVIEW, tesztelésre vár)**, buszos assetek archiválva; hátra: gyaloglás Miyako házáig filmes átvezetésként (`village_walk_REVIEW.png` kész, nincs bekötve).
-4. WASD kivezetése a maradék jelenetekből a térkép- és VN-rendszerre építve; közben a két régi hibás teszt újraírása; Akira-portrék szemüveg-ellenőrzése.
+4. **✔ WASD kivezetve** (automatikus séta, REVIEW, tesztelésre vár); a mozgásos tesztek átállítva; Akira-portrék szemüveg-ellenőrzése kész (lásd AUTOWALK_NO_WASD.md). Hátra: a két régi hibás teszt (`vn_dialogue`, `interior`) tartalmi javítása, és a Miyako-házhoz vezető séta képi átvezetése (`village_walk_REVIEW.png`).
 5. Minimális verziózott mentés és napvégi továbblépés, majd a 4. nap (VI. fejezet, Katsuro-jegyzetek, Himiko). A Hetedik Éjszaka csak a 3–6. nap összhangja után; a szerkezet és a nem szexuális túlélési ág készül, explicit szexuális tartalom nem.
 
 ## Nyitott blokkolók

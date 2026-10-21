@@ -1,4 +1,5 @@
 extends Node
+const WalkSim := preload("res://tests/support/walk_sim.gd")
 var failures: Array[String] = []
 func check(ok: bool, message: String) -> void:
 	if not ok:
@@ -54,17 +55,17 @@ func _ready() -> void:
 		while vn.active:
 			await key(KEY_SPACE)
 		check(GameState.has_flag("miyako_interior_dialogue_seen") and runner.street.player.input_enabled,"Branch completion returns control")
-		Input.action_press("walk_down")
+		WalkSim.press(runner.street.player,"walk_down")
 		await get_tree().create_timer(0.4).timeout
-		Input.action_release("walk_down")
+		WalkSim.release(runner.street.player,"walk_down")
 		check(runner.street.player.position.y <= 269,"Interior feet stay on the floor")
-		Input.action_press("walk_right")
+		WalkSim.press(runner.street.player,"walk_right")
 		await get_tree().create_timer(3.0).timeout
-		Input.action_release("walk_right")
+		WalkSim.release(runner.street.player,"walk_right")
 		check(runner.street.player.position.x > 340,"Player can walk past Miyako on the floor")
-		Input.action_press("walk_left")
+		WalkSim.press(runner.street.player,"walk_left")
 		await get_tree().create_timer(3.0).timeout
-		Input.action_release("walk_left")
+		WalkSim.release(runner.street.player,"walk_left")
 		check(runner.street.player.position.x < 240,"Player can pass Miyako in reverse too")
 		await RenderingServer.frame_post_draw
 		get_viewport().get_texture().get_image().save_png("res://review/interior_complete.png")

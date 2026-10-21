@@ -17,7 +17,7 @@ Irányítás: gombok leírása. Kilépés: játék bezárása.
 Játékállás-mentés ebben a buildben még nincs.
 
 IRÁNYÍTÁS
-WASD / nyilak — mozgás
+Akira magától sétál a következő pontig (nincs WASD / futás)
 E — megfigyelés / továbbhaladás / interakció
 Space / Enter — a nyitó szöveg gyorsítása
 Esc — a nyitó jelenet kihagyása

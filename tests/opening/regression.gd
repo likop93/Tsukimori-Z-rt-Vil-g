@@ -1,4 +1,5 @@
 extends Node
+const WalkSim := preload("res://tests/support/walk_sim.gd")
 var failures: Array[String] = []
 var runner: Node
 var shots := false
@@ -31,9 +32,9 @@ func run_checks() -> void:
 	runner = await new_runner()
 	runner.auto_advance = false
 	var start: Vector2 = runner.street.player.position
-	Input.action_press("walk_right")
+	WalkSim.press(runner.street.player,"walk_right")
 	await get_tree().create_timer(0.15).timeout
-	Input.action_release("walk_right")
+	WalkSim.release(runner.street.player,"walk_right")
 	check(runner.street.player.position.is_equal_approx(start),"Input locked during intro")
 	check(not GameState.has_flag("entered_tsukimori"),"No story flag before handoff")
 	check(not runner.weather.visible,"Opening black beat has no visible rain overlay")
@@ -82,11 +83,11 @@ func run_checks() -> void:
 	check(sheet_paths.size() == 4,"All four residents use their own approved sheet")
 	await capture("village_start")
 	var old_x: float = runner.street.player.position.x
-	Input.action_press("walk_right")
+	WalkSim.press(runner.street.player,"walk_right")
 	await get_tree().create_timer(0.05).timeout
 	check(runner.street.player.velocity.x > 0 and runner.street.player.velocity.x < 70,"Walking starts with measured acceleration")
 	await get_tree().create_timer(3.4).timeout
-	Input.action_release("walk_right")
+	WalkSim.release(runner.street.player,"walk_right")
 	check(runner.street.player.position.x > old_x+100,"Player input moves Akira after handoff")
 	await get_tree().create_timer(0.3).timeout
 	check(runner.street.player.velocity.length() < 0.01,"Akira decelerates to a full stop")
@@ -100,16 +101,16 @@ func run_checks() -> void:
 		all_walk = all_walk and runner.street.player.visited_frames.has(frame)
 	check(all_walk,"Akira plays every side-walk phase from actual travel")
 	runner.street.player.position = Vector2(535,96)
-	Input.action_press("walk_up")
+	WalkSim.press(runner.street.player,"walk_up")
 	await get_tree().create_timer(1.0).timeout
-	Input.action_release("walk_up")
+	WalkSim.release(runner.street.player,"walk_up")
 	check(is_equal_approx(runner.street.player.position.y,95),"Cannot walk beyond the far end of the stone lane")
 	check(not runner.street.player.moving and runner.street.player.visual.frame == 2,"Walking into upper boundary stops gait in back idle")
 	runner.street.player.position = Vector2(525,300)
 	for action in ["walk_up","walk_down","walk_left"]:
-		Input.action_press(action)
+		WalkSim.press(runner.street.player,action)
 		await get_tree().create_timer(0.4).timeout
-		Input.action_release(action)
+		WalkSim.release(runner.street.player,action)
 	var used_back := false
 	var used_front := false
 	for frame in range(8,12):
@@ -121,16 +122,16 @@ func run_checks() -> void:
 	await get_tree().create_timer(0.3).timeout
 	check(runner.street.player.visual.frame == 3 and not runner.street.player.visual.flip_h,"Akira remains left-facing in the correct idle pose")
 	runner.street.player.position = Vector2(900,370)
-	Input.action_press("walk_right")
-	Input.action_press("walk_down")
+	WalkSim.press(runner.street.player,"walk_right")
+	WalkSim.press(runner.street.player,"walk_down")
 	await get_tree().create_timer(0.2).timeout
-	Input.action_release("walk_right")
-	Input.action_release("walk_down")
+	WalkSim.release(runner.street.player,"walk_right")
+	WalkSim.release(runner.street.player,"walk_down")
 	check(runner.street.player.position.x <= runner.street.lane_limits(runner.street.player.position.y).y and runner.street.player.position.y <= 339,"Right and bottom bounds hold")
 	runner.street.player.position = Vector2(0,300)
-	Input.action_press("walk_left")
+	WalkSim.press(runner.street.player,"walk_left")
 	await get_tree().create_timer(0.25).timeout
-	Input.action_release("walk_left")
+	WalkSim.release(runner.street.player,"walk_left")
 	check(runner.street.player.position.x >= runner.street.lane_limits(runner.street.player.position.y).x,"Left railing retains Akira in the lane")
 	for resident in runner.street.residents:
 		check(resident.row >= 1 and resident.row <= 4,"Resident uses anonymous approved source row")

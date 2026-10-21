@@ -9,12 +9,13 @@ func _ready() -> void:
 	runner.hint.hide()
 	runner.heading.hide()
 	DirAccess.make_dir_recursive_absolute("res://review/motion_frames")
-	Input.action_press("walk_right")
+	runner.street.player.input_enabled = true
+	runner.street.player.walk_to(Vector2(548,190))
 	for i in 48:
 		await get_tree().create_timer(1.0/24.0).timeout
 		await RenderingServer.frame_post_draw
 		get_viewport().get_texture().get_image().save_png("res://review/motion_frames/%03d.png" % i)
-	Input.action_release("walk_right")
+	runner.street.player.stop_autowalk()
 	runner.queue_free()
 	await get_tree().process_frame
 	get_tree().quit()

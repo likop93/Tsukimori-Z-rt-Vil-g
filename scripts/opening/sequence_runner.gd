@@ -126,9 +126,7 @@ func make_label(parent: Node, at: Vector2, dimensions: Vector2, font_size: int) 
 
 func install_input() -> void:
 	var mapping := {
-		"walk_left":[KEY_A,KEY_LEFT],"walk_right":[KEY_D,KEY_RIGHT],
-		"walk_up":[KEY_W,KEY_UP],"walk_down":[KEY_S,KEY_DOWN],
-		"observe":[KEY_E],"run":[KEY_SHIFT]
+		"observe":[KEY_E]
 	}
 	for action in mapping:
 		if not InputMap.has_action(action):
@@ -315,7 +313,7 @@ func finish_arrival() -> void:
 	bubble.hide()
 	heading.text = "Miyako háza"
 	heading.show()
-	hint.text = "WASD / nyilak · séta    F1 · segítség"
+	hint.text = "E · tovább / figyelés    F1 · segítség"
 	hint.visible = help_visible
 	street.enable_control()
 	print("MIYAKO_ENCOUNTER_COMPLETE: met_miyako=true")

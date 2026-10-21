@@ -31,12 +31,12 @@ A tea után a főmenü következik, negyedik nap nincs. Gyors belépés: Főmen�
 ## Tulajdonosi döntések, amelyek még nincsenek implementálva (2026-10-20)
 - **Autós érkezés:** a nyitány már autós (v3, REVIEW, [részletek](docs/OPENING_V3_CAR_ARRIVAL.md)); a falu szélén parkol. A gyaloglás Miyako házáig filmes átvezetésként még hátra van.
 - **Akira szemüveg nélkül**, sötét kapucnis kabátban.
-- **Nincs WASD-alapú szabad mozgás:** térképes helyszínválasztás, filmes átvezetések, VN. A jelenlegi build a nyitány kapu utáni részében, a házbelsőben és az első éjszakai sávban még WASD/nyilak + Shift-futás.
+- **Nincs WASD-alapú szabad mozgás** (kivezetve, REVIEW, [részletek](docs/AUTOWALK_NO_WASD.md)): a kapu utáni szakaszban, a híd–ház úton, a házbelsőben és az esti nappaliban Akira magától megy a következő pontig, a játékos E-vel lép tovább. Térképes helyszínválasztás, filmes átvezetések és VN marad.
 
 Részletek: [DECISION_LOG](docs/DECISION_LOG.md), 2026-10-20.
 
 ## Irányítás (jelenlegi build, kivezetés alatt)
-WASD / nyilak: séta · Shift: futás · E: figyelés, továbbhaladás, beszélgetés · Space / Enter / bal kattintás: szöveg · Esc: szünetmenü (intróban kihagyás) · Tab: szünet · F1: súgó · M: falutérkép. A falutérképen kattintással lehet helyszínt választani, a „Hazamegyek” bármikor elérhető. [Menü és futás](docs/PAUSE_AND_RUN_REVIEW.md), [fejezetválasztó](docs/CHAPTER_SELECT_REVIEW.md).
+Akira magától megy (nincs WASD/futás) · E: figyelés, továbbhaladás, beszélgetés · Space / Enter / bal kattintás: szöveg · Esc: szünetmenü (intróban kihagyás) · Tab: szünet · F1: súgó · M: falutérkép. A falutérképen kattintással lehet helyszínt választani, a „Hazamegyek” bármikor elérhető. [Menü és futás](docs/PAUSE_AND_RUN_REVIEW.md), [fejezetválasztó](docs/CHAPTER_SELECT_REVIEW.md).
 
 ## Teszt- és állapotforrások
 - [Fejlesztési állapot](docs/PROGRESS.md)

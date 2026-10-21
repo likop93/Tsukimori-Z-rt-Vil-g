@@ -167,6 +167,8 @@ func build_house_rail() -> void:
 		add_rail_patch(PackedVector2Array([post.position,post.position+Vector2(post.size.x,0),post.end,post.position+Vector2(0,post.size.y)]),house_rail)
 
 func show_location(next_location: String, afternoon := false) -> void:
+	if is_instance_valid(player):
+		player.stop_autowalk()
 	tour_bounds = Rect2()
 	location = next_location
 	for cameo in quiet_cameos:
@@ -269,10 +271,25 @@ func show_location(next_location: String, afternoon := false) -> void:
 		resident.set_physics_process(true)
 
 
+# Akira has no free keyboard movement. In the exploration locations he walks
+# the route to the next story point by himself; the player decides when to
+# continue (E prompt at the end of the route).
+const AUTOWALK_GOALS := {
+	"street": Vector2(500,152),
+	"bridge": Vector2(548,190),
+	"house": Vector2(285,274),
+	"interior": Vector2(455,266),
+}
+
+func start_autowalk() -> void:
+	if AUTOWALK_GOALS.has(location) and player.input_enabled:
+		player.walk_to(constrain_position(AUTOWALK_GOALS[location]))
+
 func enable_control() -> void:
 	enabled = true
 	camera_locked = false
 	player.input_enabled = true
+	start_autowalk()
 
 func show_tour_location(path: String, bounds: Rect2, actor_scale: float) -> void:
 	# Isolate surveyed tour geometry from the original opening/bridge lanes.

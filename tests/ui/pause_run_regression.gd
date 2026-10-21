@@ -1,4 +1,5 @@
 extends Node
+const WalkSim := preload("res://tests/support/walk_sim.gd")
 var failures: Array[String] = []
 func check(ok: bool, message: String) -> void:
 	if not ok:
@@ -33,41 +34,32 @@ func _ready() -> void:
 	check(get_tree().paused and runner.beat_time == intro_time,"Menu freezes intro clock")
 	await key(KEY_TAB)
 	check(not get_tree().paused,"Tab resumes intro")
-	Input.action_press("run")
-	Input.action_press("walk_right")
+	check(not InputMap.has_action("run") and not InputMap.has_action("walk_right"),"No free-movement or run actions are registered")
+	WalkSim.press(actor,"walk_right")
 	var locked_at: Vector2 = actor.position
 	await get_tree().create_timer(0.2).timeout
-	check(not actor.running and actor.position == locked_at,"Shift cannot move actor during intro")
-	Input.action_release("run")
-	Input.action_release("walk_right")
+	check(actor.position == locked_at,"Akira cannot move during the intro")
+	WalkSim.release(actor,"walk_right")
 	runner.skip_all()
 	runner.street.show_location("bridge")
 	var distances: Array[float] = []
-	for run in [false,true]:
-		actor.position = Vector2(85,190)
-		actor.velocity = Vector2.ZERO
-		if run:
-			Input.action_press("run")
-		Input.action_press("walk_right")
-		await get_tree().create_timer(0.7).timeout
-		distances.append(actor.position.x-85)
-		if run:
-			check(actor.visual.texture == actor.RUN_ATLAS,"Side run uses separate atlas")
-			await capture("akira_run_REVIEW")
-		Input.action_release("run")
-		Input.action_release("walk_right")
-		await get_tree().create_timer(0.3).timeout
-	check(distances[1] > distances[0]*1.5,"Run is measurably faster than walk")
-	check(actor.velocity.length() < 0.1 and not actor.running,"Releasing input brakes to idle")
+	actor.position = Vector2(85,190)
+	actor.velocity = Vector2.ZERO
+	actor.walk_to(Vector2(300,190))
+	await get_tree().create_timer(0.7).timeout
+	distances.append(actor.position.x-85)
+	check(distances[0] > 20,"Automatic walk moves Akira along the bridge")
+	await capture("akira_autowalk_REVIEW")
+	actor.stop_autowalk()
+	await get_tree().create_timer(0.3).timeout
+	check(actor.velocity.length() < 0.1 and not actor.running,"Stopping the walk brakes to idle")
 	await key(KEY_ESCAPE)
 	check(menu.root.visible and get_tree().paused,"Escape opens pause after intro")
 	var at: Vector2 = actor.position
-	Input.action_press("walk_right")
-	Input.action_press("run")
+	WalkSim.press(actor,"walk_right")
 	await get_tree().create_timer(0.2).timeout
 	check(actor.position == at,"Movement is frozen during pause")
-	Input.action_release("walk_right")
-	Input.action_release("run")
+	WalkSim.release(actor,"walk_right")
 	await capture("pause_menu_REVIEW")
 	menu.show_settings()
 	var volume: float = AppSettings.volume
@@ -90,22 +82,18 @@ func _ready() -> void:
 	await get_tree().create_timer(0.2).timeout
 	check(vn.index == 0 and vn.revealed == revealed,"Pause prevents dialogue reveal and advancement")
 	menu.resume()
-	Input.action_press("run")
-	Input.action_press("walk_right")
+	WalkSim.press(actor,"walk_right")
 	await get_tree().create_timer(0.2).timeout
-	check(not actor.running and actor.position == at,"Running stays blocked during dialogue")
-	Input.action_release("run")
-	Input.action_release("walk_right")
+	check(actor.position == at,"Walking stays blocked during dialogue")
+	WalkSim.release(actor,"walk_right")
 	vn.queue_free()
 	actor.input_enabled = true
 	runner.street.show_location("house")
 	actor.position = Vector2(530,275)
-	Input.action_press("walk_right")
-	Input.action_press("run")
+	WalkSim.press(actor,"walk_right")
 	await get_tree().create_timer(0.6).timeout
-	Input.action_release("walk_right")
-	Input.action_release("run")
-	check(actor.position.x <= 545 and actor.position.y >= 264 and actor.position.y <= 282,"Run respects house bounds")
+	WalkSim.release(actor,"walk_right")
+	check(actor.position.x <= 545 and actor.position.y >= 264 and actor.position.y <= 282,"Walk respects house bounds")
 	remove_child(runner)
 	get_tree().root.add_child(runner)
 	get_tree().current_scene = runner

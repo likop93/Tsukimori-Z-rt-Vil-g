@@ -36,7 +36,7 @@ func _ready() -> void:
 	check(hall.camera.position == camera_at,"Pause freezes camera")
 	check(hall.cue.stream_paused,"Pause suspends creak audio")
 	runner.pause_menu.resume()
-	Input.action_press("walk_right")
+	WalkSim.press(runner.street.player,"walk_right")
 	var space := InputEventKey.new()
 	space.keycode = KEY_SPACE
 	space.pressed = true
@@ -44,7 +44,7 @@ func _ready() -> void:
 	await get_tree().create_timer(2.3).timeout
 	space.pressed = false
 	Input.parse_input_event(space)
-	Input.action_release("walk_right")
+	WalkSim.release(runner.street.player,"walk_right")
 	check(not is_instance_valid(hall.vn),"Space does not skip timed staging")
 	check(runner.street.player.position == position,"Hidden Akira cannot walk or jump")
 	await capture("hallway_03_REVIEW")

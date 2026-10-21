@@ -1,4 +1,5 @@
 extends Node
+const WalkSim := preload("res://tests/support/walk_sim.gd")
 var failures: Array[String] = []
 func check(ok: bool, message: String) -> void:
 	if not ok:
@@ -43,10 +44,10 @@ func _ready() -> void:
 	check(vn.portrait.texture.get_image().get_pixel(0,0).a < 0.01,"Character background is transparent")
 	await press(KEY_SPACE)
 	check(vn.index == 0 and vn.body.visible_characters == vn.body.get_total_character_count(),"First press reveals greeting")
-	Input.action_press("walk_right")
+	WalkSim.press(runner.street.player,"walk_right")
 	var at: Vector2 = runner.street.player.position
 	await get_tree().create_timer(0.3).timeout
-	Input.action_release("walk_right")
+	WalkSim.release(runner.street.player,"walk_right")
 	check(runner.street.player.position.distance_to(at) < 0.1,"Walking blocked during VN")
 	for i in 3:
 		if i > 0:

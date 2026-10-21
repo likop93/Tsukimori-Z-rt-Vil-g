@@ -1,4 +1,5 @@
 extends Node
+const WalkSim := preload("res://tests/support/walk_sim.gd")
 var failures: Array[String] = []
 func check(ok: bool, label: String) -> void:
 	if not ok:
@@ -31,9 +32,9 @@ func _ready() -> void:
 		miyako.frame = f
 		check(absf(miyako.visual.offset.y+miyako.pivots[f].y)<0.01,"Every Miyako pose has the same foot baseline")
 	runner.street.player.position = Vector2(300,274)
-	Input.action_press("walk_right")
+	WalkSim.press(runner.street.player,"walk_right")
 	await get_tree().create_timer(1.5).timeout
-	Input.action_release("walk_right")
+	WalkSim.release(runner.street.player,"walk_right")
 	check(runner.street.player.position.x < 335,"Player cannot walk through Miyako")
 	await shot("miyako_contact")
 	for x in [145,242,320,438,530]:

@@ -328,3 +328,5 @@ Tulajdonosi döntések az átadás-ellenőrzés után. Az explicit tulajdonosi d
 4. **Nincs WASD-alapú szabad mozgás.** A játék térképes helyszínválasztással, filmes átvezetésekkel és VN-párbeszédekkel működik. Kivezetendő a kapu utáni utca/híd/ház szakasz járása, a házbelső és az éjszakai sáv járása, valamint a Shift-futás, a hozzájuk tartozó vezérlési súgókkal és tesztekkel. A már működő kattintásos falutérkép megmarad. Implementáció külön, jóváhagyott lépésben; addig a jelenlegi kód változatlan.
 
 Státusz: döntés rögzítve, implementáció nincs. Nem új vizuális LOCK.
+
+> **Státusz 2026-10-21:** a 2026-10-20 bejegyzés 4. pontja (WASD kivezetése) implementálva REVIEW állapotban: `docs/AUTOWALK_NO_WASD.md`. A 4. pont tartalma nem változott.

@@ -1,5 +1,6 @@
 # Historical automatic-arrival test; superseded by gate_flow_regression.gd on 2026-09-28.
 extends Node
+const WalkSim := preload("res://tests/support/walk_sim.gd")
 var failures: Array[String] = []
 func check(ok: bool, label: String) -> void:
 	if not ok:
@@ -26,10 +27,10 @@ func _ready() -> void:
 	runner.auto_advance = false
 	runner.finish_intro()
 	check(not runner.street.player.input_enabled,"Street remains cinematic")
-	Input.action_press("walk_down")
+	WalkSim.press(runner.street.player,"walk_down")
 	var initial_y: float = runner.street.player.position.y
 	await get_tree().create_timer(1.0).timeout
-	Input.action_release("walk_down")
+	WalkSim.release(runner.street.player,"walk_down")
 	check(runner.street.player.position.y < initial_y,"Director moves actor while opposing player input is ignored")
 	runner.request_skip()
 	check(runner.skip_dialog.visible,"Unseen arrival asks before skipping")
@@ -65,16 +66,16 @@ func _ready() -> void:
 	Engine.time_scale = 1
 	check(runner.street.player.input_enabled and runner.handoff_count == 1,"One natural handoff after greeting")
 	var destination: Vector2 = runner.street.player.position
-	Input.action_press("walk_left")
+	WalkSim.press(runner.street.player,"walk_left")
 	await get_tree().create_timer(0.4).timeout
-	Input.action_release("walk_left")
+	WalkSim.release(runner.street.player,"walk_left")
 	check(runner.street.player.position.x < destination.x,"House forecourt becomes playable")
 	await get_tree().create_timer(0.4).timeout
 	check(runner.street.player.facing == 1 and runner.street.player.visual.frame == 1 and not runner.street.player.visual.flip_h,"Left movement settles in the source's left-facing idle")
 	await capture("akira_left_idle_REVIEW")
-	Input.action_press("walk_right")
+	WalkSim.press(runner.street.player,"walk_right")
 	await get_tree().create_timer(0.4).timeout
-	Input.action_release("walk_right")
+	WalkSim.release(runner.street.player,"walk_right")
 	await get_tree().create_timer(0.4).timeout
 	check(runner.street.player.facing == 3 and runner.street.player.visual.frame == 3 and not runner.street.player.visual.flip_h,"Right movement settles in the source's right-facing idle")
 	runner.queue_free()

@@ -6,4 +6,6 @@ Shift nyomva tartása: futás, 118 px/s a 70 px/s sétával szemben. Gyorsulás 
 
 Források, pontos promptok, hiányzó production animáció: [generation.md](../assets/opening/run_v1/generation.md).
 
+> **2026-10-21:** a futás (Shift) és a szabad WASD-mozgás kikerült, lásd `AUTOWALK_NO_WASD.md`. A teszt (`pause_run_regression`) ma a szünetet, a VN-zárat és a ház úthatárait ellenőrzi; a futás-sebesség ellenőrzés megszűnt.
+
 Teszt: tests/ui/pause_run_regression.tscn. Intró-szünet, folytatás, intró/VN futásblokkolás, sebességkülönbség, fékezés, menü-szünet, hangerő, Esc almenü, VN szöveg befagyasztása, ház úthatárai és főmenübe visszatérés. Mért 0.7 mp-es sáv: séta 40.16 px, futás 67.00 px. A főmenü és Miyako VN meglévő tesztjei is sikeresek. Godot import/indítás nem adott parse/runtime script-hibát; a környezeti certificate-store és kilépési ObjectDB diagnosztika továbbra is előfordul.
