@@ -1,57 +1,54 @@
 # Tsukimori — Zárt Világ
 
-**2026-10-14 · Falubejárás:** kattintható térképes helyszínválasztás, külön találkozás/belépés gombok, bármikor elérhető Otthon. Akirát ebben a szakaszban nem kell irányítani. Teszt: Fejezetválasztás → III. Falubejárás · Reina és a többiek. [Részletek](docs/VILLAGE_DESTINATION_NAVIGATION_REVIEW.md).
-
-
-A jelenleg futó játék egy high-detail pixel-art 2D/2.5D narratív prototípus. F5 a főmenüt indítja. A „Játék indítása” innen vezet a 66 másodperces nyitásba: busz, Akira monológja, emléktöredék, leszállás, erdei séta, kapu. A kapunál visszakapod az irányítást; a híd és Miyako találkozása játékosvezérelt.
+Godot 4.7.2 alapú, cinematic pixel-art / 2.5D narratív pszichológiai horror és romantikus játék, 640×360 alapfelbontással. **Technikai REVIEW állapot:** a LOCKED kreatív döntések változatlanok, a működés nem jelent FINAL assetjóváhagyást.
 
 ## Indítás
+1. A teljes ZIP kicsomagolása egy új mappába.
+2. Godot 4.7.2 (normál kiadás) → Importálás → a gyökérben lévő `project.godot`.
+3. Az import után F5 → főmenü (`scenes/ui/main_menu.tscn`) → Játék indítása.
 
-1. A teljes ZIP-et csomagold ki egy új mappába.
-2. Godot 4.7.2 → Importálás → a gyökérben lévő project.godot.
-3. Várd meg az importálást, majd F5 → Játék indítása.
+macOS: [MACOS_INSTALL_HU.txt](docs/MACOS_INSTALL_HU.txt). Tesztelői leírás: [TESTER_README.txt](TESTER_README.txt). Játékállás-mentés még nincs; csak a hangerő és a teljes képernyő marad meg.
 
-A főmenü egérrel vagy nyilakkal és Enterrel kezelhető. Beállítások: hangerő és teljes képernyő; ezek a következő indításra is megmaradnak. Az Irányítás megnyitja a gombok leírását, a Kilépés bezárja a játékot. Esc visszalép az almenükből. Játékállás-mentés még nincs.
+## Mi játszható most (2026-10-20)
+Az érkezéstől a 3. nap esti teájáig összefüggő történet. Ez rendezett jelenetsor, nem három szabadon szimulált nap.
 
-Teszteléshez a Fejezetválasztás közvetlenül a nyitányhoz, falusi sétához, Miyako első találkozásához, első éjszakához, első rendelési naphoz vagy Hana fejezetéhez vezet. A kiválasztott rész új tesztállapotból indul, szükséges előzményekkel és az eredeti nulla pontos korábbi döntésekkel. [Belépési pontok és állapotkezelés](docs/CHAPTER_SELECT_REVIEW.md).
+**nyitány (66 mp) → kapu → Miyako első találkozása → házbelső → első éjszaka → 1. nap (rendelő, két páciens, délutáni falubejárás) → 2. nap (Hana, késő délutáni Miyako, éjszakai látogató) → 3. nap (Shion-konzultáció, pecsét, délutáni falutérkép Ayamével és Hana/Himiko-említéssel, esti tea)**
 
-WASD / nyilak: séta. Shift nyomva: futás. E: figyelés, továbbhaladás a helyszín kijáratánál, beszélgetés Miyakóval. Space / Enter: szöveg gyorsítása / tovább. Esc: szünetmenü (intróban kihagyás). Tab / jobb felső Menü gomb: szünet bármikor. F1: vezérlési segítség.
+A tea után a főmenü következik, negyedik nap nincs. Gyors belépés: Főmenü → Fejezetválasztás (10 belépő, előzményekkel, de megszerzett pontok nélkül; nem save/load). Karaktergaléria és karakterlapok a főmenüből, illetve a szünetmenüből.
 
-A szünetmenüben folytatás, karakterlapok és kapcsolati státusz, hangerő, teljes képernyő, irányítás és főmenübe visszatérés található. A világ és a párbeszéd szünet alatt megáll. [Menü és futás REVIEW](docs/PAUSE_AND_RUN_REVIEW.md).
+| Működő rendszer | Hol |
+|---|---|
+| Főmenü, szünetmenü, beállítások, fejezetválasztó | `scripts/ui/` |
+| VN-párbeszéd, portrék, CG-k, választások (adatvezérelt) | `scripts/ui/vn_dialogue.gd`, `data/home_day1–3` |
+| Kattintásos falutérkép, visszalátogatások | `scripts/ui/village_map.gd`, `scripts/opening/village_walk_director.gd` |
+| GameState: 120 napos naptár, napszakok, események, látogatások, kapcsolatok | `scripts/game_state.gd` |
+| Karakterlapok, kapcsolati állapot, elutasítási/horror-állapotok | `scripts/ui/character_*.gd` |
+| Godot-tesztek | `tests/` |
 
-## Aktuális állapot
+## Még nincs
+4–10. nap · Hetedik Éjszaka · Katsuro nyomozati ága · Himiko érkezése · Mashiro jelenetei · Sayuri · mentés/betöltés · combat, inventory, komplex route-rendszer · végleges animáció, portrék és hang.
 
-2026-10-12: Főmenü → Karaktergaléria · tervek. Hana, Shion és Kuroe teljes alakos hétköznapi ruhái, saját fejlődési iránya és három-három választható jelenetpróba. A galéria nem módosítja a játék állapotát és nem helyettesíti a fő történetet. Hana korai átalakulása is lassabb. [Kidolgozás és korlátok](docs/WOMEN_CHARACTER_DEVELOPMENT_REVIEW.md).
+## Tulajdonosi döntések, amelyek még nincsenek implementálva (2026-10-20)
+- **Autós érkezés** a mostani buszos nyitány helyett; a falu szélén parkol, onnan gyalog megy Miyako házáig.
+- **Akira szemüveg nélkül**, sötét kapucnis kabátban.
+- **Nincs WASD-alapú szabad mozgás:** térképes helyszínválasztás, filmes átvezetések, VN. A jelenlegi build a nyitány kapu utáni részében, a házbelsőben és az első éjszakai sávban még WASD/nyilak + Shift-futás.
 
-Miyako horrorátalakulása lassabb: a jelenlegi fejezetekben legfeljebb finoman figyelő lesz. A teljes testi változás és mániákus mosoly későbbi történeti felfedésre van fenntartva.
+Részletek: [DECISION_LOG](docs/DECISION_LOG.md), 2026-10-20.
 
-2026-10-11: a pecsét után Miyako esti teázása következik, három személyes válasszal és új, horrorállapothoz illeszkedő esti ruhákkal. Közvetlenül: Fejezetválasztás → V. Esti tea. A karakterlap megőrzi a kimondott kapcsolati megállapodást és az új ruha előnézetét. Új REVIEW-kiegészítés, nem az eredeti forrás átirata. [Részletek, assetek, korlátok](docs/MIYAKO_TEA_WARDROBE_REVIEW.md).
+## Irányítás (jelenlegi build, kivezetés alatt)
+WASD / nyilak: séta · Shift: futás · E: figyelés, továbbhaladás, beszélgetés · Space / Enter / bal kattintás: szöveg · Esc: szünetmenü (intróban kihagyás) · Tab: szünet · F1: súgó · M: falutérkép. A falutérképen kattintással lehet helyszínt választani, a „Hazamegyek” bármikor elérhető. [Menü és futás](docs/PAUSE_AND_RUN_REVIEW.md), [fejezetválasztó](docs/CHAPTER_SELECT_REVIEW.md).
 
-Miyako előtt E indítja az első VN-jelenetet. E / Space / Enter / bal kattintás kiírja az aktuális mondatot, majd továbblép. A beszélgetés megvárja az olvasót. Utána újabb E belép a házba: benti beszélgetés, két eredeti választás, majd bejárható belső sáv. Jobbra E → Akira VN-szobája, ahol gombokkal választható az ablak, az orvosi táska, a fénykép és a lefekvés. Az első éjszaka külön lezárásából explicit folytatás vezet a reggelhez.
-
-Akira szobája és a rendelő VN-háttérként működik, járó Akira nélkül. Egér vagy fel/le + Enter választja a megfigyeléseket, a lefekvést és a két konzultációt. Reggel Miyakóval és két eredeti döntés → rendelő → nap tanulságai és Katsuro füzete → esti beszélgetés → második éjszakai „Hana” záróhang → az első nap vége. [Aktuális VN-kezelés](docs/ROOM_CLINIC_VN_REVIEW.md), [éjszaka története](docs/FIRST_NIGHT_IMPLEMENTATION_REVIEW.md), [első nap és hiányok](docs/FIRST_DAY_IMPLEMENTATION_REVIEW.md).
-
-Az első nap végén a Második reggel · folytatás gomb (vagy új E/Space/Enter) továbbvisz az éjszakai füzethez, Miyako üzenetéhez és Hana első terápiás beszélgetéséhez. Két eredeti választás, keret nélküli Hana-portré változó arckifejezéssel és megismerés után frissülő karakterlap. [Hana-jelenet, források és hiányok](docs/HANA_FIRST_SESSION_REVIEW.md).
-
-REVIEW / PLACEHOLDER: négy női ambient NPC, mozgás, kamera, eső, járható úthatárok, előtér-takarás, kapunál állapotbiztos átadás, híd és Miyako köszöntése. Az oldalirányú járás nyolc képkockás, az előre/hátra ciklus négyképkockás. Ez nem a teljes 10–15 perces történeti flow.
-
-A korai cameók működnek: Hana a meleg bejáratnál felpillant, Kuroe áthalad a házközön, Shion a híd falusi oldaláról figyel és elfordul. Mindhárom REVIEW asset, névtábla és dialógus nélkül. [Hana és Shion részletei](docs/HANA_SHION_CAMEOS_REVIEW.md).
-
-A párbeszédekben a partner balra, Akira jobbra jelenik meg keret nélkül. Hana öt, Miyako négy képi reakciót kapott. Az első két névtelen páciens eredeti, dekoratív felnőtt női portréja és reakciói is megjelennek. [Assetforrások, promptok és REVIEW státusz](docs/DIALOGUE_PORTRAITS_REVIEW.md).
-
-A portrék egymás felé fordulnak; a páciensek mérete és elhelyezése igazított. A rendelőben külön orvosi Akira-portré látszik. Hana nagy történeti pillanatai öt külön jelenetképet kapnak (leülés, ajtó, jel, füzet, elköszönés), a megfelelő mondatoknál; ezek alatt a VN-portrék elrejtőznek. [Új képek, rendezés és pontos promptok](docs/MEDICAL_AKIRA_HANA_CG_REVIEW.md).
-
-Még hiányzik: teljes házbelső, végleges karakteranimáció és portrék, fénykép-CG, alvás animáció/hang és Hana jóváhagyott klinikai szövege/sorrendje. A szoba, a reggeli háttér és a rendelő REVIEW. Combat, inventory, route-rendszer és komplex save/load nincs megvalósítva.
-
+## Teszt- és állapotforrások
 - [Fejlesztési állapot](docs/PROGRESS.md)
-- [Nyitás és Space-javítás](docs/CINEMATIC_V2_REVIEW.md)
-- [Talajhoz igazítás](docs/DIALOGUE_GROUNDING_FIX_REVIEW.md)
-- [Szövegdoboz rétegjavítása](docs/SUBTITLE_LAYER_FIX_REVIEW.md)
+- [Main audit és 3–10. napi terv, 2026-10-19](docs/WORK_HANDOFF_AUDIT_2026_10_19.md)
+- [3. nap, Ayame, tesztek, 2026-10-20](docs/DAY3_VILLAGE_REVIEW.md)
+- [Beérkezett Mashiro/Ayame referenciák](docs/REFERENCE_INTAKE_2026_10_20.md)
+
+A 3. napi suite-ok sikeresek. Két régi teszt (`vn_dialogue`, `interior`) kézzel felállított belépési fixture-je hibás, és kilépéskor 2–4 ObjectDB-figyelmeztetés marad.
 
 ## Governance
+A kreatív authority: [DECISION_LOG](docs/DECISION_LOG.md), [CREATIVE_BIBLE](docs/CREATIVE_BIBLE.md), [STORY_CANON](docs/STORY_CANON.md), [CHARACTER_BIBLE](docs/CHARACTER_BIBLE.md), [ART_DIRECTION_LOCK](docs/ART_DIRECTION_LOCK.md), [PIXEL_ART_PRODUCTION_DIRECTION](docs/PIXEL_ART_PRODUCTION_DIRECTION.md), [VISUAL_REFERENCE_INDEX](docs/VISUAL_REFERENCE_INDEX.md), [VISUAL_ASSET_USAGE_MATRIX](docs/VISUAL_ASSET_USAGE_MATRIX.md). Új történeti irányok: [STORY_DIRECTION_ADDENDUM](docs/STORY_DIRECTION_ADDENDUM_2026_10_19.md), [120 napos handoff](docs/TSUKIMORI_120_DAY_STORY_AND_WORK_HANDOFF.md). Az explicit tulajdonosi döntés felülírja az ellentétes régebbi LOCKED sort, de a DECISION_LOG-ba be kell vezetni.
 
-A kreatív authority változatlan: [DECISION_LOG](docs/DECISION_LOG.md), [CREATIVE_BIBLE](docs/CREATIVE_BIBLE.md), [STORY_CANON](docs/STORY_CANON.md), [CHARACTER_BIBLE](docs/CHARACTER_BIBLE.md), [ART_DIRECTION_LOCK](docs/ART_DIRECTION_LOCK.md), [PIXEL_ART_PRODUCTION_DIRECTION](docs/PIXEL_ART_PRODUCTION_DIRECTION.md), [VISUAL_REFERENCE_INDEX](docs/VISUAL_REFERENCE_INDEX.md), [VISUAL_ASSET_USAGE_MATRIX](docs/VISUAL_ASSET_USAGE_MATRIX.md). A technikai működés nem jelent FINAL assetjóváhagyást.
-
-## Korábbi 3D prototípus
-
-A megőrzött 3D jelenetek, modellek, generátorok és tesztek az [archive/legacy_3d](archive/legacy_3d/README.md) alatt találhatók. A jelenlegi F5-ös játék nem tölti be őket. A régi README és állapotjelentés másolata is az archívumban maradt.
+## Archívum
+- Korábbi 3D prototípus: [archive/legacy_3d](archive/legacy_3d/README.md). A jelenlegi F5 nem tölti be.
+- Az előző README részletes változata: [README_HISTORY_BEFORE_2026_10_20](docs/README_HISTORY_BEFORE_2026_10_20.md).

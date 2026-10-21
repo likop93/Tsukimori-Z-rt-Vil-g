@@ -74,10 +74,8 @@ Nem lehet:
 - a zöldülés történeti állapot legyen, ne alapdesign.
 
 ## Szemüveg
-- **opcionális variáns**;
-- vékony, modern, sötét keret;
-- nem lehet Loft vizuális ismertetőjegyének másolata;
-- külön meshként kapcsolható.
+- **Nincs szemüveg, véglegesen** (tulajdonosi döntés, 2026-10-20). A korábbi opcionális variáns felülírva; szemüveg-mesh, -material és ki/be kapcsoló nem készül;
+- Loft vizuális ismertetőjegyeit továbbra sem szabad másolni.
 
 ---
 
@@ -86,7 +84,7 @@ Nem lehet:
 ## Primary outfit
 
 A jóváhagyott karakterlap alapján:
-- sötét charcoal / fekete külső réteg;
+- sötét charcoal / fekete **kapucnis kabát** külső rétegként (tulajdonosi döntés, 2026-10-20);
 - modern, rétegzett városi felső;
 - kapucnis vagy puhább belső réteg;
 - egyszerű világosabb szürke alsó felső;
@@ -139,14 +137,12 @@ Ajánlott külön mesh részek:
 - Inner_Hoodie / Shirt
 - Pants
 - Shoes
-- Glasses_Optional
 - Watch
 - Optional bag / strap
 
 A mesh-felosztás szolgálja:
 - ruhaanimációt;
 - material swapet;
-- szemüveg ki/be kapcsolását;
 - későbbi outfit variánsokat.
 
 ---
@@ -236,7 +232,6 @@ Material group:
 - Cloth_Light
 - Leather/Rubber
 - Metal_Accent
-- Glasses
 
 Kerülendő:
 - túl erős normal map;
@@ -438,7 +433,6 @@ A karakter FINAL lookdev csak akkor tekinthető sikeresnek, ha ebben a jelenetbe
 - [ ] Walk foot lock stabil
 - [ ] nincs foot sliding
 - [ ] sötét esti fényben arc olvasható
-- [ ] opcionális szemüveg kapcsolható
 - [ ] beauty target jelenetben review-zva
 
 ---

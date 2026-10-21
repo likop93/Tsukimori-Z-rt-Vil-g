@@ -47,10 +47,10 @@ LOCKED megjelenés:
 - intelligens, komoly, figyelő arc;
 - karcsú-atletikus testalkat;
 - sötét charcoal/fekete, modern, rétegzett városi felsőruházat;
-- puhább belső réteg / kapucnis réteg megengedett és a jóváhagyott design része;
+- puhább belső réteg / kapucnis réteg megengedett és a jóváhagyott design része; elsődleges külső réteg: **sötét kapucnis kabát** (tulajdonosi döntés, 2026-10-20);
 - sötét, karcsú nadrág és praktikus sötét cipő;
 - visszafogott karóra;
-- szemüveg opcionális variáns, vékony modern kerettel;
+- **szemüveg nélkül, véglegesen** (tulajdonosi döntés, 2026-10-20; a korábbi „opcionális variáns” felülírva);
 - hosszabb kabát későbbi alternatív outfit lehet, nem az elsődleges sziluett;
 - a Black Fan motívum előrevetíthető, de ne legyen feltűnő cosplay-dísz.
 
