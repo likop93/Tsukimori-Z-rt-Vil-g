@@ -1,5 +1,5 @@
 {
-  "scene_id": "short_gate_handoff_v2",
+  "scene_id": "short_gate_handoff_v3_car",
   "beats": [
     {
       "id": "black",
@@ -8,17 +8,24 @@
       "lines": []
     },
     {
-      "id": "bus",
-      "image": "bus",
+      "id": "car",
+      "image": "car",
       "shots": [
-        "bus_cabin"
+        "res://assets/opening/car_v3/car_drive_REVIEW.png"
       ],
       "duration": 19,
-      "line_times": [0, 3, 7.5, 12, 14.3, 16.5],
+      "line_times": [
+        0,
+        3,
+        7.5,
+        12,
+        14.3,
+        16.5
+      ],
       "lines": [
-        "Az eső már órák óta verte az ablakot.",
-        "A sofőr egyszer sem kérdezte meg, biztosan itt akarok-e leszállni.",
-        "Talán ő is tudta, hogy ezt a döntést már jóval az indulás előtt elrontottam.",
+        "Órák óta vezettem, és az út egyre mélyebbre vitt a hegyek közé.",
+        "Egyszer sem fordultam vissza, pedig minden kanyarban lett volna rá lehetőségem.",
+        "Talán már indulás előtt tudtam, hogy ezt a döntést elrontottam.",
         "Katsuro hívott vissza.",
         "Túl sok év után.",
         "Túl kevés magyarázattal."
@@ -99,8 +106,8 @@
     },
     {
       "id": "recover",
-      "image": "bus",
-      "asset": "res://assets/opening/cinematic_v2/akira_recover_REVIEW.png",
+      "image": "car",
+      "asset": "res://assets/opening/car_v3/car_drive_REVIEW.png",
       "duration": 3,
       "lines": [
         "És én mégis eljöttem."
@@ -110,30 +117,48 @@
           "at": 0,
           "sound": "breath"
         }
+      ],
+      "crop": [
+        0.08,
+        0.04,
+        0.42,
+        0.42
       ]
     },
     {
-      "id": "stop",
-      "image": "forest",
-      "asset": "res://assets/opening/short_intro_v1/forest_gate_REVIEW.png",
+      "id": "parking",
+      "image": "car",
+      "asset": "res://assets/opening/car_v3/car_park_REVIEW.png",
       "duration": 8,
       "lines": [],
       "cues": [
         {
-          "at": 0.5,
+          "at": 0,
+          "sound": "engine_off"
+        },
+        {
+          "at": 0.6,
           "sound": "door"
         },
         {
-          "at": 2.3,
+          "at": 2.4,
           "sound": "step"
         },
         {
-          "at": 4.3,
+          "at": 3.2,
+          "sound": "step"
+        },
+        {
+          "at": 5.6,
           "sound": "door"
         },
         {
-          "at": 5,
-          "sound": "depart"
+          "at": 6.6,
+          "sound": "step"
+        },
+        {
+          "at": 7.3,
+          "sound": "step"
         }
       ]
     },

@@ -9,7 +9,7 @@
 | Elem | Státusz |
 |---|---|
 | Főmenü, szünet, beállítások, fejezetválasztó (10 belépő) | IMPLEMENTED |
-| Nyitány (66 mp, buszos) | IMPLEMENTED — **autós változatra cserélendő** (2026-10-20 döntés) |
+| Nyitány (66 mp, autós v3) | IMPLEMENTED — REVIEW, Godot-ban még nem futtatva ([részletek](OPENING_V3_CAR_ARRIVAL.md)) |
 | Miyako első találkozása, házbelső, első éjszaka, rendelő | IMPLEMENTED / képek REVIEW |
 | 1. nap falubejárás (kattintásos térkép, visszalátogatás) | IMPLEMENTED |
 | 2. nap: Hana → késő délutáni Miyako → éjszakai látogató | IMPLEMENTED / képek REVIEW |
@@ -28,7 +28,7 @@
 ## Soron következő lépések (minden lépés külön jóváhagyással)
 1. Döntések rögzítése — [DECISION_LOG](DECISION_LOG.md), 2026-10-20. ✔
 2. Dokumentáció egységesítése (ez a változtatás). ✔
-3. Nyitány v3: autós érkezés, parkolás, gyaloglás Miyako házáig filmes átvezetésként; új képek és hang REVIEW-ként, a buszos assetek archiválása.
+3. Nyitány v3: **✔ autós érkezés + parkolás implementálva (REVIEW, tesztelésre vár)**, buszos assetek archiválva; hátra: gyaloglás Miyako házáig filmes átvezetésként (`village_walk_REVIEW.png` kész, nincs bekötve).
 4. WASD kivezetése a maradék jelenetekből a térkép- és VN-rendszerre építve; közben a két régi hibás teszt újraírása; Akira-portrék szemüveg-ellenőrzése.
 5. Minimális verziózott mentés és napvégi továbblépés, majd a 4. nap (VI. fejezet, Katsuro-jegyzetek, Himiko). A Hetedik Éjszaka csak a 3–6. nap összhangja után; a szerkezet és a nem szexuális túlélési ág készül, explicit szexuális tartalom nem.
 

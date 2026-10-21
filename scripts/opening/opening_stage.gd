@@ -2,8 +2,6 @@ extends Node2D
 const IDLE := preload("res://assets/opening/staging_v3/akira_atlas.png")
 const WALK := preload("res://assets/opening/gait_v5/side_atlas_REVIEW.png")
 var actor: Sprite2D
-var bus: Sprite2D
-var door: Sprite2D
 var foreground: Sprite2D
 var mode := ""
 var clock := 0.0
@@ -14,26 +12,6 @@ var texture_cache: Dictionary = {}
 var watchers: Array[Sprite2D] = []
 
 func _ready() -> void:
-	bus = Sprite2D.new()
-	bus.texture = load("res://assets/opening/short_intro_v1/bus_REVIEW.png")
-	bus.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-	bus.scale = Vector2.ONE * (420.0 / bus.texture.get_width())
-	add_child(bus)
-	# Separate door layer: slide it open before Akira steps down.
-	var size := bus.texture.get_size()
-	var region := Rect2(size*Vector2(0.16,0.325),size*Vector2(0.078,0.46))
-	var dark := Polygon2D.new()
-	var origin := region.position-size/2
-	dark.polygon = PackedVector2Array([origin,origin+Vector2(region.size.x,0),origin+region.size,origin+Vector2(0,region.size.y)])
-	dark.color = Color("#171a25")
-	bus.add_child(dark)
-	door = Sprite2D.new()
-	door.texture = bus.texture
-	door.region_enabled = true
-	door.region_rect = region
-	door.centered = false
-	door.position = origin
-	bus.add_child(door)
 	actor = Sprite2D.new()
 	actor.hframes = 4
 	actor.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
@@ -81,7 +59,6 @@ func reset_stage() -> void:
 	if actor != null:
 		actor.scale = Vector2.ONE * 1.25
 		actor.hide()
-		bus.hide()
 		foreground.hide()
 		for watcher in watchers:
 			watcher.hide()
@@ -124,7 +101,8 @@ func update_stage(id: String, time: float, duration: float, shot: TextureRect) -
 	mode = id
 	clock = time
 	match id:
-		"bus":
+		"car":
+			# Dusk drive CG: slow push and a tiny road sway, no rain on the glass.
 			var push := 1.0+0.07*smoothstep(0,duration,time)
 			shot.scale = Vector2.ONE*push
 			shot.position = Vector2(-180,-150)*(push-1)+Vector2(0,roundf(sin(time*1.5)))
@@ -138,17 +116,11 @@ func update_stage(id: String, time: float, duration: float, shot: TextureRect) -
 			var recoil := exp(-time*3.0)
 			shot.scale = Vector2.ONE*(1.03+0.025*recoil)
 			shot.position = Vector2(-10,-5)+Vector2(3*sin(time*12)*recoil,0)
-		"stop":
-			bus.show()
-			var departure := maxf(0,time-5)
-			bus.position = Vector2(225-departure*departure*45,205)
-			var open_amount := smoothstep(0.5,1.3,time)*(1-smoothstep(4.3,4.8,time))
-			door.scale.x = lerpf(1,0.08,open_amount)
-			if time >= 1.4:
-				var descent := smoothstep(1.4,2.3,time)
-				var walk := clampf(time-2.3,0,2.7)
-				pose(Vector2(95+walk*35.55,lerpf(257,282,descent)),time<5,walk*35.55+descent*15)
-				actor.modulate.a = smoothstep(1.4,1.7,time)
+		"parking":
+			# Car stays parked at the village edge; slow push toward Akira.
+			var push := 1.0+0.05*smoothstep(0,duration,time)
+			shot.scale = Vector2.ONE*push
+			shot.position = Vector2(200,180)*(1-push)
 		"forest":
 			actor.modulate.a = 1
 			var track := smoothstep(0,duration,time)
@@ -184,15 +156,6 @@ func _draw() -> void:
 		draw_set_transform(actor.position+Vector2(0,46*actor.scale.y),0,Vector2(1,0.25))
 		draw_circle(Vector2.ZERO,12,Color(0.02,0.025,0.04,0.45))
 		draw_set_transform(Vector2.ZERO)
-	if mode == "bus" or mode == "recover":
-		# Window-only droplets and travelling light; no rain inside the cabin.
-		for i in 25:
-			var x := 443+fposmod(i*29.0-clock*2,190)
-			var y := 24+fposmod(i*37.0+clock*(11+i%4),219)
-			draw_line(Vector2(x,y).round(),Vector2(x-1,y+5).round(),Color(0.6,0.76,0.95,0.20),1)
-		for i in 3:
-			var x := 436+fposmod(clock*26+i*71,194)
-			draw_rect(Rect2(x,35,3,197),Color(1,0.64,0.32,0.09))
 	if mode in ["forest","gate"]:
 		for i in 8:
 			var x := fposmod(i*98.0-clock*7,760)-90

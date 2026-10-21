@@ -57,7 +57,7 @@ func update_cinematic(_id: String, time: float) -> void:
 	while cue_cursor < cues.size() and float(cues[cue_cursor].at) <= time:
 		var kind := str(cues[cue_cursor].sound)
 		cue_cursor += 1
-		if kind == "depart":
+		if kind == "engine_off":
 			leave_vehicle()
 		elif kind == "silence":
 			end_cinematic()
@@ -69,11 +69,14 @@ func update_cinematic(_id: String, time: float) -> void:
 	if _id == "memory":
 		rain.volume_db = -24
 		vehicle.volume_db = -40
+	elif _id in ["black","car"]:
+		# Dusk drive: engine carries the scene, rain only as a distant bed.
+		rain.volume_db = -27
 	elif _id == "recover":
-		rain.volume_db = -17
+		rain.volume_db = -24
 		vehicle.volume_db = -24
-	elif _id == "stop":
-		rain.volume_db = -15+smoothstep(0.5,1.5,time)*3
+	elif _id == "parking":
+		rain.volume_db = -24+smoothstep(0.5,7.5,time)*9
 	else:
 		rain.volume_db = -15
 

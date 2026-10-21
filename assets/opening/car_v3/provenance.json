@@ -1,0 +1,11 @@
+{
+  "scene": "opening v3 — car arrival",
+  "status": "REVIEW",
+  "source": "Owner-supplied images (2026-10-21), not generated in this repository session",
+  "files": {
+    "car_drive_REVIEW.png": "1672x941, Akira driving at dusk, Tsukimori visible below the road; used in beats `car` and (cropped) `recover`",
+    "car_park_REVIEW.png": "1672x941, Akira at the open car door at the village edge; used in beat `parking`",
+    "village_walk_REVIEW.png": "1672x941, Akira walking along the village bridge/stream at dusk; NOT wired yet — reserved for the cinematic walk to Miyako's house"
+  },
+  "notes": "Smooth anime rendering, not yet pixel-quantised like the v2 CGs. Check against PIXEL_ART_PRODUCTION_DIRECTION before FINAL. Akira: black hair, no glasses, dark hooded jacket (owner decision 2026-10-20)."
+}

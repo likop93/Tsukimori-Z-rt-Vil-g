@@ -211,7 +211,7 @@ func set_beat(index: int) -> void:
 	heading.visible = false
 	hint.text = words.intro
 	hint.visible = index > 0
-	weather.active = beat.id not in ["black","memory","bus","recover"]
+	weather.active = beat.id not in ["black","memory","car","recover","parking"]
 	weather.visible = weather.active
 	ambience.rain.volume_db = -22 if beat.id == "memory" else -15
 	ambience.vehicle.pitch_scale = 0.65 if beat.id == "memory" else 1.0
@@ -225,10 +225,12 @@ func set_beat(index: int) -> void:
 	if shot.visible:
 		if beat.has("asset"):
 			shot.texture = load(beat.asset)
-			if beat.id == "stop":
+			if beat.has("crop"):
+				# Normalised crop [x,y,w,h] of the beat asset.
+				var c: Array = beat.crop
 				var crop := AtlasTexture.new()
 				crop.atlas = shot.texture
-				crop.region = Rect2(0,280,1100,619)
+				crop.region = Rect2(Vector2(c[0],c[1])*shot.texture.get_size(),Vector2(c[2],c[3])*shot.texture.get_size())
 				shot.texture = crop
 		elif beat.has("shots"):
 			set_shot(str(beat.shots[0]),0)
@@ -240,7 +242,8 @@ func set_shot(id: String, index: int) -> void:
 	shot_index = index
 	if fade != null:
 		fade.kill()
-	shot.texture = load("res://assets/opening/shot_review_v2/"+id+"_REVIEW.png")
+	# Full res:// paths are used by the v3 car shots; short ids keep the v2 folder.
+	shot.texture = load(id if id.begins_with("res://") else "res://assets/opening/shot_review_v2/"+id+"_REVIEW.png")
 	shot.modulate.a = 0.0
 	fade = create_tween()
 	fade.tween_property(shot,"modulate:a",1.0,0.55)
@@ -253,7 +256,7 @@ func advance_line() -> void:
 		narration.visible_characters = -1
 		return
 	# Keep subsequent thoughts on their film cues. Consuming them early left
-	# the final short sentence on screen for most of the bus ride.
+	# the final short sentence on screen for most of the drive.
 	# Text input never seeks the cinematic clock, actors, camera or audio.
 	# ESC is the sole explicit path for skipping the full cinematic.
 

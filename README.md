@@ -29,7 +29,7 @@ A tea után a főmenü következik, negyedik nap nincs. Gyors belépés: Főmen�
 4–10. nap · Hetedik Éjszaka · Katsuro nyomozati ága · Himiko érkezése · Mashiro jelenetei · Sayuri · mentés/betöltés · combat, inventory, komplex route-rendszer · végleges animáció, portrék és hang.
 
 ## Tulajdonosi döntések, amelyek még nincsenek implementálva (2026-10-20)
-- **Autós érkezés** a mostani buszos nyitány helyett; a falu szélén parkol, onnan gyalog megy Miyako házáig.
+- **Autós érkezés:** a nyitány már autós (v3, REVIEW, [részletek](docs/OPENING_V3_CAR_ARRIVAL.md)); a falu szélén parkol. A gyaloglás Miyako házáig filmes átvezetésként még hátra van.
 - **Akira szemüveg nélkül**, sötét kapucnis kabátban.
 - **Nincs WASD-alapú szabad mozgás:** térképes helyszínválasztás, filmes átvezetések, VN. A jelenlegi build a nyitány kapu utáni részében, a házbelsőben és az első éjszakai sávban még WASD/nyilak + Shift-futás.
 

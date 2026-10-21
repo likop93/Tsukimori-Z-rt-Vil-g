@@ -40,12 +40,12 @@ func _ready() -> void:
 	for i in runner.beats[1].line_times.size():
 		runner.beat_time = float(runner.beats[1].line_times[i])+0.01
 		runner._process(0.0)
-		check(runner.line_index == i,"Bus thoughts follow authored cues")
+		check(runner.line_index == i,"Car thoughts follow authored cues")
 	check(float(runner.beats[1].duration)-float(runner.beats[1].line_times[-1]) <= 2.5,"Last short thought lasts at most 2.5 seconds")
 	var shots := [
-		[1,15.0,"bus_katsuro"],[2,1.8,"memory_warm"],[2,4.0,"memory_touch"],
+		[1,15.0,"car_katsuro"],[2,1.8,"memory_warm"],[2,4.0,"memory_touch"],
 		[2,5.8,"memory_cold"],[2,7.5,"memory_wrist"],[2,9.5,"memory_recoil"],
-		[3,0.8,"bus_recovery"],[4,1.9,"disembark"],[4,6.0,"bus_departure"],
+		[3,0.8,"car_recovery"],[4,1.9,"parking_exit"],[4,6.0,"parking_end"],
 		[5,7.0,"forest_walk"],[6,3.0,"gate_approach"]
 	]
 	for spec in shots:
