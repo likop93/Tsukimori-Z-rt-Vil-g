@@ -1,0 +1,128 @@
+[
+  {
+    "source_zip": "TSUKIMORI_VISUAL_CANON_WORKPACK_V3.zip",
+    "path": "v3/01_KANONIKUS_KEPREFERENCIA/AKIRA_TULAJDONOSI_EGYALAKOS_PORTRE.png",
+    "bytes": 1757277,
+    "sha256": "04a0b82c972c235536dfc03bb882dc8810a6335c65fcf169c19b5cf30f835cd8"
+  },
+  {
+    "source_zip": "TSUKIMORI_VISUAL_CANON_WORKPACK_V3.zip",
+    "path": "v3/01_KANONIKUS_KEPREFERENCIA/AKIRA_TULAJDONOSI_KARAKTERLAP.png",
+    "bytes": 3146258,
+    "sha256": "2972d058d9c34ffb8c4076ea2cb75053f5e0030ae5f3b7d6c6246aaa7317ef69"
+  },
+  {
+    "source_zip": "TSUKIMORI_VISUAL_CANON_WORKPACK_V3.zip",
+    "path": "v3/01_KANONIKUS_KEPREFERENCIA/MIYAKO_TULAJDONOSI_EREDETI_PORTRE.jpg",
+    "bytes": 425830,
+    "sha256": "65cd3788ebeeaab4367d15fbba191c9e9e4717c85f4741057ff005b391770f8b"
+  },
+  {
+    "source_zip": "TSUKIMORI_VISUAL_CANON_WORKPACK_V3.zip",
+    "path": "v3/02_KARAKTERKANON_ES_MIMIKA_V3.md",
+    "bytes": 6501,
+    "sha256": "8ea13d857947b6197a2a9d87d9bd48751528e87126a8746207285057733b2837"
+  },
+  {
+    "source_zip": "TSUKIMORI_VISUAL_CANON_WORKPACK_V3.zip",
+    "path": "v3/03_CG_SHOTLIST_KORAI_V3.csv",
+    "bytes": 6673,
+    "sha256": "637435c9f8b9fd514e40a439eaeca53ecd5207f4901f6562478a83e667dd24a1"
+  },
+  {
+    "source_zip": "TSUKIMORI_VISUAL_CANON_WORKPACK_V3.zip",
+    "path": "v3/04_RESZLETES_SCENE_SHOTLIST_V3.md",
+    "bytes": 12016,
+    "sha256": "bdd008f03ef9a18a73246a12dcb9da8a90b5312c7920fd57831a08f4039e4b84"
+  },
+  {
+    "source_zip": "TSUKIMORI_VISUAL_CANON_WORKPACK_V3.zip",
+    "path": "v3/05_WORK_EGYETLEN_FEJLESZTESI_UTASITAS.md",
+    "bytes": 3763,
+    "sha256": "092f83f1404426eb4d52084f79e58d09cfea24be740da055b01798d8a77e6e9f"
+  },
+  {
+    "source_zip": "TSUKIMORI_VISUAL_CANON_WORKPACK_V3.zip",
+    "path": "v3/06_REFERENCIA_SHA256.txt",
+    "bytes": 330,
+    "sha256": "bbf2abd56a2291e8bfc6c1745f7801fe1ef9b9b81c07bf13c50fef19a69e219c"
+  },
+  {
+    "source_zip": "TSUKIMORI_VISUAL_CANON_WORKPACK_V3.zip",
+    "path": "v3/README_ELŐSZÖR_EZT.md",
+    "bytes": 1457,
+    "sha256": "6340509d4aa2fbea9b4807174e8c770ab9874ebc78dc2a09c1005165aab6a693"
+  },
+  {
+    "source_zip": "TSUKIMORI_EGYSEGES_VIZUALIS_ALAP_V4.zip",
+    "path": "v4/01_EREDETI_REFERENCIAK/AKIRA_01_TULAJDONOSI_EGYALAKOS.png",
+    "bytes": 1757277,
+    "sha256": "04a0b82c972c235536dfc03bb882dc8810a6335c65fcf169c19b5cf30f835cd8"
+  },
+  {
+    "source_zip": "TSUKIMORI_EGYSEGES_VIZUALIS_ALAP_V4.zip",
+    "path": "v4/01_EREDETI_REFERENCIAK/AKIRA_02_TULAJDONOSI_KARAKTERLAP.png",
+    "bytes": 3146258,
+    "sha256": "2972d058d9c34ffb8c4076ea2cb75053f5e0030ae5f3b7d6c6246aaa7317ef69"
+  },
+  {
+    "source_zip": "TSUKIMORI_EGYSEGES_VIZUALIS_ALAP_V4.zip",
+    "path": "v4/01_EREDETI_REFERENCIAK/MIYAKO_01_TULAJDONOSI_EREDETI.jpeg",
+    "bytes": 425830,
+    "sha256": "65cd3788ebeeaab4367d15fbba191c9e9e4717c85f4741057ff005b391770f8b"
+  },
+  {
+    "source_zip": "TSUKIMORI_EGYSEGES_VIZUALIS_ALAP_V4.zip",
+    "path": "v4/01_EREDETI_REFERENCIAK/MIYAKO_02_EREDETIBOL_KIVAGOTT_VN_REVIEW.png",
+    "bytes": 1632733,
+    "sha256": "0c372188c87edbec4f1f6a00ce3893be0b9893b175eaabb63ea8deaa31561fd3"
+  },
+  {
+    "source_zip": "TSUKIMORI_EGYSEGES_VIZUALIS_ALAP_V4.zip",
+    "path": "v4/02_REFERENCIAK_ELLENORZESE.json",
+    "bytes": 1140,
+    "sha256": "a54b3fd008fec88b2c322f3dee079ccad19cf482abdf13b4e249d7c72dcb3225"
+  },
+  {
+    "source_zip": "TSUKIMORI_EGYSEGES_VIZUALIS_ALAP_V4.zip",
+    "path": "v4/03_EGYSÉGES_VIZUÁLIS_SZABVÁNY.md",
+    "bytes": 6676,
+    "sha256": "ae14bf448a5859ff0ab1c4d9c2bde81d6df6ea0bbf160767722b3553a7cfb3d2"
+  },
+  {
+    "source_zip": "TSUKIMORI_EGYSEGES_VIZUALIS_ALAP_V4.zip",
+    "path": "v4/04_WORK_EGYETLEN_UTASITAS.md",
+    "bytes": 2625,
+    "sha256": "27f875f94b57abc2f07925891bdda1575fd1ad3b6e4676742f29b53af42186cc"
+  },
+  {
+    "source_zip": "TSUKIMORI_EGYSEGES_VIZUALIS_ALAP_V4.zip",
+    "path": "v4/05_KÉPI_ELFOGADÁSI_TESZT.md",
+    "bytes": 1724,
+    "sha256": "3f3419a5433e559cc6f0314a593276fcdd0ec4fa7931f87647a48d22f8ecada0"
+  },
+  {
+    "source_zip": "TSUKIMORI_EGYSEGES_VIZUALIS_ALAP_V4.zip",
+    "path": "v4/06_KORAI_CG_FELADATLISTA_23_TERV.csv",
+    "bytes": 6673,
+    "sha256": "637435c9f8b9fd514e40a439eaeca53ecd5207f4901f6562478a83e667dd24a1"
+  },
+  {
+    "source_zip": "TSUKIMORI_EGYSEGES_VIZUALIS_ALAP_V4.zip",
+    "path": "v4/07_KORAI_CG_STORYBOARD_TERV.md",
+    "bytes": 12016,
+    "sha256": "bdd008f03ef9a18a73246a12dcb9da8a90b5312c7920fd57831a08f4039e4b84"
+  },
+  {
+    "source_zip": "TSUKIMORI_EGYSEGES_VIZUALIS_ALAP_V4.zip",
+    "path": "v4/preview_eredeti_par.html",
+    "bytes": 3626,
+    "sha256": "383025c4390742b6b5e3da0b4a0ad6ba7d73f943cbb87b0eeee02f0b17eba9e8"
+  },
+  {
+    "source_zip": "TSUKIMORI_EGYSEGES_VIZUALIS_ALAP_V4.zip",
+    "path": "v4/README_ELŐSZÖR_EZT.md",
+    "bytes": 2336,
+    "sha256": "115a36eaa0b826e3472ab595c11f7676b33743596990151963ba0a575953b1de"
+  }
+]

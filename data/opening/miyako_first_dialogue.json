@@ -18,10 +18,8 @@
     }
   ],
   "portrait_side": "left",
-  "portrait_variants": {
-    "neutral": "res://assets/opening/vn_portraits/miyako_cutout_v1_REVIEW.png",
-    "warm": "res://assets/opening/vn_portraits/miyako_warm_v1_REVIEW.png",
-    "worried": "res://assets/opening/vn_portraits/miyako_worried_v1_REVIEW.png",
-    "surprised": "res://assets/opening/vn_portraits/miyako_surprised_v1_REVIEW.png"
-  }
+  "portrait_variants": {},
+  "portrait_path": "res://assets/opening/vn_portraits/v4/miyako_owner_cutout_REVIEW.png",
+  "akira_portrait_path": "res://assets/opening/vn_portraits/v4/akira_owner_original_REVIEW.png",
+  "visual_status": "REVIEW: V4 original identity trial; neutral M0 fallback, expression variants and pixel-art adaptation pending."
 }

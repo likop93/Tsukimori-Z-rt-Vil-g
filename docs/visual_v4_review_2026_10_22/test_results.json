@@ -1,0 +1,33 @@
+{
+  "baseline": "7e1a0b80c19df58bd5793008af2a1e8f1a69a052",
+  "godot": "4.7.2 stable Compatibility/OpenGL",
+  "reference_files_hash_verified": 21,
+  "dialogue_lines_unchanged": true,
+  "screenshots_native_size": [
+    640,
+    360
+  ],
+  "suites": [
+    {
+      "log": "v4_vn_dialogue_regression.log",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "log": "v4_current_entry_audit.log",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "log": "v4_chapter_select_regression.log",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "log": "v4_vn_3x.log",
+      "failures": [],
+      "passed": true
+    }
+  ],
+  "import_note": "Initial sandbox import reported Safe save failed. Authorized retry completed with no ERROR/WARNING. Both logs retained."
+}

@@ -1,0 +1,168 @@
+{
+  "scope": "Literal Akira/Miyako image resource paths in data and scripts; dynamic portrait families are described in the report, not a complete runtime graph.",
+  "assets": [
+    {
+      "path": "res://assets/home_day1/akira_katsuro_photo_v1_REVIEW.png",
+      "exists": true,
+      "references": [
+        "scripts/opening/first_night_director.gd:25"
+      ]
+    },
+    {
+      "path": "res://assets/home_day1/akira_room_REVIEW.png",
+      "exists": true,
+      "references": [
+        "data/home_day2/night_visitor.json:14",
+        "data/home_day2/night_visitor.json:21",
+        "data/home_day2/night_visitor.json:28",
+        "data/home_day2/night_visitor.json:35",
+        "data/home_day2/night_visitor.json:42",
+        "data/home_day2/night_visitor.json:49",
+        "data/home_day2/night_visitor.json:75",
+        "data/home_day2/night_visitor.json:82",
+        "data/home_day2/night_visitor.json:89",
+        "scripts/opening/first_night_director.gd:72"
+      ]
+    },
+    {
+      "path": "res://assets/home_day1/akira_sleep_REVIEW.png",
+      "exists": true,
+      "references": [
+        "scripts/opening/first_night_director.gd:57",
+        "scripts/opening/first_night_director.gd:76",
+        "scripts/opening/first_night_director.gd:411"
+      ]
+    },
+    {
+      "path": "res://assets/home_day1/hallway/miyako_turn_v1_REVIEW.png",
+      "exists": true,
+      "references": [
+        "scripts/opening/miyako_hallway_director.gd:69"
+      ]
+    },
+    {
+      "path": "res://assets/opening/cinematic_v2/akira_recover_REVIEW.png",
+      "exists": true,
+      "references": [
+        "data/opening/sequence.json:103"
+      ]
+    },
+    {
+      "path": "res://assets/opening/miyako_review/atlas_REVIEW.png",
+      "exists": true,
+      "references": [
+        "scripts/opening/grounded_miyako.gd:3"
+      ]
+    },
+    {
+      "path": "res://assets/opening/staging_v3/akira_atlas.png",
+      "exists": true,
+      "references": [
+        "scripts/opening/actor.gd:2",
+        "scripts/opening/opening_stage.gd:2"
+      ]
+    },
+    {
+      "path": "res://assets/opening/vn_portraits/akira_doctor_green_eye_v1_REVIEW.png",
+      "exists": true,
+      "references": [
+        "data/home_day2/miyako_tea.json:7",
+        "data/home_day3/village_events_REVIEW.json:68",
+        "scripts/opening/hana_day_director.gd:50",
+        "scripts/opening/village_walk_director.gd:220",
+        "scripts/opening/village_walk_director.gd:247",
+        "scripts/ui/character_journal.gd:25"
+      ]
+    },
+    {
+      "path": "res://assets/opening/vn_portraits/akira_doctor_v1_REVIEW.png",
+      "exists": true,
+      "references": [
+        "data/home_day1/patient_1.json:109",
+        "data/home_day1/patient_2.json:181",
+        "data/home_day2/hana_arrival.json:274",
+        "data/home_day2/hana_close.json:183",
+        "data/home_day2/hana_memory.json:356",
+        "data/home_day2/miyako_afternoon.json:9",
+        "data/home_day2/miyako_seal.json:9",
+        "data/home_day2/shion_arrival.json:507",
+        "data/home_day2/shion_close.json:229",
+        "data/home_day2/shion_memory.json:194",
+        "scripts/opening/village_walk_director.gd:245",
+        "scripts/ui/character_journal.gd:20"
+      ]
+    },
+    {
+      "path": "res://assets/opening/vn_portraits/akira_neutral_v1_REVIEW.png",
+      "exists": true,
+      "references": [
+        "data/home_day2/night_visitor.json:9",
+        "data/ui/characters.json:7",
+        "scripts/ui/vn_dialogue.gd:145"
+      ]
+    },
+    {
+      "path": "res://assets/opening/vn_portraits/miyako_cutout_v1_REVIEW.png",
+      "exists": true,
+      "references": [
+        "data/home_day1/clinic_morning.json:181",
+        "data/home_day1/day_evening.json:62",
+        "data/home_day1/morning.json:46",
+        "data/opening/miyako_interior_dialogue.json:70",
+        "data/ui/characters.json:14",
+        "scripts/ui/vn_dialogue.gd:52",
+        "scripts/ui/vn_dialogue.gd:164"
+      ]
+    },
+    {
+      "path": "res://assets/opening/vn_portraits/miyako_surprised_v1_REVIEW.png",
+      "exists": true,
+      "references": [
+        "data/home_day1/clinic_morning.json:184",
+        "data/home_day1/day_evening.json:65",
+        "data/home_day1/morning.json:49",
+        "data/home_day2/miyako_afternoon.json:12",
+        "data/opening/miyako_interior_dialogue.json:73"
+      ]
+    },
+    {
+      "path": "res://assets/opening/vn_portraits/miyako_warm_v1_REVIEW.png",
+      "exists": true,
+      "references": [
+        "data/home_day1/clinic_morning.json:182",
+        "data/home_day1/day_evening.json:63",
+        "data/home_day1/morning.json:47",
+        "data/home_day2/miyako_afternoon.json:13",
+        "data/opening/miyako_interior_dialogue.json:71"
+      ]
+    },
+    {
+      "path": "res://assets/opening/vn_portraits/miyako_worried_v1_REVIEW.png",
+      "exists": true,
+      "references": [
+        "data/home_day1/clinic_morning.json:183",
+        "data/home_day1/day_evening.json:64",
+        "data/home_day1/morning.json:48",
+        "data/home_day2/miyako_afternoon.json:8",
+        "data/home_day2/miyako_afternoon.json:11",
+        "data/home_day2/miyako_seal.json:8",
+        "data/home_day2/night_visitor.json:8",
+        "data/opening/miyako_interior_dialogue.json:72"
+      ]
+    },
+    {
+      "path": "res://assets/opening/vn_portraits/v4/akira_owner_original_REVIEW.png",
+      "exists": true,
+      "references": [
+        "data/opening/miyako_first_dialogue.json:23"
+      ]
+    },
+    {
+      "path": "res://assets/opening/vn_portraits/v4/miyako_owner_cutout_REVIEW.png",
+      "exists": true,
+      "references": [
+        "data/opening/miyako_first_dialogue.json:22"
+      ]
+    }
+  ]
+}

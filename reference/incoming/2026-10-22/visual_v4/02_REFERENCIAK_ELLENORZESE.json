@@ -1,0 +1,38 @@
+[
+  {
+    "filename": "01_EREDETI_REFERENCIAK/AKIRA_01_TULAJDONOSI_EGYALAKOS.png",
+    "sha256": "04a0b82c972c235536dfc03bb882dc8810a6335c65fcf169c19b5cf30f835cd8",
+    "width": 1024,
+    "height": 1536,
+    "format": "PNG",
+    "mode": "RGBA",
+    "status": "PRIMARY_APPROVED"
+  },
+  {
+    "filename": "01_EREDETI_REFERENCIAK/AKIRA_02_TULAJDONOSI_KARAKTERLAP.png",
+    "sha256": "2972d058d9c34ffb8c4076ea2cb75053f5e0030ae5f3b7d6c6246aaa7317ef69",
+    "width": 1536,
+    "height": 1024,
+    "format": "PNG",
+    "mode": "RGBA",
+    "status": "PRIMARY_APPROVED"
+  },
+  {
+    "filename": "01_EREDETI_REFERENCIAK/MIYAKO_01_TULAJDONOSI_EREDETI.jpeg",
+    "sha256": "65cd3788ebeeaab4367d15fbba191c9e9e4717c85f4741057ff005b391770f8b",
+    "width": 1024,
+    "height": 1536,
+    "format": "JPEG",
+    "mode": "RGB",
+    "status": "PRIMARY_APPROVED"
+  },
+  {
+    "filename": "01_EREDETI_REFERENCIAK/MIYAKO_02_EREDETIBOL_KIVAGOTT_VN_REVIEW.png",
+    "sha256": "0c372188c87edbec4f1f6a00ce3893be0b9893b175eaabb63ea8deaa31561fd3",
+    "width": 1024,
+    "height": 1536,
+    "format": "PNG",
+    "mode": "RGBA",
+    "status": "REVIEW_ALPHA_CUTOUT"
+  }
+]

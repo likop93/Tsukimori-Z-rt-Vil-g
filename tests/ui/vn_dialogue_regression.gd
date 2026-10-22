@@ -17,21 +17,13 @@ func press(code: Key) -> void:
 	Input.parse_input_event(event)
 	await get_tree().process_frame
 func _ready() -> void:
-	GameState.clear_runtime_state()
+	preload("res://scripts/ui/chapter_catalog.gd").prepare("miyako")
 	var runner: Node = load("res://scenes/opening/opening.tscn").instantiate()
 	add_child(runner)
-	runner.skip_all()
-	runner.street.show_location("house")
-	runner.street.player.position = Vector2(275,274)
-	runner.arrival = load("res://scripts/opening/arrival_director.gd").new()
-	runner.add_child(runner.arrival)
-	runner.arrival.runner = runner
-	runner.arrival.done = true
-	runner.arrival.show_miyako()
-	await press(KEY_E)
-	await get_tree().create_timer(1.7).timeout
+	await get_tree().process_frame
+	await get_tree().process_frame
 	var vn: CanvasLayer = runner.arrival.vn
-	check(vn != null and vn.active,"E starts VN at Miyako")
+	check(vn != null and vn.active,"Implemented Miyako checkpoint starts the real greeting")
 	if vn == null:
 		get_tree().quit(1)
 		return
@@ -41,6 +33,13 @@ func _ready() -> void:
 	check(vn.portrait.position.x < 320 and vn.akira_portrait.position.x > 320,"Stable partner-left, Akira-right staging")
 	check(vn.akira_portrait.visible and vn.akira_portrait.texture.get_image().get_pixel(0,0).a < 0.01,"Akira portrait has transparent background")
 	check(vn.portrait.texture.get_image().get_pixel(0,0).a < 0.01,"Character background is transparent")
+	check(vn.portrait_source_path == "res://assets/opening/vn_portraits/v4/miyako_owner_cutout_REVIEW.png","First greeting uses the original V4 M0 cutout, not an invented expression")
+	check(vn.akira_portrait.texture.resource_path == "res://assets/opening/vn_portraits/v4/akira_owner_original_REVIEW.png","First greeting uses the original V4 A0 portrait")
+	runner.pause_menu.open_menu()
+	var paused_index: int = vn.index
+	await press(KEY_SPACE)
+	check(vn.index == paused_index and not GameState.has_flag("met_miyako"),"Pause does not advance or complete the greeting")
+	runner.pause_menu.resume()
 	await press(KEY_SPACE)
 	check(vn.index == 0 and vn.body.visible_characters == vn.body.get_total_character_count(),"First press reveals greeting")
 	Input.action_press("walk_right")
@@ -61,7 +60,10 @@ func _ready() -> void:
 	check(GameState.has_flag("met_miyako") and GameState.has_flag("miyako_first_dialogue_seen"),"Completion sets flags")
 	check(not vn.active and runner.street.player.input_enabled,"Final acknowledgement returns control")
 	check(runner.arrival.done,"Completed greeting remains done until explicit house entry")
+	check(not GameState.has_flag("miyako_transformation_revealed") and GameState.character_stage("miyako") == 0,"Greeting leaves early Miyako unchanged")
 	var report := {"passed":failures.is_empty(),"failures":failures}
 	FileAccess.open("res://review/vn_dialogue_results.json",FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
 	print("VN_DIALOGUE: "+JSON.stringify(report))
+	runner.queue_free()
+	await get_tree().process_frame
 	get_tree().quit(0 if failures.is_empty() else 1)

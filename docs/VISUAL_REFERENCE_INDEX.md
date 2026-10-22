@@ -242,3 +242,7 @@ A hibás feliratú lapok nem írnak felül LOCKED karakterazonosságot.
 ## Beérkezett tulajdonosi ZIP-ek — 2026-10-20
 Mashiro 29 és Ayame 2 eredeti médiafájlja hash-ellenőrzött referenciaként elérhető: [REFERENCE_INTAKE_2026_10_20.md](REFERENCE_INTAKE_2026_10_20.md).
 Ez nem írja felül a LOCKED karakterbibliákat. A 3. napi Ayame-boltkép runtime AtlasTexture stagingje REVIEW; nincs új design vagy FINAL sprite-atlasz.
+
+## V3/V4 tulajdonosi vizuális csomag — 2026-10-22
+A két ZIP 21 eredeti fájlja hash-ellenőrizve a `reference/incoming/2026-10-22/` alatt. Az első Miyako-találkozás két eredeti V4 portréval futó, 640×360-as REVIEW próbája, az aktív assettérkép, előtte–utána képek és tényleges tesztek: [VISUAL_V4_FIRST_MEETING_REVIEW.md](VISUAL_V4_FIRST_MEETING_REVIEW.md).
+Ez nem kész reakciókészlet, 23 CG vagy végleges pixel-art adaptáció. Más jelenetek képei és a történeti állapotkezelés változatlanok.
