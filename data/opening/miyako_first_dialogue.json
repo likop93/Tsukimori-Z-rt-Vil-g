@@ -17,7 +17,8 @@
       "text": "Nem tört meg, nem omlott össze. Valami sötét, csendes fegyelem ült rajta."
     }
   ],
-  "portrait_side": "left",
+  "portrait_side": "right",
+  "presentation": "cinematic_two_shot",
   "portrait_variants": {},
   "portrait_path": "res://assets/opening/vn_portraits/v4/miyako_owner_cutout_REVIEW.png",
   "akira_portrait_path": "res://assets/opening/vn_portraits/v4/akira_owner_original_REVIEW.png",

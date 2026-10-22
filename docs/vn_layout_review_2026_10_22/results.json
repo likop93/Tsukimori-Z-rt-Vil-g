@@ -1,0 +1,35 @@
+{
+  "base": "edce08b",
+  "engine": "Godot 4.7.2 stable Compatibility",
+  "native_resolution": [
+    640,
+    360
+  ],
+  "requested_window_resolution": [
+    1920,
+    1080
+  ],
+  "dialogue_lines_unchanged": true,
+  "tests": [
+    {
+      "suite": "vn_dialogue_regression",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "suite": "current_entry_audit",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "suite": "chapter_select_regression",
+      "failures": [],
+      "passed": true
+    },
+    {
+      "suite": "hana_day_regression",
+      "failures": [],
+      "passed": true
+    }
+  ]
+}

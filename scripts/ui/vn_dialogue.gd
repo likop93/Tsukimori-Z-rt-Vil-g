@@ -30,6 +30,8 @@ var dialogue_panel: Panel
 var dialogue_id := ""
 var outfit := ""
 var preview_mode := false
+var presentation := ""
+var world_dim: ColorRect
 
 func _ready() -> void:
 	layer = 30
@@ -37,6 +39,12 @@ func _ready() -> void:
 	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(root)
+	world_dim = ColorRect.new()
+	world_dim.size = Vector2(640,360)
+	world_dim.color = Color(0.015,0.02,0.04,0.4)
+	world_dim.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	world_dim.hide()
+	root.add_child(world_dim)
 	cg = TextureRect.new()
 	cg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	cg.size = Vector2(640,360)
@@ -137,6 +145,7 @@ func begin(data: Dictionary) -> void:
 		return
 	lines = data.lines
 	dialogue_id = str(data.get("id",""))
+	presentation = str(data.get("presentation",""))
 	preview_mode = bool(data.get("preview_mode",false))
 	outfit = ""
 	choices = data.get("choices",[])
@@ -144,13 +153,19 @@ func begin(data: Dictionary) -> void:
 	akira_enabled = bool(data.get("akira_portrait",true))
 	akira_portrait.texture = load(str(data.get("akira_portrait_path","res://assets/opening/vn_portraits/akira_neutral_v1_REVIEW.png"))) if portraits_enabled and akira_enabled else null
 	cg_path = ""
-	# Stable two-character staging; partner stays left, Akira stays right.
+	# Preserve each scene's screen direction; the arrival uses Akira left.
 	var partner_left := str(data.get("portrait_side","left")) == "left"
 	portrait.position = Vector2(8 if partner_left else 404,48)
 	akira_portrait.position = Vector2(404 if partner_left else 8,48)
 	portrait.flip_h = partner_left if str(data.get("portrait_facing","left")) == "left" else not partner_left
 	akira_portrait.flip_h = not partner_left if str(data.get("akira_facing","left")) == "left" else partner_left
 	portrait.size = Vector2(228,312)
+	akira_portrait.size = Vector2(228,312)
+	if presentation == "cinematic_two_shot":
+		portrait.position = Vector2(0 if partner_left else 376,48)
+		akira_portrait.position = Vector2(376 if partner_left else 0,36)
+		portrait.size = Vector2(264,396)
+		akira_portrait.size = Vector2(264,396)
 	if data.get("portrait_trim",false):
 		# Seated clinic patients share the doctor's eyeline, with a lower body frame.
 		portrait.position += Vector2(10 if partner_left else -10,20)
@@ -175,6 +190,7 @@ func show_line() -> void:
 		cg.size = Vector2(640,360)*zoom
 		cg.position = (Vector2(640,360)-cg.size)*Vector2(0.5,1.0)
 	cg.visible = not cg_path.is_empty()
+	world_dim.visible = presentation == "cinematic_two_shot" and not cg.visible
 	cg.modulate = Color(str(lines[index].get("cg_tint","#ffffff")))
 	portrait.visible = portraits_enabled and not cg.visible
 	akira_portrait.visible = portraits_enabled and akira_enabled and not cg.visible
@@ -202,6 +218,11 @@ func show_line() -> void:
 	nameplate.visible = not speaker.text.is_empty()
 	portrait.modulate = Color.WHITE if speaker.text == portrait_speaker else Color(0.65,0.65,0.7)
 	akira_portrait.modulate = Color.WHITE if speaker.text == "Akira" else Color(0.65,0.65,0.7)
+	if presentation == "cinematic_two_shot":
+		# The world recedes; listening faces remain readable in the foreground.
+		var listening := Color(0.84,0.84,0.88)
+		portrait.modulate = Color.WHITE if speaker.text in ["",portrait_speaker] else listening
+		akira_portrait.modulate = Color.WHITE if speaker.text in ["","Akira"] else listening
 	body.text = str(lines[index].text)
 	set_story_layout(cg.visible)
 	body.visible_characters = 0
@@ -221,6 +242,16 @@ func set_story_layout(story_image: bool) -> void:
 	speaker.position.y = 240 if story_image else 208
 	next_button.position.y = 332 if story_image else 322
 	prompt.position.y = 336 if story_image else 326
+	if presentation == "cinematic_two_shot" and not story_image:
+		dialogue_panel.position.y = 270
+		dialogue_panel.size.y = 78
+		body.add_theme_font_size_override("font_size",14)
+		body.position.y = 279
+		body.size.y = 38
+		nameplate.position.y = 244
+		speaker.position.y = 246
+		next_button.position.y = 322
+		prompt.position.y = 326
 
 func set_partner_texture(path: String) -> void:
 	if path == portrait_source_path:

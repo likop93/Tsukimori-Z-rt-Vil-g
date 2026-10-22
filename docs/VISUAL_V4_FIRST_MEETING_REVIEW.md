@@ -1,5 +1,7 @@
 # V4 — Akira/Miyako első találkozás, kontrollált képi próba
 
+**Utólagos tulajdonosi visszajelzés: az itt látható elrendezés nem elfogadott.** A javított beállítás és a GitHub-biblia összevetése: [VN_LAYOUT_BIBLE_REVIEW_2026_10_22.md](VN_LAYOUT_BIBLE_REVIEW_2026_10_22.md). A forrásintegritási adatok megmaradnak; a korábbi teszt-PASS nem vizuális jóváhagyás.
+
 2026-10-22. Kiindulás: `7e1a0b80c19df58bd5793008af2a1e8f1a69a052`, GitHub main. Státusz: **IMPLEMENTED technikai próba / REVIEW grafika**, nem végleges pixel-art készlet.
 
 ## Elvégzett munka

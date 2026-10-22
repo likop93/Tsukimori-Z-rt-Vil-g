@@ -17,6 +17,7 @@ func advance(delta: float) -> void:
 		runner.dialogue.hide()
 		runner.hint.hide()
 		runner.bubble.hide()
+		runner.heading.hide()
 		vn = preload("res://scripts/ui/vn_dialogue.gd").new()
 		add_child(vn)
 		vn.finished.connect(finish)
