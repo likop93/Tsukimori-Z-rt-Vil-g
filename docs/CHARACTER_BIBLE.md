@@ -1,5 +1,8 @@
 # Tsukimori — Character Bible
 
+> **2026-10-21 tulajdonosi kánonszinkron:** [CANON_SYNC_2026_10_21.md](CANON_SYNC_2026_10_21.md). Az itt következő régi 3D és opcionális szemüveges leírások a későbbi tulajdonosi korrekció hatályában **felülírtak**. A karakterek játékbeli ábrázolása 2.5D filmes pixel-art; Akira szemüveg nélküli, és kézi WASD-mozgás helyett térképes helyszínválasztás/cinematic staging működik. A soron következő „FINAL” jelzők alap-karakteridentitást jelentenek, nem igazolnak minden új külön VN-, sprite- vagy CG-assetet.
+
+
 **Verzió:** 1.0  
 **Státusz:** aktív karakterkánon  
 **Dátum:** 2026-09-24
@@ -38,7 +41,7 @@ LOCKED:
 - sötét, elegáns, de praktikus megjelenés;
 - nem chibi;
 - nem fotórealista;
-- Tsukimori anime-stilizált 3D art directionjéhez igazodik.
+- Tsukimori részletgazdag cinematic 2.5D pixel-art játékbeli irányához igazodik; a legacy 3D referencia csak arc-, sziluett- és színminta.
 
 LOCKED megjelenés:
 - kb. 180 cm;
@@ -50,7 +53,7 @@ LOCKED megjelenés:
 - puhább belső réteg / kapucnis réteg megengedett és a jóváhagyott design része;
 - sötét, karcsú nadrág és praktikus sötét cipő;
 - visszafogott karóra;
-- szemüveg opcionális variáns, vékony modern kerettel;
+- szemüveg **nem használandó a játékban** (2026-10-21 tulajdonosi felülírás);
 - hosszabb kabát későbbi alternatív outfit lehet, nem az elsődleges sziluett;
 - a Black Fan motívum előrevetíthető, de ne legyen feltűnő cosplay-dísz.
 
@@ -551,3 +554,65 @@ Approved visual concept:
 A képi lapon szereplő „Miyako” név nem kánon.
 
 Részletek: `docs/NEW_SUPPORTING_CHARACTERS_APPROVED.md`.
+
+---
+
+# 2026-10-21 — Kiegészítő karakterkánon és elfogadási státuszok
+
+A részletes történeti és jelenetbeli szabályok: [CANON_SYNC_2026_10_21.md](CANON_SYNC_2026_10_21.md).
+
+## Akira — aktuális megjelenítés, LOCKED
+
+- Eredeti felnőtt férfi-arc és fekete haj, **szemüveg nélkül** minden új aktuális játékbeli portrén és emlékképen.
+- Primer civil: fekete/sötét kabát, szürke kapucni, világos póló, sötét nadrág. **Nem kötelező egyetlen ruhát hordania minden jelenetben**; a történethez, otthonhoz és múltbeli emlékképhez eltérő, életszerű ruházat illik.
+- Orvosi fehér köpeny a rendelői jelenetekhez tartozik, nem az autós érkezéshez.
+- A régebbi szemüveges változatok és automatikusan generált, más arcú férfiak nem válhatnak új vizuális authorityvá.
+
+## Miyako — aktuális megjelenítés, LOCKED identity / REVIEW expressions
+
+- A jóváhagyott **Design A**: hosszú, sötétbarna, részben felrakott haj, barna szemek, arany díszek és függők, fekete/charcoal zárt elegáns alapöltözék. Az eredeti, tulajdonos által feltöltött portré őrzi ezt az identitást.
+- Reakciók: nyugodt/semleges, alig mosolygó, meleg/gyengéd, játékos, érdeklődő, aggódó, sebezhető/szomorú, finoman figyelő/nyugtalan. Nyolc elfogadott, ugyanolyan arccal renderelt végleges production kép **még nincs**.
+- Akira más romantikus közeledéseire reagáló féltékenység, figyelés és fokozatos utánzás **lassan felépülő horrorív**. A testi átalakulás csak külön eseménylánccal és késői revelációval; ne spoilerezd a nyitányt vagy első teát.
+- Katsuro külön lezárt dolgozószobájáról és a falusi nőkről készült feljegyzésekről tud, és titkolja a hozzáférést.
+
+## Mashiro — LOCKED / a karakterlaphoz hozzáadva
+
+- **25 éves**, ~165 cm magas nő, **fehér haj**, nappal hűvös világos szemek és **ezüstkeretes szemüveg**; éjjel fehér rókafül/farok és aranyos/rókaszerű szemvariáns. A szemüveg tilalma **csak Akirára** vonatkozik.
+- Saját helye a **Holdvirág Üvegház**. Nem kerül a 0. napi falusi séta random NPC-i közé.
+- Első bemutatkozás nap 5–10, alapjavaslat 7: fehér virágokat ad át Miyakónak, Akirával Miyako házában találkozik.
+- Időérzékeny látogatási meghívás, kizárólagos True Love út; **egyetlen** külön kánoni titkos kivétel `moon_two_faces`, Akira–Mashiro–Sayuri, hármójuk külön épített bizalmával és folyamatos beleegyezésével.
+- Authority: [MASHIRO_LOCKED_BIBLE.md](MASHIRO_LOCKED_BIBLE.md), [MASHIRO_MAIN_ROMANCE_CANON.md](MASHIRO_MAIN_ROMANCE_CANON.md). Referenciák megléte **nem** jelenti a teljes VN- és CG-készlet elkészültét.
+
+## Sayuri — OWNER-ESTABLISHED identity / bővítendő
+
+- Felnőtt nő, **bordó haj**, **borostyánszínű szem**, a falusi **onsen/fürdő működtetője**.
+- A saját romantikus útja/pszichológiai története nélkülözhetetlen; nem kizárólag Mashiro titkos route-jának kiegészítője.
+- A Hold Két Arca titkos útban Sayuri és Mashiro között Akirától külön is valós bizalom, őszinteség és szabad választás szükséges.
+- A chatben léteznek vizuális referenciái, de repository-import/production elfogadás külön dokumentálandó.
+
+## Ayame — OWNER APPROVED / részlegesen REVIEW implementált
+
+- **28 éves**, Aoi boltjában dolgozó segítő, gyógyteák és gyógynövények ismerője. **Nem Aoi helyére kerül**, és nem egy általános névtelen bolti NPC.
+- Nap 3 bemutatkozás, nap 5 személyesebb beszélgetés; nap 7 és 14 a Hetedik Éjszaka külön eseményei; **nap 15** feloldható józan, kölcsönös szeretői döntés.
+- A 3. nap Godot implementációja REVIEW a [DAY3_VILLAGE_REVIEW.md](DAY3_VILLAGE_REVIEW.md) szerint. Teljes alak, reagáló portré és romantikus route még production hiány.
+- Lehetséges későbbi Ayame–Kuroe–Shion többoldalú jelenet további külön megírást és minden résztvevő beleegyezését igényli, nem automatikus kötelező szál.
+
+## Kuroe és Shion — jóváhagyott háttértörténeti kiegészítés
+
+- Kuroe és Shion **korábban párkapcsolatban voltak**. A későbbi különleges közös Akira-érzelmeknek ennek a múltnak és mindhárom felnőtt fél autonómiájának következményei vannak.
+- Kuroe kezdeményezésére Akira későbbi hangszere **hangszerkészítőnél, mahagóniból** készül, domináns **Miyako-motívumokkal**. Ez nem jelenetsorrendi engedély a hangszerkészítő epizód előrehozására.
+
+## Natsume — APPROVED CONCEPT, még nem FINAL
+
+- Natsume a Sora-féle fogadóhoz kapcsolható, kifejezetten kövér, erősen nőies, felnőtt, magabiztos és kacér szakácsnő/vendéglátó **új karakterkoncepciója**. Javasolt életkor 38, önálló pszichológiai-romantikus szerep egyelőre kidolgozás alatt.
+- A tulajdonos egy bordó-fekete karakterképet **kiinduló vizuális koncepcióként elfogadott**; a további arányváltozatok nem készültek el, így nincs új végleges megjelenés vagy komplett expression sheet.
+- Natsume **nem Sora másik dizájnja**; Sora meglévő LOCKED karakterlapja érintetlen.
+- A holdfényes, világos hajú, fiatalos kinézetű európai női képkísérletek nem elfogadott Natsume-identitások. Natsume **még nincs implementálva**, így a meglévő első tíznapos szereplőgárdát nem írja felül.
+
+## Oto, Katsuro, Himiko — történeti határok
+
+- Oto eltérő nappali/idős és éjszakai/fiatalos megjelenésének azonossága nem fedhető fel korán; a Mélységnél az idősebb nők látványosan késő negyvenesnek tűnő korra fiatalodhatnak, csak **későbbi történeti eseményben**.
+- Katsuro a falu korábbi orvosa és Miyako elhunyt férje; zárt személyes dolgozószobájának dokumentumai külön rejtély, nem azonosak a rendelő nyilvános nyilvántartásával. A Hetedik Éjszakához kapcsolódó erőszakos halál nyomozati ág részletei nincsenek személyekre véglegesítve.
+- Himiko **Hana nővére**, külön személy és route. Nem a 0–1. napos utcai NPC-cast része; Hana korai előkészítő említése nem egyenlő Himiko bemutatkozásával.
+
+**Gyártási szabály:** tervezett viselkedés és referencia-asset nem egyenlő lezárt cselekménnyel vagy Godot-implementációval.

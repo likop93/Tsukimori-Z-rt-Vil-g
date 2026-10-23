@@ -1,5 +1,8 @@
 # Tsukimori — Visual Reference Index
 
+> **2026-10-21 identitáskorrekció:** [CANON_SYNC_2026_10_21.md](CANON_SYNC_2026_10_21.md). A meglévő `AKIRA_FINAL_CHARACTER_DESIGN_V1.png` fájl megőrizhető, de az „opcionális szemüveg” sor **nem használható** új Akira-képekhez. A jóváhagyott szemüveg nélküli Akira-arc és sötét kapucnis outfit az aktív referencia; a 2026-10-20/21-i autós képek elfogadott, de pixel-art review alatt álló CG-k. Miyakónál a fekete ruhás eredeti Design A az authority; a hibás alternatív generálások elutasítottak. Képet csak tényleges repository-fájl/ellenőrzött referencia alapján jelölj production assetként.
+
+
 **Dátum:** 2026-09-24  
 **Státusz:** aktív vizuális authority index
 

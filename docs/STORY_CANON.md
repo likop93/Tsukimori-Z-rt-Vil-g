@@ -1,5 +1,13 @@
 # Tsukimori — Story Canon
 
+## Kánonszinkron — 2026-10-21 (frissebb tulajdonosi döntések)
+
+**Aktuális, kötelező kiegészítés:** [CANON_SYNC_2026_10_21.md](CANON_SYNC_2026_10_21.md). Ennek kifejezetten felülíró rendelkezései elsőbbséget élveznek az itt vagy más, régebbi dokumentumokban található buszos nyitánnyal, manuális WASD-mozgással, Akira opcionális szemüvegével és korai Miyako-átalakulással kapcsolatos technikai/tervezői szövegekkel szemben. A többi, nem ütköző LOCKED történeti és térbeli döntés változatlan.
+
+**Aktív játékbeli megjelenítés:** autó a falu széléig → parkolás → filmes gyalogos jelenetvágások a hídon át Miyako házához; interaktív falutérkép, VN és 16:9 pixel-art CG, kézzel vezérelt sprite-séta nélkül. 120 nap és az első időjárási anomália a 30. napon. A 4–10. nap, Hetedik Éjszaka és más megtervezett esemény nem válik automatikusan IMPLEMENTED státuszúvá attól, hogy ebben a kánonban szerepel.
+
+
+
 **Verzió:** 1.0  
 **Státusz:** LOCKED governance  
 **Dátum:** 2026-09-24
