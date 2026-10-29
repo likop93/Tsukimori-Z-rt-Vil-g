@@ -1,0 +1,55 @@
+{
+  "baseline": "cea6a75",
+  "godot": "4.7.2 stable Compatibility",
+  "asset_received": false,
+  "art_validated": false,
+  "production_enabled": false,
+  "fixture_capture_size": [
+    1920,
+    1080
+  ],
+  "results": [
+    {
+      "art_validated": false,
+      "failures": [],
+      "passed": true,
+      "warnings": [],
+      "log": "living_mechanics.log"
+    },
+    {
+      "failures": [],
+      "passed": true,
+      "warnings": [],
+      "log": "living_ui_vn_dialogue_regression.log"
+    },
+    {
+      "failures": [],
+      "passed": true,
+      "warnings": [],
+      "log": "living_ui_current_entry_audit.log"
+    },
+    {
+      "failures": [],
+      "passed": true,
+      "warnings": [],
+      "log": "living_ui_chapter_select_regression.log"
+    },
+    {
+      "failures": [],
+      "intro_seconds": 66.0,
+      "passed": true,
+      "suite": "gate_flow",
+      "warnings": [],
+      "log": "living_opening_regression.log"
+    },
+    {
+      "failures": [],
+      "passed": true,
+      "suite": "cinematic_input",
+      "warnings": [
+        "WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+      ],
+      "log": "living_opening_cinematic_input_regression.log"
+    }
+  ]
+}

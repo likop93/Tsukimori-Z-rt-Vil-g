@@ -1,0 +1,10 @@
+{
+  "status": "BLOCKED_ASSET: exact approved image not available locally",
+  "enabled": false,
+  "texture": "",
+  "expected_source": "TSUKIMORI_LIVING_CG_AKIRA_MIYAKO_REVIEW_WORK_V1.zip / AKIRA_MIYAKO_LIVING_CG_01_USER_PREFERRED_REVIEW.png",
+  "source_chat": "6acd09cd-9068-83eb-b5e1-9ab140be7541",
+  "lamp_positions": [],
+  "layer_status": "No background, blink or hair layers received. No parallax or character deformation.",
+  "note": "Enable only after the exact source is received, visually checked and lamp anchors placed against it. No substitute image."
+}
