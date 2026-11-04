@@ -176,7 +176,14 @@ func open_chapters() -> void:
 		var item := button(list,str(entries[i].title),Vector2.ZERO,Vector2(424,23),launch_chapter.bind(str(entries[i].id)))
 		item.custom_minimum_size = Vector2(424,23)
 		chapter_buttons.append(item)
+	button(modal,"Autós nyitány · próba",Vector2(259,282),Vector2(215,32),open_car_preview)
 	chapter_buttons[0].grab_focus()
+
+func open_car_preview() -> void:
+	if starting:
+		return
+	starting = true
+	get_tree().change_scene_to_file("res://scenes/opening/car_arrival_preview.tscn")
 
 func volume_changed(value: float) -> void:
 	AppSettings.set_volume(value/100)
