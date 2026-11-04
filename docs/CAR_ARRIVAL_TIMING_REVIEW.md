@@ -1,6 +1,8 @@
 # Autós nyitány · filmes próba az eredeti képekkel
 
-**Kipróbálás:** Fejezetválasztás → Autós nyitány · próba. Időtartam 20,8 másodperc. A három tulajdonosi REVIEW-kép a beküldött ZIP-ből származik. Az import előtt ellenőriztük mindhárom eredeti PNG méretét (1672×941) és a [forráscsomag SHA-256 jegyzékét](../assets/opening/car_arrival/MANIFEST_SHA256.json).
+A teljes út és az aktuális teszteredmények a [híd és találkozás jelentésében](CAR_BRIDGE_MEETING_REVIEW.md) találhatók. Az alábbi rész az első három beállítás korábbi önálló próbáját dokumentálja.
+
+**Kipróbálás a korábbi változatban:** Fejezetválasztás → Autós nyitány · próba. Időtartam 20,8 másodperc. A három tulajdonosi REVIEW-kép a beküldött ZIP-ből származik. Az import előtt ellenőriztük mindhárom eredeti PNG méretét (1672×941) és a [forráscsomag SHA-256 jegyzékét](../assets/opening/car_arrival/MANIFEST_SHA256.json).
 
 | Idő | Beállítás | Hang és monológ |
 |---|---|---|

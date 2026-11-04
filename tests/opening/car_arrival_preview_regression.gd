@@ -28,11 +28,11 @@ func _ready() -> void:
 	await tree.scene_changed
 	var preview := tree.current_scene
 	check(preview.scene_file_path.ends_with("car_arrival_preview.tscn"),"Menu opens isolated scene")
-	preview.get_node("Pause").pressed.emit()
+	preview.pause_button.pressed.emit()
 	var stopped: float = preview.time
 	await tree.create_timer(0.2,true).timeout
 	check(tree.paused and preview.time == stopped,"Pause freezes the timeline")
-	preview.get_node("Pause").pressed.emit()
+	preview.pause_button.pressed.emit()
 	var marks := [2.0,12.3,17.3]
 	Engine.time_scale = 2.0
 	for index in marks.size():
@@ -47,16 +47,48 @@ func _ready() -> void:
 		if DisplayServer.get_name() != "headless":
 			await RenderingServer.frame_post_draw
 			get_viewport().get_texture().get_image().save_png("res://review/car_arrival_cg_%d.png" % index)
-	while not preview.finished:
-		await tree.process_frame
+	for mark in [23.0,28.0,36.0,41.0]:
+		while preview.time < minf(mark,38.0):
+			await tree.process_frame
+		if mark == 23.0:
+			check(preview.street.location == "bridge" and preview.street.bridge_rail.visible and preview.brook.playing,"Bridge uses surveyed deck, rail and water")
+			check(not preview.street.player.input_enabled and preview.caption.text == "Csak a csendje lett nehezebb.","Directed approach and existing monologue")
+		elif mark == 28.0:
+			check(preview.street.residents[1].state == "look" and not preview.get_node("Subtitle").visible,"Woman watches during silent crossing")
+			var feet: Vector2 = preview.street.player.position
+			check(feet.x > 300 and feet.distance_to(preview.street.constrain_position(feet)) < 0.2,"Crossing proceeds along the surveyed bridge")
+			preview.toggle_pause()
+			await tree.create_timer(0.15,true).timeout
+			check(preview.street.player.position == feet,"Pause freezes the crossing")
+			preview.toggle_pause()
+		elif mark == 36.0:
+			check(preview.street.location == "house" and preview.greeting.miyako.visible,"Wide shot at the shared home")
+		else:
+			check(is_instance_valid(preview.greeting.living_cg),"Original meeting CG follows the house")
+			await tree.create_timer(3.0).timeout
+		await capture("shot_"+str(int(mark)))
+	var director: Node = preview.greeting
+	await tree.create_timer(6.5).timeout
+	check(is_instance_valid(director.vn) and director.vn.active and director.vn.index == 0,"Natural handoff to reader-controlled greeting")
+	if not is_instance_valid(director.vn):
+		tree.quit(1)
+		return
+	await tree.create_timer(1.0).timeout
+	check(director.vn.body.text == "Dr. Akira. Már vártam.","Existing first line retained")
+	await capture("greeting")
+	for step in 12:
+		if not director.vn.active:
+			break
+		director.vn.advance()
+	check(preview.finished,"Final acknowledgement ends the preview")
 	Engine.time_scale = 1.0
-	check(preview.get_node("Replay").visible and not preview.ambience.rain.playing,"Preview ends and offers replay")
-	preview.get_node("Replay").pressed.emit()
+	check(preview.replay_button.visible and not preview.ambience.rain.playing,"Preview ends and offers replay")
+	preview.replay_button.pressed.emit()
 	await tree.scene_changed
 	preview = tree.current_scene
 	check(preview.time < 1 and not preview.finished,"Replay begins from road shot")
-	preview.get_node("Pause").pressed.emit()
-	preview.get_node("Back").pressed.emit()
+	preview.pause_button.pressed.emit()
+	preview.back_button.pressed.emit()
 	await tree.scene_changed
 	check(not tree.paused and tree.current_scene.scene_file_path.ends_with("main_menu.tscn"),"Leaving while paused restores the menu")
 	check(get_window().content_scale_mode == previous_scale,"Restore menu viewport")
@@ -66,3 +98,8 @@ func _ready() -> void:
 	await tree.create_timer(0.5).timeout
 	print("CAR_ARRIVAL_REVIEW: ", JSON.stringify({"passed":failures.is_empty(),"failures":failures}))
 	tree.quit(0 if failures.is_empty() else 1)
+
+func capture(label: String) -> void:
+	if DisplayServer.get_name() != "headless":
+		await RenderingServer.frame_post_draw
+		get_viewport().get_texture().get_image().save_png("res://review/car_bridge_"+label+".png")

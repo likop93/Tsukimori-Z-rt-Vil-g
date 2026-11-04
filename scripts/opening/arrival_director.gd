@@ -1,5 +1,7 @@
 extends Node
 # Only the player-triggered Miyako greeting; traversal is owned by village_flow.
+signal preview_finished
+var preview_mode := false
 var runner: Node
 var phase := "greeting"
 var elapsed := 0.0
@@ -58,7 +60,9 @@ func begin_dialogue() -> void:
 	vn = preload("res://scripts/ui/vn_dialogue.gd").new()
 	add_child(vn)
 	vn.finished.connect(finish)
-	vn.begin(JSON.parse_string(FileAccess.get_file_as_string("res://data/opening/miyako_first_dialogue.json")))
+	var data: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/opening/miyako_first_dialogue.json"))
+	data["preview_mode"] = preview_mode
+	vn.begin(data)
 
 func show_miyako() -> void:
 	if is_instance_valid(miyako):
@@ -70,6 +74,10 @@ func show_miyako() -> void:
 
 func finish() -> void:
 	if done:
+		return
+	if preview_mode:
+		done = true
+		preview_finished.emit()
 		return
 	if runner.street.location != "house":
 		runner.street.show_location("house")
