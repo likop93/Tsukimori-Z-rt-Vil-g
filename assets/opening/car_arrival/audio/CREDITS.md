@@ -1,0 +1,6 @@
+# Hangforrások – autós nyitány és híd
+
+- **rain_window.ogg** — Ylmir, [Rain (loopable)](https://opengameart.org/content/rain-loopable), [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). A Rain OGG.zip első felvétele (1.ogg), átnevezve. Ablaknál mikrofonnal rögzített eső.
+- **river_field_loop.wav** — Thimras, [Park ambiences](https://opengameart.org/content/park-ambiences), [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). A park_ambience_river.wav adelaide-i patakfelvétel 2–16. másodpercéből készült halk hurok, fél másodperc átfedéssel, 24 kHz-re alakítva, jelszint-illesztéssel.
+- **default_hard_footstep.1.ogg, default_hard_footstep.2.ogg** — Erdie, [eredeti hang](https://freesound.org/people/Erdie/sounds/41579/), [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). A [Minetest Game default hangkészletéből](https://github.com/luanti-org/minetest_game/tree/master/mods/default/sounds), változatlan fájlok.
+- **default_wood_footstep.1.ogg, default_wood_footstep.2.ogg** — Mito551, [Minetest Game default hangkészlet és szerzői adatok](https://github.com/luanti-org/minetest_game/blob/master/mods/default/README.md), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). Változatlan fájlok, az eredeti licenc szerint.

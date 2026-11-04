@@ -51,18 +51,19 @@ func _ready() -> void:
 		while preview.time < minf(mark,38.0):
 			await tree.process_frame
 		if mark == 23.0:
-			check(preview.street.location == "bridge" and preview.street.bridge_rail.visible and preview.brook.playing,"Bridge uses surveyed deck, rail and water")
-			check(not preview.street.player.input_enabled and preview.caption.text == "Csak a csendje lett nehezebb.","Directed approach and existing monologue")
+			check(preview.still.texture == preview.BRIDGE_FOOT and preview.brook.playing,"Bridge threshold CG and field-recorded stream")
+			check(preview.caption.text == "Csak a csendje lett nehezebb.","Original monologue")
+			check(preview.ambience.cues[2].sound == "stone1" and preview.ambience.cues[3].sound == "board2" and preview.ambience.cue_cursor >= 4,"Footfalls switch from stone to wood during the threshold shot")
+			check(preview.ambience.effects["stone1"] != preview.ambience.effects["board1"] and preview.ambience.rain.playing,"Separate material streams over continuous rain")
 		elif mark == 28.0:
-			check(preview.street.residents[1].state == "look" and not preview.get_node("Subtitle").visible,"Woman watches during silent crossing")
-			var feet: Vector2 = preview.street.player.position
-			check(feet.x > 300 and feet.distance_to(preview.street.constrain_position(feet)) < 0.2,"Crossing proceeds along the surveyed bridge")
+			check(preview.still.texture == preview.SHION_BANK and not preview.get_node("Subtitle").visible,"Canon Shion on village bank; no dialogue")
+			var held: float = preview.time
 			preview.toggle_pause()
 			await tree.create_timer(0.15,true).timeout
-			check(preview.street.player.position == feet,"Pause freezes the crossing")
+			check(preview.time == held,"Pause freezes the crossing")
 			preview.toggle_pause()
 		elif mark == 36.0:
-			check(preview.street.location == "house" and preview.greeting.miyako.visible,"Wide shot at the shared home")
+			check(preview.still.texture == preview.HOUSE_WIDE,"Far bank home and bridge-side clinic CG")
 		else:
 			check(is_instance_valid(preview.greeting.living_cg),"Original meeting CG follows the house")
 			await tree.create_timer(3.0).timeout
@@ -102,4 +103,4 @@ func _ready() -> void:
 func capture(label: String) -> void:
 	if DisplayServer.get_name() != "headless":
 		await RenderingServer.frame_post_draw
-		get_viewport().get_texture().get_image().save_png("res://review/car_bridge_"+label+".png")
+		get_viewport().get_texture().get_image().save_png("res://review/canon_bridge_"+label+".png")
