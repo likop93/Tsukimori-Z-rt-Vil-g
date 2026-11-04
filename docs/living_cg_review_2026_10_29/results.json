@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-29",
+  "base_commit": "97f70f8",
+  "godot": "4.7.2.stable.official.ed1daf0bf",
+  "renderer": "Compatibility/OpenGL NVIDIA RTX 4070 SUPER",
+  "production_enabled": true,
+  "source_status": "REVIEW; owner-preferred original, not regenerated",
+  "visual_review": "Manual inspection of original CG, 1s/7.8s/8.6s/handoff captures and VN first line; smooth CG, preserved left/right layout; background/detail transition remains REVIEW",
+  "runs": [
+    {
+      "log": "living_approved.log",
+      "reports": [
+        {
+          "approved_source": true,
+          "failures": [],
+          "passed": true,
+          "visual_review": "manual screenshots required"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "log": "living_synthetic.log",
+      "reports": [
+        {
+          "approved_source": false,
+          "failures": [],
+          "passed": true,
+          "visual_review": "manual screenshots required"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "log": "living_enabled_vn_dialogue_regression.log",
+      "reports": [
+        {
+          "failures": [],
+          "passed": true
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "log": "living_enabled_current_entry_audit.log",
+      "reports": [
+        {
+          "failures": [],
+          "passed": true
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "log": "living_enabled_chapter_select_regression.log",
+      "reports": [
+        {
+          "failures": [],
+          "passed": true
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "log": "living_enabled_opening_regression.log",
+      "reports": [
+        {
+          "failures": [],
+          "intro_seconds": 66.0,
+          "passed": true,
+          "suite": "gate_flow"
+        }
+      ],
+      "warnings": []
+    },
+    {
+      "log": "living_enabled_opening_cinematic_input_regression.log",
+      "reports": [
+        {
+          "failures": [],
+          "passed": true,
+          "suite": "cinematic_input"
+        }
+      ],
+      "warnings": [
+        "WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details)."
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "file": "living_cg_09_dialogue_REVIEW.png",
+      "dimensions": [
+        640,
+        360
+      ]
+    },
+    {
+      "file": "living_cg_1_0_REVIEW.png",
+      "dimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "living_cg_4_0_REVIEW.png",
+      "dimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "living_cg_7_8_REVIEW.png",
+      "dimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "living_cg_8_6_REVIEW.png",
+      "dimensions": [
+        1920,
+        1080
+      ]
+    },
+    {
+      "file": "vn_miyako_0.png",
+      "dimensions": [
+        640,
+        360
+      ]
+    }
+  ]
+}

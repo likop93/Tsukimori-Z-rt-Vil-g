@@ -1,0 +1,17 @@
+{
+  "status": "REVIEW",
+  "source": "Owner-supplied ChatGPT image package",
+  "source_archive": "TSUKIMORI_LIVING_CG_AKIRA_MIYAKO_REVIEW_WORK_V1 (2).zip",
+  "archive_sha256": "4ddee887699518d9484fd312c2dad0c5bb921ce386298aab2ec68eead4d6d406",
+  "entry": "AKIRA_MIYAKO_LIVING_CG_01_USER_PREFERRED_REVIEW.png",
+  "sha256": "39017fd4e6e53b3c19e6d966be094e23f499d0c11ac97dd96c269ba197b75c0e",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "byte_length": 2334291,
+  "transforms": "None; byte-identical copy",
+  "selection": "01_USER_PREFERRED_REVIEW; alternative 02 not imported",
+  "authorization": "User supplied this package for the already requested first-meeting Living CG integration",
+  "layers_received": "Flat PNG only; no isolated character/background/eye/hair layers"
+}

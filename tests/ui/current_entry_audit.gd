@@ -8,6 +8,7 @@ func observe() -> void:
     await get_tree().process_frame
 
 func _ready() -> void:
+    get_window().unfocusable = true
     for choice in ["listen","ask"]:
         preload("res://scripts/ui/chapter_catalog.gd").prepare("village")
         var runner: Node = load("res://scenes/opening/opening.tscn").instantiate()
@@ -24,6 +25,11 @@ func _ready() -> void:
         await get_tree().process_frame
         await observe()
         await get_tree().create_timer(1.8).timeout
+        var cg_wait := 0.0
+        while is_instance_valid(runner.arrival.living_cg) and cg_wait < 11.0:
+            await get_tree().process_frame
+            cg_wait += get_process_delta_time()
+        check(cg_wait < 11.0,"Real traversal completes Living CG")
         if not is_instance_valid(runner.arrival.vn):
             check(false,"Real flow starts Miyako greeting")
             runner.queue_free()

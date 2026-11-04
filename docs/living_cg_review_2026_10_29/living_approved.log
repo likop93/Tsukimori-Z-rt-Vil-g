@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 621.01 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 4070 SUPER
+
+GATE_HANDOFF: entered_tsukimori=true met_miyako=false
+LIVING_CG_FRAME: 1.00398955555555
+LIVING_CG_FRAME: 4.00621733333332
+LIVING_CG_FRAME: 7.80758115151532
+LIVING_CG_FRAME: 8.60596575757574
+MIYAKO_ENCOUNTER_COMPLETE: met_miyako=true
+GATE_HANDOFF: entered_tsukimori=true met_miyako=false
+MIYAKO_ENCOUNTER_COMPLETE: met_miyako=true
+LIVING_CG_MECHANICS: {"approved_source":true,"failures":[],"passed":true,"visual_review":"manual screenshots required"}

@@ -20,6 +20,7 @@ func interact() -> void:
 	Input.action_release("observe")
 	await get_tree().process_frame
 func _ready() -> void:
+	get_window().unfocusable = true
 	GameState.clear_runtime_state()
 	var runner: Node = await make_runner()
 	var duration := 0.0
@@ -78,6 +79,15 @@ func _ready() -> void:
 	await interact()
 	Engine.time_scale = 4
 	await get_tree().create_timer(4).timeout
+	var cg_wait := 0.0
+	while is_instance_valid(runner.arrival.living_cg) and cg_wait < 11.0:
+		await get_tree().process_frame
+		cg_wait += get_process_delta_time()
+	check(cg_wait < 11.0,"Natural opening completes the Living CG before the greeting")
+	if not is_instance_valid(runner.arrival.vn):
+		check(false,"Greeting exists after cinematic")
+		get_tree().quit(1)
+		return
 	check(runner.arrival.vn.body.text.contains("Dr. Akira. Már vártam."),"Miyako meeting is still available after exploration")
 	check(runner.arrival.vn.root.is_visible_in_tree(),"Miyako VN actually renders after natural intro")
 	await capture("miyako_after_exploration_REVIEW")

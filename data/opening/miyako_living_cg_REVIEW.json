@@ -1,10 +1,11 @@
 {
-  "status": "BLOCKED_ASSET: exact approved image not available locally",
-  "enabled": false,
-  "texture": "",
+  "status": "REVIEW: owner-preferred original CG integrated; outfit/location continuity remains review",
+  "enabled": true,
+  "texture": "res://assets/opening/living_cg/AKIRA_MIYAKO_LIVING_CG_01_USER_PREFERRED_REVIEW.png",
   "expected_source": "TSUKIMORI_LIVING_CG_AKIRA_MIYAKO_REVIEW_WORK_V1.zip / AKIRA_MIYAKO_LIVING_CG_01_USER_PREFERRED_REVIEW.png",
   "source_chat": "6acd09cd-9068-83eb-b5e1-9ab140be7541",
-  "lamp_positions": [],
+  "source_sha256": "39017fd4e6e53b3c19e6d966be094e23f499d0c11ac97dd96c269ba197b75c0e",
+  "lamp_positions": [[0.441, 0.157], [0.078, 0.735], [0.513, 0.604], [0.521, 0.801]],
   "layer_status": "No background, blink or hair layers received. No parallax or character deformation.",
-  "note": "Enable only after the exact source is received, visually checked and lamp anchors placed against it. No substitute image."
+  "note": "Original 1672x941 image copied byte-for-byte from the owner-supplied ZIP. No regeneration or image edits. Existing VN portraits/layout retained after the crossfade."
 }

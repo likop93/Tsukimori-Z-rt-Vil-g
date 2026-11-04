@@ -1,5 +1,11 @@
 extends "res://tests/ui/vn_dialogue_regression.gd"
-## Synthetic texture tests mechanics only. Never an approved scene preview.
+## Default: synthetic mechanics. --approved-cg: real configured source and captures.
+var approved_source := false
+
+func capture_cg(label: String) -> void:
+	await RenderingServer.frame_post_draw
+	get_viewport().get_texture().get_image().save_png("res://review/living_cg_"+label+"_REVIEW.png")
+
 func fixture() -> Texture2D:
 	var texture := GradientTexture2D.new()
 	texture.width = 1920
@@ -9,20 +15,33 @@ func fixture() -> Texture2D:
 	return texture
 
 func _ready() -> void:
+	get_window().unfocusable = true # Automated input must not capture desktop typing.
+	approved_source = "--approved-cg" in OS.get_cmdline_user_args()
 	var original_mode := get_window().content_scale_mode
 	for skip_early in [false,true]:
 		preload("res://scripts/ui/chapter_catalog.gd").prepare("miyako")
 		var runner: Node = load("res://scenes/opening/opening.tscn").instantiate()
 		add_child(runner)
 		var arrival: Node = runner.arrival
-		arrival.presentation_started = true
-		check(arrival.start_living_cg(fixture(),[[0.75,0.3]]),"Synthetic fixture starts through real arrival controller")
+		if approved_source:
+			arrival.advance(0.0)
+			check(is_instance_valid(arrival.living_cg),"Approved config starts through real greeting trigger")
+		else:
+			arrival.presentation_started = true
+			check(arrival.start_living_cg(fixture(),[[0.75,0.3]]),"Synthetic fixture starts through real arrival controller")
 		var cg: CanvasLayer = arrival.living_cg
-		var marker := Label.new()
-		marker.text = "TECHNICAL FIXTURE / NO APPROVED CG"
-		marker.position = Vector2(25,290)
-		marker.add_theme_font_size_override("font_size",14)
-		cg.root.add_child(marker)
+		if not is_instance_valid(cg):
+			get_tree().quit(1)
+			return
+		if not approved_source:
+			var marker := Label.new()
+			marker.text = "TECHNICAL FIXTURE / NO APPROVED CG"
+			marker.position = Vector2(25,290)
+			marker.add_theme_font_size_override("font_size",14)
+			cg.root.add_child(marker)
+		else:
+			check(cg.picture.texture.get_size() == Vector2(1672,941),"Original approved resolution retained")
+			check(cg.picture.texture.resource_path.ends_with("01_USER_PREFERRED_REVIEW.png"),"Preferred source used, not alternative")
 		await get_tree().process_frame
 		check(get_window().content_scale_mode == Window.CONTENT_SCALE_MODE_CANVAS_ITEMS,"CG uses window-resolution canvas instead of 640px raster upscaling")
 		check(cg.picture.texture_filter == CanvasItem.TEXTURE_FILTER_LINEAR,"CG uses linear filtering")
@@ -41,13 +60,26 @@ func _ready() -> void:
 		check(cg.elapsed == paused_at and not cg.transitioning,"Pause freezes animation and blocks skip")
 		runner.pause_menu.resume()
 		if skip_early:
-			await press(KEY_SPACE)
+			# Test the actual on-screen Skip control as well as repeated requests.
+			cg.skip_button.pressed.emit()
 			cg.skip() # Repeated skip cannot duplicate the VN.
 		else:
-			await get_tree().create_timer(4.0).timeout
+			if approved_source:
+				for at_time in [1.0,4.0,7.8,8.6]:
+					while is_instance_valid(cg) and cg.elapsed < at_time:
+						await get_tree().process_frame
+					if not is_instance_valid(cg):
+						check(false,"Cinematic ended before requested capture")
+						get_tree().quit(1)
+						return
+					print("LIVING_CG_FRAME: ",cg.elapsed)
+					await capture_cg(str(at_time).replace(".","_"))
+			else:
+				await get_tree().create_timer(4.0).timeout
 			check(cg.camera_stage.scale.x > start_zoom.x and cg.camera_stage.scale.x < 1.026,"Slow bounded camera zoom")
-			await RenderingServer.frame_post_draw
-			get_viewport().get_texture().get_image().save_png("res://review/living_cg_TECHNICAL_FIXTURE.png")
+			if not approved_source:
+				await RenderingServer.frame_post_draw
+				get_viewport().get_texture().get_image().save_png("res://review/living_cg_TECHNICAL_FIXTURE.png")
 		var timeout := 0.0
 		while is_instance_valid(arrival.living_cg) and timeout < 11.0:
 			await get_tree().process_frame
@@ -58,6 +90,8 @@ func _ready() -> void:
 		check(is_instance_valid(vn) and vn.active and vn.index == 0,"Natural/skip handoff preserves the first greeting")
 		check(vn.dialogue_panel.size.y == 78 and vn.portrait.position.x > 320,"Approved October 22 layout retained")
 		check(not GameState.has_flag("met_miyako"),"Watching or skipping does not acknowledge dialogue")
+		if approved_source and not skip_early:
+			await capture_cg("09_dialogue")
 		for step in 12:
 			if not vn.active:
 				break
@@ -77,5 +111,5 @@ func _ready() -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
 	check(get_window().content_scale_mode == original_mode,"Scene destruction restores display mode")
-	print("LIVING_CG_MECHANICS: "+JSON.stringify({"passed":failures.is_empty(),"failures":failures,"art_validated":false}))
+	print("LIVING_CG_MECHANICS: "+JSON.stringify({"passed":failures.is_empty(),"failures":failures,"approved_source":approved_source,"visual_review":"manual screenshots required"}))
 	get_tree().quit(0 if failures.is_empty() else 1)

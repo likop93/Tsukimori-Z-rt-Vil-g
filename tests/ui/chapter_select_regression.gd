@@ -25,6 +25,7 @@ func capture(name: String) -> void:
 	get_viewport().get_texture().get_image().save_png("res://review/chapter_"+name+"_REVIEW.png")
 
 func _ready() -> void:
+	get_window().unfocusable = true
 	await get_tree().process_frame
 	var entries := Catalog.entries()
 	for i in entries.size():
@@ -69,6 +70,13 @@ func _ready() -> void:
 				check(runner.street.location == "street" and runner.street.player.input_enabled,"Village entry is playable at the gate")
 				check(not GameState.has_flag("met_miyako"),"Village entry does not reveal Miyako")
 			"miyako":
+				check(is_instance_valid(runner.arrival.living_cg),"Miyako checkpoint starts approved Living CG")
+				await key(KEY_SPACE)
+				var cg_wait := 0.0
+				while is_instance_valid(runner.arrival.living_cg) and cg_wait < 2.0:
+					await get_tree().process_frame
+					cg_wait += get_process_delta_time()
+				check(cg_wait < 2.0,"Chapter cinematic skip finishes")
 				check(runner.arrival.vn.active and runner.arrival.vn.index == 0,"Miyako starts at greeting without consuming first line")
 				check(not GameState.has_flag("met_miyako"),"Greeting still requires acknowledgement")
 			"night":

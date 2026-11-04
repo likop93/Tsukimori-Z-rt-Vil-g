@@ -17,11 +17,18 @@ func press(code: Key) -> void:
 	Input.parse_input_event(event)
 	await get_tree().process_frame
 func _ready() -> void:
+	get_window().unfocusable = true
 	preload("res://scripts/ui/chapter_catalog.gd").prepare("miyako")
 	var runner: Node = load("res://scenes/opening/opening.tscn").instantiate()
 	add_child(runner)
 	await get_tree().process_frame
 	await get_tree().process_frame
+	# The first greeting now follows the nine-second Living CG.
+	var cg_wait := 0.0
+	while is_instance_valid(runner.arrival.living_cg) and cg_wait < 11.0:
+		await get_tree().process_frame
+		cg_wait += get_process_delta_time()
+	check(cg_wait < 11.0,"Living CG hands off within its bounded duration")
 	var vn: CanvasLayer = runner.arrival.vn
 	check(vn != null and vn.active,"Implemented Miyako checkpoint starts the real greeting")
 	if vn == null:

@@ -1,5 +1,8 @@
 # Tsukimori — Decision Log
 
+## 2026-10-29 — első találkozás Living CG forrás átvétele és futó REVIEW próba
+A tulajdonos átadta a `TSUKIMORI_LIVING_CG_AKIRA_MIYAKO_REVIEW_WORK_V1 (2).zip` fájlt. A kiválasztott `01_USER_PREFERRED_REVIEW.png` változatlan, hash-ellenőrzött másolata bekerült a kilencmásodperces Godot-átvezetésbe, és bekapcsoltuk az első találkozás előtt. Valódi render, Pause/Skip/VN és nyitánytesztek, valamint képkockasorozat készült. A CG és a korábbi házháttér közötti folytonosság REVIEW; nincs új FINAL-design vagy globális stílusváltás. Részletek: [LIVING_CG_FIRST_MEETING_REVIEW.md](LIVING_CG_FIRST_MEETING_REVIEW.md).
+
 ## 2026-10-22-i tulajdonosi átadás, rögzítve 2026-10-29 — első találkozás Living CG
 A legfrissebb kifejezett tulajdonosi döntés alapján az Akira–Miyako első találkozás **részletgazdag, sima anime-render / 16:9 filmes próba** lehet. Ez az egy jelenet vizuális kivétele a korábbi pixel-art production irány alól; nem globális stílusváltás. Az eredeti karakterazonosság és a 2026-10-22-i VN-elrendezés megmarad. A jóváhagyott hétköznapi fekete Miyako-outfit ehhez a jelenethez használható; az alapruha nem törlendő. Egyetlen CG nem torzítható pislogás/hajmozgás imitálására. PR #1 nem egyesítendő automatikusan. A technikai előkészítés és a még hiányzó pontos képfájl: [LIVING_CG_FIRST_MEETING_REVIEW.md](LIVING_CG_FIRST_MEETING_REVIEW.md). Ez a bejegyzés nem kész jelenet vagy FINAL grafika igazolása.
 
