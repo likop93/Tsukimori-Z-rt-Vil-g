@@ -1,8 +1,13 @@
 extends Control
-## Standalone pacing review. The menu launches it without preparing a chapter.
+## Alternate day-zero entry, launched only from the chapter selector.
 const MENU := "res://scenes/ui/main_menu.tscn"
-const CUTS := [0.0, 7.6, 14.0, 20.8, 26.8, 33.0]
-const END := 38.0
+const CUTS := [0.0, 11.2, 17.6, 24.4, 30.4, 36.6]
+const END := 41.6
+const MEMORY_START := 6.55
+const HAND_RETURN := 9.2
+const WARM := preload("res://assets/opening/cinematic_v2/memory_warm_REVIEW.png")
+const COLD := preload("res://assets/opening/cinematic_v2/memory_cold_REVIEW.png")
+var memory_material := ShaderMaterial.new()
 @export var road_cg: Texture2D
 @export var parking_cg: Texture2D
 @export var walk_cg: Texture2D
@@ -18,7 +23,7 @@ var greeting: Node
 var brook := AudioStreamPlayer.new()
 var controls_layer := CanvasLayer.new()
 var pause_button: Button
-var replay_button: Button
+var skip_button: Button
 var back_button: Button
 var lines := {}
 var original_scale_mode: Window.ContentScaleMode
@@ -35,11 +40,11 @@ func _ready() -> void:
 	for beat in sequence.beats:
 		lines[beat.id] = beat.get("lines", [])
 	pause_button = $Pause
-	replay_button = $Replay
+	skip_button = $Skip
 	back_button = $Back
 	controls_layer.layer = 45
 	add_child(controls_layer)
-	for button in [pause_button,replay_button,back_button]:
+	for button in [pause_button,skip_button,back_button]:
 		button.reparent(controls_layer,false)
 	brook.stream = preload("res://assets/opening/car_arrival/audio/river_field_loop.wav")
 	brook.process_mode = Node.PROCESS_MODE_PAUSABLE
@@ -58,7 +63,8 @@ func _ready() -> void:
 	})
 	pause_button.pressed.connect(toggle_pause)
 	back_button.pressed.connect(back)
-	replay_button.pressed.connect(func(): get_tree().reload_current_scene())
+	skip_button.pressed.connect(skip_journey)
+	memory_material.shader = preload("res://scripts/opening/memory_fragment.gdshader")
 	update_frame()
 
 func _process(delta: float) -> void:
@@ -69,41 +75,91 @@ func _process(delta: float) -> void:
 	if time >= END:
 		begin_meeting()
 
-func begin_meeting() -> void:
+func skip_journey() -> void:
+	if not get_tree().paused and not meeting_started:
+		begin_meeting(true)
+
+func begin_meeting(skip_film := false) -> void:
+	if meeting_started:
+		return
 	meeting_started = true
+	skip_button.hide()
+	GameState.set_flag("opening_intro_seen")
+	GameState.set_flag("entered_tsukimori")
+	GameState.set_flag("crossed_bridge")
+	still.texture = HOUSE_WIDE
+	still.material = null
+	still.scale = Vector2.ONE
+	$Subtitle.hide()
+	$Dissolve.color.a = 0
+	ambience.vehicle.stop()
 	greeting = preload("res://scripts/opening/arrival_director.gd").new()
 	greeting.process_mode = Node.PROCESS_MODE_PAUSABLE
 	greeting.preview_mode = true
 	add_child(greeting)
-	greeting.preview_finished.connect(end_preview)
+	greeting.preview_finished.connect(enter_home)
 	brook.stop()
 	ambience.end_cinematic()
 	ambience.rain.volume_db = -24
 	pause_button.position.y = 4
-	back_button.position.y = 4
+	back_button.hide()
 	get_window().content_scale_mode = original_scale_mode
-	if not greeting.try_living_cg():
+	if skip_film or not greeting.try_living_cg():
 		greeting.begin_dialogue()
 
-func end_preview() -> void:
+func enter_home() -> void:
+	if finished:
+		return
 	finished = true
 	ambience.rain.stop()
-	pause_button.hide()
-	replay_button.show()
-	back_button.position.y = replay_button.position.y
-	replay_button.grab_focus()
+	GameState.set_flag("met_miyako")
+	GameState.set_flag("miyako_first_dialogue_seen")
+	GameState.chapter_start = "car_story_interior"
+	get_tree().change_scene_to_file.call_deferred("res://scenes/opening/opening.tscn")
+
+func update_memory() -> void:
+	if time < MEMORY_START:
+		return
+	still.material = memory_material
+	var memory := time < HAND_RETURN
+	var crop := Vector4(0.0,0.49,0.52,0.52)
+	var fracture := 0.0
+	if time < 7.22:
+		still.texture = WARM
+		crop = Vector4(0.17,0.34,0.39,0.39)
+	elif time < 8.04:
+		still.texture = COLD
+		crop = Vector4(0.23,0.50,0.45,0.45)
+		fracture = 0.55
+	elif time < 8.42:
+		still.texture = WARM
+		crop = Vector4(0.27,0.44,0.28,0.28)
+		fracture = 0.85
+	elif memory:
+		still.texture = COLD
+		crop = Vector4(0.28,0.57,0.32,0.32)
+		fracture = 0.95
+	else:
+		still.texture = road_cg
+	memory_material.set_shader_parameter("crop",crop)
+	memory_material.set_shader_parameter("memory_amount",1.0 if memory else 0.0)
+	memory_material.set_shader_parameter("fracture",fracture)
+	ambience.vehicle.volume_db = -75
+	ambience.rain.volume_db = -48 if memory else lerpf(-75,-29,smoothstep(HAND_RETURN+0.85,CUTS[1],time))
 
 func update_frame() -> void:
 	var next := CUTS.bsearch(time,false)-1
 	var local_time := time - float(CUTS[next])
 	if next != shot:
 		shot = next
+		still.material = null
 		still.texture = [road_cg,parking_cg,walk_cg,BRIDGE_FOOT,SHION_BANK,HOUSE_WIDE][shot]
 		still.show()
 		var cues := []
 		if shot == 0:
-			cues = [{"at":5.2,"sound":"depart"}]
+			cues = [{"at":MEMORY_START,"sound":"dread"},{"at":7.22,"sound":"pulse"},{"at":HAND_RETURN,"sound":"silence"}]
 		elif shot == 1:
+			ambience.vehicle.stop()
 			cues = [{"at":0.1,"sound":"door"},{"at":0.9,"sound":"step"},{"at":5.65,"sound":"door"}]
 		elif shot == 2:
 			cues = [{"at":0.3,"sound":"step"},{"at":1.2,"sound":"step"},{"at":2.1,"sound":"step"}]
@@ -121,7 +177,9 @@ func update_frame() -> void:
 				cues.append({"at":0.2+i*0.63,"sound":"stone"+str(1+i%2)})
 		ambience.configure({"cues":cues})
 	ambience.update_cinematic("car_review", local_time)
-	if shot == 3:
+	if shot == 0:
+		update_memory()
+	elif shot == 3:
 		brook.volume_db = lerpf(-22,-5,smoothstep(0.0,2.5,local_time))
 	elif shot == 5:
 		brook.volume_db = lerpf(-5,-34,smoothstep(0,4.8,local_time))
@@ -130,7 +188,7 @@ func update_frame() -> void:
 	var line := ""
 	if time < 3.5:
 		line = lines.bus[0]
-	elif time < CUTS[1]:
+	elif time < MEMORY_START:
 		line = lines.bus[3]
 	elif local_time < 3.8 and shot == 1:
 		line = lines.forest[0]
@@ -151,7 +209,10 @@ func toggle_pause() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		get_viewport().set_input_as_handled()
-		back()
+		if meeting_started:
+			toggle_pause()
+		else:
+			back()
 	elif event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_TAB:
 		get_viewport().set_input_as_handled()
 		toggle_pause()

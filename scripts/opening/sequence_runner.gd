@@ -112,7 +112,12 @@ func _ready() -> void:
 	add_child(pause_menu)
 	var requested := GameState.chapter_start
 	GameState.chapter_start = "" # One-shot request; scene reload cannot replay it.
-	preload("res://scripts/ui/chapter_catalog.gd").enter(self,requested)
+	if requested == "car_story_interior" and GameState.has_flag("miyako_first_dialogue_seen"):
+		skip_all()
+		ambience.vehicle.stop()
+		village_flow.enter_interior(true)
+	else:
+		preload("res://scripts/ui/chapter_catalog.gd").enter(self,requested)
 
 func make_label(parent: Node, at: Vector2, dimensions: Vector2, font_size: int) -> Label:
 	var label := Label.new()
@@ -304,7 +309,7 @@ func finish_intro() -> void:
 	add_child(village_flow)
 	village_flow.runner = self
 	handoff_completed.emit()
-	print("GATE_HANDOFF: entered_tsukimori=true met_miyako=false")
+	print("GATE_HANDOFF: entered_tsukimori=true met_miyako=",GameState.has_flag("met_miyako"))
 
 func finish_arrival() -> void:
 	skip_dialog.hide()

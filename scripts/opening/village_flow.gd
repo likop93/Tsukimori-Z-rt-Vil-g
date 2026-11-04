@@ -47,12 +47,7 @@ func advance(delta: float) -> void:
 			if GameState.has_flag("met_miyako"):
 				runner.hint.text = "E · belépés a házba" if actor.position.x >= 255 and actor.position.x < 320 else runner.words.controls
 				if interact and actor.position.x >= 255 and actor.position.x < 320 and not GameState.has_flag("entered_shared_home"):
-					var previous: Node = runner.arrival
-					runner.arrival = preload("res://scripts/opening/interior_director.gd").new()
-					runner.add_child(runner.arrival)
-					runner.arrival.runner = runner
-					runner.arrival.begin()
-					previous.queue_free()
+					enter_interior()
 				return
 			near_exit = actor.position.x >= 255 and actor.position.x < 310 and not GameState.has_flag("met_miyako")
 			runner.hint.text = "E · Miyako" if near_exit else runner.words.controls
@@ -69,9 +64,26 @@ func advance(delta: float) -> void:
 			near_exit = actor.position.x > 435
 			runner.hint.text = "E · az este folytatása" if near_exit else "A folytatáshoz sétálj jobbra.    WASD / nyilak · séta"
 			if near_exit and interact and GameState.has_flag("miyako_interior_dialogue_seen"):
-				var previous: Node = runner.arrival
-				runner.arrival = preload("res://scripts/opening/first_night_director.gd").new()
-				runner.add_child(runner.arrival)
-				runner.arrival.runner = runner
-				runner.arrival.begin()
-				previous.queue_free()
+				enter_room()
+
+func enter_interior(from_cinematic := false) -> void:
+	var previous: Node = runner.arrival
+	var director := preload("res://scripts/opening/interior_director.gd").new()
+	runner.arrival = director
+	runner.add_child(director)
+	director.runner = runner
+	if from_cinematic:
+		director.conversation_finished.connect(enter_room, CONNECT_ONE_SHOT)
+	director.begin(from_cinematic)
+	if is_instance_valid(previous):
+		previous.queue_free()
+
+func enter_room() -> void:
+	var previous: Node = runner.arrival
+	var director := preload("res://scripts/opening/first_night_director.gd").new()
+	runner.arrival = director
+	runner.add_child(director)
+	director.runner = runner
+	director.begin()
+	if is_instance_valid(previous):
+		previous.queue_free()

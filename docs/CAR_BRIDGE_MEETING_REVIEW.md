@@ -1,6 +1,8 @@
 # A hídtól Miyako első mondatáig · filmes REVIEW
 
-**Kipróbálás:** Fejezetválasztás → Autós nyitány · próba. A három eredeti autós kép után három új, referenciákból készített anime-beállítás következik. A meglévő Living CG a 38. másodpercnél indul.
+A folyamatos történeti változat aktuális időzítése, előnézete és tesztjei az [emlék és történeti próba jelentésében](CAR_MEMORY_STORY_REVIEW.md) találhatók. Az alábbi időzítés az ezt megelőző hídi egységhez tartozik.
+
+**Korábbi próba:** Fejezetválasztás → Autós nyitány · próba. A három eredeti autós kép után három új, referenciákból készített anime-beállítás következik. A meglévő Living CG a 38. másodpercnél indul.
 
 | Idő | Beállítás és hang |
 |---|---|

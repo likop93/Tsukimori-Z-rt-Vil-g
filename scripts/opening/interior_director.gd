@@ -1,9 +1,10 @@
 extends Node
+signal conversation_finished
 var runner: Node
 var done := false
 var vn: CanvasLayer
 
-func begin() -> void:
+func begin(from_cinematic := false) -> void:
 	runner.street.player.input_enabled = false
 	runner.street.player.velocity = Vector2.ZERO
 	runner.street.player.scripted_axis = Vector2.ZERO
@@ -17,9 +18,13 @@ func begin() -> void:
 	veil.size = Vector2(640,360)
 	veil.color = Color(0,0,0,0)
 	transition.add_child(veil)
-	var tween := create_tween()
-	tween.tween_property(veil,"color:a",1.0,0.4)
-	await tween.finished
+	var tween: Tween
+	if from_cinematic:
+		veil.color.a = 1.0
+	else:
+		tween = create_tween()
+		tween.tween_property(veil,"color:a",1.0,0.4)
+		await tween.finished
 	runner.street.show_location("interior")
 	runner.weather.active = false
 	runner.weather.hide()
@@ -56,3 +61,4 @@ func finish() -> void:
 	runner.heading.show()
 	runner.hint.visible = runner.help_visible
 	runner.street.enable_control()
+	conversation_finished.emit()

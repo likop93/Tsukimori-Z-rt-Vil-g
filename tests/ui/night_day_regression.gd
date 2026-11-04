@@ -199,5 +199,7 @@ func _ready() -> void:
 	GameState.clear_runtime_state()
 	check(miyako_reactions.size() >= 4,"Miyako shows four reactions during the actual morning and evening sequence")
 	check(not GameState.has_flag("first_day_complete") and not GameState.has_flag("hana_name_heard"),"New game clears first-day progress")
+	# Allow the mixer to release the last room's stopped WAV voices before exit.
+	await get_tree().create_timer(0.5).timeout
 	print("NIGHT_DAY: "+JSON.stringify({"passed":failures.is_empty(),"failures":failures}))
 	get_tree().quit(0 if failures.is_empty() else 1)

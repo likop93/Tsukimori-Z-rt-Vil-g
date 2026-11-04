@@ -183,6 +183,7 @@ func open_car_preview() -> void:
 	if starting:
 		return
 	starting = true
+	GameState.clear_runtime_state()
 	get_tree().change_scene_to_file("res://scenes/opening/car_arrival_preview.tscn")
 
 func volume_changed(value: float) -> void:

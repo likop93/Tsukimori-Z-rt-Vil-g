@@ -1,0 +1,11 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 621.14 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 4070 SUPER
+
+Movie Maker mode enabled, recording movie in 640×360 @ 24 FPS...
+--------------------------------------------------------------------------------
+Done recording movie at path: C:/Users/likop/.codex/.chatgpt-projects/g-p-69b00f1a50988191adb316b0d6893210/verify-v4-20261022/review/memory_clip.avi
+309 frames at 24 FPS (movie length: 00:00:12:21), recorded in 00:00:03 (400% of real-time speed).
+CPU render time: 0.08 seconds (average: 0.26 ms/frame)
+GPU render time: 0.02 seconds (average: 0.08 ms/frame)
+Encoding time: 0.65 seconds (average: 2.10 ms/frame)
+--------------------------------------------------------------------------------

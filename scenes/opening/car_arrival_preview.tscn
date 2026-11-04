@@ -43,14 +43,13 @@ offset_bottom = 356.0
 theme_override_font_sizes/font_size = 12
 text = "Szünet"
 
-[node name="Replay" type="Button" parent="."]
-visible = false
-offset_left = 452.0
+[node name="Skip" type="Button" parent="."]
+offset_left = 324.0
 offset_top = 330.0
-offset_right = 552.0
+offset_right = 478.0
 offset_bottom = 356.0
 theme_override_font_sizes/font_size = 12
-text = "Újrajátszás"
+text = "Nyitány kihagyása"
 
 [node name="Back" type="Button" parent="."]
 offset_left = 558.0
