@@ -8,6 +8,7 @@ func check(condition: bool, detail: String) -> void:
 func _ready() -> void:
 	get_window().unfocusable = true
 	var tree := get_tree()
+	var previous_scale := get_window().content_scale_mode
 	GameState.set_flag("review_state_sentinel")
 	var before: Dictionary = GameState.flags.duplicate(true)
 	var menu: Node = preload("res://scenes/ui/main_menu.tscn").instantiate()
@@ -38,11 +39,14 @@ func _ready() -> void:
 		while preview.time < marks[index] and not preview.finished:
 			await tree.process_frame
 		check(preview.shot == index,"Shot order at capture "+str(index))
+		var still: TextureRect = preview.get_node("Still")
+		check(still.visible and still.texture.resource_path.get_file().begins_with(["01_", "02_", "03_"][index]),"Original artwork in intended shot")
+		check(still.texture.get_size() == Vector2(1672,941) and get_window().content_scale_mode == Window.CONTENT_SCALE_MODE_CANVAS_ITEMS,"Full source and window-resolution CG render")
 		if index == 1:
-			check(not preview.ambience.vehicle.playing and not preview.get_node("Subtitle").visible,"Parked car is silent before the door opens")
+			check(not preview.ambience.vehicle.playing and not preview.get_node("Subtitle").visible,"Motor has stopped during the quiet parking beat")
 		if DisplayServer.get_name() != "headless":
 			await RenderingServer.frame_post_draw
-			get_viewport().get_texture().get_image().save_png("res://review/car_arrival_board_%d.png" % index)
+			get_viewport().get_texture().get_image().save_png("res://review/car_arrival_cg_%d.png" % index)
 	while not preview.finished:
 		await tree.process_frame
 	Engine.time_scale = 1.0
@@ -55,6 +59,7 @@ func _ready() -> void:
 	preview.get_node("Back").pressed.emit()
 	await tree.scene_changed
 	check(not tree.paused and tree.current_scene.scene_file_path.ends_with("main_menu.tscn"),"Leaving while paused restores the menu")
+	check(get_window().content_scale_mode == previous_scale,"Restore menu viewport")
 	check(GameState.flags == before,"Preview and replay preserve story flags")
 	tree.current_scene.queue_free()
 	# Let the audio mixer release the stopped WAV playbacks before exiting the test.

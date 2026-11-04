@@ -1,21 +1,19 @@
-# Autós érkezés · képes időzítési próba
+# Autós nyitány · filmes próba az eredeti képekkel
 
-Godot 4.7.2, 2026-11-04, kiinduló commit `a7caa86`. A **Fejezetválasztás → Autós nyitány · próba** pont egy 20,8 másodperces animált képes vázlatot indít. A játék rendes indítása továbbra is a korábbi nyitányra vezet.
+**Kipróbálás:** Fejezetválasztás → Autós nyitány · próba. Időtartam 20,8 másodperc. A három tulajdonosi REVIEW-kép a beküldött ZIP-ből származik. Az import előtt ellenőriztük mindhárom eredeti PNG méretét (1672×941) és a [forráscsomag SHA-256 jegyzékét](../assets/opening/car_arrival/MANIFEST_SHA256.json).
 
-| Idő | Kép | Meglévő szöveg és hang |
+| Idő | Beállítás | Hang és monológ |
 |---|---|---|
-| 0–7,6 mp | Akira autója az erdős hegyi úton | „Az eső már órák óta verte az ablakot.” → „Katsuro hívott vissza.” Eső és motor. |
-| 7,6–14 mp | Az első falukép, lassítás, parkolás a falu szélén | „Tsukimori ugyanolyan csendesnek tűnt, mint régen.” A motor 11,6 mp körül elhallgat. A szöveg eltűnik, az eső tovább hallatszik. |
-| 14–20,8 mp | Ajtónyitás, kiszállás, talajérintés, ajtócsukás | A lépés után „És én mégis eljöttem.” Ezután újrajátszás vagy visszatérés a főmenübe. |
+| 0–7,6 mp | Akira a volánnál, az alkonyati hegyi út és a falu fényei | Eső, motor, „Katsuro hívott vissza.” A motor 5,2–7,2 mp között halkul el. |
+| 7,6–14 mp | A falu szélén a nyitott ajtó mellett áll | Ajtónyitás és lépés, falukép, felirat nélküli szünet, majd ajtócsukás. |
+| 14–20,8 mp | Akira vállán a táskával gyalog elindul | Lépések és eső. „És én mégis eljöttem.” |
 
-**IMPLEMENTED és tesztelt.** Önálló jelenet, automatikus képsor, szünet, újrajátszás és kilépés szünetből. A szövegek a meglévő `data/opening/sequence.json` monológjából jönnek. A hangok a játék meglévő `ambience.gd` lejátszóját használják. A próba nem ír történeti állapotot.
+**Tesztelt működés.** A külön menüpontból elérhető próba ablakfelbontásban, lineáris szűréssel jelenik meg. A felirat és a kezelőszervek külön rétegen vannak. A szünet, az újrajátszás és a főmenübe való visszatérés működik. Kilépéskor visszaáll a játék eredeti megjelenítési módja. A menüpróba megőrzi a történeti jelzőket.
 
-**REVIEW / PLACEHOLDER.** A hegyek, az autó, a parkoló és az ajtó mozgó kompozíciós vázlat. Akira a meglévő `assets/opening/staging_v3/akira_atlas.png` oldalnézeti figurája. A jármű színe és formája tesztgrafika. A jelenet három Texture2D helye fogadja az eredeti képeket.
+**Térbeli folytonosság.** A híd már a második és a harmadik képen látható a háttérben. A próba az átkelés előtt ér véget. A távoli épületekhez nem rendel helyszínazonosítót. Az átkelés és Miyako házának megközelítése a következő szakasz.
 
-**MISSING.** A három jóváhagyott autós CG bináris fájlja. A [kánonátadás](https://github.com/likop93/Tsukimori-Z-rt-Vil-g/pull/1) dokumentálja a három kép elfogadását. A hozzáférhető projektchat-kivonatokban, a vizsgált Git-ágakon, helyi projektmappákban és a név alapján ellenőrzött Tsukimori-ZIP-ekben nem sikerült azonosítani az eredeti három képet. Az eredeti grafika, képkivágás és a következő gyalogos jelenethez illeszkedés ellenőrzése még hátravan.
+**Godot 4.7.2.** [A futások naplói és 1280×720-as képkockái](car_arrival_cg_review_2026_11_04/). A képek bekötése a car_arrival_preview.tscn fájlban, az időzítés és a helyi megjelenítési mód a car_arrival_preview.gd fájlban, az ellenőrzések a car_arrival_preview_regression.gd fájlban találhatók. [A korábbi vázlat dokumentációja](https://github.com/likop93/Tsukimori-Z-rt-Vil-g/blob/7903c36/docs/CAR_ARRIVAL_TIMING_REVIEW.md).
 
-**Godot-futások.** A grafikus és a headless jelenetteszt sikeres. Ellenőrizte a főmenüből indítást, a snittek sorrendjét, a motor leállását, az olvasási szünetet, az újrajátszást és a főmenübe visszatérést a flagek megőrzésével. A fejezetválasztó regresszió és a normál nyitány → kapu → Miyako teszt is sikeres. [Naplók és három képkocka](car_arrival_review_2026_11_04/).
-
-![Hegyi út](car_arrival_review_2026_11_04/car_arrival_board_0.png)
-![Parkolás](car_arrival_review_2026_11_04/car_arrival_board_1.png)
-![Kiszállás](car_arrival_review_2026_11_04/car_arrival_board_2.png)
+![Hegyi út](car_arrival_cg_review_2026_11_04/car_arrival_cg_0.png)
+![Megérkezés](car_arrival_cg_review_2026_11_04/car_arrival_cg_1.png)
+![Gyalog a falu felé](car_arrival_cg_review_2026_11_04/car_arrival_cg_2.png)

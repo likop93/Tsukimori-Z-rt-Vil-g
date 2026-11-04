@@ -3,22 +3,22 @@ extends Control
 const MENU := "res://scenes/ui/main_menu.tscn"
 const CUTS := [0.0, 7.6, 14.0]
 const END := 20.8
-const TITLES := ["Hegyi út", "Tsukimori határa", "Kiszállás"]
-# These slots accept the original three images when supplied.
 @export var road_cg: Texture2D
 @export var parking_cg: Texture2D
-@export var exit_cg: Texture2D
+@export var walk_cg: Texture2D
 var time := 0.0
 var shot := -1
 var paused_here := false
 var finished := false
 var lines := {}
-@onready var boards := $Boards
+var original_scale_mode: Window.ContentScaleMode
 @onready var still: TextureRect = $Still
 @onready var ambience := $Ambience
 @onready var caption: Label = $Subtitle/Text
 
 func _ready() -> void:
+	original_scale_mode = get_window().content_scale_mode
+	get_window().content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	ambience.process_mode = Node.PROCESS_MODE_PAUSABLE
 	var sequence: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/opening/sequence.json"))
@@ -47,20 +47,17 @@ func update_frame() -> void:
 	var local_time := time - float(CUTS[next])
 	if next != shot:
 		shot = next
-		still.texture = [road_cg,parking_cg,exit_cg][shot]
-		still.visible = still.texture != null
-		boards.visible = not still.visible
-		$Title.text = TITLES[shot] + ("  ·  képes vázlat" if boards.visible else "  ·  REVIEW")
+		still.texture = [road_cg,parking_cg,walk_cg][shot]
+		still.show()
 		var cues := []
-		if shot == 1:
-			cues = [{"at":2.0,"sound":"depart"}] # Existing vehicle fade ends at 4.0 s.
-		elif shot == 2:
-			cues = [{"at":0.15,"sound":"door"},{"at":2.5,"sound":"step"},{"at":4.9,"sound":"door"}]
+		if shot == 0:
+			cues = [{"at":5.2,"sound":"depart"}]
+		elif shot == 1:
+			cues = [{"at":0.1,"sound":"door"},{"at":0.9,"sound":"step"},{"at":5.65,"sound":"door"}]
+		else:
+			cues = [{"at":0.3,"sound":"step"},{"at":1.2,"sound":"step"},{"at":2.1,"sound":"step"}]
 		ambience.configure({"cues":cues})
 	ambience.update_cinematic("car_review", local_time)
-	boards.shot = shot
-	boards.seconds = local_time
-	boards.queue_redraw()
 	still.scale = Vector2.ONE * (1.0+0.014*smoothstep(0,7,local_time))
 	$Dissolve.color.a = 0.72 * (1.0-smoothstep(0,0.32,local_time))
 	var line := ""
@@ -99,5 +96,6 @@ func back() -> void:
 	get_tree().change_scene_to_file(MENU)
 
 func _exit_tree() -> void:
+	get_window().content_scale_mode = original_scale_mode
 	if paused_here:
 		get_tree().paused = false

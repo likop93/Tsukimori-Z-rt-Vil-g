@@ -1,0 +1,35 @@
+[
+  {
+    "file": "01_AKIRA_VEZET_A_HEGYI_UTON_REVIEW.png",
+    "original_source": "ködös_hegyi_út_naplementében.png",
+    "pixels": [
+      1672,
+      941
+    ],
+    "bytes": 2069804,
+    "sha256": "71a23a941bcd8d30d1fc33f27105d038cdedb650b11009a2b575bdeb26e01268",
+    "status": "REVIEW, nem automatikusan Godotba bekotott"
+  },
+  {
+    "file": "02_AKIRA_KISZALL_A_FALU_SZELEN_REVIEW.png",
+    "original_source": "esős_alkonyi_érkezés_a_hegyi_faluba.png",
+    "pixels": [
+      1672,
+      941
+    ],
+    "bytes": 2346733,
+    "sha256": "eefece89d7582402ec11cb3051d84a95eff90a36c6e934f1a60ecd075fff5e87",
+    "status": "REVIEW, nem automatikusan Godotba bekotott"
+  },
+  {
+    "file": "03_AKIRA_GYALOG_A_FALUBA_REVIEW.png",
+    "original_source": "alkonyati_séta_a_hegyi_faluban.png",
+    "pixels": [
+      1672,
+      941
+    ],
+    "bytes": 2445284,
+    "sha256": "3d9335c0e8d2aecaf4fecff350ddfbfea351b261c529dc23f879f57c8aef7973",
+    "status": "REVIEW, nem automatikusan Godotba bekotott"
+  }
+]
