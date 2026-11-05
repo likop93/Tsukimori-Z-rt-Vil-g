@@ -1,5 +1,8 @@
 # Tsukimori — Pixel Art Production Direction v1
 
+> **2026-10-21 új tulajdonosi interakciós lock:** [CANON_SYNC_2026_10_21.md](CANON_SYNC_2026_10_21.md). A „járható sík”, „exploration”, „world sprite” és régi locomotion leírások csak a vizuális kompozíciót és filmes staginget jelentik; nem írnak elő WASD vagy szabad karaktervezérlést. A játékos helyszínt választ a térképen, a gyalogos megérkezés beállításként játszódik le. A 2.5D filmes pixel-art production stílus továbbra is LOCKED; a három új autós anime-render csak elfogadott tartalmi/staging REVIEW, nem kész egységes pixel-art CG.
+
+
 **Dátum:** 2026-09-26  
 **Státusz:** **LOCKED — FINAL PRODUCTION VISUAL DIRECTION**
 

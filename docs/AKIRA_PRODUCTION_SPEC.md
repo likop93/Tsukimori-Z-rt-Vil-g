@@ -1,5 +1,8 @@
 # Akira — FINAL Character Production Spec v1
 
+> **2026-10-21 OWNER OVERRIDE:** [CANON_SYNC_2026_10_21.md](CANON_SYNC_2026_10_21.md). A jelen fájl eredeti 3D gyártási leírása **legacy technikai referenciaként** marad meg. A játék 2.5D filmes pixel-art, kézi WASD/CharacterBody3D gameplay nélkül. A korábbi „opcionális szemüveg” most **nem használható** az Akira production portrékon és CG-ken. Az eredeti, szemüveg nélküli fekete hajú arc és sötét kapucnis civil viselet a kiindulópont; öltözék jelenetfüggő, fehér köpeny csak rendelőben.
+
+
 **Projekt:** Tsukimori — Zárt Világ  
 **Karakter:** Dr. Akira  
 **Státusz:** APPROVED DESIGN / PRODUCTION LOCK  
@@ -73,11 +76,10 @@ Nem lehet:
 - természetfeletti fejlődéshez külön eye-material/variant előkészíthető;
 - a zöldülés történeti állapot legyen, ne alapdesign.
 
-## Szemüveg
-- **opcionális variáns**;
-- vékony, modern, sötét keret;
-- nem lehet Loft vizuális ismertetőjegyének másolata;
-- külön meshként kapcsolható.
+## Szemüveg — 2026-10-21 UPDATE, NEM AKTÍV
+- **Akira a játékban szemüveg nélküli.** Ez a későbbi tulajdonosi döntés felülírja az eredeti opcionális szemüveges leírást.
+- A történeti karakterlap szemüveges sorát tilos aktív portré- és CG-referenciaként használni.
+- A régebbi szemüveges modelleket/képeket archiválni lehet, de a productionhez javítandók.
 
 ---
 

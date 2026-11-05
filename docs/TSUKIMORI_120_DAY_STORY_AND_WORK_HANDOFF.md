@@ -1,4 +1,7 @@
 # Tsukimori — 120 napos történeti irány és Work fejlesztési handoff
+
+> **2026-10-21 tulajdonosi pontosítás:** [CANON_SYNC_2026_10_21.md](CANON_SYNC_2026_10_21.md). A lent említett „szabadon bejárható” világ és „minden NPC találkozása” **nem WASD-vezérelt szabad mozgást** jelent. A játék kattintásos térképpel, filmes jelenetváltásokkal és VN-nel működik. A korábbi buszos intró SUPERSEDED: Akira autóval érkezik, a falu szélén parkol és filmes gyalogos beállításokon jut el Miyakóhoz. Az elfogadott 120 napos történet változatlan; az itt leírt 1–10. napos fejlesztési cél nem elkészült tíz nap.
+
 **Rögzítve:** 2026-10-14  
 **Státusz:** tulajdonos által elfogadott új kreatív irányok + világosan megjelölt, MÉG NEM LOCKED javaslatok.  
 **Első technikai cél:** az 1–10. nap végigjátszható, összefüggő Godot-változata.
